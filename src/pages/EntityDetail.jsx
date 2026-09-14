@@ -6,6 +6,7 @@ import { getTransactionsForEntity } from '../data/transactions.js'
 import { TransactionList } from '../components/money/TransactionRow.jsx'
 import { flowsForEntity, FLOWS } from '../data/flows.js'
 import { EntityNews } from '../components/news/EntityNews.jsx'
+import { PepiLens } from '../components/consulting/PepiLens.jsx'
 import { currencySymbol } from '../utils/format.js'
 
 function Fact({ label, children }) {
@@ -126,6 +127,8 @@ export default function EntityDetail() {
               </div>
             </Card>
           )}
+
+          <PepiLens entityId={e.id} />
 
           <EntityNews entityId={e.id} />
 

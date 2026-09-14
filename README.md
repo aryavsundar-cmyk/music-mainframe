@@ -34,6 +34,7 @@ React 19 · Vite 7 · Tailwind 4 (CSS-first, no tailwind.config) · React Router
 | `/deals` · `/pe` · `/pe/:id` · `/abs` · `/catalogs` | money | live (Sprint 3) |
 | `/pros` · `/pros/:id` · `/dsps` | rights | live (Sprint 4) |
 | `/news` | live | live (Sprint 5) |
+| `/consulting` · `/consulting/:id` | overlay | live (Sprint 6) |
 | `/design` | reference | living style guide |
 
 ## Design system
@@ -92,6 +93,10 @@ File-based, `src/data/*.js`, named exports plus small helpers. Conventions fixed
 - `fundamentals.js` — DSP economics for all 21 DSP entities: tier, payout model (pro-rata · artist-centric · statutory · lump-sum · direct), US price and note, subscribers/MAU with as-of, ARPU, 2025 payouts, commonly cited all-in per-stream range (order of magnitude, never contractual), share to rights holders, MIDiA subscriber share, posture, dated shifts. `MARKET` holds IFPI 2025, MIDiA Q4 2025 shares, the stream-split rule of thumb, and the Phonorecords IV/V mechanical rate status.
 - Every record: `asOf` (ISO date) + `sources: [{ label, url }]`.
 - Relative imports carry `.js` so Node scripts (exports, batch generation) can import data files directly.
+
+## Consulting overlay (src/data/consulting.js)
+
+The A&M PEPI lens, mirroring the Intelligence Hub's client-category × service-line pattern. Five service lines (Diligence · Carve-out · Value creation · PMI · Strategy) each described in music terms, and seven client categories (Catalog investors · Label PE sponsors · Publisher roll-ups · Independent distributors · PRO modernisation · Live entertainment operators · Music-AI investors). Category membership is COMPUTED from entity type/roles (`rule`) plus a short `explicit` list, so it tracks entities.js; deals and volume come from transactions.js; `topics` link to `/news?topic=`. Each category carries a thesis, engagement triggers, KPIs, and per-line engagement hypotheses (39 total). `getConsultingContext(entityId)` powers the "PEPI lens" rail on entity pages and biases the hypotheses toward the entity's recent deal types.
 
 ## Live news (server/)
 

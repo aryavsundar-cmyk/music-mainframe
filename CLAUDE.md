@@ -29,4 +29,4 @@ Working conventions for this repo. Mirrors how the sibling Mainframe apps run.
 No royalty calculator · no artist tooling · no playback embeds · no sync marketplace · no song-level PRO lookup · no AI music generation.
 
 ## Sprint map
-0 foundation · 1 entities · 2 flows · 3 deals/PE/ABS/catalogs · 4 PROs + DSPs · 5 live news (all shipped) · 5 live news · 6 consulting overlay · 7+ sibling cross-links.
+0 foundation · 1 entities · 2 flows · 3 deals/PE/ABS/catalogs · 4 PROs + DSPs · 5 live news · 6 consulting overlay (all shipped) · 5 live news · 6 consulting overlay · 7+ sibling cross-links.

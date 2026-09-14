@@ -18,7 +18,7 @@ import { SIGNAL_STATS, TOPIC_SIGNALS } from './signals.js'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DIST = path.resolve(__dirname, '../dist')
 const PORT = process.env.PORT || 3002
-const SPRINT = 5
+const SPRINT = 6
 const started = new Date()
 
 const sources = JSON.parse(fs.readFileSync(path.join(__dirname, 'sources.json'), 'utf8'))
