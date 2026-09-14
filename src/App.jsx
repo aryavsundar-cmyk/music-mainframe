@@ -10,6 +10,7 @@ import PE from './pages/PE.jsx'
 import PEFundDetail from './pages/PEFundDetail.jsx'
 import ABS from './pages/ABS.jsx'
 import PROs from './pages/PROs.jsx'
+import PRODetail from './pages/PRODetail.jsx'
 import DSPs from './pages/DSPs.jsx'
 import Catalogs from './pages/Catalogs.jsx'
 import News from './pages/News.jsx'
@@ -107,6 +108,7 @@ export default function App() {
             <Route path="/pe/:id" element={<PEFundDetail />} />
             <Route path="/abs" element={<ABS />} />
             <Route path="/pros" element={<PROs />} />
+            <Route path="/pros/:id" element={<PRODetail />} />
             <Route path="/dsps" element={<DSPs />} />
             <Route path="/catalogs" element={<Catalogs />} />
             <Route path="/news" element={<News />} />

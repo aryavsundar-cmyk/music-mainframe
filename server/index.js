@@ -19,7 +19,7 @@ app.disable('x-powered-by')
 app.use(compression())
 
 app.get('/api/health', (_req, res) => {
-  res.json({ ok: true, app: 'music-mainframe', sprint: 3, started: started.toISOString(), uptimeSec: Math.round(process.uptime()) })
+  res.json({ ok: true, app: 'music-mainframe', sprint: 4, started: started.toISOString(), uptimeSec: Math.round(process.uptime()) })
 })
 
 app.use(express.static(DIST, { maxAge: '1h', index: false }))
