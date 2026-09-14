@@ -46,7 +46,7 @@ export default function Deals() {
           <select className={select} value={params.asset} onChange={(e) => set({ asset: e.target.value })} aria-label="Asset"><option value="">Any asset</option>{Object.entries(ASSETS).map(([k, v]) => <option key={k} value={k}>{v}</option>)}</select>
           <select className={select} value={params.structure} onChange={(e) => set({ structure: e.target.value })} aria-label="Structure"><option value="">Any structure</option>{Object.entries(STRUCTURES).map(([k, v]) => <option key={k} value={k}>{v}</option>)}</select>
           <select className={select} value={params.year} onChange={(e) => set({ year: e.target.value })} aria-label="Year"><option value="">Any year</option>{YEARS.map((y) => <option key={y} value={y}>{y}</option>)}</select>
-          <select className={select} value={params.status} onChange={(e) => set({ status: e.target.value })} aria-label="Status"><option value="">Any status</option><option value="closed">Closed</option><option value="pending">Pending</option><option value="announced">Announced</option></select>
+          <select className={select} value={params.status} onChange={(e) => set({ status: e.target.value })} aria-label="Status"><option value="">Any status</option><option value="closed">Closed</option><option value="pending">Pending</option><option value="announced">Announced</option><option value="terminated">Terminated</option></select>
         </div>
       </div>
 
