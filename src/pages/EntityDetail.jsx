@@ -1,10 +1,11 @@
 import { Link, useParams } from 'react-router-dom'
-import { ArrowLeft, ExternalLink, CornerDownRight } from 'lucide-react'
-import { PageHeader, SectionHeader, Card, Stat, Tag, Num, FlowMark } from '../components/primitives/index.js'
+import { ArrowLeft, ArrowRight, ExternalLink, CornerDownRight } from 'lucide-react'
+import { PageHeader, SectionHeader, Card, Stat, Tag, FlowMark } from '../components/primitives/index.js'
 import { ENTITY_TYPES, LENS_TONE, OWNERSHIP, TIERS, getEntityProfile, getEntity, getChildren, getParentChain, getBackers, getBackedBy } from '../data/entities.js'
-import { getTransactionsForEntity, TX_TYPES, partyName } from '../data/transactions.js'
+import { getTransactionsForEntity } from '../data/transactions.js'
+import { TransactionList } from '../components/money/TransactionRow.jsx'
 import { flowsForEntity, FLOWS } from '../data/flows.js'
-import { currencySymbol, formatDate } from '../utils/format.js'
+import { currencySymbol } from '../utils/format.js'
 
 function Fact({ label, children }) {
   return (
@@ -44,7 +45,8 @@ export default function EntityDetail() {
   return (
     <>
       <Link to="/entities" className="t-small text-ink-3 no-underline inline-flex items-center gap-1 hover:text-ink-1 mb-4"><ArrowLeft size={14} aria-hidden="true" /> Entities</Link>
-      <PageHeader eyebrow={`${t.label}${e.subtype ? ` · ${e.subtype}` : ''}`} tone={tone === 'neutral' ? 'muted' : tone} title={e.name} lede={e.summary} />
+      <PageHeader eyebrow={`${t.label}${e.subtype ? ` · ${e.subtype}` : ''}`} tone={tone === 'neutral' ? 'muted' : tone} title={e.name} lede={e.summary}
+        actions={e.roles.some((r) => ['catalog-fund', 'pe-fund', 'debt-investor', 'strategic'].includes(r)) ? <Link to={`/pe/${e.id}`} className="t-small text-ink-2 no-underline hover:text-ink-1 inline-flex items-center gap-1 border border-line-2 rounded-md h-9 px-3.5">Investment view <ArrowRight size={13} aria-hidden="true" /></Link> : undefined} />
 
       <div className="flex flex-wrap items-center gap-2 -mt-5 mb-8">
         {e.roles.map((r) => <Tag key={r} tone={LENS_TONE[ENTITY_TYPES[r]?.lens] === 'neutral' ? 'neutral' : LENS_TONE[ENTITY_TYPES[r]?.lens]}>{ENTITY_TYPES[r]?.label || r}</Tag>)}
@@ -85,32 +87,6 @@ export default function EntityDetail() {
             </section>
           )}
 
-          <section>
-            <SectionHeader eyebrow="Money" title="Related transactions" aside={`${deals.length} on file · Sprint 3 expands`} />
-            {deals.length === 0
-              ? <p className="t-body text-ink-3 m-0">No transactions filed against this entity yet.</p>
-              : (
-                <div className="divide-y divide-line-1">
-                  {deals.map((d) => (
-                    <div key={d.id} className="py-3 grid grid-cols-[88px_minmax(0,1fr)_auto] gap-4 items-start">
-                      <div className="t-data text-ink-3">{formatDate(d.date)}</div>
-                      <div className="min-w-0">
-                        <div className="t-body text-ink-1">{d.title}</div>
-                        <div className="t-small text-ink-3 mt-0.5">
-                          {d.acquirers.map(partyName).join(', ') || '—'} ← {d.sellers.map(partyName).join(', ') || '—'}
-                          {d.status !== 'closed' && <Tag tone="neutral" className="ml-2">{d.status}</Tag>}
-                          {d.verify && <Tag tone="danger" className="ml-2">verify</Tag>}
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <Num kind="money" value={d.value} className="t-data" />
-                        <div className="mt-1"><Tag tone={TX_TYPES[d.type]?.tone || 'neutral'}>{TX_TYPES[d.type]?.label || d.type}</Tag></div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-          </section>
         </div>
 
         <aside className="space-y-8">
@@ -165,6 +141,10 @@ export default function EntityDetail() {
           </Card>
         </aside>
       </div>
+      <section className="mt-12">
+        <SectionHeader eyebrow="Money" title="Related transactions" aside={`${deals.length} on file`} />
+        <TransactionList items={deals} empty="No transactions filed against this entity yet." />
+      </section>
     </>
   )
 }

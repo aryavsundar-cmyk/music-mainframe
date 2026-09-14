@@ -22,11 +22,11 @@ Working conventions for this repo. Mirrors how the sibling Mainframe apps run.
 - Relative imports carry `.js` / `.jsx` extensions (Node ESM compatibility for scripts).
 - Backend lives in `server/` at repo root, never under `src/`. `server/sources.json` (Sprint 5) stays JSON.
 - Lazy-load heavy export renderers (`pptxgenjs`, `docx`) when they arrive; keep the core bundle small.
-- Data files: typed empty defaults, never `null`. Every record carries `asOf` + `sources[]`.
+- Data files: typed empty defaults, never `null`. Every record carries `asOf` + `sources[]`. A fact from the brief or memory that isn't cited gets `verify: true` and a dated note; a verification pass sources it or drops it. Never silently overwrite a sourced figure with a remembered one.
 - Sibling apps (`~/Desktop/A&M/Agencies/am-intelligence-hub`, `…/programmatic-ecosystem`) are convention reference only. Reuse shapes (`PATTERNS-FROM-SIBLINGS.md` in the kickoff packet), never content. Never edit them from this session.
 
 ## Non-goals (Sprints 0–3)
 No royalty calculator · no artist tooling · no playback embeds · no sync marketplace · no song-level PRO lookup · no AI music generation.
 
 ## Sprint map
-0 foundation (this) · 1 entities · 2 flows · 3 deals/PE/ABS/catalogs · 4 PROs + DSPs · 5 live news · 6 consulting overlay · 7+ sibling cross-links.
+0 foundation · 1 entities · 2 flows · 3 deals/PE/ABS/catalogs (all shipped) · 4 PROs + DSPs · 5 live news · 6 consulting overlay · 7+ sibling cross-links.

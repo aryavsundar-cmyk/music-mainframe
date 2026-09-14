@@ -7,6 +7,7 @@ import EntityDetail from './pages/EntityDetail.jsx'
 import Flows from './pages/Flows.jsx'
 import Deals from './pages/Deals.jsx'
 import PE from './pages/PE.jsx'
+import PEFundDetail from './pages/PEFundDetail.jsx'
 import ABS from './pages/ABS.jsx'
 import PROs from './pages/PROs.jsx'
 import DSPs from './pages/DSPs.jsx'
@@ -103,6 +104,7 @@ export default function App() {
             <Route path="/flows/*" element={<Flows />} />
             <Route path="/deals" element={<Deals />} />
             <Route path="/pe" element={<PE />} />
+            <Route path="/pe/:id" element={<PEFundDetail />} />
             <Route path="/abs" element={<ABS />} />
             <Route path="/pros" element={<PROs />} />
             <Route path="/dsps" element={<DSPs />} />

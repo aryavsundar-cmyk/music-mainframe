@@ -31,7 +31,7 @@ React 19 · Vite 7 · Tailwind 4 (CSS-first, no tailwind.config) · React Router
 | `/` | overview | Sprint 0 |
 | `/entities` · `/entities/:id` | structure | live (Sprint 1) |
 | `/flows` · `/flows/recording` · `/flows/publishing` | structure | live (Sprint 2) |
-| `/deals` · `/pe` · `/abs` · `/catalogs` | money | Sprint 3 |
+| `/deals` · `/pe` · `/pe/:id` · `/abs` · `/catalogs` | money | live (Sprint 3) |
 | `/pros` · `/dsps` | rights | Sprint 4 |
 | `/news` | live | Sprint 5 |
 | `/design` | reference | living style guide |
@@ -85,11 +85,16 @@ Dark by default. `data-theme="light"` on `<html>` flips every `--mm-*` role; per
 File-based, `src/data/*.js`, named exports plus small helpers. Conventions fixed in Sprint 0:
 
 - `entities.js` — one flat table (`ENTITIES`) plus helpers (`getEntity`, `getEntityProfile`, `getParentChain`, `getChildren`, `filterEntities`, `headlineMetric`). Source rows live in `entities/*.js`, one file per brief §4 section, merged and normalised at load (typed defaults, duplicate-id guard). `type` is the primary bucket (facet); `roles[]` holds the rest (Sony = label + publisher + distributor). `tier` = scale within type, never prestige. `verify: true` marks a record carrying a fact from the brief that isn't yet sourced — it shows as a red tag in the UI and is a facet on `/entities`.
-- `transactions.js` — one table (`TRANSACTIONS`) for catalog sales, PE rounds, ABS, debt, take-privates, M&A, differentiated by `type`. Parties are `{ entityId }` or `{ name, kind }` so artists and estates never get forced into the entity table. Sprint 1 ships a 21-deal seed; Sprint 3 fills it.
+- `transactions.js` — one table (`TRANSACTIONS`, 60 deals 2019–2026) for catalog sales, equity/fund raises, ABS, debt, take-privates, M&A, differentiated by `type`. Parties are `{ entityId }` or `{ name, kind }` so artists and estates never enter the entity table; superstar deals carry `catalogOf` (drives `/catalogs`). ABS rows carry an `abs` object (issuer, series, rating, arrangers, collateral, catalog value, advance rate, anticipated repayment, legal final) rendered by `components/money/AbsStructure.jsx` in fixed-income conventions. Every row has `sources[]`; `verify: true` only where a figure is a press estimate the parties have not confirmed. `ABS_MARKET` holds the KBRA market totals. Helpers: `filterTransactions`, `getTransactionsForEntity`, `ABS_DEALS`, `CATALOG_SALES`, `TX_TOTALS`.
+- `peFunds.js` — investment-view extension keyed by entity id for every money-lens actor (44 profiles): thesis, structure preference, portfolio (entity ids), named catalogs, exits, LP base. `getFundProfile(id)` always returns typed defaults plus the entity's transactions and ABS issued; `listFunds({ kind, q })` ranks by deal volume; `kindOf(e)` files multi-role entities under their first money role.
 - `flows.js` — exports both flows (`FLOWS.recording`, `FLOWS.publishing`). A flow is nodes on a (col, row) grid plus edges of kind `rights` (forward) or `money` (backward), each with a label and optional `econ` split. Nodes carry `entityIds` (who plays the role → links to `/entities/:id`), `econ` (published splits and rates, `verify: true` unless statutory), and notes. `components/flows/FlowDiagram.jsx` lays nodes out on a CSS grid and draws edges in an SVG layer from measured rects; `FlowPanel.jsx` is the click-to-drill rail. Recording is a 5×2 chain with the SoundExchange statutory branch; publishing is a 4×3 fan (publisher → PRO / mechanical / sync → licensees → back to the writer).
-- `peFunds.js`, `pros.js`, `fundamentals.js` — profile extensions keyed by entity id, with typed empty defaults (never null).
+- `pros.js`, `fundamentals.js` — profile extensions keyed by entity id (Sprint 4), same typed-default pattern as `peFunds.js`.
 - Every record: `asOf` (ISO date) + `sources: [{ label, url }]`.
 - Relative imports carry `.js` so Node scripts (exports, batch generation) can import data files directly.
+
+## Verification discipline
+
+Sprint 3 ran a sourced verification pass (web, 2026-09-14) over the facts transcribed from the kickoff brief. Corrections landed in the data with citations: Concord's owner was Michigan Retirement Systems / Great Mountain Partners (not Bain) and Concord combined with BMG on 1 Sep 2026; SESAC stayed with Blackstone (not Ares) and issued an $889M WBS; Hellman & Friedman's GMR deal was 2024 at $3.3B; AWAL/Sony was cleared, not blocked; See Tickets went to CTS Eventim; ASM Global to Legends; Live Nation lost the states' jury trial in April 2026 after the DOJ settled; UMG closed Downtown in Feb 2026; Sony Music Publishing bought Recognition (ex-Hipgnosis) in Jul 2026; Primary Wave bought Kobalt in Jul 2026. Remaining `verify` tags (38 entities) mark open questions with a date, not guesses.
 
 ## Conventions
 

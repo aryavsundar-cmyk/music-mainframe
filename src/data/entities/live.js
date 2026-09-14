@@ -1,14 +1,12 @@
-import { site, ir, edgar, mbw } from './_schema.js'
+import { site, ir, edgar, mbw, src } from './_schema.js'
 
 /** §4 Live, touring, ticketing, venues, festivals. */
 export const LIVE = [
   { id: 'live-nation', name: 'Live Nation Entertainment', short: 'LYV', type: 'live', roles: ['live'], tier: 1, subtype: 'promoter + ticketing + venues',
     hq: 'Beverly Hills, CA', founded: 2005, ownership: 'public', ticker: 'NYSE: LYV', region: 'Global',
     metrics: { revenue: 23.2e9, revenueYear: 2024, revenueCurrency: 'USD' },
-    summary: 'Largest promoter and, via Ticketmaster (2010 merger), the largest primary ticketer. The DOJ and 30+ states sued in May 2024 seeking to unwind Ticketmaster; trial was scheduled for March 2026.',
-    notes: ['Confirm the DOJ trial outcome / remedies status before citing.'],
-    verify: true,
-    sources: [ir('https://investors.livenationentertainment.com'), edgar('LYV')] },
+    summary: 'Largest promoter and, via Ticketmaster (2010 merger), the largest primary ticketer. The DOJ settled its 2024 antitrust case mid-trial in March 2026 on behavioural terms (multi-vendor ticketing, amphitheatre access for outside promoters, fee caps, a $280M state fund) with no divestiture; 33 states plus DC pressed on and on 15 April 2026 a federal jury found Live Nation and Ticketmaster liable on every count, with damages of $1.72 per primary ticket. Remedies, post-trial motions, and appeal pending. Raised its OCESA (Mexico) stake to 75% for $646M in August 2025.',
+    sources: [src('CNN — jury verdict (15 Apr 2026)', 'https://www.cnn.com/2026/04/15/politics/ticketmaster-live-nation-monopoly-verdict'), src('Paul, Weiss — verdict takeaways', 'https://www.paulweiss.com/insights/client-memos/live-nationticketmaster-antitrust-verdict-key-takeaways-from-the-states-jury-trial-win'), ir('https://investors.livenationentertainment.com')] },
   { id: 'ticketmaster', name: 'Ticketmaster', type: 'live', roles: ['live'], tier: 1, subtype: 'ticketing',
     hq: 'Beverly Hills, CA', founded: 1976, ownership: 'subsidiary', parentId: 'live-nation', region: 'Global',
     summary: 'Primary ticketing platform at the center of the antitrust case; the 2022 Eras Tour on-sale is the political flashpoint.',
@@ -53,16 +51,13 @@ export const LIVE = [
     summary: 'Fan-first mobile ticketing with no resale markup; SoftBank Vision Fund 2-backed.',
     sources: [site('https://dice.fm')] },
   { id: 'see-tickets', name: 'See Tickets', type: 'live', roles: ['live'], tier: 2, subtype: 'ticketing',
-    hq: 'Nottingham, UK', founded: 1990, ownership: 'subsidiary', parentId: 'vivendi', region: 'UK / Europe / US',
-    summary: 'Vivendi\'s ticketing arm (Vivendi Village); stayed with Vivendi through the 2024 group split.',
-    verify: true,
-    sources: [site('https://www.seetickets.com')] },
+    hq: 'Nottingham, UK', founded: 1990, ownership: 'subsidiary', parentId: 'cts-eventim', region: 'UK / Europe / US',
+    summary: 'Second-largest UK ticketing platform. Vivendi sold it, with its festival portfolio (Kite, Love Supreme, Junction 2), to CTS Eventim for ~€300M enterprise value; completed 6 June 2024.',
+    sources: [mbw('CTS Eventim completes acquisition of Vivendi ticketing'), src('Vivendi — completion of sale to CTS Eventim', 'https://www.vivendi.com/en/press-release/completion-of-the-sale-of-vivendis-festival-and-international-ticketing-activities-to-cts-eventim/')] },
   { id: 'eventbrite', name: 'Eventbrite', type: 'live', roles: ['live'], tier: 2, subtype: 'ticketing (self-serve)',
-    hq: 'San Francisco, CA', founded: 2006, ownership: 'public', ticker: 'NYSE: EB', region: 'Global',
-    summary: 'Self-serve ticketing for the long tail of events; refocused on consumer discovery after 2023.',
-    sources: [ir('https://investor.eventbrite.com'), edgar('EB')] },
-
-  // ── Venue operators ───────────────────────────────────────────────────────
+    hq: 'San Francisco, CA', founded: 2006, ownership: 'subsidiary', parentId: 'bending-spoons', region: 'Global',
+    summary: 'Self-serve ticketing for the long tail of events. Taken private by Bending Spoons for ~$500M ($4.50 per share); letter of intent Aug 2025, merger agreement Dec 2025, closed 10 March 2026 and delisted from the NYSE.',
+    sources: [src('TicketNews — Bending Spoons finalizes Eventbrite purchase (Mar 2026)', 'https://www.ticketnews.com/2026/03/bending-spoons-finalizes-purchase-of-eventbrite/')] },
   { id: 'asm-global', name: 'ASM Global', type: 'live', roles: ['live'], tier: 1, subtype: 'venue management',
     hq: 'Los Angeles, CA', founded: 2019, ownership: 'subsidiary', parentId: 'legends', region: 'Global',
     summary: 'Formed from AEG Facilities + SMG (Onex) in 2019; acquired by Legends (Sixth Street-backed) in 2024. Manages 350+ venues.',
@@ -98,4 +93,13 @@ export const LIVE = [
     hq: 'London, UK', founded: 2007, ownership: 'subsidiary', parentId: 'wmg', region: 'Global',
     summary: 'Concert-discovery app acquired by WMG in 2017 after settling its antitrust suit against Live Nation.',
     sources: [site('https://www.songkick.com')] },
+  { id: 'cts-eventim', name: 'CTS Eventim', type: 'live', roles: ['live'], tier: 1, subtype: 'ticketing + promotion (Europe)',
+    hq: 'Munich, DE', founded: 1989, ownership: 'public', ticker: 'ETR: EVD', region: 'Europe / Global',
+    summary: 'Europe\'s largest ticketing and live company (Eventim, See Tickets, France Billet). Bought Vivendi\'s See Tickets and festivals for ~€300M enterprise value (completed June 2024); nine-month revenue rose 16% to ~$2.1B after the merger.',
+    sources: [mbw('CTS Eventim completes acquisition of Vivendi'), src('Vivendi — completion of sale to CTS Eventim', 'https://www.vivendi.com/en/press-release/completion-of-the-sale-of-vivendis-festival-and-international-ticketing-activities-to-cts-eventim/')] },
+  { id: 'superstruct', name: 'Superstruct Entertainment', type: 'live', roles: ['live'], tier: 2, subtype: 'festival group',
+    hq: 'London, UK', founded: 2017, ownership: 'pe-backed', parentId: 'kkr', region: 'Europe / Australia',
+    summary: 'Owner of 80+ festivals (Sziget, Wacken, Parookaville, Sónar). Providence Equity sold it to KKR in June 2024 for ~$1.39B.',
+    verify: true,
+    sources: [mbw('KKR Superstruct Providence')] },
 ]

@@ -1,4 +1,4 @@
-import { site, ir, mbw } from './_schema.js'
+import { site, ir, mbw, src } from './_schema.js'
 
 /** §4 Creator / artist infrastructure, A&R tech, AI + music tech, rights data, sync. */
 export const CREATOR = [
@@ -23,11 +23,11 @@ export const CREATOR = [
     verify: true,
     sources: [site('https://createmusicgroup.com'), mbw('Create Music Group')] },
   { id: 'believe', name: 'Believe', type: 'artist-services', roles: ['artist-services', 'distributor', 'label'], tier: 1, subtype: 'digital label + distribution group',
-    hq: 'Paris, FR', founded: 2005, ownership: 'public', ticker: 'EPA: BLV', region: 'Global',
+    hq: 'Paris, FR', founded: 2005, ownership: 'pe-backed', region: 'Global',
     metrics: { revenue: 1.0e9, revenueYear: 2024, revenueCurrency: 'EUR' },
-    summary: 'Denis Ladegaillerie\'s digital-native group (TuneCore, Nuclear Blast, Groove Attack); the founder-led consortium with EQT and TCV took control in 2024 and moved toward delisting.',
+    summary: 'Denis Ladegaillerie\'s digital-native group (TuneCore, Nuclear Blast, Groove Attack). The founder-led consortium with EQT and TCV bought a 71.9% block in 2024 (~€1.54B valuation), then ran a buyout and squeeze-out at €17.20 per share (~€1.73B); Believe stopped trading on Euronext Paris on 22 July 2025.',
     verify: true,
-    sources: [ir('https://www.believe.com/investors'), mbw('Believe')] },
+    sources: [mbw('Believe squeeze-out stops trading'), src('Euronext — increase in buyout offer price (Jun 2025)', 'https://live.euronext.com/en/products/equities/company-news/2025-06-04-increase-price-public-buyout-offer-followed-squeeze-out')] },
   { id: 'vinyl-group', name: 'Vinyl Group', type: 'music-tech', roles: ['music-tech', 'data'], tier: 3, subtype: 'listed music-tech roll-up',
     hq: 'Melbourne, AU', founded: 2018, ownership: 'public', ticker: 'ASX: VNL', region: 'Australia / Global',
     summary: 'Jaxsta (credits database), Vampr, Vinyl.com, Serenade, plus trade media (The Brag, Mediaweek); ASX-listed roll-up.',
@@ -66,15 +66,12 @@ export const CREATOR = [
   // ── AI music / music tech ─────────────────────────────────────────────────
   { id: 'suno', name: 'Suno', type: 'music-tech', roles: ['music-tech'], tier: 2, subtype: 'generative AI music',
     hq: 'Cambridge, MA', founded: 2022, ownership: 'private', region: 'US',
-    summary: 'Text-to-song generator sued by the majors via the RIAA in June 2024; reached a settlement and licensing deal with Warner in late 2025 while the UMG/Sony claims and the GEMA suit continued.',
-    notes: ['Verify current litigation and licensing status per label.'],
-    verify: true,
-    sources: [site('https://suno.com'), mbw('Suno lawsuit')] },
+    summary: 'Text-to-song generator sued by the majors via the RIAA in June 2024. Settled with Warner Music on 25 November 2025 (new models trained on licensed WMG catalog; downloads restricted to paid tiers); UMG and Sony were still suing as of April 2026. Raised a $250M Series C led by Menlo Ventures in November 2025.',
+    sources: [mbw('Suno Warner settlement'), src('Forbes — Suno and Udio licensing deals (Dec 2025)', 'https://www.forbes.com/sites/virginieberger/2025/12/18/launch-train-settle-how-suno-and-udios-licensing-deals-made-copyright-infringement-profitable/')] },
   { id: 'udio', name: 'Udio', type: 'music-tech', roles: ['music-tech'], tier: 3, subtype: 'generative AI music',
     hq: 'New York, NY', founded: 2023, ownership: 'private', region: 'US',
-    summary: 'Ex-DeepMind founders; co-defendant in the 2024 RIAA suits; settled with UMG (October 2025) and Warner (November 2025) with licensed-platform terms.',
-    verify: true,
-    sources: [site('https://www.udio.com'), mbw('Udio settlement')] },
+    summary: 'Ex-DeepMind founders; co-defendant in the 2024 RIAA suits. Settled with UMG (October 2025) and Warner (November 2025) on licensed-platform, walled-garden terms (no downloads); Sony still litigating as of April 2026.',
+    sources: [mbw('Udio Universal settlement'), src('Forbes — Suno and Udio licensing deals (Dec 2025)', 'https://www.forbes.com/sites/virginieberger/2025/12/18/launch-train-settle-how-suno-and-udios-licensing-deals-made-copyright-infringement-profitable/')] },
   { id: 'elevenlabs', name: 'ElevenLabs', type: 'music-tech', roles: ['music-tech'], tier: 2, subtype: 'AI voice + music (adjacent)',
     hq: 'London, UK · New York, NY', founded: 2022, ownership: 'private', region: 'Global',
     summary: 'Voice-AI company that launched a licensed music model (Eleven Music, 2025) with Merlin and Kobalt deals.',

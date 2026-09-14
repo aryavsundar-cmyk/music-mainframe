@@ -1,4 +1,4 @@
-import { site, ir, edgar, mbw } from './_schema.js'
+import { site, ir, edgar, mbw, src } from './_schema.js'
 
 /** §4 Recorded music — majors, major indies, label-owned distribution, DIY/creator distribution. */
 export const RECORDED = [
@@ -7,9 +7,10 @@ export const RECORDED = [
     hq: 'Hilversum, NL · Santa Monica, CA', founded: 1934, ownership: 'public', ticker: 'AMS: UMG', region: 'Global',
     backers: ['bollore', 'tencent', 'pershing-square'],
     metrics: { revenue: 11.83e9, revenueYear: 2024, revenueCurrency: 'EUR' },
-    summary: 'Largest music company by revenue. Recorded music (Interscope Capitol, Republic, Island, Def Jam, Motown, Polydor, Deutsche Grammophon), publishing (UMPG), and distribution (Virgin Music Group). Listed on Euronext Amsterdam after the 2021 Vivendi spin; Bolloré, a Tencent-led consortium, and Pershing Square are anchor holders.',
-    notes: ['Pershing Square pushed for a US listing in 2025.', 'TikTok licensing standoff Jan–May 2024 pulled UMG repertoire from the platform.'],
-    sources: [ir('https://www.universalmusic.com/investors/'), mbw('Universal Music Group')] },
+    summary: 'Largest music company by revenue. Recorded music (Interscope Capitol, Republic, Island, Def Jam, Motown, Polydor, Deutsche Grammophon), publishing (UMPG), distribution and services (Virgin Music Group, which absorbed Downtown in February 2026). Listed on Euronext Amsterdam since the 2021 Vivendi spin; Bolloré (~28% per Pershing Square) and Pershing Square are anchor holders.',
+    notes: ['Pershing Square proposed a $64.4B cash-and-stock merger into a NYSE-listed "New UMG" on 7 April 2026; needs a two-thirds shareholder vote. Outcome not confirmed as of 2026-09-14.', 'Bought 25.8% of Chord Music Partners from KKR for $240M (Feb 2024).', 'TikTok licensing standoff Jan–May 2024 pulled UMG repertoire from the platform.'],
+    verify: true,
+    sources: [ir('https://www.universalmusic.com/investors/'), src('Pershing Square proposal (BusinessWire, 6 Apr 2026)', 'https://www.businesswire.com/news/home/20260406138476/en/Pershing-Square-Announces-Proposal-to-Universal-Music-Group-N.V.'), src('Variety — UMG completes Downtown acquisition (Feb 2026)', 'https://variety.com/2026/music/news/universal-virgin-music-complete-775-million-acquisition-downtown-1236668336/')] },
   { id: 'sony-music-group', name: 'Sony Music Group', short: 'SMG', type: 'label', roles: ['label', 'publisher', 'distributor'], tier: 1, subtype: 'major',
     hq: 'New York, NY', founded: 2021, ownership: 'subsidiary', parentId: 'sony', region: 'Global',
     metrics: { revenue: 1.74e12, revenueYear: 2024, revenueCurrency: 'JPY' },
@@ -30,20 +31,20 @@ export const RECORDED = [
     sources: [ir('https://investors.wmg.com'), edgar('WMG')] },
 
   // ── Major indies ──────────────────────────────────────────────────────────
-  { id: 'concord', name: 'Concord', type: 'label', roles: ['label', 'publisher', 'catalog-fund', 'debt-investor'], tier: 2, subtype: 'major indie',
-    hq: 'Nashville, TN', founded: 1995, ownership: 'pension', region: 'Global',
-    backers: ['michigan-retirement', 'barings'],
+  { id: 'concord', name: 'Concord', type: 'label', roles: ['label', 'publisher', 'catalog-fund', 'debt-investor'], tier: 2, subtype: 'major indie', status: 'merged',
+    hq: 'Nashville, TN', founded: 1995, ownership: 'subsidiary', parentId: 'bmg', region: 'Global',
+    backers: ['great-mountain-partners', 'michigan-retirement'],
     metrics: { catalogSize: 1.3e6 },
-    summary: 'Largest independent by catalog: Concord Label Group (Fantasy, Rounder, Stax, Craft), Concord Music Publishing (Boosey & Hawkes, Downtown catalog 2021), Concord Theatricals. Bought Round Hill Music Royalty Fund (2023) and issued the largest music-royalty ABS on record. Parent entity is Alchemy Copyrights LLC.',
-    notes: ['Kickoff brief lists Bain Capital as equity owner; public reporting names Michigan Retirement Systems (majority) and Barings — confirm before citing.', 'Catalog count per company statements ("more than 1.3 million songs").'],
-    verify: true,
-    sources: [site('https://concord.com'), mbw('Concord')] },
-  { id: 'bmg', name: 'BMG Rights Management', short: 'BMG', type: 'label', roles: ['label', 'publisher'], tier: 2, subtype: 'major indie',
-    hq: 'Berlin, DE', founded: 2008, ownership: 'subsidiary', parentId: 'bertelsmann', region: 'Global',
-    metrics: { revenue: 1.0e9, revenueYear: 2024, revenueCurrency: 'EUR' },
-    summary: 'Bertelsmann\'s fourth-largest-publisher / label hybrid, built by acquisition (Chrysalis, Bug, Sanctuary, Mute). KKR held 51% from 2009 until Bertelsmann bought it back in 2013.',
-    verify: true,
-    sources: [site('https://www.bmg.com'), src2()] },
+    summary: 'Largest independent by catalog until it combined with BMG on 1 September 2026: Concord Label Group (Fantasy, Rounder, Stax, Craft), Concord Music Publishing (Boosey & Hawkes, the Downtown catalog bought in 2021), Concord Theatricals. Majority-owned by the State of Michigan Retirement Systems, with Great Mountain Partners managing the position; issuer of the largest music-royalty ABS on record. Parent entity was Alchemy Copyrights LLC.',
+    notes: ['BMG–Concord combination: Bertelsmann 67%, Concord\'s owners 33% (managed by Great Mountain Partners), ~$1.16B cash to GMP affiliates; pro forma 2026 revenue $2.2B; HQ Nashville; CEO Bob Valentine. Closed 1 Sep 2026.', 'Kickoff brief listed Bain Capital as Concord\'s owner — incorrect; Bain\'s music exposure is the 2025 Warner JV.'],
+    sources: [src('Bertelsmann — completion of BMG–Concord combination (Sep 2026)', 'https://www.bertelsmann.com/en/media/news/bertelsmann-and-great-mountain-partners-complete-combination-of-bmg-and-concord.html'), src('Rolling Stone — pension-fund-owned Concord', 'https://www.rollingstone.com/pro/features/concord-keeps-spending-100-million-plus-on-music-deals-whats-its-strategy-1052933/'), mbw('Concord')] },
+  { id: 'bmg', name: 'BMG', type: 'label', roles: ['label', 'publisher', 'catalog-fund'], tier: 1, subtype: 'major indie (post-Concord)',
+    hq: 'Nashville, TN · Berlin, DE', founded: 2008, ownership: 'subsidiary', parentId: 'bertelsmann', region: 'Global',
+    backers: ['great-mountain-partners'],
+    metrics: { revenue: 2.2e9, revenueYear: 2026, revenueCurrency: 'USD' },
+    summary: 'Bertelsmann\'s label-and-publisher hybrid, built by acquisition (Chrysalis, Bug, Sanctuary, Mute) and, from 1 September 2026, combined with Concord into the world\'s fourth-largest music company (pro forma 2026 revenue $2.2B, adjusted EBITDA $730M). Bertelsmann holds 67%, Concord\'s former owners 33%. KKR held 51% from 2009 until Bertelsmann bought it back in 2013.',
+    notes: ['Bloomberg first reported the Concord talks on 29 Jan 2026 at up to ~$7B; definitive agreement Apr 2026; closed 1 Sep 2026.'],
+    sources: [src('Bertelsmann — completion of BMG–Concord combination', 'https://www.bertelsmann.com/en/media/news/bertelsmann-and-great-mountain-partners-complete-combination-of-bmg-and-concord.html'), mbw('BMG Concord merger complete')] },
   { id: 'beggars-group', name: 'Beggars Group', type: 'label', roles: ['label'], tier: 2, subtype: 'indie group',
     hq: 'London, UK', founded: 1977, ownership: 'private', region: 'UK / Global',
     summary: 'Martin Mills\' independent group: XL Recordings, 4AD, Matador, Rough Trade, Young. Benchmark for artist-friendly independent economics.',
@@ -95,10 +96,9 @@ export const RECORDED = [
   // ── DIY / creator distribution ────────────────────────────────────────────
   { id: 'distrokid', name: 'DistroKid', type: 'distributor', roles: ['distributor'], tier: 2, subtype: 'DIY',
     hq: 'New York, NY', founded: 2013, ownership: 'pe-backed', region: 'Global',
-    backers: ['insight-partners'],
-    summary: 'Subscription DIY distributor; claims the largest share of new releases to DSPs. Insight Partners took a majority stake in 2021 at a reported ~$1.3B valuation.',
-    verify: true,
-    sources: [site('https://distrokid.com'), mbw('DistroKid')] },
+    backers: ['cvc', 'insight-partners'],
+    summary: 'Subscription DIY distributor claiming 30–40% of the world\'s new uploads. Insight Partners took a majority in 2021 (~$1.3B reported valuation); CVC Capital Partners agreed to buy a majority stake on 6 July 2026 (Fund IX; Insight retains a significant minority; close expected Q3 2026; terms undisclosed, a ~$2B valuation was reported as sought).',
+    sources: [src('CVC — majority investment in DistroKid (Jul 2026)', 'https://www.cvc.com/media/news/2026/cvc-capital-partners-to-make-majority-investment-in-distrokid/'), mbw('DistroKid CVC')] },
   { id: 'tunecore', name: 'TuneCore', type: 'distributor', roles: ['distributor', 'publisher'], tier: 2, subtype: 'DIY',
     hq: 'Brooklyn, NY', founded: 2006, ownership: 'subsidiary', parentId: 'believe', region: 'Global',
     summary: 'Per-release DIY distributor with a publishing-administration add-on; acquired by Believe in 2015.',
@@ -131,7 +131,9 @@ export const RECORDED = [
     hq: 'New York, NY · São Paulo, BR', founded: 2010, ownership: 'private', region: 'LatAm / Global',
     summary: 'Distribution and label services with deep Latin American footprint; also a YouTube multi-channel network.',
     sources: [site('https://onerpm.com')] },
+  { id: 'revelator', name: 'Revelator', type: 'distributor', roles: ['distributor', 'music-tech'], tier: 3, subtype: 'B2B distribution + rights tech',
+    hq: 'Tel Aviv, IL · New York, NY', founded: 2012, ownership: 'subsidiary', parentId: 'wmg', region: 'Global',
+    summary: 'B2B distribution, rights management, royalty accounting, and analytics platform. Warner Music Group agreed to acquire it on 1 April 2026 (terms undisclosed; close expected the following quarter) to upgrade ADA and its label services — Warner\'s answer to UMG\'s Downtown deal.',
+    verify: true,
+    sources: [src('WMG — agreement to acquire Revelator (Apr 2026)', 'https://www.prnewswire.com/news-releases/warner-music-group-agrees-to-acquire-revelator-state-of-the-art-independent-music-platform-302731480.html'), mbw('Warner Music Group Revelator')] },
 ]
-
-// local helper — BMG is a Bertelsmann sub with no separate IR page
-function src2() { return { label: 'Bertelsmann annual report', url: 'https://www.bertelsmann.com/investor-relations/' } }
