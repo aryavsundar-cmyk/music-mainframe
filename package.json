@@ -14,7 +14,8 @@
     "server": "node server/index.js",
     "start": "node server/index.js",
     "lint": "eslint .",
-    "briefs": "node scripts/generate-briefs.mjs"
+    "briefs": "node scripts/generate-briefs.mjs",
+    "test:valuation": "node scripts/test-valuation.mjs"
   },
   "engines": {
     "node": ">=20.19.0"

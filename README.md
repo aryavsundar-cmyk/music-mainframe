@@ -36,6 +36,7 @@ React 19 · Vite 7 · Tailwind 4 (CSS-first, no tailwind.config) · React Router
 | `/news` | live | live (Sprint 5) |
 | `/consulting` · `/consulting/:id` | overlay | live (Sprint 6) |
 | `/deliverables` | overlay | live (Sprint 8) |
+| `/lab` · `/lab/:caseId` | academy | live (Sprint 9) |
 | `/design` | reference | living style guide |
 
 ## Design system
@@ -104,6 +105,16 @@ One data builder, three renderers (Patterns §1/§3/§6/§8). `buildBrief(entity
 Three more document kinds share the brief's block model, so the same three renderers (plus `briefMarkdown.js`) produce them with no renderer changes. **Account plan** (`buildAccountPlan`): SCR summary, stakeholder map, category × service-line matrix, 30·60·90 roadmap, KPIs, deals, news. **Proposal** (`buildProposal`): SCR executive summary, understanding, objectives, workstreams per line (activities and deliverables from `data/rateCard.js` templates), phased timeline, staffing table, indicative commercials (`estimateCommercials`, day rates mirror the Hub's PricingCalculator defaults × 8 and are editable in the UI — every output labels them indicative), capabilities, risks, next steps, appendix. **Sector deck** (`buildCategoryDeck`): one PEPI client category with lens-specific market context. `/deliverables` is the builder (entity search, kind, mode, category, lines, duration, day rates, outline preview) and the export bar: Word · Slides · Text · Markdown · Gamma deck · Gamma doc. Entity pages' export menu also offers Account plan and Proposal directly. Node: `npm run briefs -- --kind account-plan|proposal|category-deck …`.
 
 **Gamma.** `POST /api/gamma/generate` proxies Gamma's public API (same shape as the Hub): submits Markdown with `textMode: preserve` and `cardSplit: inputTextBreaks` so each § section becomes a card, polls to completion, returns the gamma URL. Needs `GAMMA_API_KEY` (Render env var, `sync: false` in render.yaml; or a local `.env`, which the server reads without a dependency). Without a key the endpoint returns 503 with help text, the UI disables the Gamma buttons, and the Markdown export is the paste-into-Gamma path.
+
+## Valuation lab (/lab)
+
+A training environment for leading IP and music-catalog valuations through a full mock engagement: **Pitch** (SCR framing, economic perimeter, the five price-deciding questions, staffing and fees) → **Plan** (workstreams and timeline, prioritised information request list, hypotheses) → **Execute** (nine steps: rights inventory and concentration, gross-to-net and mix, quality of earnings, stream-level forecast, risk-built discount rate and DCF, multiples and sensitivity, findings to protections, price bridge, model review) → **Deliver** (football field, concluded range and offer, "what must be true" for the seller's ask, scorecard, IC memo export to Word, slides, text, Markdown, or Gamma).
+
+- **Cases** live in `src/data/cases/` (first: `northstar.js`, adapted from the operator's Perplexity practice case). Each case carries the data room, the *draft model as a junior team presented it* (`asPresented`), and a reviewing director's benchmark. The trainee starts on the draft and has to find its problems.
+- **Engine** `src/utils/valuation.js` is pure and Node-tested (`npm run test:valuation`, 18 assertions against hand calculations). Every figure is computed from inputs; normalisation adjustments land in exactly one stream, so the forecast base reconciles to normalised LTM by construction. `reviewChecks()` recomputes the draft and reports each discrepancy.
+- **The Northstar draft's real errors** (verified by recomputation): inventory sums to $1,601K vs $1,501K LTM; top-10 share is 53.5% not 43%; 3-year CAGR is 9.3% not 8.5%; a $12K buyer synergy sits inside standalone earnings; the $34K viral adjustment is deducted twice and the gap relabelled "$43K leakage"; stated forecast totals exceed their own growth assumptions; the terminal PV is $5.22M not $5.9M, so the $11.0M DCF is really $10.3M and implies 7.3x — below the case's own 7.5x floor.
+- **State** `src/utils/labState.js` (defaults, benchmark, progress, scorecard) persisted per case in localStorage by `hooks/useLabState.js`. Reviewer mode shows director notes everywhere; "Load reviewer answers" fills the full benchmark. **Documents** `src/utils/labDocs.js`: pitch memo, workplan, IC valuation memo on the shared block model.
+- Lab pages are lazy chunks. All figures are fictional; multiples and discount rates are case assumptions, not market benchmarks.
 
 ## Sibling cross-links (src/data/siblings.js)
 
