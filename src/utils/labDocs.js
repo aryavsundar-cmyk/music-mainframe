@@ -6,12 +6,12 @@
 import { ROLES } from '../data/rateCard.js'
 import { fmtK, fmtM, fmtPct, fmtX, num, reviewChecks, sum } from './valuation.js'
 
-const finish = (c, kind, label, sections, subtitle) => {
+export const finish = (c, kind, label, sections, subtitle) => {
   sections.forEach((s, i) => { s.num = i + 1 })
   return { kind, entity: null, mode: kind, modeLabel: label, title: `${c.title} — ${label}`, subtitle, slug: `${c.id}-${kind}`, generatedAt: new Date().toISOString(), asOf: c.valuationDate, sections, citations: { items: [], source: 'empty' } }
 }
-const push = (sections) => (eyebrow, title, blocks) => { const b = blocks.filter(Boolean); if (b.length) sections.push({ eyebrow, title, blocks: b }) }
-const disclaimer = (c) => ({ kind: 'note', text: c.disclaimer })
+export const push = (sections) => (eyebrow, title, blocks) => { const b = blocks.filter(Boolean); if (b.length) sections.push({ eyebrow, title, blocks: b }) }
+export const disclaimer = (c) => ({ kind: 'note', text: c.disclaimer })
 
 export function teamFee(team) {
   const rows = ROLES.map((r) => ({ ...r, days: num(team?.[r.id]), fees: num(team?.[r.id]) * r.dayRate })).filter((r) => r.days > 0)
@@ -21,25 +21,25 @@ export function teamFee(team) {
 export function buildPitchMemo(c, s) {
   const S = []; const add = push(S)
   const fee = teamFee(s.pitch.team)
-  add('Situation · complication · resolution', 'Why Meridian needs this work', [
+  add('Situation · complication · resolution', `Why ${c.client.name.replace(/ \(mock\)$/, '')} needs this work`, [
     { kind: 'paragraph', text: `Situation. ${s.pitch.scr.s || c.client.situation}` },
     { kind: 'paragraph', text: `Complication. ${s.pitch.scr.c || c.centralQuestion}` },
     { kind: 'paragraph', text: `Resolution. ${s.pitch.scr.r || c.client.ask}` },
   ])
   add('Client', c.client.name, [{ kind: 'paragraph', text: c.client.profile }, { kind: 'paragraph', text: c.client.ask }])
-  add('Target', c.title, [{ kind: 'bullets', items: c.scope }, { kind: 'table', columns: ['Attribute', 'Fact', 'Implication'], rows: c.profile }])
+  add(c.kind === 'pmi' ? 'Deal' : 'Target', c.title, [{ kind: 'bullets', items: c.scope }, { kind: 'table', columns: ['Attribute', 'Fact', 'Implication'], rows: c.profile }])
   const per = c.perimeter.filter((p) => s.pitch.perimeter[p.id])
-  if (per.length) add('Perimeter', 'What the buyer is acquiring', [{ kind: 'table', columns: ['Item', 'Treatment'], rows: per.map((p) => [p.text, { in: 'In perimeter', out: 'Out of perimeter', diligence: 'Depends on diligence / SPA' }[s.pitch.perimeter[p.id]]]) }])
+  if (per.length) add('Perimeter', c.copy.perimeterTitle, [{ kind: 'table', columns: ['Item', 'Treatment'], rows: per.map((p) => [p.text, c.copy.perimeterLabels[s.pitch.perimeter[p.id]]]) }])
   const qs = c.questions.filter((q) => s.pitch.questions.includes(q.id))
   if (qs.length) add('Key questions', 'What the engagement must answer', [{ kind: 'bullets', items: qs.map((q) => q.text) }, { kind: 'paragraph', text: `Central question: ${c.centralQuestion}` }])
   add('Scope', 'Workstreams', [{ kind: 'table', columns: ['Workstream', 'Lead', 'Weeks', 'Core analyses'], rows: c.workstreams.map((w) => [w.label, w.lead, `${w.weeks[0]}–${w.weeks[1]}`, w.analyses.slice(0, 3).join(' · ')]) }])
   add('Commercials', 'Team and indicative fees', [
-    { kind: 'stats', items: [{ label: 'Indicative fees', value: fmtK(fee.fees) }, { label: 'Consultant days', value: String(fee.days) }, { label: 'Duration', value: '5 weeks' }, { label: 'Fee as % of ask', value: fmtPct(fee.fees / c.sellerAsk) }] },
+    { kind: 'stats', items: [{ label: 'Indicative fees', value: fmtK(fee.fees) }, { label: 'Consultant days', value: String(fee.days) }, { label: 'Duration', value: `${c.weeks} weeks` }, { label: c.feeBase.label, value: fmtPct(fee.fees / c.feeBase.value) }] },
     { kind: 'table', columns: ['Role', 'Days', 'Day rate', 'Fees'], rows: fee.rows.map((r) => [r.label, String(r.days), fmtK(r.dayRate), fmtK(r.fees)]) },
     { kind: 'note', text: 'Day rates are indicative placeholders from data/rateCard.js. Replace with the engagement rate card before sending.' },
   ])
   add('Notice', 'Practice case', [disclaimer(c)])
-  return finish(c, 'pitch-memo', 'Pitch memo', S, `${c.client.name} · buy-side diligence proposal`)
+  return finish(c, 'pitch-memo', 'Pitch memo', S, `${c.client.name} · ${c.proposalLabel}`)
 }
 
 export function buildWorkplan(c, s) {
@@ -50,9 +50,9 @@ export function buildWorkplan(c, s) {
     { kind: 'table', columns: ['Priority', 'Request', 'Workstream', 'Status'], rows: ['P1', 'P2', 'P3', '—'].flatMap((p) => byP(p).map((i) => [p, i.text, c.workstreams.find((w) => w.id === i.ws)?.label || i.ws, s.plan.irl[i.id]?.status || 'Not yet requested'])) },
   ])
   const qs = c.questions.filter((q) => s.pitch.questions.includes(q.id))
-  if (qs.length) add('Hypotheses', 'Questions and how we test them', [{ kind: 'bullets', items: qs.map((q) => q.text) }])
+  if (qs.length) add('Hypotheses', 'Questions and how we test them', [{ kind: 'table', columns: ['Question', 'How we test it'], rows: qs.map((q) => [q.text, q.test || '—']) }])
   add('Notice', 'Practice case', [disclaimer(c)])
-  return finish(c, 'workplan', 'Engagement workplan', S, 'Five-week buy-side diligence plan')
+  return finish(c, 'workplan', 'Engagement workplan', S, c.planLabel)
 }
 
 export function buildValuationMemo(c, s, r) {

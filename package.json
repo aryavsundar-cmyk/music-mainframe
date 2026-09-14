@@ -15,7 +15,9 @@
     "start": "node server/index.js",
     "lint": "eslint .",
     "briefs": "node scripts/generate-briefs.mjs",
-    "test:valuation": "node scripts/test-valuation.mjs"
+    "test:valuation": "node scripts/test-valuation.mjs",
+    "test:pmi": "node scripts/test-pmi.mjs",
+    "test": "npm run test:valuation && npm run test:pmi"
   },
   "engines": {
     "node": ">=20.19.0"

@@ -16,7 +16,31 @@ export const NORTHSTAR = {
   difficulty: 'Core',
   hours: '4–6 hours',
   valuationDate: '2026-12-31',
+  kind: 'valuation',
   sellerAsk: 14000000,
+  weeks: 5,
+  engagementLabel: 'catalog valuation',
+  proposalLabel: 'buy-side diligence proposal',
+  planLabel: 'Five-week buy-side diligence plan',
+  criticalWorkstreams: ['valuation', 'spa'],
+  briefKpis: [
+    { label: 'Seller ask', value: 14000000 },
+    { label: 'Reported LTM net', value: 1500000, hint: '≈ 9.3x at the ask' },
+  ],
+  feeBase: { label: 'Fee as % of ask', value: 14000000 },
+  feeReviewer: 'For a $10–14M catalog, a buyer will push back hard on anything above roughly 3–4% of deal value, so expect to defend scope: legal chain-of-title review often sits with counsel, which lets you trim Senior Director days. Front-load Analyst and Manager days in weeks 1–2 (data reconciliation), and hold MD time for the IC readout and SPA protection in week 5.',
+  copy: {
+    perimeterTitle: 'Set the economic perimeter',
+    perimeterPrompt: "A catalog's value is the present value of the specific contractual interests transferred. Classify each item.",
+    perimeterLabels: { in: 'In perimeter', out: 'Out of perimeter', diligence: 'Depends on diligence / SPA' },
+    questionsTitle: 'Pick the five questions that decide the price',
+    questionsPrompt: 'A pitch that answers everything answers nothing. Choose the five questions the engagement must answer.',
+    planTitle: 'Five weeks to investment committee',
+    irlReviewer: [
+      'Everything that proves cash and ownership is P1: title-level royalty statements, bank receipts, distributor and PRO statements, chain of title, participation agreements, reversion schedule, liens, and the receivables/reserves/payables ledger. You cannot normalise earnings or build a perimeter without them.',
+      'Tax returns, the admin fee schedule, sync log, and metadata audit matter but can land in week 2. Artist pipeline is colour for the commercial view.',
+    ],
+  },
   disclaimer: 'Illustrative practice case. Fictional target, buyer, and figures. Not an appraisal, market quote, or investment recommendation. Multiples and discount rates are case assumptions, not market benchmarks.',
   sources: [
     { label: 'EPGD Law — How to strike a music catalog deal (cited in source case)', url: 'https://www.epgdlaw.com/how-to-strike-a-music-catalog-deal/' },
@@ -66,16 +90,16 @@ export const NORTHSTAR = {
   ],
 
   questions: [
-    { id: 'q-nps', text: 'What is buyer-acquired net cash flow (NPS/NLS) after participations, fees, reserves, and recoupment?', benchmark: true },
-    { id: 'q-recurring', text: 'How much of LTM growth is recurring versus one-off (sync, viral spikes, catch-up payments)?', benchmark: true },
-    { id: 'q-title', text: 'Does the seller own the rights and can it transfer them (chain of title, consents, reversions)?', benchmark: true },
-    { id: 'q-concentration', text: 'How concentrated is income by title and platform, and how durable are the top titles?', benchmark: true },
-    { id: 'q-closing', text: 'Who owns pre-close receivables, reserves, and payables at closing?', benchmark: true },
-    { id: 'q-social', text: 'How large is the seller\'s social-media following?', benchmark: false, why: 'Useful commercial colour; not a value driver on its own.' },
-    { id: 'q-synergy', text: 'How much can Meridian cut administration fees post-close?', benchmark: false, why: 'Buyer upside — relevant to returns, not to what Meridian should pay.' },
-    { id: 'q-comps', text: 'What multiple did the last comparable catalog sale achieve?', benchmark: false, why: 'Secondary: a cross-check that means little until earnings are normalised and risks are comparable.' },
-    { id: 'q-payout', text: 'What happens if Spotify changes its payout model?', benchmark: false, why: 'A sensitivity case, answered inside the forecast rather than as a scoping question.' },
-    { id: 'q-banker', text: 'What discount rate did the seller\'s adviser use?', benchmark: false, why: 'Anchoring. Build your own rate from asset-specific risks.' },
+    { id: 'q-nps', text: 'What is buyer-acquired net cash flow (NPS/NLS) after participations, fees, reserves, and recoupment?', benchmark: true, test: 'Rebuild gross-to-net from statements; tie to bank receipts; recompute participations and fees by agreement.' },
+    { id: 'q-recurring', text: 'How much of LTM growth is recurring versus one-off (sync, viral spikes, catch-up payments)?', benchmark: true, test: 'Bridge LTM to prior year by stream and title; license-log review for sync; streaming curves for spikes.' },
+    { id: 'q-title', text: 'Does the seller own the rights and can it transfer them (chain of title, consents, reversions)?', benchmark: true, test: 'Chain-of-title review against registrations; consent and reversion schedule; lien search.' },
+    { id: 'q-concentration', text: 'How concentrated is income by title and platform, and how durable are the top titles?', benchmark: true, test: 'Title and platform concentration; top-title decay curves; playlist and territory dependency.' },
+    { id: 'q-closing', text: 'Who owns pre-close receivables, reserves, and payables at closing?', benchmark: true, test: 'Receivables aging, reserve release pattern, payables; draft the SPA collection waterfall.' },
+    { id: 'q-social', text: 'How large is the seller\'s social-media following?', benchmark: false, why: 'Useful commercial colour; not a value driver on its own.', test: 'Commercial workstream colour only.' },
+    { id: 'q-synergy', text: 'How much can Meridian cut administration fees post-close?', benchmark: false, why: 'Buyer upside — relevant to returns, not to what Meridian should pay.', test: 'Buyer returns model, outside the standalone price.' },
+    { id: 'q-comps', text: 'What multiple did the last comparable catalog sale achieve?', benchmark: false, why: 'Secondary: a cross-check that means little until earnings are normalised and risks are comparable.', test: 'Multiple cross-check after normalisation.' },
+    { id: 'q-payout', text: 'What happens if Spotify changes its payout model?', benchmark: false, why: 'A sensitivity case, answered inside the forecast rather than as a scoping question.', test: 'Downside sensitivity in the forecast.' },
+    { id: 'q-banker', text: 'What discount rate did the seller\'s adviser use?', benchmark: false, why: 'Anchoring. Build your own rate from asset-specific risks.', test: 'Reconcile to our own risk build-up; don\'t anchor.' },
   ],
 
   workstreams: [
@@ -271,5 +295,3 @@ export const NORTHSTAR = {
   ],
 }
 
-export const CASES = { northstar: NORTHSTAR }
-export const CASE_LIST = Object.values(CASES)

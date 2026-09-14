@@ -3,6 +3,8 @@
  * progress, and the scorecard. Persisted per case in localStorage by hooks/useLabState.js.
  */
 import { asPresentedExec, benchmarkExec, computeCase, num } from './valuation.js'
+import { asPresentedPmi, benchmarkPmi, benchmarkBoard } from './pmi.js'
+import { pmiProgress, pmiScoreRows, pmiConclusionRow } from './pmiState.js'
 
 export const STAGES = [
   { id: 'pitch', label: 'Pitch', blurb: 'Frame the problem, set the perimeter, scope and price the work' },
@@ -10,6 +12,9 @@ export const STAGES = [
   { id: 'execute', label: 'Execute', blurb: 'Review the draft model, correct it, value the catalog' },
   { id: 'deliver', label: 'Deliver', blurb: 'Conclude, recommend an offer, export the IC memo' },
 ]
+
+/** Stage list with case-specific blurbs (c.stageBlurbs). */
+export const stagesFor = (c) => STAGES.map((s) => ({ ...s, blurb: c.stageBlurbs?.[s.id] || s.blurb }))
 
 export const EXEC_STEPS = [
   { id: 'inventory', label: 'Perimeter & inventory' },
@@ -29,16 +34,22 @@ export function defaultState(c) {
     ui: { reviewer: false },
     pitch: { scr: { s: '', c: '', r: '' }, perimeter: {}, questions: [], team: { ...c.teamDefaults }, revealed: {} },
     plan: { irl: {}, revealed: false },
-    exec: asPresentedExec(c),
-    deliver: { low: '', high: '', offer: '', rationale: '' },
+    exec: c.kind === 'pmi' ? asPresentedPmi(c) : asPresentedExec(c),
+    deliver: c.kind === 'pmi' ? { target: '', budget: '', rationale: '' } : { low: '', high: '', offer: '', rationale: '' },
   }
 }
 
 export function benchmarkState(c) {
+  const shared = sharedBenchmark(c)
+  if (c.kind === 'pmi') return { ...shared, exec: benchmarkPmi(c), deliver: benchmarkBoard(c) }
   const ex = benchmarkExec(c)
   const r = computeCase(c, ex)
   const low = Math.round(Math.min(r.scenarios[2]?.ev ?? r.dcf.ev, r.multipleValues[0]) / 50000) * 50000
   const high = Math.round(Math.max(r.dcf.ev, r.multipleValues[1]) / 50000) * 50000
+  return { ...shared, exec: ex, deliver: { low, high, offer: ex.headline, rationale: c.benchmarkDeliver.rationale } }
+}
+
+function sharedBenchmark(c) {
   return {
     v: 1,
     ui: { reviewer: true },
@@ -50,8 +61,6 @@ export function benchmarkState(c) {
       revealed: { scr: true, perimeter: true, questions: true, fee: true },
     },
     plan: { irl: Object.fromEntries(c.irl.map((i) => [i.id, { priority: i.benchmark, status: 'Requested' }])), revealed: true },
-    exec: ex,
-    deliver: { low, high, offer: ex.headline, rationale: c.benchmarkDeliver.rationale },
   }
 }
 
@@ -79,6 +88,11 @@ const frac = (xs) => (xs.length ? xs.filter(Boolean).length / xs.length : 0)
 export function progress(c, s) {
   const pitch = frac([filled(s.pitch.scr.s), filled(s.pitch.scr.c), filled(s.pitch.scr.r), ...c.perimeter.map((p) => !!s.pitch.perimeter[p.id]), s.pitch.questions.length === 5])
   const plan = frac(c.irl.map((i) => !!s.plan.irl[i.id]?.priority))
+  if (c.kind === 'pmi') {
+    const k = pmiProgress(c, s)
+    const execute = frac(k.execute); const deliver = frac(k.deliver)
+    return { pitch, plan, execute, deliver, overall: (pitch + plan + execute + deliver) / 4 }
+  }
   const execute = frac([
     ...c.normalization.map((n) => !!s.exec.norm[n.id]?.touched),
     ...c.findings.map((f) => !!(s.exec.findings[f.id]?.severity && s.exec.findings[f.id]?.protection)),
@@ -97,14 +111,20 @@ export function scorecard(c, s, r, b) {
   add('Pitch framing (SCR)', scrOk, 3, scrOk < 3 ? ['Write all three parts; each should stand alone in one or two sentences.'] : ['Complete. Compare against the reviewer example for sharpness.'])
 
   const per = c.perimeter.filter((p) => s.pitch.perimeter[p.id] === p.benchmark)
-  add('Economic perimeter', per.length, c.perimeter.length, c.perimeter.filter((p) => s.pitch.perimeter[p.id] && s.pitch.perimeter[p.id] !== p.benchmark).map((p) => `${p.text}: ${p.why}`))
+  add(c.kind === 'pmi' ? 'Integration perimeter' : 'Economic perimeter', per.length, c.perimeter.length, c.perimeter.filter((p) => s.pitch.perimeter[p.id] && s.pitch.perimeter[p.id] !== p.benchmark).map((p) => `${p.text}: ${p.why}`))
 
   const q = s.pitch.questions.filter((id) => c.questions.find((x) => x.id === id)?.benchmark)
-  add('Key diligence questions', q.length, 5, s.pitch.questions.filter((id) => !c.questions.find((x) => x.id === id)?.benchmark).map((id) => { const x = c.questions.find((y) => y.id === id); return `${x.text} — ${x.why}` }))
+  add(c.kind === 'pmi' ? 'Key integration questions' : 'Key diligence questions', q.length, 5, s.pitch.questions.filter((id) => !c.questions.find((x) => x.id === id)?.benchmark).map((id) => { const x = c.questions.find((y) => y.id === id); return `${x.text} — ${x.why}` }))
 
   const p1 = c.irl.filter((i) => i.benchmark === 'P1')
   const p1ok = p1.filter((i) => s.plan.irl[i.id]?.priority === 'P1')
   add('Information request priorities', p1ok.length, p1.length, p1.filter((i) => s.plan.irl[i.id]?.priority !== 'P1').map((i) => `Should be P1: ${i.text}`))
+
+  if (c.kind === 'pmi') {
+    pmiScoreRows(c, s, r, b, add)
+    pmiConclusionRow(c, s, r, b, add)
+    return totals(rows)
+  }
 
   const nOk = c.normalization.filter((n) => (s.exec.norm[n.id]?.treatment || 'accept') === n.benchmark)
   add('Quality-of-earnings calls', nOk.length, c.normalization.length, c.normalization.filter((n) => (s.exec.norm[n.id]?.treatment || 'accept') !== n.benchmark).map((n) => `${n.label}: ${n.why}`))
@@ -139,6 +159,10 @@ export function scorecard(c, s, r, b) {
     !(offer > 0 && offer < c.sellerAsk * 0.9) && 'An offer near the ask needs the "what must be true" assumptions evidenced first.',
   ].filter(Boolean))
 
+  return totals(rows)
+}
+
+function totals(rows) {
   const score = rows.reduce((a, x) => a + x.score, 0); const max = rows.reduce((a, x) => a + x.max, 0)
   return { rows, score, max, pct: max ? score / max : 0 }
 }

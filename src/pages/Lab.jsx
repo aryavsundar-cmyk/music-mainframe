@@ -1,9 +1,22 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { PageHeader, SectionHeader, Card, Tag } from '../components/primitives/index.js'
-import { CASE_LIST } from '../data/cases/northstar.js'
+import { CASE_LIST } from '../data/cases/index.js'
 import { readLabState } from '../hooks/useLabState.js'
 import { progress, STAGES } from '../utils/labState.js'
+
+const KIND = { valuation: 'Catalog valuation', pmi: 'Post-merger integration' }
+
+const PMI_METHOD = [
+  ['Governance', 'An IMO with decision rights, a weekly cadence, and one synergy register the board can audit.'],
+  ['Synergy register', 'Every lever bottom-up: cost lines, headcount, owner, evidence. No line in two levers.'],
+  ['Phasing', 'Tied to real constraints: system cut-over, contract notice windows, statement cycles, renewals.'],
+  ['Cost to achieve', 'Line-by-line one-offs, TSA, severance, retention, working capital. Never risk-weight costs.'],
+  ['Value', 'Phased, risk-weighted, net cash flows discounted against the premium — not run rate × deal multiple.'],
+  ['Day 1', 'Continuity first: statements, payments, mandates, and letters of direction. Writers should notice nothing.'],
+  ['People', 'Relationships and data knowledge are the asset. Retain before you cut; price the attrition.'],
+  ['Board commitment', 'A target management can deliver, a funded budget, and the gap to the banker case explained.'],
+]
 
 const METHOD = [
   ['Perimeter', 'Define exactly which contractual economic interests transfer — rights type, ownership %, territory, term, reversions, participations, liens.'],
@@ -20,7 +33,7 @@ export default function Lab() {
   return (
     <>
       <PageHeader eyebrow="Academy · mock engagements" title="Valuation lab"
-        lede="Train on leading IP and music-catalog valuations by running a full mock engagement: pitch it, plan it, review and correct an inherited model, value the catalog, and deliver an IC memo — scored against a reviewing director." />
+        lede="Train on leading music-rights engagements by running them end to end: pitch it, plan it, review and correct an inherited model, reach a conclusion, and deliver the memo — scored against a reviewing director." />
       <SectionHeader eyebrow="Cases" title="Choose an engagement" />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-12">
         {CASE_LIST.map((c) => {
@@ -31,7 +44,7 @@ export default function Lab() {
               <Card interactive pad="lg" tone="accent" className="h-full flex flex-col">
                 <div className="flex items-start justify-between gap-3 mb-2">
                   <h3 className="t-h2 text-ink-1 m-0">{c.title}</h3>
-                  <div className="flex gap-1.5"><Tag tone="neutral">{c.difficulty}</Tag><Tag tone="neutral" mono>{c.hours}</Tag></div>
+                  <div className="flex flex-wrap justify-end gap-1.5"><Tag tone="accent">{KIND[c.kind]}</Tag><Tag tone="neutral">{c.difficulty}</Tag><Tag tone="neutral" mono>{c.hours}</Tag></div>
                 </div>
                 <p className="t-body text-ink-2 m-0 mb-3">{c.tagline}</p>
                 <p className="t-small text-ink-3 m-0 flex-1">{c.client.situation}</p>
@@ -53,13 +66,22 @@ export default function Lab() {
         })}
         <Card pad="lg" className="flex flex-col justify-center">
           <div className="t-eyebrow text-ink-3 mb-1">Next cases</div>
-          <p className="t-body text-ink-2 m-0">The lab is case-driven: add a file under <span className="font-mono">src/data/cases/</span> with a perimeter, data room, a draft model with planted issues, and a reviewer benchmark. Candidates: a publisher roll-up PMI, a music-royalty ABS collateral review, a PRO carve-out.</p>
+          <p className="t-body text-ink-2 m-0">The lab is case-driven: add a file under <span className="font-mono">src/data/cases/</span> with a perimeter, data room, a draft model with planted issues, and a reviewer benchmark. Each case declares a kind (valuation or integration), which selects its engine and execution steps. Candidates: a music-royalty ABS collateral review, a PRO carve-out.</p>
         </Card>
       </div>
       <SectionHeader eyebrow="Method" title="What every catalog valuation has to get right" />
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
-        {METHOD.map(([t, d], i) => <Card key={t} pad="md"><div className="t-micro font-mono text-ink-4 mb-1">{String(i + 1).padStart(2, '0')}</div><div className="t-h3 text-ink-1 mb-1">{t}</div><p className="t-small text-ink-3 m-0">{d}</p></Card>)}
-      </div>
+      <MethodGrid items={METHOD} />
+      <div className="h-12" />
+      <SectionHeader eyebrow="Method" title="What every publisher integration has to get right" />
+      <MethodGrid items={PMI_METHOD} />
     </>
+  )
+}
+
+function MethodGrid({ items }) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
+      {items.map(([t, d], i) => <Card key={t} pad="md"><div className="t-micro font-mono text-ink-4 mb-1">{String(i + 1).padStart(2, '0')}</div><div className="t-h3 text-ink-1 mb-1">{t}</div><p className="t-small text-ink-3 m-0">{d}</p></Card>)}
+    </div>
   )
 }

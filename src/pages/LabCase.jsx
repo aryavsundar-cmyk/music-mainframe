@@ -2,15 +2,17 @@ import { useMemo } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { ArrowLeft, RotateCcw, GraduationCap, BookOpenCheck } from 'lucide-react'
 import { PageHeader, Card, Button } from '../components/primitives/index.js'
-import { CASES } from '../data/cases/northstar.js'
+import { CASES } from '../data/cases/index.js'
 import { useLabState } from '../hooks/useLabState.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
-import { STAGES, progress } from '../utils/labState.js'
-import { computeCase, benchmarkExec, asPresentedExec, reviewChecks } from '../utils/valuation.js'
+import { stagesFor, progress } from '../utils/labState.js'
+import { engineFor } from '../utils/labEngines.js'
 import { PitchStage } from '../components/lab/PitchStage.jsx'
 import { PlanStage } from '../components/lab/PlanStage.jsx'
 import { ExecuteStage } from '../components/lab/ExecuteStage.jsx'
 import { DeliverStage } from '../components/lab/DeliverStage.jsx'
+import { PmiExecuteStage } from '../components/lab/PmiExecuteStage.jsx'
+import { PmiDeliverStage } from '../components/lab/PmiDeliverStage.jsx'
 
 export default function LabCase() {
   const { caseId } = useParams()
@@ -18,17 +20,22 @@ export default function LabCase() {
   if (!c) {
     return (<><PageHeader eyebrow="Valuation lab" tone="muted" title="No such case." lede={`Nothing is filed under "${caseId}".`} /><Link to="/lab" className="t-small text-accent no-underline inline-flex items-center gap-1"><ArrowLeft size={14} aria-hidden="true" /> All cases</Link></>)
   }
-  return <CaseWorkspace c={c} />
+  return <CaseWorkspace key={c.id} c={c} />
 }
 
 function CaseWorkspace({ c }) {
   const { state, update, reset, loadBenchmark } = useLabState(c)
   const { params, set } = useUrlFilters(['stage', 'step'])
+  const STAGES = useMemo(() => stagesFor(c), [c])
+  const engine = useMemo(() => engineFor(c), [c])
   const stage = STAGES.some((s) => s.id === params.stage) ? params.stage : 'pitch'
-  const r = useMemo(() => computeCase(c, state.exec), [c, state.exec])
-  const b = useMemo(() => { const ex = benchmarkExec(c); return { ...computeCase(c, ex), headline: ex.headline } }, [c])
-  const draft = useMemo(() => computeCase(c, asPresentedExec(c)), [c])
-  const checks = useMemo(() => reviewChecks(c), [c])
+  const r = useMemo(() => engine.compute(state.exec), [engine, state.exec])
+  const b = useMemo(() => engine.benchmark(), [engine])
+  const draft = useMemo(() => engine.draft(), [engine])
+  const checks = useMemo(() => engine.checks(), [engine])
+  const pmi = c.kind === 'pmi'
+  const Execute = pmi ? PmiExecuteStage : ExecuteStage
+  const Deliver = pmi ? PmiDeliverStage : DeliverStage
   const pr = progress(c, state)
   const reviewer = !!state.ui.reviewer
   const props = { c, state, update, reviewer, r, b, draft, checks }
@@ -38,7 +45,7 @@ function CaseWorkspace({ c }) {
   return (
     <>
       <Link to="/lab" className="t-small text-ink-3 no-underline inline-flex items-center gap-1 hover:text-ink-1 mb-4"><ArrowLeft size={14} aria-hidden="true" /> Valuation lab</Link>
-      <PageHeader eyebrow="Mock engagement · catalog valuation" title={c.title} lede={c.tagline}
+      <PageHeader eyebrow={`Mock engagement · ${c.engagementLabel}`} title={c.title} lede={c.tagline}
         actions={<div className="flex flex-col items-end gap-2">
           <div className="flex gap-2">
             <Button size="sm" variant={reviewer ? 'primary' : 'secondary'} icon={GraduationCap} onClick={() => update(['ui', 'reviewer'], !reviewer)}>{reviewer ? 'Reviewer mode on' : 'Reviewer mode'}</Button>
@@ -62,8 +69,8 @@ function CaseWorkspace({ c }) {
 
       {stage === 'pitch' && <PitchStage {...props} />}
       {stage === 'plan' && <PlanStage {...props} />}
-      {stage === 'execute' && <ExecuteStage {...props} step={params.step} onStep={(id) => { set({ step: id }); window.scrollTo({ top: 0 }) }} />}
-      {stage === 'deliver' && <DeliverStage {...props} />}
+      {stage === 'execute' && <Execute {...props} step={params.step} onStep={(id) => { set({ step: id }); window.scrollTo({ top: 0 }) }} />}
+      {stage === 'deliver' && <Deliver {...props} />}
 
       <Card pad="md" className="mt-8">
         <div className="flex items-center justify-between gap-4">

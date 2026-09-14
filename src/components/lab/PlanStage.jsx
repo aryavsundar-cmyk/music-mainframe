@@ -2,8 +2,6 @@ import { Card, Tag } from '../primitives/index.js'
 import { buildWorkplan } from '../../utils/labDocs.js'
 import { Exercise, Reviewer, Seg, Table, ExportBar } from './LabUi.jsx'
 
-const WEEKS = [1, 2, 3, 4, 5]
-
 export function PlanStage({ c, state, update, reviewer }) {
   const irl = state.plan.irl
   const show = reviewer || state.plan.revealed
@@ -11,21 +9,23 @@ export function PlanStage({ c, state, update, reviewer }) {
   const p1 = c.irl.filter((i) => i.benchmark === 'P1')
   const p1ok = p1.filter((i) => irl[i.id]?.priority === 'P1').length
   const chosenQs = c.questions.filter((q) => state.pitch.questions.includes(q.id))
+  const WEEKS = Array.from({ length: c.weeks }, (_, i) => i + 1)
+  const cols = { gridTemplateColumns: `200px repeat(${c.weeks}, minmax(0, 1fr))` }
 
   return (
     <div className="space-y-6">
       <Card pad="lg">
         <div className="t-eyebrow text-accent mb-1">Workplan</div>
-        <h3 className="t-h2 text-ink-1 m-0 mb-4">Five weeks to investment committee</h3>
+        <h3 className="t-h2 text-ink-1 m-0 mb-4">{c.copy.planTitle}</h3>
         <div className="overflow-x-auto -mx-2">
           <div className="min-w-[720px] px-2">
-            <div className="grid grid-cols-[220px_repeat(5,minmax(0,1fr))] gap-1 t-micro uppercase tracking-[0.08em] text-ink-3 mb-2">
-              <span>Workstream</span>{WEEKS.map((w) => <span key={w} className="text-center">Week {w}</span>)}
+            <div className="grid gap-1 t-micro uppercase tracking-[0.08em] text-ink-3 mb-2" style={cols}>
+              <span>Workstream</span>{WEEKS.map((w) => <span key={w} className="text-center">{c.weeks > 6 ? `W${w}` : `Week ${w}`}</span>)}
             </div>
             {c.workstreams.map((w) => (
-              <div key={w.id} className="grid grid-cols-[220px_repeat(5,minmax(0,1fr))] gap-1 items-center py-1.5 border-t border-line-1">
+              <div key={w.id} className="grid gap-1 items-center py-1.5 border-t border-line-1" style={cols}>
                 <span><span className="t-small text-ink-1 block">{w.label}</span><span className="t-micro text-ink-4">{w.lead}</span></span>
-                {WEEKS.map((wk) => <span key={wk} className={`h-5 rounded-sm ${wk >= w.weeks[0] && wk <= w.weeks[1] ? (w.id === 'valuation' || w.id === 'spa' ? 'bg-accent' : 'bg-secondary') : 'bg-ground-4'}`} />)}
+                {WEEKS.map((wk) => <span key={wk} className={`h-5 rounded-sm ${wk >= w.weeks[0] && wk <= w.weeks[1] ? (c.criticalWorkstreams.includes(w.id) ? 'bg-accent' : 'bg-secondary') : 'bg-ground-4'}`} />)}
               </div>
             ))}
           </div>
@@ -59,8 +59,7 @@ export function PlanStage({ c, state, update, reviewer }) {
           {show && <span className="t-small font-mono text-ink-2">{p1ok}/{p1.length} critical requests marked P1</span>}
         </div>
         <Reviewer reviewer={reviewer}>
-          <p className="m-0">Everything that proves <em>cash</em> and <em>ownership</em> is P1: title-level royalty statements, bank receipts, distributor and PRO statements, chain of title, participation agreements, reversion schedule, liens, and the receivables/reserves/payables ledger. You cannot normalise earnings or build a perimeter without them.</p>
-          <p className="m-0">Tax returns, the admin fee schedule, sync log, and metadata audit matter but can land in week 2. Artist pipeline is colour for the commercial view.</p>
+          {c.copy.irlReviewer.map((t) => <p key={t} className="m-0">{t}</p>)}
         </Reviewer>
       </Exercise>
 
@@ -68,24 +67,11 @@ export function PlanStage({ c, state, update, reviewer }) {
         <div className="t-eyebrow text-ink-3 mb-2">Hypotheses to test</div>
         {chosenQs.length === 0 ? <p className="t-body text-ink-3 m-0">Pick your five questions in the Pitch stage; they carry through here and into the memo.</p> : (
           <Table minWidth={680} columns={[{ key: 'q', label: 'Question' }, { key: 'how', label: 'How we test it' }]}
-            rows={chosenQs.map((q) => ({ key: q.id, q: <span className="t-body text-ink-1">{q.text}</span>, how: <span className="t-small text-ink-3">{TESTS[q.id] || 'Scope into the relevant workstream; agree evidence required with the client.'}</span> }))} />
+            rows={chosenQs.map((q) => ({ key: q.id, q: <span className="t-body text-ink-1">{q.text}</span>, how: <span className="t-small text-ink-3">{q.test || 'Scope into the relevant workstream; agree evidence required with the client.'}</span> }))} />
         )}
       </Card>
 
       <ExportBar title="Export the workplan" build={() => buildWorkplan(c, state)} />
     </div>
   )
-}
-
-const TESTS = {
-  'q-nps': 'Rebuild gross-to-net from statements; tie to bank receipts; recompute participations and fees by agreement.',
-  'q-recurring': 'Bridge LTM to prior year by stream and title; license-log review for sync; streaming curves for spikes.',
-  'q-title': 'Chain-of-title review against registrations; consent and reversion schedule; lien search.',
-  'q-concentration': 'Title and platform concentration; top-title decay curves; playlist and territory dependency.',
-  'q-closing': 'Receivables aging, reserve release pattern, payables; draft the SPA collection waterfall.',
-  'q-social': 'Commercial workstream colour only.',
-  'q-synergy': 'Buyer returns model, outside the standalone price.',
-  'q-comps': 'Multiple cross-check after normalisation.',
-  'q-payout': 'Downside sensitivity in the forecast.',
-  'q-banker': 'Reconcile to our own risk build-up; don\'t anchor.',
 }

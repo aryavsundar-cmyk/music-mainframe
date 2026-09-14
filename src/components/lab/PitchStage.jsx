@@ -5,7 +5,7 @@ import { fmtK, fmtM, fmtPct, num } from '../../utils/valuation.js'
 import { Exercise, Reviewer, Seg, NumField, TextArea, Table, Money, ExportBar, Kpi } from './LabUi.jsx'
 
 const PER_OPTS = [['in', 'In'], ['out', 'Out'], ['diligence', 'Depends']]
-const PER_LABEL = { in: 'In perimeter', out: 'Out of perimeter', diligence: 'Depends on diligence / SPA' }
+const kpiValue = (v) => (typeof v === 'number' ? fmtM(v) : v)
 
 export function PitchStage({ c, state, update, reviewer }) {
   const p = state.pitch
@@ -13,6 +13,8 @@ export function PitchStage({ c, state, update, reviewer }) {
   const perimeterDone = c.perimeter.filter((x) => p.perimeter[x.id]).length
   const perimeterRight = c.perimeter.filter((x) => p.perimeter[x.id] === x.benchmark).length
   const qRight = p.questions.filter((id) => c.questions.find((q) => q.id === id)?.benchmark).length
+  const PER_LABEL = c.copy.perimeterLabels
+  const defaultFee = teamFee(c.teamDefaults).fees
 
   return (
     <div className="space-y-6">
@@ -29,8 +31,7 @@ export function PitchStage({ c, state, update, reviewer }) {
             <div className="t-eyebrow text-ink-3 mb-2">Transaction scope</div>
             <ul className="m-0 pl-4 t-small text-ink-2 space-y-1">{c.scope.map((x) => <li key={x}>{x}</li>)}</ul>
             <div className="grid grid-cols-2 gap-4 mt-4">
-              <Kpi label="Seller ask" value={fmtM(c.sellerAsk)} tone="money" />
-              <Kpi label="Reported LTM net" value="$1.50M" hint="≈ 9.3x at the ask" tone="money" />
+              {c.briefKpis.map((k) => <Kpi key={k.label} label={k.label} value={kpiValue(k.value)} hint={k.hint} tone="money" />)}
             </div>
           </div>
         </div>
@@ -43,7 +44,7 @@ export function PitchStage({ c, state, update, reviewer }) {
 
       <Exercise n={1} title="Frame the pitch in SCR" prompt="Write the situation, complication, and resolution you would open the pitch with. One or two sentences each; each should stand on its own.">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {[['s', 'Situation', 'What is true today, uncontroversially'], ['c', 'Complication', 'Why the obvious answer (pay the ask) is risky'], ['r', 'Resolution', 'What the engagement delivers, and by when']].map(([k, label, hint]) => (
+          {[['s', 'Situation', 'What is true today, uncontroversially'], ['c', 'Complication', c.kind === 'pmi' ? 'Why the plan the board approved is at risk' : 'Why the obvious answer (pay the ask) is risky'], ['r', 'Resolution', 'What the engagement delivers, and by when']].map(([k, label, hint]) => (
             <div key={k}>
               <div className="t-small text-ink-1 mb-1">{label}</div>
               <TextArea rows={5} value={p.scr[k]} onChange={(v) => update(['pitch', 'scr', k], v)} placeholder={hint} />
@@ -57,7 +58,7 @@ export function PitchStage({ c, state, update, reviewer }) {
         </Reviewer>
       </Exercise>
 
-      <Exercise n={2} title="Set the economic perimeter" prompt="A catalog's value is the present value of the specific contractual interests transferred. Classify each item." aside={<Tag tone="neutral" mono>{perimeterDone}/{c.perimeter.length}</Tag>}>
+      <Exercise n={2} title={c.copy.perimeterTitle} prompt={c.copy.perimeterPrompt} aside={<Tag tone="neutral" mono>{perimeterDone}/{c.perimeter.length}</Tag>}>
         <div className="divide-y divide-line-1 border-y border-line-1">
           {c.perimeter.map((x) => {
             const pick = p.perimeter[x.id]
@@ -80,7 +81,7 @@ export function PitchStage({ c, state, update, reviewer }) {
         </div>
       </Exercise>
 
-      <Exercise n={3} title="Pick the five questions that decide the price" prompt="A pitch that answers everything answers nothing. Choose the five questions the engagement must answer." aside={<Tag tone="neutral" mono>{p.questions.length}/5</Tag>}>
+      <Exercise n={3} title={c.copy.questionsTitle} prompt={c.copy.questionsPrompt} aside={<Tag tone="neutral" mono>{p.questions.length}/5</Tag>}>
         <div className="space-y-1.5">
           {c.questions.map((q) => {
             const on = p.questions.includes(q.id)
@@ -102,7 +103,7 @@ export function PitchStage({ c, state, update, reviewer }) {
         </div>
       </Exercise>
 
-      <Exercise n={4} title="Scope and price the engagement" prompt="Five workstreams over five weeks. Staff it, then sanity-check the fee against the deal.">
+      <Exercise n={4} title="Scope and price the engagement" prompt={`${c.workstreams.length} workstreams over ${c.weeks} weeks. Staff it, then sanity-check the fee against what is at stake.`}>
         <Table minWidth={760} columns={[{ key: 'w', label: 'Workstream' }, { key: 'l', label: 'Lead' }, { key: 'wk', label: 'Weeks', align: 'center' }, { key: 'a', label: 'Core analyses' }]}
           rows={c.workstreams.map((w) => ({ key: w.id, w: <span className="t-body text-ink-1">{w.label}</span>, l: <span className="t-small text-ink-2">{w.lead}</span>, wk: <span className="font-mono t-data">{w.weeks[0]}–{w.weeks[1]}</span>, a: <span className="t-small text-ink-3">{w.analyses.slice(0, 3).join(' · ')}</span> }))} />
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_280px] gap-6 mt-5 items-start">
@@ -111,13 +112,13 @@ export function PitchStage({ c, state, update, reviewer }) {
             foot={{ r: 'Total', d: <span className="font-mono">{fee.days}</span>, rate: '', f: <Money>{fmtK(fee.fees)}</Money> }} />
           <div className="space-y-4">
             <Kpi label="Indicative fees" value={fmtK(fee.fees)} tone="money" hint="rates are placeholders" />
-            <Kpi label="Fee as % of ask" value={fmtPct(fee.fees / c.sellerAsk)} />
-            <Kpi label="Fee per diligence week" value={fmtK(fee.fees / 5)} />
+            <Kpi label={c.feeBase.label} value={fmtPct(fee.fees / c.feeBase.value)} />
+            <Kpi label="Fee per week" value={fmtK(fee.fees / c.weeks)} />
           </div>
         </div>
         <Reviewer reviewer={reviewer}>
-          <p className="m-0">Default staffing lands around {fmtK(teamFee(c.teamDefaults).fees)}, about {fmtPct(teamFee(c.teamDefaults).fees / c.sellerAsk)} of the ask. For a $10–14M catalog, a buyer will push back hard on anything above roughly 3–4% of deal value, so expect to defend scope: legal chain-of-title review often sits with counsel, which lets you trim Senior Director days.</p>
-          <p className="m-0">Front-load Analyst and Manager days in weeks 1–2 (data reconciliation), and hold MD time for the IC readout and SPA protection in week 5.</p>
+          <p className="m-0">Default staffing lands around {fmtK(defaultFee)}: {c.feeBase.label.toLowerCase()} is {fmtPct(defaultFee / c.feeBase.value)}, or {fmtK(defaultFee / c.weeks)} a week.</p>
+          <p className="m-0">{c.feeReviewer}</p>
         </Reviewer>
       </Exercise>
 

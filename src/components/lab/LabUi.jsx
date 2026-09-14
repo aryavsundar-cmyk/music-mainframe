@@ -79,8 +79,8 @@ export function Table({ columns, rows, foot, minWidth = 640, rowClass }) {
   )
 }
 
-export const Money = ({ v, children, className = '' }) => <span className={`font-mono tabular text-money ${className}`}>{children ?? v}</span>
-export const Figure = ({ children, className = '' }) => <span className={`font-mono tabular ${className}`}>{children}</span>
+export const Money = ({ v, children, className = '' }) => <span className={`font-mono tabular text-money whitespace-nowrap ${className}`}>{children ?? v}</span>
+export const Figure = ({ children, className = '' }) => <span className={`font-mono tabular whitespace-nowrap ${className}`}>{children}</span>
 
 export function Verdict({ ok, children }) {
   return <span className={`inline-flex items-center gap-1 t-small ${ok ? 'text-secondary' : 'text-danger'}`}>{ok ? <Check size={13} aria-hidden="true" /> : <AlertTriangle size={13} aria-hidden="true" />}{children}</span>
@@ -129,4 +129,76 @@ export function ExportBar({ title, build, primary = 'docx' }) {
 
 export function StatusTag({ kind }) {
   return kind === 'error' ? <Tag tone="danger">error</Tag> : <Tag tone="secondary">judgement</Tag>
+}
+
+/** ModelReview — red-team checklist: call each area before revealing the recomputed answer. */
+export function ModelReview({ n, c, state, update, checks, title = 'Red-team the draft', prompt = 'A reviewing director recomputes what they inherit. For each area, decide whether the draft has a problem before you reveal the answer.' }) {
+  const found = c.checks.filter((k) => state.exec.checks[k.id]?.flaggedBeforeReveal && state.exec.checks[k.id]?.verdict !== 'revealed').length
+  return (
+    <Exercise n={n} title={title} prompt={prompt} aside={<Tag tone="neutral" mono>{found}/{c.checks.length} called</Tag>}>
+      <div className="space-y-3">
+        {checks.map((k, i) => {
+          const s = state.exec.checks[k.id] || {}
+          const reveal = () => update(['exec', 'checks', k.id], { ...s, revealed: true, flaggedBeforeReveal: !!s.verdict, verdict: s.verdict || 'revealed' })
+          return (
+            <div key={k.id} className="rounded-md border border-line-1 p-4">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div className="flex items-center gap-3 min-w-0"><span className="font-mono t-micro text-ink-4">{String(i + 1).padStart(2, '0')}</span><span className="t-body text-ink-1">{k.area}</span>{s.revealed && <StatusTag kind={k.kind} />}</div>
+                <div className="flex items-center gap-2">
+                  {!s.revealed && <Seg value={s.verdict} onChange={(v) => update(['exec', 'checks', k.id, 'verdict'], v)} options={[['issue', 'Issue'], ['fine', 'Looks fine']]} />}
+                  {!s.revealed ? <button type="button" onClick={reveal} className="t-small text-secondary bg-transparent border-0 cursor-pointer px-0">Reveal</button> : <span className={`t-micro ${s.flaggedBeforeReveal && (s.verdict === 'issue' || k.kind === 'judgement') ? 'text-secondary' : 'text-ink-4'}`}>{s.verdict === 'revealed' ? 'revealed without a call' : s.verdict === 'issue' || k.kind === 'judgement' ? 'you called it' : 'missed'}</span>}
+                </div>
+              </div>
+              {s.revealed && (
+                <div className="mt-3 space-y-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div className="rounded-sm bg-ground-2 px-3 py-2"><div className="t-micro uppercase tracking-[0.08em] text-ink-4">Draft</div><div className="t-data text-ink-2">{k.stated}</div></div>
+                    <div className="rounded-sm bg-ground-2 px-3 py-2"><div className="t-micro uppercase tracking-[0.08em] text-ink-4">Recomputed</div><div className="t-data text-money">{k.computed}</div></div>
+                  </div>
+                  <p className="t-small text-ink-2 m-0">{k.text}</p>
+                  <p className="t-small text-secondary m-0">Lesson: {k.lesson}</p>
+                </div>
+              )}
+            </div>
+          )
+        })}
+      </div>
+    </Exercise>
+  )
+}
+
+/** ScorecardCard — rows vs the reviewer benchmark. */
+export function ScorecardCard({ sc }) {
+  return (
+    <Card pad="lg">
+      <div className="flex flex-wrap items-end justify-between gap-4 mb-4">
+        <div><div className="t-eyebrow text-accent mb-1">Scorecard</div><h3 className="t-h2 text-ink-1 m-0">How your engagement compares with the reviewer</h3></div>
+        <Kpi label="Overall" value={`${Math.round(sc.pct * 100)}%`} hint={`${sc.score} / ${sc.max} points`} tone={sc.pct >= 0.8 ? 'count' : sc.pct >= 0.5 ? 'ink' : 'danger'} />
+      </div>
+      <div className="divide-y divide-line-1 border-y border-line-1">
+        {sc.rows.map((row) => (
+          <div key={row.area} className="py-2.5 grid grid-cols-[minmax(0,1fr)_120px] gap-4 items-start">
+            <div className="min-w-0">
+              <div className="t-body text-ink-1">{row.area}</div>
+              {row.notes.slice(0, 3).map((n) => <div key={n} className="t-small text-ink-3 mt-0.5">{n}</div>)}
+              {row.notes.length > 3 && <div className="t-micro text-ink-4 mt-0.5">+{row.notes.length - 3} more</div>}
+            </div>
+            <div>
+              <div className="flex justify-end t-data font-mono text-ink-1">{row.score} / {row.max}</div>
+              <div className="h-1.5 rounded-sm bg-ground-4 overflow-hidden mt-1"><div className={`h-full ${row.score === row.max ? 'bg-secondary' : 'bg-accent'}`} style={{ width: `${(row.score / row.max) * 100}%` }} /></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Card>
+  )
+}
+
+export function Takeaways({ items }) {
+  return (
+    <Card pad="lg">
+      <div className="t-eyebrow text-ink-3 mb-3">Takeaways</div>
+      <ol className="m-0 pl-5 t-body text-ink-2 space-y-1.5">{items.map((t) => <li key={t}>{t}</li>)}</ol>
+    </Card>
+  )
 }

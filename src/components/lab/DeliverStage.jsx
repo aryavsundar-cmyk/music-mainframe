@@ -2,7 +2,7 @@ import { Card } from '../primitives/index.js'
 import { buildValuationMemo } from '../../utils/labDocs.js'
 import { scorecard } from '../../utils/labState.js'
 import { fmtK, fmtM, fmtPct, fmtX, num } from '../../utils/valuation.js'
-import { Exercise, Reviewer, NumField, TextArea, Kpi, ExportBar } from './LabUi.jsx'
+import { Exercise, Reviewer, NumField, TextArea, Kpi, ExportBar, ScorecardCard, Takeaways } from './LabUi.jsx'
 
 function FootballField({ bars, markers, lo, hi }) {
   const pos = (v) => `${Math.max(0, Math.min(100, ((v - lo) / (hi - lo)) * 100))}%`
@@ -74,32 +74,8 @@ export function DeliverStage({ c, state, update, r, b, reviewer }) {
         <p className="t-body text-ink-2 mt-4 mb-0">Isolate which assumption bridges the gap and ask whether any evidence supports it. If none does, the ask is a negotiating position, not a value.</p>
       </Card>
 
-      <Card pad="lg">
-        <div className="flex flex-wrap items-end justify-between gap-4 mb-4">
-          <div><div className="t-eyebrow text-accent mb-1">Scorecard</div><h3 className="t-h2 text-ink-1 m-0">How your engagement compares with the reviewer</h3></div>
-          <Kpi label="Overall" value={`${Math.round(sc.pct * 100)}%`} hint={`${sc.score} / ${sc.max} points`} tone={sc.pct >= 0.8 ? 'count' : sc.pct >= 0.5 ? 'ink' : 'danger'} />
-        </div>
-        <div className="divide-y divide-line-1 border-y border-line-1">
-          {sc.rows.map((row) => (
-            <div key={row.area} className="py-2.5 grid grid-cols-[minmax(0,1fr)_120px] gap-4 items-start">
-              <div className="min-w-0">
-                <div className="t-body text-ink-1">{row.area}</div>
-                {row.notes.slice(0, 3).map((n) => <div key={n} className="t-small text-ink-3 mt-0.5">{n}</div>)}
-                {row.notes.length > 3 && <div className="t-micro text-ink-4 mt-0.5">+{row.notes.length - 3} more</div>}
-              </div>
-              <div>
-                <div className="flex justify-end t-data font-mono text-ink-1">{row.score} / {row.max}</div>
-                <div className="h-1.5 rounded-sm bg-ground-4 overflow-hidden mt-1"><div className={`h-full ${row.score === row.max ? 'bg-secondary' : 'bg-accent'}`} style={{ width: `${(row.score / row.max) * 100}%` }} /></div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Card>
-
-      <Card pad="lg">
-        <div className="t-eyebrow text-ink-3 mb-3">Takeaways</div>
-        <ol className="m-0 pl-5 t-body text-ink-2 space-y-1.5">{c.takeaways.map((t) => <li key={t}>{t}</li>)}</ol>
-      </Card>
+      <ScorecardCard sc={sc} />
+      <Takeaways items={c.takeaways} />
 
       <ExportBar title="Export the IC valuation memo" build={() => buildValuationMemo(c, state, r)} />
     </div>

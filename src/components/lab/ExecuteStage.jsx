@@ -1,7 +1,7 @@
 import { Card, Tag } from '../primitives/index.js'
 import { fmtK, fmtM, fmtPct, fmtX, num, sum } from '../../utils/valuation.js'
 import { EXEC_STEPS } from '../../utils/labState.js'
-import { Exercise, Reviewer, Seg, NumField, Table, Money, Figure, Kpi, Verdict, StatusTag } from './LabUi.jsx'
+import { Exercise, Reviewer, Seg, NumField, Table, Money, Figure, Kpi, Verdict, ModelReview } from './LabUi.jsx'
 
 
 const pctCell = (v) => <Figure className="text-ink-2">{fmtPct(v)}</Figure>
@@ -325,37 +325,6 @@ function Price({ c, state, update, r, b, reviewer }) {
   )
 }
 
-function Review({ c, state, update, checks }) {
-  const found = c.checks.filter((k) => state.exec.checks[k.id]?.flaggedBeforeReveal && state.exec.checks[k.id]?.verdict !== 'revealed').length
-  return (
-    <Exercise n={14} title="Red-team the draft" prompt="A reviewing director recomputes what they inherit. For each area, decide whether the draft has a problem before you reveal the answer." aside={<Tag tone="neutral" mono>{found}/{c.checks.length} called</Tag>}>
-      <div className="space-y-3">
-        {checks.map((k, i) => {
-          const s = state.exec.checks[k.id] || {}
-          const reveal = () => update(['exec', 'checks', k.id], { ...s, revealed: true, flaggedBeforeReveal: !!s.verdict, verdict: s.verdict || 'revealed' })
-          return (
-            <div key={k.id} className="rounded-md border border-line-1 p-4">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div className="flex items-center gap-3 min-w-0"><span className="font-mono t-micro text-ink-4">{String(i + 1).padStart(2, '0')}</span><span className="t-body text-ink-1">{k.area}</span>{s.revealed && <StatusTag kind={k.kind} />}</div>
-                <div className="flex items-center gap-2">
-                  {!s.revealed && <Seg value={s.verdict} onChange={(v) => update(['exec', 'checks', k.id, 'verdict'], v)} options={[['issue', 'Issue'], ['fine', 'Looks fine']]} />}
-                  {!s.revealed ? <button type="button" onClick={reveal} className="t-small text-secondary bg-transparent border-0 cursor-pointer px-0">Reveal</button> : <span className={`t-micro ${s.flaggedBeforeReveal && (s.verdict === 'issue' || k.kind === 'judgement') ? 'text-secondary' : 'text-ink-4'}`}>{s.verdict === 'revealed' ? 'revealed without a call' : s.verdict === 'issue' || k.kind === 'judgement' ? 'you called it' : 'missed'}</span>}
-                </div>
-              </div>
-              {s.revealed && (
-                <div className="mt-3 space-y-2">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    <div className="rounded-sm bg-ground-2 px-3 py-2"><div className="t-micro uppercase tracking-[0.08em] text-ink-4">Draft</div><div className="t-data text-ink-2">{k.stated}</div></div>
-                    <div className="rounded-sm bg-ground-2 px-3 py-2"><div className="t-micro uppercase tracking-[0.08em] text-ink-4">Recomputed</div><div className="t-data text-money">{k.computed}</div></div>
-                  </div>
-                  <p className="t-small text-ink-2 m-0">{k.text}</p>
-                  <p className="t-small text-secondary m-0">Lesson: {k.lesson}</p>
-                </div>
-              )}
-            </div>
-          )
-        })}
-      </div>
-    </Exercise>
-  )
+function Review(p) {
+  return <ModelReview n={14} {...p} />
 }

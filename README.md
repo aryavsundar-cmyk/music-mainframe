@@ -36,7 +36,7 @@ React 19 · Vite 7 · Tailwind 4 (CSS-first, no tailwind.config) · React Router
 | `/news` | live | live (Sprint 5) |
 | `/consulting` · `/consulting/:id` | overlay | live (Sprint 6) |
 | `/deliverables` | overlay | live (Sprint 8) |
-| `/lab` · `/lab/:caseId` | academy | live (Sprint 9) |
+| `/lab` · `/lab/:caseId` | academy | live (Sprints 9–10) |
 | `/design` | reference | living style guide |
 
 ## Design system
@@ -115,6 +115,22 @@ A training environment for leading IP and music-catalog valuations through a ful
 - **The Northstar draft's real errors** (verified by recomputation): inventory sums to $1,601K vs $1,501K LTM; top-10 share is 53.5% not 43%; 3-year CAGR is 9.3% not 8.5%; a $12K buyer synergy sits inside standalone earnings; the $34K viral adjustment is deducted twice and the gap relabelled "$43K leakage"; stated forecast totals exceed their own growth assumptions; the terminal PV is $5.22M not $5.9M, so the $11.0M DCF is really $10.3M and implies 7.3x — below the case's own 7.5x floor.
 - **State** `src/utils/labState.js` (defaults, benchmark, progress, scorecard) persisted per case in localStorage by `hooks/useLabState.js`. Reviewer mode shows director notes everywhere; "Load reviewer answers" fills the full benchmark. **Documents** `src/utils/labDocs.js`: pitch memo, workplan, IC valuation memo on the shared block model.
 - Lab pages are lazy chunks. All figures are fictional; multiples and discount rates are case assumptions, not market benchmarks.
+
+### Cases and kinds
+
+Cases live in `src/data/cases/` and are registered in `cases/index.js`. Each declares a `kind` that selects its engine (`utils/labEngines.js`), execution steps, deliver stage, and scorecard rows; Pitch and Plan are shared and read their copy, KPIs, fee base, timeline length, and hypothesis tests from the case.
+
+| Case | Kind | Engine | Deliverable |
+| --- | --- | --- | --- |
+| Northstar Songs & Masters | `valuation` | `utils/valuation.js` · `npm run test:valuation` | IC valuation memo |
+| Halcyon + Brightwater | `pmi` | `utils/pmi.js` · `npm run test:pmi` | 100-day integration board memo |
+
+**Halcyon + Brightwater (Sprint 10)** is a publisher roll-up post-merger integration: a $540M acquisition carrying a $70M premium, approved on a banker synergy case of $20M run rate "worth $186M at 9.3x". **Execute** has eight steps: deal and cost baseline by function, synergy register (keep or reject; run rate, Y1–Y4 phasing, one-off cost, probability, one-time backlog), dis-synergies and one-off costs (TSA, retention, IMO, mandate working capital), synergy value (phased, risk-weighted NPV with optional perpetuity vs run rate × multiple; premium coverage, cash break-even, what must be true), Day 1 / Day 100 / Year 1 sequencing, organisation and retention (decisions drive retention cost and the writer-attrition dis-synergy), risks to mitigations, and a ten-point red-team of the banker case. **Deliver** commits a run-rate target and one-off budget against a downside / base / upside range, then scores the engagement.
+
+- **Engine** `src/utils/pmi.js` is pure and Node-tested (`npm run test:pmi`, 24 checks including annuity and perpetuity hand calculations, TSA spill, people-driven attrition, a 100% reviewer score, and Word/slides renders). One-off costs are never probability-weighted.
+- **The banker case's planted errors**: $0.5M double count between the system and royalty-ops levers; $0.3M of founder cost already out of the baseline; every lever at 100% from Day 1; $2.0M of one-offs against a realistic $16.3M (1.14x run rate); a one-time $3.0M unmatched backlog capitalised as run rate; sub-publishing savings gross of in-house cost and ahead of notice windows; admin-fee uplift with no renewal churn; a revenue multiple on uncosted savings; no year-1 cash trough. Re-based: $14.3M gross, $10.0M risk-weighted net, NPV $68.4M, 0.98x the premium, cash break-even in year 3.
+- **State** `src/utils/pmiState.js` (steps, progress, scorecard rows); **documents** `src/utils/pmiDocs.js` (board memo).
+- `npm test` runs both engine suites.
 
 ## Sibling cross-links (src/data/siblings.js)
 
