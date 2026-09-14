@@ -1,8 +1,9 @@
 import { Link, useParams } from 'react-router-dom'
 import { ArrowLeft, ExternalLink, CornerDownRight } from 'lucide-react'
-import { PageHeader, SectionHeader, Card, Stat, Tag, Num } from '../components/primitives/index.js'
+import { PageHeader, SectionHeader, Card, Stat, Tag, Num, FlowMark } from '../components/primitives/index.js'
 import { ENTITY_TYPES, LENS_TONE, OWNERSHIP, TIERS, getEntityProfile, getEntity, getChildren, getParentChain, getBackers, getBackedBy } from '../data/entities.js'
 import { getTransactionsForEntity, TX_TYPES, partyName } from '../data/transactions.js'
+import { flowsForEntity, FLOWS } from '../data/flows.js'
 import { currencySymbol, formatDate } from '../utils/format.js'
 
 function Fact({ label, children }) {
@@ -36,6 +37,7 @@ export default function EntityDetail() {
   const backers = getBackers(e.id)
   const backs = getBackedBy(e.id)
   const deals = getTransactionsForEntity(e.id)
+  const flowRoles = flowsForEntity(e.id)
   const m = e.metrics
   const cur = currencySymbol(m.revenueCurrency)
 
@@ -132,6 +134,21 @@ export default function EntityDetail() {
             </div>
             {chain.length === 0 && children.length === 0 && <div className="t-small text-ink-4 mt-1">Independent — no parent or subsidiaries on file.</div>}
           </Card>
+
+          {flowRoles.length > 0 && (
+            <Card pad="md">
+              <div className="t-eyebrow text-ink-3 mb-3">Appears in flows</div>
+              <div className="space-y-2">
+                {flowRoles.map(({ flowId, node }) => (
+                  <Link key={`${flowId}-${node.id}`} to={`/flows/${flowId}?node=${node.id}`} className="flex items-center justify-between gap-3 no-underline group">
+                    <FlowMark flow={flowId} label={false} />
+                    <span className="t-small text-ink-2 group-hover:text-ink-1 flex-1">{node.label}</span>
+                    <span className="t-micro text-ink-4">{FLOWS[flowId].label.split(' ')[0]}</span>
+                  </Link>
+                ))}
+              </div>
+            </Card>
+          )}
 
           <Card pad="md">
             <div className="t-eyebrow text-ink-3 mb-3">Sources</div>

@@ -30,7 +30,7 @@ React 19 · Vite 7 · Tailwind 4 (CSS-first, no tailwind.config) · React Router
 |---|---|---|
 | `/` | overview | Sprint 0 |
 | `/entities` · `/entities/:id` | structure | live (Sprint 1) |
-| `/flows` · `/flows/recording` · `/flows/publishing` | structure | Sprint 2 |
+| `/flows` · `/flows/recording` · `/flows/publishing` | structure | live (Sprint 2) |
 | `/deals` · `/pe` · `/abs` · `/catalogs` | money | Sprint 3 |
 | `/pros` · `/dsps` | rights | Sprint 4 |
 | `/news` | live | Sprint 5 |
@@ -86,7 +86,7 @@ File-based, `src/data/*.js`, named exports plus small helpers. Conventions fixed
 
 - `entities.js` — one flat table (`ENTITIES`) plus helpers (`getEntity`, `getEntityProfile`, `getParentChain`, `getChildren`, `filterEntities`, `headlineMetric`). Source rows live in `entities/*.js`, one file per brief §4 section, merged and normalised at load (typed defaults, duplicate-id guard). `type` is the primary bucket (facet); `roles[]` holds the rest (Sony = label + publisher + distributor). `tier` = scale within type, never prestige. `verify: true` marks a record carrying a fact from the brief that isn't yet sourced — it shows as a red tag in the UI and is a facet on `/entities`.
 - `transactions.js` — one table (`TRANSACTIONS`) for catalog sales, PE rounds, ABS, debt, take-privates, M&A, differentiated by `type`. Parties are `{ entityId }` or `{ name, kind }` so artists and estates never get forced into the entity table. Sprint 1 ships a 21-deal seed; Sprint 3 fills it.
-- `flows.js` — exports both `recording` and `publishing`.
+- `flows.js` — exports both flows (`FLOWS.recording`, `FLOWS.publishing`). A flow is nodes on a (col, row) grid plus edges of kind `rights` (forward) or `money` (backward), each with a label and optional `econ` split. Nodes carry `entityIds` (who plays the role → links to `/entities/:id`), `econ` (published splits and rates, `verify: true` unless statutory), and notes. `components/flows/FlowDiagram.jsx` lays nodes out on a CSS grid and draws edges in an SVG layer from measured rects; `FlowPanel.jsx` is the click-to-drill rail. Recording is a 5×2 chain with the SoundExchange statutory branch; publishing is a 4×3 fan (publisher → PRO / mechanical / sync → licensees → back to the writer).
 - `peFunds.js`, `pros.js`, `fundamentals.js` — profile extensions keyed by entity id, with typed empty defaults (never null).
 - Every record: `asOf` (ISO date) + `sources: [{ label, url }]`.
 - Relative imports carry `.js` so Node scripts (exports, batch generation) can import data files directly.
