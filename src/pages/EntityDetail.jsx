@@ -8,6 +8,7 @@ import { flowsForEntity, FLOWS } from '../data/flows.js'
 import { EntityNews } from '../components/news/EntityNews.jsx'
 import { PepiLens } from '../components/consulting/PepiLens.jsx'
 import { ExportButtons } from '../components/export/ExportButtons.jsx'
+import { HubLinks } from '../components/HubLinks.jsx'
 import { currencySymbol } from '../utils/format.js'
 
 function Fact({ label, children }) {
@@ -135,6 +136,8 @@ export default function EntityDetail() {
           <PepiLens entityId={e.id} />
 
           <EntityNews entityId={e.id} />
+
+          <HubLinks entityId={e.id} />
 
           <Card pad="md">
             <div className="t-eyebrow text-ink-3 mb-3">Sources</div>

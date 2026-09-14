@@ -19,7 +19,7 @@ import { getProProfile, SCOPES, MODELS } from '../data/pros.js'
 import { getDspProfile, TIERS as DSP_TIERS, PAYOUT_MODELS } from '../data/fundamentals.js'
 import { flowsForEntity, FLOWS } from '../data/flows.js'
 import { getConsultingContext, SERVICE_LINES } from '../data/consulting.js'
-import { hubFundLink } from '../data/siblings.js'
+import { hubFundLink, hubLinks } from '../data/siblings.js'
 import { CITATION_FALLBACK } from './newsCitations.js'
 import { formatMoney, formatCount, formatPct, formatRate, formatDate, currencySymbol } from './format.js'
 
@@ -74,6 +74,7 @@ export function buildBrief(entityId, { mode = 'full', citations = { items: [], s
     ] },
     e.notes.length ? { kind: 'bullets', items: e.notes } : null,
     e.verify ? { kind: 'note', text: 'This record carries at least one fact from the kickoff brief that is not yet confirmed against a primary source.' } : null,
+    hubLinks(e.id).length ? { kind: 'bullets', items: hubLinks(e.id).map((l) => `Also in Intelligence Hub — ${l.label.replace(' · Intelligence Hub', '')}: ${l.url}`) } : null,
   ])
 
   // § Metrics — when present

@@ -100,7 +100,7 @@ One data builder, three renderers (Patterns §1/§3/§6/§8). `buildBrief(entity
 
 ## Sibling cross-links (src/data/siblings.js)
 
-Sponsors profiled in both apps (Blackstone, KKR, Apollo, Silver Lake, Carlyle, Ares, Sixth Street, Bain, Francisco Partners, BlackRock) link to their Intelligence Hub PE Academy page from `/pe/:id`, the PEPI lens rail, and the financial brief. Read-only; the Hub is never edited from here.
+Two kinds of Hub page are mapped. Sponsors profiled in both apps (Blackstone, KKR, Apollo, Silver Lake, Carlyle, Ares, Sixth Street, Bain, Francisco Partners, BlackRock) link to their PE Academy page from `/pe/:id`, the PEPI lens rail, and the financial brief. Companies in the Hub's Sports & Live Entertainment segment (Live Nation/Ticketmaster, Endeavor, TKO via WWE), its Studios & Streaming segment (UMG, WMG, SiriusXM, iHeartMedia, Spotify), and its Social & UGC segment (YouTube, TikTok, Meta) link to their `/company/:segment/:id` page from an "Also in Intelligence Hub" rail on `/entities/:id` and from every brief's Profile section. Ids were confirmed against the Hub's data files and the routes against its live host (am-intelligence-hub.onrender.com — the Hub README's `mainframe.onrender.com` is stale); read-only, the Hub is never edited from here.
 
 ## Consulting overlay (src/data/consulting.js)
 
