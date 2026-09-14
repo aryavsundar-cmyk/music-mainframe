@@ -29,7 +29,7 @@ React 19 · Vite 7 · Tailwind 4 (CSS-first, no tailwind.config) · React Router
 | Route | Lens | Fills in |
 |---|---|---|
 | `/` | overview | Sprint 0 |
-| `/entities` | structure | Sprint 1 |
+| `/entities` · `/entities/:id` | structure | live (Sprint 1) |
 | `/flows` · `/flows/recording` · `/flows/publishing` | structure | Sprint 2 |
 | `/deals` · `/pe` · `/abs` · `/catalogs` | money | Sprint 3 |
 | `/pros` · `/dsps` | rights | Sprint 4 |
@@ -84,8 +84,8 @@ Dark by default. `data-theme="light"` on `<html>` flips every `--mm-*` role; per
 
 File-based, `src/data/*.js`, named exports plus small helpers. Conventions fixed in Sprint 0:
 
-- `entities.js` — one flat table. `type` is the primary bucket (facet); `roles[]` holds the rest (Sony = label + publisher + distributor). `tier` = scale within type, never prestige.
-- `transactions.js` — one table for catalog sales, PE rounds, ABS, debt, take-privates, M&A, differentiated by `type`. `/deals`, `/abs`, `/catalogs` are filtered views. Non-entity sellers use `counterparty { name, kind, entityId? }`.
+- `entities.js` — one flat table (`ENTITIES`) plus helpers (`getEntity`, `getEntityProfile`, `getParentChain`, `getChildren`, `filterEntities`, `headlineMetric`). Source rows live in `entities/*.js`, one file per brief §4 section, merged and normalised at load (typed defaults, duplicate-id guard). `type` is the primary bucket (facet); `roles[]` holds the rest (Sony = label + publisher + distributor). `tier` = scale within type, never prestige. `verify: true` marks a record carrying a fact from the brief that isn't yet sourced — it shows as a red tag in the UI and is a facet on `/entities`.
+- `transactions.js` — one table (`TRANSACTIONS`) for catalog sales, PE rounds, ABS, debt, take-privates, M&A, differentiated by `type`. Parties are `{ entityId }` or `{ name, kind }` so artists and estates never get forced into the entity table. Sprint 1 ships a 21-deal seed; Sprint 3 fills it.
 - `flows.js` — exports both `recording` and `publishing`.
 - `peFunds.js`, `pros.js`, `fundamentals.js` — profile extensions keyed by entity id, with typed empty defaults (never null).
 - Every record: `asOf` (ISO date) + `sources: [{ label, url }]`.

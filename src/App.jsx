@@ -3,6 +3,7 @@ import { Disc3, Building2, Waypoints, Handshake, Landmark, Layers, Library, Scro
 import { ThemeContext, useThemeState } from './hooks/useTheme.js'
 import Home from './pages/Home.jsx'
 import Entities from './pages/Entities.jsx'
+import EntityDetail from './pages/EntityDetail.jsx'
 import Flows from './pages/Flows.jsx'
 import Deals from './pages/Deals.jsx'
 import PE from './pages/PE.jsx'
@@ -98,6 +99,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/entities" element={<Entities />} />
+            <Route path="/entities/:id" element={<EntityDetail />} />
             <Route path="/flows/*" element={<Flows />} />
             <Route path="/deals" element={<Deals />} />
             <Route path="/pe" element={<PE />} />
