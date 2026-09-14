@@ -4,7 +4,11 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  server: { port: 5190, host: true },
+  server: {
+    port: 5190, host: true,
+    // Live-news backend runs separately on :3002 in dev (same origin in prod).
+    proxy: { '/api': 'http://localhost:3002', '/ws': { target: 'ws://localhost:3002', ws: true } },
+  },
   build: {
     rollupOptions: {
       output: {

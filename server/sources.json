@@ -1,0 +1,175 @@
+{
+  "_comment": "Hot-editable source config (Patterns §5). Restart the server after editing. category = editorial lens for the feed as a whole; items are still tagged by entity/topic signals.",
+  "refreshMinutes": 15,
+  "rssFeeds": [
+    {
+      "id": "mbw",
+      "name": "Music Business Worldwide",
+      "url": "https://www.musicbusinessworldwide.com/feed/",
+      "enabled": true,
+      "category": "trade"
+    },
+    {
+      "id": "billboard-biz",
+      "name": "Billboard Business",
+      "url": "https://www.billboard.com/c/business/feed/",
+      "enabled": true,
+      "category": "trade"
+    },
+    {
+      "id": "cmu",
+      "name": "Complete Music Update",
+      "url": "https://completemusicupdate.com/feed/",
+      "enabled": true,
+      "category": "trade"
+    },
+    {
+      "id": "musically",
+      "name": "Music Ally",
+      "url": "https://musically.com/feed/",
+      "enabled": true,
+      "category": "trade"
+    },
+    {
+      "id": "hits",
+      "name": "Hits Daily Double",
+      "url": "https://hitsdailydouble.com/rss",
+      "enabled": false,
+      "category": "trade",
+      "_note": "malformed XML breaks the parser (Sep 2026)"
+    },
+    {
+      "id": "pollstar",
+      "name": "Pollstar",
+      "url": "https://news.pollstar.com/feed/",
+      "enabled": true,
+      "category": "live"
+    },
+    {
+      "id": "variety-music",
+      "name": "Variety Music",
+      "url": "https://variety.com/v/music/feed/",
+      "enabled": true,
+      "category": "trade"
+    },
+    {
+      "id": "musicweek",
+      "name": "Music Week",
+      "url": "https://www.musicweek.com/rss",
+      "enabled": false,
+      "category": "trade",
+      "_note": "site returns 404/403 for feed paths (Sep 2026)"
+    },
+    {
+      "id": "dmn",
+      "name": "Digital Music News",
+      "url": "https://www.digitalmusicnews.com/feed/",
+      "enabled": true,
+      "category": "trade"
+    },
+    {
+      "id": "hypebot",
+      "name": "Hypebot",
+      "url": "https://www.hypebot.com/hypebot/feed",
+      "enabled": false,
+      "category": "trade",
+      "_note": "feed path 404 (Sep 2026)"
+    },
+    {
+      "id": "water-and-music",
+      "name": "Water & Music",
+      "url": "https://www.waterandmusic.com/rss/",
+      "enabled": false,
+      "category": "analysis",
+      "_note": "no public RSS found (Sep 2026)"
+    },
+    {
+      "id": "trapital",
+      "name": "Trapital",
+      "url": "https://trapital.co/rss/",
+      "enabled": false,
+      "category": "analysis",
+      "_note": "no public RSS found (Sep 2026)"
+    },
+    {
+      "id": "sci",
+      "name": "Structured Credit Investor",
+      "url": "https://www.structuredcreditinvestor.com/rss",
+      "enabled": false,
+      "category": "abs",
+      "_note": "paywalled; enable if credentials are added"
+    }
+  ],
+  "googleNews": {
+    "enabled": true,
+    "queries": [
+      "music catalog acquisition",
+      "music publishing acquisition",
+      "music royalty securitization",
+      "music ABS KBRA",
+      "music private equity catalog",
+      "streaming royalty rates",
+      "Spotify royalties publishers",
+      "PRO ASCAP BMI reform",
+      "Mechanical Licensing Collective",
+      "Live Nation Ticketmaster antitrust",
+      "Universal Music Group Pershing Square",
+      "Sony Music Publishing acquisition",
+      "Warner Music Group deal",
+      "BMG Concord",
+      "AI music lawsuit Suno Udio",
+      "TikTok music licensing",
+      "Hipgnosis Recognition Music",
+      "Primary Wave Kobalt",
+      "SESAC Blackstone",
+      "music rights fund"
+    ]
+  },
+  "secFilings": {
+    "enabled": true,
+    "companies": [
+      {
+        "ticker": "SPOT",
+        "name": "Spotify Technology",
+        "cik": "0001639920",
+        "entityId": "spotify"
+      },
+      {
+        "ticker": "WMG",
+        "name": "Warner Music Group",
+        "cik": "0001319161",
+        "entityId": "wmg"
+      },
+      {
+        "ticker": "LYV",
+        "name": "Live Nation Entertainment",
+        "cik": "0001335258",
+        "entityId": "live-nation"
+      },
+      {
+        "ticker": "RSVR",
+        "name": "Reservoir Media",
+        "cik": "0001824403",
+        "entityId": "reservoir"
+      },
+      {
+        "ticker": "SIRI",
+        "name": "Sirius XM Holdings",
+        "cik": "0000908937",
+        "entityId": "siriusxm"
+      },
+      {
+        "ticker": "IHRT",
+        "name": "iHeartMedia",
+        "cik": "0001400891",
+        "entityId": "iheartradio"
+      },
+      {
+        "ticker": "BX",
+        "name": "Blackstone",
+        "cik": "0001393818",
+        "entityId": "blackstone"
+      }
+    ]
+  }
+}

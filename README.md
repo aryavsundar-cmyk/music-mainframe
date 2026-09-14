@@ -33,7 +33,7 @@ React 19 · Vite 7 · Tailwind 4 (CSS-first, no tailwind.config) · React Router
 | `/flows` · `/flows/recording` · `/flows/publishing` | structure | live (Sprint 2) |
 | `/deals` · `/pe` · `/pe/:id` · `/abs` · `/catalogs` | money | live (Sprint 3) |
 | `/pros` · `/pros/:id` · `/dsps` | rights | live (Sprint 4) |
-| `/news` | live | Sprint 5 |
+| `/news` | live | live (Sprint 5) |
 | `/design` | reference | living style guide |
 
 ## Design system
@@ -92,6 +92,10 @@ File-based, `src/data/*.js`, named exports plus small helpers. Conventions fixed
 - `fundamentals.js` — DSP economics for all 21 DSP entities: tier, payout model (pro-rata · artist-centric · statutory · lump-sum · direct), US price and note, subscribers/MAU with as-of, ARPU, 2025 payouts, commonly cited all-in per-stream range (order of magnitude, never contractual), share to rights holders, MIDiA subscriber share, posture, dated shifts. `MARKET` holds IFPI 2025, MIDiA Q4 2025 shares, the stream-split rule of thumb, and the Phonorecords IV/V mechanical rate status.
 - Every record: `asOf` (ISO date) + `sources: [{ label, url }]`.
 - Relative imports carry `.js` so Node scripts (exports, batch generation) can import data files directly.
+
+## Live news (server/)
+
+`node server/index.js` (:3002 in dev, `$PORT` on Render) serves the build and the news layer. `server/sources.json` is the hot-editable source list (RSS feeds, Google News queries, SEC EDGAR CIKs, refresh interval); restart after editing. `server/signals.js` GENERATES entity signals from `src/data/entities.js` (name + acronym + a short alias list; generic parent names are blocklisted so "Apple" never tags Apple Inc. news) and hand-tunes 11 topic signals with whole-word matching. `server/relevanceScorer.js` tags each item with `entities[]`, `types[]`, `topics[]`, and a 0–100 score. REST: `/api/news?q=&entity=&type=&topic=&source=&kind=&limit=`, `/api/news/stats`, `/api/news/sources`, `POST /api/news/refresh`. WebSocket at `/ws` pushes new items. In-memory, restart-safe, no keys. The Vite dev server proxies `/api` and `/ws` to :3002. `useNewsStream` distinguishes **backend unreachable** from **no matches**; the `/news` page and the entity "In the news" rail say which.
 
 ## Verification discipline
 

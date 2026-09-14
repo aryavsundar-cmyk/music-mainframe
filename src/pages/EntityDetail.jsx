@@ -5,6 +5,7 @@ import { ENTITY_TYPES, LENS_TONE, OWNERSHIP, TIERS, getEntityProfile, getEntity,
 import { getTransactionsForEntity } from '../data/transactions.js'
 import { TransactionList } from '../components/money/TransactionRow.jsx'
 import { flowsForEntity, FLOWS } from '../data/flows.js'
+import { EntityNews } from '../components/news/EntityNews.jsx'
 import { currencySymbol } from '../utils/format.js'
 
 function Fact({ label, children }) {
@@ -125,6 +126,8 @@ export default function EntityDetail() {
               </div>
             </Card>
           )}
+
+          <EntityNews entityId={e.id} />
 
           <Card pad="md">
             <div className="t-eyebrow text-ink-3 mb-3">Sources</div>
