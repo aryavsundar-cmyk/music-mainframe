@@ -19,3 +19,6 @@ npm-debug.log*
 .idea
 .DS_Store
 *.sw?
+
+# Batch exports
+exports

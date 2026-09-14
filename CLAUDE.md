@@ -21,7 +21,7 @@ Working conventions for this repo. Mirrors how the sibling Mainframe apps run.
 - React 19 + Vite 7 + Tailwind 4 (CSS-first `@theme`; no `tailwind.config.js`) + React Router 7 + Lucide. JSX, not TS.
 - Relative imports carry `.js` / `.jsx` extensions (Node ESM compatibility for scripts).
 - Backend lives in `server/` at repo root, never under `src/`. `server/sources.json` (Sprint 5) stays JSON.
-- Lazy-load heavy export renderers (`pptxgenjs`, `docx`) when they arrive; keep the core bundle small.
+- Exports: `utils/brief.js` is the ONLY data builder; renderers (`briefText/Docx/Pptx.js`) consume it and never hard-code a section list. Browser entry is `utils/download.js` (lazy-imports docx/pptxgenjs); Node entry is `scripts/generate-briefs.mjs`. Add a section to the builder, never to a renderer.
 - Data files: typed empty defaults, never `null`. Every record carries `asOf` + `sources[]`. A fact from the brief or memory that isn't cited gets `verify: true` and a dated note; a verification pass sources it or drops it. Never silently overwrite a sourced figure with a remembered one.
 - Sibling apps (`~/Desktop/A&M/Agencies/am-intelligence-hub`, `…/programmatic-ecosystem`) are convention reference only. Reuse shapes (`PATTERNS-FROM-SIBLINGS.md` in the kickoff packet), never content. Never edit them from this session.
 
@@ -29,4 +29,4 @@ Working conventions for this repo. Mirrors how the sibling Mainframe apps run.
 No royalty calculator · no artist tooling · no playback embeds · no sync marketplace · no song-level PRO lookup · no AI music generation.
 
 ## Sprint map
-0 foundation · 1 entities · 2 flows · 3 deals/PE/ABS/catalogs · 4 PROs + DSPs · 5 live news · 6 consulting overlay (all shipped) · 5 live news · 6 consulting overlay · 7+ sibling cross-links.
+0 foundation · 1 entities · 2 flows · 3 deals/PE/ABS/catalogs · 4 PROs + DSPs · 5 live news · 6 consulting overlay · 7 exports + Hub cross-links (all shipped).

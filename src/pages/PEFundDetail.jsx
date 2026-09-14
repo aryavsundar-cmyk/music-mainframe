@@ -4,6 +4,8 @@ import { PageHeader, SectionHeader, Card, Stat, Tag } from '../components/primit
 import { TransactionList } from '../components/money/TransactionRow.jsx'
 import { getEntityProfile, OWNERSHIP, TIERS, ENTITY_TYPES } from '../data/entities.js'
 import { getFundProfile, FUND_KINDS, kindOf } from '../data/peFunds.js'
+import { hubFundLink } from '../data/siblings.js'
+import { ExportButtons } from '../components/export/ExportButtons.jsx'
 
 function Block({ title, children }) {
   return (
@@ -26,7 +28,13 @@ export default function PEFundDetail() {
     <>
       <Link to="/pe" className="t-small text-ink-3 no-underline inline-flex items-center gap-1 hover:text-ink-1 mb-4"><ArrowLeft size={14} aria-hidden="true" /> PE funds & capital</Link>
       <PageHeader eyebrow={`${FUND_KINDS[kind]?.label || 'Capital'}${e.subtype ? ` · ${e.subtype}` : ''}`} title={e.name} lede={e.summary}
-        actions={<Link to={`/entities/${e.id}`} className="t-small text-ink-2 no-underline hover:text-ink-1 inline-flex items-center gap-1 border border-line-2 rounded-md h-9 px-3.5">Entity record <ExternalLink size={13} aria-hidden="true" /></Link>} />
+        actions={<div className="flex flex-col items-end gap-2">
+          <ExportButtons entity={e} />
+          <div className="flex items-center gap-4">
+            <Link to={`/entities/${e.id}`} className="t-small text-ink-2 no-underline hover:text-ink-1 inline-flex items-center gap-1">Entity record</Link>
+            {hubFundLink(e.id) && <a href={hubFundLink(e.id).url} target="_blank" rel="noreferrer" className="t-small text-secondary no-underline hover:underline inline-flex items-center gap-1">{hubFundLink(e.id).label} <ExternalLink size={12} aria-hidden="true" /></a>}
+          </div>
+        </div>} />
       <div className="flex flex-wrap items-center gap-2 -mt-5 mb-8">
         {e.roles.map((r) => <Tag key={r} tone={['catalog-fund', 'pe-fund', 'debt-investor'].includes(r) ? 'accent' : 'neutral'}>{ENTITY_TYPES[r]?.label || r}</Tag>)}
         <Tag>{TIERS[e.tier]}</Tag><Tag>{OWNERSHIP[e.ownership] || e.ownership}</Tag>

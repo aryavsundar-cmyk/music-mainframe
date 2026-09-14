@@ -4,6 +4,7 @@ import { PageHeader, SectionHeader, Card, Stat, Tag, Num, FlowMark } from '../co
 import { getEntityProfile } from '../data/entities.js'
 import { getProProfile, SCOPES, MODELS } from '../data/pros.js'
 import { currencySymbol, formatDate } from '../utils/format.js'
+import { ExportButtons } from '../components/export/ExportButtons.jsx'
 
 export default function PRODetail() {
   const { id } = useParams()
@@ -18,7 +19,7 @@ export default function PRODetail() {
     <>
       <Link to="/pros" className="t-small text-ink-3 no-underline inline-flex items-center gap-1 hover:text-ink-1 mb-4"><ArrowLeft size={14} aria-hidden="true" /> PROs & CMOs</Link>
       <PageHeader eyebrow={`${p.region} · ${e.subtype}`} tone="secondary" title={e.name} lede={e.summary}
-        actions={<Link to={`/entities/${e.id}`} className="t-small text-ink-2 no-underline hover:text-ink-1 inline-flex items-center gap-1 border border-line-2 rounded-md h-9 px-3.5">Entity record <ExternalLink size={13} aria-hidden="true" /></Link>} />
+        actions={<div className="flex flex-col items-end gap-2"><ExportButtons entity={e} /><Link to={`/entities/${e.id}`} className="t-small text-ink-2 no-underline hover:text-ink-1 inline-flex items-center gap-1">Entity record <ExternalLink size={13} aria-hidden="true" /></Link></div>} />
       <div className="flex flex-wrap items-center gap-2 -mt-5 mb-8">
         {p.scopes.map((s) => <Tag key={s} tone={SCOPES[s].tone}>{SCOPES[s].label}</Tag>)}
         <Tag>{MODELS[p.model]}</Tag>

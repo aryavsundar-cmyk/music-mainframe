@@ -7,6 +7,7 @@ import { TransactionList } from '../components/money/TransactionRow.jsx'
 import { flowsForEntity, FLOWS } from '../data/flows.js'
 import { EntityNews } from '../components/news/EntityNews.jsx'
 import { PepiLens } from '../components/consulting/PepiLens.jsx'
+import { ExportButtons } from '../components/export/ExportButtons.jsx'
 import { currencySymbol } from '../utils/format.js'
 
 function Fact({ label, children }) {
@@ -48,7 +49,10 @@ export default function EntityDetail() {
     <>
       <Link to="/entities" className="t-small text-ink-3 no-underline inline-flex items-center gap-1 hover:text-ink-1 mb-4"><ArrowLeft size={14} aria-hidden="true" /> Entities</Link>
       <PageHeader eyebrow={`${t.label}${e.subtype ? ` · ${e.subtype}` : ''}`} tone={tone === 'neutral' ? 'muted' : tone} title={e.name} lede={e.summary}
-        actions={e.roles.some((r) => ['catalog-fund', 'pe-fund', 'debt-investor', 'strategic'].includes(r)) ? <Link to={`/pe/${e.id}`} className="t-small text-ink-2 no-underline hover:text-ink-1 inline-flex items-center gap-1 border border-line-2 rounded-md h-9 px-3.5">Investment view <ArrowRight size={13} aria-hidden="true" /></Link> : undefined} />
+        actions={<div className="flex flex-col items-end gap-2">
+          <ExportButtons entity={e} />
+          {e.roles.some((r) => ['catalog-fund', 'pe-fund', 'debt-investor', 'strategic'].includes(r)) && <Link to={`/pe/${e.id}`} className="t-small text-ink-2 no-underline hover:text-ink-1 inline-flex items-center gap-1">Investment view <ArrowRight size={13} aria-hidden="true" /></Link>}
+        </div>} />
 
       <div className="flex flex-wrap items-center gap-2 -mt-5 mb-8">
         {e.roles.map((r) => <Tag key={r} tone={LENS_TONE[ENTITY_TYPES[r]?.lens] === 'neutral' ? 'neutral' : LENS_TONE[ENTITY_TYPES[r]?.lens]}>{ENTITY_TYPES[r]?.label || r}</Tag>)}

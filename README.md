@@ -94,6 +94,14 @@ File-based, `src/data/*.js`, named exports plus small helpers. Conventions fixed
 - Every record: `asOf` (ISO date) + `sources: [{ label, url }]`.
 - Relative imports carry `.js` so Node scripts (exports, batch generation) can import data files directly.
 
+## Exports (src/utils/brief*.js, scripts/generate-briefs.mjs)
+
+One data builder, three renderers (Patterns §1/§3/§6/§8). `buildBrief(entityId, { mode, citations })` returns numbered sections of typed blocks (paragraph · facts · stats · bullets · table · note); `briefText.js`, `briefDocx.js` (docx), and `briefPptx.js` (pptxgenjs) render that object and nothing else, so a new section is added once. Modes are per entity type, not binary: labels/publishers/distributors get full · catalog · financial · distribution; funds full · financial; PROs full · methodology · membership; DSPs full · economics · rights. Citations come from `newsCitations.fetchCitations` and the brief prints a different fallback for *feed unreachable* vs *nothing tagged*. In the app, entity, fund, and PRO pages carry the two-tier export UX (primary "Export full brief" .docx + a mode × format menu); renderers are lazy-loaded so docx and pptxgenjs stay out of the core bundle. From Node: `npm run briefs -- --entity concord --entity blackstone --modes full,financial --formats docx,pptx,txt --out-dir ./exports --api http://localhost:3002`.
+
+## Sibling cross-links (src/data/siblings.js)
+
+Sponsors profiled in both apps (Blackstone, KKR, Apollo, Silver Lake, Carlyle, Ares, Sixth Street, Bain, Francisco Partners, BlackRock) link to their Intelligence Hub PE Academy page from `/pe/:id`, the PEPI lens rail, and the financial brief. Read-only; the Hub is never edited from here.
+
 ## Consulting overlay (src/data/consulting.js)
 
 The A&M PEPI lens, mirroring the Intelligence Hub's client-category × service-line pattern. Five service lines (Diligence · Carve-out · Value creation · PMI · Strategy) each described in music terms, and seven client categories (Catalog investors · Label PE sponsors · Publisher roll-ups · Independent distributors · PRO modernisation · Live entertainment operators · Music-AI investors). Category membership is COMPUTED from entity type/roles (`rule`) plus a short `explicit` list, so it tracks entities.js; deals and volume come from transactions.js; `topics` link to `/news?topic=`. Each category carries a thesis, engagement triggers, KPIs, and per-line engagement hypotheses (39 total). `getConsultingContext(entityId)` powers the "PEPI lens" rail on entity pages and biases the hypotheses toward the entity's recent deal types.

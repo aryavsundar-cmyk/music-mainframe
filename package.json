@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Mainframe · Music — intelligence platform for the modern music business",
+  "description": "Mainframe \u00b7 Music \u2014 intelligence platform for the modern music business",
   "scripts": {
     "tokens": "node scripts/build-tokens.mjs",
     "predev": "npm run tokens",
@@ -13,7 +13,8 @@
     "preview": "vite preview",
     "server": "node server/index.js",
     "start": "node server/index.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "briefs": "node scripts/generate-briefs.mjs"
   },
   "engines": {
     "node": ">=20.19.0"
@@ -23,8 +24,10 @@
     "@fontsource/ibm-plex-sans": "^5.2.5",
     "@fontsource/instrument-serif": "^5.2.5",
     "compression": "^1.8.0",
+    "docx": "^9.7.1",
     "express": "^5.2.1",
     "lucide-react": "^0.575.0",
+    "pptxgenjs": "^4.0.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.13.0",
