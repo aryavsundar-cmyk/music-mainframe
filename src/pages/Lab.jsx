@@ -5,7 +5,18 @@ import { CASE_LIST } from '../data/cases/index.js'
 import { readLabState } from '../hooks/useLabState.js'
 import { progress, STAGES } from '../utils/labState.js'
 
-const KIND = { valuation: 'Catalog valuation', pmi: 'Post-merger integration' }
+const KIND = { valuation: 'Catalog valuation', pmi: 'Post-merger integration', abs: 'Royalty ABS review' }
+
+const ABS_METHOD = [
+  ['Tape to cash', 'Tie every tape line to statements and bank receipts; accruals and one-offs don\'t service notes.'],
+  ['Eligibility', 'Credit only what the issuer owns, can transfer, and can collect until legal final.'],
+  ['Concentration', 'Apply limits to the eligible pool; excess concentrations get no credit.'],
+  ['Cash available', 'Servicing fees and senior expenses come first; trend from normalised history.'],
+  ['Value & LTV', 'Value the borrowing base yourself; an appraisal is an input, not a conclusion.'],
+  ['Waterfall', 'Rebuild payments, triggers, reserve, and ARD from the indenture, not the sponsor model.'],
+  ['Break-evens', 'Solve for the haircut that breaks each class, not just the sponsor\'s scenarios.'],
+  ['Size & conditions', 'The answer is a maximum size and the conditions that make it investable.'],
+]
 
 const PMI_METHOD = [
   ['Governance', 'An IMO with decision rights, a weekly cadence, and one synergy register the board can audit.'],
@@ -66,7 +77,7 @@ export default function Lab() {
         })}
         <Card pad="lg" className="flex flex-col justify-center">
           <div className="t-eyebrow text-ink-3 mb-1">Next cases</div>
-          <p className="t-body text-ink-2 m-0">The lab is case-driven: add a file under <span className="font-mono">src/data/cases/</span> with a perimeter, data room, a draft model with planted issues, and a reviewer benchmark. Each case declares a kind (valuation or integration), which selects its engine and execution steps. Candidates: a music-royalty ABS collateral review, a PRO carve-out.</p>
+          <p className="t-body text-ink-2 m-0">The lab is case-driven: add a file under <span className="font-mono">src/data/cases/</span> with a perimeter, data room, a draft model with planted issues, and a reviewer benchmark. Each case declares a kind (valuation, integration, or ABS review), which selects its engine and execution steps. Candidates: a PRO carve-out, a label distribution-deal renegotiation.</p>
         </Card>
       </div>
       <SectionHeader eyebrow="Method" title="What every catalog valuation has to get right" />
@@ -74,6 +85,9 @@ export default function Lab() {
       <div className="h-12" />
       <SectionHeader eyebrow="Method" title="What every publisher integration has to get right" />
       <MethodGrid items={PMI_METHOD} />
+      <div className="h-12" />
+      <SectionHeader eyebrow="Method" title="What every royalty ABS review has to get right" />
+      <MethodGrid items={ABS_METHOD} />
     </>
   )
 }

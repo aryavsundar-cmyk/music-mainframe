@@ -1,8 +1,17 @@
 /** labEngines.js — selects the computation engine for a lab case by `c.kind`. */
 import { computeCase, benchmarkExec, asPresentedExec, reviewChecks } from './valuation.js'
 import { computePmi, benchmarkPmi, asPresentedPmi, reviewPmiChecks } from './pmi.js'
+import { computeAbs, benchmarkAbs, asPresentedAbs, reviewAbsChecks } from './abs.js'
 
 export function engineFor(c) {
+  if (c.kind === 'abs') {
+    return {
+      compute: (exec) => computeAbs(c, exec),
+      benchmark: () => computeAbs(c, benchmarkAbs(c)),
+      draft: () => computeAbs(c, asPresentedAbs(c)),
+      checks: () => reviewAbsChecks(c),
+    }
+  }
   if (c.kind === 'pmi') {
     return {
       compute: (exec) => computePmi(c, exec),

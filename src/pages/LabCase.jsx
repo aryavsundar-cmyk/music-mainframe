@@ -13,6 +13,8 @@ import { ExecuteStage } from '../components/lab/ExecuteStage.jsx'
 import { DeliverStage } from '../components/lab/DeliverStage.jsx'
 import { PmiExecuteStage } from '../components/lab/PmiExecuteStage.jsx'
 import { PmiDeliverStage } from '../components/lab/PmiDeliverStage.jsx'
+import { AbsExecuteStage } from '../components/lab/AbsExecuteStage.jsx'
+import { AbsDeliverStage } from '../components/lab/AbsDeliverStage.jsx'
 
 export default function LabCase() {
   const { caseId } = useParams()
@@ -33,9 +35,8 @@ function CaseWorkspace({ c }) {
   const b = useMemo(() => engine.benchmark(), [engine])
   const draft = useMemo(() => engine.draft(), [engine])
   const checks = useMemo(() => engine.checks(), [engine])
-  const pmi = c.kind === 'pmi'
-  const Execute = pmi ? PmiExecuteStage : ExecuteStage
-  const Deliver = pmi ? PmiDeliverStage : DeliverStage
+  const Execute = { pmi: PmiExecuteStage, abs: AbsExecuteStage }[c.kind] || ExecuteStage
+  const Deliver = { pmi: PmiDeliverStage, abs: AbsDeliverStage }[c.kind] || DeliverStage
   const pr = progress(c, state)
   const reviewer = !!state.ui.reviewer
   const props = { c, state, update, reviewer, r, b, draft, checks }

@@ -36,7 +36,7 @@ React 19 · Vite 7 · Tailwind 4 (CSS-first, no tailwind.config) · React Router
 | `/news` | live | live (Sprint 5) |
 | `/consulting` · `/consulting/:id` | overlay | live (Sprint 6) |
 | `/deliverables` | overlay | live (Sprint 8) |
-| `/lab` · `/lab/:caseId` | academy | live (Sprints 9–10) |
+| `/lab` · `/lab/:caseId` | academy | live (Sprints 9–11) |
 | `/design` | reference | living style guide |
 
 ## Design system
@@ -124,13 +124,20 @@ Cases live in `src/data/cases/` and are registered in `cases/index.js`. Each dec
 | --- | --- | --- | --- |
 | Northstar Songs & Masters | `valuation` | `utils/valuation.js` · `npm run test:valuation` | IC valuation memo |
 | Halcyon + Brightwater | `pmi` | `utils/pmi.js` · `npm run test:pmi` | 100-day integration board memo |
+| Cadence Royalty Funding 2026-1 | `abs` | `utils/abs.js` · `npm run test:abs` | Investment committee credit memo |
 
 **Halcyon + Brightwater (Sprint 10)** is a publisher roll-up post-merger integration: a $540M acquisition carrying a $70M premium, approved on a banker synergy case of $20M run rate "worth $186M at 9.3x". **Execute** has eight steps: deal and cost baseline by function, synergy register (keep or reject; run rate, Y1–Y4 phasing, one-off cost, probability, one-time backlog), dis-synergies and one-off costs (TSA, retention, IMO, mandate working capital), synergy value (phased, risk-weighted NPV with optional perpetuity vs run rate × multiple; premium coverage, cash break-even, what must be true), Day 1 / Day 100 / Year 1 sequencing, organisation and retention (decisions drive retention cost and the writer-attrition dis-synergy), risks to mitigations, and a ten-point red-team of the banker case. **Deliver** commits a run-rate target and one-off budget against a downside / base / upside range, then scores the engagement.
 
 - **Engine** `src/utils/pmi.js` is pure and Node-tested (`npm run test:pmi`, 24 checks including annuity and perpetuity hand calculations, TSA spill, people-driven attrition, a 100% reviewer score, and Word/slides renders). One-off costs are never probability-weighted.
 - **The banker case's planted errors**: $0.5M double count between the system and royalty-ops levers; $0.3M of founder cost already out of the baseline; every lever at 100% from Day 1; $2.0M of one-offs against a realistic $16.3M (1.14x run rate); a one-time $3.0M unmatched backlog capitalised as run rate; sub-publishing savings gross of in-house cost and ahead of notice windows; admin-fee uplift with no renewal churn; a revenue multiple on uncosted savings; no year-1 cash trough. Re-based: $14.3M gross, $10.0M risk-weighted net, NPV $68.4M, 0.98x the premium, cash break-even in year 3.
 - **State** `src/utils/pmiState.js` (steps, progress, scorecard rows); **documents** `src/utils/pmiDocs.js` (board memo).
-- `npm test` runs both engine suites.
+- `npm test` runs all three engine suites.
+
+**Cadence Royalty Funding 2026-1 (Sprint 11)** is an investor-side collateral review of a music-royalty ABS: $220M Class A (6.00%, 2% amortisation) and $40M Class B (8.50%) secured by 38,000 compositions and 6,400 masters, ARD year 6, legal final year 25, cash trap below 1.25x and rapid amortisation below 1.15x. The trainee reviews it for a $100M anchor Class A investor. **Execute** has nine steps: data tape tie-out and normalisation, eligibility screen, concentration limits on the eligible pool, collateral cash flow after servicing and senior expenses, collateral value and LTV (with a rate × trend grid), the annual note waterfall (A interest and principal, B interest subordinated under rapid amortisation and post-ARD, liquidity reserve draws and refills, cash trap and sweep), stress scenarios with break-even haircuts and the maximum Class A that passes DSCR, LTV, and severe-stress tests, findings to structural protections, and a ten-point offering review. **Deliver** is the credit recommendation: invest, invest with conditions, or decline; maximum Class A; conditions; credit memo export.
+
+- **Engine** `src/utils/abs.js` is pure and Node-tested (`npm run test:abs`, 22 checks including cash conservation in every waterfall year, the closed-form cash-trap break-even, the 22-year appraisal annuity, and that the maximum Class A passes while $1M more fails). The scorecard tests the waterfall at the offered structure, so trainees can explore other sizes freely.
+- **The offering's planted problems**: $0.8M of accrued, unreceived royalties on the tape; $1.8M of one-offs and $1.6M of pro-forma add-backs inside the $39.6M "pro forma LTM"; termination, consent, and litigation defects treated as eligible; concentration limits written into the indenture but not applied; DSCR of 1.89x measured before the servicing fee and senior expenses; a flat trend on a catalog declining about 1% a year; a 55% Class A LTV on a $400M appraisal of the unadjusted tape; a reserve equal to six months of Class A interest described as six months of debt service; and a 10% sponsor stress. Re-based: $30.6M borrowing base, 1.33x DSCR (6% haircut to trap), $264M collateral value, 83% Class A LTV, a Class A loss in the severe scenario, and a $145M maximum Class A.
+- **State** `src/utils/absState.js`; **documents** `src/utils/absDocs.js` (credit memo).
 
 ## Sibling cross-links (src/data/siblings.js)
 
