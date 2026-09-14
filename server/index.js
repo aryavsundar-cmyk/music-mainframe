@@ -1,6 +1,6 @@
 /**
  * Mainframe · Music — production server.
- * Sprint 0: serves the Vite build + SPA fallback + /api/health.
+ * Serves the Vite build + SPA fallback + /api/health (reports current sprint).
  * Sprint 5: grows the RSS / Google News / SEC EDGAR aggregator + WebSocket push here
  *           (pattern: am-intelligence-hub/server). Lives outside src/ so Vite never bundles it.
  */
@@ -19,7 +19,7 @@ app.disable('x-powered-by')
 app.use(compression())
 
 app.get('/api/health', (_req, res) => {
-  res.json({ ok: true, app: 'music-mainframe', sprint: 0, started: started.toISOString(), uptimeSec: Math.round(process.uptime()) })
+  res.json({ ok: true, app: 'music-mainframe', sprint: 1, started: started.toISOString(), uptimeSec: Math.round(process.uptime()) })
 })
 
 app.use(express.static(DIST, { maxAge: '1h', index: false }))
