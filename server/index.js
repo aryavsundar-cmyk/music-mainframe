@@ -18,8 +18,11 @@ import { SIGNAL_STATS, TOPIC_SIGNALS } from './signals.js'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DIST = path.resolve(__dirname, '../dist')
 const PORT = process.env.PORT || 3002
-const SPRINT = 7
+const SPRINT = 8
 const started = new Date()
+
+// Minimal .env loader (no dependency): KEY=value lines at repo root, never overriding real env.
+try { for (const line of fs.readFileSync(path.resolve(__dirname, '../.env'), 'utf8').split('\n')) { const m = /^\s*([A-Z0-9_]+)\s*=\s*(.*?)\s*$/.exec(line); if (m && !(m[1] in process.env)) process.env[m[1]] = m[2].replace(/^['"]|['"]$/g, '') } } catch { /* no .env */ }
 
 const sources = JSON.parse(fs.readFileSync(path.join(__dirname, 'sources.json'), 'utf8'))
 const REFRESH_MS = (sources.refreshMinutes || 15) * 60 * 1000
@@ -84,6 +87,35 @@ app.get('/api/news/sources', (_req, res) => res.json({
 }))
 
 app.post('/api/news/refresh', (_req, res) => { fetchNews(); res.json({ ok: true, running: true }) })
+
+// ── Gamma (presentation / document generation) ───────────────────────────────
+// Proxies Gamma's public API (same shape as the Intelligence Hub). Needs GAMMA_API_KEY (Render env or .env).
+// Gamma is async: POST creates a generation, then poll GET until completed. ~20–40s.
+app.use(express.json({ limit: '2mb' }))
+app.get('/api/gamma/status', (_req, res) => res.json({ configured: !!process.env.GAMMA_API_KEY }))
+app.post('/api/gamma/generate', async (req, res) => {
+  const key = process.env.GAMMA_API_KEY
+  if (!key) return res.status(503).json({ error: 'GAMMA_API_KEY not configured', help: 'Set GAMMA_API_KEY on the Render service (or in .env locally). Get a key at gamma.app/settings/api. Meanwhile, download the .md and paste it into Gamma.' })
+  const { content, title, format = 'presentation', numCards = 12 } = req.body || {}
+  if (!content) return res.status(400).json({ error: 'content is required' })
+  const base = process.env.GAMMA_API_URL || 'https://public-api.gamma.app/v1.0'
+  try {
+    const r = await fetch(`${base}/generations`, { method: 'POST', headers: { 'X-API-KEY': key, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ inputText: content, textMode: 'preserve', format, numCards, textOptions: { tone: 'professional, precise', audience: 'private-equity deal team and music executives', language: 'en' }, imageOptions: { source: 'aiGenerated' }, cardSplit: 'inputTextBreaks' }) })
+    const text = await r.text(); let data = {}; try { data = JSON.parse(text) } catch { /* non-JSON */ }
+    if (!r.ok) return res.status(r.status).json({ error: 'Gamma API error', details: data?.message || data?.error || text.slice(0, 300) })
+    const id = data.generationId
+    if (!id) return res.status(502).json({ error: 'Gamma did not return a generation ID', raw: data })
+    console.log(`[gamma] ${id} · ${format} · "${title}" · ${content.length} chars`)
+    for (let i = 0; i < 45; i++) {
+      await new Promise((ok) => setTimeout(ok, 2000))
+      const s = await fetch(`${base}/generations/${id}`, { headers: { 'X-API-KEY': key } }).then((x) => x.json()).catch(() => ({}))
+      if (s.status === 'completed' && s.gammaUrl) { console.log(`[gamma] done in ${(i + 1) * 2}s → ${s.gammaUrl}`); return res.json({ url: s.gammaUrl, generationId: id, status: 'complete', title }) }
+      if (s.status === 'failed') return res.status(502).json({ error: 'Gamma generation failed', details: s })
+    }
+    res.status(504).json({ error: 'Gamma generation timed out (90s). Try again or use the .md export.' })
+  } catch (err) { res.status(502).json({ error: 'Failed to reach Gamma API', details: err.message }) }
+})
 
 if (fs.existsSync(DIST)) {
   app.use(express.static(DIST, { maxAge: '1h', index: false }))

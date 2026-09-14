@@ -187,10 +187,10 @@ export function buildBrief(entityId, { mode = 'full', citations = { items: [], s
 
   sections.forEach((s, i) => { s.num = i + 1 })
   return {
-    entity: e, mode, modeLabel: MODES[mode]?.label || mode, title: e.name,
+    kind: 'brief', slug: `${e.id}-${mode}-brief`, entity: e, mode, modeLabel: MODES[mode]?.label || mode, title: e.name,
     subtitle: `${type.label}${e.subtype ? ` · ${e.subtype}` : ''} · ${MODES[mode]?.label || mode}`,
     generatedAt: new Date().toISOString(), asOf: e.asOf, sections, citations,
   }
 }
 
-export const briefFilename = (brief, ext) => `${brief.entity.id}-${brief.mode}-brief-${brief.generatedAt.slice(0, 10)}.${ext}`
+export const briefFilename = (doc, ext) => `${doc.slug || `${doc.entity?.id}-${doc.mode}-brief`}-${doc.generatedAt.slice(0, 10)}.${ext}`

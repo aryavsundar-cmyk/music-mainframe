@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Sparkles, Download, ChevronDown, Check, AlertTriangle } from 'lucide-react'
 import { Button } from '../primitives/index.js'
 import { MODES, modesFor } from '../../utils/brief.js'
-import { exportBrief } from '../../utils/download.js'
+import { exportBrief, buildDeliverable, exportDoc } from '../../utils/download.js'
 
-const FORMATS = [['docx', 'Word'], ['pptx', 'Slides'], ['txt', 'Text']]
+const FORMATS = [['docx', 'Word'], ['pptx', 'Slides'], ['txt', 'Text'], ['md', 'MD']]
+const EXTRA = [['account-plan', 'Account plan', 'SCR, stakeholders, matrix, 30·60·90'], ['proposal', 'Proposal', 'Default category and lines; tune in Deliverables']]
 
 /**
  * Two-tier export UX (Patterns §3): one primary gradient-free CTA "Export full brief" (.docx) and one quieter
@@ -26,7 +28,10 @@ export function ExportButtons({ entity }) {
 
   const run = async (mode, format) => {
     setBusy(`${mode}/${format}`); setOpen(false)
-    try { setLast({ ok: true, ...(await exportBrief(entity.id, { mode, format })) }) }
+    try {
+      if (mode === 'account-plan' || mode === 'proposal') setLast({ ok: true, ...(await exportDoc(await buildDeliverable(mode, { entityId: entity.id }), format)) })
+      else setLast({ ok: true, ...(await exportBrief(entity.id, { mode, format })) })
+    }
     catch (err) { setLast({ ok: false, error: err.message }) }
     finally { setBusy('') }
   }
@@ -49,6 +54,19 @@ export function ExportButtons({ entity }) {
                   </div>
                 </div>
               ))}
+              <div className="border-t border-line-1 mt-1 pt-1">
+                {EXTRA.map(([m, label, blurb]) => (
+                  <div key={m} className="px-2 py-1.5">
+                    <div className="flex items-baseline justify-between gap-2">
+                      <div><div className="t-small text-ink-1">{label}</div><div className="t-micro text-ink-4">{blurb}</div></div>
+                      <div className="flex gap-1 shrink-0">
+                        {FORMATS.map(([f, fl]) => <button key={f} type="button" role="menuitem" onClick={() => run(m, f)} className="t-micro font-mono rounded-sm border border-line-1 px-1.5 py-0.5 text-ink-2 hover:bg-ground-3 hover:text-ink-1 bg-transparent cursor-pointer">{fl}</button>)}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+                <Link to={`/deliverables?entity=${entity.id}&kind=proposal`} className="block px-2 py-1.5 t-micro text-accent no-underline hover:underline">Build a proposal or Gamma deck →</Link>
+              </div>
             </div>
           )}
         </div>

@@ -35,6 +35,7 @@ React 19 · Vite 7 · Tailwind 4 (CSS-first, no tailwind.config) · React Router
 | `/pros` · `/pros/:id` · `/dsps` | rights | live (Sprint 4) |
 | `/news` | live | live (Sprint 5) |
 | `/consulting` · `/consulting/:id` | overlay | live (Sprint 6) |
+| `/deliverables` | overlay | live (Sprint 8) |
 | `/design` | reference | living style guide |
 
 ## Design system
@@ -97,6 +98,12 @@ File-based, `src/data/*.js`, named exports plus small helpers. Conventions fixed
 ## Exports (src/utils/brief*.js, scripts/generate-briefs.mjs)
 
 One data builder, three renderers (Patterns §1/§3/§6/§8). `buildBrief(entityId, { mode, citations })` returns numbered sections of typed blocks (paragraph · facts · stats · bullets · table · note); `briefText.js`, `briefDocx.js` (docx), and `briefPptx.js` (pptxgenjs) render that object and nothing else, so a new section is added once. Modes are per entity type, not binary: labels/publishers/distributors get full · catalog · financial · distribution; funds full · financial; PROs full · methodology · membership; DSPs full · economics · rights. Citations come from `newsCitations.fetchCitations` and the brief prints a different fallback for *feed unreachable* vs *nothing tagged*. In the app, entity, fund, and PRO pages carry the two-tier export UX (primary "Export full brief" .docx + a mode × format menu); renderers are lazy-loaded so docx and pptxgenjs stay out of the core bundle. From Node: `npm run briefs -- --entity concord --entity blackstone --modes full,financial --formats docx,pptx,txt --out-dir ./exports --api http://localhost:3002`.
+
+## Deliverables (src/utils/{accountPlan,proposal,categoryDeck}.js, /deliverables)
+
+Three more document kinds share the brief's block model, so the same three renderers (plus `briefMarkdown.js`) produce them with no renderer changes. **Account plan** (`buildAccountPlan`): SCR summary, stakeholder map, category × service-line matrix, 30·60·90 roadmap, KPIs, deals, news. **Proposal** (`buildProposal`): SCR executive summary, understanding, objectives, workstreams per line (activities and deliverables from `data/rateCard.js` templates), phased timeline, staffing table, indicative commercials (`estimateCommercials`, day rates mirror the Hub's PricingCalculator defaults × 8 and are editable in the UI — every output labels them indicative), capabilities, risks, next steps, appendix. **Sector deck** (`buildCategoryDeck`): one PEPI client category with lens-specific market context. `/deliverables` is the builder (entity search, kind, mode, category, lines, duration, day rates, outline preview) and the export bar: Word · Slides · Text · Markdown · Gamma deck · Gamma doc. Entity pages' export menu also offers Account plan and Proposal directly. Node: `npm run briefs -- --kind account-plan|proposal|category-deck …`.
+
+**Gamma.** `POST /api/gamma/generate` proxies Gamma's public API (same shape as the Hub): submits Markdown with `textMode: preserve` and `cardSplit: inputTextBreaks` so each § section becomes a card, polls to completion, returns the gamma URL. Needs `GAMMA_API_KEY` (Render env var, `sync: false` in render.yaml; or a local `.env`, which the server reads without a dependency). Without a key the endpoint returns 503 with help text, the UI disables the Gamma buttons, and the Markdown export is the paste-into-Gamma path.
 
 ## Sibling cross-links (src/data/siblings.js)
 

@@ -1,5 +1,5 @@
 import { NavLink, Route, Routes } from 'react-router-dom'
-import { Disc3, Building2, Waypoints, Handshake, Landmark, Layers, Library, ScrollText, Radio, Rss, Briefcase, Palette, Sun, Moon } from 'lucide-react'
+import { Disc3, Building2, Waypoints, Handshake, Landmark, Layers, Library, ScrollText, Radio, Rss, Briefcase, FileOutput, Palette, Sun, Moon } from 'lucide-react'
 import { ThemeContext, useThemeState } from './hooks/useTheme.js'
 import Home from './pages/Home.jsx'
 import Entities from './pages/Entities.jsx'
@@ -16,6 +16,7 @@ import Catalogs from './pages/Catalogs.jsx'
 import News from './pages/News.jsx'
 import Consulting from './pages/Consulting.jsx'
 import ConsultingCategory from './pages/ConsultingCategory.jsx'
+import Deliverables from './pages/Deliverables.jsx'
 import DesignSystem from './pages/DesignSystem.jsx'
 import NotFound from './pages/NotFound.jsx'
 
@@ -40,6 +41,7 @@ const NAV = [
   ]},
   { group: 'Overlay', items: [
     { to: '/consulting', label: 'Consulting lens', icon: Briefcase },
+    { to: '/deliverables', label: 'Deliverables', icon: FileOutput },
   ]},
 ]
 
@@ -119,6 +121,7 @@ export default function App() {
             <Route path="/news" element={<News />} />
             <Route path="/consulting" element={<Consulting />} />
             <Route path="/consulting/:id" element={<ConsultingCategory />} />
+            <Route path="/deliverables" element={<Deliverables />} />
             <Route path="/design" element={<DesignSystem />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
