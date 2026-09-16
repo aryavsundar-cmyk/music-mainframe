@@ -27,9 +27,10 @@
     "test:glossary": "node scripts/test-glossary.mjs",
     "test:market": "node scripts/test-market.mjs",
     "test:outcomes": "node scripts/test-outcomes.mjs",
+    "test:xlsx": "node scripts/test-xlsx.mjs",
     "test:edition": "node scripts/test-edition.mjs",
-    "test:work": "MM_EDITION=work node --import ./scripts/edition-loader.mjs scripts/test-prospect.mjs && MM_EDITION=work node --import ./scripts/edition-loader.mjs scripts/test-market.mjs && MM_EDITION=work node --import ./scripts/edition-loader.mjs scripts/test-outcomes.mjs && MM_EDITION=work node scripts/test-parity.mjs",
-    "test": "npm run test:valuation && npm run test:pmi && npm run test:abs && npm run test:carveout && npm run test:prospect && npm run test:contrast && npm run test:glossary && npm run test:market && npm run test:outcomes && npm run test:edition && npm run test:work"
+    "test:work": "MM_EDITION=work node --import ./scripts/edition-loader.mjs scripts/test-prospect.mjs && MM_EDITION=work node --import ./scripts/edition-loader.mjs scripts/test-market.mjs && MM_EDITION=work node --import ./scripts/edition-loader.mjs scripts/test-outcomes.mjs && MM_EDITION=work node --import ./scripts/edition-loader.mjs scripts/test-xlsx.mjs && MM_EDITION=work node scripts/test-parity.mjs",
+    "test": "npm run test:valuation && npm run test:pmi && npm run test:abs && npm run test:carveout && npm run test:prospect && npm run test:contrast && npm run test:glossary && npm run test:market && npm run test:outcomes && npm run test:xlsx && npm run test:edition && npm run test:work"
   },
   "engines": {
     "node": ">=20.19.0"
@@ -58,6 +59,7 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "tailwindcss": "^4.2.0",
-    "vite": "^7.3.1"
+    "vite": "^7.3.1",
+    "xml-js": "^1.6.11"
   }
 }

@@ -17,8 +17,7 @@ export const EDITIONS = {
     label: 'Full edition',
     groups: ['Canvas', 'Money', 'Rights', 'Live', 'Market', 'Pipeline', 'Overlay', 'Reference', 'Academy'],
     features: { consulting: true, deliverables: true, lab: true, glossary: true, outreach: true, hubLinks: true, rateCard: true, records: true },
-    // 'xlsx' joins both lists in Sprint 20, when the exporter exists. The manifest never advertises a format the app cannot produce.
-    exports: ['docx', 'pptx', 'txt', 'md', 'gamma-presentation', 'gamma-document'],
+    exports: ['docx', 'pptx', 'xlsx', 'txt', 'md', 'gamma-presentation', 'gamma-document'],
   },
   work: {
     id: 'work',
@@ -26,7 +25,7 @@ export const EDITIONS = {
     groups: ['Canvas', 'Money', 'Rights', 'Live', 'Market', 'Pipeline', 'Reference'],
     // outreach drafts stay out: the personas and hooks are authored judgement, not public record.
     features: { consulting: false, deliverables: false, lab: false, glossary: true, outreach: false, hubLinks: false, rateCard: false, records: true },
-    exports: ['docx', 'pptx', 'txt'],
+    exports: ['docx', 'pptx', 'xlsx', 'txt'],
   },
 }
 

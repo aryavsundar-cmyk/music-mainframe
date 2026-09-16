@@ -1,6 +1,6 @@
 # Work edition — strategy and execution plan
 
-Status: Sprints 18–19 shipped 2026-09-16 (the split, its test, and public-fit scoring proved in both editions). Sprints 20–21 outstanding. Drafted after Sprint 17.
+Status: Sprints 18–20 shipped 2026-09-16 (the split, its test, public-fit scoring, and the Excel exporter). Sprint 21 outstanding. Drafted after Sprint 17.
 Question it answers: what can be shared at work without giving away the part that is mine.
 
 ---
@@ -103,7 +103,7 @@ leave it out and revisit.
 | PowerPoint (.pptx) | ✅ | ✅ | Existing `briefPptx.js` |
 | Text (.txt) | ✅ | ✅ | Existing `briefText.js` |
 | Markdown (.md) | ✅ | Optional | Harmless; keep unless it clutters |
-| **Excel (.xlsx)** | New | ✅ | New `briefXlsx.js` |
+| **Excel (.xlsx)** | ✅ | ✅ | `briefXlsx.js` — shipped |
 | Gamma | ✅ | ❌ | Needs a key and sends content to a third party |
 
 Excel is the one build item. The block model already carries typed `table` blocks, so each table becomes a sheet,

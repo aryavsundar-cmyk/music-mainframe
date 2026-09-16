@@ -104,7 +104,7 @@ One data builder, three renderers (Patterns §1/§3/§6/§8). `buildBrief(entity
 
 ## Deliverables (src/utils/{accountPlan,proposal,categoryDeck}.js, /deliverables)
 
-Three more document kinds share the brief's block model, so the same three renderers (plus `briefMarkdown.js`) produce them with no renderer changes. **Account plan** (`buildAccountPlan`): SCR summary, stakeholder map, category × service-line matrix, 30·60·90 roadmap, KPIs, deals, news. **Proposal** (`buildProposal`): SCR executive summary, understanding, objectives, workstreams per line (activities and deliverables from `data/rateCard.js` templates), phased timeline, staffing table, indicative commercials (`estimateCommercials`, day rates mirror the Hub's PricingCalculator defaults × 8 and are editable in the UI — every output labels them indicative), capabilities, risks, next steps, appendix. **Sector deck** (`buildCategoryDeck`): one PEPI client category with lens-specific market context. `/deliverables` is the builder (entity search, kind, mode, category, lines, duration, day rates, outline preview) and the export bar: Word · Slides · Text · Markdown · Gamma deck · Gamma doc. Entity pages' export menu also offers Account plan and Proposal directly. Node: `npm run briefs -- --kind account-plan|proposal|category-deck …`.
+Four renderers share the block model: text, Word, slides and Excel (plus Markdown). A new section is added once, in the builder, and every format follows. **Account plan** (`buildAccountPlan`): SCR summary, stakeholder map, category × service-line matrix, 30·60·90 roadmap, KPIs, deals, news. **Proposal** (`buildProposal`): SCR executive summary, understanding, objectives, workstreams per line (activities and deliverables from `data/rateCard.js` templates), phased timeline, staffing table, indicative commercials (`estimateCommercials`, day rates mirror the Hub's PricingCalculator defaults × 8 and are editable in the UI — every output labels them indicative), capabilities, risks, next steps, appendix. **Sector deck** (`buildCategoryDeck`): one PEPI client category with lens-specific market context. `/deliverables` is the builder (entity search, kind, mode, category, lines, duration, day rates, outline preview) and the export bar: Word · Slides · Text · Markdown · Gamma deck · Gamma doc. Entity pages' export menu also offers Account plan and Proposal directly. Node: `npm run briefs -- --kind account-plan|proposal|category-deck …`.
 
 **Gamma.** `POST /api/gamma/generate` proxies Gamma's public API (same shape as the Hub): submits Markdown with `textMode: preserve` and `cardSplit: inputTextBreaks` so each § section becomes a card, polls to completion, returns the gamma URL. Needs `GAMMA_API_KEY` (Render env var, `sync: false` in render.yaml; or a local `.env`, which the server reads without a dependency). Without a key the endpoint returns 503 with help text, the UI disables the Gamma buttons, and the Markdown export is the paste-into-Gamma path.
 
@@ -165,6 +165,19 @@ The page has three views. **Coverage** is a segment × tier matrix showing how m
 **Account pages** (`/prospecting/:accountId`, Sprint 14) carry the full picture: profile and PEPI categories, the score broken into fit, timing and access with reasons, every trigger with its source, the transactions on file, the outreach composer and drafts, live news for that entity from `/api/news?entity=`, and the record editor. The panel and the page share one set of components (`components/prospecting/AccountParts.jsx`), so drafts can never drift between them.
 
 Records live in localStorage only (`mm-prospect-v1`). Engine and drafts are Node-tested: `npm run test:prospect`, 25 checks.
+
+## Excel export
+
+`src/utils/briefXlsx.js` renders the same block model as every other format, writing SpreadsheetML by hand over jszip (already in the tree behind `docx` and `pptxgenjs`, so it costs no new download). Layout: a **Summary** sheet carrying the document's identity and every stats and facts block as label/value rows, **one sheet per table block**, and a **Sources** sheet holding the citations and every note — including the notices that say what a score does and does not mean, so they travel with the numbers rather than being left on screen.
+
+Cells keep the formatting the rest of the app uses. A cell becomes a real number only when the string is a plain number, so `1,234` becomes 1234 while `$12M` stays text: a wrong number is worse than a string. Sheet names follow Excel's rules — 31 characters, no forbidden punctuation, unique within the workbook — and header rows are frozen.
+
+Available in both editions, in the browser and from Node:
+
+```bash
+npm run briefs -- --entity umg --modes financial --formats xlsx
+npm run test:xlsx     # structure, escaping, numeric detection, sheet naming
+```
 
 ## Editions
 
