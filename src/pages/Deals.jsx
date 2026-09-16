@@ -3,9 +3,21 @@ import { useUrlFilters } from '../hooks/useUrlFilters.js'
 import { Search, X } from 'lucide-react'
 import { PageHeader, Stat } from '../components/primitives/index.js'
 import { TransactionList } from '../components/money/TransactionRow.jsx'
-import { filterTransactions, TX_TYPES, ASSETS, STRUCTURES, YEARS, TX_TOTALS } from '../data/transactions.js'
+import { filterTransactions, TX_TYPES, ASSETS, STRUCTURES, YEARS, TX_TOTALS, partyName } from '../data/transactions.js'
+import { PageExport } from '../components/export/PageExport.jsx'
+import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
+import { format } from '../utils/format.js'
 
 const KEYS = ['q', 'type', 'asset', 'structure', 'year', 'status']
+const FILTER_LABELS = {
+  q: { label: 'Search' },
+  type: { label: 'Type', format: (v) => TX_TYPES[v]?.label || v },
+  asset: { label: 'Asset', format: (v) => ASSETS[v] || v },
+  structure: { label: 'Structure', format: (v) => STRUCTURES[v] || v },
+  year: { label: 'Year' },
+  status: { label: 'Status' },
+}
+const parties = (list) => (list || []).map(partyName).join(' · ')
 const chip = (a) => ['inline-flex items-center gap-1.5 rounded-sm border px-2 py-1 t-small cursor-pointer select-none transition-colors duration-100',
   a ? 'bg-ground-4 border-line-3 text-ink-1' : 'bg-transparent border-line-1 text-ink-2 hover:bg-ground-2 hover:text-ink-1'].join(' ')
 const select = 'bg-ground-1 border border-line-2 rounded-md h-8 px-2 t-small text-ink-1 focus:border-accent outline-none'
@@ -51,6 +63,23 @@ export default function Deals() {
       </div>
 
       <TransactionList items={rows} dense={!!params.type} />
+      <PageExport build={() => buildPageDoc({
+        slug: 'deals',
+        title: 'Deals',
+        eyebrow: 'Money · who is buying',
+        lede: 'Transactions on record — acquisitions, catalog sales, securitisations and stake sales — as this view filtered them.',
+        filters: describeFilters(params, FILTER_LABELS),
+        sort: 'Most recent first',
+        stats: [
+          { label: 'In this view', value: String(rows.length) },
+          { label: 'Disclosed value here', value: format.money(rows.reduce((a, t) => a + (t.value || 0), 0)) },
+          { label: 'On record', value: String(TX_TOTALS.count) },
+        ],
+        columns: ['Date', 'Transaction', 'Type', 'Asset', 'Acquirer', 'Seller', 'Value', 'Status'],
+        rows: rows.map((t) => [t.date, t.title, TX_TYPES[t.type]?.label || t.type, ASSETS[t.asset] || t.asset, parties(t.acquirers), parties(t.sellers), t.value ? format.money(t.value) : 'undisclosed', t.status || '']),
+        total: TX_TOTALS.count,
+        notes: rows.some((t) => t.verify) ? ['Values marked in the app as press estimates are not confirmed by the parties. Check the source before quoting a figure.'] : [],
+      })} />
     </>
   )
 }

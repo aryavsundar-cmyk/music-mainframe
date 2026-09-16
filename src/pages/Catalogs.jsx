@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom'
 import { PageHeader, Stat, Tag, Num } from '../components/primitives/index.js'
 import { TransactionList } from '../components/money/TransactionRow.jsx'
 import { CATALOG_SALES, ASSETS, partyName } from '../data/transactions.js'
-import { formatDate } from '../utils/format.js'
+import { formatDate, format } from '../utils/format.js'
+import { PageExport } from '../components/export/PageExport.jsx'
+import { buildPageDoc } from '../utils/pageDocs.js'
 
 const ASSET_TONE = { recording: 'recording', publishing: 'publishing', both: 'accent' }
 const TH = 'text-left t-micro uppercase tracking-[0.08em] text-ink-3 font-medium py-2 px-3 border-b border-line-2 whitespace-nowrap'
@@ -54,6 +56,21 @@ export default function Catalogs() {
 
       <div className="t-eyebrow text-accent mb-4">Terms and sources</div>
       <TransactionList items={rows} dense />
+      <PageExport build={() => buildPageDoc({
+        slug: 'catalog-sales',
+        title: 'Catalog sales',
+        eyebrow: 'Money · what changed hands',
+        lede: 'Songwriter and artist catalogs sold, with the rights transferred and the reported consideration.',
+        sort: sort === 'value' ? 'Largest reported value first' : 'Most recent first',
+        stats: [
+          { label: 'Sales on file', value: String(rows.length) },
+          { label: 'Reported value', value: format.money(total) },
+          { label: 'Largest', value: largest ? format.money(largest.value) : '—' },
+        ],
+        columns: ['Catalog', 'Seller', 'Buyer', 'Rights', 'Date', 'Value'],
+        rows: rows.map((t) => [t.catalogOf || t.title, (t.sellers || []).map(partyName).join(' · '), (t.acquirers || []).map(partyName).join(' · '), ASSETS[t.asset] || t.asset, formatDate(t.date), t.value ? format.money(t.value) : 'undisclosed']),
+        notes: rows.some((t) => t.verify) ? ['Values marked in the app as press estimates are not confirmed by the parties.'] : [],
+      })} />
     </>
   )
 }

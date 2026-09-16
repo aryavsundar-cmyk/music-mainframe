@@ -19,7 +19,7 @@ import { SIGNAL_STATS, TOPIC_SIGNALS } from './signals.js'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DIST = path.resolve(__dirname, `../${process.env.MM_EDITION === 'work' ? 'dist-work' : 'dist'}`)
 const PORT = process.env.PORT || 3002
-const SPRINT = 21
+const SPRINT = 22
 const started = new Date()
 
 // Minimal .env loader (no dependency): KEY=value lines at repo root, never overriding real env.

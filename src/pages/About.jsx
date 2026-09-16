@@ -5,6 +5,9 @@ import { ENTITIES } from '../data/entities.js'
 import { TRANSACTIONS } from '../data/transactions.js'
 import { GLOSSARY } from '../data/glossary.js'
 import { EDITION, EDITIONS, FRAMING, IS_WORK } from '../editions.js'
+import { LIMIT_LIST } from '../data/limits.js'
+import { PageExport } from '../components/export/PageExport.jsx'
+import { buildPageDoc } from '../utils/pageDocs.js'
 
 /**
  * What this build is, what is in it, and where every number came from — the page a reviewer opens first.
@@ -80,6 +83,31 @@ export default function About() {
         </dl>
         {IS_WORK && <p className="t-small text-ink-3 mt-3 mb-0">Sections outside this list are not hidden in this build — they are not compiled into it, so no part of them reaches the browser.</p>}
       </Card>
+
+      <PageExport label="Export this provenance statement" build={() => buildPageDoc({
+        slug: 'about-this-tool',
+        title: 'About this tool',
+        eyebrow: 'Reference · provenance',
+        lede: IS_WORK ? FRAMING.what : 'Where every figure in this application comes from, how the scores are computed, and what the application does not claim.',
+        stats: [
+          { label: 'Companies on record', value: String(facts.entities) },
+          { label: 'Transactions on record', value: String(facts.transactions) },
+          { label: 'Press-estimate values', value: String(facts.estimates) },
+          { label: 'Terms explained', value: String(facts.terms) },
+        ],
+        columns: ['Measure', 'Value', 'What it means'],
+        rows: [
+          ['Companies on record', String(facts.entities), `${facts.entitiesSourced} carry sources`],
+          ['Transactions on record', String(facts.transactions), `${facts.transactionsSourced} carry sources`],
+          ['Press-estimate values', String(facts.estimates), 'flagged in the app, never presented as confirmed'],
+          ['Terms explained', String(facts.terms), 'plain English, with worked examples'],
+          ['Records checked between', `${facts.checkedFrom} and ${facts.checkedTo}`, 'every record carries the date it was last checked'],
+          ['Sections in this build', ed.groups.join(' · '), 'what this edition contains'],
+          ['Export formats', ed.exports.join(' · '), 'what this edition can produce'],
+        ],
+        tableTitle: 'Provenance at a glance',
+        notes: [IS_WORK ? `${FRAMING.notProduct} ${FRAMING.data}` : 'This is a personal research tool. Nothing in it is advice, and no figure in it is a firm position.', ...LIMIT_LIST.map((l) => `${l.claim} ${l.detail}`)],
+      })} />
     </>
   )
 }

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { ArrowUpRight, ChevronDown } from 'lucide-react'
 import { PageHeader, Card, Tag } from '../components/primitives/index.js'
 import { ExportBar } from '../components/export/ExportBar.jsx'
+import { describeFilters, filterSentence } from '../utils/pageDocs.js'
 import { Field, selectFull } from '../components/prospecting/ProspectUi.jsx'
 import { LimitNote } from '../components/prospecting/LimitNote.jsx'
 import { BUYER_KINDS, GOALS, buyerNarrative, matchBuyers } from '../utils/buyerMatch.js'
@@ -77,7 +78,7 @@ export default function BuyerMatch() {
         {matches.slice(0, 24).map((b) => <BuyerRow key={b.id} buyer={b} />)}
       </div>
 
-      <ExportBar title="Export the shortlist" build={() => buildBuyerShortlist(matches.slice(0, 15), brief)} />
+      <ExportBar title="Export the shortlist" build={() => buildBuyerShortlist(matches.slice(0, 15), { ...brief, note: filterSentence(describeFilters(brief, { asset: { label: 'Asset' }, size: { label: 'Size' }, genre: { label: 'Genre' }, region: { label: 'Region' }, goal: { label: 'Goal' } }), { shown: Math.min(15, matches.length), total: matches.length }) })} />
       <p className="t-micro text-ink-4 mt-4">Profiles are built only from transactions on record. Approach is still a conversation.</p>
     </>
   )

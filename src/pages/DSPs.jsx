@@ -5,7 +5,9 @@ import { PageHeader, SectionHeader, Stat, Tag, Num, Card } from '../components/p
 import { listDsps, TIERS, TIER_ORDER, PAYOUT_MODELS, MARKET } from '../data/fundamentals.js'
 import { getEntity } from '../data/entities.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
-import { formatDate } from '../utils/format.js'
+import { formatDate, format } from '../utils/format.js'
+import { PageExport } from '../components/export/PageExport.jsx'
+import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 
 const rate = (v) => '$' + v.toFixed(4).replace(/0+$/, '').replace(/\.$/, '')
 
@@ -126,6 +128,24 @@ export default function DSPs() {
           <div className="border-t border-line-1">{list.map(({ e, ...p }) => <Row key={e.id} e={e} p={p} />)}</div>
         </section>
       ))}
+      <PageExport build={() => buildPageDoc({
+        slug: 'dsps',
+        title: 'DSPs',
+        eyebrow: 'Rights · where it is consumed',
+        lede: 'Streaming platforms and other digital service providers: how each pays rightsholders, what it charges, and the all-in per-stream range on record.',
+        filters: describeFilters(params, { q: { label: 'Search' }, tier: { label: 'Tier', format: (v) => TIERS[v] || v }, model: { label: 'Payout model', format: (v) => PAYOUT_MODELS[v]?.label || v } }),
+        sort: 'Grouped by tier',
+        stats: [
+          { label: 'In this view', value: String(rows.length) },
+          { label: 'On record', value: String(all.length) },
+          { label: `Recorded music ${ifpi.year} (IFPI)`, value: format.money(ifpi.recordedRevenue) },
+          { label: 'Paid subscription users (IFPI)', value: format.count(ifpi.paidUsers) },
+        ],
+        columns: ['Platform', 'Tier', 'Payout model', 'Scale', 'US price', 'All-in rate'],
+        rows: rows.map(({ e, ...p }) => [e.name, TIERS[p.tier] || p.tier || '', PAYOUT_MODELS[p.model]?.label || p.model || '', p.subscribers ? `${format.count(p.subscribers)} subscribers` : p.mau ? `${format.count(p.mau)} monthly users` : '', p.priceUS ? `$${p.priceUS}` : '', p.perStream ? `${rate(p.perStream[0])}–${rate(p.perStream[1])}` : '']),
+        total: all.length,
+        notes: ['Per-stream rates are all-in ranges from public reporting, not rate cards. They move with mix, market and deal terms.', `US streaming mechanical rate: ${mechanicalRate}.`],
+      })} />
     </>
   )
 }

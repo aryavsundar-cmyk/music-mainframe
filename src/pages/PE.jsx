@@ -5,6 +5,9 @@ import { PageHeader, Stat, Card, Tag, Num } from '../components/primitives/index
 import { listFunds, FUND_KINDS, MONEY_TYPES, kindOf } from '../data/peFunds.js'
 import { OWNERSHIP } from '../data/entities.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
+import { PageExport } from '../components/export/PageExport.jsx'
+import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
+import { format } from '../utils/format.js'
 
 const chip = (a) => ['inline-flex items-center gap-1.5 rounded-sm border px-2 py-1 t-small cursor-pointer select-none transition-colors duration-100',
   a ? 'bg-ground-4 border-line-3 text-ink-1' : 'bg-transparent border-line-1 text-ink-2 hover:bg-ground-2 hover:text-ink-1'].join(' ')
@@ -71,6 +74,23 @@ export default function PE() {
           </div>
         </section>
       ))}
+      <PageExport build={() => buildPageDoc({
+        slug: 'money-side-actors',
+        title: 'PE funds and money-side actors',
+        eyebrow: 'Money · who is funding it',
+        lede: 'Sponsors, catalog funds, credit providers and strategics on record, with the deals and securitisations attributed to each.',
+        filters: describeFilters(params, { q: { label: 'Search' }, kind: { label: 'Kind', format: (v) => FUND_KINDS[v]?.label || v } }),
+        sort: 'Grouped by kind, then deal volume',
+        stats: [
+          { label: 'In this view', value: String(rows.length) },
+          { label: 'With an investment profile', value: String(rows.filter((r) => r.hasProfile).length) },
+          { label: 'Deal volume here', value: format.money(rows.reduce((a, r) => a + (r.dealVolume || 0), 0)) },
+          { label: 'On record', value: String(all.length) },
+        ],
+        columns: ['Actor', 'Kind', 'Ownership', 'Deals on file', 'ABS issued', 'Deal volume', 'Thesis'],
+        rows: rows.map((r) => [r.e.name, FUND_KINDS[kindOf(r.e)]?.label || kindOf(r.e), r.e.subtype || OWNERSHIP[r.e.ownership] || '', String(r.deals.length), String(r.absIssued.length), r.dealVolume ? format.money(r.dealVolume) : '', (r.thesis || r.e.summary || '').slice(0, 220)]),
+        total: all.length,
+      })} />
     </>
   )
 }

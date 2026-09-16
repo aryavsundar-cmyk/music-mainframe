@@ -54,7 +54,9 @@ export function buildBuyerShortlist(matches, brief) {
       ['Genre', brief.genre || 'Not specified'],
       ['Region', brief.region || 'Any'],
       ['Seller objective', GOALS[brief.goal]?.label || 'Not specified'],
-    ] },
+      // What the screen was showing when this was exported, in the same words every other page uses.
+      brief.note ? ['View', brief.note] : null,
+    ].filter(Boolean) },
     brief.goal ? { kind: 'paragraph', text: GOALS[brief.goal].note } : null,
   ])
   add('Shortlist', `${strong.length} strong fit${strong.length === 1 ? '' : 's'} of ${matches.length} buyers on record`, [

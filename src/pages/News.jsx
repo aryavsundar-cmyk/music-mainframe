@@ -6,6 +6,8 @@ import { useNewsStream } from '../hooks/useNewsStream.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
 import { ENTITY_TYPES, TYPE_ORDER, getEntity } from '../data/entities.js'
 import { formatDate } from '../utils/format.js'
+import { PageExport } from '../components/export/PageExport.jsx'
+import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 
 const chip = (a) => ['inline-flex items-center gap-1.5 rounded-sm border px-2 py-1 t-small cursor-pointer select-none transition-colors duration-100',
   a ? 'bg-ground-4 border-line-3 text-ink-1' : 'bg-transparent border-line-1 text-ink-2 hover:bg-ground-2 hover:text-ink-1'].join(' ')
@@ -82,6 +84,22 @@ export default function News() {
       ) : (
         <div className="border-t border-line-1 max-w-4xl">{items.map((n) => <NewsItem key={n.id} n={n} topics={topics} />)}</div>
       )}
+      {!!items.length && <PageExport build={() => buildPageDoc({
+        slug: 'news',
+        title: 'Live news',
+        eyebrow: 'Live · what just changed',
+        lede: 'Trade press, search and SEC filings, tagged to the entities on the canvas.',
+        filters: describeFilters(params, { q: { label: 'Search' }, entity: { label: 'Entity', format: (v) => getEntity(v)?.name || v }, type: { label: 'Entity type', format: (v) => ENTITY_TYPES[v]?.label || v }, topic: { label: 'Topic' }, source: { label: 'Source' }, kind: { label: 'Kind' } }),
+        sort: 'Most recent first',
+        stats: [{ label: 'In this export', value: String(items.length) }, { label: 'Matching the filters', value: String(total) }, { label: 'Feed state', value: state }],
+        columns: ['Published', 'Source', 'Kind', 'Headline', 'Entities', 'Link'],
+        rows: items.map((n) => [n.publishedAt ? n.publishedAt.slice(0, 10) : '', n.source || '', n.kind || '', n.title || '', (n.entities || []).map((id) => getEntity(id)?.name || id).join(' · '), n.url || '']),
+        total,
+        notes: [
+          'This is a snapshot of a live feed taken at the moment of export. The feed moves; the file does not.',
+          status?.lastError ? `The last fetch reported an error: ${status.lastError}. Some sources may be missing from this snapshot.` : '',
+        ].filter(Boolean),
+      })} />}
     </>
   )
 }

@@ -4,6 +4,8 @@ import { PageHeader, Card, FlowMark, Tag } from '../components/primitives/index.
 import { FlowDiagram } from '../components/flows/FlowDiagram.jsx'
 import { FlowPanel } from '../components/flows/FlowPanel.jsx'
 import { FLOWS, getFlowNode } from '../data/flows.js'
+import { PageExport } from '../components/export/PageExport.jsx'
+import { buildPageDoc } from '../utils/pageDocs.js'
 
 const TABS = [
   { to: '/flows', flow: null, label: 'Both', end: true },
@@ -42,9 +44,33 @@ function FlowView({ flowId }) {
       </div>
       <div ref={panelRef} className="xl:sticky xl:top-6 scroll-mt-6">
         <FlowPanel flow={flow} node={node} onClose={() => select(null)} onSelect={select} />
+        <PageExport className="mt-6" label="Export this flow" build={() => flowDoc(flow, node)} />
       </div>
     </div>
   )
+}
+
+/**
+ * A diagram cannot be a table, so the export carries what the diagram encodes: the stages in order, what
+ * happens at each, and the economics attached to it. A selected stage leads, because that is what the reader
+ * was looking at when they pressed the button.
+ */
+function flowDoc(flow, node) {
+  const econLine = (n) => (n.econ || []).map((e) => `${e.label} ${e.kind === 'pct' ? `${e.value}%` : e.value}${e.verify ? ' (unverified)' : ''}`).join(' · ')
+  return buildPageDoc({
+    slug: `flow-${flow.id}`,
+    title: `${flow.label || flow.id} flow`,
+    eyebrow: 'Structure · how the money moves',
+    lede: flow.lede,
+    filters: node ? [{ label: 'Stage selected', value: node.label }] : [],
+    sort: 'In flow order, left to right',
+    stats: [{ label: 'Stages', value: String(flow.nodes.length) }, { label: 'Shape', value: flow.shape || '' }, { label: 'As of', value: flow.asOf || '' }],
+    columns: ['Stage', 'Role', 'What happens', 'Economics on record'],
+    rows: flow.nodes.map((n) => [n.label, n.sub || '', n.description || '', econLine(n)]),
+    notes: [flow.legend, node ? `${node.label}: ${node.description}` : ''].filter(Boolean),
+    citations: { items: (flow.sources || []).map((s) => ({ label: s.label, url: s.url })), source: 'flow' },
+    asOf: flow.asOf,
+  })
 }
 
 /** Overview: both flows compact, stacked, so the different rhythm reads at a glance. Click → full view. */

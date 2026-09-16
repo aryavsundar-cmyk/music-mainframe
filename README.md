@@ -166,6 +166,31 @@ The page has three views. **Coverage** is a segment × tier matrix showing how m
 
 Records live in localStorage only (`mm-prospect-v1`). Engine and drafts are Node-tested: `npm run test:prospect`, 25 checks.
 
+## Page-level exports
+
+Every page is a filtered, sorted view of records, and every page exports that view: **Word, slides, Excel and text**, from the bar at the foot of the page. `utils/pageDocs.js` turns what is on screen into the same block model the briefs use, so the existing renderers produce the files with no new code.
+
+The rule the module exists to enforce is that a document must not misrepresent the view it came from. The first section of every page export states the filters that were applied, how the rows were sorted, how many of the total are present, and when it was captured:
+
+```
+Page      Entities
+Filters   Type: LABEL · Tier: a
+Records   13 of 188
+Captured  2026-09-16 15:12
+
+Note: This is the filtered view: 13 of 188 records match. It is not the full table.
+```
+
+Three consequences fall out of that rule. Rows are exported in the order the page displayed them — the builder never re-filters or re-sorts, because a second implementation of the same filter eventually disagrees with the first. A view matching nothing exports an empty *result*, naming the filters that produced it, rather than an empty file. And a table longer than 400 rows is cut with the cut stated, pointing at the Excel export that holds the rest.
+
+Pages that are not tables export what they are: `/flows` exports the stages the diagram draws with the economics attached to each, `/news` exports a snapshot and says that the feed has moved on since, `/about` exports the provenance statement, and the market and pipeline pages keep their own narrative documents — now naming their filters in the same words.
+
+One fix came with it: the slide renderer had been silently cutting tables at fourteen rows. A brief never noticed; a 188-row page export would have shown fourteen and looked complete. It now says `… and N more rows` on the slide.
+
+```bash
+npm run test:pagedocs   # filters stated, order preserved, empty and truncated views honest
+```
+
 ## Excel export
 
 `src/utils/briefXlsx.js` renders the same block model as every other format, writing SpreadsheetML by hand over jszip (already in the tree behind `docx` and `pptxgenjs`, so it costs no new download). Layout: a **Summary** sheet carrying the document's identity and every stats and facts block as label/value rows, **one sheet per table block**, and a **Sources** sheet holding the citations and every note — including the notices that say what a score does and does not mean, so they travel with the numbers rather than being left on screen.

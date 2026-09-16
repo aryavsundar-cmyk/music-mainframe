@@ -2,7 +2,9 @@ import { useMemo } from 'react'
 import { PageHeader, SectionHeader, Stat, Card, Num } from '../components/primitives/index.js'
 import { TransactionList } from '../components/money/TransactionRow.jsx'
 import { ABS_DEALS, ABS_MARKET, partyName, year } from '../data/transactions.js'
-import { formatDate } from '../utils/format.js'
+import { formatDate, format } from '../utils/format.js'
+import { PageExport } from '../components/export/PageExport.jsx'
+import { buildPageDoc } from '../utils/pageDocs.js'
 
 export default function ABS() {
   const byIssuer = useMemo(() => {
@@ -60,6 +62,22 @@ export default function ABS() {
         <SectionHeader eyebrow="Deals" title="Securitisations" aside={`${ABS_DEALS.length} on file · newest first`} />
         <TransactionList items={ABS_DEALS} dense />
       </div>
+      <PageExport build={() => buildPageDoc({
+        slug: 'abs-securitisations',
+        title: 'Royalty securitisations',
+        eyebrow: 'Money · how it is financed',
+        lede: 'Every securitisation on file, with issuance by year and by issuer. This page has no filters — it is the full set.',
+        sort: 'Newest first',
+        stats: [
+          { label: 'Deals on file', value: String(ABS_DEALS.length) },
+          { label: 'Value on file', value: format.money(ABS_DEALS.reduce((a, t) => a + (t.value || 0), 0)) },
+          { label: 'Issuance 2025', value: format.money(ABS_MARKET.issuance2025) },
+          { label: 'KBRA forecast 2026', value: format.money(ABS_MARKET.forecast2026) },
+        ],
+        columns: ['Date', 'Deal', 'Issuer', 'Value', 'Structure', 'Status'],
+        rows: ABS_DEALS.map((t) => [t.date, t.title, t.sellers[0] ? partyName(t.sellers[0]) : t.abs?.issuer || '', t.value ? format.money(t.value) : 'undisclosed', t.abs?.structure || t.structure || '', t.status || '']),
+        notes: [ABS_MARKET.note, `Issuance by year: ${byYear.map(([y, v]) => `${y} ${format.money(v)}`).join(' · ')}.`, `By issuer: ${byIssuer.slice(0, 8).map(([k, v]) => `${k} ${v.n} (${format.money(v.v)})`).join(' · ')}.`],
+      })} />
     </>
   )
 }

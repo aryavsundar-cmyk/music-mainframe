@@ -44,7 +44,14 @@ function body(slide, blocks) {
       })
       y += 1.2
     } else if (b.kind === 'table') {
-      const rows = [b.columns.map((c) => ({ text: c.toUpperCase(), options: { bold: true, color: MUTED, fontFace: SANS, fontSize: 8, fill: { color: 'ECE8DF' } } })), ...b.rows.slice(0, 14).map((r) => r.map((v, i) => ({ text: String(v ?? ''), options: { color: INK, fontFace: i === 0 ? MONO : SANS, fontSize: 9 } })))]
+      // A slide holds about fourteen rows. Cutting there is fine; cutting silently is not — a page export can
+      // carry hundreds of rows, and a deck that showed the first fourteen as though they were all of them would
+      // be a lie by omission. The last row says what is missing and where to find it.
+      const SLIDE_ROWS = 14
+      const over = b.rows.length - SLIDE_ROWS
+      const shown = over > 0 ? b.rows.slice(0, SLIDE_ROWS - 1) : b.rows
+      const more = over > 0 ? [[`… and ${over + 1} more rows — see the Word or Excel export`, ...Array(Math.max(0, b.columns.length - 1)).fill('')]] : []
+      const rows = [b.columns.map((c) => ({ text: c.toUpperCase(), options: { bold: true, color: MUTED, fontFace: SANS, fontSize: 8, fill: { color: 'ECE8DF' } } })), ...[...shown, ...more].map((r) => r.map((v, i) => ({ text: String(v ?? ''), options: { color: i === 0 && over > 0 && r === more[0] ? MUTED : INK, fontFace: i === 0 ? MONO : SANS, fontSize: 9, italic: r === more[0] } })))]
       const n = b.columns.length; const colW = n === 5 ? [1.4, 5.4, 1.8, 1.9, 1.6] : n === 3 ? [1.4, 2.6, 8.1] : n === 2 ? [1.6, 10.5] : undefined
       const h = Math.min(room(), rows.length * 0.3)
       slide.addTable(rows, { x: M, y, w: W - M * 2, colW, rowH: 0.28, border: { type: 'solid', color: RULE, pt: 0.5 }, margin: 0.04, autoPage: false })

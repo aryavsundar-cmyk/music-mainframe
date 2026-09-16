@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { ArrowUpRight, ExternalLink, Search, X } from 'lucide-react'
 import { PageHeader, Card, Tag } from '../components/primitives/index.js'
 import { ExportBar } from '../components/export/ExportBar.jsx'
+import { describeFilters, filterSentence } from '../utils/pageDocs.js'
 import { selectClass } from '../components/prospecting/ProspectUi.jsx'
 import { LimitNote } from '../components/prospecting/LimitNote.jsx'
 import { ConnectorStatus } from '../components/prospecting/ConnectorStatus.jsx'
@@ -97,7 +98,7 @@ export default function CatalogScan() {
         <div className="xl:sticky xl:top-6 space-y-4">
           {selected ? <HoldingPanel row={selected} onClose={() => set({ row: '' })} />
             : <Card pad="lg"><p className="t-body text-ink-3 m-0">Pick a holding to see why it scores, the sources behind it, and which buyers would fit.</p></Card>}
-          <ExportBar title="Export the scan" build={() => buildCatalogScan(shown, any ? 'Filtered view' : 'All tracked holdings')} />
+          <ExportBar title="Export the scan" build={() => buildCatalogScan(shown, filterSentence(describeFilters({ q: params.q, asset: params.asset, owner: params.owner, band: params.band, genre: params.genre }, { q: { label: 'Search' }, asset: { label: 'Asset' }, owner: { label: 'Owner type' }, band: { label: 'Signal' }, genre: { label: 'Genre' } }), { shown: shown.length, total: rows.length }))} />
           <ConnectorStatus connectors={connectors} ready={ready} />
         </div>
       </div>

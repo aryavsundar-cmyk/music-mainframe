@@ -4,6 +4,8 @@ import { PageHeader, SectionHeader, Card } from '../components/primitives/index.
 import { TermRow } from '../components/reference/Concepts.jsx'
 import { GLOSSARY, TAGS } from '../data/glossary.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
+import { PageExport } from '../components/export/PageExport.jsx'
+import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 
 export default function Glossary() {
   const { params, set } = useUrlFilters(['q', 'tag'])
@@ -43,6 +45,18 @@ export default function Glossary() {
         </div>
       ))}
       {!matches.length && <Card pad="lg"><p className="t-body text-ink-3 m-0">Nothing matches that search.</p></Card>}
+      <PageExport build={() => buildPageDoc({
+        slug: 'finance-explained',
+        title: 'Finance, explained',
+        eyebrow: 'Reference · plain English',
+        lede: 'Every term the app uses, written for someone who has never worked on a deal: what it is, an example with round numbers, and the mistake people actually make with it.',
+        filters: describeFilters({ q: params.q, tag: params.tag }, { q: { label: 'Search' }, tag: { label: 'Group', format: (v) => TAGS[v] || v } }),
+        sort: 'Grouped by topic',
+        stats: [{ label: 'Terms in this view', value: String(matches.length) }, { label: 'Terms on record', value: String(GLOSSARY.length) }],
+        columns: ['Term', 'Also known as', 'What it is', 'Worked example', 'Watch out for'],
+        rows: matches.map((t) => [t.term, (t.aka || []).join(' · '), t.plain || t.short, t.worked || '', t.watch || '']),
+        total: GLOSSARY.length,
+      })} />
     </>
   )
 }

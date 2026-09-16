@@ -5,6 +5,7 @@ import { PageHeader, SectionHeader, Card, Tag, Button } from '../components/prim
 import { ScoreBar, TierTag, selectClass } from '../components/prospecting/ProspectUi.jsx'
 import { AccountHeader, OutreachComposer, RecordEditor, ScoreReasons, TriggerList } from '../components/prospecting/AccountParts.jsx'
 import { ExportBar } from '../components/export/ExportBar.jsx'
+import { describeFilters, filterSentence } from '../utils/pageDocs.js'
 import { buildTargetList } from '../utils/prospectDocs.js'
 import { buildAccounts, coverage, triggerFeed, TRIGGER_KINDS, SEGMENTS, SEGMENT_BY_ID } from '../utils/prospect.js'
 import { STATUSES, STATUS_LABEL, useProspectRecords } from '../hooks/useProspectRecords.js'
@@ -80,7 +81,7 @@ export default function Prospecting() {
 
       {view !== 'coverage' && (
         <div className="mt-6">
-          <ExportBar title="Export the call sheet" build={() => buildTargetList(view === 'targets' ? filtered : accounts, records, { limit: 40, filterNote: any ? 'Filtered view' : 'Unfiltered, in score order' })} />
+          <ExportBar title="Export the call sheet" build={() => buildTargetList(view === 'targets' ? filtered : accounts, records, { limit: 40, filterNote: `${filterSentence(describeFilters({ side: params.side, segment: params.segment, tier: params.tier, status: params.status, q: params.q }, { side: { label: 'Side' }, segment: { label: 'Segment' }, tier: { label: 'Tier', format: (v) => v.toUpperCase() }, status: { label: 'Status' }, q: { label: 'Search' } }), { shown: view === 'targets' ? filtered.length : accounts.length, total: accounts.length })}, in score order.` })} />
         </div>
       )}
 

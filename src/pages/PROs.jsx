@@ -5,7 +5,9 @@ import { PageHeader, Stat, Tag, Num, Card } from '../components/primitives/index
 import { MoneyBar } from '../components/rights/MoneyBar.jsx'
 import { listPros, SCOPES, MODELS, REGIONS, GLOBAL_COLLECTIONS, toUsd } from '../data/pros.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
-import { currencySymbol } from '../utils/format.js'
+import { currencySymbol, format } from '../utils/format.js'
+import { PageExport } from '../components/export/PageExport.jsx'
+import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 
 const chip = (a) => ['inline-flex items-center gap-1.5 rounded-sm border px-2 py-1 t-small cursor-pointer select-none transition-colors duration-100',
   a ? 'bg-ground-4 border-line-3 text-ink-1' : 'bg-transparent border-line-1 text-ink-2 hover:bg-ground-2 hover:text-ink-1'].join(' ')
@@ -82,6 +84,25 @@ export default function PROs() {
           </tbody>
         </table>
       </div>
+
+      <PageExport build={() => buildPageDoc({
+        slug: 'pros-cmos',
+        title: 'PROs and CMOs',
+        eyebrow: 'Rights · who collects',
+        lede: 'Collective management organisations on record: what they license, how they distribute, and what they collected in their latest reported year.',
+        filters: describeFilters(params, { q: { label: 'Search' }, region: { label: 'Region', format: (v) => REGIONS[v] || v }, scope: { label: 'Rights', format: (v) => SCOPES[v]?.label || v } }),
+        sort: 'Latest collections, largest first',
+        stats: [
+          { label: 'In this view', value: String(rows.length) },
+          { label: 'Collections here (USD equiv.)', value: format.money(rows.filter((r) => r.latest).reduce((s, r) => s + toUsd(r.latest.collections, r.currency), 0)) },
+          { label: 'On record', value: String(all.length) },
+          { label: 'CISAC music collections 2024', value: format.money(GLOBAL_COLLECTIONS.music) },
+        ],
+        columns: ['Society', 'Region', 'Rights', 'Model', 'Latest collections', 'Year', 'YoY', 'Paid out', 'Overhead', 'Members'],
+        rows: rows.map(({ e, ...p }) => [e.name, p.region || '', (p.scopes || []).map((s) => SCOPES[s]?.label || s).join(' · '), MODELS[p.model] || p.model || '', p.latest ? `${currencySymbol(p.currency)}${format.count(p.latest.collections)}` : '', p.latest?.year ? String(p.latest.year) : '', p.growth != null ? format.pct(p.growth) : '', p.latestDist ? `${currencySymbol(p.currency)}${format.count(p.latestDist.distributions)}` : '', p.overhead != null ? format.pct(p.overhead) : '', p.members ? format.count(p.members) : '']),
+        total: all.length,
+        notes: ['Collections are reported in each society\u2019s own currency; the summary converts at the rates in data/pros.js for comparison only.', GLOBAL_COLLECTIONS.note],
+      })} />
 
       <Card pad="lg" className="max-w-3xl">
         <div className="t-eyebrow text-publishing mb-2">Global context</div>
