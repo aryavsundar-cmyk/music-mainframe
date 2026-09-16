@@ -45,7 +45,7 @@ export const TRIGGER_KINDS = {
   portfolio: { label: 'Portfolio activity', weight: 7, window: 18 },
   'catalog-sale': { label: 'Catalog transaction', weight: 8, window: 18 },
   debt: { label: 'Debt financing', weight: 8, window: 18 },
-  ard: { label: 'ABS repayment date approaching', weight: 12, window: 36 },
+  ard: { label: 'ABS repayment date approaching', weight: 12, window: 48 },
   reform: { label: 'Society reform milestone', weight: 10, window: 18 },
   signal: { label: 'News signal', weight: 2, window: 3 },
 }
@@ -213,6 +213,29 @@ export function buildAccounts(ctx = {}) {
     accounts.push(account)
   }
   return accounts.sort((a, b) => b.score.total - a.score.total || a.name.localeCompare(b.name))
+}
+
+/**
+ * triggerFeed — every live trigger across the book, as a dated list. Deadlines still ahead (an anticipated
+ * repayment date) come first, then the most recent events. A trigger past its decay window never appears:
+ * the feed is what is worth a call now, not an archive.
+ */
+export function triggerFeed(accounts, opts = {}) {
+  const today = opts.today || TODAY()
+  const out = []
+  for (const a of accounts) {
+    if (opts.segment && a.segment !== opts.segment) continue
+    if (opts.tier && a.score.tier !== opts.tier) continue
+    for (const t of a.triggers) {
+      if (opts.kind && t.kind !== opts.kind) continue
+      if (t.kind === 'signal') continue // signals move the score but are not a dated event to open on
+      const d = parseDate(t.date)
+      const months = d ? monthsBetween(d, today) : 999
+      out.push({ ...t, when: months < 0 ? 'ahead' : 'recent', monthsAway: Math.abs(months), account: a })
+    }
+  }
+  out.sort((x, y) => (x.when === y.when ? x.monthsAway - y.monthsAway || y.weight - x.weight : x.when === 'ahead' ? -1 : 1))
+  return opts.limit ? out.slice(0, opts.limit) : out
 }
 
 /** Coverage matrix: segment × tier, with how many carry an owner and a status beyond "new". */

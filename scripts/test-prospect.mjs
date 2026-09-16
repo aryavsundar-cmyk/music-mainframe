@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /** test-prospect.mjs — asserts the prospecting engine and the outreach drafts. `npm run test:prospect` */
 import assert from 'node:assert/strict'
-import { buildAccounts, clauseForTransaction, coverage, hypothesesFor, recommendedLine, scoreAccount, segmentFor, sizeBand, triggersFor, SEGMENTS, TIER_CUTS } from '../src/utils/prospect.js'
+import { buildAccounts, clauseForTransaction, coverage, hypothesesFor, recommendedLine, scoreAccount, segmentFor, sizeBand, triggerFeed, triggersFor, SEGMENTS, TIER_CUTS, TRIGGER_KINDS } from '../src/utils/prospect.js'
 import { LIMITS, briefText, draftOutreach, trimWords, whenPhrase } from '../src/utils/outreach.js'
 import { HOOKS, hookFor } from '../src/data/playbooks.js'
 import { PERSONAS } from '../src/data/personas.js'
@@ -154,6 +154,36 @@ t('the brief carries the score, the triggers, and both drafts', () => {
   assert.ok(b.includes(a.name) && b.includes('Why now') && b.includes('LinkedIn note') && b.includes('Subject:'))
   assert.ok(b.includes(String(a.score.total)))
 })
+t('the trigger feed lists dated events only, deadlines ahead first', () => {
+  const feed = triggerFeed(accounts, { today: TODAY })
+  assert.ok(feed.length > 50, `feed has ${feed.length} items`)
+  assert.equal(feed.filter((f) => f.kind === 'signal').length, 0, 'news signals move the score but are not events')
+  const firstRecent = feed.findIndex((f) => f.when === 'recent')
+  assert.ok(feed.slice(0, firstRecent).every((f) => f.when === 'ahead'), 'deadlines ahead come first')
+  const recent = feed.slice(firstRecent)
+  for (let i = 1; i < recent.length; i++) assert.ok(recent[i].monthsAway >= recent[i - 1].monthsAway, 'recent events run newest first')
+  for (const f of feed) assert.ok(f.account && f.account.id, 'every feed row carries its account')
+})
+t('the feed filters by kind, segment and tier, and honours a limit', () => {
+  const abs = triggerFeed(accounts, { today: TODAY, kind: 'abs' })
+  assert.ok(abs.length && abs.every((f) => f.kind === 'abs'))
+  const societies = triggerFeed(accounts, { today: TODAY, segment: 'societies' })
+  assert.ok(societies.every((f) => f.account.segment === 'societies'))
+  const tierA = triggerFeed(accounts, { today: TODAY, tier: 'A' })
+  assert.ok(tierA.every((f) => f.account.score.tier === 'A'))
+  assert.equal(triggerFeed(accounts, { today: TODAY, limit: 7 }).length, 7)
+})
+t('a trigger past its decay window drops off the feed', () => {
+  const now = triggerFeed(accounts, { today: TODAY }).filter((f) => f.kind === 'm&a').length
+  const later = triggerFeed(buildAccounts({ today: new Date('2029-09-16T00:00:00Z') }), { today: new Date('2029-09-16T00:00:00Z') }).filter((f) => f.kind === 'm&a').length
+  assert.ok(now > 0 && later === 0, `m&a triggers: ${now} today, ${later} three years on`)
+})
+t('an anticipated repayment date shows as a deadline ahead inside its window', () => {
+  const ahead = triggerFeed(accounts, { today: TODAY, kind: 'ard' })
+  assert.ok(ahead.length, 'ARDs inside the window are listed')
+  assert.ok(ahead.every((f) => f.when === 'ahead'), 'a future date is never filed as recent')
+  assert.ok(TRIGGER_KINDS.ard.window >= 36, 'refinancing conversations start years out')
+})
 t('scoring is deterministic for a fixed clock', () => {
   const again = buildAccounts({ today: TODAY })
   assert.deepEqual(again.map((a) => `${a.id}:${a.score.total}`), accounts.map((a) => `${a.id}:${a.score.total}`))
@@ -163,5 +193,6 @@ const cov = coverage(accounts, {})
 console.log(`\n${n} checks passed`)
 console.log(`${accounts.length} accounts · Tier A ${cov.totals.A} · Tier B ${cov.totals.B} · with a live trigger ${accounts.filter((a) => a.score.timing > 0).length}`)
 console.log(`top five: ${accounts.slice(0, 5).map((a) => `${a.short || a.name} ${a.score.total}`).join(' · ')}`)
+console.log(`trigger feed ${triggerFeed(accounts, { today: TODAY }).length} events · ${triggerFeed(accounts, { today: TODAY }).filter((f) => f.when === 'ahead').length} deadlines ahead`)
 console.log(`hooks ${HOOKS.length} across ${new Set(HOOKS.map((h) => h.segment)).size} segments · personas ${PERSONAS.length} · entities out of scope: ${ENTITIES.filter((e) => !segmentFor(e)).length} (${[...new Set(ENTITIES.filter((e) => !segmentFor(e)).map((e) => e.type))].join(', ')})`)
 console.log(`sample: ${getEntity('umg').name} → ${draftOutreach(byId.umg, { line: recommendedLine(byId.umg) }).emailSubject}`)

@@ -37,7 +37,7 @@ React 19 · Vite 7 · Tailwind 4 (CSS-first, no tailwind.config) · React Router
 | `/consulting` · `/consulting/:id` | overlay | live (Sprint 6) |
 | `/deliverables` | overlay | live (Sprint 8) |
 | `/lab` · `/lab/:caseId` | academy | live (Sprints 9–12) |
-| `/prospecting` | pipeline | live (Sprint 13) |
+| `/prospecting` · `/prospecting/:accountId` | pipeline | live (Sprints 13–14) |
 | `/design` | reference | living style guide |
 
 ## Design system
@@ -159,7 +159,19 @@ Tier A is 55+ or a live trigger with real access, Tier B 40+, and the cuts are s
 
 `src/utils/outreach.js` drafts what the operator actually sends: a LinkedIn connection note inside the 300-character limit, a LinkedIn message, an email subject and body, and two follow-ups — built from the account's own trigger written from its side ("your $500M securitisation through Canon Music Issuer Trust in April"), the hook for that segment and service line (`data/playbooks.js`, versioned), and the buying role's opening question (`data/personas.js`, roles only, never people). Every draft is copy-to-clipboard; the module drafts and never sends.
 
-The page has two views — a coverage matrix (segment × tier, with how many priority accounts have been worked) and a sortable target list with an account panel carrying the score breakdown, triggers with sources, the composer, the drafts, and a status/relationship/notes record. Records live in localStorage only (`mm-prospect-v1`). Engine and drafts are Node-tested: `npm run test:prospect`, 21 checks.
+The page has three views. **Coverage** is a segment × tier matrix showing how many priority accounts have been worked. **Targets** is a sortable list with an account panel. **Triggers** (Sprint 14) is the dated feed across the whole book — `triggerFeed()` puts deadlines still ahead first (an anticipated repayment date inside four years), then the most recent events, filtered by kind, segment or tier; a trigger past its decay window drops off, and news signals are excluded because they move the score but are not an event to open on.
+
+**Account pages** (`/prospecting/:accountId`, Sprint 14) carry the full picture: profile and PEPI categories, the score broken into fit, timing and access with reasons, every trigger with its source, the transactions on file, the outreach composer and drafts, live news for that entity from `/api/news?entity=`, and the record editor. The panel and the page share one set of components (`components/prospecting/AccountParts.jsx`), so drafts can never drift between them.
+
+Records live in localStorage only (`mm-prospect-v1`). Engine and drafts are Node-tested: `npm run test:prospect`, 25 checks.
+
+## Keeping the service up
+
+The deployed app is one Express service: it serves `dist` and runs the news aggregator on the same process, so there is no separate backend to lose in production. Render restarts it against `healthCheckPath: /api/health`, and a free-plan instance sleeps when idle and cold-starts on the next request.
+
+- `npm run health` — one deterministic check of a running instance: it answers, reports ok, the news cache is not empty, the last successful fetch is recent, and that fetch did not error. Exits non-zero with the specific reason. `--url`, `--max-age`, `--retries` and `--timeout` are all flags, so it works against localhost too.
+- `.github/workflows/health.yml` — runs that check every 30 minutes and on push, and opens (or comments on) a single `health`-labelled issue when it fails. A scheduled HTTP check, not an agent: uptime is a deterministic question and wants a deterministic watcher.
+- `npm run server:watch` — local only. Supervises `server/index.js`, restarts it with backoff, and gives up after five crashes inside ten seconds so a real fault stays visible instead of looping.
 
 ## Sibling cross-links (src/data/siblings.js)
 

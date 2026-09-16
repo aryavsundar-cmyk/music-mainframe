@@ -1,40 +1,23 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowUpRight, ExternalLink, RotateCcw, Search, X } from 'lucide-react'
+import { ArrowUpRight, RotateCcw, Search, X } from 'lucide-react'
 import { PageHeader, SectionHeader, Card, Tag, Button } from '../components/primitives/index.js'
-import { CopyButton, Draft, Field, ScoreBar, TierTag, selectClass, selectFull } from '../components/prospecting/ProspectUi.jsx'
-import { buildAccounts, coverage, hypothesesFor, lineLabel, recommendedLine, SEGMENTS, SEGMENT_BY_ID } from '../utils/prospect.js'
-import { LIMITS, briefText, draftOutreach } from '../utils/outreach.js'
-import { PERSONAS, PERSONA_BY_ID } from '../data/personas.js'
-import { SERVICE_LINES } from '../data/consulting.js'
-import { hubLinks } from '../data/siblings.js'
+import { ScoreBar, TierTag, selectClass } from '../components/prospecting/ProspectUi.jsx'
+import { AccountHeader, OutreachComposer, RecordEditor, ScoreReasons, TriggerList } from '../components/prospecting/AccountParts.jsx'
+import { buildAccounts, coverage, triggerFeed, TRIGGER_KINDS, SEGMENTS, SEGMENT_BY_ID } from '../utils/prospect.js'
 import { STATUSES, STATUS_LABEL, useProspectRecords } from '../hooks/useProspectRecords.js'
+import { useSignals } from '../hooks/useSignals.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
 
-const SENDER_KEY = 'mm-prospect-sender'
 const fmtDate = (d) => (d ? d : '—')
 
-/** Live news signals per entity, used by the timing score. Falls back to none when the feed is unreachable. */
-function useSignals() {
-  const [signals, setSignals] = useState({})
-  const [state, setState] = useState('loading')
-  useEffect(() => {
-    let alive = true
-    fetch('/api/news?limit=400').then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
-      .then((j) => { if (!alive) return; const map = {}; for (const it of j.items || []) for (const id of it.entities || []) map[id] = (map[id] || 0) + 1; setSignals(map); setState('live') })
-      .catch(() => { if (alive) setState('unavailable') })
-    return () => { alive = false }
-  }, [])
-  return { signals, state }
-}
-
 export default function Prospecting() {
-  const { params, set, clear, any } = useUrlFilters(['view', 'side', 'segment', 'tier', 'status', 'q', 'account'])
+  const { params, set, clear, any } = useUrlFilters(['view', 'side', 'segment', 'tier', 'status', 'kind', 'q', 'account'])
   const { records, update, reset } = useProspectRecords()
   const { signals, state: feed } = useSignals()
   const accounts = useMemo(() => buildAccounts({ records, signals }), [records, signals])
   const cov = useMemo(() => coverage(accounts, records), [accounts, records])
-  const view = params.view === 'coverage' ? 'coverage' : 'targets'
+  const view = ['coverage', 'triggers'].includes(params.view) ? params.view : 'targets'
 
   const filtered = accounts.filter((a) => {
     const r = records[a.id] || {}
@@ -54,6 +37,7 @@ export default function Prospecting() {
         actions={<div className="flex flex-col items-end gap-2">
           <div className="flex gap-2">
             <Button size="sm" variant={view === 'targets' ? 'primary' : 'secondary'} onClick={() => set({ view: 'targets' })}>Targets</Button>
+            <Button size="sm" variant={view === 'triggers' ? 'primary' : 'secondary'} onClick={() => set({ view: 'triggers' })}>Triggers</Button>
             <Button size="sm" variant={view === 'coverage' ? 'primary' : 'secondary'} onClick={() => set({ view: 'coverage' })}>Coverage</Button>
           </div>
           <span className="t-micro text-ink-4">{feed === 'live' ? 'News signals live' : feed === 'loading' ? 'Loading signals…' : 'News feed unreachable — timing scores exclude signals'}</span>
@@ -70,6 +54,8 @@ export default function Prospecting() {
 
       {view === 'coverage' ? (
         <CoverageView cov={cov} onPick={(segment, tier) => set({ view: 'targets', segment, tier: tier || '', account: '' })} />
+      ) : view === 'triggers' ? (
+        <TriggersView accounts={accounts} params={params} set={set} records={records} update={update} />
       ) : (
         <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(0,420px)] gap-6 items-start">
           <div className="space-y-4 min-w-0">
@@ -222,121 +208,78 @@ function TargetTable({ accounts, records, selectedId, onSelect, onStatus }) {
 }
 
 function AccountPanel({ account, record, update, onClose }) {
-  // derived state keyed by account: switching accounts resets the composer without an effect
-  const fresh = (a) => ({ key: a.id, line: recommendedLine(a), personaId: '', triggerId: '' })
-  const [composer, setComposer] = useState(() => fresh(account))
-  const c = composer.key === account.id ? composer : fresh(account)
-  const { line, personaId, triggerId } = c
-  const setLine = (v) => setComposer({ ...c, line: v })
-  const setPersonaId = (v) => setComposer({ ...c, personaId: v })
-  const setTriggerId = (v) => setComposer({ ...c, triggerId: v })
-  const [sender, setSender] = useState(() => { try { return localStorage.getItem(SENDER_KEY) || '' } catch { return '' } })
-  useEffect(() => { try { localStorage.setItem(SENDER_KEY, sender) } catch { /* storage unavailable */ } }, [sender])
-
-  const trigger = triggerId ? account.triggers.find((t) => t.id === triggerId) : account.topTrigger
-  const draft = draftOutreach(account, { line, persona: personaId || undefined, trigger, sender })
-  const hyps = hypothesesFor(account, draft.line).slice(0, 3)
-  const hub = hubLinks(account.id)
-
   return (
     <Card pad="lg" className="space-y-5">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <div className="flex items-center gap-2 mb-1"><TierTag tier={account.score.tier} /><span className="t-micro text-ink-3">{SEGMENT_BY_ID[account.segment]?.label}</span></div>
-          <h3 className="t-h2 text-ink-1 m-0">{account.name}</h3>
-          <p className="t-small text-ink-3 m-0 mt-1">{account.hq} · {account.ownership}</p>
+          <AccountHeader account={account}>
+            <h3 className="t-h2 text-ink-1 m-0">{account.name}</h3>
+            <p className="t-small text-ink-3 m-0">{account.hq} · {account.ownership}</p>
+          </AccountHeader>
         </div>
-        <button type="button" onClick={onClose} className="text-ink-4 hover:text-ink-1 bg-transparent border-0 cursor-pointer p-1" aria-label="Close panel"><X size={16} /></button>
+        <button type="button" onClick={onClose} className="text-ink-4 hover:text-ink-1 bg-transparent border-0 cursor-pointer p-1 shrink-0" aria-label="Close panel"><X size={16} /></button>
       </div>
 
-      <div className="flex flex-wrap items-center gap-3">
-        <ScoreBar score={account.score} width={160} />
-        <Link to={`/entities/${account.id}`} className="t-small text-accent no-underline inline-flex items-center gap-1">Entity <ArrowUpRight size={12} aria-hidden="true" /></Link>
-        {hub?.length ? hub.map((h) => <a key={h.url} href={h.url} target="_blank" rel="noreferrer" className="t-small text-secondary no-underline inline-flex items-center gap-1">{h.label} <ExternalLink size={11} aria-hidden="true" /></a>) : null}
-      </div>
+      <Link to={`/prospecting/${account.id}`} className="t-small text-accent no-underline inline-flex items-center gap-1">Full account page <ArrowUpRight size={12} aria-hidden="true" /></Link>
 
-      <div>
-        <div className="t-eyebrow text-ink-3 mb-2">Why it scores</div>
-        <ul className="m-0 pl-4 t-small text-ink-2 space-y-1">
-          {[...account.score.fitReasons, ...account.score.timingReasons.slice(0, 3), ...account.score.accessReasons].map((r) => <li key={r}>{r}</li>)}
-          {!account.score.accessReasons.length && <li className="text-ink-4">No access recorded — set the relationship below if you know someone.</li>}
-        </ul>
-      </div>
+      <div><div className="t-eyebrow text-ink-3 mb-2">Why it scores</div><ScoreReasons account={account} /></div>
+      <div><div className="t-eyebrow text-ink-3 mb-2">Triggers</div><TriggerList triggers={account.triggers} limit={5} /></div>
 
-      {account.triggers.length > 0 && (
-        <div>
-          <div className="t-eyebrow text-ink-3 mb-2">Triggers</div>
-          <div className="space-y-1.5">
-            {account.triggers.slice(0, 5).map((t) => (
-              <div key={t.id} className="flex items-baseline gap-2">
-                <span className="t-micro font-mono text-ink-4 shrink-0 w-16">{fmtDate(t.date)}</span>
-                <span className="t-small text-ink-2 min-w-0">{t.label}{t.sources?.[0]?.url && <a href={t.sources[0].url} target="_blank" rel="noreferrer" className="text-secondary no-underline ml-1.5 t-micro">source</a>}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+      <OutreachComposer account={account} compact />
 
-      <div className="grid grid-cols-2 gap-3">
-        <Field label="Service line">
-          <select value={line} onChange={(e) => setLine(e.target.value)} className={selectFull} aria-label="Service line">
-            {account.lines.map((l) => <option key={l} value={l}>{SERVICE_LINES[l]?.label || l}</option>)}
-          </select>
-        </Field>
-        <Field label="Buying role">
-          <select value={personaId || draft.persona || ''} onChange={(e) => setPersonaId(e.target.value)} className={selectFull} aria-label="Buying role">
-            {PERSONAS.map((p) => <option key={p.id} value={p.id}>{p.role}</option>)}
-          </select>
-        </Field>
-        <Field label="Trigger to open on">
-          <select value={triggerId} onChange={(e) => setTriggerId(e.target.value)} className={selectFull} aria-label="Trigger">
-            <option value="">{account.topTrigger ? 'Strongest trigger' : 'No trigger — sector context'}</option>
-            {account.triggers.map((t) => <option key={t.id} value={t.id}>{t.date ? `${t.date} · ` : ''}{t.label.slice(0, 60)}</option>)}
-          </select>
-        </Field>
-        <Field label="Sign as" hint="stored in this browser">
-          <input value={sender} onChange={(e) => setSender(e.target.value)} placeholder="Your name" aria-label="Sign as"
-            className="bg-ground-1 border border-line-2 rounded-md h-8 px-2 t-small text-ink-1 placeholder:text-ink-4 focus:border-accent outline-none w-full" />
-        </Field>
-      </div>
-
-      {hyps.length > 0 && (
-        <div>
-          <div className="t-eyebrow text-ink-3 mb-2">What we would actually do · {lineLabel(draft.line)}</div>
-          <ul className="m-0 pl-4 t-small text-ink-3 space-y-1">{hyps.map((h) => <li key={h.text}>{h.text}</li>)}</ul>
-        </div>
-      )}
-
-      {draft.warnings.map((w) => <p key={w} className="t-small text-danger m-0">{w}</p>)}
-
-      <div className="space-y-3">
-        <div className="flex items-center justify-between gap-3">
-          <div className="t-eyebrow text-ink-3">Drafts · {PERSONA_BY_ID[draft.persona]?.role}</div>
-          <CopyButton text={briefText(account, draft)} label="Copy brief" />
-        </div>
-        <Draft title="LinkedIn connection note" text={draft.linkedinNote} limit={LIMITS.linkedinNote} length={draft.lengths.linkedinNote} />
-        <Draft title="LinkedIn message" hint={draft.linkedinSubject} text={draft.linkedinBody} length={draft.lengths.linkedinBody} />
-        <Draft title="Email subject" text={draft.emailSubject} limit={LIMITS.emailSubject} length={draft.lengths.emailSubject} />
-        <Draft title="Email" text={draft.emailBody} length={draft.lengths.emailBody} />
-        {draft.followUps.map((f) => <Draft key={f.day} title={`Follow-up · day ${f.day} · ${f.channel === 'email' ? 'email' : 'LinkedIn'}`} text={f.text} length={f.text.length} />)}
-      </div>
-
-      <div className="grid grid-cols-2 gap-3 pt-4 border-t border-line-1">
-        <Field label="Status">
-          <select value={record.status || 'new'} onChange={(e) => update(account.id, { status: e.target.value })} className={selectFull} aria-label={`Status for ${account.name}`}>
-            {STATUSES.map((s) => <option key={s} value={s}>{STATUS_LABEL[s]}</option>)}
-          </select>
-        </Field>
-        <Field label="Relationship" hint="raises the access score">
-          <select value={record.access || 'none'} onChange={(e) => update(account.id, { access: e.target.value })} className={selectFull} aria-label="Relationship strength">
-            <option value="none">None</option><option value="warm">Warm — an introduction exists</option><option value="strong">Strong — I know someone here</option>
-          </select>
-        </Field>
-      </div>
-      <Field label="Note" hint={record.updated ? `Last updated ${record.updated}` : 'Private to this browser'}>
-        <textarea value={record.note || ''} onChange={(e) => update(account.id, { note: e.target.value })} rows={3} placeholder="Who you spoke to, what they said, when to come back."
-          className="w-full bg-ground-1 border border-line-2 rounded-md px-3 py-2 t-small text-ink-1 placeholder:text-ink-4 focus:border-accent outline-none resize-y" />
-      </Field>
+      <div className="pt-4 border-t border-line-1"><RecordEditor account={account} record={record} update={update} /></div>
     </Card>
+  )
+}
+
+/** The trigger feed: every dated reason to call, deadlines ahead first, then the most recent events. */
+function TriggersView({ accounts, params, set, records, update }) {
+  const feed = triggerFeed(accounts, { segment: params.segment, tier: params.tier, kind: params.kind, limit: 80 })
+  const kinds = Object.entries(TRIGGER_KINDS).filter(([id]) => id !== 'signal')
+  return (
+    <>
+      <div className="flex flex-wrap items-end gap-3 mb-4">
+        <select value={params.kind} onChange={(e) => set({ kind: e.target.value })} className={`${selectClass} w-52`} aria-label="Trigger kind">
+          <option value="">All trigger kinds</option>
+          {kinds.map(([id, k]) => <option key={id} value={id}>{k.label}</option>)}
+        </select>
+        <select value={params.segment} onChange={(e) => set({ segment: e.target.value })} className={`${selectClass} w-56`} aria-label="Segment">
+          <option value="">All segments</option>
+          {SEGMENTS.map((sg) => <option key={sg.id} value={sg.id}>{sg.label}</option>)}
+        </select>
+        <select value={params.tier} onChange={(e) => set({ tier: e.target.value })} className={`${selectClass} w-28`} aria-label="Tier">
+          <option value="">All tiers</option><option value="A">Tier A</option><option value="B">Tier B</option><option value="C">Tier C</option>
+        </select>
+        <span className="t-small text-ink-3 font-mono tabular">{feed.length}</span>
+      </div>
+      <Card pad="md">
+        <div className="divide-y divide-line-1">
+          {feed.map((t) => {
+            const r = records[t.account.id] || {}
+            return (
+              <div key={`${t.account.id}-${t.id}`} className="py-2.5 grid grid-cols-1 md:grid-cols-[92px_minmax(0,1fr)_auto] gap-3 items-start">
+                <div className="flex flex-col">
+                  <span className="t-micro font-mono text-ink-2">{fmtDate(t.date)}</span>
+                  <span className={`t-micro ${t.when === 'ahead' ? 'text-accent' : 'text-ink-4'}`}>{t.when === 'ahead' ? 'ahead' : `${t.monthsAway}mo ago`}</span>
+                </div>
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Link to={`/prospecting/${t.account.id}`} className="t-small text-ink-1 no-underline hover:text-accent">{t.account.name}</Link>
+                    <TierTag tier={t.account.score.tier} />
+                    <Tag tone="neutral">{TRIGGER_KINDS[t.kind]?.label || t.kind}</Tag>
+                  </div>
+                  <div className="t-small text-ink-3 mt-0.5">{t.label}{t.sources?.[0]?.url && <a href={t.sources[0].url} target="_blank" rel="noreferrer" className="text-secondary no-underline ml-1.5 t-micro">source</a>}</div>
+                </div>
+                <select value={r.status || 'new'} onChange={(e) => update(t.account.id, { status: e.target.value })} className={`${selectClass} w-32`} aria-label={`Status for ${t.account.name}`}>
+                  {STATUSES.map((st) => <option key={st} value={st}>{STATUS_LABEL[st]}</option>)}
+                </select>
+              </div>
+            )
+          })}
+        </div>
+        {!feed.length && <p className="t-body text-ink-3 m-0 py-6 text-center">No live triggers match these filters. A trigger past its decay window drops off the feed.</p>}
+      </Card>
+      <p className="t-micro text-ink-4 mt-3">Deadlines still ahead come first, then the most recent events. News signals move the timing score but are not listed here: they are not a dated event to open on.</p>
+    </>
   )
 }

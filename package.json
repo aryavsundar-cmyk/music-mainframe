@@ -12,6 +12,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "server": "node server/index.js",
+    "server:watch": "node scripts/watch-server.mjs",
+    "health": "node scripts/check-health.mjs",
     "start": "node server/index.js",
     "lint": "eslint .",
     "briefs": "node scripts/generate-briefs.mjs",

@@ -1,6 +1,6 @@
 # Prospecting & Coverage Module — Strategy
 
-Status: Sprint 13 shipped 2026-09-16 (scoring engine, coverage and target views, LinkedIn and email drafts, local records). Sprints 14–16 outstanding. Owner: practice lead. Drafted 2026-09-15, after Sprint 12.
+Status: Sprints 13–14 shipped 2026-09-16 (scoring engine, coverage and target views, LinkedIn and email drafts, local records). Sprints 15–16 outstanding. Owner: practice lead. Drafted 2026-09-15, after Sprint 12.
 Scope: a research and prospecting capability inside Mainframe · Music that turns the app's corpus into a
 targeted go-to-market for a PEPI-adjacent music practice.
 
@@ -165,7 +165,7 @@ user's own LinkedIn export and relationship tracker supply the access layer loca
 | Sprint | Deliverable | Done when |
 |---|---|---|
 | 13 | ✅ Shipped: scoring engine, personas, playbooks, `/prospecting` Coverage and Targets views, LinkedIn and email drafts, local status records | Every account scores with visible components; coverage matrix shows gaps; 21 engine and draft tests pass |
-| 14 | Triggers feed wired to news, transactions, ABS dates, PRO timelines; Account page | A trigger older than its decay window drops off; account page renders signals and prior work |
+| 14 | ✅ Shipped: trigger feed (deadlines ahead first, decay enforced), account pages with live news, shared composer components, plus a health watcher for the news backend | A trigger older than its decay window drops off; account pages render signals, triggers, deals and drafts |
 | 15 | Personas, playbooks, message composer, three exports | A target list, account brief, and outreach sequence export to Word and Gamma |
 | 16 | Enrichment connectors (filings first), saved lists and owner assignment, outcome tracking | Outreach outcomes feed back into scoring; stale accounts age out |
 
