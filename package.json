@@ -24,7 +24,8 @@
     "test:prospect": "node scripts/test-prospect.mjs",
     "test:contrast": "node scripts/test-contrast.mjs",
     "test:glossary": "node scripts/test-glossary.mjs",
-    "test": "npm run test:valuation && npm run test:pmi && npm run test:abs && npm run test:carveout && npm run test:prospect && npm run test:contrast && npm run test:glossary"
+    "test:market": "node scripts/test-market.mjs",
+    "test": "npm run test:valuation && npm run test:pmi && npm run test:abs && npm run test:carveout && npm run test:prospect && npm run test:contrast && npm run test:glossary && npm run test:market"
   },
   "engines": {
     "node": ">=20.19.0"

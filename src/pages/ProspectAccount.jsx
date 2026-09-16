@@ -3,6 +3,9 @@ import { Link, useParams } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import { PageHeader, Card, Tag } from '../components/primitives/index.js'
 import { AccountHeader, AccountNews, OutreachComposer, Panel, RecordEditor, ScoreReasons, TriggerList } from '../components/prospecting/AccountParts.jsx'
+import { ExportBar } from '../components/lab/LabUi.jsx'
+import { buildAccountBrief, buildOutreachSequence } from '../utils/prospectDocs.js'
+import { draftOutreach } from '../utils/outreach.js'
 import { buildAccounts, lineLabel, recommendedLine, SEGMENT_BY_ID } from '../utils/prospect.js'
 import { CLIENT_CATEGORIES } from '../data/consulting.js'
 import { partyName } from '../data/transactions.js'
@@ -73,6 +76,11 @@ export default function ProspectAccount() {
           )}
 
           <Panel title="Outreach"><OutreachComposer account={account} /></Panel>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <ExportBar title="Export the account brief" build={() => buildAccountBrief(account, draftOutreach(account, { line }), record)} />
+            <ExportBar title="Export the outreach sequence" build={() => buildOutreachSequence(account, draftOutreach(account, { line }))} />
+          </div>
         </div>
 
         <div className="space-y-6 xl:sticky xl:top-6">

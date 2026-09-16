@@ -38,6 +38,7 @@ React 19 · Vite 7 · Tailwind 4 (CSS-first, no tailwind.config) · React Router
 | `/deliverables` | overlay | live (Sprint 8) |
 | `/lab` · `/lab/:caseId` | academy | live (Sprints 9–12) |
 | `/prospecting` · `/prospecting/:accountId` | pipeline | live (Sprints 13–14) |
+| `/market/catalogs` · `/market/buyers` | market | live (Sprint 16) |
 | `/design` | reference | living style guide |
 
 ## Design system
@@ -164,6 +165,20 @@ The page has three views. **Coverage** is a segment × tier matrix showing how m
 **Account pages** (`/prospecting/:accountId`, Sprint 14) carry the full picture: profile and PEPI categories, the score broken into fit, timing and access with reasons, every trigger with its source, the transactions on file, the outreach composer and drafts, live news for that entity from `/api/news?entity=`, and the record editor. The panel and the page share one set of components (`components/prospecting/AccountParts.jsx`), so drafts can never drift between them.
 
 Records live in localStorage only (`mm-prospect-v1`). Engine and drafts are Node-tested: `npm run test:prospect`, 25 checks.
+
+## Market modules (/market)
+
+Two views of the same market, from opposite sides. Both are built only from records the app can cite.
+
+**Catalog scan (`/market/catalogs`, demand side).** `utils/catalogScan.js` derives one holding per acquisition on record — who bought what, when, for how much, from whom — plus platforms whose scale is known from their entity record. Each holding is scored 0–100 on how likely it is to come to market, and every point is explained: how that kind of owner behaves (sponsors turn over in years four to eight, strategics rarely sell), how long it has been held, a securitisation repayment date inside four years, whether the owner has sold before, and sale-intent language in the live news feed ("explores sale", "hires adviser", "strategic review", estate and succession events). Scores band into live signal, worth watching, and quiet. Genre tags come only from words that appear in the sourced text, and the matched phrase is kept on the row, so most holdings are honestly untagged.
+
+**Buyer match (`/market/buyers`, sell side).** `utils/buyerMatch.js` profiles every entity that has acquired something on record: how many deals, median and largest disclosed cheque, asset mix, how they financed it, who they co-invested with, how recently they bought, and how many exits they have made. `matchBuyers(brief)` scores each against a seller's brief — asset type, indicative size, genre, region, and what the seller wants (highest price, speed, legacy, or selling part) — and explains every point. A strong match means a buyer has done deals like this one, never that they are interested.
+
+Both export through the shared block model (`utils/marketDocs.js`): a catalog scan with its sources, and a buyer shortlist with the brief, the ranking, and a page per buyer. `npm run test:market` (15 checks) asserts that holdings trace to sourced records, genre tags appear in the text, availability is bounded and explained, sale intent matches only real phrases, buyer profiles only credit deals the buyer actually made, and the seller's objective changes the shortlist.
+
+## Prospecting exports
+
+`utils/prospectDocs.js` completes the prospecting loop with three documents on the shared block model: a **target list** (the week's call sheet, grouped by tier, with score, why-now, status and owner), an **account brief** (score reasons, triggers, transactions, what we would do, and the opening), and an **outreach sequence** (day 0 LinkedIn note, day 1 email, and the two follow-ups, with character counts). All three export to Word, slides, text, Markdown and Gamma from `/prospecting` and the account pages.
 
 ## Contrast and readability
 

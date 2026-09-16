@@ -4,6 +4,8 @@ import { ArrowUpRight, RotateCcw, Search, X } from 'lucide-react'
 import { PageHeader, SectionHeader, Card, Tag, Button } from '../components/primitives/index.js'
 import { ScoreBar, TierTag, selectClass } from '../components/prospecting/ProspectUi.jsx'
 import { AccountHeader, OutreachComposer, RecordEditor, ScoreReasons, TriggerList } from '../components/prospecting/AccountParts.jsx'
+import { ExportBar } from '../components/lab/LabUi.jsx'
+import { buildTargetList } from '../utils/prospectDocs.js'
 import { buildAccounts, coverage, triggerFeed, TRIGGER_KINDS, SEGMENTS, SEGMENT_BY_ID } from '../utils/prospect.js'
 import { STATUSES, STATUS_LABEL, useProspectRecords } from '../hooks/useProspectRecords.js'
 import { useSignals } from '../hooks/useSignals.js'
@@ -67,6 +69,12 @@ export default function Prospecting() {
               ? <AccountPanel account={selected} record={records[selected.id] || {}} update={update} onClose={() => set({ account: '' })} />
               : <Card pad="lg"><p className="t-body text-ink-3 m-0">Pick an account to see why it scores, what to lead with, and drafts for LinkedIn and email.</p></Card>}
           </div>
+        </div>
+      )}
+
+      {view !== 'coverage' && (
+        <div className="mt-6">
+          <ExportBar title="Export the call sheet" build={() => buildTargetList(view === 'targets' ? filtered : accounts, records, { limit: 40, filterNote: any ? 'Filtered view' : 'Unfiltered, in score order' })} />
         </div>
       )}
 

@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { NavLink, Route, Routes } from 'react-router-dom'
-import { Disc3, Building2, Waypoints, Handshake, Landmark, Layers, Library, ScrollText, Radio, Rss, Briefcase, FileOutput, GraduationCap, Palette, Sun, Moon, Crosshair } from 'lucide-react'
+import { Disc3, Building2, Waypoints, Handshake, Landmark, Layers, Library, ScrollText, Radio, Rss, Briefcase, FileOutput, GraduationCap, Palette, Sun, Moon, Crosshair, Users } from 'lucide-react'
 import { ThemeContext, useThemeState } from './hooks/useTheme.js'
 import Home from './pages/Home.jsx'
 import Entities from './pages/Entities.jsx'
@@ -19,6 +19,8 @@ import Consulting from './pages/Consulting.jsx'
 import ConsultingCategory from './pages/ConsultingCategory.jsx'
 import Deliverables from './pages/Deliverables.jsx'
 import Prospecting from './pages/Prospecting.jsx'
+import CatalogScan from './pages/CatalogScan.jsx'
+import BuyerMatch from './pages/BuyerMatch.jsx'
 import ProspectAccount from './pages/ProspectAccount.jsx'
 // Lab pages are lazy chunks: the valuation engine and case data stay out of the core bundle.
 const Lab = lazy(() => import('./pages/Lab.jsx'))
@@ -49,6 +51,10 @@ const NAV = [
   { group: 'Overlay', items: [
     { to: '/consulting', label: 'Consulting lens', icon: Briefcase },
     { to: '/deliverables', label: 'Deliverables', icon: FileOutput },
+  ]},
+  { group: 'Market', items: [
+    { to: '/market/catalogs', label: 'Catalog scan', icon: Library },
+    { to: '/market/buyers', label: 'Buyer match', icon: Users },
   ]},
   { group: 'Pipeline', items: [
     { to: '/prospecting', label: 'Prospecting', icon: Crosshair },
@@ -135,6 +141,8 @@ export default function App() {
             <Route path="/consulting" element={<Consulting />} />
             <Route path="/consulting/:id" element={<ConsultingCategory />} />
             <Route path="/deliverables" element={<Deliverables />} />
+            <Route path="/market/catalogs" element={<CatalogScan />} />
+            <Route path="/market/buyers" element={<BuyerMatch />} />
             <Route path="/prospecting" element={<Prospecting />} />
             <Route path="/prospecting/:accountId" element={<ProspectAccount />} />
             <Route path="/lab" element={<Suspense fallback={<div className="t-small text-ink-3">Loading…</div>}><Lab /></Suspense>} />
