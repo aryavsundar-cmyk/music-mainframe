@@ -21,15 +21,15 @@ export const STAGES = [
 export const stagesFor = (c) => STAGES.map((s) => ({ ...s, blurb: c.stageBlurbs?.[s.id] || s.blurb }))
 
 export const EXEC_STEPS = [
-  { id: 'inventory', label: 'Perimeter & inventory' },
-  { id: 'history', label: 'Earnings & mix' },
-  { id: 'qoe', label: 'Quality of earnings' },
-  { id: 'forecast', label: 'Forecast' },
-  { id: 'dcf', label: 'Discount rate & DCF' },
-  { id: 'multiples', label: 'Multiples & sensitivity' },
-  { id: 'findings', label: 'Findings & protections' },
-  { id: 'price', label: 'Purchase price' },
-  { id: 'review', label: 'Model review' },
+  { id: 'inventory', label: 'Perimeter & inventory', terms: ['ownership-share', 'chain-of-title', 'concentration', 'net-receipts'] },
+  { id: 'history', label: 'Earnings & mix', terms: ['gross-to-net', 'net-receipts', 'participations', 'reserve', 'cagr', 'ltm'] },
+  { id: 'qoe', label: 'Quality of earnings', terms: ['normalisation', 'one-off', 'ebitda', 'adjusted-ebitda', 'run-rate'] },
+  { id: 'forecast', label: 'Forecast', terms: ['forecast', 'decay', 'run-rate', 'cagr'] },
+  { id: 'dcf', label: 'Discount rate & DCF', terms: ['present-value', 'discount-rate', 'risk-premium', 'dcf', 'terminal-value', 'perpetuity', 'horizon'] },
+  { id: 'multiples', label: 'Multiples & sensitivity', terms: ['multiple', 'sensitivity', 'enterprise-value'] },
+  { id: 'findings', label: 'Findings & protections', terms: ['escrow', 'earn-out', 'condition-precedent', 'reversion', 'consent'] },
+  { id: 'price', label: 'Purchase price', terms: ['price-bridge', 'working-capital', 'escrow', 'earn-out', 'enterprise-value'] },
+  { id: 'review', label: 'Model review', terms: ['what-must-be-true', 'break-even', 'normalisation'] },
 ]
 
 export function defaultState(c) {

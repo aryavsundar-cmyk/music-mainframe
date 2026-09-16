@@ -5,14 +5,14 @@
 import { num } from './valuation.js'
 
 export const CARVE_STEPS = [
-  { id: 'baseline', label: 'Carve-out P&L' },
-  { id: 'revenue', label: 'Revenue quality' },
-  { id: 'standalone', label: 'Standalone cost build' },
-  { id: 'bridge', label: 'EBITDA bridge' },
-  { id: 'separation', label: 'Separation & TSA' },
-  { id: 'value', label: 'Value & price' },
-  { id: 'findings', label: 'Findings & protections' },
-  { id: 'review', label: 'Vendor pack review' },
+  { id: 'baseline', label: 'Carve-out P&L', terms: ['carve-out', 'allocation', 'ebitda', 'margin'] },
+  { id: 'revenue', label: 'Revenue quality', terms: ['arms-length', 'one-off', 'run-rate', 'pro-forma'] },
+  { id: 'standalone', label: 'Standalone cost build', terms: ['standalone-cost', 'allocation', 'carve-out'] },
+  { id: 'bridge', label: 'EBITDA bridge', terms: ['adjusted-ebitda', 'normalisation', 'capitalisation-policy', 'arms-length', 'standalone-cost'] },
+  { id: 'separation', label: 'Separation & TSA', terms: ['tsa', 'cost-to-achieve', 'stranded-cost', 'retention'] },
+  { id: 'value', label: 'Value & price', terms: ['multiple', 'enterprise-value', 'present-value', 'price-bridge'] },
+  { id: 'findings', label: 'Findings & protections', terms: ['condition-precedent', 'consent', 'earn-out', 'escrow', 'working-capital'] },
+  { id: 'review', label: 'Vendor pack review', terms: ['what-must-be-true', 'allocation', 'pro-forma', 'capitalisation-policy'] },
 ]
 
 const filled = (t) => String(t || '').trim().length >= 40

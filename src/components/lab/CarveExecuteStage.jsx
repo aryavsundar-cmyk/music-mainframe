@@ -2,6 +2,7 @@ import { Card, Tag } from '../primitives/index.js'
 import { fmtK, fmtM, fmtPct, fmtX, num } from '../../utils/valuation.js'
 import { CARVE_STEPS, bridgeMatches } from '../../utils/carveState.js'
 import { Exercise, Reviewer, Seg, NumField, Table, Money, Figure, Kpi, Verdict, ModelReview } from './LabUi.jsx'
+import { Concepts } from './Concepts.jsx'
 
 const Row = ({ label, hint, children }) => (
   <div className="flex items-center justify-between gap-3">
@@ -35,6 +36,7 @@ export function CarveExecuteStage({ step, onStep, ...p }) {
           </Card>
         )}
         <Body {...p} />
+        <Concepts ids={CARVE_STEPS.find((s) => s.id === cur)?.terms} />
         <div className="flex justify-between">
           {idx > 0 ? <button type="button" onClick={() => onStep(CARVE_STEPS[idx - 1].id)} className="t-small text-ink-2 bg-transparent border-0 cursor-pointer px-0">← {CARVE_STEPS[idx - 1].label}</button> : <span />}
           {idx < CARVE_STEPS.length - 1 ? <button type="button" onClick={() => onStep(CARVE_STEPS[idx + 1].id)} className="t-small text-accent bg-transparent border-0 cursor-pointer px-0">{CARVE_STEPS[idx + 1].label} →</button> : <span />}

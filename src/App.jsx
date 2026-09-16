@@ -23,6 +23,7 @@ import ProspectAccount from './pages/ProspectAccount.jsx'
 // Lab pages are lazy chunks: the valuation engine and case data stay out of the core bundle.
 const Lab = lazy(() => import('./pages/Lab.jsx'))
 const LabCase = lazy(() => import('./pages/LabCase.jsx'))
+const LabGlossary = lazy(() => import('./pages/LabGlossary.jsx'))
 import DesignSystem from './pages/DesignSystem.jsx'
 import NotFound from './pages/NotFound.jsx'
 
@@ -137,6 +138,7 @@ export default function App() {
             <Route path="/prospecting" element={<Prospecting />} />
             <Route path="/prospecting/:accountId" element={<ProspectAccount />} />
             <Route path="/lab" element={<Suspense fallback={<div className="t-small text-ink-3">Loading…</div>}><Lab /></Suspense>} />
+            <Route path="/lab/glossary" element={<Suspense fallback={<div className="t-small text-ink-3">Loading…</div>}><LabGlossary /></Suspense>} />
             <Route path="/lab/:caseId" element={<Suspense fallback={<div className="t-small text-ink-3">Loading…</div>}><LabCase /></Suspense>} />
             <Route path="/design" element={<DesignSystem />} />
             <Route path="*" element={<NotFound />} />

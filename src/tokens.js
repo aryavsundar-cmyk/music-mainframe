@@ -17,15 +17,15 @@ export const palette = {
   paper:   { 0: '#F4F1EA', 1: '#FAF8F3', 2: '#FFFFFF', 3: '#FFFFFF', 4: '#ECE8DF' },
   ink: {
     // warm neutrals, light → dark
-    50: '#F4F1EA', 100: '#DED9CF', 200: '#B8B0A3', 300: '#9C958A', 400: '#7E776C',
+    50: '#F4F1EA', 100: '#DED9CF', 200: '#B8B0A3', 300: '#9C958A', 350: '#A29B90', 400: '#7E776C',
     500: '#6E675C', 600: '#524C43', 700: '#3A352E', 800: '#26221D', 900: '#1A1714',
   },
   gold: {
     200: '#F0D89A', 300: '#E6C27A', 400: '#D4A24C', 500: '#B8862F',
-    600: '#8A6420', 700: '#5E4414', 800: '#3A2A08', 900: '#241A04',
+    600: '#8A6420', 650: '#7E5A1C', 700: '#5E4414', 800: '#3A2A08', 900: '#241A04',
   },
   verdigris: {
-    200: '#B4D8CD', 300: '#8FBFB1', 400: '#5E9C8A', 500: '#43836F',
+    200: '#B4D8CD', 300: '#8FBFB1', 350: '#72AA99', 400: '#5E9C8A', 500: '#43836F',
     600: '#2F6F62', 700: '#1F4F45', 800: '#0E2A24', 900: '#081A16',
   },
   // VU-meter overdrive. Litigation, over-limit, destructive. Never decorative.
@@ -41,33 +41,35 @@ export const themes = {
     'ground-2': palette.shellac[2],   // panel / sidebar
     'ground-3': palette.shellac[3],   // popover / hover
     'ground-4': palette.shellac[4],   // pressed / selected
-    'ink-1': palette.ink[50],         // primary text
-    'ink-2': palette.ink[200],        // secondary
-    'ink-3': palette.ink[400],        // muted / captions
-    'ink-4': palette.ink[600],        // disabled / hairline labels
-    'line-1': 'rgba(244, 241, 234, 0.08)',
-    'line-2': 'rgba(244, 241, 234, 0.16)',
-    'line-3': 'rgba(244, 241, 234, 0.32)',
+    // Every text role clears 4.5:1 against ground-0…4 — see scripts/test-contrast.mjs
+    'ink-1': palette.ink[50],         // primary text          11.3:1 worst
+    'ink-2': palette.ink[100],        // secondary              9.0:1
+    'ink-3': palette.ink[200],        // muted / captions       5.9:1
+    'ink-4': palette.ink[350],        // hints / hairline labels 4.6:1
+    'line-1': 'rgba(244, 241, 234, 0.10)',
+    'line-2': 'rgba(244, 241, 234, 0.18)',
+    'line-3': 'rgba(244, 241, 234, 0.34)',
     accent: palette.gold[400],
     'accent-hover': palette.gold[300],
     'accent-ink': palette.gold[800],                 // text ON accent fill
     'accent-soft': 'rgba(212, 162, 76, 0.12)',       // tinted surface
     'accent-line': 'rgba(212, 162, 76, 0.40)',
-    secondary: palette.verdigris[400],
+    secondary: palette.verdigris[350],
     'secondary-hover': palette.verdigris[300],
     'secondary-ink': palette.verdigris[800],
     'secondary-soft': 'rgba(94, 156, 138, 0.14)',
     'secondary-line': 'rgba(94, 156, 138, 0.40)',
-    danger: palette.vu[400],
-    'danger-soft': 'rgba(210, 72, 58, 0.14)',
-    // Domain aliases — the two rights flows, by name, so flow code never says "gold"
+    danger: palette.vu[300],
+    'danger-soft': 'rgba(210, 72, 58, 0.16)',
+    // Domain aliases — the two rights flows, by name, so flow code never says "gold".
+    // Both aliases are used as label text as well as stroke colour, so they take the legible variants.
     recording: palette.gold[400],
-    publishing: palette.verdigris[400],
+    publishing: palette.verdigris[350],
     // Numeric treatments (see `numeric` below)
     money: palette.gold[400],
-    count: palette.verdigris[400],
+    count: palette.verdigris[350],
     pct: palette.ink[50],
-    rate: palette.ink[200],
+    rate: palette.ink[100],
   },
   light: {
     'ground-0': palette.paper[0],
@@ -75,14 +77,14 @@ export const themes = {
     'ground-2': palette.paper[2],
     'ground-3': palette.paper[3],
     'ground-4': palette.paper[4],
-    'ink-1': palette.ink[900],
-    'ink-2': palette.ink[500],
-    'ink-3': palette.ink[400],
-    'ink-4': palette.ink[200],
-    'line-1': 'rgba(26, 23, 20, 0.08)',
-    'line-2': 'rgba(26, 23, 20, 0.16)',
-    'line-3': 'rgba(26, 23, 20, 0.32)',
-    accent: palette.gold[600],
+    'ink-1': palette.ink[900],        // 14.6:1 worst
+    'ink-2': palette.ink[700],        //  9.9:1
+    'ink-3': palette.ink[600],        //  6.9:1
+    'ink-4': palette.ink[500],        //  4.6:1
+    'line-1': 'rgba(26, 23, 20, 0.10)',
+    'line-2': 'rgba(26, 23, 20, 0.18)',
+    'line-3': 'rgba(26, 23, 20, 0.34)',
+    accent: palette.gold[650],
     'accent-hover': palette.gold[700],
     'accent-ink': palette.paper[0],
     'accent-soft': 'rgba(138, 100, 32, 0.10)',
@@ -94,12 +96,12 @@ export const themes = {
     'secondary-line': 'rgba(47, 111, 98, 0.40)',
     danger: palette.vu[600],
     'danger-soft': 'rgba(168, 54, 43, 0.10)',
-    recording: palette.gold[600],
+    recording: palette.gold[650],
     publishing: palette.verdigris[600],
-    money: palette.gold[600],
+    money: palette.gold[650],
     count: palette.verdigris[600],
     pct: palette.ink[900],
-    rate: palette.ink[500],
+    rate: palette.ink[600],
   },
 }
 

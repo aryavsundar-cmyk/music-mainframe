@@ -166,7 +166,7 @@ user's own LinkedIn export and relationship tracker supply the access layer loca
 |---|---|---|
 | 13 | ✅ Shipped: scoring engine, personas, playbooks, `/prospecting` Coverage and Targets views, LinkedIn and email drafts, local status records | Every account scores with visible components; coverage matrix shows gaps; 21 engine and draft tests pass |
 | 14 | ✅ Shipped: trigger feed (deadlines ahead first, decay enforced), account pages with live news, shared composer components, plus a health watcher for the news backend | A trigger older than its decay window drops off; account pages render signals, triggers, deals and drafts |
-| 15 | Personas, playbooks, message composer, three exports | A target list, account brief, and outreach sequence export to Word and Gamma |
+| 15 | Re-prioritised by the operator: app-wide contrast fix and the lab glossary shipped instead. Personas, playbooks and the composer landed early in Sprint 13; the three exports move to Sprint 16 | A target list, account brief, and outreach sequence export to Word and Gamma |
 | 16 | Enrichment connectors (filings first), saved lists and owner assignment, outcome tracking | Outreach outcomes feed back into scoring; stale accounts age out |
 
 ---

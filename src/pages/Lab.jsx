@@ -56,6 +56,12 @@ export default function Lab() {
     <>
       <PageHeader eyebrow="Academy · mock engagements" title="Valuation lab"
         lede="Train on leading music-rights engagements by running them end to end: pitch it, plan it, review and correct an inherited model, reach a conclusion, and deliver the memo — scored against a reviewing director." />
+      <Card pad="md" className="mb-6 border-secondary-line">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <p className="t-body text-ink-2 m-0">New to deal finance? Every term the lab uses is explained in plain English, with an example and the mistake people make with it.</p>
+          <Link to="/lab/glossary" className="t-small text-secondary no-underline whitespace-nowrap">Finance, explained →</Link>
+        </div>
+      </Card>
       <SectionHeader eyebrow="Cases" title="Choose an engagement" />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-12">
         {CASE_LIST.map((c) => {

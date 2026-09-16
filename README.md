@@ -165,6 +165,25 @@ The page has three views. **Coverage** is a segment × tier matrix showing how m
 
 Records live in localStorage only (`mm-prospect-v1`). Engine and drafts are Node-tested: `npm run test:prospect`, 25 checks.
 
+## Contrast and readability
+
+Every text colour is defined once in `src/tokens.js` and must clear the WCAG AA threshold of 4.5:1 against every surface it can sit on, in both themes. `npm run test:contrast` enforces that, plus four more rules: the ink ramp stays monotonic so hierarchy survives, coloured text clears 4.5:1 on its own tinted surface, text on a filled control clears 4.5:1, and `tokens.css` is in sync with `tokens.js`.
+
+Sprint 15 re-based the text roles after an audit found muted text as low as 1.5:1 on dark and 1.8:1 on light. Worst-case ratios now:
+
+| Theme | ink-1 | ink-2 | ink-3 | ink-4 | accent | secondary | danger |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Dark | 11.3 | 9.0 | 5.9 | 4.6 | 5.5 | 4.8 | 5.2 |
+| Light | 14.6 | 9.9 | 6.9 | 4.6 | 5.1 | 4.8 | 5.3 |
+
+Contrast is never fixed in a component. It is fixed in the token, and the test locks it.
+
+## Finance, explained (/lab/glossary)
+
+`src/data/glossary.js` holds 68 plain-English entries covering the finance, accounting and maths the lab uses. Each carries a one-line definition, two to four sentences in everyday words, a worked example with round numbers, and the mistake people actually make with it, plus links to related terms.
+
+Every execution step across all four cases lists the terms it uses in its `terms` array, and `components/lab/Concepts.jsx` renders them as a collapsible panel under the step, so the explanation sits beside the exercise that needs it. `/lab/glossary` is the searchable index, grouped by theme. `npm run test:glossary` checks that entries are complete, references resolve, explanations stay short and numeric, every step points at terms that exist, and no term is orphaned.
+
 ## Keeping the service up
 
 The deployed app is one Express service: it serves `dist` and runs the news aggregator on the same process, so there is no separate backend to lose in production. Render restarts it against `healthCheckPath: /api/health`, and a free-plan instance sleeps when idle and cold-starts on the next request.

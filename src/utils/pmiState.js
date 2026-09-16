@@ -6,14 +6,14 @@ import { leverMatches } from './pmi.js'
 import { num } from './valuation.js'
 
 export const PMI_STEPS = [
-  { id: 'baseline', label: 'Deal & cost baseline' },
-  { id: 'register', label: 'Synergy register' },
-  { id: 'costs', label: 'Dis-synergies & one-offs' },
-  { id: 'value', label: 'Synergy value' },
-  { id: 'day1', label: 'Day 1 & TSA' },
-  { id: 'people', label: 'Organisation & retention' },
-  { id: 'risks', label: 'Risks & mitigations' },
-  { id: 'review', label: 'Synergy case review' },
+  { id: 'baseline', label: 'Deal & cost baseline', terms: ['premium', 'ebitda', 'margin', 'synergy'] },
+  { id: 'register', label: 'Synergy register', terms: ['synergy', 'run-rate', 'phasing', 'probability-weighting', 'cost-to-achieve'] },
+  { id: 'costs', label: 'Dis-synergies & one-offs', terms: ['dis-synergy', 'cost-to-achieve', 'tsa', 'retention', 'working-capital'] },
+  { id: 'value', label: 'Synergy value', terms: ['npv', 'present-value', 'discount-rate', 'perpetuity', 'premium', 'payback', 'multiple'] },
+  { id: 'day1', label: 'Day 1 & TSA', terms: ['tsa', 'phasing'] },
+  { id: 'people', label: 'Organisation & retention', terms: ['attrition', 'retention', 'dis-synergy'] },
+  { id: 'risks', label: 'Risks & mitigations', terms: ['dis-synergy', 'attrition'] },
+  { id: 'review', label: 'Synergy case review', terms: ['what-must-be-true', 'break-even', 'run-rate', 'unmatched'] },
 ]
 
 const filled = (t) => String(t || '').trim().length >= 40

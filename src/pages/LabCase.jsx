@@ -57,7 +57,10 @@ function CaseWorkspace({ c }) {
           <button type="button" onClick={() => { if (window.confirm('Load the reviewer\'s complete answers? This replaces your work in this browser.')) loadBenchmark() }} className="t-micro text-ink-3 hover:text-ink-1 bg-transparent border-0 cursor-pointer inline-flex items-center gap-1"><BookOpenCheck size={12} aria-hidden="true" />Load reviewer answers</button>
         </div>} />
 
-      <p className="t-micro text-ink-4 -mt-6 mb-6 max-w-3xl">{c.disclaimer}</p>
+      <div className="-mt-6 mb-6 flex flex-wrap items-baseline justify-between gap-3">
+        <p className="t-micro text-ink-4 m-0 max-w-3xl">{c.disclaimer}</p>
+        <Link to="/lab/glossary" className="t-small text-secondary no-underline whitespace-nowrap">Finance, explained →</Link>
+      </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-8" role="tablist" aria-label="Engagement stages">
         {STAGES.map((s, i) => (

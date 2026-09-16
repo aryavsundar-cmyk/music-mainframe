@@ -3,6 +3,7 @@ import { fmtK, fmtM, fmtPct, fmtX, num } from '../../utils/valuation.js'
 import { collateral, collateralValue } from '../../utils/abs.js'
 import { ABS_STEPS } from '../../utils/absState.js'
 import { Exercise, Reviewer, Seg, NumField, Table, Money, Figure, Kpi, Verdict, ModelReview } from './LabUi.jsx'
+import { Concepts } from './Concepts.jsx'
 
 const Row = ({ label, hint, children }) => (
   <div className="flex items-center justify-between gap-3">
@@ -40,6 +41,7 @@ export function AbsExecuteStage({ step, onStep, ...p }) {
           </Card>
         )}
         <Body {...p} />
+        <Concepts ids={ABS_STEPS.find((s) => s.id === cur)?.terms} />
         <div className="flex justify-between">
           {idx > 0 ? <button type="button" onClick={() => onStep(ABS_STEPS[idx - 1].id)} className="t-small text-ink-2 bg-transparent border-0 cursor-pointer px-0">← {ABS_STEPS[idx - 1].label}</button> : <span />}
           {idx < ABS_STEPS.length - 1 ? <button type="button" onClick={() => onStep(ABS_STEPS[idx + 1].id)} className="t-small text-accent bg-transparent border-0 cursor-pointer px-0">{ABS_STEPS[idx + 1].label} →</button> : <span />}

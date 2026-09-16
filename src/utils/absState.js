@@ -6,15 +6,15 @@ import { num } from './valuation.js'
 import { collateral, waterfall } from './abs.js'
 
 export const ABS_STEPS = [
-  { id: 'tape', label: 'Data tape tie-out' },
-  { id: 'eligibility', label: 'Eligibility screen' },
-  { id: 'concentration', label: 'Concentration limits' },
-  { id: 'cashflow', label: 'Collateral cash flow' },
-  { id: 'value', label: 'Collateral value & LTV' },
-  { id: 'waterfall', label: 'Waterfall & triggers' },
-  { id: 'stress', label: 'Stress & break-evens' },
-  { id: 'findings', label: 'Findings & protections' },
-  { id: 'review', label: 'Offering review' },
+  { id: 'tape', label: 'Data tape tie-out', terms: ['securitisation', 'normalisation', 'one-off', 'pro-forma', 'net-receipts'] },
+  { id: 'eligibility', label: 'Eligibility screen', terms: ['eligibility', 'consent', 'reversion', 'chain-of-title'] },
+  { id: 'concentration', label: 'Concentration limits', terms: ['concentration-limit', 'concentration', 'eligibility'] },
+  { id: 'cashflow', label: 'Collateral cash flow', terms: ['waterfall', 'servicer', 'decay', 'forecast'] },
+  { id: 'value', label: 'Collateral value & LTV', terms: ['appraisal', 'dcf', 'ltv', 'advance-rate', 'discount-rate'] },
+  { id: 'waterfall', label: 'Waterfall & triggers', terms: ['waterfall', 'dscr', 'cash-trap', 'ard', 'reserve-account'] },
+  { id: 'stress', label: 'Stress & break-evens', terms: ['break-even', 'sensitivity', 'probability-weighting', 'dscr'] },
+  { id: 'findings', label: 'Findings & protections', terms: ['condition-precedent', 'escrow', 'servicer', 'eligibility'] },
+  { id: 'review', label: 'Offering review', terms: ['what-must-be-true', 'pro-forma', 'ltv'] },
 ]
 
 const filled = (t) => String(t || '').trim().length >= 40

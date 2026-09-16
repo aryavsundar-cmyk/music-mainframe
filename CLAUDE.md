@@ -15,7 +15,8 @@ Working conventions for this repo. Mirrors how the sibling Mainframe apps run.
 - Numbers go through `<Num kind>` / `utils/format.js`. Four kinds: money · count · pct · rate.
 - One `primary` Button per view. Eyebrows numbered only in exports.
 - Recording = gold, solid chain. Publishing = verdigris, dashed fan. Never "same diagram, different colour".
-- Check `/design` after any token change; both themes.
+- Check `/design` after any token change; both themes. Every text role must clear 4.5:1 on ground-0…4 in both themes — `npm run test:contrast` enforces it, along with ink-ramp hierarchy, coloured text on its own tint, text on filled controls, and tokens.css being in sync. Never fix contrast in a component; fix the token.
+- Lab explanations: plain-English definitions live in `data/glossary.js` (short · plain · worked example with real numbers · watch-out · related). Every execution step lists the terms it uses in its `terms` array, rendered by `components/lab/Concepts.jsx`; `/lab/glossary` is the searchable index. `npm run test:glossary` checks completeness, resolvable references, sentence length, and that no term is orphaned.
 
 ## Code
 - React 19 + Vite 7 + Tailwind 4 (CSS-first `@theme`; no `tailwind.config.js`) + React Router 7 + Lucide. JSX, not TS.
@@ -32,4 +33,4 @@ Working conventions for this repo. Mirrors how the sibling Mainframe apps run.
 No royalty calculator · no artist tooling · no playback embeds · no sync marketplace · no song-level PRO lookup · no AI music generation.
 
 ## Sprint map
-0 foundation · 1 entities · 2 flows · 3 deals/PE/ABS/catalogs · 4 PROs + DSPs · 5 live news · 6 consulting overlay · 7 exports + Hub cross-links · 8 deliverables (account plans, proposals, sector decks, Gamma) · 9 valuation lab · 10 publisher roll-up PMI case · 11 royalty ABS collateral review case · 12 PRO carve-out case · 13 prospecting & coverage module · 14 trigger feed, account pages, health watcher — all shipped.
+0 foundation · 1 entities · 2 flows · 3 deals/PE/ABS/catalogs · 4 PROs + DSPs · 5 live news · 6 consulting overlay · 7 exports + Hub cross-links · 8 deliverables (account plans, proposals, sector decks, Gamma) · 9 valuation lab · 10 publisher roll-up PMI case · 11 royalty ABS collateral review case · 12 PRO carve-out case · 13 prospecting & coverage module · 14 trigger feed, account pages, health watcher · 15 accessible contrast + lab glossary — all shipped.

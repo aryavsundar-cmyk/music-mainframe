@@ -3,6 +3,7 @@ import { fmtK, fmtM, fmtPct, fmtX, num, sum } from '../../utils/valuation.js'
 import { leverMatches } from '../../utils/pmi.js'
 import { PMI_STEPS } from '../../utils/pmiState.js'
 import { Exercise, Reviewer, Seg, NumField, Table, Money, Figure, Kpi, Verdict, ModelReview } from './LabUi.jsx'
+import { Concepts } from './Concepts.jsx'
 
 const Row = ({ label, hint, children }) => (
   <div className="flex items-center justify-between gap-3">
@@ -38,6 +39,7 @@ export function PmiExecuteStage({ step, onStep, ...p }) {
           </Card>
         )}
         <Body {...p} />
+        <Concepts ids={PMI_STEPS.find((s) => s.id === cur)?.terms} />
         <div className="flex justify-between">
           {idx > 0 ? <button type="button" onClick={() => onStep(PMI_STEPS[idx - 1].id)} className="t-small text-ink-2 bg-transparent border-0 cursor-pointer px-0">← {PMI_STEPS[idx - 1].label}</button> : <span />}
           {idx < PMI_STEPS.length - 1 ? <button type="button" onClick={() => onStep(PMI_STEPS[idx + 1].id)} className="t-small text-accent bg-transparent border-0 cursor-pointer px-0">{PMI_STEPS[idx + 1].label} →</button> : <span />}
