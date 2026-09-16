@@ -16,7 +16,10 @@ import { buildCatalogScan } from '../src/utils/marketDocs.js'
 import { buildAccounts } from '../src/utils/prospect.js'
 import { scanCatalogs } from '../src/utils/catalogScan.js'
 import { LIMITS } from '../src/data/limits.js'
-import { EDITIONS } from '../src/editions.js'
+import { EDITIONS, IS_WORK } from '../src/editions.js'
+import { RENDERERS, exportDoc } from '../src/utils/download.js'
+import { withFraming, FRAMING_TITLE } from '../src/utils/framing.js'
+import { renderBriefText } from '../src/utils/briefText.js'
 
 const TODAY = new Date('2026-09-16T00:00:00Z')
 let n = 0
@@ -97,6 +100,33 @@ t('both editions offer Excel, and only the full edition offers Gamma', () => {
   assert.ok(EDITIONS.full.exports.includes('xlsx') && EDITIONS.work.exports.includes('xlsx'))
   assert.ok(EDITIONS.full.exports.some((f) => f.startsWith('gamma')))
   assert.ok(!EDITIONS.work.exports.some((f) => f.startsWith('gamma')), 'the work edition must not offer Gamma')
+})
+
+await T('a document carries its edition framing out of the building', async () => {
+  const doc = buildTargetList(buildAccounts({ today: TODAY }), {}, { limit: 5 })
+  const framed = withFraming(doc)
+  if (IS_WORK) {
+    const section = framed.sections.at(-1)
+    assert.equal(section.title, FRAMING_TITLE, 'the research edition must append its framing section')
+    assert.ok(renderBriefText(framed).includes('not a firm system of record'), 'the text render drops the framing')
+    const sources = workbookSheets(framed).at(-1).rows.flat().join(' ')
+    assert.ok(sources.includes('not a firm system of record'), 'the workbook drops the framing')
+    assert.equal(withFraming(framed).sections.length, framed.sections.length, 'framing must not be appended twice')
+  } else {
+    assert.equal(framed.sections.length, doc.sections.length, 'the full edition adds no framing section')
+  }
+})
+t('every format an edition advertises has its own renderer — no silent fallback', () => {
+  // Sprint 20 shipped Word bytes named .xlsx: download.js had no xlsx branch and its `else` rendered docx,
+  // while the return value still reported a filename and a section count. Absence is the thing to assert.
+  for (const [name, ed] of Object.entries(EDITIONS)) {
+    for (const f of ed.exports.filter((x) => !x.startsWith('gamma'))) {
+      assert.ok(typeof RENDERERS[f] === 'function', `${name} edition advertises "${f}" with no renderer in download.js`)
+    }
+  }
+  const fns = Object.values(RENDERERS)
+  assert.equal(new Set(fns).size, fns.length, 'two formats share one renderer — one of them writes the wrong file type')
+  assert.rejects(() => exportDoc({ sections: [], slug: 'x' }, 'pdf'), /No renderer/, 'an unknown format must throw, not produce a mislabelled file')
 })
 
 console.log(`\n${n} checks passed`)

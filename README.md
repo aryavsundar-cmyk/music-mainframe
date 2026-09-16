@@ -187,6 +187,8 @@ Two builds from one codebase. `full` is the personal edition. `work` is the shar
 npm run build         # full edition  → dist/
 npm run build:work    # work edition  → dist-work/
 npm run test:edition  # builds the work edition and proves what is not in it
+npm run test:export   # exports the work edition's SOURCE and proves the same of the tree
+npm run edition:work -- --out ../music-mainframe-work   # a standalone repo to hand over
 ```
 
 The split happens at build time. `vite.config.js` swaps the authored modules — the consulting overlay, the rate card, internal cross-links, personas, playbooks, lab cases, the private document builders, the Gamma path, and the private navigation — for stubs, matching by resolved path rather than by import string. Runtime hiding would not be enough: anything inside the bundle is readable by anyone who opens developer tools.
@@ -197,7 +199,13 @@ What changes in the work edition beyond exclusion: prospecting keeps coverage, t
 
 **Both editions run the same tests.** `npm run test:work` re-runs the prospecting, market and outcomes suites under `scripts/edition-loader.mjs`, a Node resolve hook that applies the same swaps as the build, then `scripts/test-parity.mjs` compares the two side by side: the same account universe and trigger feed, bounded scores in both, priority tiers within two of each other, at least seven of the top ten names shared with the same account first, identical market modules (they never used authored material), drafting available in one edition and honestly absent in the other, and documents that build in both. Current split: Tier A is 6 in each; the work edition's Tier B runs a little wider at 19 against 15.
 
-**Deployment.** `MM_EDITION=work` makes the server serve `dist-work` and drops the Gamma proxy, so no document content can leave the app. `EMBED_ALLOW` sets `frame-ancestors` for embedding in SharePoint or similar (deny by default), and `ACCESS_USER` with `ACCESS_PASS` turns on basic authentication for a private deployment — never applied to `/api/health`, so the uptime watcher keeps working.
+**Deployment.** The research edition is its own service in `render.yaml` (`music-mainframe-work`), built with `npm run build:work`. `MM_EDITION=work` makes the server serve `dist-work` and drops the Gamma proxy, so no document content can leave the app. `EMBED_ALLOW` sets `frame-ancestors` for embedding in SharePoint or similar (deny by default), and `ACCESS_USER` with `ACCESS_PASS` turns on basic authentication for a private deployment — never applied to `/api/health`, so the uptime watcher keeps working. `npm run health:work` checks that service; the scheduled workflow checks it too, once `MM_WORK_URL` is set as a repository variable.
+
+**Handing over the source.** A build protects the bundle; it does nothing about the repository. If the firm wants to host or review the research edition, `npm run edition:work -- --out ../music-mainframe-work` writes a standalone tree: an allowlisted copy, the private sources deleted outright, the stubs materialised in their place, a rewritten manifest, README and `render.yaml`, and no git history. It then greps every copied file against the strings that exist only in the private modules and **deletes the tree** if one appears, and builds the result to prove nothing was removed that something still imports. `npm run test:export` runs it in the test chain.
+
+This check earns its keep: its first run failed on a stub's own comment, which named the practice. Minification had been dropping that comment from the bundle, so the bundle test never saw it — a source export ships comments.
+
+**Saying so on screen.** `/about` states, in both editions, what the tool is, where the records come from, how the scores are computed, and what it does not claim. Its counts are measured from the data at render time, because a provenance page that asserted its own coverage in prose would be the one page nobody checks. Exported documents from the research edition carry the same framing as a final section (`utils/framing.js`), since a file forwarded on has no screen around it.
 
 ## Enrichment connectors and outcome tracking
 

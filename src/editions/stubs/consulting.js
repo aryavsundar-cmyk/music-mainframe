@@ -1,4 +1,4 @@
-/** Work-edition stub: the PEPI overlay is authored material and is not part of this build. */
+/** Work-edition stub: the consulting overlay is authored material and is not part of this build. */
 export const OVERLAY_LABEL = ''
 export const OVERLAY_OWNER = ''
 export const CLIENT_CATEGORIES = []

@@ -1,6 +1,6 @@
 # Work edition — strategy and execution plan
 
-Status: Sprints 18–20 shipped 2026-09-16 (the split, its test, public-fit scoring, and the Excel exporter). Sprint 21 outstanding. Drafted after Sprint 17.
+Status: Sprints 18–21 shipped 2026-09-16 (the split, its test, public-fit scoring, the Excel exporter, and the second service with its source export). The plan is complete. Drafted after Sprint 17.
 Question it answers: what can be shared at work without giving away the part that is mine.
 
 ---
@@ -135,8 +135,8 @@ path by which content leaves the app to a third party. That is worth saying out 
 |---|---|---|
 | 18 | ✅ Shipped: `editions.js`, build-time module swapping by resolved path, `npm run build:work`, a ten-check secrecy test, nav and route gating, the framing notice, and server support for embedding and access control | The work bundle contains no authored string, and the test proves it |
 | 19 | ✅ Shipped: transaction cadence added to fit, `PUBLIC_FIT_WEIGHT` redistribution, honest degradation of drafts and briefs, a Node resolve hook that runs every suite in the work shape, and a parity suite comparing the two | Both editions build; prospect, market and outcomes pass in both; parity holds — Tier A 6 in each, same account first |
-| 20 | Excel exporter on the block model, export menus per edition, Gamma removed from the work build and service | A table exports to a sheet with its sources in both editions |
-| 21 | Second Render service, optional basic auth, framing copy and disclaimers, `edition:work` source export | A colleague opens the link and sees only public material |
+| 20 | ✅ Shipped: `briefXlsx.js` on the block model, export menus driven by the edition manifest, Gamma absent from the work build and service. Sprint 21 fixed the missing browser wiring. | A table exports to a sheet with its sources in both editions |
+| 21 | ✅ Shipped: second Render service in `render.yaml`, basic auth and embed allowlist, `/about` provenance page, framing carried into exports, `edition:work` source export with its own leak scan | A colleague opens the link and sees only public material |
 
 Four sprints, and the order matters: the secrecy test lands first so nothing after it can quietly leak.
 

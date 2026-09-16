@@ -1,9 +1,15 @@
 /**
  * download.js — browser-side export entry points for ANY doc built on the block model
- * (brief · account plan · proposal · sector deck). Renderers are lazy-imported so docx and pptxgenjs never
- * enter the core bundle. The Gamma path lives in its own module so an edition can exclude it entirely.
+ * (brief · account plan · proposal · sector deck). Renderers are lazy-imported so docx, pptxgenjs and jszip
+ * never enter the core bundle. The Gamma path lives in its own module so an edition can exclude it entirely.
+ *
+ * RENDERERS is the whole format table, and exportDoc throws on a format that isn't in it. An `else` branch
+ * that quietly rendered anything unknown as Word is exactly how Sprint 20 shipped Word bytes named .xlsx:
+ * the call returned a filename and a section count, so it looked verified. scripts/test-xlsx.mjs now asserts
+ * every format each edition advertises has an entry here.
  */
 import { buildBrief, briefFilename } from './brief.js'
+import { withFraming } from './framing.js'
 import { fetchCitations } from './newsCitations.js'
 
 function save(blob, filename) {
@@ -13,15 +19,24 @@ function save(blob, filename) {
   setTimeout(() => URL.revokeObjectURL(url), 2000)
 }
 
-/** exportDoc(doc, format) — format: docx | pptx | txt | md | gamma-presentation | gamma-document */
+/** format → the blob it produces. One entry per format any edition advertises; nothing falls through. */
+export const RENDERERS = {
+  docx: async (doc) => (await import('./briefDocx.js')).briefDocxBlob(doc),
+  pptx: async (doc) => (await import('./briefPptx.js')).briefPptxBlob(doc),
+  xlsx: async (doc) => (await import('./briefXlsx.js')).briefXlsxBlob(doc),
+  txt: async (doc) => new Blob([(await import('./briefText.js')).renderBriefText(doc)], { type: 'text/plain;charset=utf-8' }),
+  md: async (doc) => new Blob([(await import('./briefMarkdown.js')).renderBriefMarkdown(doc)], { type: 'text/markdown;charset=utf-8' }),
+}
+
+/** exportDoc(doc, format) — format: any key of RENDERERS, or gamma-presentation | gamma-document */
 export async function exportDoc(doc, format = 'docx') {
-  const filename = briefFilename(doc, format.startsWith('gamma') ? 'gamma' : format)
-  if (format === 'txt') { const { renderBriefText } = await import('./briefText.js'); save(new Blob([renderBriefText(doc)], { type: 'text/plain;charset=utf-8' }), filename) }
-  else if (format === 'md') { const { renderBriefMarkdown } = await import('./briefMarkdown.js'); save(new Blob([renderBriefMarkdown(doc)], { type: 'text/markdown;charset=utf-8' }), filename) }
-  else if (format === 'pptx') { const { briefPptxBlob } = await import('./briefPptx.js'); save(await briefPptxBlob(doc), filename) }
-  else if (format.startsWith('gamma')) { const { exportToGamma } = await import('./gammaExport.js'); return exportToGamma(doc, format) }
-  else { const { briefDocxBlob } = await import('./briefDocx.js'); save(await briefDocxBlob(doc), filename) }
-  return { filename, citations: doc.citations?.source, sections: doc.sections.length }
+  const framed = withFraming(doc)
+  if (format.startsWith('gamma')) { const { exportToGamma } = await import('./gammaExport.js'); return exportToGamma(framed, format) }
+  const render = RENDERERS[format]
+  if (!render) throw new Error(`No renderer for format "${format}" — add one to RENDERERS or drop it from the edition manifest.`)
+  const filename = briefFilename(framed, format)
+  save(await render(framed), filename)
+  return { filename, citations: framed.citations?.source, sections: framed.sections.length }
 }
 
 /** Convenience for entity pages: fetch citations, build the brief, export. */

@@ -12,3 +12,31 @@ services:
         value: production
       - key: GAMMA_API_KEY
         sync: false
+
+  # The research edition: the same repo, built with MM_EDITION=work so the authored modules are replaced by
+  # stubs at compile time. It is a separate service because it must be separately reachable, separately
+  # gated, and separately embeddable — and because no environment of the personal build should ever gate it.
+  - type: web
+    name: music-mainframe-work
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: npm ci --include=dev && npm run build:work
+    startCommand: node server/index.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MM_EDITION
+        value: work
+      # Hosts allowed to frame the app (a SharePoint tenant, say). Unset = refuse all framing.
+      - key: EMBED_ALLOW
+        sync: false
+      # Set both to put the whole site behind basic auth. /api/health stays open so the watcher keeps working.
+      - key: ACCESS_USER
+        sync: false
+      - key: ACCESS_PASS
+        sync: false
+      # Deliberately no GAMMA_API_KEY: the work build has no Gamma path to call it.
+      - key: SEC_USER_AGENT
+        sync: false

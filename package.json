@@ -11,10 +11,12 @@
     "prebuild": "npm run tokens",
     "build": "vite build",
     "build:work": "MM_EDITION=work vite build",
+    "edition:work": "node scripts/export-edition.mjs",
     "preview": "vite preview",
     "server": "node server/index.js",
     "server:watch": "node scripts/watch-server.mjs",
     "health": "node scripts/check-health.mjs",
+    "health:work": "node scripts/check-health.mjs --url ${MM_WORK_URL:-https://music-mainframe-work.onrender.com}",
     "start": "node server/index.js",
     "lint": "eslint .",
     "briefs": "node scripts/generate-briefs.mjs",
@@ -29,8 +31,9 @@
     "test:outcomes": "node scripts/test-outcomes.mjs",
     "test:xlsx": "node scripts/test-xlsx.mjs",
     "test:edition": "node scripts/test-edition.mjs",
+    "test:export": "node scripts/export-edition.mjs --out ./.export-check --force",
     "test:work": "MM_EDITION=work node --import ./scripts/edition-loader.mjs scripts/test-prospect.mjs && MM_EDITION=work node --import ./scripts/edition-loader.mjs scripts/test-market.mjs && MM_EDITION=work node --import ./scripts/edition-loader.mjs scripts/test-outcomes.mjs && MM_EDITION=work node --import ./scripts/edition-loader.mjs scripts/test-xlsx.mjs && MM_EDITION=work node scripts/test-parity.mjs",
-    "test": "npm run test:valuation && npm run test:pmi && npm run test:abs && npm run test:carveout && npm run test:prospect && npm run test:contrast && npm run test:glossary && npm run test:market && npm run test:outcomes && npm run test:xlsx && npm run test:edition && npm run test:work"
+    "test": "npm run test:valuation && npm run test:pmi && npm run test:abs && npm run test:carveout && npm run test:prospect && npm run test:contrast && npm run test:glossary && npm run test:market && npm run test:outcomes && npm run test:xlsx && npm run test:edition && npm run test:export && npm run test:work"
   },
   "engines": {
     "node": ">=20.19.0"

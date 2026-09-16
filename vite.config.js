@@ -12,7 +12,7 @@ const at = (p) => path.resolve(dir, p)
  * never enter the bundle. Hiding a route would still ship its data to anyone who opens developer tools.
  * scripts/test-edition.mjs builds this and greps the output for private strings.
  */
-const WORK_SWAPS = [
+export const WORK_SWAPS = [
   ['src/data/consulting.js', 'src/editions/stubs/consulting.js'],
   ['src/navPrivate.js', 'src/editions/stubs/navPrivate.js'],
   ['src/data/siblings.js', 'src/editions/stubs/siblings.js'],
@@ -24,6 +24,8 @@ const WORK_SWAPS = [
   ['src/utils/proposal.js', 'src/editions/stubs/docBuilder.js'],
   ['src/utils/accountPlan.js', 'src/editions/stubs/docBuilder.js'],
   ['src/utils/categoryDeck.js', 'src/editions/stubs/docBuilder.js'],
+  ['src/components/consulting/PepiLens.jsx', 'src/editions/stubs/Inline.jsx'],
+  ['src/components/HubLinks.jsx', 'src/editions/stubs/Inline.jsx'],
   ['src/pages/Consulting.jsx', 'src/editions/stubs/Page.jsx'],
   ['src/pages/ConsultingCategory.jsx', 'src/editions/stubs/Page.jsx'],
   ['src/pages/Deliverables.jsx', 'src/editions/stubs/Page.jsx'],
