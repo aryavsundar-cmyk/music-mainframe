@@ -2,8 +2,17 @@
 import { computeCase, benchmarkExec, asPresentedExec, reviewChecks } from './valuation.js'
 import { computePmi, benchmarkPmi, asPresentedPmi, reviewPmiChecks } from './pmi.js'
 import { computeAbs, benchmarkAbs, asPresentedAbs, reviewAbsChecks } from './abs.js'
+import { computeCarve, benchmarkCarve, asPresentedCarve, reviewCarveChecks } from './carveout.js'
 
 export function engineFor(c) {
+  if (c.kind === 'carveout') {
+    return {
+      compute: (exec) => computeCarve(c, exec),
+      benchmark: () => computeCarve(c, benchmarkCarve(c)),
+      draft: () => computeCarve(c, asPresentedCarve(c)),
+      checks: () => reviewCarveChecks(c),
+    }
+  }
   if (c.kind === 'abs') {
     return {
       compute: (exec) => computeAbs(c, exec),

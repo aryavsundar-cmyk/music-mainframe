@@ -5,7 +5,18 @@ import { CASE_LIST } from '../data/cases/index.js'
 import { readLabState } from '../hooks/useLabState.js'
 import { progress, STAGES } from '../utils/labState.js'
 
-const KIND = { valuation: 'Catalog valuation', pmi: 'Post-merger integration', abs: 'Royalty ABS review' }
+const KIND = { valuation: 'Catalog valuation', pmi: 'Post-merger integration', abs: 'Royalty ABS review', carveout: 'Carve-out diligence' }
+
+const CARVE_METHOD = [
+  ['Perimeter', 'Nothing transfers unless the documents say so: people, code, data rights, contracts, leases.'],
+  ['Allocations', 'A parent allocation is what the group charged itself, never a standalone cost base.'],
+  ['Standalone build', 'Cost every corporate function bottom-up with headcount, executive team included.'],
+  ['Related-party revenue', 'Benchmark the intercompany rate card and model the reset in the base case.'],
+  ['Accounting policy', 'Capitalisation, provisions, and cut-off travel with the parent. Normalise them.'],
+  ['Separation & TSA', 'One-off separation cost and transitional services are part of the price, both directions.'],
+  ['Stranded cost', 'The seller\'s problem until it returns as a services-agreement price increase.'],
+  ['Conditions', 'Anchor agreement, data licence, and consents are conditions precedent, not indemnities.'],
+]
 
 const ABS_METHOD = [
   ['Tape to cash', 'Tie every tape line to statements and bank receipts; accruals and one-offs don\'t service notes.'],
@@ -77,7 +88,7 @@ export default function Lab() {
         })}
         <Card pad="lg" className="flex flex-col justify-center">
           <div className="t-eyebrow text-ink-3 mb-1">Next cases</div>
-          <p className="t-body text-ink-2 m-0">The lab is case-driven: add a file under <span className="font-mono">src/data/cases/</span> with a perimeter, data room, a draft model with planted issues, and a reviewer benchmark. Each case declares a kind (valuation, integration, or ABS review), which selects its engine and execution steps. Candidates: a PRO carve-out, a label distribution-deal renegotiation.</p>
+          <p className="t-body text-ink-2 m-0">The lab is case-driven: add a file under <span className="font-mono">src/data/cases/</span> with a perimeter, data room, a draft model with planted issues, and a reviewer benchmark. Each case declares a kind (valuation, integration, ABS review, or carve-out), which selects its engine and execution steps. Candidates: a label distribution-deal renegotiation, a live-entertainment roll-up, an AI-licensing dispute.</p>
         </Card>
       </div>
       <SectionHeader eyebrow="Method" title="What every catalog valuation has to get right" />
@@ -88,6 +99,9 @@ export default function Lab() {
       <div className="h-12" />
       <SectionHeader eyebrow="Method" title="What every royalty ABS review has to get right" />
       <MethodGrid items={ABS_METHOD} />
+      <div className="h-12" />
+      <SectionHeader eyebrow="Method" title="What every carve-out has to get right" />
+      <MethodGrid items={CARVE_METHOD} />
     </>
   )
 }

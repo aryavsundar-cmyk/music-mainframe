@@ -18,7 +18,8 @@
     "test:valuation": "node scripts/test-valuation.mjs",
     "test:pmi": "node scripts/test-pmi.mjs",
     "test:abs": "node scripts/test-abs.mjs",
-    "test": "npm run test:valuation && npm run test:pmi && npm run test:abs"
+    "test:carveout": "node scripts/test-carveout.mjs",
+    "test": "npm run test:valuation && npm run test:pmi && npm run test:abs && npm run test:carveout"
   },
   "engines": {
     "node": ">=20.19.0"

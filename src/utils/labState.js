@@ -7,6 +7,8 @@ import { asPresentedPmi, benchmarkPmi, benchmarkBoard } from './pmi.js'
 import { pmiProgress, pmiScoreRows, pmiConclusionRow } from './pmiState.js'
 import { asPresentedAbs, benchmarkAbs, benchmarkCredit } from './abs.js'
 import { absProgress, absScoreRows, absConclusionRow } from './absState.js'
+import { asPresentedCarve, benchmarkCarve, benchmarkOffer } from './carveout.js'
+import { carveProgress, carveScoreRows, carveConclusionRow } from './carveState.js'
 
 export const STAGES = [
   { id: 'pitch', label: 'Pitch', blurb: 'Frame the problem, set the perimeter, scope and price the work' },
@@ -36,8 +38,8 @@ export function defaultState(c) {
     ui: { reviewer: false },
     pitch: { scr: { s: '', c: '', r: '' }, perimeter: {}, questions: [], team: { ...c.teamDefaults }, revealed: {} },
     plan: { irl: {}, revealed: false },
-    exec: c.kind === 'pmi' ? asPresentedPmi(c) : c.kind === 'abs' ? asPresentedAbs(c) : asPresentedExec(c),
-    deliver: c.kind === 'pmi' ? { target: '', budget: '', rationale: '' } : c.kind === 'abs' ? { recommendation: '', maxA: '', conditions: [], rationale: '' } : { low: '', high: '', offer: '', rationale: '' },
+    exec: c.kind === 'pmi' ? asPresentedPmi(c) : c.kind === 'abs' ? asPresentedAbs(c) : c.kind === 'carveout' ? asPresentedCarve(c) : asPresentedExec(c),
+    deliver: c.kind === 'pmi' ? { target: '', budget: '', rationale: '' } : c.kind === 'abs' ? { recommendation: '', maxA: '', conditions: [], rationale: '' } : c.kind === 'carveout' ? { low: '', high: '', offer: '', conditions: [], rationale: '' } : { low: '', high: '', offer: '', rationale: '' },
   }
 }
 
@@ -45,6 +47,7 @@ export function benchmarkState(c) {
   const shared = sharedBenchmark(c)
   if (c.kind === 'pmi') return { ...shared, exec: benchmarkPmi(c), deliver: benchmarkBoard(c) }
   if (c.kind === 'abs') return { ...shared, exec: benchmarkAbs(c), deliver: benchmarkCredit(c) }
+  if (c.kind === 'carveout') return { ...shared, exec: benchmarkCarve(c), deliver: benchmarkOffer(c) }
   const ex = benchmarkExec(c)
   const r = computeCase(c, ex)
   const low = Math.round(Math.min(r.scenarios[2]?.ev ?? r.dcf.ev, r.multipleValues[0]) / 50000) * 50000
@@ -91,8 +94,8 @@ const frac = (xs) => (xs.length ? xs.filter(Boolean).length / xs.length : 0)
 export function progress(c, s) {
   const pitch = frac([filled(s.pitch.scr.s), filled(s.pitch.scr.c), filled(s.pitch.scr.r), ...c.perimeter.map((p) => !!s.pitch.perimeter[p.id]), s.pitch.questions.length === 5])
   const plan = frac(c.irl.map((i) => !!s.plan.irl[i.id]?.priority))
-  if (c.kind === 'pmi' || c.kind === 'abs') {
-    const k = c.kind === 'pmi' ? pmiProgress(c, s) : absProgress(c, s)
+  if (c.kind !== 'valuation') {
+    const k = c.kind === 'pmi' ? pmiProgress(c, s) : c.kind === 'abs' ? absProgress(c, s) : carveProgress(c, s)
     const execute = frac(k.execute); const deliver = frac(k.deliver)
     return { pitch, plan, execute, deliver, overall: (pitch + plan + execute + deliver) / 4 }
   }
@@ -114,15 +117,20 @@ export function scorecard(c, s, r, b) {
   add('Pitch framing (SCR)', scrOk, 3, scrOk < 3 ? ['Write all three parts; each should stand alone in one or two sentences.'] : ['Complete. Compare against the reviewer example for sharpness.'])
 
   const per = c.perimeter.filter((p) => s.pitch.perimeter[p.id] === p.benchmark)
-  add({ pmi: 'Integration perimeter', abs: 'Review perimeter' }[c.kind] || 'Economic perimeter', per.length, c.perimeter.length, c.perimeter.filter((p) => s.pitch.perimeter[p.id] && s.pitch.perimeter[p.id] !== p.benchmark).map((p) => `${p.text}: ${p.why}`))
+  add({ pmi: 'Integration perimeter', abs: 'Review perimeter', carveout: 'Carve-out perimeter' }[c.kind] || 'Economic perimeter', per.length, c.perimeter.length, c.perimeter.filter((p) => s.pitch.perimeter[p.id] && s.pitch.perimeter[p.id] !== p.benchmark).map((p) => `${p.text}: ${p.why}`))
 
   const q = s.pitch.questions.filter((id) => c.questions.find((x) => x.id === id)?.benchmark)
-  add({ pmi: 'Key integration questions', abs: 'Key credit questions' }[c.kind] || 'Key diligence questions', q.length, 5, s.pitch.questions.filter((id) => !c.questions.find((x) => x.id === id)?.benchmark).map((id) => { const x = c.questions.find((y) => y.id === id); return `${x.text} — ${x.why}` }))
+  add({ pmi: 'Key integration questions', abs: 'Key credit questions', carveout: 'Key diligence questions' }[c.kind] || 'Key diligence questions', q.length, 5, s.pitch.questions.filter((id) => !c.questions.find((x) => x.id === id)?.benchmark).map((id) => { const x = c.questions.find((y) => y.id === id); return `${x.text} — ${x.why}` }))
 
   const p1 = c.irl.filter((i) => i.benchmark === 'P1')
   const p1ok = p1.filter((i) => s.plan.irl[i.id]?.priority === 'P1')
   add('Information request priorities', p1ok.length, p1.length, p1.filter((i) => s.plan.irl[i.id]?.priority !== 'P1').map((i) => `Should be P1: ${i.text}`))
 
+  if (c.kind === 'carveout') {
+    carveScoreRows(c, s, r, b, add)
+    carveConclusionRow(c, s, r, b, add)
+    return totals(rows)
+  }
   if (c.kind === 'abs') {
     absScoreRows(c, s, r, b, add)
     absConclusionRow(c, s, r, b, add)

@@ -1,0 +1,247 @@
+/**
+ * beacon.js — "Beacon Rights Services", an ILLUSTRATIVE carve-out of a performing-rights society's licensing and
+ * data-services division. Every organisation, person, and figure is fictional. Not advice; multiples, rates, and
+ * standalone cost estimates are case assumptions.
+ *
+ * Teaching design matches the other lab cases: the vendor's carve-out pack arrives as presented (`draft` treatments,
+ * `asPresented`) with the classic carve-out traps — parent allocations passed off as standalone costs, related-party
+ * revenue at non-arm's-length rates, project revenue treated as recurring, a parent capitalisation policy flattering
+ * EBITDA, and no separation cost, TSA, or stranded cost anywhere in the price. `benchmark` is the reviewing
+ * director's position. The trainee runs buy-side carve-out diligence for a growth-equity sponsor.
+ */
+
+const M = 1e6
+
+export const BEACON = {
+  id: 'beacon',
+  kind: 'carveout',
+  title: 'Beacon Rights Services',
+  tagline: 'Buy-side carve-out diligence on a performing-rights society\'s licensing and data division',
+  difficulty: 'Advanced',
+  hours: '5–7 hours',
+  valuationDate: '2026-09-30',
+  signingTarget: '2026-12-20',
+  weeks: 6,
+  engagementLabel: 'carve-out diligence',
+  proposalLabel: 'buy-side carve-out diligence proposal',
+  planLabel: 'Six-week carve-out diligence and separation plan',
+  criticalWorkstreams: ['financials', 'value'],
+  stageBlurbs: { execute: 'Rebuild the carve-out P&L, stand the business up, price it', deliver: 'Recommend a range, a cheque, and the conditions' },
+  disclaimer: 'Illustrative practice case. Fictional society, carve-out entity, sponsor, people, and figures. Not advice. Multiples, standalone cost estimates, and arm\'s-length rates are case assumptions, not market benchmarks.',
+  sources: [],
+
+  // ── PITCH ────────────────────────────────────────────────────────────────────
+  client: {
+    name: 'Tessell Capital (mock)',
+    profile: 'Growth-equity sponsor, $4.2B under management, focused on data and payments infrastructure. First investment in music rights; no in-house royalty operations expertise.',
+    situation: 'Harborlight Performing Rights Society (mock) — member-owned, $1.1B of annual collections, 320,000 members — is carving out Beacon Rights Services, its licensing operations, matching, and distribution-technology division. Beacon also serves 14 other societies and a publisher client base. Harborlight will sell 70% and retain 30%, with a seven-year services agreement back to the society. The vendor pack shows $128M of revenue and $38.0M of "pro forma adjusted EBITDA", guiding to about $340M enterprise value.',
+    ask: 'Run buy-side carve-out diligence in six weeks: rebuild the P&L on a standalone basis, test the anchor contract and the third-party book, cost the separation and the transitional services, and recommend an enterprise value, an equity cheque for 70%, and the conditions Tessell should require.',
+  },
+  seller: 'Harborlight Performing Rights Society (mock), member-owned',
+  scope: [
+    'Beacon Rights Services: licensing operations, works matching, claims, and distribution technology',
+    '854 staff across operations (620), technology (180), and commercial (54)',
+    'Revenue $128M: Harborlight services agreement $79M, 14 third-party societies $31M, publisher and label data services $12M, implementation projects $6M',
+    'Seven-year services agreement back to Harborlight, to be signed at closing; 30% retained by the society',
+    'Transitional services from Harborlight (finance, IT hosting, offices) and data services back to it',
+  ],
+  briefKpis: [
+    { label: 'Vendor guide', value: 340 * M, hint: '≈ 8.9x the pack\'s $38.0M' },
+    { label: 'Anchor customer', value: 79 * M, hint: '62% of revenue is the parent' },
+  ],
+  profile: [
+    ['Revenue', '$128.0M', 'Growing with society collections, not independently'],
+    ['Reported carve-out EBITDA', '$35.0M (27.3%)', 'On parent cost allocations, not standalone costs'],
+    ['Vendor "pro forma adjusted EBITDA"', '$38.0M', 'Add-backs accepted without a standalone view'],
+    ['Parent revenue', '62% of the total', 'Related-party pricing set inside the group'],
+    ['Third-party societies', '14 contracts, $31M', 'Most carry change-of-control consent rights'],
+    ['Implementation projects', '$6.0M', 'Episodic by nature; one large go-live completed in the period'],
+    ['Development capitalisation', '$6.5M capitalised in the year', 'Parent policy; standalone policy would expense more'],
+    ['Corporate functions', 'Provided by Harborlight', 'No standalone executive team, finance, HR, legal, or IT'],
+    ['Member data', 'Licensed from the society, not owned', 'The asset the business runs on is not being sold'],
+  ],
+  centralQuestion: 'What does this business earn on its own feet, at arm\'s-length prices, once it pays for everything the parent provides today — and what is that worth?',
+  feeBase: { label: 'Fee as % of vendor guide', value: 340 * M },
+  feeReviewer: 'Carve-out diligence is heavier than a standard buy-side job because the target has no standalone accounts. Expect Director and Manager weight on the financial rebuild and the standalone operating model, and keep Managing Director time for the anchor-contract negotiation and the investment committee. Separation and TSA work runs in parallel from week two, or the price you conclude will miss its cost.',
+  copy: {
+    perimeterTitle: 'Set the carve-out perimeter',
+    perimeterPrompt: 'In a carve-out, nothing transfers unless the documents say it does. Decide what is inside the transaction, what stays with the society, and what depends on the separation agreements.',
+    perimeterLabels: { in: 'Transfers to the buyer', out: 'Stays with the society', diligence: 'Depends on the agreements' },
+    questionsTitle: 'Pick the five questions that decide the price',
+    questionsPrompt: 'A carve-out is priced on what the business earns alone. Choose the five questions the diligence must answer.',
+    planTitle: 'Six weeks to signing',
+    irlReviewer: [
+      'P1 is everything that proves standalone economics: the carve-out P&L with the allocation basis, the draft services agreement and its pricing schedule, the third-party contracts with consent clauses, headcount and payroll by function, the technology and licence inventory, the capitalisation policy, and the draft TSA and separation plan.',
+      'Benchmarking data, the vendor model, and property leases matter by week two. Marketing materials and the society\'s own strategy deck are context.',
+    ],
+  },
+  perimeter: [
+    { id: 'staff', text: 'The 854 Beacon staff and their employment contracts', benchmark: 'in', why: 'The business is its people. Confirm transfer mechanics and works-council obligations by jurisdiction.' },
+    { id: 'platform', text: 'The matching and distribution technology platform and its source code', benchmark: 'in', why: 'The core asset being bought. Check ownership of components built while inside the society.' },
+    { id: 'member-data', text: 'Harborlight member and works data used by the platform', benchmark: 'diligence', why: 'Usually licensed, not owned. The licence terms, exclusivity, and duration are as important as the price.' },
+    { id: 'cmo-contracts', text: 'The 14 third-party society contracts', benchmark: 'diligence', why: 'They transfer only with consent. Map change-of-control clauses before signing.' },
+    { id: 'society-licensing', text: 'Harborlight\'s own member-facing licensing authority', benchmark: 'out', why: 'The society keeps its statutory and member mandate. Beacon operates it under contract.' },
+    { id: 'brand', text: 'The Harborlight name and member-facing brand', benchmark: 'out', why: 'Stays with the society. Budget a rebrand.' },
+    { id: 'pension', text: 'The society\'s defined-benefit pension scheme obligations', benchmark: 'out', why: 'A classic carve-out trap. Confirm no transfer, and price any partial obligation explicitly.' },
+    { id: 'litigation', text: 'Pending tariff litigation brought by a broadcaster group', benchmark: 'out', why: 'The society\'s dispute over its own tariffs. Exclude it, with indemnity cover for operational spillover.' },
+    { id: 'leases', text: 'The two operations centres and their leases', benchmark: 'diligence', why: 'Depends on whether leases are assignable or become a TSA-provided service.' },
+    { id: 'retained-stake', text: 'Governance rights attached to the society\'s retained 30%', benchmark: 'diligence', why: 'The seller is also the anchor customer and a continuing shareholder. Reserved matters and conflicts need drafting.' },
+  ],
+  questions: [
+    { id: 'q-standalone', text: 'What does Beacon earn standalone, once parent allocations are replaced with real costs?', benchmark: true, test: 'Function-by-function standalone cost build with headcount, benchmarked externally.' },
+    { id: 'q-armslength', text: 'Is the anchor contract at arm\'s length, and what happens when it resets?', benchmark: true, test: 'Benchmark the services-agreement rate card against third-party pricing; model the reset.' },
+    { id: 'q-consents', text: 'Will the 14 third-party societies consent and stay after a change of control?', benchmark: true, test: 'Consent clause review, renewal schedule, and customer referencing.' },
+    { id: 'q-separation', text: 'What does separation cost, and how long do we depend on the society?', benchmark: true, test: 'Separation cost register and TSA schedule with exit criteria, both directions.' },
+    { id: 'q-price', text: 'What enterprise value and structure does the standalone case support?', benchmark: true, test: 'Multiple on standalone EBITDA, less separation and TSA cost; conditions and protections.' },
+    { id: 'q-growth', text: 'How fast is the global collections market growing?', benchmark: false, why: 'Context. It doesn\'t tell you what this business earns alone.', test: 'Market section of the memo.' },
+    { id: 'q-brand', text: 'What should the carved-out business be called?', benchmark: false, why: 'A separation workstream task, not a price question.', test: 'Covered in the separation budget.' },
+    { id: 'q-ai', text: 'Could AI matching replace the operations team?', benchmark: false, why: 'A value-creation thesis for the hold period, not a diligence finding.', test: 'Post-close value plan.' },
+    { id: 'q-society', text: 'Is the society a well-run organisation?', benchmark: false, why: 'Only matters through the contract and the retained stake.', test: 'Counterparty review.' },
+    { id: 'q-comps', text: 'What multiples did other rights-tech deals trade at?', benchmark: false, why: 'A cross-check on the multiple, not the question that decides the price.', test: 'Valuation cross-check.' },
+  ],
+  workstreams: [
+    { id: 'financials', label: 'Carve-out financials & QoE', lead: 'Director', weeks: [1, 5], analyses: ['Rebuild the carve-out P&L from the allocation basis', 'Related-party pricing and revenue quality', 'Capitalisation policy and normalised EBITDA', 'Working capital and the opening balance sheet'] },
+    { id: 'commercial', label: 'Commercial & customer', lead: 'Manager', weeks: [1, 4], analyses: ['Anchor contract terms and benchmark pricing', 'Third-party consents, renewals, and references', 'Pipeline and implementation revenue quality'] },
+    { id: 'operating', label: 'Standalone operating model', lead: 'Senior Director', weeks: [2, 5], analyses: ['Function-by-function standalone cost build', 'Executive team and governance', 'Technology, licences, and data rights'] },
+    { id: 'separation', label: 'Separation & TSA', lead: 'Manager', weeks: [2, 6], analyses: ['Separation cost register and sequencing', 'TSA schedules in and out, with exit criteria', 'Stranded cost at the society and who pays'] },
+    { id: 'value', label: 'Valuation & SPA', lead: 'Managing Director', weeks: [4, 6], analyses: ['Enterprise value on standalone EBITDA', 'Price bridge, cheque, and structure', 'Findings to conditions and protections'] },
+  ],
+  teamDefaults: { md: 8, sd: 20, dir: 40, mgr: 55, an: 55, assoc: 15 },
+  irl: [
+    { id: 'carve-pl', text: 'Carve-out P&L, 36 months, with the allocation basis by function', ws: 'financials', benchmark: 'P1' },
+    { id: 'allocations', text: 'Parent cost allocation methodology and supporting schedules', ws: 'financials', benchmark: 'P1' },
+    { id: 'services-agreement', text: 'Draft services agreement with Harborlight, including the pricing schedule', ws: 'commercial', benchmark: 'P1' },
+    { id: 'cmo-contracts', text: 'The 14 third-party society contracts with change-of-control clauses', ws: 'commercial', benchmark: 'P1' },
+    { id: 'headcount', text: 'Headcount, payroll, and org charts by function', ws: 'operating', benchmark: 'P1' },
+    { id: 'tech', text: 'Technology inventory: licences, hosting, code ownership, third-party components', ws: 'operating', benchmark: 'P1' },
+    { id: 'capitalisation', text: 'Development capitalisation policy and project-level detail', ws: 'financials', benchmark: 'P1' },
+    { id: 'tsa', text: 'Draft TSA schedules, both directions, with rates and durations', ws: 'separation', benchmark: 'P1' },
+    { id: 'data-licence', text: 'Draft member and works data licence', ws: 'operating', benchmark: 'P1' },
+    { id: 'benchmarks', text: 'Third-party pricing benchmarks for comparable services', ws: 'commercial', benchmark: 'P2' },
+    { id: 'separation-plan', text: 'Vendor separation plan and cost estimate', ws: 'separation', benchmark: 'P2' },
+    { id: 'leases', text: 'Property leases and assignability', ws: 'separation', benchmark: 'P2' },
+    { id: 'vendor-model', text: 'Vendor financial model', ws: 'value', benchmark: 'P2' },
+    { id: 'strategy', text: 'Society board strategy papers on the carve-out', ws: 'value', benchmark: 'P3' },
+  ],
+
+  // ── EXECUTE: DATA ROOM ───────────────────────────────────────────────────────
+  revenue: [
+    { id: 'society-core', label: 'Harborlight core licensing operations', customer: 'parent', ltm: 62 * M, pricing: 'Cost plus 8%, set inside the group', quality: 'Recurring under a seven-year agreement' },
+    { id: 'society-data', label: 'Harborlight data, matching & distribution', customer: 'parent', ltm: 17 * M, pricing: 'Cost plus 8%, set inside the group', quality: 'Recurring; volumes track society collections' },
+    { id: 'cmo', label: 'Third-party societies (14)', customer: 'third-party', ltm: 31 * M, pricing: 'Negotiated, per-work and per-transaction', quality: 'Recurring; consent required on change of control' },
+    { id: 'publisher', label: 'Publisher & label data services', customer: 'third-party', ltm: 12 * M, pricing: 'Subscription and usage', quality: 'Recurring, growing' },
+    { id: 'projects', label: 'Implementation & project fees', customer: 'third-party', ltm: 6 * M, pricing: 'Time and materials', quality: 'Episodic; one large go-live completed in the period' },
+  ],
+  costs: [
+    { id: 'ops', label: 'Licensing & distribution operations', ltm: 54 * M, fte: 620, basis: 'Direct' },
+    { id: 'tech', label: 'Technology, data & product', ltm: 22 * M, fte: 180, basis: 'Direct, net of $6.5M capitalised development' },
+    { id: 'sales', label: 'Commercial & account management', ltm: 8 * M, fte: 54, basis: 'Direct' },
+    { id: 'alloc', label: 'Harborlight cost allocations', ltm: 9 * M, fte: 0, basis: 'Allocated on headcount and revenue' },
+  ],
+  // Parent allocation versus what each function costs on its own feet.
+  functions: [
+    { id: 'exec', label: 'Executive team, board & governance', allocation: 1.2 * M, standalone: 3.0 * M, fte: 9, why: 'A standalone company needs its own chief executive, finance chief, technology chief, and a board. The society allocated a slice of its own executive time.' },
+    { id: 'finance', label: 'Finance, tax & treasury', allocation: 2.1 * M, standalone: 2.6 * M, fte: 22, why: 'Statutory accounts, audit, tax, treasury, and investor reporting for a sponsor-backed company.' },
+    { id: 'hr', label: 'HR, payroll & talent', allocation: 1.4 * M, standalone: 1.7 * M, fte: 14, why: '854 staff across jurisdictions need their own payroll, benefits, and talent function.' },
+    { id: 'legal', label: 'Legal, compliance & data protection', allocation: 1.3 * M, standalone: 2.0 * M, fte: 11, why: 'Rights data carries real privacy and compliance obligations; the society absorbed this centrally.' },
+    { id: 'it', label: 'Corporate IT, security & licences', allocation: 1.6 * M, standalone: 2.2 * M, fte: 18, why: 'Enterprise licences reprice at standalone volumes, and security tooling is bought fresh.' },
+    { id: 'facilities', label: 'Facilities, real estate & insurance', allocation: 1.1 * M, standalone: 1.3 * M, fte: 6, why: 'Two operations centres, either assigned or taken at market rents.' },
+    { id: 'other', label: 'Audit, advisory & other corporate', allocation: 0.3 * M, standalone: 0.6 * M, fte: 0, why: 'Audit, insurance, and advisory cost more for a standalone entity than an allocated share.' },
+  ],
+  // EBITDA bridge items. `kind: 'standalone'` is computed from the function build.
+  bridge: [
+    { id: 'sep-prep', label: 'Separation-preparation consulting in the period', amount: 1.5 * M, kind: 'one-off', draft: 'accept', benchmark: 'accept', evidence: 'Invoices, project code', why: 'A genuine one-off caused by the transaction itself. Add it back.' },
+    { id: 'legal-oneoff', label: 'One-off legal costs on a settled dispute', amount: 0.6 * M, kind: 'one-off', draft: 'accept', benchmark: 'accept', evidence: 'Settlement agreement', why: 'Non-recurring and evidenced.' },
+    { id: 'retention', label: 'Carve-out retention bonuses paid in the period', amount: 0.9 * M, kind: 'one-off', draft: 'accept', benchmark: 'reject', evidence: 'Payroll detail', why: 'Judgement: the buyer will run its own retention plan for the same people, so the cost recurs in substance. Adding it back sells the same saving twice.' },
+    { id: 'related-party', label: 'Anchor revenue reset to arm\'s-length rates', amount: -3.5 * M, kind: 'revenue', draft: 'reject', benchmark: 'accept', evidence: 'Benchmark rate card versus the draft services agreement', why: 'The society pays cost plus 8% on services a third party would price about 4.5% lower. The agreement resets at closing, so the reset belongs in the base, not in an upside case.' },
+    { id: 'projects', label: 'Non-recurring implementation revenue', amount: -2.5 * M, kind: 'revenue', draft: 'reject', benchmark: 'accept', evidence: 'Project register; the go-live completed in March', why: 'One completed implementation. Project fees continue at a lower run rate, but this scale of fee does not.' },
+    { id: 'standalone', label: 'Standalone function costs above parent allocations', amount: 0, kind: 'standalone', draft: 'reject', benchmark: 'accept', evidence: 'Function-by-function build', why: 'The single largest carve-out adjustment: the allocation is what the parent charged itself, not what these functions cost on their own feet.' },
+    { id: 'capdev', label: 'Development capitalisation normalised to standalone policy', amount: -2 * M, kind: 'accounting', draft: 'reject', benchmark: 'accept', evidence: 'Capitalisation policy, project detail', why: 'The society capitalises 40% of development. On a policy a sponsor-backed company would adopt, about $2.0M more is expensed each year.' },
+    { id: 'service-levels', label: 'Parent-mandated service levels not required standalone', amount: 0.8 * M, kind: 'run-rate', draft: 'reject', benchmark: 'partial', evidence: 'Service schedules; operations analysis', why: 'Judgement: some of the society\'s gold-plated service levels genuinely go, but the anchor agreement locks most of them in for seven years. Take about half.' },
+  ],
+  separation: [
+    { id: 'it-split', label: 'IT separation, data migration, licence novation', amount: 7.5 * M, benchmark: true, why: 'The largest separation cost and the long pole: standing up hosting, security, and data flows outside the society.' },
+    { id: 'systems', label: 'Standalone finance, HR, and payroll systems', amount: 2.6 * M, benchmark: true, why: 'Bought, implemented, and run before the TSA ends.' },
+    { id: 'legal-sep', label: 'Entity set-up, contract novations, consents', amount: 3.1 * M, benchmark: true, why: 'Fourteen society consents, employment transfers, and a new entity in each jurisdiction.' },
+    { id: 'recruit', label: 'Recruiting and onboarding the standalone team', amount: 2.4 * M, benchmark: true, why: 'Executive search and the corporate functions the society used to provide.' },
+    { id: 'brand', label: 'Rebrand, web, and customer communications', amount: 1.2 * M, benchmark: true, why: 'The Harborlight name stays with the society.' },
+    { id: 'retention-plan', label: 'Retention plan for key operators and engineers', amount: 1.8 * M, benchmark: true, why: 'Cheaper than losing the people who run matching and distribution during separation.' },
+  ],
+  tsa: [
+    { id: 'in-it', label: 'IT hosting, security & service desk from Harborlight', direction: 'in', monthly: 0.22 * M, months: 18, benchmark: 18, why: 'Runs until the platform and corporate IT are fully separated. Price extension options up front.' },
+    { id: 'in-finance', label: 'Finance, payroll & HR administration from Harborlight', direction: 'in', monthly: 0.18 * M, months: 12, benchmark: 12, why: 'Twelve months is realistic for standing up systems and a team.' },
+    { id: 'in-facilities', label: 'Office space and facilities from Harborlight', direction: 'in', monthly: 0.09 * M, months: 24, benchmark: 24, why: 'Cheaper than breaking leases; exit with the property plan.' },
+    { id: 'out-data', label: 'Data and reporting services to Harborlight (income)', direction: 'out', monthly: 0.15 * M, months: 12, benchmark: 12, why: 'Reverse TSA income. Real, but it ends, so it is not run-rate EBITDA.' },
+  ],
+  stranded: { amount: 4.2 * M, why: 'Harborlight keeps about $4.2M of cost it can no longer allocate to Beacon. It is the society\'s problem, but expect it to arrive as a request for higher services-agreement pricing. Keep it out of your base case and put it on the negotiation list.' },
+
+  asPresented: {
+    reportedEbitda: 35 * M,
+    adjEbitda: 38 * M,
+    askEv: 340 * M,
+    multiples: [8.5, 9.5, 10.5],
+    stake: 70,
+    deductSeparation: false,
+    deductTsa: false,
+    rate: 10,
+  },
+  benchmarkModel: { multiples: [8.0, 9.0, 10.0], deductSeparation: true, deductTsa: true, rate: 10, stake: 70 },
+
+  findings: [
+    { id: 'anchor-pricing', finding: 'Anchor revenue priced inside the group, above arm\'s length', benchmark: { severity: 'High', protection: 'services-agreement' } },
+    { id: 'standalone-cost', finding: 'No standalone corporate functions exist today', benchmark: { severity: 'High', protection: 'price' } },
+    { id: 'consents', finding: 'Change-of-control consents needed from 14 societies', benchmark: { severity: 'High', protection: 'cp-consents' } },
+    { id: 'data-licence', finding: 'The platform runs on member data the society retains', benchmark: { severity: 'High', protection: 'data-licence' } },
+    { id: 'capitalisation', finding: 'Development capitalisation policy flatters EBITDA', benchmark: { severity: 'Medium', protection: 'price' } },
+    { id: 'separation-cost', finding: 'Separation cost and TSA absent from the vendor price', benchmark: { severity: 'Medium', protection: 'price' } },
+    { id: 'key-people', finding: 'Matching and distribution depend on a small engineering group', benchmark: { severity: 'Medium', protection: 'retention' } },
+    { id: 'wc-peg', finding: 'No carve-out balance sheet or working-capital history', benchmark: { severity: 'Medium', protection: 'wc-peg' } },
+    { id: 'stranded', finding: 'Stranded cost at the society may return as price pressure', benchmark: { severity: 'Low', protection: 'services-agreement' } },
+    { id: 'project-revenue', finding: 'Implementation revenue treated as recurring', benchmark: { severity: 'Medium', protection: 'earnout' } },
+  ],
+  protections: [
+    { id: 'services-agreement', label: 'Arm\'s-length services agreement signed before closing' },
+    { id: 'cp-consents', label: 'Third-party consents as conditions precedent' },
+    { id: 'data-licence', label: 'Long-term, exclusive member-data licence with defined terms' },
+    { id: 'price', label: 'Reflect in price (standalone EBITDA and multiple)' },
+    { id: 'earnout', label: 'Earn-out on retained third-party revenue' },
+    { id: 'retention', label: 'Retention plan and key-person commitments' },
+    { id: 'wc-peg', label: 'Working-capital peg and completion-accounts mechanism' },
+    { id: 'tsa-terms', label: 'TSA rates, durations, and extension options fixed at signing' },
+    { id: 'escrow', label: 'Escrow and specific indemnities' },
+  ],
+  checks: [
+    { id: 'allocation', area: 'Parent allocations versus standalone cost', kind: 'error' },
+    { id: 'related-party', area: 'Anchor revenue pricing', kind: 'error' },
+    { id: 'projects', area: 'Implementation revenue', kind: 'error' },
+    { id: 'capdev', area: 'Development capitalisation', kind: 'error' },
+    { id: 'separation', area: 'Separation cost in the price', kind: 'error' },
+    { id: 'tsa', area: 'Transitional services', kind: 'error' },
+    { id: 'multiple', area: 'What the multiple is applied to', kind: 'error' },
+    { id: 'wc', area: 'Working capital and the opening balance sheet', kind: 'error' },
+    { id: 'retention', area: 'Retention bonus add-back', kind: 'judgement' },
+    { id: 'service-levels', area: 'Service-level savings', kind: 'judgement' },
+  ],
+
+  benchmarkPitch: {
+    scr: {
+      s: 'Harborlight is carving out Beacon Rights Services, selling 70% with a seven-year services agreement back to the society, and guiding to about $340M on $38.0M of pro forma adjusted EBITDA.',
+      c: 'Beacon has never stood on its own: 62% of its revenue is priced inside the group and resets at closing, its corporate functions are a parent allocation rather than a cost base, its development capitalisation follows society policy, one large implementation sits in recurring revenue, and neither separation cost nor the transitional services appear anywhere in the price.',
+      r: 'Six weeks of carve-out diligence that rebuilds the P&L on a standalone, arm\'s-length basis, costs the separation and the TSA, and gives the investment committee an enterprise value, an equity cheque for 70%, and the conditions that make the deal safe.',
+    },
+  },
+  benchmarkDeliver: {
+    conditions: ['services-agreement', 'cp-consents', 'data-licence', 'retention'],
+    rationale: 'Price the business that exists on its own feet, not the one inside the society. Standalone EBITDA is materially below the vendor\'s pro forma figure, almost entirely because the anchor contract resets to arm\'s length and the corporate functions have to be bought for the first time. On that base, and after separation cost and transitional services the vendor left out of the price, the enterprise value we can support is far below the guide. The business is genuinely good — recurring, embedded, and hard to replace — so the recommendation is to bid, not to walk: at our range, with the services agreement and the data licence signed before closing, third-party consents as conditions, and an earn-out carrying the implementation revenue we are not paying for.',
+  },
+  takeaways: [
+    'A carve-out is valued on what the business earns alone: allocations are what the parent charged itself, not a cost base.',
+    'Build standalone costs function by function, with headcount, before you touch the multiple.',
+    'Related-party revenue is priced inside the group. Find the arm\'s-length rate and model the reset in the base case.',
+    'Accounting policy travels with the parent: capitalisation, provisions, and revenue cut-off can all flatter carve-out EBITDA.',
+    'Separation cost and the TSA are part of the price, not a post-close surprise.',
+    'A reverse TSA is income that ends; never leave it in run-rate EBITDA.',
+    'Stranded cost is the seller\'s problem until it arrives as a price increase in the services agreement.',
+    'In a carve-out the contracts are the asset: consents, the data licence, and the anchor agreement decide whether the business exists on Day 1.',
+  ],
+}
