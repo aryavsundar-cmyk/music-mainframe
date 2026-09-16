@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { NavLink, Route, Routes } from 'react-router-dom'
-import { Disc3, Building2, Waypoints, Handshake, Landmark, Layers, Library, ScrollText, Radio, Rss, Briefcase, FileOutput, GraduationCap, Palette, Sun, Moon } from 'lucide-react'
+import { Disc3, Building2, Waypoints, Handshake, Landmark, Layers, Library, ScrollText, Radio, Rss, Briefcase, FileOutput, GraduationCap, Palette, Sun, Moon, Crosshair } from 'lucide-react'
 import { ThemeContext, useThemeState } from './hooks/useTheme.js'
 import Home from './pages/Home.jsx'
 import Entities from './pages/Entities.jsx'
@@ -18,6 +18,7 @@ import News from './pages/News.jsx'
 import Consulting from './pages/Consulting.jsx'
 import ConsultingCategory from './pages/ConsultingCategory.jsx'
 import Deliverables from './pages/Deliverables.jsx'
+import Prospecting from './pages/Prospecting.jsx'
 // Lab pages are lazy chunks: the valuation engine and case data stay out of the core bundle.
 const Lab = lazy(() => import('./pages/Lab.jsx'))
 const LabCase = lazy(() => import('./pages/LabCase.jsx'))
@@ -46,6 +47,9 @@ const NAV = [
   { group: 'Overlay', items: [
     { to: '/consulting', label: 'Consulting lens', icon: Briefcase },
     { to: '/deliverables', label: 'Deliverables', icon: FileOutput },
+  ]},
+  { group: 'Pipeline', items: [
+    { to: '/prospecting', label: 'Prospecting', icon: Crosshair },
   ]},
   { group: 'Academy', items: [
     { to: '/lab', label: 'Valuation lab', icon: GraduationCap },
@@ -129,6 +133,7 @@ export default function App() {
             <Route path="/consulting" element={<Consulting />} />
             <Route path="/consulting/:id" element={<ConsultingCategory />} />
             <Route path="/deliverables" element={<Deliverables />} />
+            <Route path="/prospecting" element={<Prospecting />} />
             <Route path="/lab" element={<Suspense fallback={<div className="t-small text-ink-3">Loading…</div>}><Lab /></Suspense>} />
             <Route path="/lab/:caseId" element={<Suspense fallback={<div className="t-small text-ink-3">Loading…</div>}><LabCase /></Suspense>} />
             <Route path="/design" element={<DesignSystem />} />

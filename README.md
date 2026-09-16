@@ -37,6 +37,7 @@ React 19 · Vite 7 · Tailwind 4 (CSS-first, no tailwind.config) · React Router
 | `/consulting` · `/consulting/:id` | overlay | live (Sprint 6) |
 | `/deliverables` | overlay | live (Sprint 8) |
 | `/lab` · `/lab/:caseId` | academy | live (Sprints 9–12) |
+| `/prospecting` | pipeline | live (Sprint 13) |
 | `/design` | reference | living style guide |
 
 ## Design system
@@ -145,6 +146,20 @@ Cases live in `src/data/cases/` and are registered in `cases/index.js`. Each dec
 - **Engine** `src/utils/carveout.js` is pure and Node-tested (`npm run test:carveout`, 20 checks; the standalone bridge line is computed from the cost build, so editing a function cost flows straight through to EBITDA and value).
 - **The vendor pack's planted traps**: parent allocations of $9.0M presented as a standalone cost base ($13.4M when built bottom-up); anchor revenue at cost plus 8% that resets $3.5M lower at arm's length; a completed implementation inside recurring revenue; society capitalisation policy flattering EBITDA by $2.0M; a retention add-back that recurs in substance; and no separation cost, TSA, or stranded cost anywhere in the price. Re-based: $25.1M standalone EBITDA (19.6% margin), $18.6M separation, $5.7M TSA present value, $202M enterprise value and a $141M cheque for 70% — 41% below the guide, which needs 14.5x standalone.
 - **State** `src/utils/carveState.js`; **documents** `src/utils/carveDocs.js` (carve-out memo).
+
+## Prospecting & coverage (/prospecting)
+
+Sprint 13. Turns the corpus into a target list. `src/utils/prospect.js` places all 178 sellable entities into one of nine selling segments (four buy-side, five sell-side) and scores each out of 100, with the reasons visible:
+
+- **Fit (0–40)** — tier within type, size band from the headline metric, PEPI categories with named hypotheses, role breadth.
+- **Timing (0–40)** — dated triggers, each decayed across its own window: deals from `transactions.js`, ABS anticipated repayment dates still ahead, society reform milestones from `pros.js`, a sponsor's portfolio-company activity at reduced weight, and live news signals counted from `/api/news`.
+- **Access (0–20)** — Intelligence Hub cross-links, sponsor overlap, and the operator's own recorded relationship. Nothing else moves it: the app holds no contact records.
+
+Tier A is 55+ or a live trigger with real access, Tier B 40+, and the cuts are set against the live distribution so Tier A stays a week of calls (currently 5 without news signals, 8 with them).
+
+`src/utils/outreach.js` drafts what the operator actually sends: a LinkedIn connection note inside the 300-character limit, a LinkedIn message, an email subject and body, and two follow-ups — built from the account's own trigger written from its side ("your $500M securitisation through Canon Music Issuer Trust in April"), the hook for that segment and service line (`data/playbooks.js`, versioned), and the buying role's opening question (`data/personas.js`, roles only, never people). Every draft is copy-to-clipboard; the module drafts and never sends.
+
+The page has two views — a coverage matrix (segment × tier, with how many priority accounts have been worked) and a sortable target list with an account panel carrying the score breakdown, triggers with sources, the composer, the drafts, and a status/relationship/notes record. Records live in localStorage only (`mm-prospect-v1`). Engine and drafts are Node-tested: `npm run test:prospect`, 21 checks.
 
 ## Sibling cross-links (src/data/siblings.js)
 
