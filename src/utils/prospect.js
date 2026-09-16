@@ -14,6 +14,7 @@ import { TRANSACTIONS, partyIds as txPartyIds, partyName } from '../data/transac
 import { CLIENT_CATEGORIES, SERVICE_LINES, getConsultingContext } from '../data/consulting.js'
 import { listPros } from '../data/pros.js'
 import { SHARED_COMPANY_IDS, SHARED_SPONSOR_IDS } from '../data/siblings.js'
+import { outcomeEffect } from './outcomes.js'
 
 export const TODAY = () => new Date()
 /** Tier cuts, set against the live distribution so Tier A stays a week's worth of calls. */
@@ -48,6 +49,7 @@ export const TRIGGER_KINDS = {
   ard: { label: 'ABS repayment date approaching', weight: 12, window: 48 },
   reform: { label: 'Society reform milestone', weight: 10, window: 18 },
   signal: { label: 'News signal', weight: 2, window: 3 },
+  filing: { label: 'Regulatory filing', weight: 8, window: 6 },
 }
 
 /** Linear decay to zero across the trigger's window; events in the future (an ARD) decay as they get further away. */
@@ -133,6 +135,12 @@ export function triggersFor(entityId, ctx = {}) {
     const w = decay('reform', d, today)
     if (w > 0) out.push({ id: `${entityId}-${r.date}`, kind: 'reform', date: r.date, label: `Reform milestone: ${r.text}`, clause: `what you published — ${String(r.text).replace(/\.\s*$/, '')}`, detail: '', weight: TRIGGER_KINDS.reform.weight * w, sources: pro.sources })
   }
+  // structured filings from the enrichment connector: the form type carries its own weight
+  for (const f of (ctx.filings?.[entityId] || []).slice(0, 6)) {
+    const d = parseDate(f.filed)
+    const w = decay('filing', d, today)
+    if (w > 0 && f.weight >= 6) out.push({ id: `${entityId}-${f.id}`, kind: 'filing', date: f.filed, label: `${f.form} — ${f.formLabel}${f.company ? ` (${f.company})` : ''}`, clause: `your ${f.form} filing`, detail: f.note, weight: Math.min(f.weight, TRIGGER_KINDS.filing.weight) * w, sources: [{ label: `SEC EDGAR · ${f.form}`, url: f.url }] })
+  }
   const signals = ctx.signals?.[entityId] || 0
   if (signals > 0) out.push({ id: `${entityId}-signals`, kind: 'signal', date: ctx.signalsAsOf || '', label: `${signals} news ${signals === 1 ? 'item' : 'items'} in the live feed`, clause: '', detail: '', weight: Math.min(signals, 5) * TRIGGER_KINDS.signal.weight })
   return out.sort((a, b) => String(b.date).localeCompare(String(a.date)) || b.weight - a.weight)
@@ -157,6 +165,9 @@ export function sizeBand(account) {
 export function scoreAccount(account, ctx = {}) {
   const record = ctx.records?.[account.id] || {}
   const fitReasons = []; const timingReasons = []; const accessReasons = []
+  // what actually happened when we reached out outranks every proxy: engagement lifts access, a recent
+  // loss or silence cools timing, and "not now" parks the account until the date they gave us
+  const outcome = outcomeEffect(record, ctx.today || TODAY())
 
   const tierPoints = { 1: 12, 2: 8, 3: 4 }[account.tier] || 4
   fitReasons.push(`Tier ${account.tier} within ${account.type} (+${tierPoints})`)
@@ -173,9 +184,11 @@ export function scoreAccount(account, ctx = {}) {
   const triggers = account.triggers || []
   let timing = 0
   for (const t of triggers) { timing += t.weight; timingReasons.push(`${t.label} (+${t.weight.toFixed(0)})`) }
+  if (outcome.timingPenalty) { timing -= outcome.timingPenalty; timingReasons.push(...outcome.reasons.filter((r) => r.includes('−'))) }
   timing = clamp(Math.round(timing), 0, 40)
 
   let access = 0
+  if (outcome.accessBonus) { access += outcome.accessBonus; accessReasons.push(...outcome.reasons.filter((r) => r.includes('+'))) }
   const hubSponsor = SHARED_SPONSOR_IDS.includes(account.id)
   const hubCompany = SHARED_COMPANY_IDS.includes(account.id)
   if (hubSponsor || hubCompany) { access += 8; accessReasons.push(`Covered in the Intelligence Hub as a shared ${hubSponsor ? 'sponsor' : 'company'} (+8)`) }
@@ -186,8 +199,9 @@ export function scoreAccount(account, ctx = {}) {
   access = clamp(access, 0, 20)
 
   const total = fit + timing + access
-  const tier = total >= TIER_CUTS.a || (timing >= 20 && access >= 8) ? 'A' : total >= TIER_CUTS.b ? 'B' : 'C'
-  return { fit, timing, access, total, tier, fitReasons, timingReasons, accessReasons }
+  let tier = total >= TIER_CUTS.a || (timing >= 20 && access >= 8) ? 'A' : total >= TIER_CUTS.b ? 'B' : 'C'
+  if (outcome.parked) { tier = 'C'; accessReasons.push(`Parked until ${outcome.parkedUntil} — held out of the priority tiers`) }
+  return { fit, timing, access, total, tier, fitReasons, timingReasons, accessReasons, outcome }
 }
 
 /** All accounts, scored and sorted by score. ctx: { records, signals, today }. */

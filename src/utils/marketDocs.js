@@ -6,9 +6,10 @@ import { finish, push } from './labDocs.js'
 import { BUYER_KINDS, GOALS, buyerNarrative } from './buyerMatch.js'
 import { OWNER_BEHAVIOUR } from './catalogScan.js'
 import { fmtM } from './valuation.js'
+import { LIMITS } from '../data/limits.js'
 
 const asOf = () => new Date().toISOString().slice(0, 10)
-const NOTICE = 'Derived from the application\'s own sourced transaction and entity records plus the live news feed. Availability and match scores are prompts to do work, not statements that an asset is for sale or that a buyer is interested.'
+const NOTICE = `Derived from the application's own sourced transaction and entity records, the live news feed, and SEC filings. ${LIMITS.availability.claim} ${LIMITS.match.claim} ${LIMITS.availability.enforced} ${LIMITS.match.enforced}`
 const meta = { id: 'market', title: 'Mainframe · Music', disclaimer: NOTICE, valuationDate: asOf() }
 const money = (v) => (!v ? '—' : v >= 1e9 ? `$${(v / 1e9).toFixed(1)}B` : fmtM(v, 0))
 

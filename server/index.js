@@ -12,13 +12,14 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { WebSocketServer } from 'ws'
 import { aggregate } from './newsAggregator.js'
+import { fetchAllFilings, listedEntities } from './filings.js'
 import { scoreAll } from './relevanceScorer.js'
 import { SIGNAL_STATS, TOPIC_SIGNALS } from './signals.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DIST = path.resolve(__dirname, '../dist')
 const PORT = process.env.PORT || 3002
-const SPRINT = 16
+const SPRINT = 17
 const started = new Date()
 
 // Minimal .env loader (no dependency): KEY=value lines at repo root, never overriding real env.
@@ -51,6 +52,29 @@ async function fetchNews() {
 }
 
 const publicStatus = () => ({ ...status, total: cache.length, refreshMinutes: sources.refreshMinutes || 15 })
+
+// ── Enrichment: structured SEC filings ────────────────────────────────────────
+// Slow-moving compared with news, so it refreshes on its own, longer clock.
+const FILINGS_REFRESH_MS = (Number(process.env.FILINGS_REFRESH_MINUTES) || 360) * 60 * 1000
+let filings = []
+let filingsStatus = { running: false, lastFetch: null, lastSuccess: null, lastError: null, errors: [], companies: listedEntities().length, resolved: 0 }
+
+async function fetchFilings() {
+  if (filingsStatus.running) return
+  filingsStatus.running = true
+  const t0 = Date.now()
+  try {
+    const r = await fetchAllFilings({ perCompany: 12 })
+    if (r.filings.length) filings = r.filings
+    filingsStatus = { ...filingsStatus, lastFetch: new Date().toISOString(), lastSuccess: r.filings.length ? new Date().toISOString() : filingsStatus.lastSuccess, lastError: r.filings.length ? null : 'no filings returned', errors: r.errors, companies: r.companies, resolved: r.resolved }
+    console.log(`[filings] ${r.filings.length} filings from ${r.resolved}/${r.companies} companies in ${Date.now() - t0}ms (${r.errors.length} errors)`)
+  } catch (err) {
+    filingsStatus = { ...filingsStatus, lastFetch: new Date().toISOString(), lastError: err.message }
+    console.error('[filings] fetch failed:', err.message)
+  } finally { filingsStatus.running = false }
+}
+
+const filingsPublic = () => ({ ...filingsStatus, total: filings.length, refreshMinutes: FILINGS_REFRESH_MS / 60000 })
 
 function filterNews({ q = '', entity = '', type = '', topic = '', source = '', kind = '', minScore = '' }) {
   const needle = q.trim().toLowerCase()
@@ -92,6 +116,23 @@ app.post('/api/news/refresh', (_req, res) => { fetchNews(); res.json({ ok: true,
 // Proxies Gamma's public API (same shape as the Intelligence Hub). Needs GAMMA_API_KEY (Render env or .env).
 // Gamma is async: POST creates a generation, then poll GET until completed. ~20–40s.
 app.use(express.json({ limit: '2mb' }))
+app.get('/api/filings', (req, res) => {
+  const { entity = '', form = '', minWeight = '' } = req.query
+  const limit = Math.min(Number(req.query.limit) || 100, 400)
+  const items = filings.filter((f) => (!entity || f.entityId === entity) && (!form || f.form === form) && (!minWeight || f.weight >= Number(minWeight)))
+  res.json({ items: items.slice(0, limit), total: items.length, status: filingsPublic() })
+})
+
+app.post('/api/filings/refresh', (_req, res) => { fetchFilings(); res.json({ ok: true, running: true }) })
+
+/** What each enrichment connector is, and whether it is actually working right now. */
+app.get('/api/enrichment/status', (_req, res) => res.json({
+  connectors: [
+    { id: 'news', label: 'Trade press and search', kind: 'news', live: !!status.lastSuccess && !status.lastError, items: cache.length, sources: status.sourceCount, lastSuccess: status.lastSuccess, lastError: status.lastError, errors: status.errors?.length || 0, refreshMinutes: sources.refreshMinutes || 15 },
+    { id: 'sec', label: 'SEC EDGAR filings', kind: 'filing', live: !!filingsStatus.lastSuccess && !filingsStatus.lastError, items: filings.length, sources: filingsStatus.resolved, lastSuccess: filingsStatus.lastSuccess, lastError: filingsStatus.lastError, errors: filingsStatus.errors?.length || 0, refreshMinutes: FILINGS_REFRESH_MS / 60000, coverage: `${filingsStatus.resolved}/${filingsStatus.companies} listed entities` },
+  ],
+}))
+
 app.get('/api/gamma/status', (_req, res) => res.json({ configured: !!process.env.GAMMA_API_KEY }))
 app.post('/api/gamma/generate', async (req, res) => {
   const key = process.env.GAMMA_API_KEY
@@ -144,4 +185,6 @@ server.listen(PORT, () => {
   console.log(`music-mainframe :${PORT} · dist ${fs.existsSync(DIST) ? 'served' : 'absent'} · signals ${SIGNAL_STATS.entities} entities / ${SIGNAL_STATS.patterns} patterns / ${SIGNAL_STATS.topics} topics · refresh ${sources.refreshMinutes || 15}m`)
   fetchNews()
   setInterval(fetchNews, REFRESH_MS).unref()
+  setTimeout(fetchFilings, 4000).unref()
+  setInterval(fetchFilings, FILINGS_REFRESH_MS).unref()
 })

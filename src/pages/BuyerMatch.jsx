@@ -4,6 +4,7 @@ import { ArrowUpRight, ChevronDown } from 'lucide-react'
 import { PageHeader, Card, Tag } from '../components/primitives/index.js'
 import { ExportBar } from '../components/lab/LabUi.jsx'
 import { Field, selectFull } from '../components/prospecting/ProspectUi.jsx'
+import { LimitNote } from '../components/prospecting/LimitNote.jsx'
 import { BUYER_KINDS, GOALS, buyerNarrative, matchBuyers } from '../utils/buyerMatch.js'
 import { buildBuyerShortlist } from '../utils/marketDocs.js'
 import { marketStats, scanCatalogs } from '../utils/catalogScan.js'
@@ -26,6 +27,8 @@ export default function BuyerMatch() {
     <>
       <PageHeader eyebrow="Market · sell side" title="Buyer match"
         lede="Who actually buys catalogs, what each one has bought, and which of them fit the asset you are selling. Profiles are built only from transactions on record — nothing is assumed about appetite that a deal does not evidence." />
+
+      <LimitNote ids={['match']} className="mb-6" />
 
       <Card pad="lg" className="mb-6">
         <div className="t-eyebrow text-ink-3 mb-3">The brief</div>
@@ -75,7 +78,7 @@ export default function BuyerMatch() {
       </div>
 
       <ExportBar title="Export the shortlist" build={() => buildBuyerShortlist(matches.slice(0, 15), brief)} />
-      <p className="t-micro text-ink-4 mt-4">A match score says a buyer has done deals like this one, not that they are interested. Approach is still a conversation.</p>
+      <p className="t-micro text-ink-4 mt-4">Profiles are built only from transactions on record. Approach is still a conversation.</p>
     </>
   )
 }

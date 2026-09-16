@@ -166,6 +166,23 @@ The page has three views. **Coverage** is a segment × tier matrix showing how m
 
 Records live in localStorage only (`mm-prospect-v1`). Engine and drafts are Node-tested: `npm run test:prospect`, 25 checks.
 
+## Enrichment connectors and outcome tracking
+
+**Connectors.** `server/filings.js` pulls structured SEC filings for every US-listed entity in `entities.js`: tickers are read from the entity table, CIKs resolved from SEC's own ticker map, and each company's submissions feed gives real form types rather than a parsed headline. Coverage therefore tracks the entity table instead of a hand-kept list — currently 27 of 28 listed entities, about 324 filings. `/api/filings` serves them (filterable by entity, form, minimum weight) and `/api/enrichment/status` reports each connector's health. Set `SEC_USER_AGENT`; SEC requires a declared agent and rate-limits hard, so the fetch is sequential and paced, refreshing every six hours.
+
+Form types carry meaning and weight: an S-4 or SC 14D9 says a deal is in progress, an SC 13D says an activist has taken a stake, an ABS-15G is securitisation reporting, a 10-Q is routine. Significant filings become prospecting triggers and lift a holding's availability in the catalog scan. `ConnectorStatus` shows every connector's state on screen — when one is down the UI says so rather than quietly scoring lower.
+
+**Outcomes.** `utils/outcomes.js` records what happened after the outreach — contacted, replied, meeting, proposal, won, lost, no reply, not now — and feeds it back into scoring: engagement raises access (a proposal more than a reply) and halves after six months, a loss inside 90 days cools timing, "not now" parks the account out of the priority tiers until the date they gave you, and 90 quiet days marks it stale. The Pipeline view on `/prospecting` shows the funnel by furthest stage reached, reply, meeting and win rates, conversion by segment, and the accounts that have gone quiet. Records stay in localStorage.
+
+## What the scores mean
+
+`src/data/limits.js` holds two sentences, and they are the single source of truth:
+
+- **A match score means a buyer has done deals like yours, not that they are interested.** Profiles are built only from transactions on record. No buyer can be credited with a deal they did not make — the tests check every deal against its acquirer.
+- **An availability score is a prompt to do work, not a claim that an asset is for sale.** No genre tag can exist without the word appearing in the source — the tests check each tag against the text it came from.
+
+`LimitNote` renders them on the catalog scan, buyer match, prospecting and account pages, and every exported document carries them. `npm run test:outcomes` fails if a screen or a document drops one.
+
 ## Market modules (/market)
 
 Two views of the same market, from opposite sides. Both are built only from records the app can cite.

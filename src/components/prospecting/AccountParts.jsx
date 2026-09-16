@@ -9,6 +9,7 @@ import { PERSONAS, PERSONA_BY_ID } from '../../data/personas.js'
 import { SERVICE_LINES } from '../../data/consulting.js'
 import { hubLinks } from '../../data/siblings.js'
 import { STATUSES, STATUS_LABEL } from '../../hooks/useProspectRecords.js'
+import { OUTCOMES, OUTCOME_BY_ID, outcomeEffect } from '../../utils/outcomes.js'
 
 const SENDER_KEY = 'mm-prospect-sender'
 const fmtDate = (d) => d || '—'
@@ -125,7 +126,9 @@ export function OutreachComposer({ account, compact = false }) {
   )
 }
 
-export function RecordEditor({ account, record, update }) {
+export function RecordEditor({ account, record, update, logOutcome, removeOutcome }) {
+  const effect = outcomeEffect(record)
+  const outcomes = [...(record.outcomes || [])].sort((a, b) => String(b.date).localeCompare(String(a.date)))
   return (
     <div className="space-y-3">
       <div className="grid grid-cols-2 gap-3">
@@ -144,6 +147,53 @@ export function RecordEditor({ account, record, update }) {
         <textarea value={record.note || ''} onChange={(e) => update(account.id, { note: e.target.value })} rows={3} placeholder="Who you spoke to, what they said, when to come back."
           className="w-full bg-ground-1 border border-line-2 rounded-md px-3 py-2 t-small text-ink-1 placeholder:text-ink-4 focus:border-accent outline-none resize-y" />
       </Field>
+
+      {logOutcome && (
+        <div className="pt-3 border-t border-line-1 space-y-2">
+          <div className="t-eyebrow text-ink-3">What happened</div>
+          <div className="flex flex-wrap gap-1.5">
+            {OUTCOMES.map((o) => (
+              <button key={o.id} type="button" title={o.note} onClick={() => logOutcome(account.id, { kind: o.id, status: o.id === 'won' ? 'proposal' : o.id === 'contacted' ? 'contacted' : o.id === 'meeting' ? 'meeting' : undefined })}
+                className="t-micro rounded-md border border-line-2 bg-transparent text-ink-2 px-2 py-1 cursor-pointer hover:bg-ground-3 hover:text-ink-1">{o.label}</button>
+            ))}
+          </div>
+          {outcomes.length > 0 && (
+            <div className="space-y-1">
+              {outcomes.slice(0, 6).map((o) => (
+                <div key={`${o.kind}-${o.date}`} className="flex items-baseline justify-between gap-2">
+                  <span className="t-small text-ink-2"><span className="t-micro font-mono text-ink-4 mr-2">{o.date}</span>{OUTCOME_BY_ID[o.kind]?.label || o.kind}</span>
+                  {removeOutcome && <button type="button" onClick={() => removeOutcome(account.id, o)} className="t-micro text-ink-4 hover:text-danger bg-transparent border-0 cursor-pointer px-0">remove</button>}
+                </div>
+              ))}
+            </div>
+          )}
+          {record.outcomes?.some((o) => o.kind === 'not-now') && (
+            <Field label="Parked until" hint="held out of the priority tiers until this date">
+              <input type="date" value={record.parkedUntil || ''} onChange={(e) => update(account.id, { parkedUntil: e.target.value })} aria-label="Parked until"
+                className="bg-ground-1 border border-line-2 rounded-md h-8 px-2 t-small text-ink-1 focus:border-accent outline-none w-full" />
+            </Field>
+          )}
+          {effect.reasons.length > 0 && <p className="t-micro text-ink-3 m-0">{effect.reasons.join(' · ')}</p>}
+        </div>
+      )}
+    </div>
+  )
+}
+
+/** Recent regulatory filings for this account, from the SEC connector. */
+export function AccountFilings({ filings = [] }) {
+  if (!filings.length) return <p className="t-small text-ink-4 m-0">No filings on file. The connector covers US-listed entities only.</p>
+  return (
+    <div className="space-y-2">
+      {filings.slice(0, 8).map((f) => (
+        <div key={f.id} className="flex items-baseline gap-2">
+          <span className="t-micro font-mono text-ink-4 shrink-0 w-20">{f.filed}</span>
+          <span className="min-w-0">
+            <a href={f.url} target="_blank" rel="noreferrer" className="t-small text-ink-1 no-underline hover:text-accent">{f.form} — {f.formLabel}</a>
+            <span className="block t-micro text-ink-3">{f.note}</span>
+          </span>
+        </div>
+      ))}
     </div>
   )
 }

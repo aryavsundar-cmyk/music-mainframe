@@ -133,6 +133,14 @@ export function availability(h, ctx = {}) {
   const sold = TRANSACTIONS.filter((t) => t.sellers.some((p) => p.entityId === h.ownerId))
   if (sold.length) { score += 8; reasons.push(`Has sold ${sold.length} time${sold.length === 1 ? '' : 's'} before — a seller, not a holder (+8)`) }
 
+  // a merger registration, a tender response or an activist stake says more than any headline
+  const filings = (ctx.filings?.[h.ownerId] || []).filter((f) => ['S-4', 'SC 14D9', 'SC 13D', 'DEFM14A', '424B5', 'ABS-15G'].includes(f.form))
+  if (filings.length) {
+    const top = filings[0]
+    const add = ['S-4', 'SC 14D9', 'DEFM14A'].includes(top.form) ? 18 : 10
+    score += add
+    reasons.push(`Filed ${top.form} on ${top.filed} — ${top.note} (+${add})`)
+  }
   const intents = saleIntent(ctx.news?.[h.ownerId] || [])
   const process = intents.find((i) => i.kind === 'process')
   if (process) { score += 35; reasons.push(`Live signal: "${process.matched}" — ${process.title} (+35)`) }
@@ -140,7 +148,7 @@ export function availability(h, ctx = {}) {
 
   score = clamp(Math.round(score), 0, 100)
   const band = score >= 60 ? 'live' : score >= 40 ? 'watch' : 'quiet'
-  return { score, band, reasons, intents, years }
+  return { score, band, reasons, intents, filings, years }
 }
 
 export function scanCatalogs(ctx = {}) {

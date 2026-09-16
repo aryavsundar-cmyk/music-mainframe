@@ -2,7 +2,8 @@ import { useMemo } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import { PageHeader, Card, Tag } from '../components/primitives/index.js'
-import { AccountHeader, AccountNews, OutreachComposer, Panel, RecordEditor, ScoreReasons, TriggerList } from '../components/prospecting/AccountParts.jsx'
+import { AccountFilings, AccountHeader, AccountNews, OutreachComposer, Panel, RecordEditor, ScoreReasons, TriggerList } from '../components/prospecting/AccountParts.jsx'
+import { LimitNote } from '../components/prospecting/LimitNote.jsx'
 import { ExportBar } from '../components/lab/LabUi.jsx'
 import { buildAccountBrief, buildOutreachSequence } from '../utils/prospectDocs.js'
 import { draftOutreach } from '../utils/outreach.js'
@@ -10,14 +11,14 @@ import { buildAccounts, lineLabel, recommendedLine, SEGMENT_BY_ID } from '../uti
 import { CLIENT_CATEGORIES } from '../data/consulting.js'
 import { partyName } from '../data/transactions.js'
 import { useProspectRecords } from '../hooks/useProspectRecords.js'
-import { useSignals } from '../hooks/useSignals.js'
+import { useEnrichment } from '../hooks/useEnrichment.js'
 import { currencySymbol, formatMoney } from '../utils/format.js'
 
 export default function ProspectAccount() {
   const { accountId } = useParams()
-  const { records, update } = useProspectRecords()
-  const { signals } = useSignals()
-  const accounts = useMemo(() => buildAccounts({ records, signals }), [records, signals])
+  const { records, update, logOutcome, removeOutcome } = useProspectRecords()
+  const { signals, filings } = useEnrichment()
+  const accounts = useMemo(() => buildAccounts({ records, signals, filings }), [records, signals, filings])
   const account = accounts.find((a) => a.id === accountId)
   const record = records[accountId] || {}
 
@@ -84,8 +85,10 @@ export default function ProspectAccount() {
         </div>
 
         <div className="space-y-6 xl:sticky xl:top-6">
-          <Panel title="Your record"><RecordEditor account={account} record={record} update={update} /></Panel>
+          <Panel title="Your record"><RecordEditor account={account} record={record} update={update} logOutcome={logOutcome} removeOutcome={removeOutcome} /></Panel>
           <Panel title="In the news"><AccountNews accountId={account.id} /></Panel>
+          <Panel title="Filings"><AccountFilings filings={filings[account.id] || []} /></Panel>
+          <LimitNote ids={['match']} />
           {cats.length > 0 && (
             <Panel title="PEPI lens">
               {cats.map((c) => (

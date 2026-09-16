@@ -1,9 +1,12 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUpRight, ExternalLink, Search, X } from 'lucide-react'
 import { PageHeader, Card, Tag } from '../components/primitives/index.js'
 import { ExportBar } from '../components/lab/LabUi.jsx'
 import { selectClass } from '../components/prospecting/ProspectUi.jsx'
+import { LimitNote } from '../components/prospecting/LimitNote.jsx'
+import { ConnectorStatus } from '../components/prospecting/ConnectorStatus.jsx'
+import { useEnrichment } from '../hooks/useEnrichment.js'
 import { filterCatalogs, marketStats, scanCatalogs, OWNER_BEHAVIOUR } from '../utils/catalogScan.js'
 import { buildCatalogScan } from '../utils/marketDocs.js'
 import { ASSETS } from '../data/transactions.js'
@@ -13,28 +16,10 @@ import { useUrlFilters } from '../hooks/useUrlFilters.js'
 const money = (v) => (!v ? '—' : v >= 1e9 ? `$${(v / 1e9).toFixed(1)}B` : fmtM(v, 0))
 const BANDS = { live: { label: 'Live signal', tone: 'danger' }, watch: { label: 'Worth watching', tone: 'accent' }, quiet: { label: 'Quiet', tone: 'neutral' } }
 
-/** News per owner, so sale-intent language in the live feed can lift a holding's availability. */
-function useOwnerNews() {
-  const [state, setState] = useState({ news: {}, feed: 'loading' })
-  useEffect(() => {
-    let alive = true
-    fetch('/api/news?limit=300').then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
-      .then((j) => {
-        if (!alive) return
-        const map = {}
-        for (const it of j.items || []) for (const id of it.entities || []) (map[id] = map[id] || []).push(it)
-        setState({ news: map, feed: 'live' })
-      })
-      .catch(() => { if (alive) setState({ news: {}, feed: 'unavailable' }) })
-    return () => { alive = false }
-  }, [])
-  return state
-}
-
 export default function CatalogScan() {
   const { params, set, clear, any } = useUrlFilters(['q', 'asset', 'owner', 'band', 'genre', 'row'])
-  const { news, feed } = useOwnerNews()
-  const rows = useMemo(() => scanCatalogs({ news }), [news])
+  const { news, filings, connectors, ready } = useEnrichment()
+  const rows = useMemo(() => scanCatalogs({ news, filings }), [news, filings])
   const stats = useMemo(() => marketStats(rows), [rows])
   const shown = filterCatalogs(rows, params)
   const selected = rows.find((r) => r.id === params.row) || null
@@ -43,7 +28,9 @@ export default function CatalogScan() {
     <>
       <PageHeader eyebrow="Market · demand side" title="Catalog scan"
         lede="Every catalog holding the app can trace to a sourced transaction, scored on how likely it is to come to market — from how that kind of owner behaves, how long they have held it, refinancing dates ahead, and sale-intent language in the live feed."
-        actions={<span className="t-micro text-ink-4">{feed === 'live' ? 'Live feed connected' : feed === 'loading' ? 'Loading the feed…' : 'Feed unreachable — scores exclude live signals'}</span>} />
+        actions={<span className="t-micro text-ink-4">{!ready ? 'Loading enrichment…' : connectors.length ? `${connectors.filter((c) => c.live).length}/${connectors.length} connectors live` : 'Enrichment unreachable'}</span>} />
+
+      <LimitNote ids={['availability']} className="mb-6" />
 
       <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
         {[['Holdings tracked', stats.holdings], ['Live signal', stats.live], ['Worth watching', stats.watch], ['Owners', stats.owners], ['Disclosed value', money(stats.tracked)]].map(([label, value]) => (
@@ -111,10 +98,11 @@ export default function CatalogScan() {
           {selected ? <HoldingPanel row={selected} onClose={() => set({ row: '' })} />
             : <Card pad="lg"><p className="t-body text-ink-3 m-0">Pick a holding to see why it scores, the sources behind it, and which buyers would fit.</p></Card>}
           <ExportBar title="Export the scan" build={() => buildCatalogScan(shown, any ? 'Filtered view' : 'All tracked holdings')} />
+          <ConnectorStatus connectors={connectors} ready={ready} />
         </div>
       </div>
 
-      <p className="t-micro text-ink-4 mt-6">A score is a prompt to do work, never a statement that an asset is for sale. Genre tags come only from words that appear in the sourced text, so many rows are untagged.</p>
+      <p className="t-micro text-ink-4 mt-6">Genre tags come only from words that appear in the sourced text, so many rows are honestly untagged.</p>
     </>
   )
 }

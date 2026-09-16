@@ -8,18 +8,21 @@ import { ExportBar } from '../components/lab/LabUi.jsx'
 import { buildTargetList } from '../utils/prospectDocs.js'
 import { buildAccounts, coverage, triggerFeed, TRIGGER_KINDS, SEGMENTS, SEGMENT_BY_ID } from '../utils/prospect.js'
 import { STATUSES, STATUS_LABEL, useProspectRecords } from '../hooks/useProspectRecords.js'
-import { useSignals } from '../hooks/useSignals.js'
+import { useEnrichment } from '../hooks/useEnrichment.js'
+import { ConnectorStatus } from '../components/prospecting/ConnectorStatus.jsx'
+import { LimitNote } from '../components/prospecting/LimitNote.jsx'
+import { conversionBy, funnel, staleAccounts, OUTCOMES } from '../utils/outcomes.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
 
 const fmtDate = (d) => (d ? d : '—')
 
 export default function Prospecting() {
   const { params, set, clear, any } = useUrlFilters(['view', 'side', 'segment', 'tier', 'status', 'kind', 'q', 'account'])
-  const { records, update, reset } = useProspectRecords()
-  const { signals, state: feed } = useSignals()
-  const accounts = useMemo(() => buildAccounts({ records, signals }), [records, signals])
+  const { records, update, logOutcome, removeOutcome, reset } = useProspectRecords()
+  const { signals, filings, connectors, ready } = useEnrichment()
+  const accounts = useMemo(() => buildAccounts({ records, signals, filings }), [records, signals, filings])
   const cov = useMemo(() => coverage(accounts, records), [accounts, records])
-  const view = ['coverage', 'triggers'].includes(params.view) ? params.view : 'targets'
+  const view = ['coverage', 'triggers', 'pipeline'].includes(params.view) ? params.view : 'targets'
 
   const filtered = accounts.filter((a) => {
     const r = records[a.id] || {}
@@ -40,9 +43,10 @@ export default function Prospecting() {
           <div className="flex gap-2">
             <Button size="sm" variant={view === 'targets' ? 'primary' : 'secondary'} onClick={() => set({ view: 'targets' })}>Targets</Button>
             <Button size="sm" variant={view === 'triggers' ? 'primary' : 'secondary'} onClick={() => set({ view: 'triggers' })}>Triggers</Button>
+            <Button size="sm" variant={view === 'pipeline' ? 'primary' : 'secondary'} onClick={() => set({ view: 'pipeline' })}>Pipeline</Button>
             <Button size="sm" variant={view === 'coverage' ? 'primary' : 'secondary'} onClick={() => set({ view: 'coverage' })}>Coverage</Button>
           </div>
-          <span className="t-micro text-ink-4">{feed === 'live' ? 'News signals live' : feed === 'loading' ? 'Loading signals…' : 'News feed unreachable — timing scores exclude signals'}</span>
+          <span className="t-micro text-ink-4">{!ready ? 'Loading enrichment…' : connectors.length ? `${connectors.filter((c) => c.live).length}/${connectors.length} connectors live` : 'Enrichment unreachable'}</span>
         </div>} />
 
       <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-3 mb-6">
@@ -56,6 +60,8 @@ export default function Prospecting() {
 
       {view === 'coverage' ? (
         <CoverageView cov={cov} onPick={(segment, tier) => set({ view: 'targets', segment, tier: tier || '', account: '' })} />
+      ) : view === 'pipeline' ? (
+        <PipelineView accounts={accounts} records={records} connectors={connectors} ready={ready} />
       ) : view === 'triggers' ? (
         <TriggersView accounts={accounts} params={params} set={set} records={records} update={update} />
       ) : (
@@ -66,7 +72,7 @@ export default function Prospecting() {
           </div>
           <div className="xl:sticky xl:top-6">
             {selected
-              ? <AccountPanel account={selected} record={records[selected.id] || {}} update={update} onClose={() => set({ account: '' })} />
+              ? <AccountPanel account={selected} record={records[selected.id] || {}} update={update} logOutcome={logOutcome} removeOutcome={removeOutcome} onClose={() => set({ account: '' })} />
               : <Card pad="lg"><p className="t-body text-ink-3 m-0">Pick an account to see why it scores, what to lead with, and drafts for LinkedIn and email.</p></Card>}
           </div>
         </div>
@@ -215,7 +221,7 @@ function TargetTable({ accounts, records, selectedId, onSelect, onStatus }) {
   )
 }
 
-function AccountPanel({ account, record, update, onClose }) {
+function AccountPanel({ account, record, update, logOutcome, removeOutcome, onClose }) {
   return (
     <Card pad="lg" className="space-y-5">
       <div className="flex items-start justify-between gap-3">
@@ -235,7 +241,8 @@ function AccountPanel({ account, record, update, onClose }) {
 
       <OutreachComposer account={account} compact />
 
-      <div className="pt-4 border-t border-line-1"><RecordEditor account={account} record={record} update={update} /></div>
+      <div className="pt-4 border-t border-line-1"><RecordEditor account={account} record={record} update={update} logOutcome={logOutcome} removeOutcome={removeOutcome} /></div>
+      <LimitNote ids={['match']} />
     </Card>
   )
 }
@@ -289,5 +296,84 @@ function TriggersView({ accounts, params, set, records, update }) {
       </Card>
       <p className="t-micro text-ink-4 mt-3">Deadlines still ahead come first, then the most recent events. News signals move the timing score but are not listed here: they are not a dated event to open on.</p>
     </>
+  )
+}
+
+/** Pipeline — what happened after the outreach, and what it says about where to spend next week. */
+function PipelineView({ accounts, records, connectors, ready }) {
+  const f = funnel(records)
+  const bySegment = conversionBy(accounts, records, 'segment')
+  const stale = staleAccounts(accounts, records)
+  const pct = (v) => (v == null ? '—' : `${Math.round(v * 100)}%`)
+  const steps = [['Touched', f.touched], ['Contacted', f.contacted], ['Replied', f.replied], ['Meetings', f.meetings], ['Proposals', f.proposals], ['Won', f.won]]
+  const max = Math.max(1, ...steps.map(([, v]) => v))
+  return (
+    <div className="space-y-6">
+      <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(0,360px)] gap-6 items-start">
+        <Card pad="lg">
+          <div className="t-eyebrow text-ink-3 mb-1">Funnel</div>
+          <h3 className="t-h2 text-ink-1 m-0 mb-4">What came back</h3>
+          {f.touched === 0 ? (
+            <p className="t-body text-ink-3 m-0">Nothing logged yet. Record what happened on an account — contacted, replied, meeting, proposal, won, lost — and this fills in. Outcomes also feed the score: engagement raises access, a recent loss cools timing, and "not now" parks an account until the date they gave you.</p>
+          ) : (
+            <>
+              <div className="space-y-2">
+                {steps.map(([label, value]) => (
+                  <div key={label} className="grid grid-cols-[110px_minmax(0,1fr)_44px] gap-3 items-center">
+                    <span className="t-small text-ink-2">{label}</span>
+                    <span className="h-5 rounded-sm bg-ground-4 overflow-hidden"><span className="block h-full bg-accent" style={{ width: `${(value / max) * 100}%` }} /></span>
+                    <span className="font-mono tabular t-data text-ink-1 text-right">{value}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="grid grid-cols-3 gap-4 mt-5">
+                <Stat label="Reply rate" value={pct(f.replyRate)} />
+                <Stat label="Meeting rate" value={pct(f.meetingRate)} />
+                <Stat label="Win rate" value={pct(f.winRate)} hint="of proposals sent" />
+              </div>
+            </>
+          )}
+        </Card>
+        <div className="space-y-4">
+          <ConnectorStatus connectors={connectors} ready={ready} />
+          <LimitNote ids={['match']} />
+        </div>
+      </div>
+
+      {bySegment.length > 0 && (
+        <Card pad="lg">
+          <div className="t-eyebrow text-ink-3 mb-3">Where it is working</div>
+          <div className="overflow-x-auto -mx-2.5">
+            <table className="w-full border-collapse" style={{ minWidth: 560 }}>
+              <thead><tr>{['Segment', 'Worked', 'Replied', 'Meetings', 'Won', 'Reply rate'].map((h, i) => <th key={h} className={`t-micro uppercase tracking-[0.08em] text-ink-3 font-medium py-2 px-2.5 border-b border-line-2 whitespace-nowrap ${i ? 'text-right' : 'text-left'}`}>{h}</th>)}</tr></thead>
+              <tbody>
+                {bySegment.map((g) => (
+                  <tr key={g.key}>
+                    <td className="py-2 px-2.5 border-b border-line-1 t-small text-ink-1">{SEGMENT_BY_ID[g.key]?.label || g.key}</td>
+                    {[g.touched, g.replied, g.meetings, g.won].map((v, i) => <td key={i} className="py-2 px-2.5 border-b border-line-1 text-right font-mono tabular t-data text-ink-2">{v}</td>)}
+                    <td className="py-2 px-2.5 border-b border-line-1 text-right font-mono tabular t-data text-ink-1">{pct(g.replyRate)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </Card>
+      )}
+
+      <Card pad="lg">
+        <div className="t-eyebrow text-ink-3 mb-1">Gone quiet</div>
+        <h3 className="t-h3 text-ink-1 m-0 mb-3">{stale.length} account{stale.length === 1 ? '' : 's'} with nothing for 90 days</h3>
+        {stale.length === 0 ? <p className="t-small text-ink-3 m-0">Nothing has aged out. An account goes stale 90 days after its last recorded outcome, unless it is parked.</p> : (
+          <div className="divide-y divide-line-1">
+            {stale.slice(0, 10).map(({ account, effect }) => (
+              <div key={account.id} className="py-2 flex flex-wrap items-baseline justify-between gap-2">
+                <Link to={`/prospecting/${account.id}`} className="t-small text-ink-1 no-underline hover:text-accent">{account.name}</Link>
+                <span className="t-micro text-ink-3">{OUTCOMES.find((o) => o.id === effect.lastTouch?.kind)?.label} · {effect.sinceDays} days ago</span>
+              </div>
+            ))}
+          </div>
+        )}
+      </Card>
+    </div>
   )
 }

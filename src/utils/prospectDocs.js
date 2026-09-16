@@ -8,8 +8,9 @@ import { SEGMENT_BY_ID, lineLabel, hypothesesFor } from './prospect.js'
 import { PERSONA_BY_ID } from '../data/personas.js'
 import { STATUS_LABEL } from '../hooks/useProspectRecords.js'
 import { fmtM, fmtPct } from './valuation.js'
+import { LIMITS } from '../data/limits.js'
 
-const NOTICE = 'Prospecting figures are derived from the application\'s own sourced records and the live news feed. Relationship notes are the operator\'s own and are held locally.'
+const NOTICE = `Prospecting figures are derived from the application's own sourced records, the live news feed and SEC filings. Relationship notes and outcomes are the operator's own and are held locally. ${LIMITS.match.claim}`
 const asOf = () => new Date().toISOString().slice(0, 10)
 const meta = { id: 'prospecting', title: 'Mainframe · Music', disclaimer: NOTICE, valuationDate: asOf() }
 
