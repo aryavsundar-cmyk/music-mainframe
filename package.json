@@ -10,6 +10,7 @@
     "dev": "vite",
     "prebuild": "npm run tokens",
     "build": "vite build",
+    "build:work": "MM_EDITION=work vite build",
     "preview": "vite preview",
     "server": "node server/index.js",
     "server:watch": "node scripts/watch-server.mjs",
@@ -26,7 +27,8 @@
     "test:glossary": "node scripts/test-glossary.mjs",
     "test:market": "node scripts/test-market.mjs",
     "test:outcomes": "node scripts/test-outcomes.mjs",
-    "test": "npm run test:valuation && npm run test:pmi && npm run test:abs && npm run test:carveout && npm run test:prospect && npm run test:contrast && npm run test:glossary && npm run test:market && npm run test:outcomes"
+    "test:edition": "node scripts/test-edition.mjs",
+    "test": "npm run test:valuation && npm run test:pmi && npm run test:abs && npm run test:carveout && npm run test:prospect && npm run test:contrast && npm run test:glossary && npm run test:market && npm run test:outcomes && npm run test:edition"
   },
   "engines": {
     "node": ">=20.19.0"

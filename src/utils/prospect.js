@@ -3,7 +3,7 @@
  *
  * buildAccounts(ctx) turns the entity, fund, society, and platform tables into accounts placed in one selling
  * segment each, then scores every account out of 100:
- *   fit (0–40)     — does a PEPI service line have a specific hypothesis here, at what scale and role breadth
+ *   fit (0–40)     — does a service line have a specific hypothesis here, at what scale and role breadth
  *   timing (0–40)  — dated triggers (deals, ABS repayment dates, society reform milestones, news signals), decayed
  *   access (0–20)  — Hub cross-links, the operator's own relationship record, adviser overlap on past deals
  * Every component returns its reasons, so a score can be defended in a meeting. Nothing here invents a contact:
@@ -11,7 +11,7 @@
  */
 import { ENTITIES, getBackedBy, getEntity } from '../data/entities.js'
 import { TRANSACTIONS, partyIds as txPartyIds, partyName } from '../data/transactions.js'
-import { CLIENT_CATEGORIES, SERVICE_LINES, getConsultingContext } from '../data/consulting.js'
+import { OVERLAY_LABEL, CLIENT_CATEGORIES, SERVICE_LINES, getConsultingContext } from '../data/consulting.js'
 import { listPros } from '../data/pros.js'
 import { SHARED_COMPANY_IDS, SHARED_SPONSOR_IDS } from '../data/siblings.js'
 import { outcomeEffect } from './outcomes.js'
@@ -174,12 +174,17 @@ export function scoreAccount(account, ctx = {}) {
   const sizePoints = sizeBand(account).points
   if (sizePoints) fitReasons.push(`${sizeBand(account).label} (+${sizePoints})`)
   const catPoints = Math.min(account.categories.length * 5, 10)
-  if (catPoints) fitReasons.push(`${account.categories.length} PEPI ${account.categories.length === 1 ? 'category' : 'categories'} with named hypotheses (+${catPoints})`)
+  if (catPoints) fitReasons.push(`${account.categories.length} ${OVERLAY_LABEL ? `${OVERLAY_LABEL} ` : ''}${account.categories.length === 1 ? 'category' : 'categories'} with named hypotheses (+${catPoints})`)
   const rolePoints = Math.min(account.roles.length, 3) * 2
   fitReasons.push(`${account.roles.length} ${account.roles.length === 1 ? 'role' : 'roles'} in the value chain (+${rolePoints})`)
   const hypPoints = Math.min(account.hypotheses, 4)
   if (hypPoints) fitReasons.push(`${account.hypotheses} engagement hypotheses across our lines (+${hypPoints})`)
-  const fit = clamp(tierPoints + sizePoints + catPoints + rolePoints + hypPoints, 0, 40)
+  // Without the consulting overlay (the work edition), its weight goes to the public signals rather than
+  // simply vanishing, so scores stay comparable between editions.
+  const overlay = CLIENT_CATEGORIES.length > 0
+  const weight = overlay ? 1 : 1.6
+  if (!overlay) fitReasons.push('No consulting overlay in this edition — fit is weighted on scale, reach and activity')
+  const fit = clamp(Math.round((tierPoints + sizePoints + rolePoints) * weight) + catPoints + hypPoints, 0, 40)
 
   const triggers = account.triggers || []
   let timing = 0

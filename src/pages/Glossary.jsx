@@ -1,12 +1,11 @@
 import { useMemo } from 'react'
-import { Link } from 'react-router-dom'
-import { ArrowLeft, Search } from 'lucide-react'
+import { Search } from 'lucide-react'
 import { PageHeader, SectionHeader, Card } from '../components/primitives/index.js'
-import { TermRow } from '../components/lab/Concepts.jsx'
+import { TermRow } from '../components/reference/Concepts.jsx'
 import { GLOSSARY, TAGS } from '../data/glossary.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
 
-export default function LabGlossary() {
+export default function Glossary() {
   const { params, set } = useUrlFilters(['q', 'tag'])
   const q = params.q.trim().toLowerCase()
   const matches = useMemo(() => GLOSSARY.filter((t) => {
@@ -18,8 +17,7 @@ export default function LabGlossary() {
 
   return (
     <>
-      <Link to="/lab" className="t-small text-ink-3 no-underline inline-flex items-center gap-1 hover:text-ink-1 mb-4"><ArrowLeft size={14} aria-hidden="true" /> Valuation lab</Link>
-      <PageHeader eyebrow="Academy · plain English" title="Finance, explained"
+      <PageHeader eyebrow="Reference · plain English" title="Finance, explained"
         lede="Every term the lab uses, written for someone who has never worked on a deal: what it is, an example with round numbers, and the mistake people actually make with it." />
 
       <div className="flex flex-wrap items-center gap-3 mb-6">

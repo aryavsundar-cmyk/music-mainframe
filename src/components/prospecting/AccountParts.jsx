@@ -9,6 +9,7 @@ import { PERSONAS, PERSONA_BY_ID } from '../../data/personas.js'
 import { SERVICE_LINES } from '../../data/consulting.js'
 import { hubLinks } from '../../data/siblings.js'
 import { STATUSES, STATUS_LABEL } from '../../hooks/useProspectRecords.js'
+import { has } from '../../editions.js'
 import { OUTCOMES, OUTCOME_BY_ID, outcomeEffect } from '../../utils/outcomes.js'
 
 const SENDER_KEY = 'mm-prospect-sender'
@@ -68,6 +69,11 @@ export function TriggerList({ triggers, limit = 6 }) {
 
 /** Composer + drafts. The only place outreach text is produced, so panel and page can never drift. */
 export function OutreachComposer({ account, compact = false }) {
+  if (!has('outreach')) return <p className="t-small text-ink-3 m-0">Message drafting is not part of this edition. Use the score, the triggers and the sources above to decide who to approach and why now.</p>
+  return <Composer account={account} compact={compact} />
+}
+
+function Composer({ account, compact = false }) {
   const fresh = (a) => ({ key: a.id, line: recommendedLine(a), personaId: '', triggerId: '' })
   const [composer, setComposer] = useState(() => fresh(account))
   const c = composer.key === account.id ? composer : fresh(account)

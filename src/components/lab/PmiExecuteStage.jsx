@@ -3,7 +3,7 @@ import { fmtK, fmtM, fmtPct, fmtX, num, sum } from '../../utils/valuation.js'
 import { leverMatches } from '../../utils/pmi.js'
 import { PMI_STEPS } from '../../utils/pmiState.js'
 import { Exercise, Reviewer, Seg, NumField, Table, Money, Figure, Kpi, Verdict, ModelReview } from './LabUi.jsx'
-import { Concepts } from './Concepts.jsx'
+import { Concepts } from '../reference/Concepts.jsx'
 
 const Row = ({ label, hint, children }) => (
   <div className="flex items-center justify-between gap-3">

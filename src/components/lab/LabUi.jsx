@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
-import { ChevronDown, GraduationCap, Check, AlertTriangle, FileText, Presentation, FileType, FileCode, ExternalLink } from 'lucide-react'
-import { Card, Tag, Button, Eyebrow } from '../primitives/index.js'
-import { exportDoc } from '../../utils/download.js'
+import { useState } from 'react'
+import { ExportBar } from '../export/ExportBar.jsx'
+import { ChevronDown, GraduationCap, Check, AlertTriangle } from 'lucide-react'
+import { Card, Tag, Eyebrow } from '../primitives/index.js'
 
 /** Exercise — a numbered task card: what to do, the working area, and optional reviewer notes. */
 export function Exercise({ n, title, prompt, children, aside }) {
@@ -97,36 +97,6 @@ export function Kpi({ label, value, hint, tone = 'ink' }) {
   )
 }
 
-const FORMATS = [['docx', 'Word', FileText], ['pptx', 'Slides', Presentation], ['txt', 'Text', FileType], ['md', 'Markdown', FileCode]]
-
-/** ExportBar — exports a block-model doc (built lazily on click) to Word, slides, text, Markdown, or Gamma. */
-export function ExportBar({ title, build, primary = 'docx' }) {
-  const [busy, setBusy] = useState('')
-  const [last, setLast] = useState(null)
-  const [gamma, setGamma] = useState(null)
-  useEffect(() => { const t = setTimeout(() => fetch('/api/gamma/status').then((r) => r.json()).then(setGamma).catch(() => setGamma({ configured: false })), 0); return () => clearTimeout(t) }, [])
-  const run = async (f) => {
-    setBusy(f)
-    try { setLast({ ok: true, ...(await exportDoc(build(), f)) }) } catch (err) { setLast({ ok: false, error: err.message }) } finally { setBusy('') }
-  }
-  return (
-    <Card pad="md">
-      <div className="flex flex-wrap items-center gap-3 justify-between">
-        <div className="t-eyebrow text-ink-3">{title}</div>
-        <div className="flex flex-wrap gap-2">
-          {FORMATS.map(([f, label, Icon]) => <Button key={f} size="sm" variant={f === primary ? 'primary' : 'secondary'} icon={Icon} onClick={() => run(f)} disabled={!!busy}>{busy === f ? 'Building…' : label}</Button>)}
-          <Button size="sm" variant="secondary" icon={ExternalLink} onClick={() => run('gamma-presentation')} disabled={!!busy || (gamma && !gamma.configured)}>{busy === 'gamma-presentation' ? 'Generating…' : 'Gamma'}</Button>
-        </div>
-      </div>
-      {last && (
-        <div className={`mt-2 t-micro ${last.ok ? 'text-ink-3' : 'text-danger'}`}>
-          {last.ok ? (last.url ? <>Gamma ready: <a href={last.url} target="_blank" rel="noreferrer" className="text-secondary">{last.url}</a></> : `${last.filename} · ${last.sections} sections`) : last.error}
-        </div>
-      )}
-    </Card>
-  )
-}
-
 export function StatusTag({ kind }) {
   return kind === 'error' ? <Tag tone="danger">error</Tag> : <Tag tone="secondary">judgement</Tag>
 }
@@ -202,3 +172,6 @@ export function Takeaways({ items }) {
     </Card>
   )
 }
+
+// re-exported so the lab stages keep one import; the component itself is edition-neutral
+export { ExportBar }

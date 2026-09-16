@@ -18,7 +18,7 @@ import { getFundProfile, kindOf, FUND_KINDS } from '../data/peFunds.js'
 import { getProProfile, SCOPES, MODELS } from '../data/pros.js'
 import { getDspProfile, TIERS as DSP_TIERS, PAYOUT_MODELS } from '../data/fundamentals.js'
 import { flowsForEntity, FLOWS } from '../data/flows.js'
-import { getConsultingContext, SERVICE_LINES } from '../data/consulting.js'
+import { OVERLAY_LABEL, getConsultingContext, SERVICE_LINES } from '../data/consulting.js'
 import { hubFundLink, hubLinks } from '../data/siblings.js'
 import { CITATION_FALLBACK } from './newsCitations.js'
 import { formatMoney, formatCount, formatPct, formatRate, formatDate, currencySymbol } from './format.js'
@@ -29,7 +29,7 @@ const RIGHTS_OPS = new Set(['label', 'publisher', 'distributor', 'artist-service
 export const MODES = {
   full: { label: 'Full brief', blurb: 'Everything on the page' },
   catalog: { label: 'Catalog brief', blurb: 'Profile, hierarchy, flows, catalog deals' },
-  financial: { label: 'Financial brief', blurb: 'Transactions, ABS, investment view, PEPI lens' },
+  financial: { label: 'Financial brief', blurb: 'Transactions, ABS, investment view, consulting lens' },
   distribution: { label: 'Distribution brief', blurb: 'Profile, flows, distribution relationships' },
   methodology: { label: 'Methodology brief', blurb: 'How the society licenses, distributes, and reforms' },
   membership: { label: 'Membership brief', blurb: 'Collections, members, payout policy' },
@@ -163,9 +163,9 @@ export function buildBrief(entityId, { mode = 'full', citations = { items: [], s
     { kind: 'bullets', items: roles.map(({ flowId, node }) => `${FLOWS[flowId].label} → ${node.label}: ${node.description}`) },
   ])
 
-  // § PEPI lens
+  // § consulting overlay
   const ctx = getConsultingContext(e.id)
-  if (inMode('financial') && ctx.categories.length) add('PEPI lens', 'Where the consulting work is', [
+  if (inMode('financial') && OVERLAY_LABEL && ctx.categories.length) add(OVERLAY_LABEL, 'Where the consulting work is', [
     { kind: 'facts', rows: [['Client categories', list(ctx.categories.map((c) => c.label))]] },
     { kind: 'bullets', items: ctx.hypotheses.map((h) => `${SERVICE_LINES[h.line].label}: ${h.text}`) },
     { kind: 'paragraph', text: ctx.categories[0].thesis },

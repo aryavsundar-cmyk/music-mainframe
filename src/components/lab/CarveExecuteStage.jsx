@@ -2,7 +2,7 @@ import { Card, Tag } from '../primitives/index.js'
 import { fmtK, fmtM, fmtPct, fmtX, num } from '../../utils/valuation.js'
 import { CARVE_STEPS, bridgeMatches } from '../../utils/carveState.js'
 import { Exercise, Reviewer, Seg, NumField, Table, Money, Figure, Kpi, Verdict, ModelReview } from './LabUi.jsx'
-import { Concepts } from './Concepts.jsx'
+import { Concepts } from '../reference/Concepts.jsx'
 
 const Row = ({ label, hint, children }) => (
   <div className="flex items-center justify-between gap-3">

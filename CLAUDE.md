@@ -18,6 +18,13 @@ Working conventions for this repo. Mirrors how the sibling Mainframe apps run.
 - Check `/design` after any token change; both themes. Every text role must clear 4.5:1 on ground-0…4 in both themes — `npm run test:contrast` enforces it, along with ink-ramp hierarchy, coloured text on its own tint, text on filled controls, and tokens.css being in sync. Never fix contrast in a component; fix the token.
 - Lab explanations: plain-English definitions live in `data/glossary.js` (short · plain · worked example with real numbers · watch-out · related). Every execution step lists the terms it uses in its `terms` array, rendered by `components/lab/Concepts.jsx`; `/lab/glossary` is the searchable index. `npm run test:glossary` checks completeness, resolvable references, sentence length, and that no term is orphaned.
 
+## Editions
+- `src/editions.js` declares what each build contains. `full` is personal; `work` is the shareable research edition: Canvas, Money, Rights, Live, Market, Pipeline and Reference, no authored material, no Gamma.
+- Exclusion happens at BUILD time. `vite.config.js` swaps the authored modules for stubs by RESOLVED path — an alias on the import string misses importers that spell the path differently, which is how a leak ships. Hiding a route is never enough: anything in the bundle is readable in developer tools.
+- Adding anything authored (a new hypothesis set, rate, persona, case, internal link) means adding a stub and a swap, and a string in `scripts/test-edition.mjs`. `npm run test:edition` builds the work bundle and fails if private material appears, or if the public material disappears.
+- The work edition states what it is on screen and in exports (`src/editions.js` FRAMING, `components/EditionNotice.jsx`): an independent research tool, not a firm system of record, not advice, no client or personal data.
+- Server: `MM_EDITION=work` serves `dist-work` and drops the Gamma proxy. `EMBED_ALLOW` sets `frame-ancestors` for embedding (SharePoint, say; deny by default). `ACCESS_USER`/`ACCESS_PASS` turn on basic auth, and never cover `/api/health` so the watcher keeps working.
+
 ## Code
 - React 19 + Vite 7 + Tailwind 4 (CSS-first `@theme`; no `tailwind.config.js`) + React Router 7 + Lucide. JSX, not TS.
 - Relative imports carry `.js` / `.jsx` extensions (Node ESM compatibility for scripts).
@@ -37,4 +44,4 @@ Working conventions for this repo. Mirrors how the sibling Mainframe apps run.
 No royalty calculator · no artist tooling · no playback embeds · no sync marketplace · no song-level PRO lookup · no AI music generation.
 
 ## Sprint map
-0 foundation · 1 entities · 2 flows · 3 deals/PE/ABS/catalogs · 4 PROs + DSPs · 5 live news · 6 consulting overlay · 7 exports + Hub cross-links · 8 deliverables (account plans, proposals, sector decks, Gamma) · 9 valuation lab · 10 publisher roll-up PMI case · 11 royalty ABS collateral review case · 12 PRO carve-out case · 13 prospecting & coverage module · 14 trigger feed, account pages, health watcher · 15 accessible contrast + lab glossary · 16 prospecting exports + demand-side catalog scan + sell-side buyer match · 17 enrichment connectors, outcome tracking, stated limits — all shipped.
+0 foundation · 1 entities · 2 flows · 3 deals/PE/ABS/catalogs · 4 PROs + DSPs · 5 live news · 6 consulting overlay · 7 exports + Hub cross-links · 8 deliverables (account plans, proposals, sector decks, Gamma) · 9 valuation lab · 10 publisher roll-up PMI case · 11 royalty ABS collateral review case · 12 PRO carve-out case · 13 prospecting & coverage module · 14 trigger feed, account pages, health watcher · 15 accessible contrast + lab glossary · 16 prospecting exports + demand-side catalog scan + sell-side buyer match · 17 enrichment connectors, outcome tracking, stated limits · 18 work-edition split with a build-time secrecy test — all shipped.

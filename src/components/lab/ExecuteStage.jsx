@@ -2,7 +2,7 @@ import { Card, Tag } from '../primitives/index.js'
 import { fmtK, fmtM, fmtPct, fmtX, num, sum } from '../../utils/valuation.js'
 import { EXEC_STEPS } from '../../utils/labState.js'
 import { Exercise, Reviewer, Seg, NumField, Table, Money, Figure, Kpi, Verdict, ModelReview } from './LabUi.jsx'
-import { Concepts } from './Concepts.jsx'
+import { Concepts } from '../reference/Concepts.jsx'
 
 
 const pctCell = (v) => <Figure className="text-ink-2">{fmtPct(v)}</Figure>

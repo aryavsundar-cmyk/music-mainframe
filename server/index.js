@@ -17,15 +17,23 @@ import { scoreAll } from './relevanceScorer.js'
 import { SIGNAL_STATS, TOPIC_SIGNALS } from './signals.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const DIST = path.resolve(__dirname, '../dist')
+const DIST = path.resolve(__dirname, `../${process.env.MM_EDITION === 'work' ? 'dist-work' : 'dist'}`)
 const PORT = process.env.PORT || 3002
-const SPRINT = 17
+const SPRINT = 18
 const started = new Date()
 
 // Minimal .env loader (no dependency): KEY=value lines at repo root, never overriding real env.
 try { for (const line of fs.readFileSync(path.resolve(__dirname, '../.env'), 'utf8').split('\n')) { const m = /^\s*([A-Z0-9_]+)\s*=\s*(.*?)\s*$/.exec(line); if (m && !(m[1] in process.env)) process.env[m[1]] = m[2].replace(/^['"]|['"]$/g, '') } } catch { /* no .env */ }
 
 const sources = JSON.parse(fs.readFileSync(path.join(__dirname, 'sources.json'), 'utf8'))
+
+// ── Edition, embedding and access ─────────────────────────────────────────────
+// The work edition is the shareable build: no Gamma proxy, and it can be embedded and gated without a code change.
+const EDITION = process.env.MM_EDITION === 'work' ? 'work' : 'full'
+// EMBED_ALLOW: space- or comma-separated hosts permitted to frame this app (a SharePoint tenant, say).
+const EMBED_ALLOW = (process.env.EMBED_ALLOW || '').split(/[\s,]+/).filter(Boolean)
+const ACCESS_USER = process.env.ACCESS_USER || ''
+const ACCESS_PASS = process.env.ACCESS_PASS || ''
 const REFRESH_MS = (sources.refreshMinutes || 15) * 60 * 1000
 
 // ── News state ────────────────────────────────────────────────────────────────
@@ -89,7 +97,31 @@ const app = express()
 app.disable('x-powered-by')
 app.use(compression())
 
-app.get('/api/health', (_req, res) => res.json({ ok: true, app: 'music-mainframe', sprint: SPRINT, started: started.toISOString(), uptimeSec: Math.round(process.uptime()), news: { total: cache.length, lastSuccess: status.lastSuccess, lastError: status.lastError } }))
+/** Framing policy: deny by default, allow named hosts when the deployment is meant to be embedded. */
+app.use((req, res, next) => {
+  const ancestors = EMBED_ALLOW.length ? `'self' ${EMBED_ALLOW.join(' ')}` : "'none'"
+  res.setHeader('Content-Security-Policy', `frame-ancestors ${ancestors}`)
+  if (!EMBED_ALLOW.length) res.setHeader('X-Frame-Options', 'DENY')
+  next()
+})
+
+/**
+ * Optional access control for a private deployment. Off unless both variables are set, and never applied to the
+ * health endpoint, so the uptime watcher keeps working.
+ */
+app.use((req, res, next) => {
+  if (!ACCESS_USER || !ACCESS_PASS || req.path === '/api/health') return next()
+  const header = req.headers.authorization || ''
+  const [scheme, encoded] = header.split(' ')
+  if (scheme === 'Basic' && encoded) {
+    const [user, pass] = Buffer.from(encoded, 'base64').toString('utf8').split(':')
+    if (user === ACCESS_USER && pass === ACCESS_PASS) return next()
+  }
+  res.setHeader('WWW-Authenticate', 'Basic realm="Mainframe Music", charset="UTF-8"')
+  return res.status(401).send('Authentication required.')
+})
+
+app.get('/api/health', (_req, res) => res.json({ ok: true, app: 'music-mainframe', edition: EDITION, embeddable: EMBED_ALLOW.length ? EMBED_ALLOW : false, gated: !!(ACCESS_USER && ACCESS_PASS), sprint: SPRINT, started: started.toISOString(), uptimeSec: Math.round(process.uptime()), news: { total: cache.length, lastSuccess: status.lastSuccess, lastError: status.lastError } }))
 
 app.get('/api/news', (req, res) => {
   const items = filterNews(req.query)
@@ -133,8 +165,8 @@ app.get('/api/enrichment/status', (_req, res) => res.json({
   ],
 }))
 
-app.get('/api/gamma/status', (_req, res) => res.json({ configured: !!process.env.GAMMA_API_KEY }))
-app.post('/api/gamma/generate', async (req, res) => {
+if (EDITION === 'full') app.get('/api/gamma/status', (_req, res) => res.json({ configured: !!process.env.GAMMA_API_KEY }))
+if (EDITION === 'full') app.post('/api/gamma/generate', async (req, res) => {
   const key = process.env.GAMMA_API_KEY
   if (!key) return res.status(503).json({ error: 'GAMMA_API_KEY not configured', help: 'Set GAMMA_API_KEY on the Render service (or in .env locally). Get a key at gamma.app/settings/api. Meanwhile, download the .md and paste it into Gamma.' })
   const { content, title, format = 'presentation', numCards = 12 } = req.body || {}

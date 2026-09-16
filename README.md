@@ -166,6 +166,24 @@ The page has three views. **Coverage** is a segment × tier matrix showing how m
 
 Records live in localStorage only (`mm-prospect-v1`). Engine and drafts are Node-tested: `npm run test:prospect`, 25 checks.
 
+## Editions
+
+Two builds from one codebase. `full` is the personal edition. `work` is the shareable research edition: Canvas, Money, Rights, Live, Market, Pipeline and Reference, built only on public-sourced records.
+
+```bash
+npm run build         # full edition  → dist/
+npm run build:work    # work edition  → dist-work/
+npm run test:edition  # builds the work edition and proves what is not in it
+```
+
+The split happens at build time. `vite.config.js` swaps the authored modules — the consulting overlay, the rate card, internal cross-links, personas, playbooks, lab cases, the private document builders, the Gamma path, and the private navigation — for stubs, matching by resolved path rather than by import string. Runtime hiding would not be enough: anything inside the bundle is readable by anyone who opens developer tools.
+
+`npm run test:edition` is the guarantee. It builds the work bundle and greps the output for material that exists only in the private modules: category theses and engagement hypotheses, rate-card role labels, persona questions and proof points, hook claims, lab case titles and reviewer rationales, and internal URLs. It also checks the public material is still present, so an empty bundle cannot pass, and that the framing a reviewer would read is there.
+
+What changes in the work edition beyond exclusion: prospecting keeps coverage, targets, triggers and the pipeline, but message drafting is replaced with an explanation, and fit is rescored — the consulting overlay's weight moves to scale, reach and activity, so scores stay comparable between editions. The glossary ships as its own Reference section, because it explains public concepts and gives away no position.
+
+**Deployment.** `MM_EDITION=work` makes the server serve `dist-work` and drops the Gamma proxy, so no document content can leave the app. `EMBED_ALLOW` sets `frame-ancestors` for embedding in SharePoint or similar (deny by default), and `ACCESS_USER` with `ACCESS_PASS` turns on basic authentication for a private deployment — never applied to `/api/health`, so the uptime watcher keeps working.
+
 ## Enrichment connectors and outcome tracking
 
 **Connectors.** `server/filings.js` pulls structured SEC filings for every US-listed entity in `entities.js`: tickers are read from the entity table, CIKs resolved from SEC's own ticker map, and each company's submissions feed gives real form types rather than a parsed headline. Coverage therefore tracks the entity table instead of a hand-kept list — currently 27 of 28 listed entities, about 324 filings. `/api/filings` serves them (filterable by entity, form, minimum weight) and `/api/enrichment/status` reports each connector's health. Set `SEC_USER_AGENT`; SEC requires a declared agent and rate-limits hard, so the fetch is sequential and paced, refreshing every six hours.

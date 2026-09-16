@@ -4,11 +4,12 @@ import { ArrowLeft } from 'lucide-react'
 import { PageHeader, Card, Tag } from '../components/primitives/index.js'
 import { AccountFilings, AccountHeader, AccountNews, OutreachComposer, Panel, RecordEditor, ScoreReasons, TriggerList } from '../components/prospecting/AccountParts.jsx'
 import { LimitNote } from '../components/prospecting/LimitNote.jsx'
-import { ExportBar } from '../components/lab/LabUi.jsx'
+import { ExportBar } from '../components/export/ExportBar.jsx'
 import { buildAccountBrief, buildOutreachSequence } from '../utils/prospectDocs.js'
+import { has } from '../editions.js'
 import { draftOutreach } from '../utils/outreach.js'
 import { buildAccounts, lineLabel, recommendedLine, SEGMENT_BY_ID } from '../utils/prospect.js'
-import { CLIENT_CATEGORIES } from '../data/consulting.js'
+import { CLIENT_CATEGORIES, OVERLAY_LABEL } from '../data/consulting.js'
 import { partyName } from '../data/transactions.js'
 import { useProspectRecords } from '../hooks/useProspectRecords.js'
 import { useEnrichment } from '../hooks/useEnrichment.js'
@@ -80,7 +81,7 @@ export default function ProspectAccount() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <ExportBar title="Export the account brief" build={() => buildAccountBrief(account, draftOutreach(account, { line }), record)} />
-            <ExportBar title="Export the outreach sequence" build={() => buildOutreachSequence(account, draftOutreach(account, { line }))} />
+            {has('outreach') && <ExportBar title="Export the outreach sequence" build={() => buildOutreachSequence(account, draftOutreach(account, { line }))} />}
           </div>
         </div>
 
@@ -90,7 +91,7 @@ export default function ProspectAccount() {
           <Panel title="Filings"><AccountFilings filings={filings[account.id] || []} /></Panel>
           <LimitNote ids={['match']} />
           {cats.length > 0 && (
-            <Panel title="PEPI lens">
+            <Panel title={OVERLAY_LABEL || 'Sector context'}>
               {cats.map((c) => (
                 <div key={c.id} className="mb-3 last:mb-0">
                   <div className="t-small text-ink-1">{c.label}</div>

@@ -1,7 +1,7 @@
 /**
  * download.js — browser-side export entry points for ANY doc built on the block model
  * (brief · account plan · proposal · sector deck). Renderers are lazy-imported so docx and pptxgenjs never
- * enter the core bundle. Gamma goes through the server proxy (/api/gamma/generate) and returns a URL.
+ * enter the core bundle. The Gamma path lives in its own module so an edition can exclude it entirely.
  */
 import { buildBrief, briefFilename } from './brief.js'
 import { fetchCitations } from './newsCitations.js'
@@ -19,14 +19,7 @@ export async function exportDoc(doc, format = 'docx') {
   if (format === 'txt') { const { renderBriefText } = await import('./briefText.js'); save(new Blob([renderBriefText(doc)], { type: 'text/plain;charset=utf-8' }), filename) }
   else if (format === 'md') { const { renderBriefMarkdown } = await import('./briefMarkdown.js'); save(new Blob([renderBriefMarkdown(doc)], { type: 'text/markdown;charset=utf-8' }), filename) }
   else if (format === 'pptx') { const { briefPptxBlob } = await import('./briefPptx.js'); save(await briefPptxBlob(doc), filename) }
-  else if (format.startsWith('gamma')) {
-    const { renderBriefMarkdown } = await import('./briefMarkdown.js')
-    const r = await fetch('/api/gamma/generate', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ content: renderBriefMarkdown(doc), title: `${doc.title} — ${doc.modeLabel}`, format: format === 'gamma-document' ? 'document' : 'presentation', numCards: Math.min(20, doc.sections.length + 2) }) })
-    const j = await r.json().catch(() => ({}))
-    if (!r.ok) { const err = new Error(j.help || j.error || `Gamma HTTP ${r.status}`); err.code = r.status; throw err }
-    window.open(j.url, '_blank', 'noopener')
-    return { filename: j.url, citations: doc.citations?.source, sections: doc.sections.length, url: j.url }
-  }
+  else if (format.startsWith('gamma')) { const { exportToGamma } = await import('./gammaExport.js'); return exportToGamma(doc, format) }
   else { const { briefDocxBlob } = await import('./briefDocx.js'); save(await briefDocxBlob(doc), filename) }
   return { filename, citations: doc.citations?.source, sections: doc.sections.length }
 }

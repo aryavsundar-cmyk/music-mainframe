@@ -1,7 +1,10 @@
 import { lazy, Suspense } from 'react'
 import { NavLink, Route, Routes } from 'react-router-dom'
-import { Disc3, Building2, Waypoints, Handshake, Landmark, Layers, Library, ScrollText, Radio, Rss, Briefcase, FileOutput, GraduationCap, Palette, Sun, Moon, Crosshair, Users } from 'lucide-react'
+import { BookOpen, Disc3, Building2, Waypoints, Handshake, Landmark, Layers, Library, ScrollText, Radio, Rss, Palette, Sun, Moon, Crosshair, Users } from 'lucide-react'
 import { ThemeContext, useThemeState } from './hooks/useTheme.js'
+import { CURRENT, has, showsGroup } from './editions.js'
+import { PRIVATE_NAV } from './navPrivate.js'
+import { EditionNotice } from './components/EditionNotice.jsx'
 import Home from './pages/Home.jsx'
 import Entities from './pages/Entities.jsx'
 import EntityDetail from './pages/EntityDetail.jsx'
@@ -25,7 +28,7 @@ import ProspectAccount from './pages/ProspectAccount.jsx'
 // Lab pages are lazy chunks: the valuation engine and case data stay out of the core bundle.
 const Lab = lazy(() => import('./pages/Lab.jsx'))
 const LabCase = lazy(() => import('./pages/LabCase.jsx'))
-const LabGlossary = lazy(() => import('./pages/LabGlossary.jsx'))
+const Glossary = lazy(() => import('./pages/Glossary.jsx'))
 import DesignSystem from './pages/DesignSystem.jsx'
 import NotFound from './pages/NotFound.jsx'
 
@@ -48,10 +51,6 @@ const NAV = [
   { group: 'Live', items: [
     { to: '/news', label: 'News', icon: Rss },
   ]},
-  { group: 'Overlay', items: [
-    { to: '/consulting', label: 'Consulting lens', icon: Briefcase },
-    { to: '/deliverables', label: 'Deliverables', icon: FileOutput },
-  ]},
   { group: 'Market', items: [
     { to: '/market/catalogs', label: 'Catalog scan', icon: Library },
     { to: '/market/buyers', label: 'Buyer match', icon: Users },
@@ -59,10 +58,11 @@ const NAV = [
   { group: 'Pipeline', items: [
     { to: '/prospecting', label: 'Prospecting', icon: Crosshair },
   ]},
-  { group: 'Academy', items: [
-    { to: '/lab', label: 'Valuation lab', icon: GraduationCap },
+  { group: 'Reference', items: [
+    { to: '/glossary', label: 'Finance, explained', icon: BookOpen },
   ]},
-]
+  ...PRIVATE_NAV,
+].filter((g) => showsGroup(g.group))
 
 function NavItem({ to, label, icon: Icon, end }) {
   return (
@@ -99,6 +99,7 @@ export default function App() {
           <span className="flex flex-col leading-none">
             <span className="t-eyebrow text-ink-3">Mainframe</span>
             <span className="font-display text-[1.375rem] text-ink-1 mt-0.5">Music</span>
+            {CURRENT.id === 'work' && <span className="t-micro text-ink-4">research edition</span>}
           </span>
         </NavLink>
         <nav className="flex-1 overflow-y-auto px-3 py-4 space-y-5">
@@ -138,19 +139,21 @@ export default function App() {
             <Route path="/dsps" element={<DSPs />} />
             <Route path="/catalogs" element={<Catalogs />} />
             <Route path="/news" element={<News />} />
-            <Route path="/consulting" element={<Consulting />} />
-            <Route path="/consulting/:id" element={<ConsultingCategory />} />
-            <Route path="/deliverables" element={<Deliverables />} />
+            {has('consulting') && <Route path="/consulting" element={<Consulting />} />}
+            {has('consulting') && <Route path="/consulting/:id" element={<ConsultingCategory />} />}
+            {has('deliverables') && <Route path="/deliverables" element={<Deliverables />} />}
             <Route path="/market/catalogs" element={<CatalogScan />} />
             <Route path="/market/buyers" element={<BuyerMatch />} />
             <Route path="/prospecting" element={<Prospecting />} />
             <Route path="/prospecting/:accountId" element={<ProspectAccount />} />
-            <Route path="/lab" element={<Suspense fallback={<div className="t-small text-ink-3">Loading…</div>}><Lab /></Suspense>} />
-            <Route path="/lab/glossary" element={<Suspense fallback={<div className="t-small text-ink-3">Loading…</div>}><LabGlossary /></Suspense>} />
-            <Route path="/lab/:caseId" element={<Suspense fallback={<div className="t-small text-ink-3">Loading…</div>}><LabCase /></Suspense>} />
+            {has('lab') && <Route path="/lab" element={<Suspense fallback={<div className="t-small text-ink-3">Loading…</div>}><Lab /></Suspense>} />}
+            <Route path="/glossary" element={<Suspense fallback={<div className="t-small text-ink-3">Loading…</div>}><Glossary /></Suspense>} />
+            <Route path="/lab/glossary" element={<Suspense fallback={<div className="t-small text-ink-3">Loading…</div>}><Glossary /></Suspense>} />
+            {has('lab') && <Route path="/lab/:caseId" element={<Suspense fallback={<div className="t-small text-ink-3">Loading…</div>}><LabCase /></Suspense>} />}
             <Route path="/design" element={<DesignSystem />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <EditionNotice />
         </div>
       </main>
     </div>

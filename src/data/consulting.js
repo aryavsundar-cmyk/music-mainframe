@@ -10,6 +10,9 @@
 import { ENTITIES, getEntity } from './entities.js'
 import { getTransactionsForEntity, TRANSACTIONS, partyIds } from './transactions.js'
 
+export const OVERLAY_LABEL = 'PEPI lens'
+export const OVERLAY_OWNER = 'A&M PEPI'
+
 export const SERVICE_LINES = {
   diligence: { label: 'Diligence', short: 'DD', blurb: 'Commercial, operational, and financial diligence on rights, royalty pipelines, and operating companies.' },
   'carve-out': { label: 'Carve-out', short: 'CO', blurb: 'Separating a catalog, label, or services unit from a parent — TSAs, royalty accounting, systems, people.' },
