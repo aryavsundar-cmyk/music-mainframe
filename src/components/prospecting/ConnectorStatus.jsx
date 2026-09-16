@@ -30,7 +30,11 @@ export function ConnectorStatus({ connectors = [], ready = false }) {
           </div>
         ))}
       </div>
-      {connectors.some((c) => !c.live) && <p className="t-micro text-danger mt-2 mb-0">A connector is down, so some scores exclude its signals.</p>}
+      {connectors.filter((c) => !c.live).map((c) => (
+        <p key={c.id} className="t-micro text-danger mt-2 mb-0">
+          {c.label} is down, so scores exclude its signals.{c.lastError ? ` ${c.lastError}` : ''}{c.hint ? ` ${c.hint}` : ''}
+        </p>
+      ))}
     </Card>
   )
 }

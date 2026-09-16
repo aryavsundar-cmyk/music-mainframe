@@ -12,7 +12,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { WebSocketServer } from 'ws'
 import { aggregate } from './newsAggregator.js'
-import { fetchAllFilings, listedEntities } from './filings.js'
+import { fetchAllFilings, listedEntities, uaConfigured } from './filings.js'
 import { scoreAll } from './relevanceScorer.js'
 import { SIGNAL_STATS, TOPIC_SIGNALS } from './signals.js'
 
@@ -64,9 +64,9 @@ async function fetchFilings() {
   filingsStatus.running = true
   const t0 = Date.now()
   try {
-    const r = await fetchAllFilings({ perCompany: 12 })
+    const r = await fetchAllFilings({ perCompany: 12, seed: sources.secFilings?.companies || [] })
     if (r.filings.length) filings = r.filings
-    filingsStatus = { ...filingsStatus, lastFetch: new Date().toISOString(), lastSuccess: r.filings.length ? new Date().toISOString() : filingsStatus.lastSuccess, lastError: r.filings.length ? null : 'no filings returned', errors: r.errors, companies: r.companies, resolved: r.resolved }
+    filingsStatus = { ...filingsStatus, lastFetch: new Date().toISOString(), lastSuccess: r.filings.length ? new Date().toISOString() : filingsStatus.lastSuccess, lastError: r.filings.length ? null : (r.errors[0]?.error || 'no filings returned'), errors: r.errors, companies: r.companies, resolved: r.resolved }
     console.log(`[filings] ${r.filings.length} filings from ${r.resolved}/${r.companies} companies in ${Date.now() - t0}ms (${r.errors.length} errors)`)
   } catch (err) {
     filingsStatus = { ...filingsStatus, lastFetch: new Date().toISOString(), lastError: err.message }
@@ -129,7 +129,7 @@ app.post('/api/filings/refresh', (_req, res) => { fetchFilings(); res.json({ ok:
 app.get('/api/enrichment/status', (_req, res) => res.json({
   connectors: [
     { id: 'news', label: 'Trade press and search', kind: 'news', live: !!status.lastSuccess && !status.lastError, items: cache.length, sources: status.sourceCount, lastSuccess: status.lastSuccess, lastError: status.lastError, errors: status.errors?.length || 0, refreshMinutes: sources.refreshMinutes || 15 },
-    { id: 'sec', label: 'SEC EDGAR filings', kind: 'filing', live: !!filingsStatus.lastSuccess && !filingsStatus.lastError, items: filings.length, sources: filingsStatus.resolved, lastSuccess: filingsStatus.lastSuccess, lastError: filingsStatus.lastError, errors: filingsStatus.errors?.length || 0, refreshMinutes: FILINGS_REFRESH_MS / 60000, coverage: `${filingsStatus.resolved}/${filingsStatus.companies} listed entities` },
+    { id: 'sec', label: 'SEC EDGAR filings', kind: 'filing', live: !!filingsStatus.lastSuccess && !filingsStatus.lastError, items: filings.length, sources: filingsStatus.resolved, lastSuccess: filingsStatus.lastSuccess, lastError: filingsStatus.lastError, errors: filingsStatus.errors?.length || 0, refreshMinutes: FILINGS_REFRESH_MS / 60000, coverage: `${filingsStatus.resolved}/${filingsStatus.companies} listed entities`, hint: uaConfigured() ? '' : 'Set SEC_USER_AGENT with contact details; SEC refuses anonymous callers and blocks some hosting providers.' },
   ],
 }))
 

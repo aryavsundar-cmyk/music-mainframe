@@ -10,7 +10,11 @@
  */
 import { ENTITIES } from '../src/data/entities.js'
 
-const UA = process.env.SEC_USER_AGENT || 'Mainframe Music (internal research tool; contact via repository)'
+// SEC asks for a declared agent with contact details and rejects requests it does not recognise, sometimes by IP.
+// Set SEC_USER_AGENT to something like "Your Name your@email"; without it the connector still tries, and says so.
+const UA = process.env.SEC_USER_AGENT || 'Mainframe Music research tool (set SEC_USER_AGENT with contact details)'
+const HEADERS = { 'User-Agent': UA, Accept: 'application/json', 'Accept-Encoding': 'gzip, deflate' }
+export const uaConfigured = () => !!process.env.SEC_USER_AGENT
 const TICKER_MAP = 'https://www.sec.gov/files/company_tickers.json'
 const SUBMISSIONS = (cik) => `https://data.sec.gov/submissions/CIK${cik}.json`
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
@@ -50,7 +54,7 @@ export function listedEntities() {
 let tickerCache = { at: 0, map: null }
 async function tickerToCik() {
   if (tickerCache.map && Date.now() - tickerCache.at < 24 * 3600 * 1000) return tickerCache.map
-  const res = await fetch(TICKER_MAP, { headers: { 'User-Agent': UA, Accept: 'application/json' } })
+  const res = await fetch(TICKER_MAP, { headers: HEADERS })
   if (!res.ok) throw new Error(`ticker map HTTP ${res.status}`)
   const j = await res.json()
   const map = {}
@@ -81,18 +85,23 @@ function recentFor(company, cik, submissions, limit) {
 }
 
 /** Fetch recent filings for every listed entity. Sequential and paced — SEC rate-limits hard. */
-export async function fetchAllFilings({ perCompany = 12, pauseMs = 150 } = {}) {
+export async function fetchAllFilings({ perCompany = 12, pauseMs = 150, seed = [] } = {}) {
   const companies = listedEntities()
   const errors = []
-  let map
-  try { map = await tickerToCik() } catch (err) { return { filings: [], errors: [{ source: 'SEC ticker map', error: err.message }], companies: companies.length, resolved: 0 } }
+  // CIKs already known in sources.json seed the run, so a blocked ticker map degrades to partial coverage
+  // rather than none. Everything else is resolved from SEC's map when it is reachable.
+  const seeded = Object.fromEntries(seed.filter((c) => c.cik && c.ticker).map((c) => [String(c.ticker).toUpperCase(), String(c.cik).padStart(10, '0')]))
+  let map = {}
+  try { map = await tickerToCik() } catch (err) {
+    errors.push({ source: 'SEC ticker map', error: `${err.message}${err.message.includes('403') ? ' — SEC refused the request; set SEC_USER_AGENT with contact details, and note SEC blocks some hosting providers' : ''}` })
+  }
   const filings = []
   let resolved = 0
   for (const c of companies) {
-    const cik = map[c.ticker]
-    if (!cik) { errors.push({ source: `SEC: ${c.ticker}`, error: 'ticker not found in the SEC map' }); continue }
+    const cik = seeded[c.ticker] || map[c.ticker]
+    if (!cik) { errors.push({ source: `SEC: ${c.ticker}`, error: 'no CIK — not in the SEC ticker map and not seeded in sources.json' }); continue }
     try {
-      const res = await fetch(SUBMISSIONS(cik), { headers: { 'User-Agent': UA, Accept: 'application/json' } })
+      const res = await fetch(SUBMISSIONS(cik), { headers: HEADERS })
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       filings.push(...recentFor(c, cik, await res.json(), perCompany))
       resolved += 1
@@ -100,5 +109,5 @@ export async function fetchAllFilings({ perCompany = 12, pauseMs = 150 } = {}) {
     await sleep(pauseMs)
   }
   filings.sort((a, b) => String(b.filed).localeCompare(String(a.filed)))
-  return { filings, errors, companies: companies.length, resolved }
+  return { filings, errors, companies: companies.length, resolved, uaConfigured: uaConfigured() }
 }
