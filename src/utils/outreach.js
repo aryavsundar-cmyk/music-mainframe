@@ -6,7 +6,7 @@
  * sourced record in the app, and the persona is a role, not a person. Length limits are checked, not assumed.
  */
 import { PERSONA_BY_ID } from '../data/personas.js'
-import { hookFor } from '../data/playbooks.js'
+import { HOOKS, hookFor } from '../data/playbooks.js'
 import { SEGMENT_BY_ID, lineLabel } from './prospect.js'
 
 /** Practical channel limits. LinkedIn rejects a connection note over 300 characters outright. */
@@ -68,6 +68,18 @@ export function trimTo(text, limit) {
  * opts: { line, persona, trigger, sender } — all optional; sensible defaults come from the account.
  */
 export function draftOutreach(account, opts = {}) {
+  // In an edition without the authored hooks and personas there is nothing honest to draft, so say so rather
+  // than assembling sentences out of empty strings.
+  if (!HOOKS.length && !Object.keys(PERSONA_BY_ID).length) {
+    return {
+      account: account.id, unavailable: true, line: opts.line || account.lines[0], lineLabel: lineLabel(opts.line || account.lines[0]),
+      persona: null, personaRole: null, trigger: opts.trigger === undefined ? account.topTrigger : opts.trigger,
+      triggerClause: triggerClause(account, opts.trigger === undefined ? account.topTrigger : opts.trigger), hookVersion: null,
+      linkedinNote: '', linkedinSubject: '', linkedinBody: '', emailSubject: '', emailBody: '', followUps: [],
+      warnings: ['Message drafting is not part of this edition — the personas and hooks it needs are authored material.'],
+      lengths: { linkedinNote: 0, linkedinSubject: 0, linkedinBody: 0, emailSubject: 0, emailBody: 0 },
+    }
+  }
   const asked = opts.line || account.lines[0]
   const hook = hookFor(account.segment, asked)
   // fall back honestly: if no hook is written for the asked line, report the line the hook actually speaks to
@@ -128,6 +140,7 @@ export function draftOutreach(account, opts = {}) {
 
 /** Plain-text account brief for pasting into notes or a CRM. */
 export function briefText(account, draft) {
+  if (draft?.unavailable) return publicBrief(account)
   const L = []
   L.push(`${account.name} — ${SEGMENT_BY_ID[account.segment]?.label}`)
   L.push(`Score ${account.score.total}/100 (fit ${account.score.fit}, timing ${account.score.timing}, access ${account.score.access}) · Tier ${account.score.tier}`)
@@ -145,5 +158,20 @@ export function briefText(account, draft) {
   L.push('Email')
   L.push(`Subject: ${draft.emailSubject}`)
   L.push(draft.emailBody)
+  return L.join('\n')
+}
+
+/** The same brief without any authored material: what the record says, and why it scores. */
+export function publicBrief(account) {
+  const L = []
+  L.push(`${account.name} — ${SEGMENT_BY_ID[account.segment]?.label}`)
+  L.push(`Score ${account.score.total}/100 (fit ${account.score.fit}, timing ${account.score.timing}, access ${account.score.access}) · Tier ${account.score.tier}`)
+  L.push('')
+  L.push('Why it scores')
+  for (const r of [...account.score.fitReasons, ...account.score.timingReasons.slice(0, 4), ...account.score.accessReasons]) L.push(`- ${r}`)
+  L.push('')
+  L.push('Why now')
+  for (const t of account.triggers.slice(0, 5)) L.push(`- ${t.date ? `${t.date} · ` : ''}${t.label}`)
+  if (!account.triggers.length) L.push('- No dated trigger on file')
   return L.join('\n')
 }

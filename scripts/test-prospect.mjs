@@ -14,6 +14,10 @@ let n = 0
 const t = (name, fn) => { fn(); n++; console.log(`✓ ${name}`) }
 const accounts = buildAccounts({ today: TODAY })
 const byId = Object.fromEntries(accounts.map((a) => [a.id, a]))
+// The work edition ships without the authored hooks and personas, so the assertions about them become
+// assertions that the app says so plainly. Same suite, both editions.
+const AUTHORED = HOOKS.length > 0 && PERSONAS.length > 0
+console.log(AUTHORED ? 'edition: full (authored material present)' : 'edition: work (authored material absent)')
 
 t('every account lands in exactly one segment, and segments are exhaustive for sellable types', () => {
   for (const a of accounts) assert.equal(SEGMENTS.filter((s) => s.id === a.segment).length, 1, a.id)
@@ -93,10 +97,12 @@ t('transaction clauses are written from the account\'s side, not recycled headli
 t('every segment and line pairing the recommender can produce has a hook', () => {
   for (const a of accounts) {
     const line = recommendedLine(a)
-    assert.ok(hookFor(a.segment, line), `${a.segment} × ${line} (${a.id})`)
+    if (AUTHORED) assert.ok(hookFor(a.segment, line), `${a.segment} × ${line} (${a.id})`)
+    else assert.equal(hookFor(a.segment, line), null, 'no hooks exist in this edition')
   }
 })
 t('hooks and personas are well formed', () => {
+  if (!AUTHORED) { assert.equal(HOOKS.length, 0); assert.equal(PERSONAS.length, 0); return }
   for (const h of HOOKS) {
     assert.ok(SERVICE_LINES[h.line], h.line)
     assert.ok(SEGMENTS.some((s) => s.id === h.segment), h.segment)
@@ -107,6 +113,13 @@ t('hooks and personas are well formed', () => {
   for (const p of PERSONAS) { assert.ok(p.question.endsWith('?')); assert.ok(p.proof.case && p.proof.label) }
 })
 t('drafts respect every channel limit', () => {
+  if (!AUTHORED) {
+    const d = draftOutreach(accounts[0], { line: recommendedLine(accounts[0]) })
+    assert.equal(d.unavailable, true)
+    assert.ok(d.warnings.some((w) => w.includes('not part of this edition')), 'the app says why there is no draft')
+    assert.equal(d.linkedinNote, '')
+    return
+  }
   for (const a of accounts) {
     const d = draftOutreach(a, { line: recommendedLine(a), sender: 'A. Operator' })
     assert.ok(d.lengths.linkedinNote <= LIMITS.linkedinNote, `${a.id} note ${d.lengths.linkedinNote}`)
@@ -117,6 +130,7 @@ t('drafts respect every channel limit', () => {
   }
 })
 t('drafts never leak an unresolved token or an invented name', () => {
+  if (!AUTHORED) return
   for (const a of accounts) {
     const d = draftOutreach(a, { line: recommendedLine(a) })
     const all = [d.linkedinNote, d.linkedinBody, d.emailSubject, d.emailBody, ...d.followUps.map((f) => f.text)].join('\n')
@@ -126,6 +140,7 @@ t('drafts never leak an unresolved token or an invented name', () => {
   }
 })
 t('an account with no trigger is drafted from sector context, with a warning', () => {
+  if (!AUTHORED) return
   const quiet = accounts.find((a) => !a.topTrigger)
   const d = draftOutreach(quiet, { line: recommendedLine(quiet) })
   assert.ok(d.warnings.some((w) => w.includes('No live trigger')))
@@ -133,6 +148,7 @@ t('an account with no trigger is drafted from sector context, with a warning', (
 })
 t('the trigger picked is the one the draft opens on', () => {
   const a = byId.umg
+  if (!AUTHORED) { const alt = a.triggers[1] || a.triggers[0]; assert.equal(draftOutreach(a, { trigger: alt }).trigger.id, alt.id); return }
   const alt = a.triggers[1] || a.triggers[0]
   const d = draftOutreach(a, { line: recommendedLine(a), trigger: alt })
   assert.equal(d.trigger.id, alt.id)
@@ -147,12 +163,13 @@ t('dates read as words, and subjects trim on a word boundary', () => {
   assert.equal(whenPhrase('2025-07'), ' in July 2025')
   assert.equal(trimWords('Universal Music Group separation readiness', 20), 'Universal Music…')
 })
-t('the brief carries the score, the triggers, and both drafts', () => {
+t('the brief carries the score and the triggers, with the drafts when the edition has them', () => {
   const a = byId.umg
   const d = draftOutreach(a, { line: recommendedLine(a) })
   const b = briefText(a, d)
-  assert.ok(b.includes(a.name) && b.includes('Why now') && b.includes('LinkedIn note') && b.includes('Subject:'))
-  assert.ok(b.includes(String(a.score.total)))
+  assert.ok(b.includes(a.name) && b.includes('Why now') && b.includes(String(a.score.total)))
+  if (AUTHORED) assert.ok(b.includes('LinkedIn note') && b.includes('Subject:'))
+  else assert.ok(b.includes('Why it scores') && !b.includes('LinkedIn'), 'the public brief carries reasoning, not drafts')
 })
 t('the trigger feed lists dated events only, deadlines ahead first', () => {
   const feed = triggerFeed(accounts, { today: TODAY })

@@ -19,6 +19,8 @@ import { outcomeEffect } from './outcomes.js'
 export const TODAY = () => new Date()
 /** Tier cuts, set against the live distribution so Tier A stays a week's worth of calls. */
 export const TIER_CUTS = { a: 55, b: 40 }
+/** Without the overlay, its weight moves to the public components so tiers stay comparable between editions. */
+export const PUBLIC_FIT_WEIGHT = 1.5
 const monthsBetween = (a, b) => (b.getFullYear() - a.getFullYear()) * 12 + (b.getMonth() - a.getMonth())
 const parseDate = (s) => { if (!s) return null; const d = new Date(`${String(s).length === 7 ? `${s}-01` : s}T00:00:00Z`); return Number.isNaN(+d) ? null : d }
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v))
@@ -177,14 +179,17 @@ export function scoreAccount(account, ctx = {}) {
   if (catPoints) fitReasons.push(`${account.categories.length} ${OVERLAY_LABEL ? `${OVERLAY_LABEL} ` : ''}${account.categories.length === 1 ? 'category' : 'categories'} with named hypotheses (+${catPoints})`)
   const rolePoints = Math.min(account.roles.length, 3) * 2
   fitReasons.push(`${account.roles.length} ${account.roles.length === 1 ? 'role' : 'roles'} in the value chain (+${rolePoints})`)
+  // how often they transact at all — public, and independent of whether a deal is recent (that is timing's job)
+  const cadencePoints = Math.min(account.deals.length, 6)
+  if (cadencePoints) fitReasons.push(`${account.deals.length} transaction${account.deals.length === 1 ? '' : 's'} on record (+${cadencePoints})`)
   const hypPoints = Math.min(account.hypotheses, 4)
   if (hypPoints) fitReasons.push(`${account.hypotheses} engagement hypotheses across our lines (+${hypPoints})`)
   // Without the consulting overlay (the work edition), its weight goes to the public signals rather than
   // simply vanishing, so scores stay comparable between editions.
   const overlay = CLIENT_CATEGORIES.length > 0
-  const weight = overlay ? 1 : 1.6
-  if (!overlay) fitReasons.push('No consulting overlay in this edition — fit is weighted on scale, reach and activity')
-  const fit = clamp(Math.round((tierPoints + sizePoints + rolePoints) * weight) + catPoints + hypPoints, 0, 40)
+  const weight = overlay ? 1 : PUBLIC_FIT_WEIGHT
+  if (!overlay) fitReasons.push('No consulting overlay in this edition — fit is weighted on scale, reach and deal-making')
+  const fit = clamp(Math.round((tierPoints + sizePoints + rolePoints + cadencePoints) * weight) + catPoints + hypPoints, 0, 40)
 
   const triggers = account.triggers || []
   let timing = 0

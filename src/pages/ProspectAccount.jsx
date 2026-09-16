@@ -80,7 +80,7 @@ export default function ProspectAccount() {
           <Panel title="Outreach"><OutreachComposer account={account} /></Panel>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <ExportBar title="Export the account brief" build={() => buildAccountBrief(account, draftOutreach(account, { line }), record)} />
+            <ExportBar title="Export the account brief" build={() => buildAccountBrief(account, has('outreach') ? draftOutreach(account, { line }) : null, record)} />
             {has('outreach') && <ExportBar title="Export the outreach sequence" build={() => buildOutreachSequence(account, draftOutreach(account, { line }))} />}
           </div>
         </div>

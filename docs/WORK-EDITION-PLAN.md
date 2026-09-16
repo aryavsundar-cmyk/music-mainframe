@@ -1,6 +1,6 @@
 # Work edition — strategy and execution plan
 
-Status: Sprint 18 shipped 2026-09-16 (the split and its test). Sprints 19–21 outstanding. Drafted after Sprint 17.
+Status: Sprints 18–19 shipped 2026-09-16 (the split, its test, and public-fit scoring proved in both editions). Sprints 20–21 outstanding. Drafted after Sprint 17.
 Question it answers: what can be shared at work without giving away the part that is mine.
 
 ---
@@ -134,7 +134,7 @@ path by which content leaves the app to a third party. That is worth saying out 
 | Sprint | Work | Done when |
 |---|---|---|
 | 18 | ✅ Shipped: `editions.js`, build-time module swapping by resolved path, `npm run build:work`, a ten-check secrecy test, nav and route gating, the framing notice, and server support for embedding and access control | The work bundle contains no authored string, and the test proves it |
-| 19 | Public-fit scoring path, prospecting reduced for the work edition, Hub and hypothesis references made edition-aware | Both editions build and every engine test passes in both |
+| 19 | ✅ Shipped: transaction cadence added to fit, `PUBLIC_FIT_WEIGHT` redistribution, honest degradation of drafts and briefs, a Node resolve hook that runs every suite in the work shape, and a parity suite comparing the two | Both editions build; prospect, market and outcomes pass in both; parity holds — Tier A 6 in each, same account first |
 | 20 | Excel exporter on the block model, export menus per edition, Gamma removed from the work build and service | A table exports to a sheet with its sources in both editions |
 | 21 | Second Render service, optional basic auth, framing copy and disclaimers, `edition:work` source export | A colleague opens the link and sees only public material |
 

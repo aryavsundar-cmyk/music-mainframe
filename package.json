@@ -28,7 +28,8 @@
     "test:market": "node scripts/test-market.mjs",
     "test:outcomes": "node scripts/test-outcomes.mjs",
     "test:edition": "node scripts/test-edition.mjs",
-    "test": "npm run test:valuation && npm run test:pmi && npm run test:abs && npm run test:carveout && npm run test:prospect && npm run test:contrast && npm run test:glossary && npm run test:market && npm run test:outcomes && npm run test:edition"
+    "test:work": "MM_EDITION=work node --import ./scripts/edition-loader.mjs scripts/test-prospect.mjs && MM_EDITION=work node --import ./scripts/edition-loader.mjs scripts/test-market.mjs && MM_EDITION=work node --import ./scripts/edition-loader.mjs scripts/test-outcomes.mjs && MM_EDITION=work node scripts/test-parity.mjs",
+    "test": "npm run test:valuation && npm run test:pmi && npm run test:abs && npm run test:carveout && npm run test:prospect && npm run test:contrast && npm run test:glossary && npm run test:market && npm run test:outcomes && npm run test:edition && npm run test:work"
   },
   "engines": {
     "node": ">=20.19.0"

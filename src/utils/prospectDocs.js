@@ -48,13 +48,14 @@ export function buildTargetList(accounts, records = {}, opts = {}) {
 /** Account brief — one page to read before the call. */
 export function buildAccountBrief(account, draft, record = {}) {
   const S = []; const add = push(S)
-  const persona = PERSONA_BY_ID[draft.persona]
+  const drafted = draft && !draft.unavailable
+  const persona = drafted ? PERSONA_BY_ID[draft.persona] : null
   add('Summary', account.name, [
     { kind: 'stats', items: [
       { label: 'Tier', value: account.score.tier },
       { label: 'Score', value: `${account.score.total}/100` },
       { label: 'Segment', value: SEGMENT_BY_ID[account.segment]?.label || account.segment },
-      { label: 'Lead with', value: `${draft.lineLabel} · ${persona?.role || '—'}` },
+      { label: 'Lead with', value: drafted ? `${draft.lineLabel} · ${persona?.role || '—'}` : draft?.lineLabel || '—' },
     ] },
     { kind: 'paragraph', text: account.summary || '' },
   ])
@@ -64,11 +65,11 @@ export function buildAccountBrief(account, draft, record = {}) {
   ])
   if (account.triggers.length) add('Why now', 'Dated events worth opening on', [{ kind: 'table', columns: ['Date', 'Event'], rows: account.triggers.slice(0, 6).map((t) => [t.date || '—', t.label]) }])
   if (account.deals.length) add('Transactions', 'What they have done', [{ kind: 'table', columns: ['Date', 'Transaction', 'Type'], rows: account.deals.slice(0, 8).map((d) => [d.date, d.title, d.type]) }])
-  const hyps = hypothesesFor(account, draft.line).slice(0, 4)
+  const hyps = drafted ? hypothesesFor(account, draft.line).slice(0, 4) : []
   if (hyps.length) add('What we would do', lineLabel(draft.line), [{ kind: 'bullets', items: hyps.map((h) => h.text) }])
-  add('Opening', persona?.role || 'The conversation', [
-    { kind: 'paragraph', text: `Opening question: ${persona?.question || ''}` },
-    { kind: 'paragraph', text: `Proof point: ${persona?.proof?.label || ''}` },
+  if (drafted && persona) add('Opening', persona.role, [
+    { kind: 'paragraph', text: `Opening question: ${persona.question}` },
+    { kind: 'paragraph', text: `Proof point: ${persona.proof?.label || ''}` },
     { kind: 'paragraph', text: `Draft opening: ${draft.linkedinNote}` },
   ])
   if (record.note) add('Our record', `Status: ${STATUS_LABEL[record.status || 'new']}`, [{ kind: 'paragraph', text: record.note }])
