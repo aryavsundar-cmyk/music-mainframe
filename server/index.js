@@ -15,11 +15,12 @@ import { aggregate } from './newsAggregator.js'
 import { fetchAllFilings, listedEntities, uaConfigured } from './filings.js'
 import { scoreAll } from './relevanceScorer.js'
 import { SIGNAL_STATS, TOPIC_SIGNALS } from './signals.js'
+import { loadLocalArchive, fetchRemoteArchive, DEFAULT_REMOTE } from './archive.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DIST = path.resolve(__dirname, `../${process.env.MM_EDITION === 'work' ? 'dist-work' : 'dist'}`)
 const PORT = process.env.PORT || 3002
-const SPRINT = 23
+const SPRINT = 24
 const started = new Date()
 
 // Minimal .env loader (no dependency): KEY=value lines at repo root, never overriding real env.
@@ -35,6 +36,30 @@ const EMBED_ALLOW = (process.env.EMBED_ALLOW || '').split(/[\s,]+/).filter(Boole
 const ACCESS_USER = process.env.ACCESS_USER || ''
 const ACCESS_PASS = process.env.ACCESS_PASS || ''
 const REFRESH_MS = (sources.refreshMinutes || 15) * 60 * 1000
+
+// ── Evidence archive ──────────────────────────────────────────────────────────
+// The live feed forgets; the archive does not. It is deployed with the app (data/archive) and refreshed from the
+// repository every six hours, because the daily archive job commits there without triggering a deploy.
+const ARCHIVE_DIR = path.resolve(__dirname, '../data/archive')
+const ARCHIVE_URL = process.env.ARCHIVE_URL || DEFAULT_REMOTE
+const ARCHIVE_REFRESH_MS = 6 * 60 * 60 * 1000
+const ARCHIVE_DAYS = 400
+let archive = { ...loadLocalArchive(ARCHIVE_DIR), source: 'deployed', error: null, checkedAt: null }
+
+async function refreshArchive() {
+  const checkedAt = new Date().toISOString()
+  try {
+    const remote = await fetchRemoteArchive(ARCHIVE_URL)
+    // Never step backwards: a stale CDN copy older than the deployed one is ignored.
+    if (!archive.index || String(remote.index.updatedAt) >= String(archive.index.updatedAt)) archive = { ...remote, source: 'repository', error: null, checkedAt }
+    else archive = { ...archive, error: null, checkedAt }
+    console.log(`[archive] ${archive.items.length} items (${archive.source}), watching since ${archive.index?.coverageSince}`)
+  } catch (err) {
+    archive = { ...archive, error: `Could not refresh from the repository (${err.message}); serving the copy deployed with the app.`, checkedAt }
+    console.error('[archive]', err.message)
+  }
+}
+const archiveCoverage = () => (archive.index ? { since: archive.index.coverageSince, oldest: archive.index.oldestItem, newest: archive.index.newestItem, count: archive.index.count, updatedAt: archive.index.updatedAt } : null)
 
 // ── News state ────────────────────────────────────────────────────────────────
 let cache = []
@@ -121,7 +146,14 @@ app.use((req, res, next) => {
   return res.status(401).send('Authentication required.')
 })
 
-app.get('/api/health', (_req, res) => res.json({ ok: true, app: 'music-mainframe', edition: EDITION, embeddable: EMBED_ALLOW.length ? EMBED_ALLOW : false, gated: !!(ACCESS_USER && ACCESS_PASS), sprint: SPRINT, started: started.toISOString(), uptimeSec: Math.round(process.uptime()), news: { total: cache.length, lastSuccess: status.lastSuccess, lastError: status.lastError } }))
+app.get('/api/health', (_req, res) => res.json({ ok: true, app: 'music-mainframe', edition: EDITION, embeddable: EMBED_ALLOW.length ? EMBED_ALLOW : false, gated: !!(ACCESS_USER && ACCESS_PASS), sprint: SPRINT, started: started.toISOString(), uptimeSec: Math.round(process.uptime()), news: { total: cache.length, lastSuccess: status.lastSuccess, lastError: status.lastError }, archive: { ...archiveCoverage(), source: archive.source, error: archive.error } }))
+
+/** The archive, newest first. `since` (YYYY-MM-DD) bounds the payload; the default reaches past a full year. */
+app.get('/api/archive', (req, res) => {
+  const since = /^\d{4}-\d{2}-\d{2}$/.test(req.query.since || '') ? req.query.since : new Date(Date.now() - ARCHIVE_DAYS * 86400000).toISOString().slice(0, 10)
+  const items = archive.items.filter((x) => String(x.publishedAt).slice(0, 10) >= since)
+  res.json({ items, coverage: archiveCoverage(), source: archive.source, error: archive.error, checkedAt: archive.checkedAt })
+})
 
 app.get('/api/news', (req, res) => {
   const items = filterNews(req.query)
@@ -217,6 +249,8 @@ server.listen(PORT, () => {
   console.log(`music-mainframe :${PORT} · dist ${fs.existsSync(DIST) ? 'served' : 'absent'} · signals ${SIGNAL_STATS.entities} entities / ${SIGNAL_STATS.patterns} patterns / ${SIGNAL_STATS.topics} topics · refresh ${sources.refreshMinutes || 15}m`)
   fetchNews()
   setInterval(fetchNews, REFRESH_MS).unref()
+  refreshArchive()
+  setInterval(refreshArchive, ARCHIVE_REFRESH_MS).unref()
   setTimeout(fetchFilings, 4000).unref()
   setInterval(fetchFilings, FILINGS_REFRESH_MS).unref()
 })

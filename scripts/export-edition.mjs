@@ -37,9 +37,9 @@ const out = path.resolve(root, OUT)
 const die = (msg) => { console.error(`\nFAIL ${msg}`); process.exit(1) }
 
 /** Copied wholesale. An allowlist, not a denylist: a new private directory must be added here to escape. */
-const COPY = ['index.html', 'vite.config.js', 'eslint.config.js', 'package.json', 'package-lock.json', 'public', 'src', 'server']
+const COPY = ['index.html', 'vite.config.js', 'eslint.config.js', 'package.json', 'package-lock.json', 'public', 'src', 'server', 'data']
 /** Scripts the research edition can actually run. The lab and overlay suites import material it does not have. */
-const SCRIPTS = ['build-tokens.mjs', 'check-health.mjs', 'watch-server.mjs', 'generate-briefs.mjs', 'test-contrast.mjs', 'test-glossary.mjs', 'test-market.mjs', 'test-outcomes.mjs', 'test-prospect.mjs', 'test-xlsx.mjs']
+const SCRIPTS = ['build-tokens.mjs', 'check-health.mjs', 'watch-server.mjs', 'generate-briefs.mjs', 'archive-news.mjs', 'test-archive.mjs', 'test-forces.mjs', 'test-contrast.mjs', 'test-glossary.mjs', 'test-market.mjs', 'test-outcomes.mjs', 'test-prospect.mjs', 'test-xlsx.mjs']
 /**
  * Deleted from the copy. The swapped modules are here too: a swap keeps content out of the bundle, but the
  * file itself would still be sitting in the exported tree for anyone to open.
@@ -94,7 +94,7 @@ pkg.scripts = {
   build: 'MM_EDITION=work vite build',
   server: 'MM_EDITION=work node server/index.js',
   start: 'MM_EDITION=work node server/index.js',
-  test: 'npm run test:contrast && npm run test:glossary && npm run test:market && npm run test:outcomes && npm run test:prospect && npm run test:xlsx',
+  test: 'npm run test:contrast && npm run test:glossary && npm run test:market && npm run test:outcomes && npm run test:prospect && npm run test:xlsx && npm run test:forces && npm run test:archive',
 }
 fs.writeFileSync(path.join(out, 'package.json'), `${JSON.stringify(pkg, null, 2)}\n`)
 
@@ -169,7 +169,11 @@ const readable = files.filter((f) => /\.(js|jsx|mjs|json|css|html|md|yaml|txt)$/
 const samples = [
   ...CLIENT_CATEGORIES.map((c) => ['category thesis', c.thesis.slice(0, 60)]),
   ...CLIENT_CATEGORIES.flatMap((c) => Object.values(c.engagements || {}).flat().map((h) => ['engagement hypothesis', h.slice(0, 50)])),
-  ...ROLES.map((r) => ['rate-card role', r.label]),
+  // A job title is ordinary English — the archived news is full of "named Managing Director". A title alone is
+  // only a leak in source code, where the rate card is its only reason to exist; beside its day rate it is a
+  // leak anywhere. Same rule as the bundle test.
+  ...ROLES.map((r) => ['rate-card role', r.label, 'code']),
+  ...ROLES.flatMap((r) => [['rate beside its role', `${r.label}","${r.dayRate}`], ['rate beside its role', `${r.label}: ${r.dayRate}`], ['rate beside its role', `${r.label}:${r.dayRate}`]]),
   ...PERSONAS.map((p) => ['persona question', p.question.slice(0, 40)]),
   ...HOOKS.map((h) => ['outreach hook', h.claim.slice(0, 50)]),
   ...CASE_LIST.flatMap((c) => [['lab case title', c.title], ['lab case client', c.client.name]]),
@@ -180,7 +184,8 @@ const samples = [
 const leaks = []
 for (const f of readable) {
   const text = fs.readFileSync(f, 'utf8')
-  for (const [label, s] of samples) if (s && text.includes(s)) leaks.push(`${path.relative(out, f)} — ${label}: "${s.slice(0, 48)}"`)
+  const code = !path.relative(out, f).startsWith(`data${path.sep}`)
+  for (const [label, s, scope] of samples) if (s && (scope !== 'code' || code) && text.includes(s)) leaks.push(`${path.relative(out, f)} — ${label}: "${s.slice(0, 48)}"`)
 }
 if (leaks.length) {
   fs.rmSync(out, { recursive: true, force: true })

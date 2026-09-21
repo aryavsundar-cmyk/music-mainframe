@@ -7,6 +7,10 @@ services:
     buildCommand: npm ci --include=dev && npm run build
     startCommand: node server/index.js
     healthCheckPath: /api/health
+    # The daily archive commit touches only data/archive; it must not redeploy (and so restart) the service.
+    buildFilter:
+      ignoredPaths:
+        - data/archive/**
     envVars:
       - key: NODE_ENV
         value: production
@@ -24,6 +28,10 @@ services:
     buildCommand: npm ci --include=dev && npm run build:work
     startCommand: node server/index.js
     healthCheckPath: /api/health
+    # The daily archive commit touches only data/archive; it must not redeploy (and so restart) the service.
+    buildFilter:
+      ignoredPaths:
+        - data/archive/**
     envVars:
       - key: NODE_ENV
         value: production

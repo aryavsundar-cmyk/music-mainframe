@@ -1,0 +1,21 @@
+[
+ {
+  "id": "319afdec94dbbfe4",
+  "url": "https://www.sec.gov/Archives/edgar/data/1400891/000162828026055243/0001628280-26-055243-index.htm",
+  "title": "iHeartMedia — 8-K - Current report",
+  "summary": "SEC filing by iHeartMedia (IHRT). 0001628280-26-05524334001-38987https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&filenum=001-38987&owner=include&count=102026-08-10https://www.sec.gov/Archives/edgar/data/1400891/000162828026055243/0001628280-26-055243-index.htm8-K26125…",
+  "source": "SEC EDGAR",
+  "sourceId": "sec_edgar",
+  "category": "filing",
+  "kind": "filing",
+  "publishedAt": "2026-08-10T20:14:44.000Z",
+  "entities": [
+   "iheartradio"
+  ],
+  "topics": [
+   "earnings"
+  ],
+  "score": 21,
+  "firstSeen": "2026-09-21T20:32:06.254Z"
+ }
+]

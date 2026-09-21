@@ -1,0 +1,47 @@
+# Keeps the evidence archive: runs the news aggregator once a day and commits any new music-relevant items to
+# data/archive. Deterministic and cheap — a script, not an agent.
+#
+# Archiving must never redeploy the app (a deploy restarts the service and empties the live feed), so the commit
+# carries [skip render] and render.yaml ignores data/archive. The server reads new days straight from the
+# repository instead.
+name: archive
+
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archive
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --omit=dev
+      - name: Archive today's feed
+        id: run
+        run: |
+          node scripts/archive-news.mjs | tee archive.txt
+          echo "added=$(grep -o 'ADDED=[0-9]*' archive.txt | tail -1 | cut -d= -f2)" >> "$GITHUB_OUTPUT"
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+      - name: Commit new items
+        if: steps.run.outputs.added != '0' && steps.run.outputs.added != ''
+        run: |
+          git config user.name "music-mainframe archive"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/archive
+          git commit -m "archive: ${{ steps.run.outputs.added }} new items ($(date -u +%F)) [skip render]"
+          git pull --rebase --autostash
+          git push

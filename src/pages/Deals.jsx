@@ -6,7 +6,7 @@ import { TransactionList } from '../components/money/TransactionRow.jsx'
 import { filterTransactions, TX_TYPES, ASSETS, STRUCTURES, YEARS, TX_TOTALS, partyName } from '../data/transactions.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
-import { format } from '../utils/format.js'
+import { format, formatDate } from '../utils/format.js'
 import { ExportBar } from '../components/export/ExportBar.jsx'
 import { ForceBoard } from '../components/forces/ForceBoard.jsx'
 import { ForcePanel } from '../components/forces/ForcePanel.jsx'
@@ -40,14 +40,16 @@ const chip = (a) => ['inline-flex items-center gap-1.5 rounded-sm border px-2 py
 const select = 'bg-ground-1 border border-line-2 rounded-md h-8 px-2 t-small text-ink-1 focus:border-accent outline-none'
 
 /** What the board is reading, stated plainly — including what it declined and whether the live half is there. */
-function FeedLine({ feed, tagged, declined }) {
+function FeedLine({ feed, archive, tagged, declined }) {
   const deals = tagged.filter((x) => x.kind === 'deal').length
-  if (feed.state === 'unavailable') return <span className="t-micro text-danger">Live feed unreachable — forces reflect {deals} deals on record only.</span>
-  if (feed.state === 'loading') return <span className="t-micro text-ink-3">Reading the live feed…</span>
+  const archiveLine = archive.state === 'ok' && archive.coverage
+    ? `archive: ${archive.count} items since ${formatDate(archive.coverage.since)}${archive.error ? ' (repository unreachable — deployed copy)' : ''}`
+    : archive.state === 'unavailable' ? 'archive unavailable' : 'reading the archive…'
+  if (feed.state === 'unavailable' && archive.state !== 'ok') return <span className="t-micro text-danger">Live feed and archive unreachable — forces reflect {deals} deals on record only.</span>
   return (
-    <span className="t-micro text-ink-3 tabular">
-      {deals} deals on record · {tagged.length - deals} live events tagged · {declined} declined
-      {feed.total > feed.read && ` · newest ${feed.read} of ${feed.total} feed items read`}
+    <span className="t-micro text-ink-3 tabular text-right">
+      {deals} deals on record · {tagged.length - deals} events tagged · {declined} declined
+      <br />{feed.state === 'unavailable' ? <span className="text-danger">live feed unreachable</span> : feed.state === 'loading' ? 'reading the live feed…' : `live feed: ${feed.read} items`} · {archive.state === 'unavailable' ? <span className="text-danger">{archiveLine}</span> : archiveLine}
     </span>
   )
 }
@@ -55,13 +57,14 @@ function FeedLine({ feed, tagged, declined }) {
 export default function Deals() {
   const { params, set, clear, any, sp } = useUrlFilters(KEYS)
   const listed = useMemo(() => filterTransactions(params), [sp]) // eslint-disable-line react-hooks/exhaustive-deps
-  const { tagged, unclassified, today, feed } = useForces()
+  const { tagged, unclassified, today, feed, archive, coverageSince } = useForces()
 
   // The force facets narrow deals and market events alike. The board ignores its own force selection — pressing
   // one force should not make the other four read zero — but honours the rest (exposure, direction, place, rights).
   const facets = { force: params.force, reach: params.reach, exposure: params.exposure, direction: params.dir, geography: params.geo, rights: params.rights }
   const boardItems = filterTagged(tagged, { ...facets, force: '' })
-  const board = forceBoard(boardItems, { today })
+  const board = forceBoard(boardItems, { today, coverageSince })
+  const floors = board.some((b) => !b.complete[365])
   const selected = String(params.force || '').split(',').filter(Boolean)
   const forcing = FORCE_KEYS.some((k) => params[k])
   const rows = forcing ? filterTagged(listed.map(classifyDeal), facets).map((x) => x.record) : listed
@@ -88,16 +91,23 @@ export default function Deals() {
             <div className="t-eyebrow text-accent">Five forces</div>
             <p className="t-small text-ink-2 m-0 mt-1 max-w-2xl">Every deal on record and every item in the live feed, read against the five forces reshaping the market. Press a force to see its thesis and the evidence behind it.</p>
           </div>
-          <FeedLine feed={feed} tagged={tagged} declined={unclassified.length} />
+          <FeedLine feed={feed} archive={archive} tagged={tagged} declined={unclassified.length} />
         </div>
         <ForceBoard board={board} selected={selected} onToggle={toggleForce} />
+        {floors && (
+          <p className="t-micro text-ink-3 m-0 mt-2 max-w-4xl">
+            {coverageSince
+              ? <>Market events are archived from {formatDate(coverageSince)}. A window marked ≥ reaches back before that: it holds every deal on record but only the events still in the live feed, so its count is a floor. Hatched weeks in the sparklines are incomplete the same way. Both fill in as the archive grows.</>
+              : <>The evidence archive is unavailable, so events come from the live feed alone, which holds only a few weeks and empties on restart. Windows marked ≥ are floors.</>}
+          </p>
+        )}
         <div className="mt-3">
           <ExportBar title={selected.length ? `Export the brief — ${selected.map((id) => FORCE_BY_ID[id].short_title).join(', ')}` : 'Export the five forces brief'}
-            build={() => buildForcesBrief(filterTagged(tagged, facets), { today, unclassified, filters: forceFilters, forces: selected.length ? selected : FORCE_IDS })} />
+            build={() => buildForcesBrief(filterTagged(tagged, facets), { today, unclassified, filters: forceFilters, forces: selected.length ? selected : FORCE_IDS, coverageSince, archive })} />
         </div>
       </section>
 
-      {selected.length === 1 && <ForcePanel activity={forceActivity(boardItems, selected[0], { today, feed: 12 })} />}
+      {selected.length === 1 && <ForcePanel activity={forceActivity(boardItems, selected[0], { today, feed: 12, coverageSince })} />}
 
       <ForceFilters params={params} set={set} geographies={geographiesIn(tagged)} />
 

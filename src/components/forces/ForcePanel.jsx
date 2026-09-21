@@ -4,6 +4,7 @@ import { EXPOSURE_TYPES } from '../../data/forces.js'
 import { LimitNote } from '../prospecting/LimitNote.jsx'
 import { formatDate } from '../../utils/format.js'
 import { ForceChips, Direction } from './ForceChip.jsx'
+import { ForceSpark } from './ForceSpark.jsx'
 
 function Column({ title, items }) {
   return (
@@ -38,6 +39,9 @@ export function ForcePanel({ activity }) {
 
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
         <div>
+          <div className="t-eyebrow text-ink-3 mb-2">Weekly activity · last 12 weeks</div>
+          <ForceSpark series={activity.series} height={56} label={f.short_title} />
+          <div className="flex justify-between t-micro text-ink-4 mt-1 mb-6"><span>{formatDate(activity.series[0].start)}</span><span>this week</span></div>
           <div className="t-eyebrow text-ink-3 mb-2">Activity by exposure type</div>
           {mix.length ? (
             <div className="space-y-1.5">

@@ -9,7 +9,7 @@
  */
 import assert from 'node:assert/strict'
 import { FORCES, FORCE_IDS, FORCE_BY_ID, CONFIDENCE, DIRECTIONS, EXPOSURE_TYPES, RIGHTS_TYPES, REVENUE_STREAMS, CLASSIFICATION } from '../src/data/forces.js'
-import { classifyDeal, classifyEvent, classifyAll, evidenceHolds, filterTagged, forceActivity, forceBoard, placesOf, compileKeyword, dateMs, isMusic } from '../src/utils/forces.js'
+import { classifyDeal, classifyEvent, classifyAll, evidenceHolds, filterTagged, forceActivity, forceBoard, placesOf, compileKeyword, dateMs, isMusic, windowComplete } from '../src/utils/forces.js'
 import { buildForcesBrief, THIN_EVIDENCE } from '../src/utils/forcesDocs.js'
 import { TRANSACTIONS } from '../src/data/transactions.js'
 import { LIMITS } from '../src/data/limits.js'
@@ -148,6 +148,8 @@ t('false positives found in calibration stay fixed', () => {
   const roundup = ev('Ed Sheeran discusses Macklemore axing controversy as his tour resumes', 'Elsewhere, an artist pulled out of a concert in Abu Dhabi and a band returned to Spotify.', { entities: ['spotify'] })
   assert.ok(!roundup.secondary_force_ids.includes('emerging_markets'), 'a place in a news roundup is a mention, not a market')
   assert.ok(!roundup.secondary_force_ids.includes('discovery_distribution'), 'Spotify mentioned once is one piece of evidence, not two')
+  const komca = ev('South Korea’s KOMCA quietly reverses its stance on AI', '', { entities: ['komca'], topics: ['ai'] })
+  assert.equal(komca.primary_force_id, 'ai_rights_control', 'a society named in a headline weighs what a society weighs anywhere (1), not what a DSP weighs')
 })
 
 // ── Market events ───────────────────────────────────────────────────────────────────────────────────────
@@ -210,6 +212,25 @@ t('filters: OR within a facet, AND across facets, and direct versus adjacent', (
   assert.equal(filterTagged(TAGGED, {}).length, TAGGED.length, 'no filters, no change')
 })
 
+t('a window reaching back before the archive began is a floor, and says so', () => {
+  assert.equal(windowComplete(30, { today: TODAY, coverageSince: '2026-08-01' }), true)
+  assert.equal(windowComplete(90, { today: TODAY, coverageSince: '2026-08-01' }), false, '90 days back is before August')
+  assert.equal(windowComplete(30, { today: TODAY, coverageSince: null }), false, 'with no archive, every window holding events is a floor')
+  const a = forceActivity(TAGGED, 'capital_ownership', { today: TODAY, coverageSince: '2026-09-21' })
+  assert.deepEqual(a.complete, { 30: false, 90: false, 365: false })
+})
+
+t('weekly series: twelve Monday-start weeks, and weeks before the archive are marked uncovered', () => {
+  const a = forceActivity(TAGGED, 'capital_ownership', { today: TODAY, coverageSince: '2026-09-21' })
+  assert.equal(a.series.length, 12)
+  assert.equal(a.series.at(-1).start, '2026-09-21', 'the current week starts on Monday 21 September')
+  assert.ok(a.series.at(-1).current && a.series.at(-1).covered)
+  assert.ok(!a.series.at(-2).covered, 'the week before the archive began is incomplete, not quiet')
+  for (const w of a.series) assert.equal(w.count, w.deals + w.events)
+  const bmg = a.series.find((w) => w.start === '2026-08-31')
+  assert.ok(bmg.deals >= 1, 'the BMG–Concord close (1 Sep) lands in the week of 31 Aug')
+})
+
 await T('the brief: all five theses, the method, the limit, thin evidence flagged — in every format', async () => {
   const { tagged, unclassified } = classifyAll({ deals: TRANSACTIONS, events: FIXTURES.map((x) => x.record) })
   const doc = buildForcesBrief(tagged, { today: TODAY, unclassified })
@@ -217,6 +238,9 @@ await T('the brief: all five theses, the method, the limit, thin evidence flagge
   for (const f of FORCES) assert.ok(text.includes(f.thesis), `missing thesis: ${f.id}`)
   assert.ok(text.includes(LIMITS.force.claim), 'the force limit travels with the file')
   assert.ok(/Items declined/.test(text) && /not about the music business/i.test(text), 'declined items are reported with their reasons')
+  const withArchive = renderBriefText(buildForcesBrief(tagged, { today: TODAY, unclassified, coverageSince: '2026-09-21' })).replace(/\s+/g, ' ')
+  assert.ok(withArchive.includes('Evidence archive') && withArchive.includes('≥'), 'windows that reach before the archive are exported as floors')
+  assert.ok(withArchive.includes('Weekly activity, last 12 weeks') && withArchive.includes('no — deals only'), 'the trend table marks incomplete weeks')
   const board = forceBoard(tagged, { today: TODAY })
   const thin = board.filter((b) => b.total < THIN_EVIDENCE)
   for (const b of thin) assert.ok(text.includes(`Only ${b.total} item`), `${b.force.id} is thin and must say so`)

@@ -189,6 +189,21 @@ Direction is read against the thesis as written: a training-data lawsuit *suppor
 npm run test:forces   # taxonomy, the spec's worked example, evidence on every tag, calibration guards
 ```
 
+## Evidence archive
+
+The live feed is a window, not a record: it lives in memory, holds a few weeks, and empties on every restart. Read on its own, a "last 365 days" count measures how long the server has been up. The evidence archive is what makes a trailing window mean what it says.
+
+- **Storage is the repository.** `data/archive/YYYY-MM.json` plus `index.json`. Every item keeps its source URL; summaries are trimmed to 280 characters — enough to classify and recognise the story, not a copy of the article.
+- **A scheduled job appends to it daily** (`.github/workflows/archive.yml` → `npm run archive`). It runs the real aggregator in-process rather than asking the live service, which may be asleep or freshly restarted, and keeps only what could ever be evidence: items about music and non-routine SEC filings. Items are classified when read, not when archived, so an improvement to the engine applies to the whole history.
+- **Append-only in practice.** A story is recorded once (by id, URL or headline) and never rewritten; re-running on the same feed changes no file, so a quiet day produces no commit.
+- **Archiving never redeploys the app.** The commit carries `[skip render]` and `render.yaml` ignores `data/archive/**`. The server loads the copy it was deployed with and refreshes from the repository's raw files every six hours; `/api/archive` serves it and `/api/health` reports it, including when the repository is unreachable.
+- **Coverage counts from when the archive started watching** (21 Sep 2026), not from the oldest story the first run happened to catch. A window reaching back before that holds every deal on record but only the events still in the live feed, so the board marks it `≥` — a floor, not a total — and the sparklines draw those weeks hatched, with the known count on top, rather than as quiet weeks. Both fill in as the archive grows.
+
+```bash
+npm run archive          # run the aggregator now and append what is new
+npm run test:archive     # merge, idempotency, coverage, and the committed archive's integrity
+```
+
 ## Page-level exports
 
 Every page is a filtered, sorted view of records, and every page exports that view: **Word, slides, Excel and text**, from the bar at the foot of the page. `utils/pageDocs.js` turns what is on screen into the same block model the briefs use, so the existing renderers produce the files with no new code.

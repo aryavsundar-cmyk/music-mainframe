@@ -425,7 +425,7 @@ export const classifyDeal = memo((t) => {
     if (partyIds.has(e.id)) continue
     subjects.push(e)
     const rule = PARTY_FORCE[e.type]
-    if (rule) ev.push({ force: rule[0], via: 'field', field: 'named', value: e.id, entityType: e.type, match: e.hit, weight: 3, label: `the title names ${e.short || e.name}, a ${ENTITY_TYPES[e.type]?.label || e.type}` })
+    if (rule) ev.push({ force: rule[0], via: 'field', field: 'named', value: e.id, entityType: e.type, match: e.hit, weight: rule[1], label: `the title names ${e.short || e.name}, a ${ENTITY_TYPES[e.type]?.label || e.type}` })
   }
   for (const e of subjects) {
     for (const pl of placesFor(e)) {
@@ -504,7 +504,7 @@ export const classifyEvent = memo((n) => {
   const namedIds = new Set(named.map((e) => e.id))
   for (const e of named) {
     const rule = PARTY_FORCE[e.type]
-    if (rule) ev.push({ force: rule[0], via: 'field', field: 'named', value: e.id, entityType: e.type, match: e.hit, weight: 3, label: `the title names ${e.short || e.name}, a ${ENTITY_TYPES[e.type]?.label || e.type}` })
+    if (rule) ev.push({ force: rule[0], via: 'field', field: 'named', value: e.id, entityType: e.type, match: e.hit, weight: rule[1], label: `the title names ${e.short || e.name}, a ${ENTITY_TYPES[e.type]?.label || e.type}` })
     for (const pl of placesFor(e)) {
       places.push(pl.region)
       if (pl.emerging) ev.push({ force: 'emerging_markets', via: 'field', field: 'hq', value: e.id, match: pl.city, weight: 3, label: `${e.short || e.name} is based in ${pl.city} (${pl.region})` })
@@ -539,6 +539,9 @@ export const classifyEvent = memo((n) => {
     minPrimary: 2,
   })
 })
+
+/** An SEC filing that is routine — insider trades, 144s, quarterlies — and so evidence of nothing strategic. */
+export const isRoutineFiling = (n) => n.kind === 'filing' && !FORM_SIGNIFICANT[formOf(n)]
 
 /** Does this piece of evidence actually hold for this record? The tests run this over every tag. */
 export function evidenceHolds(record, e) {
@@ -590,8 +593,23 @@ export function filterTagged(items, { force = [], reach = 'any', exposure = [], 
   })
 }
 
+const DAY = 86400000
+const startOfDay = (ms) => ms - (ms % DAY)
+
+/**
+ * Is a window complete? Deals on record reach back years, but market events only exist from the day the
+ * evidence archive started watching (`coverageSince`). A window reaching further back than that holds every
+ * deal but only some of the events, so its count is a floor, not a total. With no archive at all
+ * (`coverageSince` null) every window that includes live events is a floor.
+ */
+export function windowComplete(days, { today = new Date(), coverageSince = null } = {}) {
+  if (!coverageSince) return false
+  const now = (today instanceof Date ? today : new Date(today)).getTime()
+  return startOfDay(now) - (days - 1) * DAY >= dateMs(coverageSince)
+}
+
 /** Activity for one force: totals, trailing windows, mix, and the evidence feed. `today` is injectable for tests. */
-export function forceActivity(items, forceId, { today = new Date(), feed = 20 } = {}) {
+export function forceActivity(items, forceId, { today = new Date(), feed = 20, coverageSince = null } = {}) {
   const now = (today instanceof Date ? today : new Date(today)).getTime()
   const direct = items.filter((x) => x.primary_force_id === forceId)
   const adjacent = items.filter((x) => x.secondary_force_ids.includes(forceId))
@@ -606,10 +624,37 @@ export function forceActivity(items, forceId, { today = new Date(), feed = 20 } 
     deals: touching.filter((x) => x.kind === 'deal').length,
     events: touching.filter((x) => x.kind === 'event').length,
     trailing: { 30: within(30), 90: within(90), 365: within(365) },
+    complete: Object.fromEntries([30, 90, 365].map((d) => [d, windowComplete(d, { today, coverageSince })])),
+    series: forceSeries(touching, { today, coverageSince }),
     byExposure: count('exposure_type'),
     byDirection: count('force_impact_direction'),
     feed: touching.sort((a, b) => (dateMs(b.date) || 0) - (dateMs(a.date) || 0)).slice(0, feed),
   }
+}
+
+/**
+ * Weekly counts (Monday-start, UTC) for the last `weeks` weeks, oldest first. A week before the archive started
+ * is marked uncovered: its count includes deals but not the events nobody was recording yet, so a chart must
+ * draw it differently rather than as a quiet week.
+ */
+export function forceSeries(touching, { today = new Date(), weeks = 12, coverageSince = null } = {}) {
+  const now = startOfDay((today instanceof Date ? today : new Date(today)).getTime())
+  const dow = (new Date(now).getUTCDay() + 6) % 7
+  const thisWeek = now - dow * DAY
+  const since = coverageSince ? dateMs(coverageSince) : null
+  return Array.from({ length: weeks }, (_, i) => {
+    const start = thisWeek - (weeks - 1 - i) * 7 * DAY
+    const end = start + 7 * DAY
+    const inWeek = touching.filter((x) => { const ms = dateMs(x.date); return ms != null && ms >= start && ms < end && ms <= now + DAY })
+    return {
+      start: new Date(start).toISOString().slice(0, 10),
+      count: inWeek.length,
+      deals: inWeek.filter((x) => x.kind === 'deal').length,
+      events: inWeek.filter((x) => x.kind === 'event').length,
+      covered: since != null && start >= since,
+      current: i === weeks - 1,
+    }
+  })
 }
 
 /** Every force at once, in taxonomy order. */

@@ -1,6 +1,10 @@
 import { ArrowUp, ArrowDown } from 'lucide-react'
 import { EXPOSURE_TYPES } from '../../data/forces.js'
 import { THIN_EVIDENCE } from '../../utils/forcesDocs.js'
+import { ForceSpark } from './ForceSpark.jsx'
+
+/** A window reaching back before the archive began is a floor, not a total. */
+const win = (b, d) => `${b.complete[d] ? '' : '≥'}${b.trailing[d]}`
 
 /**
  * The five forces side by side: direct activity, adjacent activity, trailing windows, and which way the evidence
@@ -25,7 +29,8 @@ export function ForceBoard({ board, selected = [], onToggle }) {
               <span className="t-micro text-ink-3">direct</span>
               <span className="t-micro text-ink-3 ml-auto">+{b.adjacent} adjacent</span>
             </div>
-            <div className="t-micro text-ink-3 font-mono tabular">30d {b.trailing[30]} · 90d {b.trailing[90]} · 365d {b.trailing[365]}</div>
+            <ForceSpark series={b.series} label={b.force.short_title} />
+            <div className="t-micro text-ink-3 font-mono tabular">30d {win(b, 30)} · 90d {win(b, 90)} · 365d {win(b, 365)}</div>
             <div className="flex items-center gap-3 t-micro text-ink-2">
               <span className="inline-flex items-center gap-0.5" title="supports the thesis"><ArrowUp size={11} aria-hidden="true" />{b.byDirection.supports || 0}</span>
               <span className={`inline-flex items-center gap-0.5 ${b.byDirection.challenges ? 'text-danger' : ''}`} title="challenges the thesis"><ArrowDown size={11} aria-hidden="true" />{b.byDirection.challenges || 0}</span>

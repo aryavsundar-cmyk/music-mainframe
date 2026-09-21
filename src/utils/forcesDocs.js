@@ -34,10 +34,11 @@ export function evidenceRows(items, forceId) {
  * tagged: output of classifyAll().tagged (already filtered by the page if it is exporting a view).
  * forces: which forces get a section of their own — all five by default, or the ones the page has selected.
  */
-export function buildForcesBrief(tagged, { today = new Date(), unclassified = [], filters = [], forces = FORCES.map((f) => f.id), generatedAt = new Date().toISOString() } = {}) {
+export function buildForcesBrief(tagged, { today = new Date(), unclassified = [], filters = [], forces = FORCES.map((f) => f.id), generatedAt = new Date().toISOString(), coverageSince = null, archive = null } = {}) {
   const sections = []
   const add = (eyebrow, title, blocks) => { const b = blocks.filter(Boolean); if (b.length) sections.push({ eyebrow, title, blocks: b }) }
-  const board = FORCES.map((f) => forceActivity(tagged, f.id, { today, feed: 12 }))
+  const board = FORCES.map((f) => forceActivity(tagged, f.id, { today, feed: 12, coverageSince }))
+  const win = (b, d) => `${b.complete[d] ? '' : '≥'}${b.trailing[d]}`
   const deals = tagged.filter((x) => x.kind === 'deal').length
   const reasons = unclassified.reduce((acc, x) => { const k = x.unclassified.split(' — ')[0]; acc[k] = (acc[k] || 0) + 1; return acc }, {})
 
@@ -46,6 +47,7 @@ export function buildForcesBrief(tagged, { today = new Date(), unclassified = []
     { kind: 'facts', rows: [
       ['Items tagged', `${tagged.length} (${deals} on record, ${tagged.length - deals} from the live feed)`],
       ['Items declined', unclassified.length ? `${unclassified.length}: ${Object.entries(reasons).map(([k, v]) => `${v} ${k.replace(/\.$/, '').toLowerCase()}`).join('; ')}` : 'None'],
+      ['Evidence archive', coverageSince ? `Market events recorded from ${coverageSince}${archive?.count ? ` (${archive.count} archived)` : ''}. Windows reaching back further hold every deal but only the events still in the live feed, and are marked ≥ as floors.` : 'Unavailable — events come from the live feed alone, which holds a few weeks. Every window that includes events is a floor (≥).'],
       ['Filters', filters.length ? filters.map((f) => `${f.label}: ${f.value}`).join(' · ') : 'None — everything on record and in the feed'],
       ['Captured', generatedAt.slice(0, 16).replace('T', ' ')],
     ] },
@@ -54,8 +56,16 @@ export function buildForcesBrief(tagged, { today = new Date(), unclassified = []
 
   add('Overview', 'The five forces at a glance', [
     { kind: 'table', columns: ['#', 'Force', 'Direct', 'Adjacent', 'Last 30 days', 'Last 90 days', 'Last 365 days', 'Supports', 'Challenges', 'Mixed', 'Neutral'],
-      rows: board.map((b) => [String(b.force.number), b.force.short_title, String(b.direct), String(b.adjacent), String(b.trailing[30]), String(b.trailing[90]), String(b.trailing[365]), String(b.byDirection.supports || 0), String(b.byDirection.challenges || 0), String(b.byDirection.mixed || 0), String(b.byDirection.neutral || 0)]) },
+      rows: board.map((b) => [String(b.force.number), b.force.short_title, String(b.direct), String(b.adjacent), win(b, 30), win(b, 90), win(b, 365), String(b.byDirection.supports || 0), String(b.byDirection.challenges || 0), String(b.byDirection.mixed || 0), String(b.byDirection.neutral || 0)]) },
     { kind: 'note', text: 'Direct counts events where the force is primary; adjacent counts events where it is secondary. Trailing windows count both, by event date. A transaction and a trade-press item each count once, whatever their size.' },
+  ])
+
+  // One table for the trend: weeks down, forces across, so it reads as a series in Excel and in print alike.
+  const weeks = board[0].series
+  add('Trend', 'Weekly activity, last 12 weeks', [
+    { kind: 'table', columns: ['Week of', ...board.map((b) => `${b.force.number} ${b.force.short_title}`), 'Archived'],
+      rows: weeks.map((w, i) => [w.start, ...board.map((b) => String(b.series[i].count)), w.covered ? 'yes' : 'no — deals only']) },
+    { kind: 'note', text: 'Weeks marked "no" fall before the evidence archive began: they count deals on record but not the market events nobody was recording yet. Read them as incomplete, not as quiet.' },
   ])
 
   for (const id of forces) {
