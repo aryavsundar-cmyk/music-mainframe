@@ -73,6 +73,7 @@ export function buildPageDoc({
   total = rows.length,
   tableTitle = '',
   notes = [],
+  extra = [],
   limits = [],
   citations = { items: [], source: 'empty' },
   asOf = '',
@@ -108,6 +109,9 @@ export function buildPageDoc({
       ? { kind: 'table', columns, rows: body.map((r) => r.map(clean)) }
       : { kind: 'note', text: 'No records match these filters. The filters are listed above, so this file records an empty result rather than an empty page.' },
   ])
+
+  // Further views of the same page (the Deals page's market events, say), each already built as blocks.
+  for (const s of extra) add(s.eyebrow, s.title, s.blocks)
 
   const noteBlocks = [
     ...notes.map((text) => ({ kind: 'note', text })),

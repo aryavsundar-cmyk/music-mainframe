@@ -73,8 +73,10 @@ t('the funnel and conversion read the records', () => {
   assert.equal(by.reduce((a, g) => a + g.touched, 0), 3)
   assert.equal(staleAccounts(accounts, records, TODAY).length, 0, 'everything here was touched recently')
 })
-t('the two limits exist once, and every screen and document carries them', () => {
-  assert.equal(LIMIT_LIST.length, 2)
+t('the limits exist once, and every screen and document carries them', () => {
+  // Three since Sprint 23: match, availability, and force (what a Five Forces tag does and does not mean).
+  assert.equal(LIMIT_LIST.length, 3)
+  assert.match(LIMITS.force.claim, /evidence of, not what will happen next/)
   assert.match(LIMITS.match.claim, /has done deals like yours, not that they are interested/)
   assert.match(LIMITS.availability.claim, /prompt to do work, not a claim that an asset is for sale/)
   assert.match(LIMITS.match.enforced, /credited with a deal they did not make/)

@@ -7,8 +7,18 @@ import { filterTransactions, TX_TYPES, ASSETS, STRUCTURES, YEARS, TX_TOTALS, par
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 import { format } from '../utils/format.js'
+import { ExportBar } from '../components/export/ExportBar.jsx'
+import { ForceBoard } from '../components/forces/ForceBoard.jsx'
+import { ForcePanel } from '../components/forces/ForcePanel.jsx'
+import { ForceFilters } from '../components/forces/ForceFilters.jsx'
+import { EventList } from '../components/forces/EventList.jsx'
+import { useForces } from '../hooks/useForces.js'
+import { classifyDeal, filterTagged, forceBoard, forceActivity, geographiesIn } from '../utils/forces.js'
+import { buildForcesBrief, evidenceRows } from '../utils/forcesDocs.js'
+import { FORCE_BY_ID, FORCE_IDS, DIRECTIONS, EXPOSURE_TYPES, RIGHTS_TYPES } from '../data/forces.js'
 
-const KEYS = ['q', 'type', 'asset', 'structure', 'year', 'status']
+const KEYS = ['q', 'type', 'asset', 'structure', 'year', 'status', 'force', 'reach', 'exposure', 'dir', 'geo', 'rights']
+const csvLabel = (map) => (v) => String(v).split(',').filter(Boolean).map((x) => map(x)).join(', ')
 const FILTER_LABELS = {
   q: { label: 'Search' },
   type: { label: 'Type', format: (v) => TX_TYPES[v]?.label || v },
@@ -16,15 +26,49 @@ const FILTER_LABELS = {
   structure: { label: 'Structure', format: (v) => STRUCTURES[v] || v },
   year: { label: 'Year' },
   status: { label: 'Status' },
+  force: { label: 'Force', format: csvLabel((id) => `${FORCE_BY_ID[id]?.number} ${FORCE_BY_ID[id]?.short_title}`) },
+  reach: { label: 'Reach', format: (v) => (v === 'direct' ? 'Direct only' : 'Direct and adjacent') },
+  exposure: { label: 'Exposure', format: csvLabel((x) => EXPOSURE_TYPES[x] || x) },
+  dir: { label: 'Direction', format: csvLabel((x) => DIRECTIONS[x] || x) },
+  geo: { label: 'Geography', format: csvLabel((x) => x) },
+  rights: { label: 'Rights', format: csvLabel((x) => RIGHTS_TYPES[x] || x) },
 }
+const FORCE_KEYS = ['force', 'reach', 'exposure', 'dir', 'geo', 'rights']
 const parties = (list) => (list || []).map(partyName).join(' · ')
 const chip = (a) => ['inline-flex items-center gap-1.5 rounded-sm border px-2 py-1 t-small cursor-pointer select-none transition-colors duration-100',
   a ? 'bg-ground-4 border-line-3 text-ink-1' : 'bg-transparent border-line-1 text-ink-2 hover:bg-ground-2 hover:text-ink-1'].join(' ')
 const select = 'bg-ground-1 border border-line-2 rounded-md h-8 px-2 t-small text-ink-1 focus:border-accent outline-none'
 
+/** What the board is reading, stated plainly — including what it declined and whether the live half is there. */
+function FeedLine({ feed, tagged, declined }) {
+  const deals = tagged.filter((x) => x.kind === 'deal').length
+  if (feed.state === 'unavailable') return <span className="t-micro text-danger">Live feed unreachable — forces reflect {deals} deals on record only.</span>
+  if (feed.state === 'loading') return <span className="t-micro text-ink-3">Reading the live feed…</span>
+  return (
+    <span className="t-micro text-ink-3 tabular">
+      {deals} deals on record · {tagged.length - deals} live events tagged · {declined} declined
+      {feed.total > feed.read && ` · newest ${feed.read} of ${feed.total} feed items read`}
+    </span>
+  )
+}
+
 export default function Deals() {
   const { params, set, clear, any, sp } = useUrlFilters(KEYS)
-  const rows = useMemo(() => filterTransactions(params), [sp]) // eslint-disable-line react-hooks/exhaustive-deps
+  const listed = useMemo(() => filterTransactions(params), [sp]) // eslint-disable-line react-hooks/exhaustive-deps
+  const { tagged, unclassified, today, feed } = useForces()
+
+  // The force facets narrow deals and market events alike. The board ignores its own force selection — pressing
+  // one force should not make the other four read zero — but honours the rest (exposure, direction, place, rights).
+  const facets = { force: params.force, reach: params.reach, exposure: params.exposure, direction: params.dir, geography: params.geo, rights: params.rights }
+  const boardItems = filterTagged(tagged, { ...facets, force: '' })
+  const board = forceBoard(boardItems, { today })
+  const selected = String(params.force || '').split(',').filter(Boolean)
+  const forcing = FORCE_KEYS.some((k) => params[k])
+  const rows = forcing ? filterTagged(listed.map(classifyDeal), facets).map((x) => x.record) : listed
+  const q = params.q.trim().toLowerCase()
+  const events = filterTagged(tagged.filter((x) => x.kind === 'event'), facets).filter((x) => !q || x.title.toLowerCase().includes(q))
+  const toggleForce = (id) => set({ force: selected.length === 1 && selected[0] === id ? '' : id })
+  const forceFilters = describeFilters(Object.fromEntries(FORCE_KEYS.map((k) => [k, params[k]])), FILTER_LABELS)
   const counts = useMemo(() => Object.fromEntries(Object.keys(TX_TYPES).map((t) => [t, filterTransactions({ ...params, type: t }).length])), [sp]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
@@ -37,6 +81,25 @@ export default function Deals() {
         <Stat label="ABS issued" kind="money" value={TX_TOTALS.abs} hint="on file; KBRA counts $12.9B rated since 2020" />
         <Stat label="Superstar catalog sales" kind="money" value={TX_TOTALS.catalog} />
       </div>
+
+      <section className="mb-8">
+        <div className="flex flex-wrap items-end justify-between gap-3 mb-3">
+          <div>
+            <div className="t-eyebrow text-accent">Five forces</div>
+            <p className="t-small text-ink-2 m-0 mt-1 max-w-2xl">Every deal on record and every item in the live feed, read against the five forces reshaping the market. Press a force to see its thesis and the evidence behind it.</p>
+          </div>
+          <FeedLine feed={feed} tagged={tagged} declined={unclassified.length} />
+        </div>
+        <ForceBoard board={board} selected={selected} onToggle={toggleForce} />
+        <div className="mt-3">
+          <ExportBar title={selected.length ? `Export the brief — ${selected.map((id) => FORCE_BY_ID[id].short_title).join(', ')}` : 'Export the five forces brief'}
+            build={() => buildForcesBrief(filterTagged(tagged, facets), { today, unclassified, filters: forceFilters, forces: selected.length ? selected : FORCE_IDS })} />
+        </div>
+      </section>
+
+      {selected.length === 1 && <ForcePanel activity={forceActivity(boardItems, selected[0], { today, feed: 12 })} />}
+
+      <ForceFilters params={params} set={set} geographies={geographiesIn(tagged)} />
 
       <div className="space-y-3 mb-6">
         <div className="flex items-center gap-3">
@@ -63,6 +126,17 @@ export default function Deals() {
       </div>
 
       <TransactionList items={rows} dense={!!params.type} />
+
+      <section className="mt-10">
+        <div className="flex flex-wrap items-baseline justify-between gap-3 mb-2">
+          <div className="t-eyebrow text-accent">Market events · live feed</div>
+          {forcing && <span className="t-small text-ink-3 tabular">{events.length} matching</span>}
+        </div>
+        {forcing
+          ? <EventList items={events} empty={feed.state === 'unavailable' ? 'The live feed is unreachable, so only deals on record are shown above.' : 'No market event in the live feed matches these filters.'} />
+          : <p className="t-small text-ink-3 m-0">Choose a force, exposure, direction, place or rights type to see the market events behind it — lawsuits, launches, licensing deals and results that the deals table does not hold.</p>}
+      </section>
+
       <PageExport build={() => buildPageDoc({
         slug: 'deals',
         title: 'Deals',
@@ -75,9 +149,13 @@ export default function Deals() {
           { label: 'Disclosed value here', value: format.money(rows.reduce((a, t) => a + (t.value || 0), 0)) },
           { label: 'On record', value: String(TX_TOTALS.count) },
         ],
-        columns: ['Date', 'Transaction', 'Type', 'Asset', 'Acquirer', 'Seller', 'Value', 'Status'],
-        rows: rows.map((t) => [t.date, t.title, TX_TYPES[t.type]?.label || t.type, ASSETS[t.asset] || t.asset, parties(t.acquirers), parties(t.sellers), t.value ? format.money(t.value) : 'undisclosed', t.status || '']),
+        columns: ['Date', 'Transaction', 'Type', 'Asset', 'Acquirer', 'Seller', 'Value', 'Status', 'Primary force', 'Secondary forces', 'Direction', 'Why this matters'],
+        rows: rows.map((t) => { const x = classifyDeal(t); return [t.date, t.title, TX_TYPES[t.type]?.label || t.type, ASSETS[t.asset] || t.asset, parties(t.acquirers), parties(t.sellers), t.value ? format.money(t.value) : 'undisclosed', t.status || '', FORCE_BY_ID[x.primary_force_id]?.short_title || '', x.secondary_force_ids.map((id) => FORCE_BY_ID[id].short_title).join(' · '), DIRECTIONS[x.force_impact_direction] || '', x.force_rationale] }),
         total: TX_TOTALS.count,
+        extra: forcing ? [{ eyebrow: 'Market events', title: 'From the live feed, matching the same force filters', blocks: [events.length
+          ? { kind: 'table', columns: ['Date', 'Source', 'Event', 'Relationship', 'Direction', 'Confidence', 'Exposure', 'Link'], rows: selected.length === 1 ? evidenceRows(events, selected[0]) : events.map((x) => [String(x.date).slice(0, 10), x.source_label, x.title, FORCE_BY_ID[x.primary_force_id].short_title, DIRECTIONS[x.force_impact_direction], x.force_confidence, EXPOSURE_TYPES[x.exposure_type], x.source_url]) }
+          : { kind: 'note', text: 'No market event in the live feed matched these filters at the time of export.' }] }] : [],
+        limits: ['force'],
         notes: rows.some((t) => t.verify) ? ['Values marked in the app as press estimates are not confirmed by the parties. Check the source before quoting a figure.'] : [],
       })} />
     </>

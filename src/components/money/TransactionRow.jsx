@@ -5,6 +5,9 @@ import { Tag, Num } from '../primitives/index.js'
 import { TX_TYPES, ASSETS, partyName } from '../../data/transactions.js'
 import { formatDate } from '../../utils/format.js'
 import { AbsStructure } from './AbsStructure.jsx'
+import { ForceChips } from '../forces/ForceChip.jsx'
+import { WhyThisMatters } from '../forces/WhyThisMatters.jsx'
+import { classifyDeal } from '../../utils/forces.js'
 
 const ASSET_TONE = { recording: 'recording', publishing: 'publishing', both: 'accent', equity: 'neutral', 'n/a': 'neutral' }
 
@@ -21,6 +24,7 @@ function Party({ p }) {
 export function TransactionRow({ t, dense = false, defaultOpen = false }) {
   const [open, setOpen] = useState(defaultOpen)
   const tt = TX_TYPES[t.type]
+  const tag = classifyDeal(t)
   return (
     <div id={t.id} className="border-b border-line-1 scroll-mt-24">
       <button type="button" onClick={() => setOpen((o) => !o)} aria-expanded={open}
@@ -35,6 +39,7 @@ export function TransactionRow({ t, dense = false, defaultOpen = false }) {
             {t.status !== 'closed' && <Tag tone="neutral">{t.status}</Tag>}
             {t.verify && <Tag tone="danger">verify</Tag>}
           </div>
+          <div className="mt-1.5"><ForceChips tag={tag} /></div>
         </div>
         <div className="text-right shrink-0">
           <div className="flex items-center justify-end gap-2">
@@ -52,6 +57,7 @@ export function TransactionRow({ t, dense = false, defaultOpen = false }) {
           {t.valueNote && <div className="t-small text-ink-3 font-mono">{t.valueNote}</div>}
           {t.summary && <p className="t-body text-ink-2 m-0">{t.summary}</p>}
           {t.abs && <AbsStructure abs={t.abs} value={t.value} />}
+          <WhyThisMatters tag={tag} />
           <div className="flex flex-wrap gap-x-4 gap-y-1 t-micro">
             {t.sources.map((s) => (
               <a key={s.url} href={s.url} target="_blank" rel="noreferrer" className="text-ink-3 no-underline hover:text-accent inline-flex items-center gap-1">{s.label} <ExternalLink size={10} aria-hidden="true" /></a>

@@ -17,6 +17,12 @@ export const LIMITS = {
     detail: 'It reads how that kind of owner behaves, how long they have held the asset, refinancing dates ahead, whether they have sold before, and sale-intent language in the live feed. None of that is a mandate.',
     enforced: 'No genre tag can exist without the word appearing in the source — the tests check each tag against the text it came from.',
   },
+  force: {
+    id: 'force',
+    claim: 'A force tag says what an event is evidence of, not what will happen next.',
+    detail: 'Each tag is read from the record itself — its deal type and structure, the companies involved, and the words in its title and summary — and keeps the evidence that produced it. Direction says whether the event supports or pushes against the thesis as written; it is not a forecast, and a count of events is not a measure of their size.',
+    enforced: 'No force can be assigned without evidence in the record — the tests check every tag against the field or phrase it came from.',
+  },
 }
 export const LIMIT_LIST = Object.values(LIMITS)
 /** One line for document notices, so exports and screens never drift apart. */

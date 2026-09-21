@@ -166,6 +166,29 @@ The page has three views. **Coverage** is a segment × tier matrix showing how m
 
 Records live in localStorage only (`mm-prospect-v1`). Engine and drafts are Node-tested: `npm run test:prospect`, 25 checks.
 
+## Music Market Five Forces
+
+`/deals` reads every transaction on record and every item in the live feed against five strategic forces — capital and ownership, discovery and distribution, superfan and live, AI rights and control, emerging markets. Each item gets one primary force (the one most directly affected), up to three secondary forces, a confidence, a direction against the thesis, an exposure type, and the geography, rights and revenue streams the record names. The board shows each force's direct and adjacent activity with trailing 30/90/365-day counts; pressing a force opens its thesis, framework, exposure mix and a chronological evidence feed. Facets — force, reach (direct only or with adjacent), exposure, direction, geography, rights — are multi-select and narrow deals and market events alike. Every deal row carries its chips and a **Why this matters** panel.
+
+The taxonomy (`src/data/forces.js`) is transcribed from the feature spec and drives classification directly: `utils/forces.js` compiles its keywords into matchers, so editing a keyword there changes what gets tagged.
+
+**No force without evidence.** Every tag keeps the evidence that produced it — the exact phrase from the title or summary, or the structured field: deal type and structure, a party's entity type, a company named in the title, a regional company's location, a feed topic, an SEC form. `evidenceHolds` re-checks any piece of it against its record, and `npm run test:forces` runs it over every tag. On the live feed the day this shipped: 191 items tagged, 339 pieces of evidence, none failing.
+
+Calibration against the real records found the false positives the rules now exclude, each pinned by a test:
+
+- **An investor's domicile is not where a deal happens.** GIC is in Singapore; the Recognition catalog is not an emerging-markets deal. Place evidence comes only from the subject of a deal, never the money.
+- **A global company's head office is not where its users are.** TikTok is registered in Singapore. Only regional companies (tiers 2–3) contribute place; deals among global companies are tagged *Global*.
+- **Country codes collide with US states.** `IN` is Indiana and India, `IL` Illinois and Israel. Places resolve by city first.
+- **Search feeds pick up anything sharing a word.** Auto-loan ABS research and mining "royalty streamers" are declined as not about music, with the reason stated. Items from music trade and live-industry sources pass by construction.
+- **"Closed after DOJ review" is a cleared deal**, not an antitrust action. Regulators count against pricing power only beside a suit, trial, probe or break-up.
+- **One word is one fact.** "Royalty-administration" contains "Royalty"; Spotify as keyword and as entity is Spotify once.
+
+Direction is read against the thesis as written: a training-data lawsuit *supports* "AI is a control problem"; a fair-use ruling *challenges* it; an antitrust verdict challenges live pricing power; currency controls read *mixed* for emerging markets, because they strain realisation without reversing the growth shift. Forces with fewer than five items say so rather than presenting a handful as a trend. The brief (`utils/forcesDocs.js`) exports to Word, slides, Excel and text with the method, the declined count and its reasons, and the limit: *a force tag says what an event is evidence of, not what will happen next* — and a count of events is not a measure of their size.
+
+```bash
+npm run test:forces   # taxonomy, the spec's worked example, evidence on every tag, calibration guards
+```
+
 ## Page-level exports
 
 Every page is a filtered, sorted view of records, and every page exports that view: **Word, slides, Excel and text**, from the bar at the foot of the page. `utils/pageDocs.js` turns what is on screen into the same block model the briefs use, so the existing renderers produce the files with no new code.
