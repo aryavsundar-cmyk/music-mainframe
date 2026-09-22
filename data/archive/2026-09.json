@@ -1,5 +1,221 @@
 [
  {
+  "id": "e51159c7fe80f4e3",
+  "url": "https://www.musicbusinessworldwide.com/uk-based-avatar-concert-producer-unit1-studio-raises-20m-led-by-balderton-capital/",
+  "title": "UK-based avatar concert producer Unit1 Studio raises $20M led by Balderton Capital",
+  "summary": "The fundraise lands alongside what Unit1 calls a world first: the transfer of an avatar concert production from one venue to another. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-22T11:21:28.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-09-22T11:34:12.798Z"
+ },
+ {
+  "id": "579f68f3c125361a",
+  "url": "https://www.musicbusinessworldwide.com/apple-to-open-600-capacity-live-music-venue-in-london-with-two-recording-studios-and-a-broadcast-control-room-built-in/",
+  "title": "Apple to open 600-capacity live music venue in London, with two recording studios and a broadcast control room built in",
+  "summary": "Artists who play the new Apple Music Hall can leave with a Spatial Audio recording, a mix ready for broadcast, and multi-camera video of the same show. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-22T11:03:39.000Z",
+  "entities": [
+   "apple-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 32,
+  "firstSeen": "2026-09-22T11:34:12.798Z"
+ },
+ {
+  "id": "d18ce9cbaf4028ca",
+  "url": "https://musically.com/2026/09/22/apple-music-secretly-built-a-600-capacity-venue-in-its-london-hq/",
+  "title": "Apple Music secretly built a 600-capacity venue in its London HQ",
+  "summary": "Apple Music Hall is being unveiled this morning: a 600-cap venue in the Battersea Power Station complex. Apple plans to host a range of artists for concerts, up to superstar level, with the venue fully hardwired for livestreams and spatial audio. It’s a return to live music for…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-22T08:42:34.000Z",
+  "entities": [
+   "apple-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 32,
+  "firstSeen": "2026-09-22T11:34:12.798Z"
+ },
+ {
+  "id": "014d9d019a369af3",
+  "url": "https://completemusicupdate.com/jobs/head-of-business-development-mrc-the-music-royalty-co-remote/",
+  "title": "Head of Business Development // MRC (The Music Royalty Co.) (Remote)",
+  "summary": "The MRC are seeking a remote Head of Business Development to join their management team and help shape the next stage of growth.",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-22T08:38:35.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-09-22T11:34:12.798Z"
+ },
+ {
+  "id": "729be0f6e8d45204",
+  "url": "https://variety.com/2026/music/global/apple-music-hall-live-venue-london-1236871803/",
+  "title": "Apple Reveals Apple Music Hall, a New Live Venue in London",
+  "summary": "Apple is bringing a new live music venue to London. Located in Battersea Power Station, Apple Music Hall is a state-of-the-art venue “designed to connect artists and fans through bespoke, intimate performances unlike anywhere else,” Apple said in its announcement on Tuesday. “Ap…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-22T08:37:58.000Z",
+  "entities": [
+   "apple-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 32,
+  "firstSeen": "2026-09-22T11:34:12.798Z"
+ },
+ {
+  "id": "b9f64b10d352a7ac",
+  "url": "https://www.billboard.com/pro/apple-music-new-live-music-venue-london-battersea/",
+  "title": "Apple Music to Open State-of-the-Art Live Music Venue in London",
+  "summary": "The facility will be situated at the company's London HQ in Battersea Power Station.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-22T06:00:00.000Z",
+  "entities": [
+   "apple-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 32,
+  "firstSeen": "2026-09-22T11:34:12.798Z"
+ },
+ {
+  "id": "4ac045ff01596e0f",
+  "url": "https://www.digitalmusicnews.com/2026/09/21/snapchat-chat-to-songs-ai-feature/",
+  "title": "Snapchat Now Lets You Turn Chats Into Songs with AI",
+  "summary": "Snapchat announces a suite of new AI-powered tools for Lens+ subscribers, including creating songs out of your chats. Since the launch of Snapchat’s Lens+ premium subscription model last year, the company has stepped it up with even more exclusive Lenses and other immersive AR e…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-22T04:40:17.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "dsp-economics"
+  ],
+  "score": 18,
+  "firstSeen": "2026-09-22T11:34:12.798Z"
+ },
+ {
+  "id": "a753d8ac676d69ae",
+  "url": "https://www.digitalmusicnews.com/2026/09/21/shein-lawsuit-selena-moves-to-dismiss/",
+  "title": "Can Shein Sidestep Liability for Selena Knock-Offs?",
+  "summary": "Shein files a motion to dismiss the lawsuit filed by Selena’s estate, arguing it should be shielded from liability as an e-commerce platform that isn’t manufacturing the allegedly infringing items. E-commerce platform Shein has filed a motion to dismiss the copyright infringemen…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-22T04:21:15.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-09-22T11:34:12.798Z"
+ },
+ {
+  "id": "4b04efd422233f0b",
+  "url": "https://www.digitalmusicnews.com/2026/09/21/unit1-studio-avatar-based-concert-touring-funding/",
+  "title": "Unit1 Studio Raises $26.7 Million to Scale Avatar-Based Concert Touring Tech",
+  "summary": "Mixed-reality concert firm Unit 1 Studio raises $26.7 million in a new funding round to expand its technology and grow its roster of avatar-based concerts. UK-based mixed-reality concert production firm Unit1 Studio has announced securing £20 million ($26.7 million) in its lates…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-21T22:44:27.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-22T11:34:12.798Z"
+ },
+ {
+  "id": "d26460ddd085ec7d",
+  "url": "https://www.digitalmusicnews.com/2026/09/21/spotify-does-not-care-i-left/",
+  "title": "Spotify Doesn’t Care That I Left",
+  "summary": "My music is staying. My money and attention are leaving. I canceled my Spotify subscription. Yes, my music is still there, and if that is where you listen to me, please enjoy it. I am not organizing a boycott or imagining that my cancellation caused someone in Stockholm at Spoti…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-21T22:38:44.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-09-22T11:34:12.798Z"
+ },
+ {
+  "id": "1b6cc5684ff108e8",
+  "url": "https://www.digitalmusicnews.com/2026/09/21/carianne-marshall-warner-chappell-exit/",
+  "title": "Warner Chappell Co-Chair and COO Carianne Marshall Steps Down ‘As the Company Streamlines Its Leadership Structure’ — CEO Guy Moot to Become ‘Sole Chair’ on October 1st",
+  "summary": "Warner Chappell is streamlining its leadership structure, and as part of a new C-suite shakeup, co-chair and COO Carianne Marshall is exiting the company. The overarching Warner Music Group (WMG) formally announced Marshall’s departure today, and the eight-year company vet is ex…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-21T21:04:37.000Z",
+  "entities": [
+   "warner-chappell",
+   "wmg"
+  ],
+  "types": [
+   "label",
+   "publisher"
+  ],
+  "topics": [],
+  "score": 46,
+  "firstSeen": "2026-09-22T11:34:12.798Z"
+ },
+ {
   "id": "9b3b78ba9147445c",
   "url": "https://news.pollstar.com/2026/09/21/update-kenny-chesney-adds-second-night-at-gillette-stadium-to-original-vibe-room-tour-2027/",
   "title": "Update: Kenny Chesney Adds Second Night At Gillette Stadium To ‘Original Vibe Room Tour 2027’",
@@ -1050,6 +1266,28 @@
   "topics": [],
   "score": 5,
   "firstSeen": "2026-09-21T20:32:06.254Z"
+ },
+ {
+  "id": "2510a0746570efd6",
+  "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPamxfRFYzbHFKMHJjMFU3cHVHSVpzODZLVnVqVzBnamxJT19sWC1Zb2hKRWRqY2dtQS1HWjNJRk9hX0ZKSmx5ek94eXY2RGhJRXU5aFdTcVdaam1FeTlRbnZsX2JWcXR6VE9vRzYwa2N4b2xSX3hNSl85OFZaREp3X2l2WDFnaXk5NHozbEtWZl95Um5FR3lBRVRfdmlaeXNURmZPZWVyZUNKSWlBVTVBTFhyLUp6dw?oc=5",
+  "title": "Judge Probes Evidence Behind Live Nation Monopoly Verdict, Leaves Ruling Pending",
+  "summary": "Judge Probes Evidence Behind Live Nation Monopoly Verdict, Leaves Ruling Pending TicketNews",
+  "source": "TicketNews",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-20T02:19:16.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 23,
+  "firstSeen": "2026-09-22T11:34:12.798Z"
  },
  {
   "id": "b3a9e5e4d558ab6d",
@@ -3638,6 +3876,32 @@
   "firstSeen": "2026-09-21T20:32:06.254Z"
  },
  {
+  "id": "7ee6fead25dc4bba",
+  "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPR05oODYtY2g0RXNXYzNjWHBmX1pVUG1LNkhXQkpnN3J0ZXFMUE1nRXZuS0N0SUtMUTNfTjJIVjdPUWNKRXZnMWNDU295bWlaNDJ4NTItcjRLb1dKOHVDWTZib082ZWk5bVlSUWRsbl92NFJYNk1sb2hZcVhvUld0aHVWdy1TOGxRdFNPVGJfMUFTRFZncklwTy1Jd3I1cHNhNGh5MTk4ZWUtd0JIbnhv?oc=5",
+  "title": "Suno launches v6 AI music models in partnership with WMG, BMG, and Believe",
+  "summary": "Suno launches v6 AI music models in partnership with WMG, BMG, and Believe Music Business Worldwide",
+  "source": "Music Business Worldwide",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-09T07:00:00.000Z",
+  "entities": [
+   "believe",
+   "bmg",
+   "suno"
+  ],
+  "types": [
+   "artist-services",
+   "label",
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 46,
+  "firstSeen": "2026-09-22T11:34:12.798Z"
+ },
+ {
   "id": "9db54aa8c49e2a8f",
   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOLXAxUTVfTW9JUXN5Zi01bTFra2ZIVG1yZ08xOVhqRlVBUU9ENFgtZlZDaGNHSWR5bzhNOHZFT1paZXlpcVM4WmxaN01oVl9EOHlaZjFFcDFtUTViWHh3VkpIbUV1V1JQV2FPZlhZQWw3WEFOcnJCMGJITjRZM0NxTm1KdmRRRWpZb3d6UjhCbEpCV2t1c25DRnktN0NVbndtQkE?oc=5",
   "title": "What Suno's Warner, BMG deals mean for the future of Nashville's music",
@@ -3676,6 +3940,31 @@
   ],
   "score": 28,
   "firstSeen": "2026-09-21T20:32:06.254Z"
+ },
+ {
+  "id": "affe0282e9d689e7",
+  "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQdk84NlpRRVhBMGxOUXRGcDZ0YzJvVWp0MUhXZF9BOEttX2N5QTJVZF95WmZaaE5nNERSZmJUalUxbWI1T1RSTW9sLS0tSzNjenp5NlYzWGZGNmxFSWhkbzc3ME9RNzlNUURCaGpnWlN3c2dDY0RnVWVNTzJ2MlFhNUw1UHBfejRORlRzNVpXdlM4UWVPMEEydFdBblhFWXZYbk83bHd5ay16eTM4eF9Hdg?oc=5",
+  "title": "Suno unveils new AI music models in partnership with Warner Music and BMG",
+  "summary": "Suno unveils new AI music models in partnership with Warner Music and BMG ua.news",
+  "source": "ua.news",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-09T07:00:00.000Z",
+  "entities": [
+   "bmg",
+   "suno",
+   "wmg"
+  ],
+  "types": [
+   "label",
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 52,
+  "firstSeen": "2026-09-22T11:34:12.798Z"
  },
  {
   "id": "b9ce7230ddba52bd",
