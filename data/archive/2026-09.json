@@ -1309,6 +1309,25 @@
   "firstSeen": "2026-09-21T20:32:06.254Z"
  },
  {
+  "id": "f6e8780124cbfbb9",
+  "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQZGsyM2JsSUpoY2dITkpjZngxQ3JleXpfZ25BNVhUQllkVEt0SlNVbzd2VHdfLWJFNC1zSWVia3liaHp0X3VKakpPa0ZDdmJtVUx2ZVEySWprRm55TFFBWnpXd0V0VFd3YnFod2JCQlFKcmprY1lDUlJ4LVhxZXFPZzg0VUIyVmh2aFhCT1Z2a0liSmJCdGh0VVY5QTZIVDQ?oc=5",
+  "title": "UMG, Sony Expand AI Music Fight Against Suno With 60,000 Songs",
+  "summary": "UMG, Sony Expand AI Music Fight Against Suno With 60,000 Songs Bloomberg Law News",
+  "source": "Bloomberg Law News",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-18T21:29:00.000Z",
+  "entities": [
+   "suno"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 18,
+  "firstSeen": "2026-09-22T03:35:44.255Z"
+ },
+ {
   "id": "25f3523e0241f1ae",
   "url": "https://www.billboard.com/pro/shein-responds-selena-estate-lawsuit-knockoff-merch/",
   "title": "Shein Says Selena Quintanilla Estate Can’t Sue Over Knockoff Merch on Fast Fashion Site",
@@ -3617,6 +3636,26 @@
   ],
   "score": 38,
   "firstSeen": "2026-09-21T20:32:06.254Z"
+ },
+ {
+  "id": "9db54aa8c49e2a8f",
+  "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOLXAxUTVfTW9JUXN5Zi01bTFra2ZIVG1yZ08xOVhqRlVBUU9ENFgtZlZDaGNHSWR5bzhNOHZFT1paZXlpcVM4WmxaN01oVl9EOHlaZjFFcDFtUTViWHh3VkpIbUV1V1JQV2FPZlhZQWw3WEFOcnJCMGJITjRZM0NxTm1KdmRRRWpZb3d6UjhCbEpCV2t1c25DRnktN0NVbndtQkE?oc=5",
+  "title": "What Suno's Warner, BMG deals mean for the future of Nashville's music",
+  "summary": "What Suno's Warner, BMG deals mean for the future of Nashville's music The Tennessean",
+  "source": "The Tennessean",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-09T07:00:00.000Z",
+  "entities": [
+   "bmg",
+   "suno"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 38,
+  "firstSeen": "2026-09-22T03:35:44.255Z"
  },
  {
   "id": "aaa1812167dabf77",
