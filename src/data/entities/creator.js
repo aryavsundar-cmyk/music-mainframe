@@ -29,6 +29,8 @@ export const CREATOR = [
     sources: [mbw('Believe squeeze-out stops trading'), src('Euronext — increase in buyout offer price (Jun 2025)', 'https://live.euronext.com/en/products/equities/company-news/2025-06-04-increase-price-public-buyout-offer-followed-squeeze-out')] },
   { id: 'vinyl-group', name: 'Vinyl Group', type: 'music-tech', roles: ['music-tech', 'data'], tier: 3, subtype: 'listed music-tech roll-up',
     hq: 'Melbourne, AU', founded: 2018, ownership: 'public', ticker: 'ASX: VNL', region: 'Australia / Global',
+    metrics: { revenue: 18823028, revenueYear: 2026, fiscalYearEnd: '06-30', revenueCurrency: 'AUD', revenuePublished: '2026-09-17', revenueSource: { label: 'Vinyl Group — FY26 Annual Report (ASX)', url: 'https://cdn-api.markitdigital.com/apiman-gateway/ASX/asx-research/1.0/file/2924-03136349-2A1697579?access_token=83ff96335c2d45a094df02a206a39ff4' },
+      revenueNote: 'Audited revenue for the year to 30 June 2026: Publishing A$14.49M, Platforms A$4.34M. The earlier unaudited Appendix 4E gave A$18.85M, and said the auditor\'s report would include a material-uncertainty (going concern) paragraph.', metricsAsOf: '2026-09-22' },
     summary: 'Jaxsta (credits database), Vampr, Vinyl.com, Serenade, plus trade media (The Brag, Mediaweek); ASX-listed roll-up.',
     sources: [ir('https://vinyl.group')] },
   { id: 'gamma', name: 'gamma.', type: 'artist-services', roles: ['artist-services', 'distributor', 'label'], tier: 2, subtype: 'artist-first media company',

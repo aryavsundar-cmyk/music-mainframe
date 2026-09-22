@@ -75,6 +75,9 @@ export const RECORDED = [
     sources: [site('https://www.dominomusic.com')] },
   { id: 'hybe', name: 'HYBE', type: 'label', roles: ['label', 'live', 'music-tech'], tier: 2, subtype: 'K-pop group',
     hq: 'Seoul, KR', founded: 2005, ownership: 'public', ticker: 'KRX: 352820', region: 'Korea / Global',
+    metrics: { revenue: 2.64987e12, revenueYear: 2025, revenueCurrency: 'KRW', revenuePublished: '2026-02-12', revenueSource: { label: 'HYBE — 4Q25 earnings release (IR deck, full-year column)', url: 'https://hybecorp.com/unpublished%2FboardAttach%2F1785214861733_d42ccae8483b490fa6f5529e31f4ffd1.pdf' },
+      interim: { period: 'Q2 2026', end: '2026-06-30', revenue: 1.449998e12, currency: 'KRW', published: '2026-07-28', source: { label: 'HYBE — 2Q26 earnings release', url: 'https://hybecorp.com/unpublished%2FboardAttach%2F1785216874183_b4eed9e200244405ba92aa4f0daa38f6.pdf' } },
+      revenueNote: 'Consolidated revenue (K-IFRS), from HYBE\'s IR releases. Q2 2026 by line: concerts KRW 647.7B, albums KRW 326.8B, merchandise and licensing KRW 310.6B.', metricsAsOf: '2026-09-22' },
     summary: 'BTS\' company, now a multi-label group (BigHit, Pledis, Source, Ador, HYBE America / Ithaca) with Weverse fan platform. Bought Ithaca Holdings (Scooter Braun) in 2021.',
     sources: [ir('https://hybecorp.com/eng/ir/'), mbw('HYBE')] },
 

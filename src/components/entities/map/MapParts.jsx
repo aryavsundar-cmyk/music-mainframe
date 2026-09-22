@@ -37,7 +37,7 @@ export function MapColumn({ column, last, children }) {
   const L = LENS[column.lens]
   const mkt = column.market
   return (
-    <section aria-label={column.title} className="w-[268px] shrink-0 flex flex-col gap-3">
+    <section aria-label={column.title} className="grow shrink-0 basis-[268px] min-w-[268px] max-w-[400px] flex flex-col gap-3">
       <div className="relative rounded-md border border-line-2 bg-ground-1 p-3 pl-4 min-h-[148px] flex flex-col">
         <span className={`absolute left-0 top-3 bottom-3 w-[3px] rounded-r ${L.rail}`} aria-hidden="true" />
         <h2 className={`t-body font-semibold m-0 leading-snug ${L.title}`}>{column.title}</h2>

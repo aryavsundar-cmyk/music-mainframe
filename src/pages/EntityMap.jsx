@@ -9,6 +9,7 @@ import { useFinancials } from '../hooks/useFinancials.js'
 import { MapColumn, MapGroup, MapCard, MarketStrip } from '../components/entities/map/MapParts.jsx'
 import { LENS, cardMetric } from '../components/entities/map/mapStyle.js'
 import { MapDrawer } from '../components/entities/map/MapDrawer.jsx'
+import { TopScroll } from '../components/entities/map/TopScroll.jsx'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 
@@ -39,6 +40,7 @@ export default function EntityMap() {
   const highlight = params.hl !== '0'
   const opener = useRef('')
   const returnTo = useRef('')
+  const scroller = useRef(null)
   const filtersOn = params.q || params.col || params.tier || params.own
 
   const select = (id) => { if (!opener.current) opener.current = selected || id; set({ e: id }) }
@@ -123,8 +125,9 @@ export default function EntityMap() {
         </div>
       </div>
 
-      <div className="overflow-x-auto pb-4 -mx-1 px-1" role="region" aria-label="Entity map — scroll sideways for more stages" tabIndex={0}>
-        <div className="flex gap-6 items-start w-max">
+      <TopScroll target={scroller} />
+      <div ref={scroller} className="overflow-x-auto pb-4 -mx-1 px-1" role="region" aria-label="Entity map — scroll sideways for more stages" tabIndex={0}>
+        <div className="flex gap-6 items-start min-w-full">
           {map.map((c, i) => (
             <MapColumn key={c.id} column={c} last={i === map.length - 1}>
               {c.groups.length === 0 && <p className="t-micro text-ink-4 m-0 px-1">No entities here match the filters.</p>}

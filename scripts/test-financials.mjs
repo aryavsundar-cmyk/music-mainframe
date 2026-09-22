@@ -11,7 +11,8 @@
 import assert from 'node:assert/strict'
 import fs from 'node:fs'
 import { readMetric, extractFinancials, latestFilings, usTicker } from '../server/financials.js'
-import { CONCEPTS, pctChange } from '../src/utils/financialConcepts.js'
+import { formMeaning } from '../server/filings.js'
+import { CONCEPTS, pctChange, freeCashFlow, operatingMargin, fiveYearRecord } from '../src/utils/financialConcepts.js'
 import { freshnessOf, freshnessReport, currentRevenue, parsePeriod, periodLabel, nextDue } from '../src/utils/freshness.js'
 import { ENTITIES, getEntity } from '../src/data/entities.js'
 import { buildBrief } from '../src/utils/brief.js'
@@ -56,6 +57,69 @@ t('a restated period keeps the most recently filed value; year-to-date periods a
   const r = readMetric(d.facts, CONCEPTS.revenue)
   assert.equal(r.annual.value, 104, 'the amended filing replaces the original')
   assert.equal(r.quarter.value, 31, 'a nine-month year-to-date figure is not a quarter')
+})
+
+t('history: five years newest first, spanning a tag switch, one value per year', () => {
+  const d = doc({
+    Revenues: [fact('2018-10-01', '2019-09-30', 4475e6, '10-K', '2019-11-21'), fact('2019-10-01', '2020-09-30', 4463e6, '10-K', '2020-11-23'), fact('2020-10-01', '2021-09-30', 9999e6, '10-K', '2021-11-23')],
+    RevenueFromContractWithCustomerExcludingAssessedTax: [fact('2020-10-01', '2021-09-30', 5301e6, '10-K', '2021-11-23'), fact('2021-10-01', '2022-09-30', 5919e6), fact('2022-10-01', '2023-09-30', 6037e6), fact('2023-10-01', '2024-09-30', 6426e6), fact('2024-10-01', '2025-09-30', 6707e6)],
+  })
+  const h = readMetric(d.facts, CONCEPTS.revenue).history
+  assert.deepEqual(h.map((x) => x.end), ['2025-09-30', '2024-09-30', '2023-09-30', '2022-09-30', '2021-09-30'])
+  assert.equal(h.at(-1).value, 5301e6, 'the winning tag keeps a year both tags report; the old tag never overwrites it')
+  const six = readMetric(doc({ Revenues: [fact('2019-10-01', '2020-09-30', 1), ...[2021, 2022, 2023, 2024, 2025].map((y) => fact(`${y - 1}-10-01`, `${y}-09-30`, y))] }).facts, CONCEPTS.revenue).history
+  assert.equal(six.length, 5, 'capped at five years')
+  const gap = readMetric(doc({ Revenues: [fact('2024-10-01', '2025-09-30', 2)], SalesRevenueNet: [fact('2018-10-01', '2019-09-30', 1)] }).facts, CONCEPTS.revenue).history
+  assert.deepEqual(gap.map((x) => x.end), ['2025-09-30', '2019-09-30'], 'older years from another tag fill in; missing years stay missing, never invented')
+})
+
+t('a year last repeated in a 10-Q comparative is still read from its 10-K', () => {
+  const d = doc({ Revenues: [
+    fact('2020-10-01', '2021-09-30', 5301e6, '10-K', '2021-11-23'),
+    fact('2020-10-01', '2021-09-30', 5301e6, '10-Q', '2024-02-08'),
+    fact('2021-10-01', '2022-09-30', 5919e6, '10-K', '2022-11-22'),
+  ] })
+  const r = readMetric(d.facts, CONCEPTS.revenue)
+  assert.deepEqual(r.history.map((x) => x.end), ['2022-09-30', '2021-09-30'], 'WMG FY2021 was lost this way')
+  assert.equal(r.priorAnnual.value, 5301e6)
+  const x = extractFinancials(d, { cik: 1, entityId: 'x', ticker: 'X' })
+  assert.equal(x.latestFiling.form, '10-K', 'history arrays are not figures: the latest filing is a real one')
+})
+
+t('stakes filed under the post-2024 form names are read as stakes, not routine', () => {
+  assert.equal(formMeaning('SCHEDULE 13D').label, 'Activist stake')
+  assert.equal(formMeaning('SCHEDULE 13G/A').label, 'Passive stake')
+  assert.equal(formMeaning('SC 13D').weight, formMeaning('SCHEDULE 13D').weight)
+})
+
+t('cash-flow figures are annual only: 10-Q cash flows are year-to-date', () => {
+  const d = doc({ NetCashProvidedByUsedInOperatingActivities: [
+    fact('2025-01-01', '2025-12-31', 800, '10-K', '2026-02-01'),
+    fact('2026-01-01', '2026-03-31', 150, '10-Q', '2026-05-01'),
+    fact('2026-01-01', '2026-06-30', 420, '10-Q', '2026-08-01'),
+  ] })
+  const r = readMetric(d.facts, CONCEPTS.operatingCashFlow)
+  assert.equal(r.annual.value, 800)
+  assert.equal(r.quarter, null, 'a Q1 cash flow must not be shown as the latest quarter')
+})
+
+t('derived figures: free cash flow and margin only from the same year; the record never borrows a year', () => {
+  const y = (end, value, currency = 'USD') => ({ start: `${Number(end.slice(0, 4)) - 1}${end.slice(4)}`, end, value, currency, form: '10-K', filed: '2026-01-01' })
+  const fin = { metrics: {
+    revenue: { annual: y('2025-12-31', 1000), history: [y('2025-12-31', 1000), y('2024-12-31', 800), y('2022-12-31', 500)] },
+    operatingIncome: { annual: y('2025-12-31', 100), history: [y('2025-12-31', 100), y('2022-12-31', -20)] },
+    operatingCashFlow: { annual: y('2025-12-31', 300), priorAnnual: y('2024-12-31', 250), history: [y('2025-12-31', 300), y('2024-12-31', 250)] },
+    capex: { annual: y('2021-12-31', 40), history: [y('2021-12-31', 40)] },
+  } }
+  assert.equal(freeCashFlow(fin), null, 'capex from 2021 must not be netted against 2025 cash flow (Sony)')
+  assert.equal(operatingMargin(fin), 10)
+  const rec = fiveYearRecord(fin)
+  assert.deepEqual(rec.years.map((x) => x.end), ['2022-12-31', '2024-12-31', '2025-12-31'])
+  assert.deepEqual(rec.rows.find((r) => r.key === 'growth').text, ['—', '—', '+25.0%'], 'no growth across a missing year')
+  assert.deepEqual(rec.rows.find((r) => r.key === 'operatingIncome').cells.map((c) => c?.value ?? null), [-20, null, 100], 'a missing year stays empty')
+  assert.equal(rec.rows.find((r) => r.key === 'fcf'), undefined, 'no year has both cash flow and capex, so no free-cash-flow row')
+  const euro = { metrics: { ...fin.metrics, operatingIncome: { annual: y('2025-12-31', 100, 'EUR') } } }
+  assert.equal(operatingMargin(euro), null, 'never a ratio across currencies')
 })
 
 t('point-in-time figures and IFRS filers in their own currency', () => {
@@ -126,7 +190,15 @@ t('the committed SEC file is sound: every company is on the canvas, every figure
   for (const [id, c] of Object.entries(SEC.companies)) {
     assert.ok(getEntity(id), `${id} is not an entity`)
     assert.ok(c.latestFiling?.url?.startsWith('https://www.sec.gov/Archives/edgar/data/'), `${id}: no filing link`)
-    for (const m of Object.values(c.metrics)) for (const f of Object.values(m)) if (f) assert.ok(f.end && f.filed && f.form && f.currency, `${id}: a figure without its period, filing or currency`)
+    for (const [k, m] of Object.entries(c.metrics)) {
+      const { history = [], ...one } = m
+      for (const f of [...Object.values(one), ...history]) if (f) assert.ok(f.end && f.filed && f.form && f.currency, `${id}: a figure without its period, filing or currency`)
+      // History is newest first, one value per year, in one currency, and its newest year is the headline year.
+      assert.ok(history.every((h, i) => i === 0 || h.end < history[i - 1].end), `${id} ${k}: history out of order`)
+      assert.ok(new Set(history.map((h) => h.currency)).size <= 1, `${id} ${k}: history mixes currencies`)
+      if (m.annual && history.length) assert.equal(history[0].end, m.annual.end, `${id} ${k}: history does not start at the headline year`)
+      if (m.annual && history.length) assert.equal(history[0].value, m.annual.value, `${id} ${k}: history disagrees with the headline`)
+    }
   }
 })
 

@@ -26,8 +26,10 @@ if (!ua) {
   process.exit(0)
 }
 
-const { companies, errors, unresolved } = await fetchAllFinancials(ENTITIES, { ua })
+const { companies, errors, unresolved, noFigures } = await fetchAllFinancials(ENTITIES, { ua })
 const merged = { ...before.companies }
+// A company that no longer yields figures is dropped rather than left stale under a "refreshed" date.
+for (const n of noFigures) delete merged[n.split(' ')[0]]
 const changed = []
 for (const [id, rec] of Object.entries(companies)) {
   if (JSON.stringify(before.companies?.[id]) !== JSON.stringify(rec)) changed.push(id)
@@ -35,10 +37,10 @@ for (const [id, rec] of Object.entries(companies)) {
 }
 const sorted = Object.fromEntries(Object.keys(merged).sort().map((id) => [id, merged[id]]))
 const errorsSorted = Object.fromEntries(Object.keys(errors).sort().map((id) => [id, errors[id]]))
-const errorsChanged = JSON.stringify(before.errors || {}) !== JSON.stringify(errorsSorted)
+const errorsChanged = JSON.stringify(before.errors || {}) !== JSON.stringify(errorsSorted) || JSON.stringify(before.noFigures || []) !== JSON.stringify(noFigures) || Object.keys(before.companies || {}).some((id) => !merged[id])
 if (changed.length || errorsChanged || !fs.existsSync(file)) {
   fs.mkdirSync(path.dirname(file), { recursive: true })
-  const out = { updatedAt: new Date().toISOString(), source: 'SEC EDGAR XBRL (data.sec.gov/api/xbrl/companyfacts)', companies: sorted, errors: errorsSorted, unresolved }
+  const out = { updatedAt: new Date().toISOString(), source: 'SEC EDGAR XBRL (data.sec.gov/api/xbrl/companyfacts)', companies: sorted, errors: errorsSorted, unresolved, noFigures }
   fs.writeFileSync(file, `${JSON.stringify(out, null, 1)}\n`)
 }
 
@@ -46,5 +48,6 @@ console.log(`read ${Object.keys(companies).length} companies · ${changed.length
 for (const id of changed) { const c = companies[id]; const r = c.metrics.revenue?.annual; console.log(`  ~ ${id.padEnd(22)} latest filing ${c.latestFiling?.form} ${c.latestFiling?.filed}${r ? ` · revenue ${r.currency} ${(r.value / 1e9).toFixed(2)}B to ${r.end}` : ''}`) }
 for (const [id, e] of Object.entries(errors)) console.log(`  ! ${id}: ${e}`)
 if (unresolved.length) console.log(`  unresolved: ${unresolved.join(', ')}`)
+for (const n of noFigures) console.log(`  – ${n}`)
 console.log(`UPDATED=${changed.length}`)
 process.exit(0)

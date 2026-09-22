@@ -18,7 +18,7 @@
  * Every verdict says why, and when the figure became due, so a page can show "due since" rather than a colour.
  */
 
-const KIND = { 'segment sales': 'Segment sales', distributions: 'Distributions', collections: 'Collections', revenue: 'Revenue' }
+const KIND = { 'segment sales': 'Segment sales', distributions: 'Distributions', collections: 'Collections', revenue: 'Revenue', 'net assets': 'Net assets', 'management fees': 'Management fees' }
 /** "Revenue", "Collections", "Segment sales" — what the number actually is. */
 export const kindLabel = (m) => KIND[m?.revenueKind] || 'Revenue'
 /** "FY2025", or "year to 2026-03-31" for fiscal years that do not end in December (Sony's "FY2025" ends March 2026). */

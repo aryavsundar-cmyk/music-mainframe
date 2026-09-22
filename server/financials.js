@@ -60,7 +60,11 @@ export function readMetric(facts, concept) {
       const unit = pickUnit(units)
       if (!unit) continue
       const all = latestPerPeriod(units[unit])
-      if (all.length) series.push({ taxonomy, tag, unit, all })
+      // Years are read from annual reports only. A 10-Q can repeat a full year as a comparative and be the most
+      // recent filing of it (WMG's FY2021, last filed in a 2024 10-Q); keeping only the latest filing per period
+      // across all forms would then drop that year altogether.
+      const annualAll = latestPerPeriod(units[unit].filter((f) => ANNUAL_FORMS.test(f.form || '')))
+      if (all.length) series.push({ taxonomy, tag, unit, all, annualAll })
     }
   }
   if (!series.length) return null
@@ -68,7 +72,7 @@ export function readMetric(facts, concept) {
   const bestOf = (select) => {
     let best = null
     for (const s of series) {
-      const list = select(s.all).sort((a, b) => b.end.localeCompare(a.end))
+      const list = select(s.all, s).sort((a, b) => b.end.localeCompare(a.end))
       if (list.length && (!best || list[0].end > best.list[0].end)) best = { ...s, list }
     }
     return best
@@ -78,15 +82,32 @@ export function readMetric(facts, concept) {
     if (!b) return null
     return { latest: pick(b.list[0], b.unit, b.tag, b.taxonomy), prior: pick(yearBefore(b.list, b.list[0].end), b.unit, b.tag, b.taxonomy) }
   }
-  const a = bestOf((all) => all.filter((f) => f.start && within(days(f.start, f.end), ANNUAL) && ANNUAL_FORMS.test(f.form)))
-  const q = bestOf((all) => all.filter((f) => f.start && within(days(f.start, f.end), QUARTER)))
+  const isAnnual = (f) => f.start && within(days(f.start, f.end), ANNUAL)
+  const a = bestOf((_all, s) => s.annualAll.filter(isAnnual))
+  const q = concept.annualOnly ? null : bestOf((all) => all.filter((f) => f.start && within(days(f.start, f.end), QUARTER)))
   if (!a && !q) return null
   return {
+    history: a ? annualHistory(a, series, isAnnual) : [],
     annual: a ? pick(a.list[0], a.unit, a.tag, a.taxonomy) : null,
     priorAnnual: a ? pick(yearBefore(a.list, a.list[0].end), a.unit, a.tag, a.taxonomy) : null,
     quarter: q ? pick(q.list[0], q.unit, q.tag, q.taxonomy) : null,
     priorQuarter: q ? pick(yearBefore(q.list, q.list[0].end), q.unit, q.tag, q.taxonomy) : null,
   }
+}
+
+/**
+ * Up to HISTORY_YEARS fiscal years, newest first, in the winning tag's currency. The winning tag supplies every
+ * year it has; older years come from the other candidate tags (WMG's pre-2020 revenue sits under `Revenues`). Two
+ * facts whose years end within 20 days of each other are the same year (52/53-week calendars), and the first kept
+ * wins — so a newer tag never gets a second, conflicting value for a year it already has.
+ */
+export const HISTORY_YEARS = 5
+function annualHistory(best, series, isAnnual) {
+  const out = []
+  const add = (f, s) => { if (!out.some((o) => Math.abs(days(o.end, f.end)) <= 20)) out.push(pick(f, s.unit, s.tag, s.taxonomy)) }
+  for (const f of best.list) add(f, best)
+  for (const s of series) if ((s.tag !== best.tag || s.taxonomy !== best.taxonomy) && s.unit === best.unit) for (const f of s.annualAll.filter(isAnnual)) add(f, s)
+  return out.sort((x, y) => y.end.localeCompare(x.end)).slice(0, HISTORY_YEARS)
 }
 
 /**
@@ -113,7 +134,8 @@ export function extractFinancials(doc, { cik, entityId, ticker, submissions = nu
     const m = readMetric(facts, concept)
     if (m) metrics[key] = m
   }
-  const used = Object.values(metrics).flatMap((m) => Object.values(m)).filter(Boolean)
+  // Every single figure shown — the history arrays are the same filings over again, and not figures themselves.
+  const used = Object.values(metrics).flatMap((m) => Object.entries(m).filter(([k]) => k !== 'history').map(([, v]) => v)).filter(Boolean)
   const newest = used.reduce((a, b) => (!a || String(b.filed) > String(a.filed) ? b : a), null)
   const periods = used.map((f) => f.end).sort()
   const filings = latestFilings(submissions, cik)
@@ -163,6 +185,7 @@ export async function fetchAllFinancials(entities, { ua, pauseMs = 250 } = {}) {
   const companies = {}
   const errors = {}
   const unresolved = []
+  const noFigures = []
   for (const e of entities) {
     const t = usTicker(e.ticker)
     if (!t) continue
@@ -173,9 +196,13 @@ export async function fetchAllFinancials(entities, { ua, pauseMs = 250 } = {}) {
       const doc = await getJson(`https://data.sec.gov/api/xbrl/companyfacts/CIK${pad}.json`, ua)
       await sleep(pauseMs)
       const submissions = await getJson(`https://data.sec.gov/submissions/CIK${pad}.json`, ua).catch(() => null)
-      companies[e.id] = extractFinancials(doc, { cik, entityId: e.id, ticker: t, submissions })
+      const rec = extractFinancials(doc, { cik, entityId: e.id, ticker: t, submissions })
+      // A filer with no structured figures yet (a new listing reporting on 6-K, say) is not a record: an empty one
+      // would displace the verified hand-entered figures on the page. Say so instead.
+      if (Object.keys(rec.metrics).length) companies[e.id] = rec
+      else noFigures.push(`${e.id} (${t}): on file with the SEC, but no structured financial figures yet`)
     } catch (err) { errors[e.id] = err.message }
     await sleep(pauseMs)
   }
-  return { companies, errors, unresolved }
+  return { companies, errors, unresolved, noFigures }
 }

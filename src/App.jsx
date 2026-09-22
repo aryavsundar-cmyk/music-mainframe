@@ -94,7 +94,19 @@ function NavItem({ to, label, icon: Icon, end, except = [], sub = false }) {
   )
 }
 
+/**
+ * Width by page. Reading pages keep the 1280px measure; the entity map uses the whole window (it scrolls
+ * sideways), and company pages go to the wide measure so their panels sit side by side instead of stacking.
+ */
+function useWidth() {
+  const { pathname } = useLocation()
+  if (pathname === '/entities/map') return 'max-w-none'
+  if (/^\/entities\/[^/]+$/.test(pathname)) return 'max-w-content-wide'
+  return 'max-w-content-max'
+}
+
 export default function App() {
+  const width = useWidth()
   const themeState = useThemeState()
   const { theme, toggle } = themeState
   return (
@@ -134,7 +146,7 @@ export default function App() {
       </aside>
 
       <main className="flex-1 min-w-0">
-        <div className="max-w-content-max px-gutter py-10">
+        <div className={`${width} px-gutter py-10`}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/entities" element={<Entities />} />

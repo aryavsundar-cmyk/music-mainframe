@@ -36,6 +36,10 @@ export const FORM_MEANING = {
   '20-F': { label: 'Annual report (foreign issuer)', weight: 3, note: 'The annual report for a non-US filer.' },
   '6-K': { label: 'Foreign issuer update', weight: 5, note: 'Interim disclosure from a non-US filer.' },
 }
+// SEC renamed the beneficial-ownership forms in December 2024 (EDGAR Next): "SC 13D" is now filed as
+// "SCHEDULE 13D". Without these, every stake filed since reads as routine.
+FORM_MEANING['SCHEDULE 13D'] = FORM_MEANING['SC 13D']
+FORM_MEANING['SCHEDULE 13G'] = FORM_MEANING['SC 13G']
 export const formMeaning = (form) => FORM_MEANING[form] || FORM_MEANING[String(form).split('/')[0]] || { label: form, weight: 2, note: 'Routine filing.' }
 
 /** US tickers from the entity table: "NASDAQ: WMG", "NYSE: SPOT · HKEX: 1698" → WMG, SPOT. */

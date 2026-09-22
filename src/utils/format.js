@@ -3,7 +3,7 @@
  * All return strings; all accept null/undefined and return '—' (never 'null', never NaN).
  */
 const DASH = '—'
-export const CURRENCY_SYMBOL = { USD: '$', EUR: '€', GBP: '£', JPY: '¥', KRW: '₩', CAD: 'C$', AUD: 'A$' }
+export const CURRENCY_SYMBOL = { USD: '$', EUR: '€', GBP: '£', JPY: '¥', KRW: '₩', CAD: 'C$', AUD: 'A$', CNY: 'CN¥' }
 export const currencySymbol = (code) => CURRENCY_SYMBOL[code] || (code ? code + ' ' : '$')
 const isNum = (n) => typeof n === 'number' && Number.isFinite(n)
 

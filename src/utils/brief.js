@@ -26,7 +26,7 @@ import { classifyDeal, entityExposure } from './forces.js'
 import { DIRECTIONS, FORCE_BY_ID } from '../data/forces.js'
 import { LIMITS } from '../data/limits.js'
 import { currentRevenue, freshnessOf } from './freshness.js'
-import { CONCEPTS, pctChange } from './financialConcepts.js'
+import { CONCEPTS, pctChange, freeCashFlow, fiveYearRecord } from './financialConcepts.js'
 
 const MONEY_TYPES = new Set(['catalog-fund', 'pe-fund', 'debt-investor', 'strategic'])
 const RIGHTS_OPS = new Set(['label', 'publisher', 'distributor', 'artist-services'])
@@ -52,7 +52,7 @@ export function modesFor(entity) {
   return ['full']
 }
 
-const money = (v, cur = 'USD') => formatMoney(v, { currency: currencySymbol(cur), digits: 2 })
+const money = (v, cur = 'USD') => formatMoney(v, { currency: currencySymbol(cur), digits: Math.abs(v) >= 1e9 ? 2 : 1 })
 const dash = (v) => (v == null || v === '' ? '—' : String(v))
 const list = (xs) => (xs && xs.length ? xs.join(', ') : '—')
 
@@ -98,9 +98,19 @@ export function buildBrief(entityId, { mode = 'full', citations = { items: [], s
     const f = financials.metrics[k]
     return [c.label, f.annual ? `${money(f.annual.value, f.annual.currency)} (to ${f.annual.end})` : '—', pctChange(f.annual, f.priorAnnual), f.quarter ? `${money(f.quarter.value, f.quarter.currency)} (to ${f.quarter.end})` : '—', pctChange(f.quarter, f.priorQuarter)]
   }) : []
+  const fcf = freeCashFlow(financials)
+  if (fcf) secRows.push(['Free cash flow (operating cash flow less capex)', `${money(fcf.value, fcf.currency)} (to ${fcf.end})`, pctChange(fcf, freeCashFlow(financials, 'priorAnnual')), '—', '—'])
+  const record = fiveYearRecord(financials)
+  const recordTable = record ? {
+    kind: 'table',
+    columns: ['Year to', ...record.years.map((y) => y.end)],
+    rows: record.rows.map((r) => [r.label, ...(r.text || r.cells.map((c) => (c ? money(c.value, c.currency) : '—')))]),
+  } : null
   if (stats.length && inMode('financial', 'membership', 'economics', 'catalog')) add('Metrics', 'Headline numbers', [
     { kind: 'stats', items: stats },
     secRows.length ? { kind: 'table', columns: ['Figure', 'Latest year', 'Change', 'Latest quarter', 'Change on a year earlier'], rows: secRows } : null,
+    recordTable,
+    recordTable ? { kind: 'note', text: `Five-year record: each fiscal year as last reported in an annual report, in ${record.currency}. A dash means the filing does not give the figure; growth is shown only between consecutive years.` } : null,
     financials?.latestFiling ? { kind: 'note', text: `As filed with the SEC — consolidated figures, from EDGAR's structured data. Latest filing: ${financials.latestFiling.form} filed ${financials.latestFiling.filed} (${financials.latestFiling.url}).` } : null,
     rev?.source === 'record' && m.revenueSource ? { kind: 'note', text: `Source: ${m.revenueSource.label} — ${m.revenueSource.url}${m.revenuePublished ? ` (published ${m.revenuePublished})` : ''}.` } : null,
     m.revenueNote ? { kind: 'note', text: m.revenueNote } : null,

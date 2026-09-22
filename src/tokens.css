@@ -161,6 +161,7 @@
   --color-rate: var(--mm-rate);
   --spacing-sidebar: 232px;
   --spacing-content-max: 1280px;
+  --spacing-content-wide: 1920px;
   --spacing-gutter: 32px;
 }
 
