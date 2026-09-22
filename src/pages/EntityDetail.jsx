@@ -10,6 +10,10 @@ import { PepiLens } from '../components/consulting/PepiLens.jsx'
 import { ExportButtons } from '../components/export/ExportButtons.jsx'
 import { HubLinks } from '../components/HubLinks.jsx'
 import { currencySymbol } from '../utils/format.js'
+import { useMemo } from 'react'
+import { useForces } from '../hooks/useForces.js'
+import { entityExposure } from '../utils/forces.js'
+import { ForceExposure } from '../components/forces/ForceExposure.jsx'
 
 function Fact({ label, children }) {
   return (
@@ -27,6 +31,8 @@ const ELink = ({ e, className = '' }) => (
 export default function EntityDetail() {
   const { id } = useParams()
   const e = getEntityProfile(id)
+  const { tagged, loading } = useForces()
+  const exposure = useMemo(() => entityExposure(tagged, id), [tagged, id])
   if (e.missing) {
     return (
       <>
@@ -51,7 +57,7 @@ export default function EntityDetail() {
       <Link to="/entities" className="t-small text-ink-3 no-underline inline-flex items-center gap-1 hover:text-ink-1 mb-4"><ArrowLeft size={14} aria-hidden="true" /> Entities</Link>
       <PageHeader eyebrow={`${t.label}${e.subtype ? ` · ${e.subtype}` : ''}`} tone={tone === 'neutral' ? 'muted' : tone} title={e.name} lede={e.summary}
         actions={<div className="flex flex-col items-end gap-2">
-          <ExportButtons entity={e} />
+          <ExportButtons entity={e} forceItems={loading ? null : tagged} />
           {e.roles.some((r) => ['catalog-fund', 'pe-fund', 'debt-investor', 'strategic'].includes(r)) && <Link to={`/pe/${e.id}`} className="t-small text-ink-2 no-underline hover:text-ink-1 inline-flex items-center gap-1">Investment view <ArrowRight size={13} aria-hidden="true" /></Link>}
         </div>} />
 
@@ -132,6 +138,8 @@ export default function EntityDetail() {
               </div>
             </Card>
           )}
+
+          <ForceExposure exposure={exposure} name={e.name} loading={loading} />
 
           <PepiLens entityId={e.id} />
 

@@ -38,6 +38,7 @@ export function normalizeItem(n, { now = new Date().toISOString() } = {}) {
     kind: n.kind || 'news',
     publishedAt: n.publishedAt || n.firstSeen || now,
     entities: [...(n.entities || [])].sort(),
+    types: [...(n.types || [])].sort(),
     topics: [...(n.topics || [])].sort(),
     score: typeof n.score === 'number' ? Math.round(n.score * 100) / 100 : undefined,
     firstSeen: n.firstSeen || now,

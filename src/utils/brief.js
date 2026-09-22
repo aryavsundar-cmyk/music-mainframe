@@ -13,7 +13,7 @@
  * section list; they read `brief.mode` only for the cover. Modes are per entity type, not binary.
  */
 import { getEntityProfile, getEntity, getParentChain, getChildren, getBackers, getBackedBy, ENTITY_TYPES, TIERS, OWNERSHIP } from '../data/entities.js'
-import { getTransactionsForEntity, TX_TYPES, ASSETS, partyName } from '../data/transactions.js'
+import { getTransactionsForEntity, TX_TYPES, ASSETS, partyName, TRANSACTIONS } from '../data/transactions.js'
 import { getFundProfile, kindOf, FUND_KINDS } from '../data/peFunds.js'
 import { getProProfile, SCOPES, MODELS } from '../data/pros.js'
 import { getDspProfile, TIERS as DSP_TIERS, PAYOUT_MODELS } from '../data/fundamentals.js'
@@ -22,6 +22,9 @@ import { OVERLAY_LABEL, getConsultingContext, SERVICE_LINES } from '../data/cons
 import { hubFundLink, hubLinks } from '../data/siblings.js'
 import { CITATION_FALLBACK } from './newsCitations.js'
 import { formatMoney, formatCount, formatPct, formatRate, formatDate, currencySymbol } from './format.js'
+import { classifyDeal, entityExposure } from './forces.js'
+import { DIRECTIONS, FORCE_BY_ID } from '../data/forces.js'
+import { LIMITS } from '../data/limits.js'
 
 const MONEY_TYPES = new Set(['catalog-fund', 'pe-fund', 'debt-investor', 'strategic'])
 const RIGHTS_OPS = new Set(['label', 'publisher', 'distributor', 'artist-services'])
@@ -51,7 +54,7 @@ const money = (v, cur = 'USD') => formatMoney(v, { currency: currencySymbol(cur)
 const dash = (v) => (v == null || v === '' ? '—' : String(v))
 const list = (xs) => (xs && xs.length ? xs.join(', ') : '—')
 
-export function buildBrief(entityId, { mode = 'full', citations = { items: [], source: 'unavailable' } } = {}) {
+export function buildBrief(entityId, { mode = 'full', citations = { items: [], source: 'unavailable' }, forceItems = null } = {}) {
   const e = getEntityProfile(entityId)
   const type = ENTITY_TYPES[e.type] || { label: e.type }
   const inMode = (...ms) => mode === 'full' || ms.includes(mode)
@@ -178,6 +181,28 @@ export function buildBrief(entityId, { mode = 'full', citations = { items: [], s
       : { kind: 'note', text: CITATION_FALLBACK[citations.source] || CITATION_FALLBACK.unavailable },
     citations.items.length ? { kind: 'bullets', items: citations.items.map((c) => c.url) } : null,
   ])
+
+  // § Five forces — the company's exposure, from deals it is party to and headlines that name it. Without the
+  // feed and archive (a Node export, say) it falls back to deals on record and says so rather than reading low.
+  if (inMode('financial', 'catalog', 'distribution', 'rights', 'economics', 'membership')) {
+    const pool = forceItems || TRANSACTIONS.map(classifyDeal)
+    const x = entityExposure(pool, e.id, { latest: 8 })
+    const arrows = (d) => `↑${d.supports || 0} ↓${d.challenges || 0}${d.mixed ? ` ↕${d.mixed}` : ''}`
+    // Each item once, with the forces it carries — a deal tagged to three forces is one deal, not three rows.
+    const seen = new Map()
+    for (const f of x.forces) for (const l of f.latest) if (!seen.has(l.item.id)) seen.set(l.item.id, l)
+    const latest = [...seen.values()].sort((a, b) => String(b.item.date).localeCompare(String(a.item.date))).slice(0, 8)
+    const forcesOf = (it) => [it.primary_force_id, ...it.secondary_force_ids].map((id) => FORCE_BY_ID[id].short_title).join(' · ')
+    add('Five forces', 'Which forces the record ties this company to', [
+      { kind: 'paragraph', text: `Built from deals ${e.name} is party to and headlines that name it${forceItems ? ', across deals on record, the evidence archive and the live feed' : ''}. Being mentioned elsewhere in an article is counted separately and does not count as exposure.` },
+      forceItems ? null : { kind: 'note', text: 'Deals on record only — the live feed and evidence archive were not available to this export, so market events are missing.' },
+      x.forces.some((f) => f.total)
+        ? { kind: 'table', columns: ['Force', 'Primary', 'Secondary', 'As party', 'As subject', 'Mentioned', 'Direction'], rows: x.forces.map((f) => [`${f.force.number} ${f.force.short_title}`, String(f.direct), String(f.adjacent), String(f.party), String(f.subject), String(f.mentions), arrows(f.byDirection)]) }
+        : { kind: 'note', text: `Nothing on record ties ${e.name} to a force as a party or a subject.` },
+      latest.length ? { kind: 'table', columns: ['Date', 'Item', 'Forces (primary first)', 'How it is tied', 'Direction'], rows: latest.map((l) => [String(l.item.date).slice(0, 10), l.item.title, forcesOf(l.item), l.link === 'party' ? `party (${l.role})` : 'named in the headline', DIRECTIONS[l.item.force_impact_direction] || '']) } : null,
+      { kind: 'note', text: `${LIMITS.force.claim} Exposure says what the record ties a company to, not its strategy.` },
+    ])
+  }
 
   // § Sources — always
   add('Sources', 'Provenance', [

@@ -657,8 +657,184 @@ export function forceSeries(touching, { today = new Date(), weeks = 12, coverage
   })
 }
 
+// ── Periods ─────────────────────────────────────────────────────────────────────────────────────────────
+
+/** The time periods a reader can choose, each with the bucket that reads as a trend at that length. */
+export const PERIODS = {
+  week: { label: 'Week', noun: 'week', span: 'past 7 days', bucket: 'day', count: 7 },
+  month: { label: 'Month', noun: 'month', span: 'past 30 days', bucket: 'day', count: 30 },
+  quarter: { label: 'Quarter', noun: 'quarter', span: 'past 13 weeks', bucket: 'week', count: 13 },
+  year: { label: 'Year', noun: 'year', span: 'past 12 months', bucket: 'month', count: 12 },
+}
+export const PERIOD_IDS = Object.keys(PERIODS)
+
+const iso = (ms) => new Date(ms).toISOString().slice(0, 10)
+const DAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+/** The bucket boundaries for a period ending today, oldest first: [{ start, end, label }] in ms. */
+export function periodBuckets(period = 'week', { today = new Date() } = {}) {
+  const p = PERIODS[period] || PERIODS.week
+  const now = startOfDay((today instanceof Date ? today : new Date(today)).getTime())
+  if (p.bucket === 'day') {
+    return Array.from({ length: p.count }, (_, i) => {
+      const start = now - (p.count - 1 - i) * DAY
+      const d = new Date(start)
+      return { start, end: start + DAY, label: `${DAY_NAMES[d.getUTCDay()]} ${d.getUTCDate()} ${MONTH_NAMES[d.getUTCMonth()]}` }
+    })
+  }
+  if (p.bucket === 'week') {
+    const monday = now - ((new Date(now).getUTCDay() + 6) % 7) * DAY
+    return Array.from({ length: p.count }, (_, i) => {
+      const start = monday - (p.count - 1 - i) * 7 * DAY
+      const d = new Date(start)
+      return { start, end: start + 7 * DAY, label: `Week of ${d.getUTCDate()} ${MONTH_NAMES[d.getUTCMonth()]}` }
+    })
+  }
+  const d = new Date(now)
+  return Array.from({ length: p.count }, (_, i) => {
+    const m = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() - (p.count - 1 - i), 1))
+    const next = Date.UTC(m.getUTCFullYear(), m.getUTCMonth() + 1, 1)
+    return { start: m.getTime(), end: next, label: `${MONTH_NAMES[m.getUTCMonth()]} ${m.getUTCFullYear()}` }
+  })
+}
+
+const matchesForce = (x, forceId, reach) => !forceId || x.primary_force_id === forceId || (reach !== 'direct' && x.secondary_force_ids.includes(forceId))
+
+/**
+ * One force (or all tagged items, forceId null) over a period: bucketed counts, the total, and the previous
+ * period for comparison. A bucket is `covered` only if the archive was already watching when it began; the
+ * period and its predecessor are `complete` on the same test. The comparison is offered only when both are
+ * complete — "+40% on last quarter" against a quarter nobody recorded would be invented.
+ */
+export function periodActivity(items, { period = 'week', forceId = null, reach = 'any', today = new Date(), coverageSince = null } = {}) {
+  const buckets = periodBuckets(period, { today })
+  const since = coverageSince ? dateMs(coverageSince) : null
+  const now = (today instanceof Date ? today : new Date(today)).getTime()
+  const inForce = items.filter((x) => matchesForce(x, forceId, reach))
+  const at = (x) => dateMs(x.date)
+  const series = buckets.map((b) => {
+    const count = inForce.filter((x) => { const ms = at(x); return ms != null && ms >= b.start && ms < b.end && ms <= now + DAY }).length
+    return { start: iso(b.start), label: b.label, count, deals: 0, events: count, covered: since != null && b.start >= since, current: b.end > now }
+  })
+  const first = buckets[0].start
+  const span = buckets.at(-1).end - first
+  const total = series.reduce((a, w) => a + w.count, 0)
+  const prev = inForce.filter((x) => { const ms = at(x); return ms != null && ms >= first - span && ms < first }).length
+  const complete = since != null && first >= since
+  const previousComplete = since != null && first - span >= since
+  return { period, forceId, series, total, complete, previous: previousComplete ? prev : null, from: iso(first) }
+}
+
+/** Items dated inside the period, newest first. */
+export function inPeriod(items, { period = 'week', today = new Date() } = {}) {
+  const buckets = periodBuckets(period, { today })
+  const first = buckets[0].start
+  const now = (today instanceof Date ? today : new Date(today)).getTime()
+  return items.filter((x) => { const ms = dateMs(x.date); return ms != null && ms >= first && ms <= now + DAY }).sort((a, b) => (dateMs(b.date) || 0) - (dateMs(a.date) || 0))
+}
+
 /** Every force at once, in taxonomy order. */
 export const forceBoard = (items, opts) => FORCES.map((f) => forceActivity(items, f.id, opts))
+
+// ── Companies ───────────────────────────────────────────────────────────────────────────────────────────
+
+/**
+ * Every company a headline names, for linking evidence to companies. Wider than `namedIn` (which only indexes
+ * the types that carry a force): here any company counts, including three-letter acronyms that headlines use
+ * for the majors ("UMG", "WMG", "BMI") — matched case-sensitively, so "bmi" in prose never counts.
+ */
+let TITLE_INDEX = null
+export function titleEntities(title = '') {
+  if (!TITLE_INDEX) {
+    TITLE_INDEX = []
+    for (const e of ENTITIES) {
+      const brand = e.name.replace(/(?:\s+(?:Entertainment|Group|Holdings|Inc\.?|Ltd\.?|LLC|plc|Corporation|Corp\.?|Company|SE|AG))+$/i, '')
+      const names = [e.name, brand, e.short].filter((x) => x && (x.length >= 4 || /^[A-Z]{3}$/.test(x)))
+      for (const n of new Set(names)) TITLE_INDEX.push([new RegExp(`(?<![A-Za-z0-9])${esc(n)}(?![A-Za-z0-9])`), e.id, n])
+    }
+  }
+  const out = new Map()
+  for (const [re, id, n] of TITLE_INDEX) if (!out.has(id) && re.test(title)) out.set(id, n)
+  return out
+}
+
+/**
+ * How the record ties an item to a company, strongest first:
+ *   party   — the company is an acquirer or seller on a deal on record;
+ *   subject — the headline names it;
+ *   mention — the feed tagged it somewhere in the item, often in passing.
+ * Exposure is built from parties and subjects. Mentions are reported, never counted: a roundup that mentions
+ * Spotify is not evidence about Spotify.
+ */
+export function linkOf(item, entityId) {
+  const r = item.record || {}
+  if (item.kind === 'deal') {
+    if ((r.acquirers || []).some((p) => p.entityId === entityId)) return { link: 'party', role: 'acquirer' }
+    if ((r.sellers || []).some((p) => p.entityId === entityId)) return { link: 'party', role: 'seller' }
+    const hit = titleEntities(r.title).get(entityId)
+    return hit ? { link: 'subject', match: hit } : null
+  }
+  const hit = titleEntities(r.title).get(entityId)
+  if (hit) return { link: 'subject', match: hit }
+  return (r.entities || []).includes(entityId) ? { link: 'mention' } : null
+}
+
+/** Does this link actually hold? The tests run it over every exposure the app reports. */
+export function linkHolds(item, entityId, l) {
+  const r = item.record || {}
+  if (l.link === 'party') return [...(r.acquirers || []), ...(r.sellers || [])].some((p) => p.entityId === entityId)
+  if (l.link === 'subject') return String(r.title).includes(l.match)
+  if (l.link === 'mention') return (r.entities || []).includes(entityId)
+  return false
+}
+
+/**
+ * One company's exposure to the five forces: for each force, how many items tie the company to it (as a party
+ * or a subject), whether the force was primary or secondary, which way the evidence points, and the latest
+ * items. Mentions are counted beside it, not inside it.
+ */
+export function entityExposure(tagged, entityId, { latest = 3 } = {}) {
+  const linked = []
+  for (const x of tagged) { const l = linkOf(x, entityId); if (l) linked.push({ item: x, ...l }) }
+  const strong = linked.filter((l) => l.link !== 'mention')
+  const mentions = linked.filter((l) => l.link === 'mention')
+  const forces = FORCES.map((f) => {
+    const direct = strong.filter((l) => l.item.primary_force_id === f.id)
+    const adjacent = strong.filter((l) => l.item.secondary_force_ids.includes(f.id))
+    const both = [...direct, ...adjacent].sort((a, b) => (dateMs(b.item.date) || 0) - (dateMs(a.item.date) || 0))
+    const dir = both.reduce((acc, l) => { acc[l.item.force_impact_direction] = (acc[l.item.force_impact_direction] || 0) + 1; return acc }, {})
+    return {
+      force: f,
+      direct: direct.length,
+      adjacent: adjacent.length,
+      total: both.length,
+      party: both.filter((l) => l.link === 'party').length,
+      subject: both.filter((l) => l.link === 'subject').length,
+      mentions: mentions.filter((l) => l.item.primary_force_id === f.id || l.item.secondary_force_ids.includes(f.id)).length,
+      byDirection: dir,
+      latest: both.slice(0, latest),
+    }
+  }).filter((x) => x.total || x.mentions)
+  return { entityId, forces, linked: strong.length, mentions: mentions.length }
+}
+
+/** entityId → Set of forces it is exposed to (party or subject, primary or secondary). For the /entities facet. */
+export function exposureIndex(tagged) {
+  const idx = new Map()
+  for (const x of tagged) {
+    const ids = new Set()
+    if (x.kind === 'deal') for (const p of [...(x.record.acquirers || []), ...(x.record.sellers || [])]) if (p.entityId) ids.add(p.entityId)
+    for (const id of titleEntities(x.record?.title).keys()) ids.add(id)
+    for (const id of ids) {
+      const set = idx.get(id) || new Set()
+      set.add(x.primary_force_id)
+      for (const f of x.secondary_force_ids) set.add(f)
+      idx.set(id, set)
+    }
+  }
+  return idx
+}
 
 /** Geography values present in a set, for the filter. */
 export const geographiesIn = (items) => [...new Set(items.flatMap((x) => x.geography))].sort()

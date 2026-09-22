@@ -8,8 +8,13 @@ import { ENTITY_TYPES } from '../data/entities/_schema.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 import { format, currencySymbol } from '../utils/format.js'
+import { useForces } from '../hooks/useForces.js'
+import { exposureIndex } from '../utils/forces.js'
+import { FORCES, FORCE_BY_ID } from '../data/forces.js'
 
-const KEYS = ['q', 'type', 'tier', 'ownership', 'parent', 'verify']
+const KEYS = ['q', 'type', 'tier', 'ownership', 'parent', 'verify', 'force']
+const forceChip = (a) => ['inline-flex items-center gap-1.5 rounded-sm border px-2 py-1 t-small cursor-pointer select-none transition-colors duration-100',
+  a ? 'bg-ground-4 border-line-3 text-ink-1' : 'bg-transparent border-line-1 text-ink-2 hover:bg-ground-2 hover:text-ink-1'].join(' ')
 /** How each facet reads in an exported document — "type=label" means nothing to someone opening the file. */
 const FILTER_LABELS = {
   q: { label: 'Search' },
@@ -18,6 +23,7 @@ const FILTER_LABELS = {
   ownership: { label: 'Ownership' },
   parent: { label: 'Parent' },
   verify: { label: 'Flagged to verify', format: () => 'yes' },
+  force: { label: 'Exposed to', format: (v) => v.split(',').map((id) => FORCE_BY_ID[id]?.short_title || id).join(' or ') },
 }
 const headline = (e) => {
   const m = headlineMetric(e)
@@ -34,7 +40,15 @@ export default function Entities() {
     for (const [k, v] of Object.entries(patch)) v ? next.set(k, v) : next.delete(k)
     setSp(next, { replace: true })
   }
-  const rows = useMemo(() => filterEntities(params), [sp]) // eslint-disable-line react-hooks/exhaustive-deps
+  const listed = useMemo(() => filterEntities(params), [sp]) // eslint-disable-line react-hooks/exhaustive-deps
+  const { tagged, loading } = useForces()
+  const exposed = useMemo(() => exposureIndex(tagged), [tagged])
+  const picked = String(params.force || '').split(',').filter(Boolean)
+  // OR across the chosen forces: "exposed to AI rights or Superfan". Exposure means a party to a deal or named in
+  // a headline tagged to the force — never a passing mention.
+  const rows = picked.length ? listed.filter((e) => picked.some((f) => exposed.get(e.id)?.has(f))) : listed
+  const forcesOf = (id) => [...(exposed.get(id) || [])].map((f) => FORCE_BY_ID[f]).sort((a, b) => a.number - b.number)
+  const toggle = (id) => { const s = new Set(picked); if (s.has(id)) s.delete(id); else s.add(id); set({ force: [...s].join(',') }) }
 
   return (
     <>
@@ -50,6 +64,15 @@ export default function Entities() {
         <Stat label="Flagged to verify" kind="count" value={COUNTS.verify} opts={{ full: true }} hint="facts from the brief not yet sourced" />
       </div>
       <Facets params={params} set={set} resultCount={rows.length} />
+      <div className="flex flex-wrap items-center gap-1.5 -mt-2 mb-6">
+        <span className="t-micro text-ink-4 mr-1">Exposed to</span>
+        {FORCES.map((f) => (
+          <button key={f.id} type="button" aria-pressed={picked.includes(f.id)} className={forceChip(picked.includes(f.id))} onClick={() => toggle(f.id)}>
+            <span className="font-mono t-micro text-ink-3">{f.number}</span>{f.short_title}
+          </button>
+        ))}
+        <span className="t-micro text-ink-4 ml-1">{loading ? 'reading the feed and archive…' : 'a party to a deal, or named in a headline, tagged to the force'}</span>
+      </div>
       <EntityTable rows={rows} grouped={!params.type} />
       <PageExport build={() => buildPageDoc({
         slug: 'entities',
@@ -59,8 +82,9 @@ export default function Entities() {
         filters: describeFilters(params, FILTER_LABELS),
         sort: params.type ? 'Name, within the selected type' : 'Grouped by type, then name',
         stats: [{ label: 'In this view', value: String(rows.length) }, { label: 'On record', value: String(COUNTS.total) }, { label: 'Publicly listed', value: String(rows.filter((e) => e.ownership === 'public').length) }, { label: 'Flagged to verify', value: String(rows.filter((e) => e.verify).length) }],
-        columns: ['Entity', 'Type', 'Tier', 'Ownership', 'HQ', 'Parent', 'Headline'],
-        rows: rows.map((e) => [e.name, ENTITY_TYPES[e.type]?.label || e.type, e.tier || '', e.ownership || '', e.hq || '', e.parentId || '', headline(e)]),
+        columns: ['Entity', 'Type', 'Tier', 'Ownership', 'HQ', 'Parent', 'Headline', 'Forces (evidence)'],
+        rows: rows.map((e) => [e.name, ENTITY_TYPES[e.type]?.label || e.type, e.tier || '', e.ownership || '', e.hq || '', e.parentId || '', headline(e), forcesOf(e.id).map((f) => `${f.number} ${f.short_title}`).join(' · ')]),
+        limits: ['force'],
         total: COUNTS.total,
         notes: rows.some((e) => e.verify) ? ['Rows flagged to verify carry facts from the source brief that are not yet sourced. They are marked in the app and should not be quoted without checking.'] : [],
       })} />

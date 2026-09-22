@@ -6,6 +6,8 @@ import { useNewsStream } from '../hooks/useNewsStream.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
 import { ENTITY_TYPES, TYPE_ORDER, getEntity } from '../data/entities.js'
 import { formatDate } from '../utils/format.js'
+import { NewsForces } from '../components/forces/NewsForces.jsx'
+import { useForceEvents } from '../hooks/useForces.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 
@@ -37,6 +39,10 @@ export default function News() {
   const topics = stats?.topics || {}
   const sources = useMemo(() => Object.entries(stats?.bySource || {}).sort((a, b) => b[1] - a[1]), [stats])
   const refresh = () => fetch('/api/news/refresh', { method: 'POST' }).then(() => setTimeout(reload, 4000)).catch(() => {})
+  // The forces view reads the same filtered feed the list below shows, plus the archive filtered the same way.
+  const forces = useForceEvents({ live: items, filters: params })
+  const today = useMemo(() => new Date(), [])
+  const filterLabels = { q: { label: 'Search' }, entity: { label: 'Entity', format: (v) => getEntity(v)?.name || v }, type: { label: 'Entity type', format: (v) => ENTITY_TYPES[v]?.label || v }, topic: { label: 'Topic', format: (v) => topics[v] || v }, source: { label: 'Source' }, kind: { label: 'Kind' } }
 
   return (
     <>
@@ -54,6 +60,8 @@ export default function News() {
           <Stat label="SEC filings" kind="count" value={stats.bySource?.sec_edgar || 0} opts={{ full: true }} />
         </div>
       )}
+
+      <NewsForces tagged={forces.tagged} coverageSince={forces.coverageSince} archive={forces.archive} today={today} pageFilters={params} pageFilterLabels={filterLabels} />
 
       <div className="space-y-3 mb-6">
         <div className="flex items-center gap-3">

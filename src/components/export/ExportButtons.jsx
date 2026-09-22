@@ -4,8 +4,12 @@ import { Sparkles, Download, ChevronDown, Check, AlertTriangle } from 'lucide-re
 import { Button } from '../primitives/index.js'
 import { MODES, modesFor } from '../../utils/brief.js'
 import { exportBrief, buildDeliverable, exportDoc } from '../../utils/download.js'
+import { EXPORT_FORMATS } from '../../editions.js'
 
-const FORMATS = [['docx', 'Word'], ['pptx', 'Slides'], ['txt', 'Text'], ['md', 'MD']]
+// The edition manifest decides the formats. A hard-coded list here offered Markdown in the work edition (whose
+// manifest excludes it) and never offered Excel anywhere — the one menu Sprint 20 missed.
+const LABELS = { docx: 'Word', pptx: 'Slides', xlsx: 'Excel', txt: 'Text', md: 'MD' }
+const FORMATS = EXPORT_FORMATS.filter((f) => LABELS[f]).map((f) => [f, LABELS[f]])
 const EXTRA = [['account-plan', 'Account plan', 'SCR, stakeholders, matrix, 30·60·90'], ['proposal', 'Proposal', 'Default category and lines; tune in Deliverables']]
 
 /**
@@ -13,7 +17,7 @@ const EXTRA = [['account-plan', 'Account plan', 'SCR, stakeholders, matrix, 30·
  * dropdown for mode × format. Status line under the buttons reports citations state so a quiet feed is never
  * mistaken for a broken one.
  */
-export function ExportButtons({ entity }) {
+export function ExportButtons({ entity, forceItems = null }) {
   const [busy, setBusy] = useState('')
   const [last, setLast] = useState(null)
   const [open, setOpen] = useState(false)
@@ -30,7 +34,7 @@ export function ExportButtons({ entity }) {
     setBusy(`${mode}/${format}`); setOpen(false)
     try {
       if (mode === 'account-plan' || mode === 'proposal') setLast({ ok: true, ...(await exportDoc(await buildDeliverable(mode, { entityId: entity.id }), format)) })
-      else setLast({ ok: true, ...(await exportBrief(entity.id, { mode, format })) })
+      else setLast({ ok: true, ...(await exportBrief(entity.id, { mode, format, forceItems })) })
     }
     catch (err) { setLast({ ok: false, error: err.message }) }
     finally { setBusy('') }

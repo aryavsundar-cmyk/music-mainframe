@@ -9,7 +9,9 @@
  */
 import assert from 'node:assert/strict'
 import { FORCES, FORCE_IDS, FORCE_BY_ID, CONFIDENCE, DIRECTIONS, EXPOSURE_TYPES, RIGHTS_TYPES, REVENUE_STREAMS, CLASSIFICATION } from '../src/data/forces.js'
-import { classifyDeal, classifyEvent, classifyAll, evidenceHolds, filterTagged, forceActivity, forceBoard, placesOf, compileKeyword, dateMs, isMusic, windowComplete } from '../src/utils/forces.js'
+import { classifyDeal, classifyEvent, classifyAll, evidenceHolds, filterTagged, forceActivity, forceBoard, placesOf, compileKeyword, dateMs, isMusic, windowComplete, periodBuckets, periodActivity, inPeriod, PERIOD_IDS, linkOf, linkHolds, entityExposure, exposureIndex } from '../src/utils/forces.js'
+import { buildBrief } from '../src/utils/brief.js'
+import { ENTITIES } from '../src/data/entities.js'
 import { buildForcesBrief, THIN_EVIDENCE } from '../src/utils/forcesDocs.js'
 import { TRANSACTIONS } from '../src/data/transactions.js'
 import { LIMITS } from '../src/data/limits.js'
@@ -229,6 +231,67 @@ t('weekly series: twelve Monday-start weeks, and weeks before the archive are ma
   for (const w of a.series) assert.equal(w.count, w.deals + w.events)
   const bmg = a.series.find((w) => w.start === '2026-08-31')
   assert.ok(bmg.deals >= 1, 'the BMG–Concord close (1 Sep) lands in the week of 31 Aug')
+})
+
+t('periods: week and month by day, quarter by week, year by month — contiguous and ending today', () => {
+  const expect = { week: 7, month: 30, quarter: 13, year: 12 }
+  for (const p of PERIOD_IDS) {
+    const b = periodBuckets(p, { today: TODAY })
+    assert.equal(b.length, expect[p], `${p}: bucket count`)
+    for (let i = 1; i < b.length; i++) assert.equal(b[i].start, b[i - 1].end, `${p}: buckets must be contiguous`)
+    assert.ok(b.at(-1).start <= TODAY.getTime() && TODAY.getTime() < b.at(-1).end, `${p}: the last bucket holds today`)
+  }
+})
+
+t('period activity: totals add up, and no comparison is offered against a period nobody recorded', () => {
+  const at = (date) => ({ ...ROYALTY_PLATFORM, id: `p-${date}`, date })
+  const items = [at('2026-09-21'), at('2026-09-18'), at('2026-09-10'), at('2026-09-01'), at('2026-10-02')]
+  const a = periodActivity(items, { period: 'week', forceId: 'discovery_distribution', today: TODAY, coverageSince: '2026-09-01' })
+  assert.equal(a.total, a.series.reduce((x, w) => x + w.count, 0), 'the total is the sum of its buckets')
+  assert.equal(a.total, 2, 'two items in the past seven days; the future one does not count')
+  assert.equal(a.previous, 1, 'the week before holds one — and it was archived, so the comparison stands')
+  assert.ok(a.complete)
+  const early = periodActivity(items, { period: 'week', forceId: 'discovery_distribution', today: TODAY, coverageSince: '2026-09-18' })
+  assert.equal(early.previous, null, 'the previous week predates the archive, so there is nothing honest to compare with')
+  assert.equal(early.complete, false, 'and this week started before the archive, so its total is a floor')
+  assert.equal(inPeriod(items, { period: 'week', today: TODAY }).map((x) => x.date).join(), '2026-09-21,2026-09-18', 'newest first, inside the period only')
+  const direct = periodActivity(items, { period: 'month', forceId: 'capital_ownership', reach: 'direct', today: TODAY })
+  assert.equal(direct.total, 0, 'capital is only secondary on these items, so "direct only" counts none')
+})
+
+t('company exposure: only parties and headline subjects count, and every link holds', () => {
+  const { tagged } = classifyAll({ deals: TRANSACTIONS, events: FIXTURES.map((x) => x.record) })
+  const suno = entityExposure(tagged, 'suno')
+  assert.ok(suno.forces.find((f) => f.force.id === 'ai_rights_control')?.total >= 2, 'Suno is tied to AI by its own raise and by the complaint that names it')
+  const idx = exposureIndex(tagged)
+  let checked = 0
+  for (const e of ENTITIES) {
+    for (const x of tagged) {
+      const l = linkOf(x, e.id)
+      if (!l) continue
+      assert.ok(linkHolds(x, e.id, l), `${e.id} ↔ ${x.id}: a ${l.link} link that does not hold`)
+      checked++
+    }
+    const ex = entityExposure(tagged, e.id)
+    for (const f of ex.forces) {
+      if (f.total) assert.ok(idx.get(e.id)?.has(f.force.id), `${e.id}: exposure to ${f.force.id} missing from the facet index`)
+      for (const l of f.latest) assert.notEqual(l.link, 'mention', `${e.id}: a passing mention was counted as exposure`)
+    }
+  }
+  assert.ok(checked > 60, `only ${checked} links checked`)
+  const mentionOnly = { kind: 'event', id: 'm', record: { title: 'Weekly roundup', entities: ['spotify'] }, primary_force_id: 'discovery_distribution', secondary_force_ids: [] }
+  assert.equal(entityExposure([mentionOnly], 'spotify').linked, 0, 'a mention alone is no exposure')
+  assert.equal(entityExposure([mentionOnly], 'spotify').mentions, 1, '— but it is reported')
+})
+
+t('the company brief carries its force exposure, and says when it is deals only', () => {
+  const text = renderBriefText(buildBrief('suno', { mode: 'full' })).replace(/\s+/g, ' ')
+  assert.ok(text.includes('FIVE FORCES') && text.includes('AI rights and control'), 'the section is there')
+  assert.ok(text.includes('Deals on record only'), 'a Node export without the feed says what it is missing')
+  const { tagged } = classifyAll({ deals: TRANSACTIONS, events: FIXTURES.map((x) => x.record) })
+  const full = renderBriefText(buildBrief('suno', { mode: 'full', forceItems: tagged })).replace(/\s+/g, ' ')
+  assert.ok(!full.includes('Deals on record only') && full.includes('named in the headline'), 'with the feed, headline subjects appear')
+  assert.ok(full.includes(LIMITS.force.claim), 'and the limit travels with it')
 })
 
 await T('the brief: all five theses, the method, the limit, thin evidence flagged — in every format', async () => {

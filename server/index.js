@@ -15,12 +15,13 @@ import { aggregate } from './newsAggregator.js'
 import { fetchAllFilings, listedEntities, uaConfigured } from './filings.js'
 import { scoreAll } from './relevanceScorer.js'
 import { SIGNAL_STATS, TOPIC_SIGNALS } from './signals.js'
+import { ENTITIES } from '../src/data/entities.js'
 import { loadLocalArchive, fetchRemoteArchive, DEFAULT_REMOTE } from './archive.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DIST = path.resolve(__dirname, `../${process.env.MM_EDITION === 'work' ? 'dist-work' : 'dist'}`)
 const PORT = process.env.PORT || 3002
-const SPRINT = 24
+const SPRINT = 25
 const started = new Date()
 
 // Minimal .env loader (no dependency): KEY=value lines at repo root, never overriding real env.
@@ -109,11 +110,18 @@ async function fetchFilings() {
 
 const filingsPublic = () => ({ ...filingsStatus, total: filings.length, refreshMinutes: FILINGS_REFRESH_MS / 60000 })
 
-function filterNews({ q = '', entity = '', type = '', topic = '', source = '', kind = '', minScore = '' }) {
-  const needle = q.trim().toLowerCase()
-  return cache.filter((n) =>
+/**
+ * The news filter, used for the live cache AND the archive, so the News page's forces view and its list can
+ * never disagree about what "entity: UMG" means. Archived items written before Sprint 25 carry no `types`; they
+ * are derived from the item's entities, the same way the aggregator derives them.
+ */
+const TYPE_OF = new Map(ENTITIES.map((e) => [e.id, e.type]))
+const typesOf = (n) => n.types || [...new Set((n.entities || []).map((id) => TYPE_OF.get(id)).filter(Boolean))]
+function filterNews({ q = '', entity = '', type = '', topic = '', source = '', kind = '', minScore = '' }, items = cache) {
+  const needle = String(q).trim().toLowerCase()
+  return items.filter((n) =>
     (!needle || `${n.title} ${n.summary}`.toLowerCase().includes(needle)) &&
-    (!entity || n.entities.includes(entity)) && (!type || n.types.includes(type)) && (!topic || n.topics.includes(topic)) &&
+    (!entity || (n.entities || []).includes(entity)) && (!type || typesOf(n).includes(type)) && (!topic || (n.topics || []).includes(topic)) &&
     (!source || n.sourceId === source) && (!kind || n.kind === kind) && (!minScore || n.score >= Number(minScore)))
 }
 
@@ -151,7 +159,8 @@ app.get('/api/health', (_req, res) => res.json({ ok: true, app: 'music-mainframe
 /** The archive, newest first. `since` (YYYY-MM-DD) bounds the payload; the default reaches past a full year. */
 app.get('/api/archive', (req, res) => {
   const since = /^\d{4}-\d{2}-\d{2}$/.test(req.query.since || '') ? req.query.since : new Date(Date.now() - ARCHIVE_DAYS * 86400000).toISOString().slice(0, 10)
-  const items = archive.items.filter((x) => String(x.publishedAt).slice(0, 10) >= since)
+  // Same filter as /api/news, applied to the archive — one implementation, two sources.
+  const items = filterNews(req.query, archive.items.filter((x) => String(x.publishedAt).slice(0, 10) >= since))
   res.json({ items, coverage: archiveCoverage(), source: archive.source, error: archive.error, checkedAt: archive.checkedAt })
 })
 

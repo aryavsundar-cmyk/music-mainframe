@@ -8,6 +8,7 @@
  * names obey Excel's rules, and that only genuinely numeric cells become numbers.
  */
 import assert from 'node:assert/strict'
+import fs from 'node:fs'
 import JSZip from 'jszip'
 import { xml2js } from 'xml-js'
 import { briefXlsxBuffer, sheetName, workbookSheets } from '../src/utils/briefXlsx.js'
@@ -127,6 +128,13 @@ t('every format an edition advertises has its own renderer — no silent fallbac
   const fns = Object.values(RENDERERS)
   assert.equal(new Set(fns).size, fns.length, 'two formats share one renderer — one of them writes the wrong file type')
   assert.rejects(() => exportDoc({ sections: [], slug: 'x' }, 'pdf'), /No renderer/, 'an unknown format must throw, not produce a mislabelled file')
+})
+t('every export menu takes its formats from the edition manifest', () => {
+  // ExportButtons once hard-coded Word/Slides/Text/MD: no Excel anywhere, and Markdown in the work edition,
+  // whose manifest excludes it. A literal format list in a menu is how that happens.
+  const src = fs.readFileSync(new URL('../src/components/export/ExportButtons.jsx', import.meta.url), 'utf8')
+  assert.ok(src.includes('EXPORT_FORMATS'), 'ExportButtons must read the manifest')
+  assert.ok(!/\[\s*\[\s*'docx'/.test(src), 'ExportButtons must not carry its own format list')
 })
 
 console.log(`\n${n} checks passed`)

@@ -14,6 +14,9 @@ import { partyName } from '../data/transactions.js'
 import { useProspectRecords } from '../hooks/useProspectRecords.js'
 import { useEnrichment } from '../hooks/useEnrichment.js'
 import { currencySymbol, formatMoney } from '../utils/format.js'
+import { useForces } from '../hooks/useForces.js'
+import { entityExposure } from '../utils/forces.js'
+import { ForceExposure } from '../components/forces/ForceExposure.jsx'
 
 export default function ProspectAccount() {
   const { accountId } = useParams()
@@ -21,6 +24,8 @@ export default function ProspectAccount() {
   const { signals, filings } = useEnrichment()
   const accounts = useMemo(() => buildAccounts({ records, signals, filings }), [records, signals, filings])
   const account = accounts.find((a) => a.id === accountId)
+  const forceData = useForces()
+  const exposure = useMemo(() => entityExposure(forceData.tagged, accountId), [forceData.tagged, accountId])
   const record = records[accountId] || {}
 
   if (!account) {
@@ -89,6 +94,7 @@ export default function ProspectAccount() {
           <Panel title="Your record"><RecordEditor account={account} record={record} update={update} logOutcome={logOutcome} removeOutcome={removeOutcome} /></Panel>
           <Panel title="In the news"><AccountNews accountId={account.id} /></Panel>
           <Panel title="Filings"><AccountFilings filings={filings[account.id] || []} /></Panel>
+          <ForceExposure exposure={exposure} name={account.name} loading={forceData.loading} />
           <LimitNote ids={['match']} />
           {cats.length > 0 && (
             <Panel title={OVERLAY_LABEL || 'Sector context'}>

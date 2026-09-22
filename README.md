@@ -189,6 +189,18 @@ Direction is read against the thesis as written: a training-data lawsuit *suppor
 npm run test:forces   # taxonomy, the spec's worked example, evidence on every tag, calibration guards
 ```
 
+## The five forces across the app
+
+The forces are read where the questions get asked, not only on `/deals`.
+
+**News** — between the headline numbers and the search box, *Five forces in the news* turns the feed into a trend view. Choose a period — week (the default, by day), month (by day), quarter (by week) or year (by month) — and the forces you care about; reach (direct only, or with adjacent) and direction narrow it further. Each force card shows its count for the period, a bucketed trend, and the change on the previous period. The events themselves follow underneath, and the whole view exports with its period, forces and filters stated. The search and filters further down the page narrow the view too: the server applies the same filter function to the archive that it applies to the live feed, so "UMG + AI rights, past quarter" means the same thing in both places. Every state lives in the URL.
+
+Coverage is honest at every length. A period reaching back before the archive began shows its total as `≥` (a floor), its early buckets hatched and faded, and no comparison with a previous period until that period was recorded in full — "+40% on last quarter" against a quarter nobody recorded would be invented.
+
+**Companies** — every entity page and prospecting account has a *Five forces exposure* panel, and the company brief carries the same section into every export format. Exposure is built only from deals the company is a **party** to and headlines that **name** it; a passing **mention** elsewhere in an article is counted beside it, never inside it. The same rule as the buyer match: no company is credited with exposure the record does not show, and `linkHolds` checks every link. `/entities` gains an *Exposed to* facet, and its page export a forces column. A brief exported from Node (no feed, no archive) says it is deals only.
+
+The company export menu now follows the edition manifest like every other menu: it had hard-coded Word, Slides, Text and Markdown, so it never offered Excel, and in the work edition it offered Markdown, which that edition excludes.
+
 ## Evidence archive
 
 The live feed is a window, not a record: it lives in memory, holds a few weeks, and empties on every restart. Read on its own, a "last 365 days" count measures how long the server has been up. The evidence archive is what makes a trailing window mean what it says.

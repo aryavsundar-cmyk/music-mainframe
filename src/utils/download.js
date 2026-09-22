@@ -39,10 +39,10 @@ export async function exportDoc(doc, format = 'docx') {
   return { filename, citations: framed.citations?.source, sections: framed.sections.length }
 }
 
-/** Convenience for entity pages: fetch citations, build the brief, export. */
-export async function exportBrief(entityId, { mode = 'full', format = 'docx' } = {}) {
+/** Convenience for entity pages: fetch citations, build the brief, export. `forceItems` = the page's tagged evidence. */
+export async function exportBrief(entityId, { mode = 'full', format = 'docx', forceItems = null } = {}) {
   const citations = await fetchCitations({ entityId, limit: 8 })
-  return exportDoc(buildBrief(entityId, { mode, citations }), format)
+  return exportDoc(buildBrief(entityId, { mode, citations, forceItems }), format)
 }
 
 /** Build any deliverable kind with live citations. kind: brief | account-plan | proposal | category-deck */
