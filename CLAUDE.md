@@ -7,6 +7,7 @@ Working conventions for this repo. Mirrors how the sibling Mainframe apps run.
 - **Verify on preview before deploying.** Load the dev server (`.claude/launch.json` → `music-mainframe`, :5190), check console/network, check both themes, then push.
 - **Comprehensive, multi-section commit messages** with a verification block.
 - **Deploy = push to `main`.** Render auto-deploys from `render.yaml`. No other branches unless asked.
+- **Never write Render's skip token in a commit message** — not even to describe it. Render skips the deploy if the latest commit message contains it ANYWHERE, body included; Sprint 24 sat undeployed for hours because its message explained how the archive job avoids deploys. Refer to it as "the skip marker". Only the archive workflow's own commits carry it. After every push, confirm `/api/health` reports the new sprint before calling it shipped.
 - Commits end with `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>`.
 
 ## Design system is law
