@@ -30,6 +30,7 @@ React 19 · Vite 7 · Tailwind 4 (CSS-first, no tailwind.config) · React Router
 |---|---|---|
 | `/` | overview | Sprint 0 |
 | `/entities` · `/entities/:id` | structure | live (Sprint 1) |
+| `/entities/map` | structure | live (Sprint 28) |
 | `/flows` · `/flows/recording` · `/flows/publishing` | structure | live (Sprint 2) |
 | `/deals` · `/pe` · `/pe/:id` · `/abs` · `/catalogs` | money | live (Sprint 3) |
 | `/pros` · `/pros/:id` · `/dsps` | rights | live (Sprint 4) |
@@ -188,6 +189,12 @@ Direction is read against the thesis as written: a training-data lawsuit *suppor
 ```bash
 npm run test:forces   # taxonomy, the spec's worked example, evidence on every tag, calibration guards
 ```
+
+## Entity map (/entities/map)
+
+The canvas as an ecosystem, beside the table rather than instead of it. Every one of the 188 entities is placed in one of eight stages of the value chain (`utils/entityMap.js` `COLUMNS`, by entity type): capital & investors → recorded music → publishing & sync → collection & rights data → distribution & artist services → streaming & platforms → live & fan → music tech & AI. *Capital-down* reads it as ownership; *Fan-up* reverses it to follow the money. Stage headers carry a market figure only where one is sourced (IFPI, CISAC, the deals table), a count otherwise; the market strip above links each figure to its report. Cards show initials, tier, ticker and the freshest figure from `currentRevenue` (the SEC file for filers), coloured by lens: gold for capital and recording, verdigris for publishing and collection.
+
+Selecting a card opens a detail panel on the right — headline figure with its freshness verdict, facts, connections, deals, and five-forces exposure from deals — and dims everything not connected to it. Connections are only what the record shows (`connections()`): parent and subsidiaries, backers, and counterparties in the same deal; the panel groups them by reason and each one selects that company on the map. ✕, *Back to the map* or Esc closes the panel and returns focus to the card that opened it; *Full profile* opens `/entities/:id`, and the browser's Back returns to the same map. Search, stage, tier, ownership, direction and the selection all live in the URL. The page export is the current view as a table (stage, group, tier, ownership, HQ, headline figure) with the market figures as notes. `npm run test:entitymap` checks every entity is placed exactly once, both directions, the filters, and that every connection is symmetric and evidenced.
 
 ## Company financials, kept current
 

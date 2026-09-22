@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react'
-import { NavLink, Route, Routes } from 'react-router-dom'
-import { BookOpen, Disc3, Building2, Waypoints, Handshake, Landmark, Layers, Library, ScrollText, Radio, Rss, Palette, Sun, Moon, Crosshair, Users, Info } from 'lucide-react'
+import { NavLink, Route, Routes, useLocation } from 'react-router-dom'
+import { BookOpen, Disc3, Building2, Waypoints, Handshake, Landmark, Layers, Library, ScrollText, Radio, Rss, Palette, Sun, Moon, Crosshair, Users, Info, Network } from 'lucide-react'
 import { ThemeContext, useThemeState } from './hooks/useTheme.js'
 import { CURRENT, has, showsGroup } from './editions.js'
 import { PRIVATE_NAV } from './navPrivate.js'
@@ -8,6 +8,7 @@ import { EditionNotice } from './components/EditionNotice.jsx'
 import Home from './pages/Home.jsx'
 import Entities from './pages/Entities.jsx'
 import EntityDetail from './pages/EntityDetail.jsx'
+import EntityMap from './pages/EntityMap.jsx'
 import Flows from './pages/Flows.jsx'
 import Deals from './pages/Deals.jsx'
 import PE from './pages/PE.jsx'
@@ -36,7 +37,8 @@ import NotFound from './pages/NotFound.jsx'
 const NAV = [
   { group: 'Canvas', items: [
     { to: '/', label: 'Overview', icon: Disc3, end: true },
-    { to: '/entities', label: 'Entities', icon: Building2 },
+    { to: '/entities', label: 'Entities', icon: Building2, except: ['/entities/map'] },
+    { to: '/entities/map', label: 'Entity map', icon: Network, sub: true },
     { to: '/flows', label: 'Flows', icon: Waypoints },
   ]},
   { group: 'Money', items: [
@@ -66,19 +68,25 @@ const NAV = [
   ...PRIVATE_NAV,
 ].filter((g) => showsGroup(g.group))
 
-function NavItem({ to, label, icon: Icon, end }) {
+/** `except` keeps a parent item from lighting up on a subpage that has its own item; `sub` indents that subpage. */
+function NavItem({ to, label, icon: Icon, end, except = [], sub = false }) {
+  const { pathname } = useLocation()
+  const excluded = except.some((p) => pathname === p || pathname.startsWith(`${p}/`))
+  const on = (isActive) => isActive && !excluded
   return (
     <NavLink
       to={to}
       end={end}
       className={({ isActive }) => [
-        'flex items-center gap-2.5 rounded-md px-2.5 py-1.5 t-small no-underline transition-colors duration-150',
-        isActive ? 'bg-ground-4 text-ink-1' : 'text-ink-2 hover:bg-ground-3 hover:text-ink-1',
+        'flex items-center gap-2.5 rounded-md py-1.5 t-small no-underline transition-colors duration-150',
+        sub ? 'pl-7 pr-2.5' : 'px-2.5',
+        on(isActive) ? 'bg-ground-4 text-ink-1' : 'text-ink-2 hover:bg-ground-3 hover:text-ink-1',
       ].join(' ')}
+      aria-current={excluded ? 'false' : 'page'}
     >
       {({ isActive }) => (
         <>
-          <Icon size={16} strokeWidth={1.75} className={isActive ? 'text-accent' : 'text-ink-3'} aria-hidden="true" />
+          <Icon size={sub ? 14 : 16} strokeWidth={1.75} className={on(isActive) ? 'text-accent' : 'text-ink-3'} aria-hidden="true" />
           {label}
         </>
       )}
@@ -130,6 +138,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/entities" element={<Entities />} />
+            <Route path="/entities/map" element={<EntityMap />} />
             <Route path="/entities/:id" element={<EntityDetail />} />
             <Route path="/flows/*" element={<Flows />} />
             <Route path="/deals" element={<Deals />} />

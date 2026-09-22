@@ -40,3 +40,9 @@ body {
 
 /* Scrollbars, restrained */
 * { scrollbar-width: thin; scrollbar-color: var(--mm-line-2) transparent; }
+
+/* Entity map detail panel: slides in from the right. Only runs under motion-safe (see MapDrawer). */
+@keyframes mm-slide-in {
+  from { transform: translateX(24px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
