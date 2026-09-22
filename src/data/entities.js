@@ -91,9 +91,17 @@ export const COUNTS = {
 }
 
 /** Primary metric to show in a list row, by type. Returns { kind, value, label } or null. */
+/** "Revenue FY2025", "Collections FY2025", "Segment sales, year to 2026-03-31" — the figure's real kind and period. */
+const REVENUE_KIND = { 'segment sales': 'Segment sales', distributions: 'Distributions', collections: 'Collections' }
+function revenueLabel(m) {
+  const kind = REVENUE_KIND[m.revenueKind] || 'Revenue'
+  const fy = m.fiscalYearEnd && m.fiscalYearEnd !== '12-31' && /^\d{4}$/.test(String(m.revenueYear)) ? `, year to ${m.revenueYear}-${m.fiscalYearEnd}` : ` ${m.revenueYear || ''}`
+  return `${kind}${fy}`.trim()
+}
+
 export function headlineMetric(e) {
   const m = e.metrics
-  if (m.revenue) return { kind: 'money', value: m.revenue, label: `Revenue ${m.revenueYear || ''}`.trim(), currency: m.revenueCurrency }
+  if (m.revenue) return { kind: 'money', value: m.revenue, label: revenueLabel(m), currency: m.revenueCurrency }
   if (m.aum) return { kind: 'money', value: m.aum, label: 'AUM' }
   if (m.subscribers) return { kind: 'count', value: m.subscribers, label: 'Subscribers' }
   if (m.catalogSize) return { kind: 'count', value: m.catalogSize, label: 'Catalog (songs)' }

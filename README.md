@@ -189,6 +189,31 @@ Direction is read against the thesis as written: a training-data lawsuit *suppor
 npm run test:forces   # taxonomy, the spec's worked example, evidence on every tag, calibration guards
 ```
 
+## Company financials, kept current
+
+Every company page shows its latest financial figures, where each came from, and whether it is still the latest — and nothing goes stale without someone being told.
+
+**SEC filers are refreshed daily, from the filings.** `.github/workflows/financials.yml` runs `npm run financials` (`scripts/refresh-financials.mjs`), which reads every SEC-filing company on the canvas — 27 of them: WMG, Live Nation, Spotify, SiriusXM, iHeart, Reservoir, Tencent Music, Sony, MSG, TKO, the listed sponsors and platforms — from EDGAR's XBRL API and commits `data/financials/sec.json` when a figure or filing changed. For each: revenue, operating income, net income (latest year and prior year; latest quarter and the same quarter a year earlier), cash and long-term debt, each linked to the filing it came from. The server refreshes the file from the repository every six hours, so a new filing reaches the page without a deploy.
+
+Reading filings correctly took more than reading a tag, and each trap is pinned by `npm run test:financials`:
+- **Companies change tags.** WMG stopped using `Revenues` in 2020; the first tag found would have shown 2020 revenue as the latest. Every candidate tag is read and the newest period wins.
+- **Years and quarters can sit under different tags** (iHeart), so each kind of figure takes its own newest tag.
+- **Restatements win** over originals; a nine-month year-to-date figure is never read as a quarter.
+- **Filings can land before their figures.** Sony's, Tencent Music's and Anghami's 2026 annual reports are on file with no figures yet in SEC's structured data; the filing index says so, and the page shows *newer report filed · figures pending* with the link rather than last year's number as current.
+- **A change off a loss is described, not computed**: WMG's net income moving from −$16M to +$204M reads "from a loss", not "+1,375%".
+
+**Everyone else is flagged the moment a newer result is due.** Hand-entered figures (UMG, BMG, Sony Music, the societies) cannot be fetched, so `utils/freshness.js` knows when each is superseded — the fiscal year end plus a reporting lag, with non-December years labelled by their end date — and every figure carries a verdict: *current*, *pending*, *due since …*, or *last disclosed* for companies that stopped publishing (Believe, BMI). The same daily workflow runs `npm run freshness` and keeps one **Data refresh queue** issue open while anything is due, closing it when nothing is. `/entities` has a *Needs refresh* facet; the entities table, company pages and briefs all read the freshest figure (a filing beats a hand-entered number for the same or an earlier period) and say which it is.
+
+The 22 Sep 2026 pass corrected the hand-entered figures against primary sources: UMG €12.507B (FY2025, with H1 2026), BMG €900M (FY2025, with H1 2026 — the $2.2B previously shown was a pro-forma *projection* for BMG + Concord and is now labelled so), Sony Music ¥2,120.1B segment sales for the year to 31 Mar 2026 (the previous ¥1,740B matched no reported figure), Believe's exact €988.8M marked last disclosed, SoundExchange relabelled as distributions and PRS and SACEM as collections, and Spotify's Q2 2026 figure sourced to its 6-K.
+
+Company pages' news now reads the live feed and the evidence archive together, so a company's coverage survives restarts.
+
+```bash
+SEC_USER_AGENT="Name email" npm run financials   # refresh SEC figures by hand
+npm run freshness                                 # the refresh queue, as Markdown
+npm run test:financials
+```
+
 ## The five forces across the app
 
 The forces are read where the questions get asked, not only on `/deals`.

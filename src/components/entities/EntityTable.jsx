@@ -2,14 +2,26 @@ import { useNavigate, Link } from 'react-router-dom'
 import { Tag, Num } from '../primitives/index.js'
 import { ENTITY_TYPES, LENS_TONE, OWNERSHIP, getEntity, headlineMetric } from '../../data/entities.js'
 import { currencySymbol } from '../../utils/format.js'
+import { currentRevenue, freshnessOf } from '../../utils/freshness.js'
+
+/**
+ * The headline figure: the freshest revenue (a filing beats a hand-entered number for the same or an earlier
+ * period), or the entity's other headline metric. A figure that is due for replacement says so under it.
+ */
+function headline(e, fin) {
+  const r = currentRevenue(e, fin)
+  if (r) return { kind: 'money', value: r.value, currency: r.currency, label: r.label.replace('Revenue, year to', 'Revenue to'), f: freshnessOf(e, fin) }
+  const hm = headlineMetric(e)
+  return hm ? { ...hm, f: null } : null
+}
 
 const TH = 'text-left t-micro uppercase tracking-[0.08em] text-ink-3 font-medium py-2 px-3 border-b border-line-2 whitespace-nowrap'
 const TD = 'py-2.5 px-3 border-b border-line-1 align-top'
 
-function Row({ e }) {
+function Row({ e, fin }) {
   const navigate = useNavigate()
   const parent = e.parentId ? getEntity(e.parentId) : null
-  const hm = headlineMetric(e)
+  const hm = headline(e, fin)
   const t = ENTITY_TYPES[e.type]
   return (
     <tr
@@ -38,7 +50,10 @@ function Row({ e }) {
       </td>
       <td className={`${TD} text-right whitespace-nowrap`}>
         {hm
-          ? <><Num kind={hm.kind} value={hm.value} opts={hm.currency ? { currency: currencySymbol(hm.currency) } : undefined} className="t-data" /><div className="t-micro text-ink-4">{hm.label}</div></>
+          ? <><Num kind={hm.kind} value={hm.value} opts={hm.currency ? { currency: currencySymbol(hm.currency) } : undefined} className="t-data" /><div className="t-micro text-ink-4">{hm.label}</div>
+              {hm.f?.status === 'due' && <div className="t-micro text-danger" title={hm.f.reason}>due for refresh</div>}
+              {hm.f?.status === 'pending' && <div className="t-micro text-accent" title={hm.f.reason}>newer report filed</div>}
+              {hm.f?.status === 'final' && <div className="t-micro text-ink-4" title={hm.f.reason}>last disclosed</div>}</>
           : <span className="t-data text-ink-4">—</span>}
       </td>
     </tr>
@@ -46,7 +61,7 @@ function Row({ e }) {
 }
 
 /** Dense bordered table. Groups by type (with a group row) when `grouped`. */
-export function EntityTable({ rows, grouped = true }) {
+export function EntityTable({ rows, grouped = true, financials = {} }) {
   if (rows.length === 0) {
     return <div className="py-16 text-center t-body text-ink-3">No entities match. Clear a facet or widen the search.</div>
   }
@@ -64,7 +79,7 @@ export function EntityTable({ rows, grouped = true }) {
         </thead>
         <tbody>
           {groups.map(([type, list]) => (
-            <GroupRows key={type} type={type} list={list} showHeader={grouped && groups.length > 1} />
+            <GroupRows key={type} type={type} list={list} showHeader={grouped && groups.length > 1} financials={financials} />
           ))}
         </tbody>
       </table>
@@ -72,7 +87,7 @@ export function EntityTable({ rows, grouped = true }) {
   )
 }
 
-function GroupRows({ type, list, showHeader }) {
+function GroupRows({ type, list, showHeader, financials }) {
   const t = ENTITY_TYPES[type]
   return (
     <>
@@ -86,7 +101,7 @@ function GroupRows({ type, list, showHeader }) {
           </td>
         </tr>
       )}
-      {list.map((e) => <Row key={e.id} e={e} />)}
+      {list.map((e) => <Row key={e.id} e={e} fin={financials[e.id]} />)}
     </>
   )
 }

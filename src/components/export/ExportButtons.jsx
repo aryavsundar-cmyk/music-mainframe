@@ -17,7 +17,7 @@ const EXTRA = [['account-plan', 'Account plan', 'SCR, stakeholders, matrix, 30·
  * dropdown for mode × format. Status line under the buttons reports citations state so a quiet feed is never
  * mistaken for a broken one.
  */
-export function ExportButtons({ entity, forceItems = null }) {
+export function ExportButtons({ entity, forceItems = null, financials = null }) {
   const [busy, setBusy] = useState('')
   const [last, setLast] = useState(null)
   const [open, setOpen] = useState(false)
@@ -34,7 +34,7 @@ export function ExportButtons({ entity, forceItems = null }) {
     setBusy(`${mode}/${format}`); setOpen(false)
     try {
       if (mode === 'account-plan' || mode === 'proposal') setLast({ ok: true, ...(await exportDoc(await buildDeliverable(mode, { entityId: entity.id }), format)) })
-      else setLast({ ok: true, ...(await exportBrief(entity.id, { mode, format, forceItems })) })
+      else setLast({ ok: true, ...(await exportBrief(entity.id, { mode, format, forceItems, financials })) })
     }
     catch (err) { setLast({ ok: false, error: err.message }) }
     finally { setBusy('') }

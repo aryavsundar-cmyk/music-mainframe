@@ -21,7 +21,7 @@ import { loadLocalArchive, fetchRemoteArchive, DEFAULT_REMOTE } from './archive.
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DIST = path.resolve(__dirname, `../${process.env.MM_EDITION === 'work' ? 'dist-work' : 'dist'}`)
 const PORT = process.env.PORT || 3002
-const SPRINT = 26
+const SPRINT = 27
 const started = new Date()
 
 // Minimal .env loader (no dependency): KEY=value lines at repo root, never overriding real env.
@@ -61,6 +61,26 @@ async function refreshArchive() {
   }
 }
 const archiveCoverage = () => (archive.index ? { since: archive.index.coverageSince, oldest: archive.index.oldestItem, newest: archive.index.newestItem, count: archive.index.count, updatedAt: archive.index.updatedAt } : null)
+
+// ── Reported financials ───────────────────────────────────────────────────────
+// data/financials/sec.json is written daily by the financials workflow from SEC EDGAR's XBRL API. Like the archive
+// it is deployed with the app and refreshed from the repository, so a new filing reaches the page without a deploy.
+const FIN_FILE = path.resolve(__dirname, '../data/financials/sec.json')
+const FIN_URL = process.env.FINANCIALS_URL || 'https://raw.githubusercontent.com/aryavsundar-cmyk/music-mainframe/main/data/financials/sec.json'
+const readFin = () => { try { return JSON.parse(fs.readFileSync(FIN_FILE, 'utf8')) } catch { return null } }
+let financials = { data: readFin(), source: 'deployed', error: null, checkedAt: null }
+async function refreshFinancials() {
+  const checkedAt = new Date().toISOString()
+  try {
+    const r = await fetch(FIN_URL, { signal: AbortSignal.timeout(15000) })
+    if (!r.ok) throw new Error(`HTTP ${r.status}`)
+    const data = await r.json()
+    if (!financials.data || String(data.updatedAt) >= String(financials.data.updatedAt)) financials = { data, source: 'repository', error: null, checkedAt }
+    else financials = { ...financials, error: null, checkedAt }
+  } catch (err) {
+    financials = { ...financials, error: `Could not refresh from the repository (${err.message}); serving the copy deployed with the app.`, checkedAt }
+  }
+}
 
 // ── News state ────────────────────────────────────────────────────────────────
 let cache = []
@@ -154,7 +174,14 @@ app.use((req, res, next) => {
   return res.status(401).send('Authentication required.')
 })
 
-app.get('/api/health', (_req, res) => res.json({ ok: true, app: 'music-mainframe', edition: EDITION, embeddable: EMBED_ALLOW.length ? EMBED_ALLOW : false, gated: !!(ACCESS_USER && ACCESS_PASS), sprint: SPRINT, started: started.toISOString(), uptimeSec: Math.round(process.uptime()), news: { total: cache.length, lastSuccess: status.lastSuccess, lastError: status.lastError }, archive: { ...archiveCoverage(), source: archive.source, error: archive.error } }))
+app.get('/api/health', (_req, res) => res.json({ ok: true, app: 'music-mainframe', edition: EDITION, embeddable: EMBED_ALLOW.length ? EMBED_ALLOW : false, gated: !!(ACCESS_USER && ACCESS_PASS), sprint: SPRINT, started: started.toISOString(), uptimeSec: Math.round(process.uptime()), news: { total: cache.length, lastSuccess: status.lastSuccess, lastError: status.lastError }, archive: { ...archiveCoverage(), source: archive.source, error: archive.error }, financials: { companies: Object.keys(financials.data?.companies || {}).length, updatedAt: financials.data?.updatedAt || null, source: financials.source, error: financials.error } }))
+
+/** Reported financials for every SEC filer on the canvas; `?entity=` for one. */
+app.get('/api/financials', (req, res) => {
+  const all = financials.data?.companies || {}
+  const companies = req.query.entity ? (all[req.query.entity] ? { [req.query.entity]: all[req.query.entity] } : {}) : all
+  res.json({ companies, updatedAt: financials.data?.updatedAt || null, source: financials.source, error: financials.error, feedErrors: financials.data?.errors || {} })
+})
 
 /** The archive, newest first. `since` (YYYY-MM-DD) bounds the payload; the default reaches past a full year. */
 app.get('/api/archive', (req, res) => {
@@ -260,6 +287,8 @@ server.listen(PORT, () => {
   setInterval(fetchNews, REFRESH_MS).unref()
   refreshArchive()
   setInterval(refreshArchive, ARCHIVE_REFRESH_MS).unref()
+  refreshFinancials()
+  setInterval(refreshFinancials, ARCHIVE_REFRESH_MS).unref()
   setTimeout(fetchFilings, 4000).unref()
   setInterval(fetchFilings, FILINGS_REFRESH_MS).unref()
 })

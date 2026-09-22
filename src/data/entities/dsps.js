@@ -4,7 +4,7 @@ import { site, ir, edgar, mbw } from './_schema.js'
 export const DSPS = [
   { id: 'spotify', name: 'Spotify', type: 'dsp', roles: ['dsp'], tier: 1, subtype: 'interactive',
     hq: 'Stockholm, SE · New York, NY', founded: 2006, ownership: 'public', ticker: 'NYSE: SPOT', region: 'Global',
-    metrics: { subscribers: 300e6, mau: 777e6, metricsAsOf: 'Q2 2026', revenue: 4.78e9, revenueYear: 'Q2 2026', revenueCurrency: 'EUR' },
+    metrics: { subscribers: 300e6, mau: 777e6, metricsAsOf: 'Q2 2026', revenue: 4.777e9, revenueYear: 'Q2 2026', revenueCurrency: 'EUR', revenuePublished: '2026-08-04', revenueSource: { label: 'Spotify — Q2 2026 results (SEC Form 6-K, exhibit 99.1)', url: 'https://www.sec.gov/Archives/edgar/data/1639920/000114036126031044/ef20078867_ex99-1.htm' } },
     summary: 'Largest interactive DSP: 300M Premium subscribers and 777M monthly users at Q2 2026, quarterly revenue €4.78B, gross margin a record 33.4%. Sets the industry\'s pro-rata economics, the bundling fights (audiobooks; the 2024 US mechanical-rate dispute with the MLC), and the price-tier agenda.',
     sources: [mbw('Spotify hits 300 million Premium subscribers Q2 2026'), ir('https://investors.spotify.com')] },
   { id: 'apple-music', name: 'Apple Music', type: 'dsp', roles: ['dsp'], tier: 1, subtype: 'interactive',

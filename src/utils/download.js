@@ -40,9 +40,9 @@ export async function exportDoc(doc, format = 'docx') {
 }
 
 /** Convenience for entity pages: fetch citations, build the brief, export. `forceItems` = the page's tagged evidence. */
-export async function exportBrief(entityId, { mode = 'full', format = 'docx', forceItems = null } = {}) {
+export async function exportBrief(entityId, { mode = 'full', format = 'docx', forceItems = null, financials = null } = {}) {
   const citations = await fetchCitations({ entityId, limit: 8 })
-  return exportDoc(buildBrief(entityId, { mode, citations, forceItems }), format)
+  return exportDoc(buildBrief(entityId, { mode, citations, forceItems, financials }), format)
 }
 
 /** Build any deliverable kind with live citations. kind: brief | account-plan | proposal | category-deck */

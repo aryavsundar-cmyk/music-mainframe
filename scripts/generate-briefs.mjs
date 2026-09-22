@@ -20,6 +20,8 @@ import { briefPptxBuffer } from '../src/utils/briefPptx.js'
 import { briefXlsxBuffer } from '../src/utils/briefXlsx.js'
 import { renderBriefMarkdown } from '../src/utils/briefMarkdown.js'
 import { withFraming } from '../src/utils/framing.js'
+// Reported financials, as the daily workflow last committed them — so a brief built here matches the page.
+const SEC = (() => { try { return JSON.parse(fs.readFileSync(new URL('../data/financials/sec.json', import.meta.url), 'utf8')).companies } catch { return {} } })()
 import { buildAccountPlan } from '../src/utils/accountPlan.js'
 import { buildProposal } from '../src/utils/proposal.js'
 import { buildCategoryDeck } from '../src/utils/categoryDeck.js'
@@ -70,7 +72,7 @@ for (const id of entities) {
   const citations = await fetchCitations({ entityId: id, limit: 8, base: api })
   const modes = kind === 'brief' ? (modesArg ? modesArg.split(',') : modesFor(e)) : [kind]
   for (const mode of modes) {
-    const brief = kind === 'account-plan' ? buildAccountPlan(id, { citations }) : kind === 'proposal' ? buildProposal(id, { categoryId, lines: linesArg ? linesArg.split(',') : [], citations }) : buildBrief(id, { mode, citations })
+    const brief = kind === 'account-plan' ? buildAccountPlan(id, { citations }) : kind === 'proposal' ? buildProposal(id, { categoryId, lines: linesArg ? linesArg.split(',') : [], citations }) : buildBrief(id, { mode, citations, financials: SEC[id] || null })
     for (const f of formats) {
       const file = await write(brief, f)
       console.log(`${path.basename(file).padEnd(56)} ${String(fs.statSync(file).size).padStart(8)} B  citations:${citations.source}`)

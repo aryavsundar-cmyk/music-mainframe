@@ -39,7 +39,7 @@ const die = (msg) => { console.error(`\nFAIL ${msg}`); process.exit(1) }
 /** Copied wholesale. An allowlist, not a denylist: a new private directory must be added here to escape. */
 const COPY = ['index.html', 'vite.config.js', 'eslint.config.js', 'package.json', 'package-lock.json', 'public', 'src', 'server', 'data']
 /** Scripts the research edition can actually run. The lab and overlay suites import material it does not have. */
-const SCRIPTS = ['build-tokens.mjs', 'check-health.mjs', 'watch-server.mjs', 'generate-briefs.mjs', 'archive-news.mjs', 'test-archive.mjs', 'test-forces.mjs', 'test-contrast.mjs', 'test-glossary.mjs', 'test-market.mjs', 'test-outcomes.mjs', 'test-prospect.mjs', 'test-xlsx.mjs']
+const SCRIPTS = ['build-tokens.mjs', 'check-health.mjs', 'watch-server.mjs', 'generate-briefs.mjs', 'archive-news.mjs', 'test-archive.mjs', 'test-forces.mjs', 'refresh-financials.mjs', 'audit-freshness.mjs', 'test-financials.mjs', 'test-contrast.mjs', 'test-glossary.mjs', 'test-market.mjs', 'test-outcomes.mjs', 'test-prospect.mjs', 'test-xlsx.mjs']
 /**
  * Deleted from the copy. The swapped modules are here too: a swap keeps content out of the bundle, but the
  * file itself would still be sitting in the exported tree for anyone to open.
@@ -94,7 +94,7 @@ pkg.scripts = {
   build: 'MM_EDITION=work vite build',
   server: 'MM_EDITION=work node server/index.js',
   start: 'MM_EDITION=work node server/index.js',
-  test: 'npm run test:contrast && npm run test:glossary && npm run test:market && npm run test:outcomes && npm run test:prospect && npm run test:xlsx && npm run test:forces && npm run test:archive',
+  test: 'npm run test:contrast && npm run test:glossary && npm run test:market && npm run test:outcomes && npm run test:prospect && npm run test:xlsx && npm run test:forces && npm run test:archive && npm run test:financials',
 }
 fs.writeFileSync(path.join(out, 'package.json'), `${JSON.stringify(pkg, null, 2)}\n`)
 

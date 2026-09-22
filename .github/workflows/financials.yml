@@ -1,0 +1,73 @@
+# Keeps company financials current. Daily:
+#   1. reads every SEC-filing company on the canvas from EDGAR's XBRL API and commits data/financials/sec.json
+#      when a figure or filing changed (never redeploys: the commit carries Render's skip marker and render.yaml
+#      ignores data/financials; the server refreshes from the repository instead);
+#   2. audits every financial figure — SEC and hand-entered — and keeps one "Data refresh queue" issue open while
+#      anything is due, closing it when nothing is.
+# SEC requires a declared User-Agent with a contact address: set the SEC_USER_AGENT repository secret.
+name: financials
+
+on:
+  schedule:
+    - cron: '47 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: financials
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --omit=dev
+      - name: Refresh SEC financials
+        id: refresh
+        run: |
+          node scripts/refresh-financials.mjs | tee refresh.txt
+          echo "updated=$(grep -o 'UPDATED=[0-9]*' refresh.txt | tail -1 | cut -d= -f2)" >> "$GITHUB_OUTPUT"
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+      - name: Commit changed figures
+        if: steps.refresh.outputs.updated != '0' && steps.refresh.outputs.updated != ''
+        run: |
+          git config user.name "music-mainframe financials"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/financials
+          git commit -m "financials: ${{ steps.refresh.outputs.updated }} companies updated ($(date -u +%F)) [skip render]"
+          git pull --rebase --autostash
+          git push
+      - name: Audit every figure
+        id: audit
+        run: |
+          node scripts/audit-freshness.mjs --out queue.md | tee audit.txt
+          echo "due=$(grep -o 'DUE=[0-9]*' audit.txt | tail -1 | cut -d= -f2)" >> "$GITHUB_OUTPUT"
+      - name: Keep the refresh queue issue in step
+        uses: actions/github-script@v7
+        env:
+          DUE: ${{ steps.audit.outputs.due }}
+        with:
+          script: |
+            const fs = require('fs')
+            const body = fs.readFileSync('queue.md', 'utf8') + `\n\nRun: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`
+            const title = 'Data refresh queue'
+            const { data: open } = await github.rest.issues.listForRepo({ owner: context.repo.owner, repo: context.repo.repo, state: 'open', labels: 'data-refresh' })
+            if (Number(process.env.DUE) > 0) {
+              if (open.length) await github.rest.issues.update({ owner: context.repo.owner, repo: context.repo.repo, issue_number: open[0].number, body })
+              else await github.rest.issues.create({ owner: context.repo.owner, repo: context.repo.repo, title, body, labels: ['data-refresh'] })
+            } else {
+              for (const i of open) {
+                await github.rest.issues.createComment({ owner: context.repo.owner, repo: context.repo.repo, issue_number: i.number, body: 'Nothing is due any more — every figure is current, pending SEC structuring, or last disclosed. Closing.' })
+                await github.rest.issues.update({ owner: context.repo.owner, repo: context.repo.repo, issue_number: i.number, state: 'closed' })
+              }
+            }

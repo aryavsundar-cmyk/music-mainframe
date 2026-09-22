@@ -11,6 +11,7 @@ services:
     buildFilter:
       ignoredPaths:
         - data/archive/**
+        - data/financials/**
     envVars:
       - key: NODE_ENV
         value: production
@@ -32,6 +33,7 @@ services:
     buildFilter:
       ignoredPaths:
         - data/archive/**
+        - data/financials/**
     envVars:
       - key: NODE_ENV
         value: production

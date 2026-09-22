@@ -9,11 +9,14 @@ import { EntityNews } from '../components/news/EntityNews.jsx'
 import { PepiLens } from '../components/consulting/PepiLens.jsx'
 import { ExportButtons } from '../components/export/ExportButtons.jsx'
 import { HubLinks } from '../components/HubLinks.jsx'
-import { currencySymbol } from '../utils/format.js'
 import { useMemo } from 'react'
 import { useForces } from '../hooks/useForces.js'
 import { entityExposure } from '../utils/forces.js'
 import { ForceExposure } from '../components/forces/ForceExposure.jsx'
+import { useFinancials } from '../hooks/useFinancials.js'
+import { currentRevenue, freshnessOf } from '../utils/freshness.js'
+import { Financials } from '../components/entities/Financials.jsx'
+import { currencySymbol, formatDate as fmtDate } from '../utils/format.js'
 
 function Fact({ label, children }) {
   return (
@@ -33,6 +36,8 @@ export default function EntityDetail() {
   const e = getEntityProfile(id)
   const { tagged, loading } = useForces()
   const exposure = useMemo(() => entityExposure(tagged, id), [tagged, id])
+  const financials = useFinancials()
+  const fin = financials.companies[id]
   if (e.missing) {
     return (
       <>
@@ -50,14 +55,15 @@ export default function EntityDetail() {
   const deals = getTransactionsForEntity(e.id)
   const flowRoles = flowsForEntity(e.id)
   const m = e.metrics
-  const cur = currencySymbol(m.revenueCurrency)
+  // The freshest figure: a filing beats a hand-entered number for the same or an earlier period.
+  const rev = currentRevenue(e, fin)
 
   return (
     <>
       <Link to="/entities" className="t-small text-ink-3 no-underline inline-flex items-center gap-1 hover:text-ink-1 mb-4"><ArrowLeft size={14} aria-hidden="true" /> Entities</Link>
       <PageHeader eyebrow={`${t.label}${e.subtype ? ` · ${e.subtype}` : ''}`} tone={tone === 'neutral' ? 'muted' : tone} title={e.name} lede={e.summary}
         actions={<div className="flex flex-col items-end gap-2">
-          <ExportButtons entity={e} forceItems={loading ? null : tagged} />
+          <ExportButtons entity={e} forceItems={loading ? null : tagged} financials={fin || null} />
           {e.roles.some((r) => ['catalog-fund', 'pe-fund', 'debt-investor', 'strategic'].includes(r)) && <Link to={`/pe/${e.id}`} className="t-small text-ink-2 no-underline hover:text-ink-1 inline-flex items-center gap-1">Investment view <ArrowRight size={13} aria-hidden="true" /></Link>}
         </div>} />
 
@@ -70,9 +76,9 @@ export default function EntityDetail() {
         {e.verify && <Tag tone="danger">verify</Tag>}
       </div>
 
-      {(m.revenue || m.aum || m.subscribers || m.mau || m.catalogSize) && (
+      {(rev || m.aum || m.subscribers || m.mau || m.catalogSize) && (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-          {m.revenue && <Stat label={`Revenue ${m.revenueYear || ''}`} kind="money" value={m.revenue} opts={{ currency: cur }} hint={m.revenueCurrency && m.revenueCurrency !== 'USD' ? `reported in ${m.revenueCurrency}` : undefined} />}
+          {rev && <Stat label={rev.label} kind="money" value={rev.value} opts={{ currency: currencySymbol(rev.currency) }} hint={rev.source === 'sec' ? `${rev.form} filed ${fmtDate(rev.filed)}` : rev.published ? `published ${fmtDate(rev.published)}` : rev.currency !== 'USD' ? `reported in ${rev.currency}` : undefined} />}
           {m.aum && <Stat label="AUM" kind="money" value={m.aum} />}
           {m.subscribers && <Stat label="Paid subscribers" kind="count" value={m.subscribers} hint={m.metricsAsOf} />}
           {m.mau && <Stat label="Monthly active users" kind="count" value={m.mau} hint={m.metricsAsOf} />}
@@ -82,6 +88,8 @@ export default function EntityDetail() {
 
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10">
         <div className="space-y-12 min-w-0">
+          <Financials e={e} fin={fin} freshness={freshnessOf(e, fin)} />
+
           <section>
             <SectionHeader eyebrow="Profile" tone={tone === 'neutral' ? 'muted' : tone} title="Facts" />
             <Fact label="Headquarters">{e.hq || null}</Fact>

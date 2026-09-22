@@ -25,6 +25,8 @@ import { formatMoney, formatCount, formatPct, formatRate, formatDate, currencySy
 import { classifyDeal, entityExposure } from './forces.js'
 import { DIRECTIONS, FORCE_BY_ID } from '../data/forces.js'
 import { LIMITS } from '../data/limits.js'
+import { currentRevenue, freshnessOf } from './freshness.js'
+import { CONCEPTS, pctChange } from './financialConcepts.js'
 
 const MONEY_TYPES = new Set(['catalog-fund', 'pe-fund', 'debt-investor', 'strategic'])
 const RIGHTS_OPS = new Set(['label', 'publisher', 'distributor', 'artist-services'])
@@ -54,7 +56,7 @@ const money = (v, cur = 'USD') => formatMoney(v, { currency: currencySymbol(cur)
 const dash = (v) => (v == null || v === '' ? '—' : String(v))
 const list = (xs) => (xs && xs.length ? xs.join(', ') : '—')
 
-export function buildBrief(entityId, { mode = 'full', citations = { items: [], source: 'unavailable' }, forceItems = null } = {}) {
+export function buildBrief(entityId, { mode = 'full', citations = { items: [], source: 'unavailable' }, forceItems = null, financials = null } = {}) {
   const e = getEntityProfile(entityId)
   const type = ENTITY_TYPES[e.type] || { label: e.type }
   const inMode = (...ms) => mode === 'full' || ms.includes(mode)
@@ -81,14 +83,30 @@ export function buildBrief(entityId, { mode = 'full', citations = { items: [], s
   ])
 
   // § Metrics — when present
+  // The freshest figure: a filing beats a hand-entered number for the same or an earlier period. The brief says
+  // which it is, and whether a newer result is due — a forwarded file must not present last year as current.
   const m = e.metrics
   const stats = []
-  if (m.revenue) stats.push({ label: `Revenue ${m.revenueYear || ''}`.trim(), value: money(m.revenue, m.revenueCurrency), hint: m.revenueCurrency && m.revenueCurrency !== 'USD' ? `reported in ${m.revenueCurrency}` : '' })
+  const rev = currentRevenue(e, financials)
+  const fresh = freshnessOf(e, financials)
+  if (rev) stats.push({ label: rev.label, value: money(rev.value, rev.currency), hint: rev.source === 'sec' ? `${rev.form} filed ${rev.filed}` : rev.published ? `published ${rev.published}` : '' })
   if (m.aum) stats.push({ label: 'AUM', value: money(m.aum) })
   if (m.subscribers) stats.push({ label: 'Paid subscribers', value: formatCount(m.subscribers), hint: m.metricsAsOf || '' })
   if (m.mau) stats.push({ label: 'Monthly active users', value: formatCount(m.mau), hint: m.metricsAsOf || '' })
   if (m.catalogSize) stats.push({ label: 'Catalog (songs)', value: formatCount(m.catalogSize) })
-  if (stats.length && inMode('financial', 'membership', 'economics', 'catalog')) add('Metrics', 'Headline numbers', [{ kind: 'stats', items: stats }])
+  const secRows = financials?.metrics ? Object.entries(CONCEPTS).filter(([k]) => financials.metrics[k] && CONCEPTS[k].kind === 'duration').map(([k, c]) => {
+    const f = financials.metrics[k]
+    return [c.label, f.annual ? `${money(f.annual.value, f.annual.currency)} (to ${f.annual.end})` : '—', pctChange(f.annual, f.priorAnnual), f.quarter ? `${money(f.quarter.value, f.quarter.currency)} (to ${f.quarter.end})` : '—', pctChange(f.quarter, f.priorQuarter)]
+  }) : []
+  if (stats.length && inMode('financial', 'membership', 'economics', 'catalog')) add('Metrics', 'Headline numbers', [
+    { kind: 'stats', items: stats },
+    secRows.length ? { kind: 'table', columns: ['Figure', 'Latest year', 'Change', 'Latest quarter', 'Change on a year earlier'], rows: secRows } : null,
+    financials?.latestFiling ? { kind: 'note', text: `As filed with the SEC — consolidated figures, from EDGAR's structured data. Latest filing: ${financials.latestFiling.form} filed ${financials.latestFiling.filed} (${financials.latestFiling.url}).` } : null,
+    rev?.source === 'record' && m.revenueSource ? { kind: 'note', text: `Source: ${m.revenueSource.label} — ${m.revenueSource.url}${m.revenuePublished ? ` (published ${m.revenuePublished})` : ''}.` } : null,
+    m.revenueNote ? { kind: 'note', text: m.revenueNote } : null,
+    m.projection ? { kind: 'note', text: `Projection, not a result: ${m.projection.label} — ${money(m.projection.value, m.projection.currency)} for ${m.projection.year}.` } : null,
+    ['due', 'pending', 'final'].includes(fresh.status) ? { kind: 'note', text: fresh.reason } : null,
+  ])
 
   // § Corporate hierarchy
   if (inMode('catalog', 'financial', 'distribution')) {
