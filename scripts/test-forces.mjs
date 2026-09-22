@@ -9,9 +9,10 @@
  */
 import assert from 'node:assert/strict'
 import { FORCES, FORCE_IDS, FORCE_BY_ID, CONFIDENCE, DIRECTIONS, EXPOSURE_TYPES, RIGHTS_TYPES, REVENUE_STREAMS, CLASSIFICATION } from '../src/data/forces.js'
-import { classifyDeal, classifyEvent, classifyAll, evidenceHolds, filterTagged, forceActivity, forceBoard, placesOf, compileKeyword, dateMs, isMusic, windowComplete, periodBuckets, periodActivity, inPeriod, PERIOD_IDS, linkOf, linkHolds, entityExposure, exposureIndex } from '../src/utils/forces.js'
+import { classifyDeal, classifyEvent, classifyAll, evidenceHolds, filterTagged, forceActivity, forceBoard, placesOf, compileKeyword, dateMs, isMusic, windowComplete, periodBuckets, periodActivity, inPeriod, PERIOD_IDS, resolveRange, rangeBucket, unitsFor, includeDeals, readRange, classifyMilestone, RANGE_FLOOR, MMA_DATE, linkOf, linkHolds, entityExposure, exposureIndex } from '../src/utils/forces.js'
 import { buildBrief } from '../src/utils/brief.js'
 import { ENTITIES } from '../src/data/entities.js'
+import { MILESTONES } from '../src/data/milestones.js'
 import { buildForcesBrief, THIN_EVIDENCE } from '../src/utils/forcesDocs.js'
 import { TRANSACTIONS } from '../src/data/transactions.js'
 import { LIMITS } from '../src/data/limits.js'
@@ -257,6 +258,93 @@ t('period activity: totals add up, and no comparison is offered against a period
   assert.equal(inPeriod(items, { period: 'week', today: TODAY }).map((x) => x.date).join(), '2026-09-21,2026-09-18', 'newest first, inside the period only')
   const direct = periodActivity(items, { period: 'month', forceId: 'capital_ownership', reach: 'direct', today: TODAY })
   assert.equal(direct.total, 0, 'capital is only secondary on these items, so "direct only" counts none')
+})
+
+t('custom ranges: back to 2018, clamped with a note, and a backwards range is an error', () => {
+  assert.equal(RANGE_FLOOR, '2018-01-01')
+  assert.equal(MMA_DATE, '2018-10-11', 'the Music Modernization Act was signed on 11 October 2018')
+  const clamped = resolveRange({ from: '2015-06-01', to: '2031-01-01', today: TODAY })
+  assert.deepEqual([clamped.from, clamped.to, clamped.error], ['2018-01-01', '2026-09-21', null])
+  assert.equal(clamped.notes.length, 2, 'both clamps are stated, not silent')
+  assert.deepEqual([resolveRange({ today: TODAY }).from, resolveRange({ today: TODAY }).to], [MMA_DATE, '2026-09-21'], 'the default range is the MMA to today')
+  assert.match(resolveRange({ from: '2026-09-10', to: '2026-09-01', today: TODAY }).error, /after the end/, 'never silently swapped')
+})
+
+t('custom buckets: sized to the span, calendar-aligned, cut to the range, every day in exactly one', () => {
+  assert.equal(rangeBucket(MMA_DATE, '2026-09-21'), 'quarter')
+  assert.equal(rangeBucket('2026-01-01', '2026-09-21'), 'month')
+  assert.equal(rangeBucket('2026-06-01', '2026-09-21'), 'week')
+  assert.equal(rangeBucket('2026-09-01', '2026-09-21'), 'day')
+  const b = periodBuckets('custom', { from: MMA_DATE, to: '2026-09-21' })
+  assert.equal(b[0].label, 'Q4 2018')
+  assert.equal(b[0].start, Date.parse('2018-10-11T00:00:00Z'), 'the first bucket starts on the range start, not the quarter start')
+  assert.equal(b.at(-1).end, Date.parse('2026-09-22T00:00:00Z'), 'the last ends after the range end, not the quarter end')
+  for (let i = 1; i < b.length; i++) assert.equal(b[i].start, b[i - 1].end)
+  assert.deepEqual(unitsFor(MMA_DATE, '2026-09-21'), ['month', 'quarter', 'year'], 'eight years is 2,900 days or 415 weeks — past the 400-bar cap — so month is the finest reading')
+  assert.ok(!unitsFor('2026-09-01', '2026-09-21').includes('month'), 'three weeks cannot be read by month')
+  const years = periodBuckets('custom', { from: MMA_DATE, to: '2026-09-21', unit: 'year' })
+  assert.deepEqual([years.length, years[0].label, years.at(-1).label], [9, '2018', '2026'])
+})
+
+t('custom activity: deals give the long history, and the range is a floor where news was never recorded', () => {
+  const deals = TRANSACTIONS.map(classifyDeal)
+  const a = periodActivity(deals, { period: 'custom', from: MMA_DATE, to: '2026-09-21', forceId: 'capital_ownership', today: TODAY, coverageSince: '2026-09-21' })
+  assert.ok(a.total >= 40, `capital holds most of the ${deals.length} deals since the MMA`)
+  assert.equal(a.total, a.series.reduce((x, w) => x + w.count, 0))
+  assert.equal(a.complete, false, 'news before the archive is missing, so the total is a floor')
+  assert.equal(a.previous, null, 'nobody recorded the eight years before 2018 either')
+  assert.ok(a.series.every((w) => w.count === w.deals + w.events))
+})
+
+t('deals join a news view automatically only when the period predates the archive — and on request', () => {
+  assert.equal(includeDeals('', true), true, 'automatic: the period starts before the archive')
+  assert.equal(includeDeals('', false), false, 'automatic: the archive covers the period, news alone suffices')
+  assert.equal(includeDeals('0', true), false, 'the reader can always say no')
+  assert.equal(includeDeals('1', false), true, 'or yes')
+})
+
+t('the reading says only what its numbers show', () => {
+  const few = readRange({ items: TRANSACTIONS.slice(0, 3).map(classifyDeal), cards: [] })
+  assert.match(few[0], /too few to read a pattern/, 'under five items there is no pattern to claim')
+  const deals = TRANSACTIONS.map(classifyDeal)
+  const cards = FORCES.map((f) => ({ f, a: periodActivity(deals, { period: 'custom', from: MMA_DATE, to: '2026-09-21', forceId: f.id, today: TODAY, coverageSince: '2026-09-21' }) }))
+  const r = readRange({ items: deals, cards, coverageSince: '2026-09-21', unit: 'quarter', withDeals: true })
+  assert.match(r[0], /^Capital and ownership is tied to the most items/, 'the leading force, named from the counts')
+  assert.ok(r[0].includes(`of ${deals.length}`), 'with its denominator')
+  assert.ok(r.some((x) => /deals? on record in this range/.test(x)), 'and it says the deals are the long history')
+  assert.ok(r.some((x) => /push(es)? against/.test(x)), 'challenges are reported when there are any (the Pershing deal)')
+  // Mixed coverage: add archived news to the last bucket and the reading must not crown it "busiest".
+  const news = FIXTURES.filter((x) => x.primary_force_id === 'capital_ownership' || x.secondary_force_ids.includes('capital_ownership')).map((x) => ({ ...x, date: '2026-09-21' }))
+  const mix = [...deals, ...Array.from({ length: 40 }, (_, i) => ({ ...news[0], id: `n${i}`, date: '2026-09-21' }))]
+  const mixCards = FORCES.map((f) => ({ f, a: periodActivity(mix, { period: 'custom', from: MMA_DATE, to: '2026-09-21', forceId: f.id, today: TODAY, coverageSince: '2026-09-21' }) }))
+  const mr = readRange({ items: mix, cards: mixCards, coverageSince: '2026-09-21', unit: 'quarter', withDeals: true })
+  assert.ok(!/busiest quarter was Q3 2026/.test(mr.join(' ')), 'the quarter where the archive begins is not the busiest — it is the only one with news')
+  assert.ok(mr.some((x) => /Among deals on record/.test(x)) && mr.some((x) => /coverage, not a surge/.test(x)), 'the comparison uses the consistent source, and the jump is named')
+})
+
+t('milestones: sourced, dated, classified by their own words — and context, never a count', () => {
+  assert.ok(MILESTONES.length >= 20)
+  const ids = new Set()
+  for (const m of MILESTONES) {
+    assert.ok(/^\d{4}-\d{2}-\d{2}$/.test(m.date) && m.date >= RANGE_FLOOR, `${m.id}: bad date`)
+    assert.ok(m.sources?.[0]?.url?.startsWith('https://') && m.sources[0].label, `${m.id}: every milestone carries a source the reader can open`)
+    assert.ok(m.asOf, `${m.id}: asOf`)
+    assert.ok(!ids.has(m.id)); ids.add(m.id)
+    const x = classifyMilestone(m)
+    assert.ok(x.primary_force_id, `${m.id} does not classify: ${x.unclassified}`)
+    for (const e of x.evidence) assert.ok(evidenceHolds(x.record, e), `${m.id}: evidence does not hold — ${e.label}`)
+  }
+  const by = Object.fromEntries(MILESTONES.map((m) => [m.id, classifyMilestone(m)]))
+  assert.equal(by['music-modernization-act-signed'].primary_force_id, 'discovery_distribution', 'the MMA rebuilt mechanical licensing — rights administration')
+  assert.equal(by['labels-sue-suno-udio'].primary_force_id, 'ai_rights_control')
+  assert.equal(by['doj-sues-live-nation-ticketmaster'].force_impact_direction, 'challenges', 'an antitrust suit pushes against live pricing power')
+  assert.equal(by['samr-tencent-music-exclusivity-order'].primary_force_id, 'emerging_markets')
+  assert.equal(by['hipgnosis-songs-fund-ipo'].primary_force_id, 'capital_ownership', 'a listing is a capital event')
+  const marks = MILESTONES.map(classifyMilestone)
+  const without = periodActivity([], { period: 'custom', from: MMA_DATE, to: '2026-09-21', today: TODAY, coverageSince: '2026-09-21' })
+  const withMarks = periodActivity([], { period: 'custom', from: MMA_DATE, to: '2026-09-21', today: TODAY, coverageSince: '2026-09-21', milestones: marks })
+  assert.equal(withMarks.total, without.total, 'milestones never add to a count')
+  assert.ok(withMarks.series.some((w) => w.milestones.length), 'but they are marked on the buckets they fall in')
 })
 
 t('company exposure: only parties and headline subjects count, and every link holds', () => {

@@ -8,6 +8,9 @@ import { ENTITY_TYPES, TYPE_ORDER, getEntity } from '../data/entities.js'
 import { formatDate } from '../utils/format.js'
 import { NewsForces } from '../components/forces/NewsForces.jsx'
 import { useForceEvents } from '../hooks/useForces.js'
+import { TRANSACTIONS } from '../data/transactions.js'
+import { MILESTONES } from '../data/milestones.js'
+import { classifyDeal, classifyMilestone } from '../utils/forces.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 
@@ -42,6 +45,9 @@ export default function News() {
   // The forces view reads the same filtered feed the list below shows, plus the archive filtered the same way.
   const forces = useForceEvents({ live: items, filters: params })
   const today = useMemo(() => new Date(), [])
+  // The longer history: deals on record reach back to 2019, sourced milestones to the MMA in 2018.
+  const deals = useMemo(() => TRANSACTIONS.map(classifyDeal), [])
+  const milestones = useMemo(() => MILESTONES.map(classifyMilestone).filter((m) => m.primary_force_id), [])
   const filterLabels = { q: { label: 'Search' }, entity: { label: 'Entity', format: (v) => getEntity(v)?.name || v }, type: { label: 'Entity type', format: (v) => ENTITY_TYPES[v]?.label || v }, topic: { label: 'Topic', format: (v) => topics[v] || v }, source: { label: 'Source' }, kind: { label: 'Kind' } }
 
   return (
@@ -61,7 +67,7 @@ export default function News() {
         </div>
       )}
 
-      <NewsForces tagged={forces.tagged} coverageSince={forces.coverageSince} archive={forces.archive} today={today} pageFilters={params} pageFilterLabels={filterLabels} />
+      <NewsForces tagged={forces.tagged} deals={deals} milestones={milestones} coverageSince={forces.coverageSince} archive={forces.archive} today={today} pageFilters={params} pageFilterLabels={filterLabels} />
 
       <div className="space-y-3 mb-6">
         <div className="flex items-center gap-3">

@@ -50,6 +50,7 @@ const EXTRA_TERMS = {
     ['matching', /(?<![A-Za-z])(?:matching|reconciliation|unmatched)(?![A-Za-z])/gi, 'the work the thesis describes, named directly'],
     ['distribution', /(?<![A-Za-z])(?:distribution (?:deal|platform|company)|distributor)s?(?![A-Za-z])/gi, 'distribution platforms are named, not described'],
     ['algorithmic', /(?<![A-Za-z])(?:algorithmic|playlisting|recommendation(?:s)?)(?![A-Za-z])/gi, 'adjectival forms of listed keywords'],
+    ['mechanical licensing', /(?<![A-Za-z])(?:blanket (?:mechanical )?licen[cs]es?|mechanical licen[cs]ing|licensing collective|mechanical licen[cs]es?)(?![A-Za-z])/gi, 'mechanical licensing and collection are the rights administration the thesis names as a source of value (the MMA, the MLC)'],
   ],
   superfan_live: [
     ['touring', /(?<![A-Za-z])(?:touring|festivals?|live entertainment|live events?)(?![A-Za-z])/gi, 'live activity named without the listed nouns', 'topical'],
@@ -170,6 +171,8 @@ const TOPIC_FORCE = { ai: 'ai_rights_control', live: 'superfan_live', abs: 'capi
 const FORM_SIGNIFICANT = { 'S-4': 'transaction', '425': 'transaction', DEFM14A: 'transaction', 'SC 14D9': 'transaction', 'SC 13D': 'transaction', 'ABS-15G': 'financing', '8-K': 'operating initiative' }
 
 const FINANCE_VERBS = /(?<![A-Za-z])(?:raises?|raised|funding|financing|series [A-F](?![A-Za-z])|growth capital|capital (?:raise|solution|investment)|invests?|investment|securiti[sz]ations?|bonds?|notes offering|credit facility|loans?)(?![A-Za-z])/i
+// Capital-markets listings: an IPO or a first day of trading is a capital event whatever the company does.
+const LISTING = /(?<![A-Za-z])(?:IPO|initial public offering|direct listing|lists? on|listing on|begins trading|debuts on the (?:NYSE|Nasdaq|LSE)|stock exchange)(?![A-Za-z])/i
 const DEAL_VERBS = /(?<![A-Za-z])(?:acquires?|acquired|acquisition|merger|merges?|buys|bought|takes? (?:a )?(?:majority |minority |controlling )?stake|take-private|takeover)(?![A-Za-z])/i
 
 const MATCHERS = FORCES.map((f) => ({
@@ -190,7 +193,7 @@ const fieldLabel = { title: 'title', summary: 'summary', valueNote: 'value note'
  * place there is where the deal is (2). News summaries are often roundups — "…pulled out of a concert in Abu
  * Dhabi" in a piece about something else — so there a place is a mention (1) and cannot carry a force alone.
  */
-function textEvidence(record, fields, geoFound, placeWeight = 2) {
+function textEvidence(record, fields, geoFound, placeWeight = 2, summaryWeight = WEIGHT.summary) {
   const out = []
   for (const field of fields) {
     const text = record[field]
@@ -201,7 +204,7 @@ function textEvidence(record, fields, geoFound, placeWeight = 2) {
         t.re.lastIndex = 0
         const hit = t.re.exec(text)
         if (!hit) continue
-        const weight = t.geo && field !== 'title' ? placeWeight : t.topical && field === 'title' ? 2 : WEIGHT[field]
+        const weight = t.geo && field !== 'title' ? placeWeight : t.topical && field === 'title' ? 2 : field === 'summary' ? summaryWeight : WEIGHT[field]
         out.push({ force: m.id, via: 'text', field, term: t.term, match: hit[0], at: hit.index, weight, generic: !!t.generic, topical: !!t.topical, label: `“${hit[0]}” in the ${fieldLabel[field]}` })
       }
     }
@@ -235,7 +238,10 @@ function dedupe(list) {
     const cur = best.get(k)
     if (!cur || e.weight > cur.weight) best.set(k, e)
   }
-  const kept = list.filter((e) => best.get(`${e.force}|${e.field === 'named' ? 'title' : e.field}|${String(e.match || e.value).toLowerCase()}`) === e)
+  const first = list.filter((e) => best.get(`${e.force}|${e.field === 'named' ? 'title' : e.field}|${String(e.match || e.value).toLowerCase()}`) === e)
+  // A broad word corroborates once per field: "royalty" and "royalties" in one summary are one fact, not two.
+  const genericSeen = new Set()
+  const kept = first.filter((e) => { if (!(e.generic && e.via === 'text' && e.term !== 'financing' && e.term !== 'transaction' && e.term !== 'listing')) return true; const k = `${e.force}|${e.field}`; if (genericSeen.has(k)) return false; genericSeen.add(k); return true })
   // Overlapping words are one fact: "Royalty-administration" contains "Royalty", and counting both would let a
   // single hyphenated phrase outvote two separate ones. Within a field, a match inside a longer match drops out.
   const inside = (a, b) => a !== b && a.via === 'text' && b.via === 'text' && a.force === b.force && a.field === b.field
@@ -496,7 +502,9 @@ export const classifyEvent = memo((n) => {
   else if (form && form !== '8-K') ev.push({ force: 'capital_ownership', via: 'field', field: 'form', value: form, match: form, weight: 2, generic: true, label: `SEC form ${form} — a deal in progress` })
   const finance = n.title.match(FINANCE_VERBS)
   const deal = n.title.match(DEAL_VERBS)
+  const listing = n.title.match(LISTING)
   if (finance) ev.push({ force: 'capital_ownership', via: 'text', field: 'title', term: 'financing', match: finance[0], weight: 2, generic: true, label: `“${finance[0]}” in the title` })
+  else if (listing) ev.push({ force: 'capital_ownership', via: 'text', field: 'title', term: 'listing', match: listing[0], weight: 2, generic: true, label: `“${listing[0]}” in the title — a capital-markets listing` })
   else if (deal) ev.push({ force: 'capital_ownership', via: 'text', field: 'title', term: 'transaction', match: deal[0], weight: 2, generic: true, label: `“${deal[0]}” in the title` })
 
   const places = []
@@ -522,7 +530,9 @@ export const classifyEvent = memo((n) => {
   }
   const textFields = ['title', 'summary']
   const geoText = geoInText(n, textFields)
-  ev.push(...textEvidence(n, textFields, geoText.size > 0 || ev.some((e) => e.field === 'hq'), 1))
+  // A curated record (a milestone) has a summary written and verified for the record, like a deal's: its words
+  // count as a deal summary's do. Scraped news summaries are often roundups, so there a word is a mention.
+  ev.push(...textEvidence(n, textFields, geoText.size > 0 || ev.some((e) => e.field === 'hq'), n.curated ? 2 : 1, n.curated ? 2 : WEIGHT.summary))
 
   if (!places.length && [...named, ...(n.entities || []).map(getEntity)].some(isGlobal)) places.push('Global')
   const text = `${n.title} ${n.summary || ''}`
@@ -668,12 +678,94 @@ export const PERIODS = {
 }
 export const PERIOD_IDS = Object.keys(PERIODS)
 
+/**
+ * Custom ranges. The floor is 2018 — the year of the Music Modernization Act, signed 11 October 2018, which
+ * created the MLC and reset mechanical licensing. The range can reach back that far; the evidence mostly cannot:
+ * news is archived from the archive's first day, and deals on record begin in 2019. The view says so.
+ */
+export const RANGE_FLOOR = '2018-01-01'
+export const MMA_DATE = '2018-10-11'
+
+/**
+ * Validate a custom range against the floor and today. Missing ends default to the MMA and today; ends outside
+ * the bounds are clamped and say so; a start after its end is an error, not a silent swap.
+ */
+export function resolveRange({ from = '', to = '', today = new Date() } = {}) {
+  const todayIso = new Date(startOfDay((today instanceof Date ? today : new Date(today)).getTime())).toISOString().slice(0, 10)
+  const valid = (d) => /^\d{4}-\d{2}-\d{2}$/.test(d) && !Number.isNaN(Date.parse(`${d}T00:00:00Z`))
+  let f = valid(from) ? from : MMA_DATE
+  let t = valid(to) ? to : todayIso
+  const notes = []
+  if (f < RANGE_FLOOR) { f = RANGE_FLOOR; notes.push('The start was moved to 1 Jan 2018, the earliest the view reaches.') }
+  if (t > todayIso) { t = todayIso; notes.push('The end was moved to today.') }
+  if (f > todayIso) { f = todayIso; notes.push('The start was moved to today.') }
+  if (f > t) return { from: f, to: t, error: 'The start date is after the end date.', notes }
+  return { from: f, to: t, error: null, notes }
+}
+
+/** The bucket that keeps a custom range readable: about 7–40 bars whatever its length. */
+export function rangeBucket(from, to) {
+  const days = Math.round((dateMs(to) - dateMs(from)) / DAY) + 1
+  if (days <= 31) return 'day'
+  if (days <= 184) return 'week'
+  if (days <= 1100) return 'month'
+  return 'quarter'
+}
+
+export const RANGE_UNITS = ['day', 'week', 'month', 'quarter', 'year']
+
+/**
+ * Whether deals on record belong in a news view. '1' on, '0' off, '' automatic: on exactly when the period
+ * reaches back before the news archive, because then the deals are the only evidence that old. The view must
+ * say when it has decided this for the reader.
+ */
+export const includeDeals = (flag, beforeArchive) => flag === '1' || (flag !== '0' && !!beforeArchive)
+/**
+ * Which bucket sizes a range can be read in: never more than 400 bars (unreadable, and slow), never fewer than
+ * two (a single bar is not a trend).
+ */
+export function unitsFor(from, to) {
+  const days = Math.round((dateMs(to) - dateMs(from)) / DAY) + 1
+  const approx = { day: days, week: days / 7, month: days / 30.4, quarter: days / 91.3, year: days / 365.25 }
+  return RANGE_UNITS.filter((u) => approx[u] <= 400 && approx[u] >= 1.5)
+}
+
 const iso = (ms) => new Date(ms).toISOString().slice(0, 10)
 const DAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
+/**
+ * Custom-range buckets: calendar units (day, Monday week, month, quarter) cut to the range, so the first and
+ * last may be partial — every day in the range falls in exactly one bucket and no day outside it does.
+ */
+function customBuckets(from, to, override) {
+  const lo = dateMs(from); const hi = dateMs(to) + DAY
+  const unit = override && unitsFor(from, to).includes(override) ? override : rangeBucket(from, to)
+  const out = []
+  let cur = lo
+  while (cur < hi) {
+    const d = new Date(cur)
+    let next
+    if (unit === 'day') next = cur + DAY
+    else if (unit === 'week') next = cur - ((d.getUTCDay() + 6) % 7) * DAY + 7 * DAY
+    else if (unit === 'month') next = Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1)
+    else if (unit === 'quarter') next = Date.UTC(d.getUTCFullYear(), Math.floor(d.getUTCMonth() / 3) * 3 + 3, 1)
+    else next = Date.UTC(d.getUTCFullYear() + 1, 0, 1)
+    const end = Math.min(next, hi)
+    const label = unit === 'day' ? `${DAY_NAMES[d.getUTCDay()]} ${d.getUTCDate()} ${MONTH_NAMES[d.getUTCMonth()]} ${d.getUTCFullYear()}`
+      : unit === 'week' ? `Week of ${d.getUTCDate()} ${MONTH_NAMES[d.getUTCMonth()]} ${d.getUTCFullYear()}`
+        : unit === 'month' ? `${MONTH_NAMES[d.getUTCMonth()]} ${d.getUTCFullYear()}`
+          : unit === 'quarter' ? `Q${Math.floor(d.getUTCMonth() / 3) + 1} ${d.getUTCFullYear()}`
+            : `${d.getUTCFullYear()}`
+    out.push({ start: cur, end, label })
+    cur = end
+  }
+  return { buckets: out, unit }
+}
+
 /** The bucket boundaries for a period ending today, oldest first: [{ start, end, label }] in ms. */
-export function periodBuckets(period = 'week', { today = new Date() } = {}) {
+export function periodBuckets(period = 'week', { today = new Date(), from, to, unit } = {}) {
+  if (period === 'custom') return customBuckets(from, to, unit).buckets
   const p = PERIODS[period] || PERIODS.week
   const now = startOfDay((today instanceof Date ? today : new Date(today)).getTime())
   if (p.bucket === 'day') {
@@ -707,15 +799,18 @@ const matchesForce = (x, forceId, reach) => !forceId || x.primary_force_id === f
  * period and its predecessor are `complete` on the same test. The comparison is offered only when both are
  * complete — "+40% on last quarter" against a quarter nobody recorded would be invented.
  */
-export function periodActivity(items, { period = 'week', forceId = null, reach = 'any', today = new Date(), coverageSince = null } = {}) {
-  const buckets = periodBuckets(period, { today })
+export function periodActivity(items, { period = 'week', forceId = null, reach = 'any', today = new Date(), coverageSince = null, from, to, unit, milestones = [] } = {}) {
+  const buckets = periodBuckets(period, { today, from, to, unit })
+  const marks = milestones.filter((m) => matchesForce(m, forceId, reach))
   const since = coverageSince ? dateMs(coverageSince) : null
   const now = (today instanceof Date ? today : new Date(today)).getTime()
   const inForce = items.filter((x) => matchesForce(x, forceId, reach))
   const at = (x) => dateMs(x.date)
   const series = buckets.map((b) => {
-    const count = inForce.filter((x) => { const ms = at(x); return ms != null && ms >= b.start && ms < b.end && ms <= now + DAY }).length
-    return { start: iso(b.start), label: b.label, count, deals: 0, events: count, covered: since != null && b.start >= since, current: b.end > now }
+    const inside = inForce.filter((x) => { const ms = at(x); return ms != null && ms >= b.start && ms < b.end && ms <= now + DAY })
+    const deals = inside.filter((x) => x.kind === 'deal').length
+    const ms = marks.filter((m) => { const t = at(m); return t != null && t >= b.start && t < b.end }).map((m) => m.title)
+    return { start: iso(b.start), label: b.label, count: inside.length, deals, events: inside.length - deals, covered: since != null && b.start >= since, current: b.end > now, milestones: ms }
   })
   const first = buckets[0].start
   const span = buckets.at(-1).end - first
@@ -723,15 +818,80 @@ export function periodActivity(items, { period = 'week', forceId = null, reach =
   const prev = inForce.filter((x) => { const ms = at(x); return ms != null && ms >= first - span && ms < first }).length
   const complete = since != null && first >= since
   const previousComplete = since != null && first - span >= since
-  return { period, forceId, series, total, complete, previous: previousComplete ? prev : null, from: iso(first) }
+  return { period, forceId, series, total, complete, previous: previousComplete ? prev : null, from: iso(first), to: iso(buckets.at(-1).end - DAY) }
 }
 
 /** Items dated inside the period, newest first. */
-export function inPeriod(items, { period = 'week', today = new Date() } = {}) {
-  const buckets = periodBuckets(period, { today })
+export function inPeriod(items, { period = 'week', today = new Date(), from, to, unit } = {}) {
+  const buckets = periodBuckets(period, { today, from, to, unit })
   const first = buckets[0].start
   const now = (today instanceof Date ? today : new Date(today)).getTime()
-  return items.filter((x) => { const ms = dateMs(x.date); return ms != null && ms >= first && ms <= now + DAY }).sort((a, b) => (dateMs(b.date) || 0) - (dateMs(a.date) || 0))
+  const last = buckets.at(-1).end
+  return items.filter((x) => { const ms = dateMs(x.date); return ms != null && ms >= first && ms < last && ms <= now + DAY }).sort((a, b) => (dateMs(b.date) || 0) - (dateMs(a.date) || 0))
+}
+
+// ── Milestones and the reading of a range ───────────────────────────────────────────────────────────────
+
+/**
+ * A milestone (data/milestones.js) is classified by the same engine as any event — its forces come from the
+ * words in its own title and summary, never from a hand-assigned tag. It is context for a trend, not activity:
+ * callers draw it on the chart and list it, but never add it to a count.
+ */
+export const classifyMilestone = memo((m) => {
+  const src = m.sources?.[0] || m.source || {}
+  const n = { id: `milestone-${m.id}`, kind: 'news', category: 'trade', curated: true, title: m.title, summary: m.summary, publishedAt: m.date, url: src.url || '', source: src.label || '', entities: m.entities || [], topics: [] }
+  return { ...classifyEvent(n), kind: 'milestone', milestone: m }
+})
+
+const pct = (a, b) => (b ? Math.round((a / b) * 100) : 0)
+
+/**
+ * A few factual sentences about a range, computed from its counts — which force dominates, when, what the
+ * archived news adds, which way the evidence points, and what happened in the market meanwhile. No sentence
+ * asserts more than its numbers: below five items there is no pattern to read, and the reader is told so.
+ */
+export function readRange({ items = [], cards = [], coverageSince = null, unit = 'month', milestones = [], withDeals = false }) {
+  const out = []
+  const total = items.length
+  if (total < 5) {
+    out.push(total ? `Only ${total} item${total === 1 ? '' : 's'} in this range — too few to read a pattern; treat ${total === 1 ? 'it' : 'them'} as individual signals.` : 'Nothing in this range matches the selection.')
+  } else {
+    const lead = [...cards].sort((a, b) => b.a.total - a.a.total)[0]
+    const share = pct(lead.a.total, total)
+    // "Busiest" must compare like with like. If some buckets have archived news and others do not, the archived
+    // ones win by coverage alone — so across a mixed range the comparison uses deals on record, the one source
+    // that is consistent over the whole span, and the jump where the archive begins is named for what it is.
+    // Mixed means the archive begins INSIDE the range — often inside a bucket, which then holds archived news
+    // without counting as covered. Test the range, not the bucket flags.
+    const series = lead.a.series
+    const mixed = !!coverageSince && series.length > 0 && series[0].start < coverageSince && series.some((w) => w.start <= coverageSince)
+    const byDeals = [...lead.a.series].filter((w) => w.deals > 0).sort((a, b) => b.deals - a.deals)[0]
+    const busiest = [...lead.a.series].sort((a, b) => b.count - a.count)[0]
+    const when = !mixed
+      ? ` Its busiest ${unit} was ${busiest.label} (${busiest.count}).`
+      : byDeals ? ` Among deals on record — the only evidence that spans the whole range — its busiest ${unit} was ${byDeals.label} (${byDeals.deals}).` : ''
+    out.push(`${lead.f.short_title} is tied to the most items, as primary or secondary force: ${lead.a.total} of ${total} (${share}%).${when}`)
+    const archiveBucket = [...series].reverse().find((w) => w.start <= coverageSince)
+    if (mixed && archiveBucket && items.some((x) => x.kind === 'event')) out.push(`Counts rise from ${archiveBucket.label} because that is where the news archive begins — coverage, not a surge in activity.`)
+  }
+  if (coverageSince) {
+    const news = items.filter((x) => x.kind === 'event' && String(x.date).slice(0, 10) >= coverageSince)
+    if (news.length >= 5) {
+      const by = FORCES.map((f) => ({ f, n: news.filter((x) => x.primary_force_id === f.id).length })).sort((a, b) => b.n - a.n)
+      out.push(`In the archived news since ${coverageSince}, ${by[0].f.short_title} leads with ${by[0].n} of ${news.length} events${by[1]?.n ? `, then ${by[1].f.short_title} (${by[1].n})` : ''}.`)
+    }
+    if (withDeals) {
+      const deals = items.filter((x) => x.kind === 'deal')
+      if (deals.length) out.push(`The ${deals.length} deal${deals.length === 1 ? '' : 's'} on record in this range ${deals.length === 1 ? 'is' : 'are'} the longer history; before ${coverageSince} they are the only evidence the view holds.`)
+    }
+  }
+  const against = items.filter((x) => x.force_impact_direction === 'challenges')
+  if (against.length) {
+    const by = FORCES.map((f) => ({ f, n: against.filter((x) => x.primary_force_id === f.id).length })).sort((a, b) => b.n - a.n)
+    out.push(`${against.length} item${against.length === 1 ? '' : 's'} push${against.length === 1 ? 'es' : ''} against ${against.length === 1 ? 'its' : 'their'} force's thesis, most under ${by[0].f.short_title} (${by[0].n}).`)
+  }
+  if (milestones.length) out.push(`${milestones.length} market milestone${milestones.length === 1 ? '' : 's'} fall${milestones.length === 1 ? 's' : ''} in this range — marked on the trend lines and listed below.`)
+  return out
 }
 
 /** Every force at once, in taxonomy order. */

@@ -21,7 +21,7 @@ import { loadLocalArchive, fetchRemoteArchive, DEFAULT_REMOTE } from './archive.
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DIST = path.resolve(__dirname, `../${process.env.MM_EDITION === 'work' ? 'dist-work' : 'dist'}`)
 const PORT = process.env.PORT || 3002
-const SPRINT = 25
+const SPRINT = 26
 const started = new Date()
 
 // Minimal .env loader (no dependency): KEY=value lines at repo root, never overriding real env.

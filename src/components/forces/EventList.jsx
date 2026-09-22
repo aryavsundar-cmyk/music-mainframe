@@ -13,7 +13,7 @@ function EventRow({ x }) {
         <div className="min-w-0">
           <a href={x.source_url} target="_blank" rel="noreferrer" className="t-body text-ink-1 no-underline hover:text-accent inline-flex gap-1.5">{x.title}<ExternalLink size={11} className="shrink-0 mt-1.5 text-ink-4" aria-hidden="true" /></a>
           <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1">
-            <span className="t-micro text-ink-3">{x.source_label}</span>
+            <span className="t-micro text-ink-3">{x.kind === 'deal' ? `Deal on record${x.source_label ? ` · ${x.source_label}` : ''}` : x.source_label}</span>
             <ForceChips tag={x} />
           </div>
         </div>
