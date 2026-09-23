@@ -23,6 +23,12 @@ export const LIMITS = {
     detail: 'Each tag is read from the record itself — its deal type and structure, the companies involved, and the words in its title and summary — and keeps the evidence that produced it. Direction says whether the event supports or pushes against the thesis as written; it is not a forecast, and a count of events is not a measure of their size.',
     enforced: 'No force can be assigned without evidence in the record — the tests check every tag against the field or phrase it came from.',
   },
+  comparison: {
+    id: 'comparison',
+    claim: 'A comparison lines up reported figures, not like-for-like businesses.',
+    detail: 'Each company defines its own revenue, reports it in its own currency and closes its year on its own date; a label group, a streaming service and a promoter earn money in ways that no single table makes equivalent. Ratios travel further than totals, and none of it adjusts for accounting policy, acquisitions or one-off items.',
+    enforced: 'No figure is ranked against a figure in another currency, and no trend is drawn across a gap in the years — the tests check both.',
+  },
 }
 export const LIMIT_LIST = Object.values(LIMITS)
 /** One line for document notices, so exports and screens never drift apart. */

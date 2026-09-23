@@ -119,7 +119,11 @@ function SecTable({ fin }) {
             if (c.kind === 'instant') {
               return (
                 <tr key={k}>
-                  <td className="py-1.5 pr-2 border-b border-line-1 text-ink-2">{c.label}<div className="t-micro text-ink-4">at {formatDate(m.latest.end)}</div></td>
+                  <td className="py-1.5 pr-2 border-b border-line-1 text-ink-2">{c.label}
+                    <div className={`t-micro ${m.latest.stale ? 'text-danger' : 'text-ink-4'}`} title={m.latest.stale ? `The company last tagged this figure here; it has reported through ${formatDate(m.latest.stale)} since.` : undefined}>
+                      {m.latest.stale ? `last tagged ${formatDate(m.latest.end)}` : `at ${formatDate(m.latest.end)}`}
+                    </div>
+                  </td>
                   <td className="py-1.5 px-2 border-b border-line-1 text-right text-ink-1 font-mono" colSpan={3}>{money(m.latest.value, m.latest.currency)}</td>
                   <td className="py-1.5 px-2 border-b border-line-1 text-right text-ink-3 font-mono" colSpan={2}>{m.prior ? money(m.prior.value, m.prior.currency) : '—'}</td>
                   <td className="py-1.5 pl-2 border-b border-line-1 text-right text-ink-2 font-mono">{change(m.latest, m.prior)}</td>

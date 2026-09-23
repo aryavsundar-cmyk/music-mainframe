@@ -101,6 +101,7 @@ export default function EntityDetail() {
       <PageHeader eyebrow={`${t.label}${e.subtype ? ` · ${e.subtype}` : ''}`} tone={tone === 'neutral' ? 'muted' : tone} title={e.name} lede={e.summary}
         actions={<div className="flex flex-col items-end gap-2">
           <ExportButtons entity={e} forceItems={loading ? null : tagged} financials={fin || null} />
+          <Link to={`/compare?ids=${e.id}`} className="t-small text-ink-2 no-underline hover:text-ink-1 inline-flex items-center gap-1">Compare with… <ArrowRight size={13} aria-hidden="true" /></Link>
           {e.roles.some((r) => ['catalog-fund', 'pe-fund', 'debt-investor', 'strategic'].includes(r)) && <Link to={`/pe/${e.id}`} className="t-small text-ink-2 no-underline hover:text-ink-1 inline-flex items-center gap-1">Investment view <ArrowRight size={13} aria-hidden="true" /></Link>}
         </div>} />
 

@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-22T04:59:02.729Z",
+ "updatedAt": "2026-09-23T12:51:12.019Z",
  "source": "SEC EDGAR XBRL (data.sec.gov/api/xbrl/companyfacts)",
  "companies": {
   "alphabet": {
@@ -2684,7 +2684,8 @@
       "form": "10-Q",
       "filed": "2014-08-13",
       "accn": "0001047469-14-006936",
-      "tag": "us-gaap:LongTermDebt"
+      "tag": "us-gaap:LongTermDebt",
+      "stale": "2026-06-30"
      },
      "prior": null
     }
@@ -4743,7 +4744,8 @@
       "form": "10-Q",
       "filed": "2023-05-04",
       "accn": "0001527166-23-000064",
-      "tag": "us-gaap:LongTermDebtNoncurrent"
+      "tag": "us-gaap:LongTermDebtNoncurrent",
+      "stale": "2026-06-30"
      },
      "prior": {
       "value": 2255000000,
@@ -4753,7 +4755,8 @@
       "form": "10-Q",
       "filed": "2022-04-28",
       "accn": "0001527166-22-000025",
-      "tag": "us-gaap:LongTermDebtNoncurrent"
+      "tag": "us-gaap:LongTermDebtNoncurrent",
+      "stale": "2026-06-30"
      }
     }
    },
@@ -5158,7 +5161,8 @@
       "form": "10-Q",
       "filed": "2019-11-01",
       "accn": "0001193125-19-280752",
-      "tag": "us-gaap:LongTermDebtNoncurrent"
+      "tag": "us-gaap:LongTermDebtNoncurrent",
+      "stale": "2026-06-30"
      },
      "prior": {
       "value": 242132000000,
@@ -5168,7 +5172,8 @@
       "form": "10-Q",
       "filed": "2018-11-02",
       "accn": "0001193125-18-317325",
-      "tag": "us-gaap:LongTermDebtNoncurrent"
+      "tag": "us-gaap:LongTermDebtNoncurrent",
+      "stale": "2026-06-30"
      }
     }
    },
@@ -6082,7 +6087,8 @@
       "form": "10-K",
       "filed": "2022-02-28",
       "accn": "0001404912-22-000004",
-      "tag": "us-gaap:LongTermDebt"
+      "tag": "us-gaap:LongTermDebt",
+      "stale": "2026-06-30"
      },
      "prior": {
       "value": 33501204000,
@@ -6092,7 +6098,8 @@
       "form": "10-K",
       "filed": "2021-02-19",
       "accn": "0001404912-21-000008",
-      "tag": "us-gaap:LongTermDebt"
+      "tag": "us-gaap:LongTermDebt",
+      "stale": "2026-06-30"
      }
     }
    },
@@ -6584,24 +6591,24 @@
     },
     "longTermDebt": {
      "latest": {
-      "value": 1715688000,
+      "value": 6233084000,
       "currency": "USD",
       "start": null,
-      "end": "2011-12-31",
-      "form": "10-K",
-      "filed": "2012-02-24",
-      "accn": "0001193125-12-075895",
-      "tag": "us-gaap:LongTermDebt"
+      "end": "2026-06-30",
+      "form": "10-Q",
+      "filed": "2026-07-30",
+      "accn": "0001335258-26-000035",
+      "tag": "us-gaap:LongTermDebtAndCapitalLeaseObligations"
      },
      "prior": {
-      "value": 1731864000,
+      "value": 4990995000,
       "currency": "USD",
       "start": null,
-      "end": "2010-12-31",
-      "form": "10-K",
-      "filed": "2012-02-24",
-      "accn": "0001193125-12-075895",
-      "tag": "us-gaap:LongTermDebt"
+      "end": "2025-06-30",
+      "form": "10-Q",
+      "filed": "2025-08-07",
+      "accn": "0001335258-25-000129",
+      "tag": "us-gaap:LongTermDebtAndCapitalLeaseObligations"
      }
     }
    },
@@ -7100,7 +7107,8 @@
       "form": "10-K",
       "filed": "2022-06-29",
       "accn": "0001213900-22-035870",
-      "tag": "us-gaap:LongTermDebtNoncurrent"
+      "tag": "us-gaap:LongTermDebtNoncurrent",
+      "stale": "2026-06-30"
      },
      "prior": null
     }
@@ -9044,24 +9052,24 @@
     },
     "longTermDebt": {
      "latest": {
-      "value": 2434753000,
+      "value": 9453000000,
       "currency": "USD",
       "start": null,
-      "end": "2012-09-30",
+      "end": "2026-06-30",
       "form": "10-Q",
-      "filed": "2012-11-01",
-      "accn": "0000908937-12-000009",
-      "tag": "us-gaap:LongTermDebt"
+      "filed": "2026-07-30",
+      "accn": "0000908937-26-000022",
+      "tag": "us-gaap:LongTermDebtAndCapitalLeaseObligations"
      },
      "prior": {
-      "value": 3031167000,
+      "value": 10136000000,
       "currency": "USD",
       "start": null,
-      "end": "2011-09-30",
+      "end": "2025-06-30",
       "form": "10-Q",
-      "filed": "2011-11-03",
-      "accn": "0000950123-11-094792",
-      "tag": "us-gaap:LongTermDebt"
+      "filed": "2025-07-31",
+      "accn": "0000908937-25-000023",
+      "tag": "us-gaap:LongTermDebtAndCapitalLeaseObligations"
      }
     }
    },

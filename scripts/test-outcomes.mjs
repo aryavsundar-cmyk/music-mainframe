@@ -74,8 +74,10 @@ t('the funnel and conversion read the records', () => {
   assert.equal(staleAccounts(accounts, records, TODAY).length, 0, 'everything here was touched recently')
 })
 t('the limits exist once, and every screen and document carries them', () => {
-  // Three since Sprint 23: match, availability, and force (what a Five Forces tag does and does not mean).
-  assert.equal(LIMIT_LIST.length, 3)
+  // Four since Sprint 30: match, availability, force, and comparison (what a side-by-side table is not).
+  assert.equal(LIMIT_LIST.length, 4)
+  assert.match(LIMITS.comparison.claim, /reported figures, not like-for-like businesses/)
+  assert.match(LIMITS.comparison.enforced, /ranked against a figure in another currency/)
   assert.match(LIMITS.force.claim, /evidence of, not what will happen next/)
   assert.match(LIMITS.match.claim, /has done deals like yours, not that they are interested/)
   assert.match(LIMITS.availability.claim, /prompt to do work, not a claim that an asset is for sale/)
@@ -93,11 +95,11 @@ t('the limits exist once, and every screen and document carries them', () => {
   // and the screens: the shared component is the only place the UI states them
   const note = fs.readFileSync(new URL('../src/components/prospecting/LimitNote.jsx', import.meta.url), 'utf8')
   assert.ok(note.includes("from '../../data/limits.js'"), 'the UI reads the limits from the single source')
-  for (const page of ['BuyerMatch', 'CatalogScan', 'Prospecting', 'ProspectAccount']) {
+  for (const page of ['BuyerMatch', 'CatalogScan', 'Prospecting', 'ProspectAccount', 'Compare']) {
     const src = fs.readFileSync(new URL(`../src/pages/${page}.jsx`, import.meta.url), 'utf8')
     assert.ok(/<LimitNote/.test(src), `${page} does not show the limits`)
   }
 })
 
 console.log(`\n${n} checks passed`)
-console.log(`${OUTCOMES.length} outcomes · stale after ${STALE_DAYS} days · limits stated on 4 screens and in every export`)
+console.log(`${OUTCOMES.length} outcomes · stale after ${STALE_DAYS} days · limits stated on 5 screens and in every export`)

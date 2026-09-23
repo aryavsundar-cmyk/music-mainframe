@@ -16,7 +16,7 @@
 const DAY = 86400000
 const days = (a, b) => (Date.parse(`${b}T00:00:00Z`) - Date.parse(`${a}T00:00:00Z`)) / DAY
 
-import { CONCEPTS } from '../src/utils/financialConcepts.js'
+import { CONCEPTS, staleInstant } from '../src/utils/financialConcepts.js'
 
 export { CONCEPTS }
 
@@ -138,6 +138,15 @@ export function extractFinancials(doc, { cik, entityId, ticker, submissions = nu
   const used = Object.values(metrics).flatMap((m) => Object.entries(m).filter(([k]) => k !== 'history').map(([, v]) => v)).filter(Boolean)
   const newest = used.reduce((a, b) => (!a || String(b.filed) > String(a.filed) ? b : a), null)
   const periods = used.map((f) => f.end).sort()
+  // A balance whose tag stopped years ago (KKR's debt was last tagged in 2021, Live Nation's old tag in 2011) is
+  // marked, not dropped: the figure was really filed, but nothing may read it as the position today.
+  for (const [key, concept] of Object.entries(CONCEPTS)) {
+    if (concept.kind !== 'instant' || !metrics[key]) continue
+    for (const which of ['latest', 'prior']) {
+      const f = metrics[key][which]
+      if (f && staleInstant(f, periods.at(-1))) f.stale = periods.at(-1)
+    }
+  }
   const filings = latestFilings(submissions, cik)
   // A report newer than the figures: say so, with the filing, instead of presenting last year's number as current.
   const shownEnd = metrics.revenue?.annual?.end || null

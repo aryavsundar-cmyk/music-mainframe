@@ -12,7 +12,7 @@ import assert from 'node:assert/strict'
 import fs from 'node:fs'
 import { readMetric, extractFinancials, latestFilings, usTicker } from '../server/financials.js'
 import { formMeaning } from '../server/filings.js'
-import { CONCEPTS, pctChange, freeCashFlow, operatingMargin, fiveYearRecord } from '../src/utils/financialConcepts.js'
+import { CONCEPTS, pctChange, freeCashFlow, operatingMargin, fiveYearRecord, staleInstant, STALE_INSTANT_DAYS } from '../src/utils/financialConcepts.js'
 import { freshnessOf, freshnessReport, currentRevenue, parsePeriod, periodLabel, nextDue } from '../src/utils/freshness.js'
 import { ENTITIES, getEntity } from '../src/data/entities.js'
 import { buildBrief } from '../src/utils/brief.js'
@@ -84,6 +84,18 @@ t('a year last repeated in a 10-Q comparative is still read from its 10-K', () =
   assert.equal(r.priorAnnual.value, 5301e6)
   const x = extractFinancials(d, { cik: 1, entityId: 'x', ticker: 'X' })
   assert.equal(x.latestFiling.form, '10-K', 'history arrays are not figures: the latest filing is a real one')
+})
+
+t('a balance whose tag stopped years ago is marked, not presented as today’s position', () => {
+  assert.equal(staleInstant({ end: '2021-12-31' }, '2026-06-30'), true, 'KKR last tagged long-term debt in 2021')
+  assert.equal(staleInstant({ end: '2026-03-31' }, '2026-06-30'), false)
+  assert.equal(staleInstant({ end: '2026-06-30' }, null), false)
+  assert.ok(STALE_INSTANT_DAYS > 365, 'a year-old balance from an annual filer is normal, not stale')
+  const d = doc({ LongTermDebt: [inst('2011-12-31', 1715e6, '10-K', '2012-02-24')], Revenues: [fact('2025-01-01', '2025-12-31', 25201e6)] })
+  const x = extractFinancials(d, { cik: 1, entityId: 'x', ticker: 'X' })
+  assert.equal(x.metrics.longTermDebt.latest.stale, '2025-12-31', 'the flag carries the period the company has since reported')
+  // and the tag Live Nation actually uses is read, so this case does not arise for it any more
+  assert.ok(CONCEPTS.longTermDebt.tags['us-gaap'].includes('LongTermDebtAndCapitalLeaseObligations'))
 })
 
 t('stakes filed under the post-2024 form names are read as stakes, not routine', () => {

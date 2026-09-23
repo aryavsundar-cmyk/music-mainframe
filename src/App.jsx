@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { NavLink, Route, Routes, useLocation } from 'react-router-dom'
-import { BookOpen, Disc3, Building2, Waypoints, Handshake, Landmark, Layers, Library, ScrollText, Radio, Rss, Palette, Sun, Moon, Crosshair, Users, Info, Network } from 'lucide-react'
+import { BookOpen, Disc3, Building2, Waypoints, Handshake, Landmark, Layers, Library, ScrollText, Radio, Rss, Palette, Sun, Moon, Crosshair, Users, Info, Network, Columns3 } from 'lucide-react'
 import { ThemeContext, useThemeState } from './hooks/useTheme.js'
 import { CURRENT, has, showsGroup } from './editions.js'
 import { PRIVATE_NAV } from './navPrivate.js'
@@ -9,6 +9,7 @@ import Home from './pages/Home.jsx'
 import Entities from './pages/Entities.jsx'
 import EntityDetail from './pages/EntityDetail.jsx'
 import EntityMap from './pages/EntityMap.jsx'
+import Compare from './pages/Compare.jsx'
 import Flows from './pages/Flows.jsx'
 import Deals from './pages/Deals.jsx'
 import PE from './pages/PE.jsx'
@@ -39,6 +40,7 @@ const NAV = [
     { to: '/', label: 'Overview', icon: Disc3, end: true },
     { to: '/entities', label: 'Entities', icon: Building2, except: ['/entities/map'] },
     { to: '/entities/map', label: 'Entity map', icon: Network, sub: true },
+    { to: '/compare', label: 'Compare', icon: Columns3 },
     { to: '/flows', label: 'Flows', icon: Waypoints },
   ]},
   { group: 'Money', items: [
@@ -101,7 +103,7 @@ function NavItem({ to, label, icon: Icon, end, except = [], sub = false }) {
 function useWidth() {
   const { pathname } = useLocation()
   if (pathname === '/entities/map') return 'max-w-none'
-  if (/^\/entities\/[^/]+$/.test(pathname)) return 'max-w-content-wide'
+  if (/^\/entities\/[^/]+$/.test(pathname) || pathname === '/compare') return 'max-w-content-wide'
   return 'max-w-content-max'
 }
 
@@ -151,6 +153,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/entities" element={<Entities />} />
             <Route path="/entities/map" element={<EntityMap />} />
+            <Route path="/compare" element={<Compare />} />
             <Route path="/entities/:id" element={<EntityDetail />} />
             <Route path="/flows/*" element={<Flows />} />
             <Route path="/deals" element={<Deals />} />

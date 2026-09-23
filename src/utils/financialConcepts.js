@@ -32,7 +32,9 @@ export const CONCEPTS = {
     'ifrs-full': ['PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities', 'PurchaseOfPropertyPlantAndEquipment'],
   } },
   longTermDebt: { label: 'Long-term debt', kind: 'instant', tags: {
-    'us-gaap': ['LongTermDebtNoncurrent', 'LongTermDebt'],
+    // Live Nation reports its debt only under the capital-lease combined tags; reading the first two alone gave
+    // its 2011 balance as today's.
+    'us-gaap': ['LongTermDebtNoncurrent', 'LongTermDebt', 'LongTermDebtAndCapitalLeaseObligations', 'LongTermDebtAndCapitalLeaseObligationsNoncurrent'],
     'ifrs-full': ['NoncurrentPortionOfNoncurrentBorrowings', 'LongtermBorrowings'],
   } },
 }
@@ -55,6 +57,11 @@ export function pctChange(a, b) {
 }
 
 const DAY_MS = 86400000
+/** A balance more than this far behind the company's latest reported period is a leftover tag, not the position. */
+export const STALE_INSTANT_DAYS = 400
+
+/** Is this point-in-time figure far older than the newest period the company reported? */
+export const staleInstant = (f, latestPeriodEnd) => !!(f?.end && latestPeriodEnd && (Date.parse(latestPeriodEnd) - Date.parse(f.end)) / DAY_MS > STALE_INSTANT_DAYS)
 /** Two periods are the same fiscal year when their ends fall within 20 days (52/53-week calendars). */
 export const sameYear = (a, b) => !!(a?.end && b?.end && Math.abs(Date.parse(a.end) - Date.parse(b.end)) <= 20 * DAY_MS)
 
