@@ -1,5 +1,1019 @@
 [
  {
+  "id": "feabe0c7b257acab",
+  "url": "https://www.billboard.com/pro/music-venue-trust-shownotes-drowned-in-sound/",
+  "title": "Music Venue Trust Teams Up With Drowned In Sound to Launch Live Music Title",
+  "summary": "Shownotes will be distributed at grassroots and independent music titles across the U.K.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T11:20:09.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "e366fc5c8577b639",
+  "url": "https://musically.com/2026/09/25/strategy-spotlight-tools-symphonyos-v2/",
+  "title": "STRATEGY SPOTLIGHT: Tools – SymphonyOS V2",
+  "summary": "SymphonyOS has launched SymphonyOS V2, its biggest update since launch. Billing itself as \"the agent company of music\", the platform has rebuilt its marketing suite around six specialised AI agents, each dedicated to a different part of an artist's career or a label's rollout. T…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T10:09:48.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "1e8e137ba7e83707",
+  "url": "https://musically.com/2026/09/25/london-records-partners-with-dj-sophie-lloyd-to-reimagine-parties/",
+  "title": "London Records partners with DJ Sophie Lloyd to reimagine parties",
+  "summary": "Catalogue campaigns usually need an excuse: a 25th anniversary, a deluxe box set, a viral TikTok moment. London Records' \"London Revisited\" has none of these. The label gave Glitterbox resident Sophie Lloyd free rein over its back catalogue, and she skipped the obvious hits in f…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T10:07:14.000Z",
+  "entities": [
+   "tiktok"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "catalog-deal"
+  ],
+  "score": 39,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "23381791b4e0001a",
+  "url": "https://musically.com/2026/09/25/apple-music-launches-new-profile-features-for-artists/",
+  "title": "Apple Music launches new profile features for artists",
+  "summary": "Hot off the heels of its newly unveiled 600-capacity Apple Music Hall venue in London, Apple Music for Artists has just announced a series of new artist profile customisation features - coinciding with the public rollout of iOS 27. What’s new? The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T10:04:29.000Z",
+  "entities": [
+   "apple-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 32,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "cc90e1a663d6215e",
+  "url": "https://musically.com/2026/09/25/tokio-hotel-launch-anniversary-podcast-in-3-languages/",
+  "title": "Tokio Hotel launch anniversary podcast in 3 languages",
+  "summary": "The German band Tokio Hotel are set to release their new album Encore next month. To promote the record and celebrate 25 years of being a band, they just announced their first-ever band podcast sharing the album name. Twin brothers Bill and Tom Kaulitz (singer and guitarist resp…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T10:02:24.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "policy"
+  ],
+  "score": 33,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "67e5b41b7bfbd636",
+  "url": "https://www.billboard.com/pro/g-flip-got-hot-with-bed-on-fire/",
+  "title": "From Top of the Australian Airplay Chart to the AFL Final: How G Flip Got Hot With ‘Bed On Fire’",
+  "summary": "“Bed On Fire” was ignited by a TV sync, and has claimed some prized scalps on the way to the top of the Australia's airplay chart -- where it has stayed for the past two months.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T09:25:11.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "3d4f2dcdeb51c8c9",
+  "url": "https://musically.com/2026/09/25/fanfair-alliance-and-viagogo-clash-over-manchester-ticket-listings/",
+  "title": "FanFair Alliance and Viagogo clash over Manchester ticket listings",
+  "summary": "Campaigning organisation the FanFair Alliance has published a report targeting Viagogo, on the eve of the Labour Party conference. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T09:16:26.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "3c9ab83a3498f523",
+  "url": "https://musically.com/2026/09/25/zee-live-to-turn-sa-re-ga-ma-pa-and-kerala-underground-into-concert-series/",
+  "title": "Zee Live to turn Sa Re Ga Ma Pa and Kerala Underground into concert series",
+  "summary": "India’s longest-running reality TV singing talent competition series Sa Re Ga Ma Pa — not to be confused with the label Saregama — returned to screens last weekend. The show, […] The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T09:00:10.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "870b20c362a65a3a",
+  "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQVjRvWEdiOG1TdmY4M1AwZDA1cHhYaEhDWE13a0M0eUVwMjA0X0ZTN3FCSGcyV1FQRGVOanNVOWwybXVlZ3VpMjJ6WTE2TUFDMVhWd1RzMXgwVEJyb1Q4SGx0Qkszdlh0QjBZV2JyRlNwb0FsbnQ0SHcxZ1d3QXd0aWloWmJQY0JJb2RpMV9LYzJiTzl2N0hzUzdJcEhGLXljM1VzZGpmOE0wdw?oc=5",
+  "title": "Rate hike deals another blow to music-royalty securitization issuance",
+  "summary": "Rate hike deals another blow to music-royalty securitization issuance greenstreetnews.com",
+  "source": "greenstreetnews.com",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-25T07:51:21.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "abs"
+  ],
+  "score": 29,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "ef50a145e3816804",
+  "url": "https://variety.com/2026/music/news/taylor-swift-review-life-showgirl-encore-new-tracks-1236875342/",
+  "title": "Taylor Swift Still Has Unfinished Business With Her Exes — Thank God! — While Also Mooning Over Her Groom in ‘The Life of a Showgirl: The Encore’: New Tracks Review",
+  "summary": "If you’re a Taylor Swift fan, one of your deepest fears this year might have been that the pop superstar will be so wrapped up in a long, rapturous honeymoon that she’ll neglect to bring us down by continuing to write about the bums that got away, or any lingering regrets that w…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T06:09:05.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "bbedc928147608bd",
+  "url": "https://news.pollstar.com/2026/09/24/latin-music-icon-luis-miguel-teases-2027-tour/",
+  "title": "Latin Music Icon Luis Miguel Teases 2027 Tour",
+  "summary": "Latin music fans won’t have to wait long for Luis Miguel to make his way back to venues across the globe. The iconic singer recently posted an image of himself on social media with the words “Luis Miguel Tour 2027.” No other details were revealed, but it’s more than enough to ri…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-09-25T05:57:14.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "0d2cc44e890fc014",
+  "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOQ0ZZa203LUs0cUtFWlRYdk9Cem9zQXRxU1FnZDVlQTRLTjZEMVlRaWlDcXNCemZ4andqMFVtNnVybkdVNVZFV1hLaUNrcTRuanl1SVk2Vmtfb2owOGNFWlczekhqWkgzcDYzdTNESllWUE55MTlDMnFzQ2s3SXhhNUxsYlZfRFFDRmtvZ1hCblJ6OVN4VU4yYVlleVpqbTZiZnQtUXMtRFFnanVFN1dTRG5qS2pJb2hEOWhodmVXMGd4b2FOYVctTk8tRTU3a2JFX0tF?oc=5",
+  "title": "Partisan Music Acquires Firebird's Stake in OTM Music, Merges Publishing Operations With Left Music",
+  "summary": "Partisan Music Acquires Firebird's Stake in OTM Music, Merges Publishing Operations With Left Music Rockum",
+  "source": "Rockum",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-25T04:55:05.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "m&a"
+  ],
+  "score": 18,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "88df03d1d94fd78a",
+  "url": "https://www.billboard.com/pro/tim-mcgregor-mark-dodds-teg-exec-reshuffle/",
+  "title": "Tim McGregor Out, Mark Dodds Rises In TEG Reshuffle",
+  "summary": "The live entertainment, ticketing, and technology powerhouse presses the button on a “strategic reset,” one that sees McGregor leaving the business “to embark on his next chapter.”",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T02:27:40.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "c370ee6cec70917d",
+  "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOYTY0UzhKdl9PUmoxRkd0enB3OW1NTmthV21wTTl3c1dNOHNVb09CSlB0NUw0SHBWMWRSUlZpbjdlNTIxMnpJNFNHRUhTWHB3SXVudEdqcGd2TllqS3QwRUc1ajZFandpdkctUE9ETDk5ZVdPbloxVmxmblBxRm0wQ1JYVjJtUUNLZVlXbUI3YlpYMm9va01B?oc=5",
+  "title": "Major labels sued AI music firms, then licensed their catalogs as artists fear lost pay",
+  "summary": "Major labels sued AI music firms, then licensed their catalogs as artists fear lost pay Yahoo",
+  "source": "Yahoo",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-25T01:57:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 26,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "0681ca6e45b207fa",
+  "url": "https://variety.com/2026/film/news/dakota-johnson-taylor-swift-music-video-1236875221/",
+  "title": "Dakota Johnson on Being in Taylor Swift’s ‘Patient Zero’ Music Video: ‘We Respect Each Other’s Creative Minds’",
+  "summary": "New, mysterious and cryptic clips of Dakota Johnson flanked by another woman and man have taken rhe internet by storm, but this time, they aren’t part of her latest movie, “Verity”; they’re part of a Taylor Swift music video. Swift announced Thursday that she will unveil the mus…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T23:38:54.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "50e8cbe0f6570767",
+  "url": "https://www.billboard.com/pro/aya-nakamura-honored-billboard-france-power-players/",
+  "title": "Aya Nakamura Honored at the First Edition of Billboard France’s Power Players",
+  "summary": "The singer received the Artist-Entrepreneur of the Year award at the ceremony held on September 15 at Salle Cortot, Paris.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T23:11:25.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "4cef6c321b271ae2",
+  "url": "https://www.billboard.com/pro/billboard-france-power-players-2026-recap-event/",
+  "title": "Billboard France Celebrates Its First Power Players Edition",
+  "summary": "Music industry professionals working in the French market were honored at the inaugural event.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T23:08:12.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "a96852e635065826",
+  "url": "https://variety.com/2026/music/news/vmas-preview-producer-van-toffler-snoop-madonna-swift-2-1236875249/",
+  "title": "VMAs Producer Van Toffler on Madonna’s Return, the Taylor Takeover and Why He Brought the Show West Again: ‘L.A. and Snoop Is a Lethal Combo’",
+  "summary": "You can go home again, at least part-time, as former MTV Networks head Van Toffler proved when he came back in 2025 as the producer of the MTV Video Music Awards. He’s back in the saddle for a second year in 2026, as the two-hour telecast enjoys its second year in a row with a […",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T22:43:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "1d8ae3beac213c73",
+  "url": "https://news.pollstar.com/2026/09/24/q3-venue-charts-box-office-growth-highest-in-stadiums-large-arenas-mixed-results-in-smaller-rooms/",
+  "title": "Q3 Venue Charts: Box-Office Growth Highest In Stadiums, Large Arenas; Mixed Results In Smaller Rooms",
+  "summary": "For the second consecutive year as part of the third-quarter recap, the monthly Deep Data Cuts feature focuses on box-office growth over the past three years at concert venues around the world. And, based on totals reported to Pollstar between Nov. 13, 2025 and Aug. 12, 2026, th…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-09-24T21:28:49.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "earnings",
+   "live"
+  ],
+  "score": 21,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "14579f8960efb17c",
+  "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQYTdQRlJSVGttVmpFNzE3VmF5T3BoTkhsM2VaLWlmUW1GWEQzYWxTRzkwa2U2Y2wwMnNacXpycmhTd3ZtblAxc2hkaHdZZ3JPUFhQVjdpRnc5NXVheWJRU0M5aC0tZDZYRE5FM0pkUXIwQzdIUmVXVEFHUnkxa0RHeEViaWlrRzVYb21zb0c1WGgzWVlKcmh4T093Qjk?oc=5",
+  "title": "Cancel Your Spotify Subscription",
+  "summary": "Cancel Your Spotify Subscription The American River Current",
+  "source": "The American River Current",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-24T21:22:18.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "3fabf94f3d467657",
+  "url": "https://variety.com/lists/variety-power-of-women-stassi-schroeder-executive-gallery/",
+  "title": "Variety Power of Women: Industry Leaders Mingle With Stars to Celebrate Female Empowerment and Philanthropy",
+  "summary": "A packed lineup of talent and industry executives stepped out for Variety’s Power of Women event at the Beverly Hills Hotel on Wednesday night. Making the rounds at cocktails and inside the ballroom were movers and shakers from the town’s stop studios and platforms. Executives i…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T20:54:44.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "efe97da91a5e80a3",
+  "url": "https://www.billboard.com/lists/ai-music-company-grai-acquires-hangout-music-industry-deals/",
+  "title": "The Deals: GRAI Acquires Social Music Platform Hangout; DICE Owner Fever Raises $250M",
+  "summary": "Also this week: Dan Loeb's Third Point increases its stake in Live Nation, MNRK acquires the Black Label Society catalog and more.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T20:22:48.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "catalog-deal",
+   "m&a"
+  ],
+  "score": 40,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "f6c662092ec4d06d",
+  "url": "https://news.pollstar.com/2026/09/24/chicagos-7-billion-1901-project-to-feature-6000-seat-music-hall-exclusive/",
+  "title": "Chicago’s $7 Billion 1901 Project To Feature 6,000-Seat Music Hall (Exclusive)",
+  "summary": "Chicago’s new Music Hall is the brainchild of a music mind and taking shape where, in some ways, the city’s modern live music industry began.“My great-grandfather, Arthur, put Miles Davis and Ella Fitzgerald on a stage at the Chicago Stadium in 1959, just two blocks from United…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-09-24T19:37:33.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "2e1ef0a809dad359",
+  "url": "https://news.pollstar.com/2026/09/24/head-trip-floating-points-unveil-lineup-for-us-debut-of-sunflower-sound-system/",
+  "title": "Head Trip & Floating Points Unveil Lineup For US Debut Of Sunflower Sound System",
+  "summary": "Floating Points’ Sunflower Sound System, a custom hi-fi environment with a spatial sound system to deliver an immersive experience, will make its U.S. debut at Head Trip in Indio, California, this October. Sunflower’s programming features artists whose sound and record culture “…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-09-24T19:13:53.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "432b0845c7d755ac",
+  "url": "https://news.pollstar.com/2026/09/24/first-day-of-oceans-calling-canceled-due-to-impacts-of-this-weeks-continued-weather/",
+  "title": "First Day Of Oceans Calling Canceled Due To ‘Impacts Of This Week’s Continued Weather’",
+  "summary": "Oceans Calling festival has announced that day one of the festival, headlined by Dave Matthews Band and Hootie & The Blowfish, will not take place due to continued weather in the vicinity, “including beach erosion that affected the festival site.” “Despite the extraordinary effo…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-09-24T18:15:42.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "8bb60005cb8056e2",
+  "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQZGh4ZnhwSVdmNWdKOGJURW1ucks4amFXNloxSUQ5T010Rkc1YXh1NUkwaVBMbGhrd2d5X1RhUEFZVVBpM2FEVEQ1aVZpZ3ZkT1dieTBoME4zOTRUeER3cExKRE9FRnNRdWxfaV9teV9qQm5xNnZDamJSRmRCZ0RGd2V0bjBSVE9kRmpScE1rN2ozOWlBVWRBX3QwSHhwUjM3N2ItWWs3dzQ3YXRhWEpr0gG0AUFVX3lxTFBIVTVucHVfcFF4WWdoN1psM3hFcTVvUTJOREs4X3JyNklUQmtUdllCdTFoWHJxLWxSS0tSSUlRLVBJNklwaXV3S3RfWktWc0VqVDRsNFpFdFlSeS1KMEllcmZ6QkFYbVZsODYweWN2eFVTYUZkMllvY1QtSC14bkZvS0diNGYxa2JuQ3ZTbE1Rcl8wZTRIbHlsNHNGbnpMTDBKemNpQkpTaFVoU0Rvby1YUWk4Ng?oc=5",
+  "title": "Live Nation illegally monopolized the market for tickets, jury finds - ABC News",
+  "summary": "Live Nation illegally monopolized the market for tickets, jury finds ABC News - Breaking News, Latest News and Videos",
+  "source": "Breaking News, Latest News and Videos",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-24T18:11:11.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 20,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "dd308d0423d9295e",
+  "url": "https://news.pollstar.com/2026/09/24/emos-in-austin-returns-as-moonline-in-2027/",
+  "title": "Former Emo’s Location In Austin Returns As Moonline In 2027",
+  "summary": "AEG Presents announced the name of its second live music venue in Austin – Moonline. AEG Presents is leasing the space that was the former location of Emo’s. The reimagined 1,500-capacity venue in East Riverside will open in early 2027 following a series of upgrades. Moonline ma…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-09-24T17:23:03.000Z",
+  "entities": [
+   "aeg",
+   "aeg-presents"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 43,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "9ae263cf8f0ff569",
+  "url": "https://www.billboard.com/pro/apple-music-head-trip-livestream-video-festival-coachella/",
+  "title": "Apple Music to Host Its First Ever Video Livestream From Dance Festival Head Trip",
+  "summary": "In partnership with Goldenvoice, Apple Music will host a free video livestream of the festival's main stage during the Oct. 10-11 event in Indio, Calif.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T16:50:18.000Z",
+  "entities": [
+   "apple-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 27,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "10a38539df7f1c43",
+  "url": "https://www.billboard.com/pro/ai-scammer-wants-no-prison-for-8m-streaming-fraud-scheme/",
+  "title": "AI Music Fraudster Wants No Prison for $8M Scam: ‘No Victim Suffered Any Real Harm’",
+  "summary": "Michael Smith argues his streaming fraud scheme — using bots to play AI songs billions of times — caused only “tiny, immeasurable losses” for any single artist.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T16:10:41.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai"
+  ],
+  "score": 18,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "b8392ece2b8f952b",
+  "url": "https://variety.com/2026/music/news/u2-album-carnaval-de-luz-dolly-parton-duet-1236874546/",
+  "title": "U2’s New ‘Carnaval De Luz’ Album Will Feature a Dolly Parton Duet, Said to Be Her Last Recorded Vocal",
+  "summary": "For anyone waiting for years to get a U2 album again, it might have seemed as if the band was, you know, running to stand still. But the day is at hand, as the group’s first full-length recording in nine years, “Carnaval De Luz,” has been set for a Nov. 12 release, Interscope Re…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T16:07:42.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "de9ee43a11098992",
+  "url": "https://www.musicbusinessworldwide.com/sound-designers-and-sfx-libraries-launch-professional-sound-alliance-to-fight-ai-scraping-now-sound-will-have-protection-of-our-own/",
+  "title": "Sound designers and SFX libraries launch Professional Sound Alliance to fight AI scraping: ‘Now sound will have protection of our own’",
+  "summary": "The Alliance says it was formed in response to two forms of unauthorized use, which it calls Data Piracy and Sync Piracy. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T16:00:54.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "41d5b5050023c47f",
+  "url": "https://www.billboard.com/pro/aaron-dessner-talks-his-new-label-with-interscope/",
+  "title": "Aaron Dessner Talks Longevity in the Music Industry — and His New Label With Interscope",
+  "summary": "In the latest episode of Billboard On the Record, Aaron Dessner talks about the art of collaboration, his journey in the music business and his new label, Long Pond Music.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T15:50:54.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "0dbe5d5312f32166",
+  "url": "https://www.musicbusinessworldwide.com/landr-expands-ai-fraud-detection-built-with-machine-learning-lab-mila-and-says-artificial-streams-flagged-by-spotify-for-music-it-distributes-fell-95-between-q1-2025-and-q2-2026/",
+  "title": "LANDR expands AI fraud detection built with machine learning lab Mila – and says artificial streams flagged by Spotify for music it distributes fell 95% between Q1 2025 and Q2 2026",
+  "summary": "Distribution and music creation platform expands streaming fraud detection system Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T15:44:52.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "5247e4f65f02c21f",
+  "url": "https://variety.com/2026/music/news/chvrches-sign-with-futures-1236874505/",
+  "title": "Music Industry Moves: Chvrches Sign With Futures Music Group; MSG Entertainment Names Josephine Vaccarello President",
+  "summary": "Scottish pop trio Chvrches have signed with Futures Music Group and alongside that announcement have released their first single in three years, “Roses.” The group will play two shows in the U.K. next month, in London and their hometown of Glasgow; the release follows singer Lau…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T15:38:01.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "c30d43e8139bb4dd",
+  "url": "https://news.pollstar.com/2026/09/24/vnc-panel-preview-international-business-market-conditions-opportunities-strategies/",
+  "title": "VNC Panel Preview: International Business – Market Conditions, Opportunities & Strategies",
+  "summary": "VenuesNow Conference Panel Preview: International BusinessWednesday, Sept. 30 11:20 AM – 12:00 PM | Grand Ballroom A & B at the Sheraton Grand Seattle The live entertainment business has never been more global. The number of markets with a great live events infrastructure, led b…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-09-24T15:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "9de86f06e7b41625",
+  "url": "https://www.musicbusinessworldwide.com/over-50-of-a-major-streaming-services-tracks-come-from-distrokid/",
+  "title": "Over 50% of a major streaming service’s tracks come from DistroKid – and other revelations from UMG’s lawsuit",
+  "summary": "UMG's lawsuit accuses the DIY distributor of \"deceptive trade practices and blatant copyright infringement\", and of flooding streaming services with AI-generated \"slop. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T15:22:02.000Z",
+  "entities": [
+   "distrokid"
+  ],
+  "types": [
+   "distributor"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 36,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "f1dfc72e0c22284e",
+  "url": "https://news.pollstar.com/2026/09/24/brent-faiyaz-announces-exclusive-three-city-u-s-arena-run/",
+  "title": "Brent Faiyaz Announces Exclusive Three-City U.S. Arena Run",
+  "summary": "Brent Faiyaz has returned after three years away and will be hitting the road this fall for a special run of shows dubbed “Brent Faiyaz Live: I Spent The Night With Brent Faiyaz.” The three-city run begins Nov. 30 at Chicago’s United Center, then moves to New York City’s Barclay…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-09-24T15:15:17.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "ef15972080195259",
+  "url": "https://completemusicupdate.com/ifpi-backs-web-blocking-frenzy-in-five-latin-american-markets/",
+  "title": "IFPI backs web-blocking frenzy in five Latin American markets",
+  "summary": "Global record industry trade group IFPI has welcomed coordinated action by government agencies in five Latin American countries to secure web-blocks against 300+ piracy domains. IFPI says the action “will help protect artists and fans while supporting a healthier digital marketp…",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T15:04:54.000Z",
+  "entities": [
+   "ifpi"
+  ],
+  "types": [
+   "trade"
+  ],
+  "topics": [],
+  "score": 16,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "fe37478822d84c7e",
+  "url": "https://news.pollstar.com/2026/09/24/ovg-theater-alliance-to-play-with-purpose-at-annual-fundraiser-and-2026-impact-awards-oct-3-in-nashville/",
+  "title": "OVG Theater Alliance To ‘Play With Purpose’ At Annual Fundraiser And 2026 Impact Awards, Oct. 3 In Nashville",
+  "summary": "Leading representatives of the nation’s top-performing and most cherished arts centers and theaters will gather in Nashville on Oct. 3 for Oak View Group’s Theater Alliance’s fourth annual fundraiser, this year with a new “Play With Purpose” theme encouraging networking, fun com…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-09-24T15:00:29.000Z",
+  "entities": [
+   "oak-view-group"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 20,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "3f80b5be586130b4",
+  "url": "https://variety.com/2026/music/news/macklemore-free-palestine-tour-1236874352/",
+  "title": "Macklemore Announces ‘Free Palestine’ Tour With All Ticket Sales Being Donated to Charity",
+  "summary": "Macklemore has announced the “Free Palestine” tour, with three shows set for Dublin (Oct. 26), Paris (Oct. 29) and London (Oct. 30). The news comes after the Grammy-winning rapper was infamously dropped as opener from Ed Sheeran’s U.S. tour after making “Free Palestine” speeches…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T14:55:45.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "c986055a78a6d09d",
+  "url": "https://completemusicupdate.com/approved-gaspar-claus/",
+  "title": "🎧 Approved: Gaspar Claus",
+  "summary": "Cellist Gaspar Claus makes contemporary chamber music threaded with Mediterranean folk and electronics - every sound originates from a cello, then gets stretched, processed and metamorphosed into something else entirely. New single ‘Ecstasy’ holds the kind of sensory intensity t…",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T14:43:09.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "c074c99659a2d3e5",
+  "url": "https://www.musicbusinessworldwide.com/spotify-has-set-out-how-it-works-inside-muse-metas-personal-ai-agent/",
+  "title": "Spotify has set out how it works inside Muse, Meta’s personal AI agent",
+  "summary": "Listeners who connect the two services can ask Muse to play audio, save songs, and build playlists on Spotify through a conversation with the agent. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T14:31:15.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "d2b9650598cba520",
+  "url": "https://www.musicbusinessworldwide.com/spotify-adds-share-cards-setlist-playlists-and-a-new-in-app-destination-to-its-reserved-ticketing-feature/",
+  "title": "Spotify adds share cards, setlist playlists, and a new in-app destination to its Reserved ticketing feature",
+  "summary": "Ticket holders will get pre- and post-show setlist playlists and a single in-app destination for their Reserved content. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T14:30:11.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 27,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "0ced799b16ea7912",
+  "url": "https://www.musicbusinessworldwide.com/sam-smith-and-normani-must-face-a-jury-over-dancing-with-a-stranger-as-judge-refuses-to-end-copyright-case/",
+  "title": "Sam Smith and Normani must face a jury over Dancing with a Stranger as judge refuses to end copyright case",
+  "summary": "The decision points the case toward a jury trial, four and a half years after it was filed by Sound and Color, LLC. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T14:29:41.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "02e47507c1da9784",
+  "url": "https://musically.com/2026/09/24/the-sandbox-guide-to-the-smartest-campaigns-so-far-in-2026/",
+  "title": "THE SANDBOX GUIDE TO… Marketing trends of 2026 (so far)",
+  "summary": "Sandbox Guides are for music marketers: They explain how you can use new platforms, create new strategies, and build new audiences. The Guides feature cutting-edge case studies, expert interviews, benchmark data, […] The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "ce39ccbbb5991542",
+  "url": "https://news.pollstar.com/2026/09/24/vnc-panel-preview-leagues-owners-contemporary-facility-team-dynamics/",
+  "title": "VNC Panel Preview: Leagues/Owners – Contemporary Facility-Team Dynamics",
+  "summary": "VenuesNow Conference Panel Preview: Leagues/Owners: Contemporary Facility-Team DynamicsTuesday, Sept. 29 3:50 PM – 4:30 PM| Grand Ballroom A & B at the Sheraton Grand Seattle Our favorite sports teams are, oftentimes, some of the longest relationships in our lives. In many cases…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-09-24T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "bf714d317fbed455",
+  "url": "https://musically.com/2026/09/24/the-case-for-small-catalogues-when-50-songs-are-better-than-50-million-guest-column/",
+  "title": "The case for small catalogues – when 50 songs are better than 50 million (guest column)",
+  "summary": "Guest column: Music Ally publishes guest columns voicing the opinions of notable authors, or advancing specific perspectives on important issues. These are chosen at the Editorial team’s discretion, are not […] The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T13:25:21.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "4977c80e8ef61bc8",
+  "url": "https://musically.com/2026/09/24/india-is-adding-more-superstar-artists-on-chartmetric-than-any-other-country/",
+  "title": "India is adding more ‘Superstar’ artists on Chartmetric than any other country",
+  "summary": "Data analytics platform Chartmetric has released The New Sound of Global Music, a report that examines how five of the world’s most dynamic music markets, Brazil, India, Japan, Mexico and […] The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T13:16:15.000Z",
+  "entities": [
+   "chartmetric"
+  ],
+  "types": [
+   "data"
+  ],
+  "topics": [],
+  "score": 16,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "258df4e889b373e0",
+  "url": "https://musically.com/2026/09/24/indies-update-partisan-x-otm-music-ace-records-proper-deal/",
+  "title": "Indies update: Partisan x OTM Music, Ace Records’ Proper deal",
+  "summary": "Independent label Partisan Music is expanding its publishing business through a merger with OTM Music. Partisan has bought out Firebird Music Holdings’ stake in OTM as part of the deal. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "m&a"
+  ],
+  "score": 18,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "268a86d441e7d333",
+  "url": "https://musically.com/2026/09/24/spotify-is-first-music-service-to-connect-to-meta-muse-ai-agent/",
+  "title": "Spotify is first music service to connect to Meta Muse AI agent",
+  "summary": "Fresh from adding Ticketmaster as the first music-related ‘connector’ for its new Muse AI agent, Meta has now bagged its first streaming service: Spotify. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T12:30:00.000Z",
+  "entities": [
+   "spotify",
+   "ticketmaster"
+  ],
+  "types": [
+   "dsp",
+   "live"
+  ],
+  "topics": [],
+  "score": 40,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "281e3834a43b482a",
+  "url": "https://musically.com/2026/09/24/ai-roundup-landr-talks-fraud-while-qobuz-tags-genai-tracks/",
+  "title": "AI roundup: Landr talks fraud while Qobuz tags GenAI tracks",
+  "summary": "Landr started life as an AI-mastering tool, but has since expanded into other areas including distribution. That puts it on the front line of pressure to spot and clamp down on streaming fraud if any of its clients try their luck. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T12:30:00.000Z",
+  "entities": [
+   "qobuz"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "4dddb7d63ca97a9c",
+  "url": "https://musically.com/2026/09/24/madison-beer-is-fortnites-latest-icon-including-her-own-cup/",
+  "title": "Madison Beer is Fortnite’s latest icon – including her own cup",
+  "summary": "Epic Games has revealed that pop artist Madison Beer is the latest ‘icon’ for Fortnite, with a range of branded virtual items debuting in its in-game store later today (24 September). The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "97a8bd0c44843cca",
+  "url": "https://musically.com/2026/09/24/country-streams-on-spotify-have-more-than-doubled-since-2020/",
+  "title": "Country streams on Spotify have more than doubled since 2020",
+  "summary": "It’s no secret that country music has been having a surge globally in recent years, but now Spotify has provided some stats for the genre’s growth on its platform. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T12:30:00.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "a474065cecc1d0c3",
+  "url": "https://musically.com/2026/09/24/sony-music-group-joins-responsible-ai-policy-coalition-ariam/",
+  "title": "Sony Music group joins ‘responsible AI’ policy coalition Ariam",
+  "summary": "Ariam? It’s new to us, but that’s no surprise: the Alliance for Responsible Innovation in the Arts & Media didn’t have any music-industry members until this week. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T12:30:00.000Z",
+  "entities": [
+   "sony-music-entertainment",
+   "sony-music-group"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 46,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "8c304912fe3a5226",
+  "url": "https://variety.com/2026/music/news/taylor-swift-patient-zero-music-video-dakota-johnson-colin-farrell-1236874206/",
+  "title": "Taylor Swift’s ‘Patient Zero’ Music Video, Starring Dakota Johnson and Colin Farrell, to Debut at VMAs",
+  "summary": "Taylor Swift has recruited a couple of A-listers for her “Patient Zero” music video. Dakota Johnson and Colin Farrell will star alongside Swift in the video for the new song, which releases on Friday alongside her “Life of a Showgirl: The Encore” album. Swift directed the video,…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T12:18:08.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [],
+  "score": 28,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
   "id": "4c9f58d51b7c3a75",
   "url": "https://musically.com/2026/09/24/youtube-reveals-new-music-features-coachella-extension-and-more/",
   "title": "YouTube reveals new music features, Coachella extension and more",
@@ -396,6 +1410,22 @@
   ],
   "score": 15,
   "firstSeen": "2026-09-24T11:41:44.201Z"
+ },
+ {
+  "id": "36463da01c636bfd",
+  "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQRVVaUmlDbDNnSUxyS01rc2dwSnJ6UTFveVp6NGpnRnhHeTVBQmdwWkctQ002MXV1d3VVU3dxemlxVWJRQ083bHBGZGJmaVNwaURUXzhxTGU5TkFPaGtBOHFvQmllUDFfTnVIUEFEVTB3cXNJTE15TFZHUXRyUVF2eWdDV3NYd1JudTVDQlVqUm40bnRjMGdFLUphTkdOMWhNVXc?oc=5",
+  "title": "Entertainment in the AI Era: Music, Games and Film​: 2nd LA CorpGov Forum",
+  "summary": "Entertainment in the AI Era: Music, Games and Film​: 2nd LA CorpGov Forum Yahoo Finance",
+  "source": "Yahoo Finance",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-23T18:45:56.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
  },
  {
   "id": "cc9c4a4af5529327",
@@ -1966,6 +2996,26 @@
   "firstSeen": "2026-09-23T11:31:15.588Z"
  },
  {
+  "id": "ed365b01cf2db87b",
+  "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE41Z1NMdGpiQkl0U1NtTEFnOExfSnZYLWFlZmgxM3BHckFaOGZPaTNXYTNwMEpMdHRsYkQ1NlBnaU9wMnBuSFNaeFpFYVpJRDBOclpr?oc=5",
+  "title": "Universal Music Group N.V. (UNVGY) Stock Price, News, Quote & History",
+  "summary": "Universal Music Group N.V. (UNVGY) Stock Price, News, Quote & History Yahoo! Finance Canada",
+  "source": "Yahoo! Finance Canada",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-22T13:56:50.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 19,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
   "id": "7aac3cc94a07b32e",
   "url": "https://variety.com/2026/film/news/bts-seventeen-enhypen-hybe-cine-fest-1236872029/",
   "title": "BTS, Seventeen, Tomorrow X Together, Enhypen Anchor Trafalgar-HYBE Cine Fest’s Global Expansion",
@@ -2571,6 +3621,22 @@
   "firstSeen": "2026-09-21T20:32:06.254Z"
  },
  {
+  "id": "f0ddb880d803c4d9",
+  "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNeTY1OTVNdUJzVzYzZkN4N3U5ZEN0MzZpczJrV281MTVaTVFycTR2UUZ4M3pRSXBmYlpzV29mSUpZRmFSdm1RSERMa19qTEVZWWdtUlN3aE8tYmRVdmd4cC1BejdTbWR1OFpEYkxLOF9xR1p4YnJGY184ZW5jMlpSdG9kUjJwdVhiUk5BVDdiUlZMMFpCNHVPQXBlZGVQX0Z2cnBTNVNKVW8?oc=5",
+  "title": "Top Music Stocks Worth Watching - September 21st",
+  "summary": "Top Music Stocks Worth Watching - September 21st MarketBeat",
+  "source": "MarketBeat",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-21T19:09:44.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 2,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
   "id": "13e335ba031b1314",
   "url": "https://news.pollstar.com/2026/09/21/in-her-blood-josephine-vaccarellos-28-years-building-msgs-biggest-moments/",
   "title": "‘In Her Blood’: Josephine Vaccarello’s 28 Years Building MSG’s Biggest Moments",
@@ -2810,6 +3876,28 @@
   "topics": [],
   "score": 15,
   "firstSeen": "2026-09-21T20:32:06.254Z"
+ },
+ {
+  "id": "6b190b1a59f56937",
+  "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPeUxhWTdtTXRlUlg4WE9uaG82MW91OFZOdXU2ei1lb3hudEZMRXJsc21aQkViaDhRMnZUdUdGUFlGdU5fSVMyaXNyMEVRdVdMUFMyOGdqNG5ROWpNWmpySkVCa1VHR285bUVrNW55bF9KS0lzVmFEYU1EZXBnTHNiMFpab3N3VG1qWHE0Q09Fd3Y3SkxMclZ3YTVnS3c1aHZXeEJaZFNtNktEbUlvb3F6VTkxYkVOYURKbkVadUJFclY?oc=5",
+  "title": "WARNER CHAPPELL’S CARIANNE MARSHALL LEAVES COO/CO-CHAIR ROLE AFTER TRANSFORMATIVE SEVEN-YEAR TENURE",
+  "summary": "WARNER CHAPPELL’S CARIANNE MARSHALL LEAVES COO/CO-CHAIR ROLE AFTER TRANSFORMATIVE SEVEN-YEAR TENURE Warner Music Group",
+  "source": "Warner Music Group",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-21T18:05:13.000Z",
+  "entities": [
+   "warner-chappell",
+   "wmg"
+  ],
+  "types": [
+   "label",
+   "publisher"
+  ],
+  "topics": [],
+  "score": 38,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
  },
  {
   "id": "bb86830b08d21348",
@@ -3579,6 +4667,29 @@
   ],
   "score": 33,
   "firstSeen": "2026-09-23T11:31:15.588Z"
+ },
+ {
+  "id": "f79078bd54ed37ff",
+  "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNOENpelhHd1JhT1BwU1dwX29vcHg5RURtN1Z3REgtcXp2aGlETktRVFVyNGJIU0dkaHNreU96U2thNEFReXpFbFp5OHZOT2FIdEZTcG9FSzJpNU5qanJUWHhTc2kyOTRCRjFwRndwd0xzSWQyOXFSSUdXeUJuUnRxaHVn?oc=5",
+  "title": "UMG, Sony Hit Suno With New Copyright Lawsuit Days After AI Model Launch",
+  "summary": "UMG, Sony Hit Suno With New Copyright Lawsuit Days After AI Model Launch Law Commentary",
+  "source": "Law Commentary",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-20T07:00:00.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 26,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
  },
  {
   "id": "2510a0746570efd6",
@@ -4546,6 +5657,26 @@
   ],
   "score": 14,
   "firstSeen": "2026-09-21T20:32:06.254Z"
+ },
+ {
+  "id": "88ff49fbb5eb1f64",
+  "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOQTh2VzhLejRSUzN2blZYcllqSHctSE5qQXZ4ZjluazJ2RWJJYVNuNm5mWlJkeG0wMlhRN1Z2VW9wQmk5TGhadmhxbV9wZ3Q1S0JWOEtEd012dWpwVHgwNlp5Tnd6bDZoSEVYS2xiejNpTjkwcy1YaGprTDRNUHc0eFlIY3NjSVhRNkIwTXRlQXZCME0?oc=5",
+  "title": "What is the December 22 incident on TikTok?",
+  "summary": "What is the December 22 incident on TikTok? Dexerto",
+  "source": "Dexerto",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-18T07:00:00.000Z",
+  "entities": [
+   "tiktok"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 12,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
  },
  {
   "id": "90f4fce936be28df",
@@ -5993,6 +7124,26 @@
   "topics": [],
   "score": 12,
   "firstSeen": "2026-09-21T20:32:06.254Z"
+ },
+ {
+  "id": "def0051d3ae47c07",
+  "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQd0hfX3hYWmRMRHJmWlJKZ3ZIREE1dVhiWWwtenNpb2N4aXR4NU11SWs2clJNZjVMOGQ5TExZQVNRTlNJaGJ2dDJnYW9VWDFRaklzb1A3TENieHRaMWFvNzA0eEFGeDE1XzlZb0ttLVA0bl82UjY5S1V4VVduSUNZSFUwaU90SVprTGdWYmpydTg1T3Fma09pd21NeXNpMVZ6YjN1UG1PUDIyUW8?oc=5",
+  "title": "PRS for Music Is Cutting Administration Rates – What UK Songwriters Need to Know",
+  "summary": "PRS for Music Is Cutting Administration Rates – What UK Songwriters Need to Know RouteNote",
+  "source": "RouteNote",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-11T14:57:00.000Z",
+  "entities": [
+   "prs"
+  ],
+  "types": [
+   "pro"
+  ],
+  "topics": [],
+  "score": 16,
+  "firstSeen": "2026-09-25T11:47:35.716Z"
  },
  {
   "id": "fa45d017735b8404",
