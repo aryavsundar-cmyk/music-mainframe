@@ -1,5 +1,1137 @@
 [
  {
+  "id": "16b73ba247d429fe",
+  "url": "https://www.billboard.com/pro/common-patti-labelle-honored-black-music-action-coalition/",
+  "title": "Interscope’s Nicole Wyskoarko & Common Among Black Music Action Coalition Gala Honorees",
+  "summary": "Presented by Live Nation, the sixth annual fundraiser also celebrated Patti LaBelle and Public Enemy, among others.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-26T01:38:45.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 20,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "f236badc56109693",
+  "url": "https://www.digitalmusicnews.com/2026/09/25/latin-music-revenue-h1-2026/",
+  "title": "Latin Music Recorded Revenue Topped $540 Million in the U.S. During H1 2026 Amid Triple-Digit Vinyl Growth, RIAA Report Shows",
+  "summary": "Latin music recorded revenue topped $540 million in the U.S. during 2026’s opening half thanks to solid paid streaming gains and triple-digit vinyl growth, according to a new report. The Recording Industry Association of America (RIAA) published that report today, pointing speci…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-26T01:13:37.000Z",
+  "entities": [
+   "riaa"
+  ],
+  "types": [
+   "trade"
+  ],
+  "topics": [],
+  "score": 16,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "e32d6b5765830757",
+  "url": "https://variety.com/2026/music/news/olivia-rodrigo-unraveled-tour-setlist-opening-connecticut-1236875900/",
+  "title": "Olivia Rodrigo’s ‘Unraveled’ Tour Setlist: Every Song Played on Opening Night in Connecticut",
+  "summary": "Olivia Rodrigo officially kicked off the “Unraveled” tour on Friday night with her first show at PeoplesBank Arena in Hartford, CT. Scroll down to see the setlist as it’s being updated live. The 86-date tour is in support of Rodrigo’s third album “You Seem Pretty Sad for a Girl…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-26T00:27:23.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "2a66b3e82e730276",
+  "url": "https://variety.com/2026/music/news/taylor-swift-breaks-spotify-records-most-streamed-female-1236876086/",
+  "title": "Taylor Swift Breaks Two Spotify Records for 2026, Including Most-Streamed Female Artist in a Day",
+  "summary": "Taylor Swift has broken two Spotify records for 2026, including most-streamed female artist in a day. Swift broke the records following the midnight release of “The Life of a Showgirl: Encore,” which featured four new songs, including lead single “Patient Zero.” That song broke…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T23:43:56.000Z",
+  "entities": [
+   "hipgnosis-songs-fund",
+   "spotify"
+  ],
+  "types": [
+   "catalog-fund",
+   "dsp"
+  ],
+  "topics": [],
+  "score": 48,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "0ba0d2f92c9ad8e1",
+  "url": "https://www.digitalmusicnews.com/2026/09/25/spotify-vmas-deal-paramount/",
+  "title": "Spotify Becomes the ‘Official Music and Video Partner’ of the VMAs, Prepares to Add ‘Select 2026 Performance Content’",
+  "summary": "Another day, another video expansion for Spotify, which has debuted a dedicated MTV Video Music Awards (VMAs) hub and is preparing to add “select performances from the 2026″ edition. Spotify announced its Video Music Awards plans and wider Paramount partnership today. With the V…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T23:39:28.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "54ac7884a1fa760b",
+  "url": "https://www.billboard.com/pro/common-honored-sag-aftra-soundexchange-artist-impact-award/",
+  "title": "Common Accepts SAG-AFTRA & SoundExchange’s Artist Impact Award: ‘Makes Me Feel Like I’ve Got to Do More’",
+  "summary": "The new award honors an artist whose work crosses creative boundaries.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T22:57:49.000Z",
+  "entities": [
+   "soundexchange"
+  ],
+  "types": [
+   "pro"
+  ],
+  "topics": [],
+  "score": 26,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "386766cb600bebd1",
+  "url": "https://www.digitalmusicnews.com/2026/09/25/streaming-fraud-victimless-crime-comments/",
+  "title": "Is Streaming Fraud a Victimless Crime? Facing Prison Time, Streaming Fraudster Michael Smith Argues Fake Streams ‘A Drop in the Ocean’ for Artist Royalties",
+  "summary": "Attorneys for streaming fraudster Michael Smith request probation rather than prison time for their client, downplaying the severity of his crimes. Michael Smith, the man who generated millions by mass-uploading AI-generated songs and garnering billions of plays, has pled guilty…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T22:56:29.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai"
+  ],
+  "score": 18,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "75850ec8a1888792",
+  "url": "https://www.digitalmusicnews.com/2026/09/25/a-tale-of-two-industries-music-ai-2-0/",
+  "title": "A Tale of Two Industries: Music AI 2.0",
+  "summary": "AI music is not going away. It is separating into a transient synthetic economy and an artist-centered business built around identity, ownership, relationships and fans. Something fundamental is happening in music, and I think we have been asking the wrong question about generat…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T22:53:06.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai"
+  ],
+  "score": 18,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "e1a92cc350cc4659",
+  "url": "https://www.billboard.com/pro/grand-ole-opry-celebrate-canadian-country-music-canada-news/",
+  "title": "In Canada: Nashville’s Grand Ole Opry to Celebrate 50th Anniversary of Canadian Country Music Association",
+  "summary": "Also up north this week: Riley Green is set to headline the Grey Cup halftime show.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T21:40:23.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "67b2ebb91b027ccd",
+  "url": "https://www.digitalmusicnews.com/2026/09/25/music-industry-hires-sep-25-2026/",
+  "title": "Latest Music Industry Hires (And Fires): Warner Music, CSDEM, SOCAN, ASCAP, Epidemic, Korea Venture Business Association, More",
+  "summary": "Here’s a recap of recent music industry hires and in-house promotions as of September 25th, 2026. If you have a job shuffle to share, we’re all ears. Send us a note to news@digitalmusicnews.com. If you’d like to post a job on our Job Board, just send us a request to noah@digital…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T21:18:11.000Z",
+  "entities": [
+   "ascap",
+   "socan",
+   "wmg"
+  ],
+  "types": [
+   "label",
+   "pro"
+  ],
+  "topics": [],
+  "score": 64,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "096a962e9db369e7",
+  "url": "https://www.billboard.com/pro/lady-gaga-mayhem-lawsuit-surf-brand-legal-fees/",
+  "title": "Lady Gaga Shouldn’t Get $230K ‘Consolation Prize’ After ‘Mayhem’ Lawsuit, Surf Brand Tells Judge",
+  "summary": "Lost Surfboards tried and failed to sue the pop superstar for infringing its \"Mayhem\" trademark on her chart-topping album.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T21:08:58.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "896de5b3b5dc1960",
+  "url": "https://www.sec.gov/Archives/edgar/data/1335258/000133525826000038/0001335258-26-000038-index.htm",
+  "title": "Live Nation Entertainment — 8-K - Current report",
+  "summary": "SEC filing by Live Nation Entertainment (LYV). 0001335258-26-00003834001-32601https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&filenum=001-32601&owner=include&count=102026-09-25https://www.sec.gov/Archives/edgar/data/1335258/000133525826000038/0001335258-26-000038-inde…",
+  "source": "SEC EDGAR",
+  "sourceId": "sec_edgar",
+  "category": "filing",
+  "kind": "filing",
+  "publishedAt": "2026-09-25T21:01:29.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "earnings"
+  ],
+  "score": 31,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "2c46f243a61a605c",
+  "url": "https://www.digitalmusicnews.com/2026/09/25/warner-music-group-shakeup-recorded-music/",
+  "title": "Warner Music’s Kyncl Triggers Another Seismic Shakeup (This Time on the Recorded Music Side)",
+  "summary": "Warner Music Group (WMG) has announced a big reorganization of its recorded music leadership this morning, shifting executives across its international divisions, independent distribution arm, and frontline labels. Just moments after triggering a serious change on the publishing…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T21:00:37.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "73cde8d058ad23a5",
+  "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNeHF4T3VkUDhrWmkxazhaQW5fNFBxMXYzcjEyczI4bTVxLWV2eGxLUmpQbWZ4VGhnV0ZiQ3VvNU9zbTVYZERVeTZyZVRDR0JzWS13eXdxcDdjbzdMV1RoQTB0MjZ1MVQzLWhCVnQzWm55RGNyUkZWTkhxTTJmaXlWbVlLTjNZNG1qSG1sVFlZSGd4NW4ySEZQcnpVT0pfYzVBemROZ3YtcExiSEpKYW5CZGJnSFp2dTlfUUVCVDZ6QVZpMzdtMWNaYVBuVUkySy1xSzlCeThB?oc=5",
+  "title": "Lawmakers, Witnesses Dissect ‘Corrupt’ Live Nation Settlement at Hearing, Press for Breakup",
+  "summary": "Lawmakers, Witnesses Dissect ‘Corrupt’ Live Nation Settlement at Hearing, Press for Breakup TicketNews",
+  "source": "TicketNews",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-25T20:34:05.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 28,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "f27e01e938c5d028",
+  "url": "https://news.pollstar.com/2026/09/25/more-disruption-all-things-go-global-citizen-cbgb-festivals-canceled-due-to-noreaster/",
+  "title": "More Disruption: All Things Go, Global Citizen, CBGB Festivals Canceled Due To Nor’easter",
+  "summary": "More live music producers have followed suit, calling off shows because of a severe weather storm in the Northeast U.S. after announcements from Ed Sheeran and Oceans Calling. After consulting with local officials, All Things Go, Global Citizen and CBGB festivals announced cance…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-09-25T20:20:57.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "515ab1f6dd5957f4",
+  "url": "https://www.digitalmusicnews.com/2026/09/25/jay-z-exonerated-rape-accuser-denies-meeting-him/",
+  "title": "Jay-Z Fully Exonerated After Rape Accuser Admits She’s Never Met the Rapper",
+  "summary": "The unnamed woman who accused Jay-Z of raping her when she was 13 has withdrawn her claims, saying that she has never met the rapper. A woman who alleged Jay-Z raped her when she was just 13 years old has formally withdrawn her claims and now says she has never met the rapper. T…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T20:00:27.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "29f427074b9804c1",
+  "url": "https://www.digitalmusicnews.com/2026/09/25/ed-sheeran-cancels-gillette-stadium-date/",
+  "title": "Ed Sheeran’s Shows at Robert Kraft’s Gillette Stadium Abruptly Canceled",
+  "summary": "Ed Sheeran’s Loop Tour faces more setbacks with the cancelation of his planned shows at Robert Kraft’s Gillette Stadium “due to severe weather.” After the intense controversy surrounding Ed Sheeran’s Loop Tour this month, the singer-songwriter will ultimately not be performing a…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T18:58:24.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "71fc124c4d7d1e4b",
+  "url": "https://www.digitalmusicnews.com/2026/09/25/apple-music-hall-opening-lineup/",
+  "title": "Apple Music Hall Announces First Run of Live Shows, Including Elton John, Charli XCX, Troye Sivan, Burna Boy, Baby Keem, and More",
+  "summary": "Apple Music announces its first run of shows at Apple Music Hall with a lineup starting with Elton John on opening night, September 28. Today, Apple Music has announced its first run of shows at the new Apple Music Hall in London’s Battersea Power Station, with Elton John set to…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T18:53:24.000Z",
+  "entities": [
+   "apple-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "8f4922742d64c257",
+  "url": "https://news.pollstar.com/2026/09/25/agent-jon-moskowitz-joins-pyramid-entertainment/",
+  "title": "Agent Jon Moskowitz Joins Pyramid Entertainment",
+  "summary": "Veteran booking agent Jon Moskowitz has joined Pyramid Entertainment, bringing more than two decades of experience in the live entertainment business to the agency. A New York City Native hailing from Greenwich Village, Moskowitz has spent the past 15 years with Universal Attrac…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-09-25T18:22:16.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "4aec68df1d38b355",
+  "url": "https://www.billboard.com/pro/why-songwriters-attention-royalty-rate-proceedings-op-ed/",
+  "title": "Phono V Could Reshape Catalog Valuations for Years. Here’s Why Songwriters Should Pay Attention (Guest Column)",
+  "summary": "The outcome of the upcoming royalty rate proceedings will have long-term consequences for songwriters.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T18:15:40.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "catalog-deal",
+   "dsp-economics"
+  ],
+  "score": 30,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "83185de02dea4abc",
+  "url": "https://www.billboard.com/lists/executive-turntable-ascap-primary-wave-copyright-alliance/",
+  "title": "Executive Turntable: ASCAP Names Jason Wagener SVP/Head of General Licensing; Mariah Carey’s Black Irish Hires CMO",
+  "summary": "More music industry hires and promotions took place at Primary wave, Copyright Alliance and more.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T18:14:23.000Z",
+  "entities": [
+   "ascap",
+   "primary-wave"
+  ],
+  "types": [
+   "pro",
+   "publisher"
+  ],
+  "topics": [],
+  "score": 48,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "3151e3b26bddb934",
+  "url": "https://news.pollstar.com/2026/09/25/iheartradio-jingle-ball-2026-tour-lineups-tap-olivia-rodrigo-katseye-more/",
+  "title": "iHeartRadio Jingle Ball 2026 Tour Lineups Tap Olivia Rodrigo, KATSEYE, & More",
+  "summary": "IHeartRadio Jingle Ball 2026, presented by Capital One, has announced lineups featuring this year’s biggest artists across nine cities this December. The multiple lineups feature stars such as RAYE, Alex Warren, Ludacris, Olivia Rodrigo, Hilary Duff, Jonas Brothers, SOMBR, Charl…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-09-25T18:09:19.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "17a567fc3b218fe1",
+  "url": "https://variety.com/2026/music/news/global-citizen-festival-2026-canceled-extreme-weather-nyc-1236875816/",
+  "title": "Global Citizen Festival 2026 Canceled Due to Extreme Weather Affecting New York City",
+  "summary": "Global Citizen Festival has been canceled due to the extreme weather forecast for New York City. The event was slated to take place on Saturday at the Great Lawn in Central Park, with performances from Lauryn Hill and Wyclef Jean, Lenny Kravitz, John Legend and more. But organiz…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T17:46:43.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "aa2cddd8137046cf",
+  "url": "https://www.billboard.com/pro/how-jhene-aiko-landed-first-no-1-album-westside-whimsy/",
+  "title": "How Jhené Aiko Landed the First No. 1 Album of Her Career With ‘Westside Whimsy’",
+  "summary": "“Sometimes you can overthink a rollout,” says her manager Ketrina “Taz” Askew. “We just went with the flow and decided to let the music speak for itself.”",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T17:30:03.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "21fb819f42d54a7b",
+  "url": "https://variety.com/2026/music/news/all-things-go-nyc-festival-canceled-severe-weather-1236875785/",
+  "title": "All Things Go NYC Festival Canceled Due to ‘Severe Weather Conditions’",
+  "summary": "All Things Go NYC Festival has been canceled because of “severe weather conditions,” organizers said in a statement. The event was slated to take place Friday, Saturday and Sunday at Forest Hills Stadium, with performances from Zara Larsson, Lola Young, Brandi Carlile, Ethel Cai…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T17:27:15.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "5ebc771643a63857",
+  "url": "https://news.pollstar.com/2026/09/25/oceans-calling-festival-canceled-due-to-severe-weather/",
+  "title": "Oceans Calling Festival Canceled Due To Coastal Storm",
+  "summary": "Oceans Calling, a beloved three-day music festival on Ocean City’s beachfront, has been called off because of a surging nor’easter. Festival organizers announced the cancellation Friday morning, saying the storm system prevented them from hosting the event safely. “The National…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-09-25T17:23:10.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "64eb8066b6f52c1f",
+  "url": "https://news.pollstar.com/2026/09/25/ed-sheeran-gillette-stadium-concerts-canceled-citing-severe-weather/",
+  "title": "Ed Sheeran Gillette Stadium Concerts Canceled Citing Severe Weather",
+  "summary": "Following a controversy involving opening act Macklemore that saw global pop star Ed Sheeran without support acts for his ongoing “Loop Tour,” Sheeran’s tour dates at Gillette Stadium in Massachusetts have been canceled with the venue and promoter citing the severe weather forec…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-09-25T16:31:42.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "64acfa38f3e117de",
+  "url": "https://www.musicbusinessworldwide.com/from-warner-musics-leadership-shake-up-to-sunos-courtroom-defiance-its-mbws-weekly-round-up/",
+  "title": "From Warner Music’s leadership shake-up to Suno’s courtroom defiance… it’s MBW’s Weekly Round-Up",
+  "summary": "The biggest headlines from the past few days... Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T16:18:29.000Z",
+  "entities": [
+   "suno",
+   "wmg"
+  ],
+  "types": [
+   "label",
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 48,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "094ab7fd2e324ad7",
+  "url": "https://news.pollstar.com/2026/09/25/venuesnow-conference-preview-climate-pledge-arenas-brianna-treat-talks-integrating-sustainability-seamlessly-into-your-venue/",
+  "title": "VenuesNow Conference Preview: Climate Pledge Arena’s Brianna Treat Talks ‘Integrating Sustainability Seamlessly Into Your Venue’",
+  "summary": "In addition to insightful panels, fascinating fireside chats and plenty of networking opportunities, the annual VenuesNow Conference offers attendees the chance to tour a local venue. Held Sept. 29-30 in Seattle, this year’s edition of VNC will feature an Opening Reception, pres…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-09-25T16:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "cd2f0e2a4e1ff643",
+  "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOdGF3SjdxeERpNGdHZ3phYTdEb1RyV0JXUDRCX0ZEM3IzTHozQ19iTlRNMXkzdnk0bWhna05NRGRIYm5qTU1SUnJ0Z2ZCSEc3eng4blRnMXM1NzBSTXFGQ1ozMWVGMGZuTHBNMzM5Nk1hZUJWYXhkRUZOWWl5aHBqTjctb1laMUd2b1FMME56MA?oc=5",
+  "title": "Another Seismic Shakeup Surfaces at Warner Music Group",
+  "summary": "Another Seismic Shakeup Surfaces at Warner Music Group Digital Music News",
+  "source": "Digital Music News",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-25T15:31:38.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "33cd95b3bccc7bf0",
+  "url": "https://news.pollstar.com/2026/09/25/a-zombies-odyssey-the-legendary-colin-blunstone-on-his-solo-tour-bus-mishaps-zombie-fest-more-qa/",
+  "title": "A Zombie’s Odyssey: The Legendary Colin Blunstone On His Solo Tour, Bus Mishaps, , Zombie Fest, More (Q&A)",
+  "summary": "Please login to your Pollstar subscriber account to view this content.",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-09-25T15:31:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "9959a931a18535d9",
+  "url": "https://news.pollstar.com/2026/09/25/buckle-up-is-throwback-zach-top-countrys-next-stadium-star/",
+  "title": "Buckle Up: Is Throwback Zach Top Country’s Next Stadium Star? (Subscribers Only)",
+  "summary": "Please login to your Pollstar subscriber account to view this content.",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-09-25T15:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "dsp-economics"
+  ],
+  "score": 18,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "e166f5c1c4ef668f",
+  "url": "https://news.pollstar.com/2026/09/25/how-the-ed-sheeran-macklemore-controversy-can-foment-positive-change-via-the-live-industry-qa-with-emily-white-of-ivoted-impact-data-events/",
+  "title": "How The Ed Sheeran-Macklemore Controversy Can Foment Positive Change Via The Live Biz: Q&A With Emily White of #iVoted, Impact Data & Events",
+  "summary": "Please login to your Pollstar subscriber account to view this content.",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-09-25T15:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "80e476461d0e7bb6",
+  "url": "https://www.billboard.com/pro/jay-z-sexual-assault-accuser-fully-recants-her-accusation/",
+  "title": "Jay-Z Sexual Assault Accuser Fully Recants Her Accusation: ‘These Allegations Were False’",
+  "summary": "Two years after shocking accusations, the woman behind them says they weren't true — and that her lawyers filed them without \"any independent investigation.\"",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T15:29:42.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "8cedd00dd22c8e8b",
+  "url": "https://news.pollstar.com/2026/09/25/after-4m-tix-sold-sphere-adds-new-oz-effects/",
+  "title": "After 4M+ Tix Sold, Sphere Adds New ‘Oz’ Effects",
+  "summary": "“The Wizard of Oz at Sphere” has sold more than 4 million tickets and surpassed $500 million in revenue, the venue announced Friday. The already wildly successful production is adding new effects: animatronic winged monkeys, themed scents — including on the apples that fall from…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-09-25T15:29:04.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "98c7562a1fe3fb62",
+  "url": "https://variety.com/2026/music/news/patti-labelle-common-public-enemy-bmac-gala-2026-1236875682/",
+  "title": "Patti LaBelle, Common, Public Enemy Honored at Black Music Action Coalition Gala 2026",
+  "summary": "Patti LaBelle, Common and Public Enemy were among the artists and executives who were celebrated on Thursday night at the sixth annual Black Music Action Coalition Gala, held at the Beverly Hilton Hotel in Los Angeles. Throughout the evening, BMAC and its president/CEO Willie “P…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T15:27:47.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "3f73082615a0f9e1",
+  "url": "https://variety.com/2026/music/news/ed-sheeran-concerts-canceled-storm-1236875556/",
+  "title": "Ed Sheeran’s Concerts Canceled at Robert Kraft’s Gillette Stadium Due to Storm",
+  "summary": "Ed Sheeran’s challenging month continues as a pair of his high-profile stadium shows have been canceled due to weather. The pop star’s Sept. 25 and 26 shows at Gillette Stadium in Foxborough, Mass., have been nixed due to a nor’easter that’s set to hit the East Coast, with heavy…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T15:05:21.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "9d404cb4270e8c81",
+  "url": "https://variety.com/2026/music/reviews/joy-division-eternal-live-boxed-set-album-review-1236875250/",
+  "title": "Joy Division’s Massive ‘Eternal’ Boxed Set Documents the Band’s Brilliant Evolution Over 16 Concerts: Album Review",
+  "summary": "Few artists have cast as vast an influence in as short a time as Joy Division, the pioneering Manchester post-punk quartet whose dark, haunting songs and sound helped shape many genres and scenes that were to follow, from the obvious — indie-rock, goth, industrial — to the less-…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T15:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "ccd0369a3dba1cf1",
+  "url": "https://musically.com/2026/09/25/assistant-royalty-accounting-y-royalties-london/",
+  "title": "Assistant – Royalty Accounting – Y Royalties – London",
+  "summary": "ABOUT Y ROYALTIES Y Royalties is a data-led and innovative workplace with a growing presence in the music rights space. We sit at the crossroads of music, data and finance […] The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T14:50:31.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "fd75c37c4627166c",
+  "url": "https://completemusicupdate.com/incoming-noreaster-storm-might-succeed-where-billionaire-robert-kraft-failed-causing-an-ed-sheeran-show-to-cancel/",
+  "title": "Incoming ‘nor’easter storm’ might succeed where billionaire Robert Kraft failed - causing an Ed Sheeran show to cancel",
+  "summary": "Ed Sheeran is due back on stage later today at the stadium owned by billionaire Robert Kraft, who forced the axing of Macklemore from the show. However, stormy weather might cause a cancellation, plus promoters have offered ticket refunds since all the other support acts have pu…",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T14:44:41.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "4dd0aa666c510c9a",
+  "url": "https://www.musicbusinessworldwide.com/josh-remsberg-appointed-head-of-commercial-partnerships-at-direct-to-fan-platform-even/",
+  "title": "Josh Remsberg appointed Head of Commercial Partnerships at direct-to-fan platform EVEN",
+  "summary": "Remsberg will run EVEN's commercial relationships across the music business, dealing with labels, distributors, managers, artist teams, and other partners. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T14:20:14.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "01affa14d72c4f3b",
+  "url": "https://www.musicbusinessworldwide.com/read-simon-robsons-farewell-note-to-warner-music-staff-as-he-exits-after-nearly-30-years/",
+  "title": "Read Simon Robson’s farewell note to Warner Music staff, as he exits after nearly 30 years",
+  "summary": "Robson, President, EMEA, Recorded Music, WMG, will step down in December. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T14:02:29.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "bcc159288af39be0",
+  "url": "https://www.billboard.com/pro/val-blavatnik-warner-music-executive-elliot-grainge-ada/",
+  "title": "Val Blavatnik Named to Warner Music Group Executive Team, Elliot Grainge Named Chair of ADA, More",
+  "summary": "As part of a slew of executive announcements, Simon Robson will be leaving the company, while Alejandro Duque takes the top international role.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T14:01:31.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "bd3c7ce6e41f635a",
+  "url": "https://www.musicbusinessworldwide.com/val-blavatnik-joins-elliot-grainge-adds-ada-simon-robson-exits/",
+  "title": "Warner Music Group Shake-Up: Val Blavatnik joins, Elliot Grainge adds ADA, Simon Robson exits",
+  "summary": "Alejandro Duque promoted, as Aaron Bay-Schuck is confirmed as the sole Chairman and CEO of Warner Records Group Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T14:00:44.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "8f63317d25ed26a0",
+  "url": "https://variety.com/2026/music/news/warner-music-group-val-blavatnik-managing-director-north-america-1236875561/",
+  "title": "Warner Music Group Names Val Blavatnik Managing Director of North America and U.K. Amid Other Executive Moves",
+  "summary": "In a long-expected move, Warner Music Group has named Val Blavatnik Managing Director of North America, U.K. & Corporate Development amid several other top leadership moves. Blavatnik, 28, the son of Warner Music’s primary owner Len Blavatnik, will “unify and drive business and…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T14:00:24.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "f7c22e4350a52a36",
+  "url": "https://variety.com/2026/music/news/iheartmedia-jingle-ball-2026-olivia-rodrigo-sombr-katseye-1236875552/",
+  "title": "Olivia Rodrigo, Sombr, Katseye Lead iHeartMedia ‘Jingle Ball’ Lineups",
+  "summary": "iHeartMedia has announced the lineups for the 2026 edition of its annual “Jingle Ball Tour”: Olivia Rodrigo, Hilary Duff, Jonas Brothers, Sombr, Charlie Puth, Raye, Alex Warren, Katseye, OneRepublic, Ludacris, Teddy Swims, Sienna Spiro and more. Presented by Capital One, the tou…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "075e751daf3f584f",
+  "url": "https://variety.com/2026/music/global/elton-john-charli-xcx-burna-boy-london-apple-music-hall-1236875445/",
+  "title": "Elton John, Charli xcx, Burna Boy and More Set Shows at New Apple Music Hall in London",
+  "summary": "London’s new venue Apple Music Hall has announced its inaugural lineup, including performances from Elton John, Charli xcx, Burna Boy and more. John is set to open the venue — a state-of-the-art, 600-capacity facility at Battersea Power Station — with a concert on Monday. Apple…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T13:40:00.000Z",
+  "entities": [
+   "apple-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 27,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "76c9a239171017d1",
+  "url": "https://musically.com/2026/09/25/elton-john-charli-xcx-apple-music-hall/",
+  "title": "Elton John, Charli XCX and Burna Boy among first artists to play at Apple Music Hall",
+  "summary": "Monday night’s alright for… lighting up Apple’s new music venue? Elton John will be the first artist to play Apple Music Hall in London. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T13:40:00.000Z",
+  "entities": [
+   "apple-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 27,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "d345e061e9ebf6af",
+  "url": "https://musically.com/2026/09/25/latin-music-revenues-grew-by-8-6-in-the-us-in-the-first-half-of-2026/",
+  "title": "Latin music revenues grew by 8.6% in the US in the first half of 2026",
+  "summary": "US labels body the RIAA has published its mid-year report on US Latin recorded-music revenues, and it shows healthy growth for the sector. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T13:31:12.000Z",
+  "entities": [
+   "riaa"
+  ],
+  "types": [
+   "trade"
+  ],
+  "topics": [],
+  "score": 16,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "74d3f0a45ada1d97",
+  "url": "https://www.musicbusinessworldwide.com/ascap-names-jackson-wagener-as-senior-vice-president-and-head-of-general-licensing/",
+  "title": "ASCAP names Jackson Wagener as Senior Vice President and Head of General Licensing",
+  "summary": "He will oversee the team that licenses the organization's repertory of over 20 million musical works to restaurants, bars, fitness studios, live music venues, and other establishments that use music. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T13:25:56.000Z",
+  "entities": [
+   "ascap"
+  ],
+  "types": [
+   "pro"
+  ],
+  "topics": [],
+  "score": 26,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "f0932848bb464315",
+  "url": "https://www.musicbusinessworldwide.com/bmgs-jim-selby-elected-to-ascap-board-of-directors/",
+  "title": "BMG’s Jim Selby elected to ASCAP Board of Directors",
+  "summary": "Selby has joined the board as a publisher member, ASCAP President and Chairman of the Board Paul Williams. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T13:25:39.000Z",
+  "entities": [
+   "ascap",
+   "bmg"
+  ],
+  "types": [
+   "label",
+   "pro"
+  ],
+  "topics": [],
+  "score": 48,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "680397d324c5fadd",
+  "url": "https://www.musicbusinessworldwide.com/man-who-pocketed-8m-using-ai-songs-and-bot-streams-asks-for-no-prison-time-arguing-no-artist-suffered-any-perceptible-harm/",
+  "title": "Man who pocketed $8m using AI songs and bot streams asks for no prison time, arguing ‘no artist suffered any perceptible harm’",
+  "summary": "Michael Smith's lawyers argued that his scheme caused only \"tiny, immeasurable losses\" spread across millions of songwriters and artists, Billboard reported. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T13:25:18.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "35b784febaa123f6",
+  "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOdnkzTHdvVFo2ejhEQlFnMmI3dUdQU19kZzYxdEJueVN6OEYyanh3bURpbmxYNFo5cDdVVjdHTmE5OGpKSWc3YlR2RlA4dW5KNS1GOXktUEZXYnhYaWVza0k0ZE81TVRkUFFmMWxSTFFSa2dXU05UTklqZEZpa2xFa2ExZUxKWGZT?oc=5",
+  "title": "How TikTok Changed the Music Industry",
+  "summary": "How TikTok Changed the Music Industry New Wave Magazine",
+  "source": "New Wave Magazine",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-25T13:17:55.000Z",
+  "entities": [
+   "tiktok"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "366d04409273779e",
+  "url": "https://musically.com/2026/09/25/spotify-reserved-feature-adds-setlists-and-share-cards-for-fans/",
+  "title": "Spotify ‘Reserved’ feature adds setlists and share cards for fans",
+  "summary": "Spotify announced its new ’Reserved’ feature in May, with plans to identify the keenest fans of participating artists, then reserve them tickets for upcoming concerts. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T12:30:00.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "82bb5ddc9e74b857",
+  "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNS2NQcHBJNGRzMHlkRURkYzJtLVc1N1lxck15dXJ4Z3lTVjZrVDZQR0NLM1JKTkFGNFhURkxuSHBqQ2ZfcmJVcWpuMTcyU2VSdG1tVXIwS2tZOXhablJyTi1fWGZCUDZ2Y3MwZ3RTNW0tbWdOX1NWY3JMM0tpd0diaEVNdVJHc1VNc3puR2dYbXNRWEdUdVIyYXVEdzhPM3dnZXVlYUctTVY0R0Vqb0hGSGYtOFpJSVJvUldiMTFERXNkZ3JoYXFKMkRyelhTN2VXT09sZzZ0MWhka1VmSHpGOGNsRlFtN00yTmt2bUx3b0g?oc=5",
+  "title": "Exchange Traded Concepts to Close and Liquidate The MUSQ Global Music Industry Index ETF (NYSE: MUSQ)",
+  "summary": "Exchange Traded Concepts to Close and Liquidate The MUSQ Global Music Industry Index ETF (NYSE: MUSQ) TradingView",
+  "source": "TradingView",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-25T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "924c192ad06ed346",
+  "url": "https://musically.com/2026/09/25/ai-assisted-streaming-fraudster-hopes-to-avoid-jail-sentence/",
+  "title": "AI-assisted streaming fraudster hopes to avoid jail sentence",
+  "summary": "In March, American producer Michael Smith pleaded guilty to one count of conspiracy to commit wire fraud, following accusations that he had botted his way to more than $10m in royalties for his AI-generated music. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai"
+  ],
+  "score": 18,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "c2150d144b80efd0",
+  "url": "https://musically.com/2026/09/25/macklemore-being-apolitical-during-a-genocide-doesnt-work-anymore/",
+  "title": "Macklemore: ‘Being apolitical during a genocide doesn’t work anymore’",
+  "summary": "Having been removed from Ed Sheeran’s ‘Loop’ tour in the US, Macklemore found himself with some white space in his live schedule. He’s moved to fill that quickly. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "ccf4a7f7cd419999",
+  "url": "https://musically.com/2026/09/25/mcps-reveals-plans-to-work-with-more-specialist-partners/",
+  "title": "MCPS reveals plans to work with more ‘specialist partners’",
+  "summary": "The UK’s Mechanical Copyright Protection Society (MCPS) has historically had a close relationship with PRS for Music. Now it’s making some changes, with plans to start working “directly with an expanded network of specialist partners”. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T12:30:00.000Z",
+  "entities": [
+   "prs"
+  ],
+  "types": [
+   "pro"
+  ],
+  "topics": [
+   "pro-reform"
+  ],
+  "score": 36,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "e9e1e42f0c74d4c4",
+  "url": "https://musically.com/2026/09/25/apple-music-to-livestream-head-trip-electronic-music-festival/",
+  "title": "Apple Music to livestream Head Trip electronic-music festival",
+  "summary": "You certainly can’t accuse promoter Goldenvoice of putting all its festival-livestream eggs in the same streaming service’s basket. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T12:30:00.000Z",
+  "entities": [
+   "apple-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 27,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "f59a0d845d9fac14",
+  "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNX0tkckV4S2Q1NE50SDJIREhhZTNQWDBpanhFOElMN2ZTNlNLZE9GVXhjZUprb2JqRjVDWFZpT1pxM19sRnhLU0ctQ09JQ3RZcGMyWnlBUGFtZkRjUVFVNUVtVXlBT0VrRlg3cnZKdElrY3NNbDYzV25GanVabGxuZnR3bGdXNWh3NHJTcTRYaUpqVFNmRXpVUUVyY1JRbkdjTk9pbm9zZW9DUDhBeWZ4c0hwZmRjSXhaMmplMkdGV0k2dw?oc=5",
+  "title": "Warner Music Names Val Blavatnik to Executive Team, Unveils Suite of Leadership Promotions",
+  "summary": "Warner Music Names Val Blavatnik to Executive Team, Unveils Suite of Leadership Promotions The Hollywood Reporter",
+  "source": "The Hollywood Reporter",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-25T12:01:21.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
   "id": "feabe0c7b257acab",
   "url": "https://www.billboard.com/pro/music-venue-trust-shownotes-drowned-in-sound/",
   "title": "Music Venue Trust Teams Up With Drowned In Sound to Launch Live Music Title",
@@ -168,6 +1300,28 @@
   "firstSeen": "2026-09-25T11:47:35.716Z"
  },
  {
+  "id": "e3c066d500991d11",
+  "url": "https://www.digitalmusicnews.com/2026/09/24/qobuz-tags-ai-generated-music/",
+  "title": "Qobuz Rolls Out Tags to Flag AI-Generated Music: ‘Musical Discovery Must Remain Guided by Human Choices’",
+  "summary": "Qobuz launches a tag signifying music that has been identified as AI-generated, enabling users to better understand what they’re listening to. AI-generated content continues to gain traction across the music industry, and Qobuz wants that information to be readily visible to use…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T06:30:19.000Z",
+  "entities": [
+   "qobuz"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 25,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
   "id": "ef50a145e3816804",
   "url": "https://variety.com/2026/music/news/taylor-swift-review-life-showgirl-encore-new-tracks-1236875342/",
   "title": "Taylor Swift Still Has Unfinished Business With Her Exes — Thank God! — While Also Mooning Over Her Groom in ‘The Life of a Showgirl: The Encore’: New Tracks Review",
@@ -202,6 +1356,24 @@
   "firstSeen": "2026-09-25T11:47:35.716Z"
  },
  {
+  "id": "9e34445ebe6adb68",
+  "url": "https://www.digitalmusicnews.com/2026/09/24/calvin-harris-australian-attendance-record/",
+  "title": "Calvin Harris Breaks Yet Another Attendance Record (This Time in Australia)",
+  "summary": "Calvin Harris breaks another attendance record with the largest-ever electronic headline tour in Australia. DJ superstar Calvin Harris has sold out the largest electronic tour ever seen in Australia, breaking yet another record just days after his Guinness World Record-making fr…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T05:12:59.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 10,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
   "id": "0d2cc44e890fc014",
   "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOQ0ZZa203LUs0cUtFWlRYdk9Cem9zQXRxU1FnZDVlQTRLTjZEMVlRaWlDcXNCemZ4andqMFVtNnVybkdVNVZFV1hLaUNrcTRuanl1SVk2Vmtfb2owOGNFWlczekhqWkgzcDYzdTNESllWUE55MTlDMnFzQ2s3SXhhNUxsYlZfRFFDRmtvZ1hCblJ6OVN4VU4yYVlleVpqbTZiZnQtUXMtRFFnanVFN1dTRG5qS2pJb2hEOWhodmVXMGd4b2FOYVctTk8tRTU3a2JFX0tF?oc=5",
   "title": "Partisan Music Acquires Firebird's Stake in OTM Music, Merges Publishing Operations With Left Music",
@@ -218,6 +1390,82 @@
   ],
   "score": 18,
   "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "9a57404bbcef5e35",
+  "url": "https://www.digitalmusicnews.com/2026/09/24/oceans-calling-canceled-due-to-weather/",
+  "title": "Oceans Calling Becomes the Latest Festival Wrecked by Mother Nature",
+  "summary": "After initially rescheduling some Friday performances to accommodate stormy weather, Oceans Calling has canceled the first day of the three-day festival altogether. Oceans Calling in Ocean City, Maryland, had already modified its schedule ahead of the inclement weather rolling i…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T04:46:23.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 10,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "0ec0cd34502bbd4b",
+  "url": "https://www.digitalmusicnews.com/2026/09/24/ddex-voice-swap/",
+  "title": "Voice-Swap Joins DDEX, Eyes ‘Consent and Authorization Metadata’ Contributions as AI Vocals Become ‘Part of Real Production and Commercial Workflows’",
+  "summary": "With an eye on making “interoperable metadata” the norm for AI-powered voice models, Voice-Swap has joined the Digital Data Exchange (DDEX) as a full member. DDEX and London-headquartered Voice-Swap made the unexpected announcement official today, describing the newly minted mem…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T04:40:16.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "4bc6cfdfb47a012b",
+  "url": "https://www.digitalmusicnews.com/2026/09/24/live-nation-amphitheaters-subsidies/",
+  "title": "Too Cozy? Nearly Half of Live Nation’s Amphitheaters and Stadiums Are Owned by Municipalities and Funded by Taxpayers, Vanderbilt Study Reveals",
+  "summary": "A new report from the Vanderbilt Policy Accelerator finds that Live Nation’s dominance of the outdoor amphitheater market rests heavily on government-owned buildings and public subsidies—even after a federal jury ruled in April that the company illegally monopolized the live eve…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T03:44:16.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "bbe5dd298f7662cd",
+  "url": "https://www.digitalmusicnews.com/2026/09/24/chartmetric-global-music-market-report/",
+  "title": "Chartmetric’s Data Reveals Some Interesting New Realities About the Global Music Market In 2026",
+  "summary": "In the music industry, global availability is not the same as global success. A song can be one tap away for a listener in any country and never leave its home market. Some music genres win their audience in neighboring countries before they cross an ocean. Genres spread through…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T02:45:53.000Z",
+  "entities": [
+   "chartmetric",
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund",
+   "data"
+  ],
+  "topics": [],
+  "score": 37,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
  },
  {
   "id": "88df03d1d94fd78a",
@@ -255,6 +1503,46 @@
   ],
   "score": 26,
   "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "c1ea3fb598b8e306",
+  "url": "https://www.digitalmusicnews.com/2026/09/24/bad-bunny-reggaeton-lawsuit-continues/",
+  "title": "The ‘Frankenstein’ Reggaeton Suit Isn’t Finished — Plaintiffs Return Fire Following Summary Judgment Setback, Say Bad Bunny’s ‘Motion for Reconsideration Was a Red Herring’",
+  "summary": "The “Frankenstein” reggaeton lawsuit against Bad Bunny and a multitude of others isn’t finished yet. Weeks after suffering a serious setback in the marathon case, the plaintiffs are urging the presiding judge to reconsider his “unjust” and “inconsistent” ruling. We covered that…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T00:50:13.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 13,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "bde3d07843e1816f",
+  "url": "https://www.digitalmusicnews.com/2026/09/24/apple-music-goldenvoice-head-trip-livestream/",
+  "title": "Apple Music Dives Head-First Into Head Trip as the Official Livestream Partner",
+  "summary": "Apple Music partners with Goldenvoice as the official livestream partner of Head Trip, a bespoke experience in Indio, California, in October. Today, Apple Music has announced its partnership with Goldenvoice, the team behind Coachella Valley Music and Arts Festival, to present H…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-25T00:45:26.000Z",
+  "entities": [
+   "apple-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 22,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
  },
  {
   "id": "0681ca6e45b207fa",
@@ -431,6 +1719,44 @@
   "firstSeen": "2026-09-25T11:47:35.716Z"
  },
  {
+  "id": "591553ffcae304d1",
+  "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNZmt1eC1vN1BCMm5qeXJ4MllRVVpDQ1cyTXNIdGJUQlRfX1dMSHhEc0FkVkdsR0d4WVZPZF9mbWJ1N3R4N0taNkE5UHVwWFBWdWQtbVRpV0k0UzNWZEVMTmRvc1N5S2VtV3Q4a0hQMjJ5MGxRajFWSXF4LTNQZFJKTTZ3TFVSX091ckZoQnRqeWFXd0pfZlhWTW9QR01zNnE3Y2c?oc=5",
+  "title": "Commercial Music Licensing: Avoiding Social Audio Lawsuits | by Trent V. Bolar, Esq. | Sep, 2026",
+  "summary": "Commercial Music Licensing: Avoiding Social Audio Lawsuits | by Trent V. Bolar, Esq. | Sep, 2026 Startup Stash",
+  "source": "Startup Stash",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-24T19:11:18.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
+  "id": "8f344d181c4a4c00",
+  "url": "https://www.digitalmusicnews.com/2026/09/24/spotify-taste-profile-algorithm-tweaks-us/",
+  "title": "What’s Behind Your Algorithm? Spotify Expands Its ‘Taste Profile’ Recommendation Algorithm Tweaks to the US",
+  "summary": "Following a beta launch in New Zealand, Spotify is expanding its new algorithm tweaking tools with the launch of “Taste Profile” in the US. On Wednesday, Spotify began rolling out its new “Taste Profile” feature to Premium subscribers in the United States after a beta launch in…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T18:33:32.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "dsp-economics"
+  ],
+  "score": 25,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
   "id": "432b0845c7d755ac",
   "url": "https://news.pollstar.com/2026/09/24/first-day-of-oceans-calling-canceled-due-to-impacts-of-this-weeks-continued-weather/",
   "title": "First Day Of Oceans Calling Canceled Due To ‘Impacts Of This Week’s Continued Weather’",
@@ -512,6 +1838,25 @@
   ],
   "score": 27,
   "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "29d3c191e04aaa30",
+  "url": "https://www.digitalmusicnews.com/2026/09/24/partisan-otm-music-deal/",
+  "title": "Partisan Takes a Majority Stake in Alex Sheridan’s OTM Music, Formally Debuts ‘An Expanded Independent Publishing Operation’",
+  "summary": "Partisan Music has officially become a majority partner in Alex Sheridan’s OTM Music, which is set to absorb the investing company’s Left Music team and roster to form “an expanded independent publishing operation.” The involved parties reached out with word of the strategic mer…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-09-24T16:43:05.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "m&a",
+   "pe-capital"
+  ],
+  "score": 23,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
  },
  {
   "id": "10a38539df7f1c43",
@@ -1376,6 +2721,22 @@
   "firstSeen": "2026-09-24T11:41:44.201Z"
  },
  {
+  "id": "fbc56372e483d9a0",
+  "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQbEVaNW1lWTZiSC1Wd0V6SnlSYWcwWGdibmIzeGZ5ZUZkcFpaT3dhSWc2ZWhiU1FIQWFJZEoxSlFOVDR0TlNwM3d0T2gzaWZZc0tiT3dLS2lYUmFhcC1EVFBQVzhucm5NZk9PMmZzbklmSzBhWWdiaUd1ZFBKOFVEaTZQOFNqUnI3cjR5OUtyMDc0VVNvOEw5S2MxaTNYU0E2b2NoQTFnUGNlRGdpRnp2LVhMQ1N6a2xqZnhRMmlXd0NyOWRjWl9QRUt3b3hRRUk3OXFuY0hjRjBVQjRFMjlCbmNHSVJDV1U5SURvTy1PNTFqTHJzZDZ3bUNVRFVPUnNzUGdSb2RBR01HTU0?oc=5",
+  "title": "Florencia M. Mack Educational Fund celebrates decade of music, legacy and giving",
+  "summary": "Florencia M. Mack Educational Fund celebrates decade of music, legacy and giving The Philadelphia Tribune",
+  "source": "The Philadelphia Tribune",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-23T19:25:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
   "id": "6d98ac20406225a1",
   "url": "https://www.digitalmusicnews.com/2026/09/23/sphere-disguise-multi-year-partnership/",
   "title": "Sphere and Disguise Announce Multi-Year Technology Partnership to Further Advance Immersive Live Entertainment",
@@ -1628,6 +2989,24 @@
   "topics": [],
   "score": 10,
   "firstSeen": "2026-09-24T11:41:44.201Z"
+ },
+ {
+  "id": "b015d37c7bcfe2ba",
+  "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOSmttcERFb1VrZkVoUHEzdUlrWTM2NGRBZGFEakkzclZxeXkxMGxaYUtQVUdNbldvNmZMNTlqWkplcktVWklxUE55ckxxRFhfSlJOYkw0SzNWNHp4RzVsMHVSanpfOHBfVGNJbDhlckJVOXl0cGNkeGlRVVlscXM2TzFsZ2hpeldrTWtYRGlBSENQM2FxN3doRkZ6QUY5M2o4Z2ZSSjg3OU15MzA?oc=5",
+  "title": "Higher royalties lift Mills Music Trust (MMTRS) payout",
+  "summary": "Higher royalties lift Mills Music Trust (MMTRS) payout Stock Titan",
+  "source": "Stock Titan",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-23T15:53:45.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "dsp-economics"
+  ],
+  "score": 13,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
  },
  {
   "id": "a0dab453484dd9ea",
@@ -6457,6 +7836,28 @@
   "firstSeen": "2026-09-21T20:32:06.254Z"
  },
  {
+  "id": "415b45d2d0920588",
+  "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNNUlSY3NPc2ZGODFLcU5hN3ktdzFzTDI2M3RiZ0tGYmpuNlJUVUFaT2xWVTBfUDhLeTVjbDAySGwxZFlZQ01fdTBzQUNtZXZ2ZzlYd0ZTMTR5enNNS2JSWE1HWmlzN09ad3ZCaGNOOW90Qm10TC1tTTJCS2toWDdDX1Zkc21UakMzUmZEZVBFUGw2RWNhRTE5bEExSlVPbEltY3VJQkpqazNwSTF4cHZGMUZXcDBTSEZY?oc=5",
+  "title": "BMG expands Jean-Michel Jarre partnership with catalogue recordings deal",
+  "summary": "BMG expands Jean-Michel Jarre partnership with catalogue recordings deal Music Wee",
+  "source": "Music Wee",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-17T05:00:00.000Z",
+  "entities": [
+   "bmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "catalog-deal"
+  ],
+  "score": 26,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
   "id": "cef9678d394637dd",
   "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNVHYzZkJlWTdoUDRwQTZyVVRYRlVkRGZaY3JSUFNtOVczSXVNRFlMN3pJX1FsZktqb2VMaEp2MmJ1WmZCYUV2SGdlbkkwRzhXcXduS1Vxa3dfdnltQ1NuZHAySGhZZThraVAyeHp4TGtINEFwd0phNl9GRWNwZ1ZmX0ZUOV92YkVvMXBXTHMtWU05V1hYVmVkTjZ5OGhFNFpVNDR3X1N3eW43VkVYMVlnV25UQjJXUkd0R2poSExmbUk1eUpqbHJybDBob0ZsRkVwMWc?oc=5",
   "title": "Musicians Union Pushes Back Against Universal And Warner Motions To Dismiss AI Licensing Lawsuit",
@@ -7036,6 +8437,24 @@
   "firstSeen": "2026-09-24T11:41:44.201Z"
  },
  {
+  "id": "e93331ab42b8bd23",
+  "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNNmxiWHlhcUxCdmg0TG45d1VmcE9oelZLS1dVZTZ4bGp5VEFacnFISVc3R1l0VkpXdEhCblNBZjY2N2tZNjVWM3RLWUZkTTlaVXlNcEo1QmxYV0U1NFNEdGtNdWRCdy1JNmNYbTd1Y3BDUG8ySzlrMlc0Q05zT1VvYmE3UDJFUEdwcWVBUW9vVlhTSjhPekNwb2JORzB0eEtqQWVXN1lYU2RRQTBILTNuRDFnZS00ZmtNOTZIMEZIUU01Y18ydWRXRXV30gHPAUFVX3lxTE1Xd0dPNmhZZ09kdWNHY0h2aHQtMzlFWTlwRGVDRUFYWXJJbDVOSkJBSDBDYVZXRlJxSmw4cWR0eXp6SHE5WF9jeHRIV0R3d0N5bl9hYWphUTFjOWpjRjItZDUwWUYyWXRfVzNiMy1oQlc0TkswSGJZa1ppT0RyYkZRWkNUdEh1VnJkU3RRWjNKWkRaaWdzc0hwcUhFcldTTXVZOXVGU2xNajIzZU5ZNk1ZMjdPNllLQl9yVzdQYzhiblZ6by1Ca1J4QThsYmVoYw?oc=5",
+  "title": "How AI-generated music is emerging as a threat to streaming royalties",
+  "summary": "How AI-generated music is emerging as a threat to streaming royalties Business Standard",
+  "source": "Business Standard",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-14T07:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai"
+  ],
+  "score": 8,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
+ },
+ {
   "id": "fa51c0a1cd8854cf",
   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOYWswRF90cl9JbDFIMEk0bjhVUjN0bkNXSEpudUR2UWxSNnlGVVVjZzNZUUduNFRLZWc1MlZ1VEZ4eE5CTVhOdktjRFotWElfZHV5aFROMXRyRFNvMWFoc29NNlhMRjVfbjVmSF9wUTk3M2dXT2ZhSlRhLUFZR3U2X09fajRQRGFnQnhLcG4xTjJFdXB6M1RwZ0VWY3MtYjNWYkhwMnhHU0twOHloQjV6bTRlcE1NdXpwel9mWm5IdHhmUVgyRWkzZ0ZzWmNRdw?oc=5",
   "title": "Spotify Technology Pitches AI Add-Ons, Video and New Verticals for Growth",
@@ -7051,6 +8470,22 @@
   "topics": [],
   "score": 12,
   "firstSeen": "2026-09-21T20:32:06.254Z"
+ },
+ {
+  "id": "66f7adfcfa289b88",
+  "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQWG5KUHZvc1Z3eUtSeWljMUJZbmZSaEpCRXE4LXRqdExibTdlM2Q1RzZMb3RZRVpFeWVoT2N0UFJySUxpeVNHaWliUmEtZFZ3R2J4T3Rmd193dUNWRGhkN3VreFBHVDQ0NG1Eem9qWXRvbmR0dFhheURyMkU2STRRTVBEWVhPVGV6Zi15TVE4ZVlPdkE0bkx1UURHYTVRN0w0V1FsRHpB?oc=5",
+  "title": "Best Music Stocks To Research - September 13th",
+  "summary": "Best Music Stocks To Research - September 13th MarketBeat",
+  "source": "MarketBeat",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-13T07:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 0,
+  "firstSeen": "2026-09-26T11:20:51.332Z"
  },
  {
   "id": "bb40864de3bb8c57",
