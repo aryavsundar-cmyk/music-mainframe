@@ -9,13 +9,15 @@ import { EntityNews } from '../components/news/EntityNews.jsx'
 import { PepiLens } from '../components/consulting/PepiLens.jsx'
 import { ExportButtons } from '../components/export/ExportButtons.jsx'
 import { HubLinks } from '../components/HubLinks.jsx'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { useForces } from '../hooks/useForces.js'
 import { entityExposure } from '../utils/forces.js'
 import { ForceExposure } from '../components/forces/ForceExposure.jsx'
 import { useFinancials } from '../hooks/useFinancials.js'
 import { currentRevenue, freshnessOf, kindLabel } from '../utils/freshness.js'
 import { Financials } from '../components/entities/Financials.jsx'
+import { WatchButton } from '../components/changes/Digest.jsx'
+import { readLists, toggleInList } from '../utils/watchlist.js'
 import { SecFilings } from '../components/entities/SecFilings.jsx'
 import { Connections } from '../components/entities/Connections.jsx'
 import { pctChange, operatingMargin, freeCashFlow } from '../utils/financialConcepts.js'
@@ -74,6 +76,7 @@ export default function EntityDetail() {
   const exposure = useMemo(() => entityExposure(tagged, id), [tagged, id])
   const financials = useFinancials()
   const fin = financials.companies[id]
+  const [lists, setLists] = useState(readLists)
   if (e.missing) {
     return (
       <>
@@ -100,7 +103,10 @@ export default function EntityDetail() {
       <Link to="/entities" className="t-small text-ink-3 no-underline inline-flex items-center gap-1 hover:text-ink-1 mb-4"><ArrowLeft size={14} aria-hidden="true" /> Entities</Link>
       <PageHeader eyebrow={`${t.label}${e.subtype ? ` · ${e.subtype}` : ''}`} tone={tone === 'neutral' ? 'muted' : tone} title={e.name} lede={e.summary}
         actions={<div className="flex flex-col items-end gap-2">
-          <ExportButtons entity={e} forceItems={loading ? null : tagged} financials={fin || null} />
+          <div className="flex items-center gap-2">
+            <WatchButton entityId={e.id} lists={lists} onToggle={(x) => setLists(toggleInList(readLists(), readLists()[0].id, x))} />
+            <ExportButtons entity={e} forceItems={loading ? null : tagged} financials={fin || null} />
+          </div>
           <Link to={`/compare?ids=${e.id}`} className="t-small text-ink-2 no-underline hover:text-ink-1 inline-flex items-center gap-1">Compare with… <ArrowRight size={13} aria-hidden="true" /></Link>
           {e.roles.some((r) => ['catalog-fund', 'pe-fund', 'debt-investor', 'strategic'].includes(r)) && <Link to={`/pe/${e.id}`} className="t-small text-ink-2 no-underline hover:text-ink-1 inline-flex items-center gap-1">Investment view <ArrowRight size={13} aria-hidden="true" /></Link>}
         </div>} />

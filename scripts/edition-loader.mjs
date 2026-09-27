@@ -12,6 +12,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url'
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 export const SWAPS = [
   ['src/data/consulting.js', 'src/editions/stubs/consulting.js'],
+  ['src/data/pageGuidePrivate.js', 'src/editions/stubs/pageGuidePrivate.js'],
   ['src/data/siblings.js', 'src/editions/stubs/siblings.js'],
   ['src/data/rateCard.js', 'src/editions/stubs/rateCard.js'],
   ['src/data/personas.js', 'src/editions/stubs/personas.js'],

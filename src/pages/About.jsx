@@ -4,10 +4,14 @@ import { LimitNote } from '../components/prospecting/LimitNote.jsx'
 import { ENTITIES } from '../data/entities.js'
 import { TRANSACTIONS } from '../data/transactions.js'
 import { GLOSSARY } from '../data/glossary.js'
-import { EDITION, EDITIONS, FRAMING, IS_WORK } from '../editions.js'
+import { EDITION, EDITIONS, FRAMING, IS_WORK, has } from '../editions.js'
+import { guideFor, WORKFLOWS } from '../data/pageGuide.js'
 import { LIMIT_LIST } from '../data/limits.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc } from '../utils/pageDocs.js'
+
+/** Workflow steps name pages in **bold**; the guide is data, so the emphasis is rendered here. */
+const bold = (text) => text.split(/\*\*(.+?)\*\*/g).map((part, i) => (i % 2 ? <strong key={part} className="text-ink-1 font-medium">{part}</strong> : part))
 
 /**
  * What this build is, what is in it, and where every number came from — the page a reviewer opens first.
@@ -31,6 +35,7 @@ export default function About() {
     }
   }, [])
   const ed = EDITIONS[EDITION]
+  const guide = useMemo(() => guideFor(has), [])
 
   return (
     <>
@@ -65,6 +70,40 @@ export default function About() {
             <div className="t-eyebrow text-ink-3 mb-2">{title}</div>
             <p className="t-small text-ink-2 m-0">{body}</p>
           </Card>
+        ))}
+      </div>
+
+      <SectionHeader title="How to use it" />
+      <div className="grid gap-3 md:grid-cols-3 mb-8">
+        {WORKFLOWS.map((w) => (
+          <Card key={w.id} pad="md">
+            <div className="t-eyebrow text-accent mb-2">{w.title}</div>
+            <ol className="m-0 pl-4 t-small text-ink-2 space-y-1.5">
+              {w.steps.map((step) => <li key={step}>{bold(step)}</li>)}
+            </ol>
+          </Card>
+        ))}
+      </div>
+
+      <SectionHeader title="Every page, and what it is for" aside={`${guide.reduce((n, g) => n + g.pages.length, 0)} pages in this build`} />
+      <div className="flex flex-col gap-6 mb-8">
+        {guide.map((g) => (
+          <section key={g.group}>
+            <div className="t-eyebrow text-ink-3 mb-2">{g.group}</div>
+            <div className="grid gap-3 lg:grid-cols-2">
+              {g.pages.map((p) => (
+                <Card key={p.path} pad="md">
+                  <div className="flex items-baseline justify-between gap-2 mb-1">
+                    <h3 className="t-body font-semibold text-ink-1 m-0">{p.title}</h3>
+                    <code className="t-micro font-mono text-ink-4">{p.path}</code>
+                  </div>
+                  <p className="t-small text-ink-2 m-0">{p.what}</p>
+                  <ul className="m-0 mt-2 pl-4 t-micro text-ink-3 space-y-1">{p.use.map((u) => <li key={u}>{u}</li>)}</ul>
+                  <p className="t-micro text-ink-4 m-0 mt-2"><span className="text-ink-3">What it will not tell you: </span>{p.not}</p>
+                </Card>
+              ))}
+            </div>
+          </section>
         ))}
       </div>
 
@@ -106,6 +145,14 @@ export default function About() {
           ['Export formats', ed.exports.join(' · '), 'what this edition can produce'],
         ],
         tableTitle: 'Provenance at a glance',
+        extra: [
+          { eyebrow: 'Guide', title: 'How to use it', blocks: WORKFLOWS.map((w) => ({ kind: 'facts', rows: [[w.title, w.steps.map((s2) => s2.replace(/\*\*/g, '')).join(' → ')]] })) },
+          { eyebrow: 'Guide', title: 'Every page, and what it is for', blocks: [{
+            kind: 'table',
+            columns: ['Page', 'Path', 'What it is for', 'How to use it', 'What it will not tell you'],
+            rows: guide.flatMap((g) => g.pages.map((p) => [p.title, p.path, p.what, p.use.join(' '), p.not])),
+          }] },
+        ],
         notes: [IS_WORK ? `${FRAMING.notProduct} ${FRAMING.data}` : 'This is a personal research tool. Nothing in it is advice, and no figure in it is a firm position.', ...LIMIT_LIST.map((l) => `${l.claim} ${l.detail}`)],
       })} />
     </>

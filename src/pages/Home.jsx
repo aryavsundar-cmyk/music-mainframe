@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
-import { PageHeader, Card, Eyebrow, Tag, FlowMark } from '../components/primitives/index.js'
+import { PageHeader, Card, Eyebrow, FlowMark } from '../components/primitives/index.js'
+import { Digest } from '../components/changes/Digest.jsx'
 
 const LENSES = [
   { eyebrow: 'Structure', tone: 'secondary', title: 'Who owns what', body: 'Labels, publishers, distributors, PROs, DSPs — one flat entity table with parent links and roles.', to: '/entities', cta: 'Entities' },
@@ -16,6 +17,8 @@ export default function Home() {
         title="One canvas for structure, money, and movement."
         lede="Built for operators — deal teams, catalog investors, label BD, artist management. Two rights flows, one financial overlay, live signal."
       />
+      <Digest />
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
         {LENSES.map((l) => (
           <Card key={l.to} pad="lg" className="flex flex-col">
@@ -32,7 +35,7 @@ export default function Home() {
         <span className="t-small text-ink-3">Two rights domains, two rhythms:</span>
         <FlowMark flow="recording" />
         <FlowMark flow="publishing" />
-        <span className="ml-auto flex gap-2"><Tag tone="neutral" mono>SPRINT 0</Tag><Tag tone="neutral">foundation</Tag></span>
+        <Link to="/about" className="ml-auto t-small text-ink-3 no-underline hover:text-ink-1 inline-flex items-center gap-1">How to use this tool <ArrowRight size={13} aria-hidden="true" /></Link>
       </Card>
     </>
   )

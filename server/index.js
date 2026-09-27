@@ -21,7 +21,7 @@ import { loadLocalArchive, fetchRemoteArchive, DEFAULT_REMOTE } from './archive.
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DIST = path.resolve(__dirname, `../${process.env.MM_EDITION === 'work' ? 'dist-work' : 'dist'}`)
 const PORT = process.env.PORT || 3002
-const SPRINT = 30
+const SPRINT = 31
 const started = new Date()
 
 // Minimal .env loader (no dependency): KEY=value lines at repo root, never overriding real env.
@@ -67,8 +67,13 @@ const archiveCoverage = () => (archive.index ? { since: archive.index.coverageSi
 // it is deployed with the app and refreshed from the repository, so a new filing reaches the page without a deploy.
 const FIN_FILE = path.resolve(__dirname, '../data/financials/sec.json')
 const FIN_URL = process.env.FINANCIALS_URL || 'https://raw.githubusercontent.com/aryavsundar-cmyk/music-mainframe/main/data/financials/sec.json'
-const readFin = () => { try { return JSON.parse(fs.readFileSync(FIN_FILE, 'utf8')) } catch { return null } }
+// changes.json is written by the same job, one line per figure that moved, and travels with it.
+const CHANGES_FILE = path.resolve(__dirname, '../data/financials/changes.json')
+const CHANGES_URL = process.env.FINANCIAL_CHANGES_URL || 'https://raw.githubusercontent.com/aryavsundar-cmyk/music-mainframe/main/data/financials/changes.json'
+const readJson = (file) => { try { return JSON.parse(fs.readFileSync(file, 'utf8')) } catch { return null } }
+const readFin = () => readJson(FIN_FILE)
 let financials = { data: readFin(), source: 'deployed', error: null, checkedAt: null }
+let figureChanges = { data: readJson(CHANGES_FILE), source: 'deployed', error: null }
 async function refreshFinancials() {
   const checkedAt = new Date().toISOString()
   try {
@@ -79,6 +84,14 @@ async function refreshFinancials() {
     else financials = { ...financials, error: null, checkedAt }
   } catch (err) {
     financials = { ...financials, error: `Could not refresh from the repository (${err.message}); serving the copy deployed with the app.`, checkedAt }
+  }
+  try {
+    const r = await fetch(CHANGES_URL, { signal: AbortSignal.timeout(15000) })
+    if (!r.ok) throw new Error(`HTTP ${r.status}`)
+    const data = await r.json()
+    if (!figureChanges.data || String(data.updatedAt) >= String(figureChanges.data.updatedAt)) figureChanges = { data, source: 'repository', error: null }
+  } catch (err) {
+    figureChanges = { ...figureChanges, error: `Could not refresh the change log from the repository (${err.message}); serving the copy deployed with the app.` }
   }
 }
 
@@ -174,13 +187,27 @@ app.use((req, res, next) => {
   return res.status(401).send('Authentication required.')
 })
 
-app.get('/api/health', (_req, res) => res.json({ ok: true, app: 'music-mainframe', edition: EDITION, embeddable: EMBED_ALLOW.length ? EMBED_ALLOW : false, gated: !!(ACCESS_USER && ACCESS_PASS), sprint: SPRINT, started: started.toISOString(), uptimeSec: Math.round(process.uptime()), news: { total: cache.length, lastSuccess: status.lastSuccess, lastError: status.lastError }, archive: { ...archiveCoverage(), source: archive.source, error: archive.error }, financials: { companies: Object.keys(financials.data?.companies || {}).length, updatedAt: financials.data?.updatedAt || null, source: financials.source, error: financials.error } }))
+app.get('/api/health', (_req, res) => res.json({ ok: true, app: 'music-mainframe', edition: EDITION, embeddable: EMBED_ALLOW.length ? EMBED_ALLOW : false, gated: !!(ACCESS_USER && ACCESS_PASS), sprint: SPRINT, started: started.toISOString(), uptimeSec: Math.round(process.uptime()), news: { total: cache.length, lastSuccess: status.lastSuccess, lastError: status.lastError }, archive: { ...archiveCoverage(), source: archive.source, error: archive.error }, financials: { companies: Object.keys(financials.data?.companies || {}).length, updatedAt: financials.data?.updatedAt || null, source: financials.source, error: financials.error, changes: { total: figureChanges.data?.entries?.length || 0, startedAt: figureChanges.data?.startedAt || null, source: figureChanges.source } } }))
 
 /** Reported financials for every SEC filer on the canvas; `?entity=` for one. */
 app.get('/api/financials', (req, res) => {
   const all = financials.data?.companies || {}
   const companies = req.query.entity ? (all[req.query.entity] ? { [req.query.entity]: all[req.query.entity] } : {}) : all
   res.json({ companies, updatedAt: financials.data?.updatedAt || null, source: financials.source, error: financials.error, feedErrors: financials.data?.errors || {} })
+})
+
+/**
+ * Every figure that moved between refreshes, newest first. `since` (ISO date) bounds it, `entity` narrows it.
+ * `startedAt` says when the log began: before that, changes were not being recorded at all, which is not the
+ * same as nothing having changed.
+ */
+app.get('/api/financials/changes', (req, res) => {
+  const log = figureChanges.data || { entries: [], startedAt: null, updatedAt: null }
+  const { since = '', entity = '' } = req.query
+  const entries = (log.entries || [])
+    .filter((e) => (!since || String(e.at) >= String(since)) && (!entity || e.entityId === entity))
+    .slice(0, Math.min(Number(req.query.limit) || 500, 2000))
+  res.json({ entries, startedAt: log.startedAt || null, updatedAt: log.updatedAt || null, total: (log.entries || []).length, source: figureChanges.source, error: figureChanges.error })
 })
 
 /** The archive, newest first. `since` (YYYY-MM-DD) bounds the payload; the default reaches past a full year. */

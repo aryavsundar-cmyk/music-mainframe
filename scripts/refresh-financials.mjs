@@ -14,9 +14,11 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { ENTITIES } from '../src/data/entities.js'
 import { fetchAllFinancials } from '../server/financials.js'
+import { diffAll, appendChanges } from '../src/utils/figureChanges.js'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const file = path.join(root, 'data/financials/sec.json')
+const changesFile = path.join(root, 'data/financials/changes.json')
 const ua = process.env.SEC_USER_AGENT || ''
 const before = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : { companies: {} }
 
@@ -35,6 +37,9 @@ for (const [id, rec] of Object.entries(companies)) {
   if (JSON.stringify(before.companies?.[id]) !== JSON.stringify(rec)) changed.push(id)
   merged[id] = rec
 }
+// What moved, recorded by the job that moved it: the app cannot work this out later.
+const now = new Date().toISOString()
+const moved = diffAll(before.companies || {}, companies, { now })
 const sorted = Object.fromEntries(Object.keys(merged).sort().map((id) => [id, merged[id]]))
 const errorsSorted = Object.fromEntries(Object.keys(errors).sort().map((id) => [id, errors[id]]))
 const errorsChanged = JSON.stringify(before.errors || {}) !== JSON.stringify(errorsSorted) || JSON.stringify(before.noFigures || []) !== JSON.stringify(noFigures) || Object.keys(before.companies || {}).some((id) => !merged[id])
@@ -44,8 +49,14 @@ if (changed.length || errorsChanged || !fs.existsSync(file)) {
   fs.writeFileSync(file, `${JSON.stringify(out, null, 1)}\n`)
 }
 
+if (moved.length || !fs.existsSync(changesFile)) {
+  const log = fs.existsSync(changesFile) ? JSON.parse(fs.readFileSync(changesFile, 'utf8')) : null
+  fs.writeFileSync(changesFile, `${JSON.stringify(appendChanges(log, moved, { now }), null, 1)}\n`)
+}
+
 console.log(`read ${Object.keys(companies).length} companies · ${changed.length} changed · ${Object.keys(errors).length} errors · ${unresolved.length} US tickers with no SEC filer`)
 for (const id of changed) { const c = companies[id]; const r = c.metrics.revenue?.annual; console.log(`  ~ ${id.padEnd(22)} latest filing ${c.latestFiling?.form} ${c.latestFiling?.filed}${r ? ` · revenue ${r.currency} ${(r.value / 1e9).toFixed(2)}B to ${r.end}` : ''}`) }
+for (const m of moved) console.log(`  → ${m.entityId.padEnd(22)} ${m.metric} ${m.slot} ${m.kind}: ${m.from.end} → ${m.to.end} (${m.to.form} filed ${m.to.filed})`)
 for (const [id, e] of Object.entries(errors)) console.log(`  ! ${id}: ${e}`)
 if (unresolved.length) console.log(`  unresolved: ${unresolved.join(', ')}`)
 for (const n of noFigures) console.log(`  – ${n}`)

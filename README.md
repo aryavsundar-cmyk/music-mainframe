@@ -35,6 +35,7 @@ React 19 · Vite 7 · Tailwind 4 (CSS-first, no tailwind.config) · React Router
 | `/flows` · `/flows/recording` · `/flows/publishing` | structure | live (Sprint 2) |
 | `/deals` · `/pe` · `/pe/:id` · `/abs` · `/catalogs` | money | live (Sprint 3) |
 | `/pros` · `/pros/:id` · `/dsps` | rights | live (Sprint 4) |
+| `/changes` | live | live (Sprint 31) |
 | `/news` | live | live (Sprint 5) |
 | `/consulting` · `/consulting/:id` | overlay | live (Sprint 6) |
 | `/deliverables` | overlay | live (Sprint 8) |
@@ -42,6 +43,10 @@ React 19 · Vite 7 · Tailwind 4 (CSS-first, no tailwind.config) · React Router
 | `/prospecting` · `/prospecting/:accountId` | pipeline | live (Sprints 13–14) |
 | `/market/catalogs` · `/market/buyers` | market | live (Sprint 16) |
 | `/design` | reference | living style guide |
+
+## The manual (/about)
+
+`data/pageGuide.js` is the manual, as data: for every page, what it is for, how to use it, and **what it will not tell you**. `/about` renders it under three worked routes through the app (understand a company · follow the market · work a thesis), and the provenance export carries the whole guide as a table. `scripts/test-changes.mjs` holds it to the app — a route without a guide entry, or an entry for a route that no longer exists, fails — and checks the research edition's manual describes only the pages that edition ships. Counts on the page stay measured from the data at render time.
 
 ## Design system
 
@@ -196,6 +201,16 @@ npm run test:forces   # taxonomy, the spec's worked example, evidence on every t
 The canvas as an ecosystem, beside the table rather than instead of it. Every one of the 188 entities is placed in one of eight stages of the value chain (`utils/entityMap.js` `COLUMNS`, by entity type): capital & investors → recorded music → publishing & sync → collection & rights data → distribution & artist services → streaming & platforms → live & fan → music tech & AI. *Capital-down* reads it as ownership; *Fan-up* reverses it to follow the money. Stage headers carry a market figure only where one is sourced (IFPI, CISAC, the deals table), a count otherwise; the market strip above links each figure to its report. Cards show initials, tier, ticker and the freshest figure from `currentRevenue` (the SEC file for filers), coloured by lens: gold for capital and recording, verdigris for publishing and collection.
 
 Selecting a card opens a detail panel on the right — headline figure with its freshness verdict, facts, connections, deals, and five-forces exposure from deals — and dims everything not connected to it. Connections are only what the record shows (`connections()`): parent and subsidiaries, backers, and counterparties in the same deal; the panel groups them by reason and each one selects that company on the map. ✕, *Back to the map* or Esc closes the panel and returns focus to the card that opened it; *Full profile* opens `/entities/:id`, and the browser's Back returns to the same map. A scrubber above the columns sticks to the top of the window, so the map can be moved sideways from anywhere down a long column: drag it, click the track, use the arrows, or focus it and use ← → Home End; it names the stages in view. The map uses the full window width and its columns widen to fill it. Search, stage, tier, ownership, direction and the selection all live in the URL. The page export is the current view as a table (stage, group, tier, ownership, HQ, headline figure) with the market figures as notes. `npm run test:entitymap` checks every entity is placed exactly once, both directions, the filters, and that every connection is symmetric and evidenced.
+
+## What changed (/changes)
+
+One dated feed of everything the app watches on its own: SEC filings (every six hours), figures that moved when a filing landed, deals and milestones on the record, and archived news. `utils/changes.js` merges them; each item keeps its date, its company, and a link to the filing or story it came from.
+
+**The figure log is written by the job that moves the figures.** `scripts/refresh-financials.mjs` diffs the previous SEC file against the new one (`utils/figureChanges.js`) and appends one line per figure that really moved to `data/financials/changes.json` — new period or restatement, with the filing that caused it. A figure appearing for the first time is not a change, or adding a concept would report every company at once. The log is append-only, capped, keeps the day it began, and is served at `/api/financials/changes`; the server refreshes it from the repository like the other data files.
+
+**News is off by default.** The archive adds hundreds of stories a week and would bury a 10-Q; the chip carries its count and turns it on, and at most six stories a day reach the feed with the rest counted. **Coverage is stated, always**: each source reports the first day it holds, and a window reaching further back lists what it could not have shown, because an empty day must not read as a quiet one.
+
+**Watchlists** (`utils/watchlist.js`) are entity ids in `localStorage` and nothing else — never uploaded, and every page works without one. "Watch" on a company page adds it; the feed and the Overview digest then show only those companies. The digest covers at least a week, marks what arrived since the last visit, and never marks anything as seen — only opening the feed does that.
 
 ## Compare (/compare)
 

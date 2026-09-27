@@ -14,6 +14,7 @@ const at = (p) => path.resolve(dir, p)
  */
 export const WORK_SWAPS = [
   ['src/data/consulting.js', 'src/editions/stubs/consulting.js'],
+  ['src/data/pageGuidePrivate.js', 'src/editions/stubs/pageGuidePrivate.js'],
   ['src/navPrivate.js', 'src/editions/stubs/navPrivate.js'],
   ['src/data/siblings.js', 'src/editions/stubs/siblings.js'],
   ['src/data/rateCard.js', 'src/editions/stubs/rateCard.js'],

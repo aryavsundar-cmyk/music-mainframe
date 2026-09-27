@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { NavLink, Route, Routes, useLocation } from 'react-router-dom'
-import { BookOpen, Disc3, Building2, Waypoints, Handshake, Landmark, Layers, Library, ScrollText, Radio, Rss, Palette, Sun, Moon, Crosshair, Users, Info, Network, Columns3 } from 'lucide-react'
+import { BookOpen, Disc3, Building2, Waypoints, Handshake, Landmark, Layers, Library, ScrollText, Radio, Rss, Palette, Sun, Moon, Crosshair, Users, Info, Network, Columns3, Activity } from 'lucide-react'
 import { ThemeContext, useThemeState } from './hooks/useTheme.js'
 import { CURRENT, has, showsGroup } from './editions.js'
 import { PRIVATE_NAV } from './navPrivate.js'
@@ -10,6 +10,7 @@ import Entities from './pages/Entities.jsx'
 import EntityDetail from './pages/EntityDetail.jsx'
 import EntityMap from './pages/EntityMap.jsx'
 import Compare from './pages/Compare.jsx'
+import Changes from './pages/Changes.jsx'
 import Flows from './pages/Flows.jsx'
 import Deals from './pages/Deals.jsx'
 import PE from './pages/PE.jsx'
@@ -54,6 +55,7 @@ const NAV = [
     { to: '/dsps', label: 'DSPs', icon: Radio },
   ]},
   { group: 'Live', items: [
+    { to: '/changes', label: 'What changed', icon: Activity },
     { to: '/news', label: 'News', icon: Rss },
   ]},
   { group: 'Market', items: [
@@ -165,6 +167,7 @@ export default function App() {
             <Route path="/dsps" element={<DSPs />} />
             <Route path="/catalogs" element={<Catalogs />} />
             <Route path="/news" element={<News />} />
+            <Route path="/changes" element={<Changes />} />
             {has('consulting') && <Route path="/consulting" element={<Consulting />} />}
             {has('consulting') && <Route path="/consulting/:id" element={<ConsultingCategory />} />}
             {has('deliverables') && <Route path="/deliverables" element={<Deliverables />} />}
