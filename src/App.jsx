@@ -1,10 +1,12 @@
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import { NavLink, Route, Routes, useLocation } from 'react-router-dom'
-import { BookOpen, Disc3, Building2, Waypoints, Handshake, Landmark, Layers, Library, ScrollText, Radio, Rss, Palette, Sun, Moon, Crosshair, Users, Info, Network, Columns3, Activity } from 'lucide-react'
+import { BookOpen, Disc3, Building2, Waypoints, Handshake, Landmark, Layers, Library, ScrollText, Radio, Rss, Palette, Sun, Moon, Crosshair, Users, Info, Network, Columns3, Activity, Search } from 'lucide-react'
 import { ThemeContext, useThemeState } from './hooks/useTheme.js'
 import { CURRENT, has, showsGroup } from './editions.js'
 import { PRIVATE_NAV } from './navPrivate.js'
 import { EditionNotice } from './components/EditionNotice.jsx'
+import { CommandPalette } from './components/search/CommandPalette.jsx'
+import { useArrival } from './hooks/useArrival.js'
 import Home from './pages/Home.jsx'
 import Entities from './pages/Entities.jsx'
 import EntityDetail from './pages/EntityDetail.jsx'
@@ -109,13 +111,30 @@ function useWidth() {
   return 'max-w-content-max'
 }
 
+/** ⌘K / Ctrl+K anywhere, or `/` when the focus is not already in a field. */
+function useSearchShortcut(setOpen) {
+  useEffect(() => {
+    const onKey = (ev) => {
+      const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(ev.target?.tagName || '') || ev.target?.isContentEditable
+      if ((ev.key === 'k' || ev.key === 'K') && (ev.metaKey || ev.ctrlKey)) { ev.preventDefault(); setOpen(true); return }
+      if (ev.key === '/' && !typing && !ev.metaKey && !ev.ctrlKey) { ev.preventDefault(); setOpen(true) }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [setOpen])
+}
+
 export default function App() {
   const width = useWidth()
   const themeState = useThemeState()
+  const [searchOpen, setSearchOpen] = useState(false)
+  useSearchShortcut(setSearchOpen)
+  useArrival()
   const { theme, toggle } = themeState
   return (
     <ThemeContext.Provider value={themeState}>
     <div className="flex min-h-screen">
+      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-md focus:border focus:border-line-3 focus:bg-ground-1 focus:px-3 focus:py-2 focus:t-small focus:text-ink-1">Skip to content</a>
       <aside className="w-sidebar shrink-0 bg-ground-2 border-r border-line-1 flex flex-col sticky top-0 h-screen">
         <NavLink to="/" className="flex items-center gap-3 px-5 pt-6 pb-5 no-underline border-b border-line-1">
           <span className="relative inline-flex w-7 h-7 items-center justify-center" aria-hidden="true">
@@ -128,7 +147,14 @@ export default function App() {
             {CURRENT.id === 'work' && <span className="t-micro text-ink-4">research edition</span>}
           </span>
         </NavLink>
-        <nav className="flex-1 overflow-y-auto px-3 py-4 space-y-5">
+        <div className="px-3 pt-3">
+          <button type="button" onClick={() => setSearchOpen(true)}
+            className="w-full flex items-center gap-2 rounded-md border border-line-2 bg-ground-1 px-2.5 py-1.5 t-small text-ink-3 cursor-pointer hover:border-line-3 hover:text-ink-2">
+            <Search size={14} strokeWidth={1.75} aria-hidden="true" />Search
+            <kbd className="ml-auto t-micro font-mono text-ink-4 border border-line-2 rounded-sm px-1">⌘K</kbd>
+          </button>
+        </div>
+        <nav aria-label="Sections" className="flex-1 overflow-y-auto px-3 py-4 space-y-5">
           {NAV.map((g) => (
             <div key={g.group}>
               <div className="t-micro text-ink-4 uppercase tracking-[0.12em] px-2.5 mb-1.5">{g.group}</div>
@@ -149,7 +175,7 @@ export default function App() {
         </div>
       </aside>
 
-      <main className="flex-1 min-w-0">
+      <main id="main" className="flex-1 min-w-0">
         <div className={`${width} px-gutter py-10`}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -186,6 +212,7 @@ export default function App() {
           <EditionNotice />
         </div>
       </main>
+      {searchOpen && <CommandPalette onClose={() => setSearchOpen(false)} />}
     </div>
     </ThemeContext.Provider>
   )

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Search, X, RefreshCw, Radio, WifiOff } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { PageHeader, Stat, Tag, Card, Button } from '../components/primitives/index.js'
 import { NewsItem } from '../components/news/NewsItem.jsx'
 import { useNewsStream } from '../hooks/useNewsStream.js'
@@ -54,7 +55,10 @@ export default function News() {
     <>
       <PageHeader eyebrow="Live · movement" tone="muted" title="News"
         lede="The trades, Google News queries, and SEC filings, aggregated every 15 minutes and tagged to entities and topics by the same table that drives the rest of the canvas."
-        actions={<Button variant="secondary" icon={RefreshCw} onClick={refresh} disabled={state === 'unavailable'}>Refresh now</Button>} />
+        actions={<div className="flex items-center gap-3">
+          <Link to="/changes" className="t-small text-ink-2 no-underline hover:text-ink-1 whitespace-nowrap">What changed →</Link>
+          <Button variant="secondary" icon={RefreshCw} onClick={refresh} disabled={state === 'unavailable'}>Refresh now</Button>
+        </div>} />
 
       <div className="mb-6"><StatusLine state={state} status={status} total={status?.total ?? 0} /></div>
 

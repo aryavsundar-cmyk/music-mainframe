@@ -1,5 +1,7 @@
 import { useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { Network } from 'lucide-react'
 import { PageHeader, Stat } from '../components/primitives/index.js'
 import { Facets } from '../components/entities/Facets.jsx'
 import { EntityTable } from '../components/entities/EntityTable.jsx'
@@ -64,6 +66,7 @@ export default function Entities() {
         eyebrow="Structure · who owns what" tone="secondary"
         title="Entities"
         lede="Every label, publisher, distributor, PRO, DSP, promoter, catalog fund, sponsor, and registry on the canvas — one flat table. Type is the primary bucket; roles carry the rest."
+        actions={<Link to="/entities/map" className="inline-flex items-center gap-1.5 t-small text-ink-2 no-underline hover:text-ink-1"><Network size={14} aria-hidden="true" />Map view</Link>}
       />
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         <Stat label="Entities" kind="count" value={COUNTS.total} opts={{ full: true }} />

@@ -17,6 +17,9 @@ import { useUrlFilters } from '../hooks/useUrlFilters.js'
 const money = (v) => (!v ? '—' : v >= 1e9 ? `$${(v / 1e9).toFixed(1)}B` : fmtM(v, 0))
 const BANDS = { live: { label: 'Live signal', tone: 'danger' }, watch: { label: 'Worth watching', tone: 'accent' }, quiet: { label: 'Quiet', tone: 'neutral' } }
 
+/** The table shows this many rows; the count beside the filters says so rather than reporting the unsliced total. */
+const ROW_CAP = 80
+
 export default function CatalogScan() {
   const { params, set, clear, any } = useUrlFilters(['q', 'asset', 'owner', 'band', 'genre', 'row'])
   const { news, filings, connectors, ready } = useEnrichment()
@@ -61,7 +64,7 @@ export default function CatalogScan() {
           <option value="">Any tag</option>
           {stats.genres.map((g) => <option key={g} value={g}>{g}</option>)}
         </select>
-        <span className="t-small text-ink-3 font-mono tabular">{shown.length}</span>
+        <span className="t-small text-ink-3 font-mono tabular">{shown.length > ROW_CAP ? `${ROW_CAP} of ${shown.length}` : shown.length}</span>
         {any && <button type="button" onClick={clear} className="t-small text-secondary bg-transparent border-0 cursor-pointer px-0">Clear</button>}
       </div>
 
@@ -71,7 +74,7 @@ export default function CatalogScan() {
             <table className="w-full border-collapse" style={{ minWidth: 760 }}>
               <thead><tr>{['Holding', 'Owner', 'Asset', 'Value', 'Held', 'Signal'].map((h) => <th key={h} className="text-left t-micro uppercase tracking-[0.08em] text-ink-3 font-medium py-2 px-2.5 border-b border-line-2 whitespace-nowrap">{h}</th>)}</tr></thead>
               <tbody>
-                {shown.slice(0, 80).map((r) => (
+                {shown.slice(0, ROW_CAP).map((r) => (
                   <tr key={r.id} className={`cursor-pointer ${r.id === params.row ? 'bg-ground-3' : 'hover:bg-ground-2'}`} onClick={() => set({ row: r.id === params.row ? '' : r.id })}>
                     <td className="py-2 px-2.5 border-b border-line-1">
                       <span className="t-small text-ink-1 block max-w-[360px] truncate">{r.label}</span>

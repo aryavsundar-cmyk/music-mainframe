@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import { PageHeader, SectionHeader, Card, Stat } from '../components/primitives/index.js'
 import { LimitNote } from '../components/prospecting/LimitNote.jsx'
 import { ENTITIES } from '../data/entities.js'
@@ -94,8 +95,8 @@ export default function About() {
               {g.pages.map((p) => (
                 <Card key={p.path} pad="md">
                   <div className="flex items-baseline justify-between gap-2 mb-1">
-                    <h3 className="t-body font-semibold text-ink-1 m-0">{p.title}</h3>
-                    <code className="t-micro font-mono text-ink-4">{p.path}</code>
+                    <h3 className="t-body font-semibold m-0"><Link to={p.path} className="text-ink-1 no-underline hover:text-accent">{p.title}</Link></h3>
+                    <Link to={p.path} className="t-micro font-mono text-ink-4 no-underline hover:text-accent whitespace-nowrap">{p.path}</Link>
                   </div>
                   <p className="t-small text-ink-2 m-0">{p.what}</p>
                   <ul className="m-0 mt-2 pl-4 t-micro text-ink-3 space-y-1">{p.use.map((u) => <li key={u}>{u}</li>)}</ul>

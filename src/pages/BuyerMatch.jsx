@@ -17,11 +17,28 @@ const money = (v) => (!v ? '—' : v >= 1e9 ? `$${(v / 1e9).toFixed(1)}B` : fmtM
 const BANDS = { strong: { label: 'Strong fit', tone: 'accent' }, possible: { label: 'Possible', tone: 'secondary' }, weak: { label: 'Weak', tone: 'neutral' } }
 const REGIONS = ['Global', 'North America', 'Europe', 'United Kingdom', 'Asia', 'Latin America']
 
+/** The shortlist shows this many; the line under it says what is not shown. */
+const ROW_CAP = 24
+/** The size bands the brief offers. A handoff carrying a real deal value snaps to the band that contains it. */
+const SIZE_BANDS = [10e6, 50e6, 150e6, 400e6, 1e9, 3e9]
+const snapSize = (raw) => {
+  const v = Number(raw)
+  if (!Number.isFinite(v) || v <= 0) return ''
+  if (SIZE_BANDS.includes(v)) return String(v)
+  return String([...SIZE_BANDS].reverse().find((b) => v >= b) || SIZE_BANDS[0])
+}
+
 export default function BuyerMatch() {
   const { params, set } = useUrlFilters(['asset', 'size', 'genre', 'region', 'goal'])
-  const brief = { asset: params.asset, size: params.size, genre: params.genre, region: params.region, goal: params.goal }
-  const matches = useMemo(() => matchBuyers(brief, {}), [params.asset, params.size, params.genre, params.region, params.goal]) // eslint-disable-line react-hooks/exhaustive-deps
-  const genres = useMemo(() => marketStats(scanCatalogs({})).genres, [])
+  // Catalog scan hands over a real holding: its value is a figure, and its genre comes from the live feed. Both
+  // have to become something the brief can show, or the control reads "Any" while the engine filters on it.
+  const size = snapSize(params.size)
+  const brief = { asset: params.asset, size, genre: params.genre, region: params.region, goal: params.goal }
+  const matches = useMemo(() => matchBuyers(brief, {}), [params.asset, size, params.genre, params.region, params.goal]) // eslint-disable-line react-hooks/exhaustive-deps
+  const genreOptions = useMemo(() => {
+    const known = marketStats(scanCatalogs({})).genres
+    return params.genre && !known.includes(params.genre) ? [params.genre, ...known] : known
+  }, [params.genre])
   const strong = matches.filter((b) => b.match.band === 'strong')
 
   return (
@@ -41,15 +58,15 @@ export default function BuyerMatch() {
             </select>
           </Field>
           <Field label="Indicative size" hint="what you think it is worth">
-            <select value={params.size} onChange={(e) => set({ size: e.target.value })} className={selectFull} aria-label="Size">
+            <select value={size} onChange={(e) => set({ size: e.target.value })} className={selectFull} aria-label="Size">
               <option value="">Any</option>
-              {[10e6, 50e6, 150e6, 400e6, 1e9, 3e9].map((v) => <option key={v} value={v}>{money(v)}</option>)}
+              {SIZE_BANDS.map((v) => <option key={v} value={v}>{money(v)}</option>)}
             </select>
           </Field>
           <Field label="Genre" hint="from the sourced text">
             <select value={params.genre} onChange={(e) => set({ genre: e.target.value })} className={selectFull} aria-label="Genre">
               <option value="">Any</option>
-              {genres.map((g) => <option key={g} value={g}>{g}</option>)}
+              {genreOptions.map((g) => <option key={g} value={g}>{g}</option>)}
             </select>
           </Field>
           <Field label="Region">
@@ -75,7 +92,14 @@ export default function BuyerMatch() {
       </div>
 
       <div className="space-y-2 mb-6">
-        {matches.slice(0, 24).map((b) => <BuyerRow key={b.id} buyer={b} />)}
+        {matches.length === 0 && (
+          <Card pad="lg">
+            <p className="t-body text-ink-2 m-0">No buyer on record has done a deal like this brief.</p>
+            <p className="t-small text-ink-3 m-0 mt-2">Widen the asset or the size, or clear the genre — profiles are built only from transactions on record, so a narrow brief can match nobody.</p>
+          </Card>
+        )}
+        {matches.slice(0, ROW_CAP).map((b) => <BuyerRow key={b.id} buyer={b} />)}
+        {matches.length > ROW_CAP && <p className="t-micro text-ink-4 m-0 pt-1">Showing the {ROW_CAP} closest of {matches.length} matches. Narrow the brief to see fewer, better-fitting buyers.</p>}
       </div>
 
       <ExportBar title="Export the shortlist" build={() => buildBuyerShortlist(matches.slice(0, 15), { ...brief, note: filterSentence(describeFilters(brief, { asset: { label: 'Asset' }, size: { label: 'Size' }, genre: { label: 'Genre' }, region: { label: 'Region' }, goal: { label: 'Goal' } }), { shown: Math.min(15, matches.length), total: matches.length }) })} />

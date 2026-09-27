@@ -1,7 +1,20 @@
+import { useEffect } from 'react'
 import { Eyebrow } from './Eyebrow.jsx'
 
-/** Top of every route: eyebrow, serif h1, optional lede, actions slot (primary CTA + secondary menu). */
+export const APP_NAME = 'Mainframe · Music'
+
+/**
+ * Top of every route: eyebrow, serif h1, optional lede, actions slot (primary CTA + secondary menu).
+ *
+ * It also owns the browser title. Every route renders exactly one PageHeader, so this is the one place that can
+ * name the page in the tab, in history and in a bookmark — all 30 routes read "Mainframe · Music" without it.
+ */
 export function PageHeader({ eyebrow, title, lede, tone = 'accent', actions, className = '' }) {
+  useEffect(() => {
+    const text = typeof title === 'string' ? title : ''
+    document.title = text ? `${text} · ${APP_NAME}` : APP_NAME
+    return () => { document.title = APP_NAME }
+  }, [title])
   return (
     <header className={`mb-10 ${className}`}>
       <div className="flex items-start justify-between gap-8">

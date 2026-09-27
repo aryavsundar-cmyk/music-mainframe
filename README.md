@@ -48,6 +48,29 @@ React 19 · Vite 7 · Tailwind 4 (CSS-first, no tailwind.config) · React Router
 
 `data/pageGuide.js` is the manual, as data: for every page, what it is for, how to use it, and **what it will not tell you**. `/about` renders it under three worked routes through the app (understand a company · follow the market · work a thesis), and the provenance export carries the whole guide as a table. `scripts/test-changes.mjs` holds it to the app — a route without a guide entry, or an entry for a route that no longer exists, fails — and checks the research edition's manual describes only the pages that edition ships. Counts on the page stay measured from the data at render time.
 
+## Search, and knowing where you are (Sprint 32)
+
+**⌘K / Ctrl+K, or `/`** opens one search over everything the app holds: companies, deals, glossary terms, pages
+and saved views, grouped by kind, arrow-keys and Enter, Escape returns focus to whatever opened it. The index
+(`utils/search.js`) is built from the records themselves, so nothing can drift; ranking is deterministic
+(exact → starts-with → word → contains, weighted by which field matched) and every result carries **why** it
+matched. The live feed and the news archive are served rather than indexed, so those queries become explicit
+hand-offs to `/news` and `/deals` instead of silently missing results.
+
+**The industry's words reach the right records.** `data/aliases.js` maps the vocabulary the records do not
+contain — *majors*, *big three*, *PRO*, *CMO*, *collecting society*, *DSP*, *securitisation* and *catalogue* (both
+spellings), *royalty bonds*, *five forces*, *watchlist* — onto real entities and pages. A category word resolves
+to its section; a group word resolves to the companies. Every alias is checked against the canvas by
+`npm run test:search`, so one can never point at a record that does not exist. Recent results are remembered in
+the browser only.
+
+**Wayfinding.** `PageHeader` now sets `document.title` for every route, so tabs, bookmarks and history say which
+page they are (all 30 read "Mainframe · Music" before this). `hooks/useArrival.js` starts every navigation at the
+top of the page — without it, clicking a company 3,000px down the entity table landed 1,869px down the company
+page, below its own name — and scrolls to the row when a link names one, which is what makes the `/deals#id`
+links from the map drawer and the forces panel work at all. A skip link jumps the 22-item sidebar. The page guide
+on `/about` is now clickable, so the app's only site map is navigable.
+
 ## Design system
 
 **Source of truth: [`src/tokens.js`](src/tokens.js).** `scripts/build-tokens.mjs` emits `src/tokens.css` (committed, regenerated before every `dev`/`build`); Tailwind 4 reads it as `@theme`, so utilities like `bg-ground-1 text-ink-2 text-accent border-line-1` are the tokens. Never hard-code a hex in a component. [`/design`](src/pages/DesignSystem.jsx) renders every token and primitive live in both themes.
