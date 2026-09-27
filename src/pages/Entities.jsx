@@ -14,10 +14,11 @@ import { useForces } from '../hooks/useForces.js'
 import { useFinancials } from '../hooks/useFinancials.js'
 import { currentRevenue, freshnessOf } from '../utils/freshness.js'
 import { readEntities } from '../utils/readings.js'
+import { figureGap, GAPS } from '../utils/coverage.js'
 import { exposureIndex } from '../utils/forces.js'
 import { FORCE_BY_ID } from '../data/forces.js'
 
-const KEYS = ['q', 'type', 'tier', 'ownership', 'parent', 'verify', 'force', 'fresh']
+const KEYS = ['q', 'type', 'tier', 'ownership', 'parent', 'verify', 'force', 'fresh', 'cover']
 /** How each facet reads in an exported document — "type=label" means nothing to someone opening the file. */
 const FILTER_LABELS = {
   q: { label: 'Search' },
@@ -27,6 +28,7 @@ const FILTER_LABELS = {
   parent: { label: 'Parent' },
   verify: { label: 'Flagged to verify', format: () => 'yes' },
   fresh: { label: 'Financials', format: (v) => ({ due: 'due for refresh', pending: 'newer report filed', stale: 'due or pending' }[v] || v) },
+  cover: { label: 'Coverage', format: (v) => GAPS[v]?.label || v },
   force: { label: 'Exposed to', format: (v) => v.split(',').map((id) => FORCE_BY_ID[id]?.short_title || id).join(' or ') },
 }
 const headline = (e) => {
@@ -54,14 +56,24 @@ export default function Entities() {
   const fresh = (e) => freshnessOf(e, financials.companies[e.id]).status
   const byForce = picked.length ? listed.filter((e) => picked.some((f) => exposed.get(e.id)?.has(f))) : listed
   // "Needs refresh": figures past the date a newer result was due, or a newer report whose figures are pending.
-  const rows = params.fresh ? byForce.filter((e) => (params.fresh === 'stale' ? ['due', 'pending'].includes(fresh(e)) : fresh(e) === params.fresh)) : byForce
+  const byFresh = params.fresh ? byForce.filter((e) => (params.fresh === 'stale' ? ['due', 'pending'].includes(fresh(e)) : fresh(e) === params.fresh)) : byForce
+  // Coverage is the fourth facet the table needed: "show me what this app cannot yet tell me anything about".
+  const gapOf = (e) => figureGap(e, financials.companies[e.id], { getEntity, figuresFor: (id) => financials.companies[id] })
+  const rows = params.cover ? byFresh.filter((e) => gapOf(e).state === params.cover) : byFresh
+  const gapCounts = useMemo(
+    () => listed.reduce((m, e) => ((m[gapOf(e).state] = (m[gapOf(e).state] || 0) + 1), m), {}),
+    [listed, financials.companies], // eslint-disable-line react-hooks/exhaustive-deps
+  )
   const staleCount = listed.filter((e) => ['due', 'pending'].includes(fresh(e))).length
   // What this view adds up to, said before the reader touches a filter. Every figure is counted from the rows on
   // screen, so the sentence narrows with the table rather than describing a canvas the reader is not looking at.
   const verdicts = rows.map((e) => freshnessOf(e, financials.companies[e.id]))
+  const covered = rows.reduce((m, e) => ((m[gapOf(e).state] = (m[gapOf(e).state] || 0) + 1), m), {})
   const reading = readEntities({
     total: rows.length,
     listed: rows.filter((e) => e.ownership === 'public').length,
+    withFigure: covered.reported || 0,
+    unresearched: covered.unresearched || 0,
     secFilers: rows.filter((e) => financials.companies[e.id]?.metrics).length,
     due: verdicts.filter((v) => v.status === 'due').length,
     pending: verdicts.filter((v) => v.status === 'pending').length,
@@ -77,9 +89,10 @@ export default function Entities() {
     params.parent && { key: 'parent', label: `Parent: ${getEntity(params.parent)?.short || params.parent}`, onRemove: () => set({ parent: '' }) },
     params.verify && { key: 'verify', label: 'Flagged to verify', onRemove: () => set({ verify: '' }) },
     params.fresh && { key: 'fresh', label: 'Needs refresh', onRemove: () => set({ fresh: '' }) },
+    params.cover && { key: 'cover', label: GAPS[params.cover]?.label || params.cover, onRemove: () => set({ cover: '' }) },
     ...picked.map((f) => ({ key: `force-${f}`, label: `Exposed to ${FORCE_BY_ID[f]?.short_title || f}`, onRemove: () => toggle(f) })),
   ].filter(Boolean)
-  const clearAll = () => set({ q: '', type: '', tier: '', ownership: '', parent: '', verify: '', fresh: '', force: '' })
+  const clearAll = () => set({ q: '', type: '', tier: '', ownership: '', parent: '', verify: '', fresh: '', force: '', cover: '' })
 
   return (
     <>
@@ -102,7 +115,7 @@ export default function Entities() {
         onClear={clearAll}
         count={{ shown: rows.length, total: COUNTS.total, noun: 'companies' }}
       >
-        <FacetControls params={params} set={set} picked={picked} toggle={toggle} staleCount={staleCount} forcesLoading={loading} financials={financials} />
+        <FacetControls params={params} set={set} picked={picked} toggle={toggle} staleCount={staleCount} forcesLoading={loading} financials={financials} gapCounts={gapCounts} />
       </FilterBar>
 
       <EntityTable rows={rows} grouped={!params.type} financials={financials.companies} onClear={clearAll} />

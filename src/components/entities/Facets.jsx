@@ -1,6 +1,7 @@
 import { Chip } from '../primitives/index.js'
 import { ENTITY_TYPES, TYPE_ORDER, OWNERSHIP, PARENTS, COUNTS } from '../../data/entities.js'
 import { FORCES } from '../../data/forces.js'
+import { GAPS, GAP_ORDER } from '../../utils/coverage.js'
 
 
 const select = 'bg-ground-1 border border-line-2 rounded-md h-8 px-2 t-small text-ink-1 focus:border-accent'
@@ -13,8 +14,8 @@ const label = 't-micro text-ink-4 w-20 shrink-0'
  * Search and the active-filter summary live in the bar itself; this is what opens when the reader asks for it.
  * Each group is labelled, so the panel reads as a list of questions rather than a field of controls.
  */
-export function FacetControls({ params, set, picked, toggle, staleCount, forcesLoading, financials }) {
-  const { type = '', tier = '', ownership = '', parent = '', verify = '' } = params
+export function FacetControls({ params, set, picked, toggle, staleCount, forcesLoading, financials, gapCounts = {} }) {
+  const { type = '', tier = '', ownership = '', parent = '', verify = '', cover = '' } = params
   return (
     <div className="flex flex-col gap-3">
       <div className="flex items-start gap-2">
@@ -59,6 +60,18 @@ export function FacetControls({ params, set, picked, toggle, staleCount, forcesL
             </Chip>
           ))}
           <span className="t-micro text-ink-4">{forcesLoading ? 'reading the feed and archive…' : 'a party to a deal, or named in a headline tagged to the force'}</span>
+        </div>
+      </div>
+
+      <div className="flex items-start gap-2">
+        <span className={`${label} pt-1.5`}>Coverage</span>
+        <div className={row}>
+          {GAP_ORDER.map((id) => (
+            <Chip key={id} pressed={cover === id} onClick={() => set({ cover: cover === id ? '' : id })}>
+              {GAPS[id].label}<span className="t-micro font-mono text-ink-3">{gapCounts[id] || 0}</span>
+            </Chip>
+          ))}
+          <span className="t-micro text-ink-4">what the canvas can and cannot say about a company&apos;s figures — &ldquo;not researched yet&rdquo; is work not done, never a company that discloses nothing</span>
         </div>
       </div>
 

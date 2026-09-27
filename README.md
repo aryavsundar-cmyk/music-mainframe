@@ -126,6 +126,43 @@ and about a dozen section labels became real headings, so a page's outline is no
 `<tr>` may pretend to be a button, every panel must use the hook, no ARIA role may be claimed without its
 keyboard contract, and the dead-end empty states cannot come back.
 
+## Coverage: what the canvas knows, and why it doesn't know the rest (Sprint 36)
+
+136 of 188 companies on the canvas carried no financial figure, and the app said nothing about it. The Financials
+section simply did not render — so a company that publishes nothing looked exactly like a company that reports
+inside its parent, which looked exactly like a company nobody had researched. Three different facts, one blank
+space, and a blank space reads as "nothing to know".
+
+`utils/coverage.js` gives every missing figure a named reason, and every company page shows it:
+
+- **Reported inside a parent** is *derived* from `parentId`, never declared. The chain is walked **past** any
+  ancestor that is itself silent — The Orchard reports inside Sony Music Entertainment, which reports inside Sony
+  Music Group, which reports — so the reader is sent somewhere with a figure rather than to another blank page.
+  Where no ancestor publishes either, the sentence says that instead of offering a lead that goes nowhere.
+- **Does not publish** can only be *declared* on the record, with the finding that established it.
+- **Not researched yet** is the default, and the largest group. It is work not done, not a company that discloses
+  nothing, and it is counted on `/about` rather than rounded away.
+
+The rule the tests exist to protect is the negative one: **"does not publish" is never inferred from "is
+private"**. That inference is plausible, reads well, and is wrong often enough to matter — UK companies file at
+Companies House, Bertelsmann publishes a full annual report, and Merlin, a member-owned body, files a statutory
+transparency report more detailed than several listed companies manage. `npm run test:coverage` fails if the
+inference ever reappears.
+
+Coverage answers *is there a figure*; `freshness.js` answers *is it still current*. One question each — so a
+company that stopped disclosing counts as reported, and its staleness stays where it already lived.
+
+**Four figures researched from primary sources**, which is what the model is for: PPL (£315.3M collected in 2025,
+from PPL's own results), Merlin (£1.238bn of royalty income for 2024, from its Annual Transparency Report — money
+collected for members and passed through, not Merlin's own income), The MLC ($729.0M distributed for 2025 usage,
+from its 2025 Annual Report, with a note not to read it against 2024 as a fall because reprocessing keeps adding
+to a usage year for years afterwards) and Bertelsmann (€19.0bn group revenue for 2025 — the whole group, and the
+record says so, because it is not a music figure).
+
+Merlin's figure also exposed a modelling gap: a collective management organisation files up to a year after the
+period it covers, so a listed company's 100-day reporting lag marked the latest report in existence as overdue —
+telling the reader to go and find a number nobody has. A record can now declare its own `reportingLag`.
+
 ## Saying what the numbers say (Sprint 35)
 
 Every data page could tell the reader what its rows add up to, and until this sprint only the news page did.

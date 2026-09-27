@@ -12,7 +12,7 @@ import fs from 'node:fs'
 import { diffCompany, diffAll, appendChanges, MAX_ENTRIES } from '../src/utils/figureChanges.js'
 import { collectChanges, byDay, countByKind, coverageOf, windowStart, KIND_LIST, WINDOWS, leadsFiling, DEFAULT_KINDS } from '../src/utils/changes.js'
 import { readLists, toggleInList, addList, removeList, isWatched, DEFAULT_LIST } from '../src/utils/watchlist.js'
-import { PAGE_GUIDE, guideFor, WORKFLOWS } from '../src/data/pageGuide.js'
+import { PAGE_GUIDE, guideFor, WORKFLOWS, CONVENTIONS } from '../src/data/pageGuide.js'
 import { TRANSACTIONS } from '../src/data/transactions.js'
 import { ENTITIES } from '../src/data/entities.js'
 import { EDITIONS, EDITION, has } from '../src/editions.js'
@@ -141,6 +141,15 @@ t('windows are whole days ending today', () => {
   assert.equal(windowStart(7, new Date('2026-09-27T12:00:00Z')), '2026-09-21')
   assert.ok(WINDOWS.every((w) => w.days > 0 && w.label))
   assert.ok(KIND_LIST.every((k) => k.label && k.hint))
+})
+
+t('every keyed list in the manual has unique ids', () => {
+  // React renders a duplicate key as a console warning and then silently drops or duplicates a child — so this is
+  // caught in the browser, by someone looking, or not at all. Sprint 36 shipped two CONVENTIONS called 'coverage'.
+  for (const [name, list] of [['CONVENTIONS', CONVENTIONS], ['WORKFLOWS', WORKFLOWS], ['PAGE_GUIDE', PAGE_GUIDE]]) {
+    const ids = list.map((x) => x.id || x.path)
+    assert.equal(new Set(ids).size, ids.length, `${name}: duplicate id — ${ids.filter((v, i) => ids.indexOf(v) !== i).join(', ')}`)
+  }
 })
 
 t('watchlists live in this browser, hold entity ids, and always offer a list', () => {

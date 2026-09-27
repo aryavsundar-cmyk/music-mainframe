@@ -22,8 +22,8 @@ export const PAGE_GUIDE = [
   {
     path: '/entities', group: 'Canvas', title: 'Entities',
     what: 'Every company, society and platform on the canvas in one filterable table, with its type, tier, ownership, headline figure and freshness.',
-    use: ['Read the line under the title first: it counts the rows on screen, how many file with the SEC, and how many figures are past due.', 'Filter by type, tier, ownership, region or role; the facets carry counts.', '“Needs refresh” finds every company whose figure is due a newer result.', 'The small line beside a figure is that company’s reported revenue over the years on file, in one currency; the coloured dot is its freshness.', 'Export the filtered view; the file states the filters and the counts.'],
-    not: 'Tier is scale within a type, never prestige, and a headline figure is whatever the company last reported — not a valuation.',
+    use: ['Read the line under the title first: it counts the rows on screen, how many file with the SEC, and how many figures are past due.', 'Filter by type, tier, ownership, region or role; the facets carry counts.', '“Needs refresh” finds every company whose figure is due a newer result; “Coverage” finds the ones the app cannot yet say anything about.', 'The small line beside a figure is that company’s reported revenue over the years on file, in one currency; the coloured dot is its freshness.', 'Export the filtered view; the file states the filters and the counts.'],
+    not: 'Tier is scale within a type, never prestige, and a headline figure is whatever the company last reported — not a valuation. Most companies here carry no figure at all; the table says which kind of missing that is rather than leaving the cell blank.',
   },
   {
     path: '/entities/map', group: 'Canvas', title: 'Entity map',
@@ -34,7 +34,7 @@ export const PAGE_GUIDE = [
   {
     path: '/entities/:id', group: 'Canvas', title: 'Company pages',
     what: 'One company in full: reported financials with five years of history, five-forces exposure, connections, profile, hierarchy, news, SEC filings and related transactions.',
-    use: ['Read the headline strip for the freshest figure, the latest quarter, margins and free cash flow.', '“What changed here” is the last 90 days for this company alone — filings, figure moves, deals and milestones.', 'Use “Watch” to follow the company on What changed, and “Compare with…” to put it beside others.', 'Export a brief in Word, PowerPoint, Excel or text — it carries the same figures and their sources.'],
+    use: ['Read the headline strip for the freshest figure, the latest quarter, margins and free cash flow.', '“What changed here” is the last 90 days for this company alone — filings, figure moves, deals and milestones.', '“What the record holds” lists what this app has on the company, and where there is no figure, says whether it reports inside a parent, publishes nothing, or has simply not been researched.', 'Use “Watch” to follow the company on What changed, and “Compare with…” to put it beside others.', 'Export a brief in Word, PowerPoint, Excel or text — it carries the same figures and their sources.'],
     not: 'Figures are as reported. Nothing here is adjusted for accounting policy, acquisitions or one-off items, and a figure whose tag has gone stale is marked rather than shown as current.',
   },
   {
@@ -95,6 +95,11 @@ export function guideFor(has = () => true) {
  * re-learn a page; and every one of them is computed from the data at render time, never written into a page.
  */
 export const CONVENTIONS = [
+  {
+    id: 'held',
+    title: 'What the record holds',
+    text: 'Fewer than a third of the companies on the canvas carry a financial figure. Rather than leave that as a blank space, every company page says which kind of nothing it is: reported inside a named parent, does not publish, or not researched yet. “Not researched yet” is the honest default and the largest group — it means nobody has established whether the company publishes a figure, and it is never read as “discloses nothing”. Being private does not mean being undisclosed.',
+  },
   {
     id: 'reading',
     title: 'The sentence under the title',

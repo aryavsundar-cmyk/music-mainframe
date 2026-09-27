@@ -40,16 +40,25 @@ export const TOO_FEW = 5
  * Entities: how much of the canvas is public, how much of it refreshes itself, and how much is waiting on a
  * human. The last figure is the one that matters — it says how much of what you are reading could be stale.
  */
-export function readEntities({ total, listed, secFilers, due, pending }) {
+export function readEntities({ total, listed, secFilers, due, pending, withFigure, unresearched }) {
   if (!total) return reading(['Nothing on the canvas matches these filters.'])
   const auto = secFilers ? `${n(secFilers)} of them file with the SEC, and those figures refresh daily.` : ''
   const stale = due
     ? `${n(due)} ${due === 1 ? 'figure is' : 'figures are'} past the date a newer result was due.`
-    : 'Every figure here is current, or was the company’s last disclosure.'
+    : ''
   const waiting = pending ? `${n(pending)} ${pending === 1 ? 'company has' : 'companies have'} filed a newer report whose figures are not yet in structured form.` : ''
+  // The coverage line is the one that changes how everything above it should be read, so it is said outright
+  // rather than left for a reader to work out from a table of dashes.
+  const covered = withFigure != null
+    ? `${n(withFigure)} carry a financial figure${unresearched ? `, and ${n(unresearched)} have not been researched yet — work not done, not companies that disclose nothing` : ''}.`
+    : ''
   return reading(
-    [`${n(total)} companies on record, ${n(listed)} of them publicly listed.`, auto, stale, waiting],
-    [{ label: 'total', value: total }, { label: 'listed', value: listed }, { label: 'secFilers', value: secFilers }, { label: 'due', value: due }, { label: 'pending', value: pending }],
+    [`${n(total)} companies on record, ${n(listed)} of them publicly listed.`, covered, auto, stale, waiting],
+    [
+      { label: 'total', value: total }, { label: 'listed', value: listed }, { label: 'withFigure', value: withFigure },
+      { label: 'unresearched', value: unresearched }, { label: 'secFilers', value: secFilers },
+      { label: 'due', value: due }, { label: 'pending', value: pending },
+    ],
   )
 }
 

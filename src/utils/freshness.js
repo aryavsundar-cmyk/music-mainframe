@@ -36,7 +36,15 @@ const DAY = 86400000
 const ms = (d) => Date.parse(String(d).length === 10 ? `${d}T00:00:00Z` : d)
 const iso = (t) => new Date(t).toISOString().slice(0, 10)
 
-/** Days after a period ends by which its results are normally out. Annual reports: ~90; interim: ~60. */
+/**
+ * Days after a period ends by which its results are normally out. Annual reports: ~90; interim: ~60.
+ *
+ * A listed company's calendar is not everyone's. A collective management organisation files its statutory
+ * transparency report up to a year after the period it covers — Merlin's report for 2024 was published in
+ * November 2025 — so judging it on a listed company's 100 days marks the latest published figure in existence as
+ * overdue, which is worse than saying nothing: it tells the reader to go and find a number that does not exist.
+ * A record may therefore declare its own `reportingLag` in days, and the verdict uses it.
+ */
 export const LAG = { annual: 100, quarter: 60 }
 
 /** "2024" · 2024 · "Q2 2026" · "H1 2026" · "FY2025" → { year, part } where part is Q1–Q4, H1/H2 or FY. */
@@ -56,11 +64,14 @@ export function periodEnd({ year, part }, fyEnd = '12-31') {
   return `${year}-${q}`
 }
 
-/** When the report after this one should be out. Annual → next year end + annual lag; interim → next quarter + lag. */
-export function nextDue(end, kind = 'annual') {
+/**
+ * When the report after this one should be out. Annual → next year end + annual lag; interim → next quarter + lag.
+ * `lag` overrides the default for a company that publishes on its own timetable (see LAG).
+ */
+export function nextDue(end, kind = 'annual', lag = null) {
   const d = new Date(ms(end))
-  if (kind === 'annual') return iso(Date.UTC(d.getUTCFullYear() + 1, d.getUTCMonth(), d.getUTCDate()) + LAG.annual * DAY)
-  return iso(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 3, d.getUTCDate()) + LAG.quarter * DAY)
+  if (kind === 'annual') return iso(Date.UTC(d.getUTCFullYear() + 1, d.getUTCMonth(), d.getUTCDate()) + (lag ?? LAG.annual) * DAY)
+  return iso(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 3, d.getUTCDate()) + (lag ?? LAG.quarter) * DAY)
 }
 
 /**
@@ -85,10 +96,10 @@ export function freshnessOf(e, fin, today = new Date()) {
   const p = parsePeriod(m.revenueYear)
   if (!p) return { status: 'due', basis: 'record', reason: `The period "${m.revenueYear}" cannot be read, so its freshness cannot be judged.` }
   const end = periodEnd(p, m.fiscalYearEnd || '12-31')
-  const due = nextDue(end, p.part === 'FY' ? 'annual' : 'quarter')
+  const due = nextDue(end, p.part === 'FY' ? 'annual' : 'quarter', m.reportingLag ?? null)
   const label = periodLabel(m)
   if (m.disclosure === 'ended') return { status: 'final', basis: 'record', label, asOf: end, reason: m.disclosureNote || `${label} is the last figure the company disclosed.`, source: m.revenueSource?.url }
-  if (now > ms(due)) return { status: 'due', basis: 'record', label, asOf: end, dueSince: due, reason: `A newer result than ${label} was due by ${due}. This figure is entered by hand and has not been updated.` }
+  if (now > ms(due)) return { status: 'due', basis: 'record', label, asOf: end, dueSince: due, reason: `A newer result than ${label} was due by ${due}${m.reportingLag ? ` (${e.name} publishes about ${Math.round(m.reportingLag / 30)} months after the period ends)` : ''}. This figure is entered by hand and has not been updated.` }
   return { status: 'current', basis: 'record', label, asOf: end, reason: `${label} is the latest result expected before ${due}.` }
 }
 

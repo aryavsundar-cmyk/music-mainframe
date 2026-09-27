@@ -21,6 +21,8 @@ import { readLists, toggleInList } from '../utils/watchlist.js'
 import { SecFilings } from '../components/entities/SecFilings.jsx'
 import { Connections } from '../components/entities/Connections.jsx'
 import { EntityChanges } from '../components/changes/EntityChanges.jsx'
+import { Coverage } from '../components/entities/Coverage.jsx'
+import { figureGap, coverageOf } from '../utils/coverage.js'
 import { pctChange, operatingMargin, freeCashFlow } from '../utils/financialConcepts.js'
 import { currencySymbol, formatDate as fmtDate } from '../utils/format.js'
 
@@ -98,6 +100,9 @@ export default function EntityDetail() {
   // The freshest figure: a filing beats a hand-entered number for the same or an earlier period.
   const rev = currentRevenue(e, fin)
   const stats = headlineStats({ m, fin, rev, deals })
+  // What the canvas holds about this company, and — where it holds no figure — which kind of nothing that is.
+  const gap = figureGap(e, fin, { getEntity, figuresFor: (id) => financials.companies[id] })
+  const coverage = coverageOf(e, { fin, gap, deals: deals.length, links: children.length + backers.length + backs.length + chain.length })
 
   return (
     <>
@@ -143,6 +148,7 @@ export default function EntityDetail() {
           <div className={GRID}>
             <EntityNews entityId={e.id} />
             <div className={STACK}>
+              <Coverage coverage={coverage} />
               <SecFilings entityId={e.id} />
               <Card pad="md">
                 <Eyebrow as="h2" tone="muted" className="mb-1">Profile</Eyebrow>

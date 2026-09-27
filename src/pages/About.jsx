@@ -1,12 +1,14 @@
 import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { PageHeader, SectionHeader, Card, Stat } from '../components/primitives/index.js'
+import { PageHeader, SectionHeader, Card, Stat, Bar } from '../components/primitives/index.js'
 import { LimitNote } from '../components/prospecting/LimitNote.jsx'
-import { ENTITIES } from '../data/entities.js'
+import { ENTITIES, getEntity } from '../data/entities.js'
 import { TRANSACTIONS } from '../data/transactions.js'
 import { GLOSSARY } from '../data/glossary.js'
 import { EDITION, EDITIONS, FRAMING, IS_WORK, has } from '../editions.js'
 import { guideFor, WORKFLOWS, CONVENTIONS } from '../data/pageGuide.js'
+import { canvasCoverage, GAPS, GAP_ORDER } from '../utils/coverage.js'
+import { useFinancials } from '../hooks/useFinancials.js'
 import { LIMIT_LIST } from '../data/limits.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc } from '../utils/pageDocs.js'
@@ -37,6 +39,12 @@ export default function About() {
   }, [])
   const ed = EDITIONS[EDITION]
   const guide = useMemo(() => guideFor(has), [])
+  // Coverage is measured here too, and it is the least flattering number on the page — which is why it is on it.
+  const financials = useFinancials()
+  const coverage = useMemo(
+    () => canvasCoverage(ENTITIES, { getEntity, figuresFor: (id) => financials.companies[id] }),
+    [financials.companies],
+  )
 
   return (
     <>
@@ -58,6 +66,30 @@ export default function About() {
           <p className="t-small text-ink-2 m-0">{FRAMING.data}</p>
           <p className="t-small text-ink-2 m-0">Records were checked between <span className="font-mono tabular text-ink-1">{facts.checkedFrom}</span> and <span className="font-mono tabular text-ink-1">{facts.checkedTo}</span>. Each record carries the date it was last checked; an undated figure does not enter the application.</p>
         </div>
+      </Card>
+
+      <SectionHeader title="How much of the canvas carries a figure" aside={`${coverage.pct}% answered`} />
+      <Card pad="md" className="mb-8">
+        <p className="t-small text-ink-2 m-0 mb-3 max-w-3xl">
+          Every company on the canvas is a real company with sources and connections on record. Far fewer carry a
+          financial figure, and this is the breakdown — counted from the data as this page renders, not asserted.
+          A company with no figure is one of three things, and the app says which on the company&apos;s own page.
+        </p>
+        <ul className="m-0 p-0 list-none flex flex-col gap-1.5 max-w-2xl">
+          {GAP_ORDER.map((id) => (
+            <li key={id} className="grid grid-cols-[minmax(0,11rem)_minmax(0,1fr)_3rem] gap-3 items-center">
+              <span className="t-small text-ink-2">{GAPS[id].label}</span>
+              <Bar share={coverage.byState[id] / coverage.total} tone={id === 'unresearched' ? 'ink' : 'accent'} height="h-2" />
+              <span className="t-data text-ink-1 text-right tabular">{coverage.byState[id]}</span>
+            </li>
+          ))}
+        </ul>
+        <p className="t-micro text-ink-4 m-0 mt-3 max-w-3xl">
+          &ldquo;Not researched yet&rdquo; is the honest default and the largest bar: it means nobody has established
+          whether that company publishes a figure. It is never read as &ldquo;discloses nothing&rdquo; — being private
+          does not mean being undisclosed, as Bertelsmann&apos;s full annual report and Merlin&apos;s statutory
+          transparency report both show.
+        </p>
       </Card>
 
       <SectionHeader title="How the numbers are produced" />
