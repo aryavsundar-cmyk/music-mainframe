@@ -174,6 +174,13 @@ export default function Deliverables() {
               <Button variant="secondary" icon={ExternalLink} onClick={() => run('gamma-presentation')} disabled={!ready || !!busy || (gamma && !gamma.configured)}>{busy === 'gamma-presentation' ? 'Generating in Gamma…' : 'Gamma deck'}</Button>
               <Button variant="ghost" onClick={() => run('gamma-document')} disabled={!ready || !!busy || (gamma && !gamma.configured)}>{busy === 'gamma-document' ? 'Generating…' : 'Gamma doc'}</Button>
             </div>
+            {/* These two are not alternatives, and the row used to present them as though they were. */}
+            <p className="t-micro text-ink-4 m-0 mt-3 max-w-2xl">
+              <span className="text-ink-2">Slides</span> generates into the firm&apos;s own PowerPoint template — every
+              line lands in a real placeholder, so the deck opens as an A&amp;M deck and stays editable through its
+              layouts. <span className="text-ink-2">Gamma</span> drafts something differently shaped in Gamma&apos;s
+              own theme; it is for thinking with, and it is not firm-branded.
+            </p>
             {last && (
               <div className={`mt-3 t-small inline-flex items-start gap-1.5 ${last.ok ? 'text-ink-2' : 'text-danger'}`}>
                 {last.ok ? <Check size={13} className="mt-0.5" aria-hidden="true" /> : <AlertTriangle size={13} className="mt-0.5" aria-hidden="true" />}

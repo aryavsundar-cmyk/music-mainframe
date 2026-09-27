@@ -126,6 +126,41 @@ and about a dozen section labels became real headings, so a page's outline is no
 `<tr>` may pretend to be a button, every panel must use the hook, no ARIA role may be claimed without its
 keyboard contract, and the dead-end empty states cannot come back.
 
+## Every deck is an A&M deck (Sprint 40)
+
+`briefPptx.js` used to draw the Mainframe's own identity with pptxgenjs — shellac cover, Georgia titles, gold
+rules. Right for the application, wrong for a document that leaves the building: a deck that does not open as an
+A&M deck cannot be sent, and cannot be picked up by whoever edits it next.
+
+The firm's slide library is 87 MB — 400 example slides and 457 media files wrapped around the part that matters,
+which is the masters, the layouts and the theme. `scripts/build-deck-shell.mjs` strips the examples and leaves
+**0.23 MB** with all 61 layouts, 3 masters and 5 themes intact. That is `public/templates/am-shell.pptx`; the
+library itself is never committed, and the script is how the shell is rebuilt when the firm reissues it.
+
+Slides are appended to that shell as OOXML parts over JSZip — the technique `briefXlsx.js` already uses to write
+SpreadsheetML, for the same reason: no library does this and the format is mechanical.
+
+**Inherit, never imitate.** A placeholder shape carries `<p:spPr/>` — no geometry — and its runs name no font, no
+size and no colour. Everything comes from the A&M master. `npm run test:deck` fails if a generated slide ever
+names a typeface, because that is the moment the output stops being the firm's template and becomes a drawing
+that resembles it.
+
+Three things that were nearly wrong and are worth writing down:
+
+- **The three masters carry different themes.** Resolving layouts by name over the zip's entry order picked master
+  3's copies of "Top Title Content" and "Top Title Only" — generating against the wrong palette while the build
+  output looked perfect. Master 1 is now read explicitly from its own relationships; it is the one named
+  *Alvarez & Marsal Report Widescreen Template*.
+- **Five package parts must agree per slide** — the slide, its layout relationship, the content-type override, the
+  presentation's relationship and the slide-id list. Four out of five produces a file that opens in some readers
+  and not others, which is worse than one that never opens.
+- **The generator does not stamp the template's "CONFIDENTIAL: NOT FOR DISTRIBUTION" footer.** Marking an
+  automatically generated research document as a firm work product is not this tool's call. The left footer
+  carries the application's own provenance instead.
+
+pptxgenjs is gone: the renderer chunk went from 279 KB to 8.9 KB, and the 229 KB shell is fetched only when
+someone actually exports a deck.
+
 ## Can the reader open what this app cites? (Sprint 39)
 
 `/about` stakes this application's credibility on `sources[]`. Nothing had ever checked whether the links open,

@@ -8,6 +8,7 @@
  * are about what the document SAYS about itself — the filters, the counts, the truncation — rather than shape.
  */
 import assert from 'node:assert/strict'
+import JSZip from 'jszip'
 import { buildPageDoc, describeFilters, filterSentence, MAX_TABLE_ROWS } from '../src/utils/pageDocs.js'
 import { renderBriefText } from '../src/utils/briefText.js'
 import { renderBriefMarkdown } from '../src/utils/briefMarkdown.js'
@@ -103,10 +104,16 @@ await T('real views export: entities, deals and the glossary, in every format', 
 })
 
 await T('a deck cuts a long table, and says so on the slide', async () => {
-  // pptxgenjs writes the slide XML into the package, so the marker is findable in the raw bytes.
+  // Read the slide part rather than scanning the package bytes. The old check searched the raw buffer, which only
+  // worked because pptxgenjs barely compressed its output; a deck generated into the A&M shell is a real zip and
+  // the text is deflated. Unzipping is the stronger check anyway — it proves the marker is IN a slide, not merely
+  // somewhere in the file.
   const doc = buildPageDoc({ title: 'Entities', columns: ['Entity', 'Type'], rows: ENTITIES.slice(0, 60).map((e) => [e.name, e.type]), total: COUNTS.total })
-  const buf = await briefPptxBuffer(doc)
-  assert.ok(buf.toString('latin1').includes('more rows'), 'a truncated slide table must say how many rows it dropped')
+  const zip = await JSZip.loadAsync(await briefPptxBuffer(doc))
+  const parts = Object.keys(zip.files).filter((n) => /^ppt\/slides\/slide\d+\.xml$/.test(n))
+  const xml = (await Promise.all(parts.map((n) => zip.file(n).async('string')))).join('')
+  assert.match(xml, /more rows/, 'a truncated slide table must say how many rows it dropped')
+  assert.match(xml, /see the Word or Excel export/, 'and where the rest of them are')
 })
 
 t('every page export is available in every format the edition offers', () => {

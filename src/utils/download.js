@@ -1,6 +1,6 @@
 /**
  * download.js — browser-side export entry points for ANY doc built on the block model
- * (brief · account plan · proposal · sector deck). Renderers are lazy-imported so docx, pptxgenjs and jszip
+ * (brief · account plan · proposal · sector deck). Renderers are lazy-imported so docx and jszip
  * never enter the core bundle. The Gamma path lives in its own module so an edition can exclude it entirely.
  *
  * RENDERERS is the whole format table, and exportDoc throws on a format that isn't in it. An `else` branch

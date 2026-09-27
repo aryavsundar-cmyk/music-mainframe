@@ -1,84 +1,183 @@
-/** briefPptx.js — .pptx renderer over the brief object. Dark shellac cover, paper body, eyebrow + serif title + hairline per slide. */
-import PptxGenJS from 'pptxgenjs'
-import { palette } from '../tokens.js'
+/**
+ * briefPptx.js — the block model as an Alvarez & Marsal deck.
+ *
+ * Until Sprint 40 this drew the Mainframe's own identity with pptxgenjs: shellac cover, Georgia titles, gold
+ * rules. Correct for the application and wrong for a document that leaves the building. pptxgenjs defines its own
+ * masters, so no amount of recolouring would have made the output a real A&M deck — it would have been a
+ * look-alike whose text is not editable through the firm's placeholders and which UpSlide does not recognise.
+ *
+ * So the deck is generated INTO the firm's template instead. `public/templates/am-shell.pptx` is the library with
+ * its 400 example slides removed (87 MB → 0.23 MB, every layout and master intact, built by
+ * `scripts/build-deck-shell.mjs`). Slides are appended to it as OOXML parts over JSZip — the same technique
+ * `briefXlsx.js` already uses to write SpreadsheetML, and for the same reason: there is no library that does this
+ * and the format is mechanical.
+ *
+ * Every piece of text lands in a real placeholder and inherits the A&M font, size, colour and position. Nothing
+ * here sets a typeface. The two footers are the exception worth knowing about: the template's own footer reads
+ * "CONFIDENTIAL: NOT FOR DISTRIBUTION", and this generator deliberately does NOT stamp that on its output —
+ * marking an automatically generated research document as a firm work product is not this tool's call. The left
+ * footer carries the application's own provenance instead, and the reader can apply the firm's marking if the
+ * document becomes one.
+ */
+import JSZip from 'jszip'
+import { LAYOUTS, SHELL } from '../data/deckLayouts.js'
+import { slide, slideRels, placeholder, table, statRow, para } from './deckXml.js'
 
-const W = 13.333, H = 7.5, M = 0.6
-const SHELLAC = palette.shellac[0].slice(1), PAPER = palette.paper[0].slice(1), INK = palette.ink[900].slice(1), MUTED = palette.ink[500].slice(1), FAINT = palette.ink[300].slice(1)
-const GOLD = palette.gold[600].slice(1), GOLD_D = palette.gold[400].slice(1), VERD = palette.verdigris[600].slice(1), VERD_D = palette.verdigris[400].slice(1), RULE = 'D9D4C7'
-const SERIF = 'Georgia', SANS = 'Arial', MONO = 'Consolas'
+/** A slide holds about this many rows before the type is too small to read. */
+const TABLE_ROWS = 13
 
-function header(slide, s, brief) {
-  slide.background = { color: PAPER }
-  slide.addText(`§ ${String(s.num).padStart(2, '0')} — ${s.eyebrow.toUpperCase()}`, { x: M, y: 0.35, w: W - M * 2, h: 0.3, fontSize: 10, fontFace: SANS, bold: true, color: GOLD, charSpacing: 3 })
-  slide.addText(s.title, { x: M, y: 0.62, w: W - M * 2, h: 0.7, fontSize: 26, fontFace: SERIF, color: INK })
-  slide.addShape('rect', { x: M, y: 1.38, w: W - M * 2, h: 0.01, fill: { color: RULE }, line: { color: RULE, width: 0 } })
-  slide.addShape('rect', { x: 0, y: H - 0.42, w: W, h: 0.01, fill: { color: RULE }, line: { color: RULE, width: 0 } })
-  slide.addText(`Mainframe · Music · ${brief.title} · ${brief.modeLabel}`, { x: M, y: H - 0.38, w: 9, h: 0.3, fontSize: 8, fontFace: SANS, color: MUTED })
-}
-
-function body(slide, blocks) {
-  let y = 1.55
-  const room = () => H - 0.6 - y
-  for (const b of blocks) {
-    if (room() < 0.5) break
-    if (b.kind === 'paragraph' || b.kind === 'note') {
-      const h = Math.min(room(), 0.28 + Math.ceil(b.text.length / 150) * 0.24)
-      slide.addText(b.text, { x: M, y, w: W - M * 2, h, fontSize: b.kind === 'note' ? 10 : 12, fontFace: SANS, color: b.kind === 'note' ? MUTED : INK, italic: b.kind === 'note', valign: 'top' })
-      y += h + 0.1
-    } else if (b.kind === 'bullets') {
-      const items = b.items.slice(0, 10)
-      const h = Math.min(room(), items.reduce((s, t) => s + 0.22 + Math.floor(t.length / 160) * 0.2, 0) + 0.1)
-      slide.addText(items.map((t) => ({ text: t, options: { bullet: { code: '2022' }, breakLine: true } })), { x: M, y, w: W - M * 2, h, fontSize: 11, fontFace: SANS, color: INK, valign: 'top', paraSpaceAfter: 4 })
-      y += h + 0.1
-    } else if (b.kind === 'facts') {
-      const rows = b.rows.map(([k, v]) => [{ text: k, options: { color: MUTED, fontFace: SANS, fontSize: 9 } }, { text: v, options: { color: INK, fontFace: SANS, fontSize: 10 } }])
-      const h = Math.min(room(), rows.length * 0.3)
-      slide.addTable(rows, { x: M, y, w: W - M * 2, colW: [2.6, W - M * 2 - 2.6], rowH: 0.28, border: { type: 'solid', color: RULE, pt: 0.5 }, margin: 0.05 })
-      y += h + 0.15
-    } else if (b.kind === 'stats') {
-      const items = b.items.slice(0, 4); const cw = (W - M * 2) / items.length
-      items.forEach((s, i) => {
-        slide.addText(s.label.toUpperCase(), { x: M + i * cw, y, w: cw - 0.2, h: 0.25, fontSize: 8, fontFace: SANS, color: MUTED, charSpacing: 1.5 })
-        slide.addText(s.value, { x: M + i * cw, y: y + 0.25, w: cw - 0.2, h: 0.55, fontSize: 24, fontFace: MONO, color: GOLD })
-        if (s.hint) slide.addText(s.hint, { x: M + i * cw, y: y + 0.8, w: cw - 0.2, h: 0.25, fontSize: 8, fontFace: SANS, color: FAINT })
-      })
-      y += 1.2
-    } else if (b.kind === 'table') {
-      // A slide holds about fourteen rows. Cutting there is fine; cutting silently is not — a page export can
-      // carry hundreds of rows, and a deck that showed the first fourteen as though they were all of them would
-      // be a lie by omission. The last row says what is missing and where to find it.
-      const SLIDE_ROWS = 14
-      const over = b.rows.length - SLIDE_ROWS
-      const shown = over > 0 ? b.rows.slice(0, SLIDE_ROWS - 1) : b.rows
-      const more = over > 0 ? [[`… and ${over + 1} more rows — see the Word or Excel export`, ...Array(Math.max(0, b.columns.length - 1)).fill('')]] : []
-      const rows = [b.columns.map((c) => ({ text: c.toUpperCase(), options: { bold: true, color: MUTED, fontFace: SANS, fontSize: 8, fill: { color: 'ECE8DF' } } })), ...[...shown, ...more].map((r) => r.map((v, i) => ({ text: String(v ?? ''), options: { color: i === 0 && over > 0 && r === more[0] ? MUTED : INK, fontFace: i === 0 ? MONO : SANS, fontSize: 9, italic: r === more[0] } })))]
-      const n = b.columns.length; const colW = n === 5 ? [1.4, 5.4, 1.8, 1.9, 1.6] : n === 3 ? [1.4, 2.6, 8.1] : n === 2 ? [1.6, 10.5] : undefined
-      const h = Math.min(room(), rows.length * 0.3)
-      slide.addTable(rows, { x: M, y, w: W - M * 2, colW, rowH: 0.28, border: { type: 'solid', color: RULE, pt: 0.5 }, margin: 0.04, autoPage: false })
-      y += h + 0.15
-    }
+async function shellBytes() {
+  if (typeof document === 'undefined') {
+    const { readFile } = await import(/* @vite-ignore */ 'node:fs/promises')
+    const { fileURLToPath } = await import(/* @vite-ignore */ 'node:url')
+    return readFile(fileURLToPath(new URL('../../public/templates/am-shell.pptx', import.meta.url)))
   }
+  const res = await fetch(SHELL)
+  if (!res.ok) throw new Error(`The A&M template could not be loaded (HTTP ${res.status}). A deck needs ${SHELL}.`)
+  return new Uint8Array(await res.arrayBuffer())
 }
 
-export function buildBriefPptx(brief) {
-  const pptx = new PptxGenJS()
-  pptx.defineLayout({ name: 'MM', width: W, height: H }); pptx.layout = 'MM'
-  pptx.author = 'Mainframe · Music'; pptx.title = `${brief.title} — ${brief.modeLabel}`
+const eyebrowOf = (s) => `${s.num ? `§ ${String(s.num).padStart(2, '0')} — ` : ''}${String(s.eyebrow || '').toUpperCase()}`
+const footer = (doc) => `Mainframe · Music · ${doc.title}${doc.modeLabel ? ` · ${doc.modeLabel}` : ''} · generated ${String(doc.generatedAt || '').slice(0, 10)}`
 
-  const cover = pptx.addSlide(); cover.background = { color: SHELLAC }
-  cover.addText('MAINFRAME · MUSIC', { x: M, y: 0.6, w: 8, h: 0.3, fontSize: 10, fontFace: SANS, bold: true, color: VERD_D, charSpacing: 6 })
-  cover.addText(brief.title, { x: M, y: 2.2, w: W - M * 2, h: 1.4, fontSize: 48, fontFace: SERIF, color: 'F4F1EA' })
-  cover.addText(brief.subtitle, { x: M, y: 3.6, w: W - M * 2, h: 0.5, fontSize: 16, fontFace: SANS, color: GOLD_D })
-  cover.addText(`Generated ${brief.generatedAt.slice(0, 10)} · record as of ${brief.asOf} · ${brief.sections.length} sections`, { x: M, y: H - 0.9, w: W - M * 2, h: 0.3, fontSize: 9, fontFace: MONO, color: FAINT })
-  cover.addShape('rect', { x: M, y: 4.25, w: 1.2, h: 0.03, fill: { color: GOLD_D }, line: { color: GOLD_D, width: 0 } })
-  cover.addShape('rect', { x: M + 1.3, y: 4.25, w: 0.6, h: 0.03, fill: { color: VERD_D }, line: { color: VERD_D, width: 0 } })
-
-  const toc = pptx.addSlide(); header(toc, { num: 0, eyebrow: 'Contents', title: 'Sections' }, brief)
-  toc.addText(brief.sections.map((s) => ({ text: `§ ${String(s.num).padStart(2, '0')}  ${s.eyebrow} — ${s.title}`, options: { breakLine: true } })), { x: M, y: 1.6, w: W - M * 2, h: H - 2.4, fontSize: 13, fontFace: SANS, color: INK, valign: 'top', paraSpaceAfter: 6 })
-
-  for (const s of brief.sections) { const slide = pptx.addSlide(); header(slide, s, brief); body(slide, s.blocks) }
-  return pptx
+/** Prose blocks flowed into one placeholder, in the order the builder emitted them. */
+function proseParagraphs(blocks) {
+  const out = []
+  for (const b of blocks) {
+    if (b.kind === 'paragraph') out.push(para(b.text))
+    else if (b.kind === 'note') out.push(para(b.text, { italic: true }))
+    else if (b.kind === 'bullets') for (const item of b.items) out.push(para(item, { bullet: true }))
+  }
+  return out
 }
 
-export const briefPptxBlob = (brief) => buildBriefPptx(brief).write({ outputType: 'blob' })
-export const briefPptxBuffer = (brief) => buildBriefPptx(brief).write({ outputType: 'nodebuffer' })
+/**
+ * The slides one section becomes.
+ *
+ * Prose goes on a `Top Title Content` slide. Anything tabular — a table, a fact list, a row of figures — gets a
+ * `Top Title Only` slide and the full content area, because cramming a table under three paragraphs is how a
+ * deck ends up with six-point type.
+ */
+function sectionSlides(section, doc, nextId) {
+  const slides = []
+  const prose = proseParagraphs(section.blocks || [])
+  const tabular = (section.blocks || []).filter((b) => ['table', 'facts', 'stats'].includes(b.kind))
+
+  if (prose.length) {
+    const L = LAYOUTS.content
+    slides.push({ layout: L, shapes: [
+      placeholder(2, L.ph.eyebrow, [para(eyebrowOf(section))]),
+      placeholder(3, L.ph.title, [para(section.title)]),
+      placeholder(4, L.ph.body, prose),
+      placeholder(5, L.ph.footer || { type: 'body', idx: '40' }, [para(footer(doc))]),
+    ] })
+  }
+
+  for (const b of tabular) {
+    const L = LAYOUTS['title-only']
+    const area = L.area
+    const shapes = [
+      placeholder(2, L.ph.eyebrow, [para(eyebrowOf(section))]),
+      placeholder(3, L.ph.title, [para(section.title)]),
+    ]
+    if (b.kind === 'table') {
+      // Cutting at a slide's worth of rows is fine; cutting silently is not. A page export can carry hundreds of
+      // rows, and a deck showing the first thirteen as though they were all of them would be a lie by omission.
+      const over = b.rows.length - TABLE_ROWS
+      const shown = over > 0 ? b.rows.slice(0, TABLE_ROWS - 1) : b.rows
+      const rows = shown.map((r) => r.map((v) => String(v ?? '')))
+      if (over > 0) rows.push([`… and ${over + 1} more rows — see the Word or Excel export`, ...Array(Math.max(0, b.columns.length - 1)).fill('')])
+      shapes.push(table(nextId(), area, b.columns, rows))
+    } else if (b.kind === 'facts') {
+      shapes.push(table(nextId(), area, ['Field', 'Value'], b.rows.map(([k, v]) => [String(k), String(v)]), { widths: [1, 3] }))
+    } else {
+      shapes.push(statRow(nextId(), area, b.items.slice(0, 4)))
+    }
+    shapes.push(placeholder(4, L.ph.footer || { type: 'body', idx: '40' }, [para(footer(doc))]))
+    slides.push({ layout: L, shapes })
+  }
+
+  // A section with nothing renderable still gets its heading, so the contents list never points at a missing slide.
+  if (!slides.length) {
+    const L = LAYOUTS['title-only']
+    slides.push({ layout: L, shapes: [
+      placeholder(2, L.ph.eyebrow, [para(eyebrowOf(section))]),
+      placeholder(3, L.ph.title, [para(section.title)]),
+    ] })
+  }
+  return slides
+}
+
+/** The whole deck as a list of `{ layout, shapes }`, before any of it becomes a file. */
+export function planDeck(doc) {
+  let id = 100
+  const nextId = () => ++id
+  const sections = doc.sections || []
+  const cover = LAYOUTS.cover
+  const contents = LAYOUTS.content
+
+  const slides = [
+    { layout: cover, shapes: [
+      placeholder(2, cover.ph.title, [para(doc.title)]),
+      placeholder(3, cover.ph.date, [para(`${doc.subtitle || ''}${doc.subtitle ? ' · ' : ''}${String(doc.generatedAt || '').slice(0, 10)}`.toUpperCase())]),
+    ] },
+  ]
+
+  if (sections.length > 1) {
+    slides.push({ layout: contents, shapes: [
+      placeholder(2, contents.ph.eyebrow, [para('CONTENTS')]),
+      placeholder(3, contents.ph.title, [para('Sections')]),
+      placeholder(4, contents.ph.body, sections.map((s) => para(`${s.num ? `${String(s.num).padStart(2, '0')}  ` : ''}${s.eyebrow} — ${s.title}`, { bullet: false }))),
+      placeholder(5, contents.ph.footer || { type: 'body', idx: '40' }, [para(footer(doc))]),
+    ] })
+  }
+
+  for (const s of sections) slides.push(...sectionSlides(s, doc, nextId))
+  slides.push({ layout: LAYOUTS.back, shapes: [] })
+  return slides
+}
+
+/**
+ * Append the planned slides to the shell.
+ *
+ * Five parts of the package have to agree or PowerPoint refuses the file: the slide, its relationship to a layout,
+ * the content-type override, the presentation's relationship to the slide, and the slide id list. Getting four of
+ * five right produces a file that opens on some readers and not others, which is worse than one that never opens.
+ */
+export async function buildBriefPptx(doc) {
+  const zip = await JSZip.loadAsync(await shellBytes())
+  const plan = planDeck(doc)
+
+  let types = await zip.file('[Content_Types].xml').async('string')
+  let rels = await zip.file('ppt/_rels/presentation.xml.rels').async('string')
+  let pres = await zip.file('ppt/presentation.xml').async('string')
+
+  // Never reuse an id the shell already spent on a master, a theme or the table styles.
+  const usedRel = [...rels.matchAll(/Id="rId(\d+)"/g)].map((m) => +m[1])
+  let rid = Math.max(0, ...usedRel)
+  const entries = []
+
+  plan.forEach((s, i) => {
+    const n = i + 1
+    const part = `ppt/slides/slide${n}.xml`
+    zip.file(part, slide(s.shapes))
+    zip.file(`ppt/slides/_rels/slide${n}.xml.rels`, slideRels(s.layout.part))
+    types = types.replace('</Types>', `<Override PartName="/${part}" ContentType="application/vnd.openxmlformats-officedocument.presentationml.slide+xml"/></Types>`)
+    rid += 1
+    rels = rels.replace('</Relationships>', `<Relationship Id="rId${rid}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/slide" Target="slides/slide${n}.xml"/></Relationships>`)
+    entries.push(`<p:sldId id="${255 + n}" r:id="rId${rid}"/>`)
+  })
+
+  zip.file('[Content_Types].xml', types)
+  zip.file('ppt/_rels/presentation.xml.rels', rels)
+  // The shell ships with an empty list; a deck with slides needs it populated and in order.
+  pres = pres.replace(/<p:sldIdLst\s*\/>|<p:sldIdLst>[\s\S]*?<\/p:sldIdLst>/, `<p:sldIdLst>${entries.join('')}</p:sldIdLst>`)
+  zip.file('ppt/presentation.xml', pres)
+
+  return zip
+}
+
+const OPTS = { compression: 'DEFLATE', compressionOptions: { level: 6 }, mimeType: 'application/vnd.openxmlformats-officedocument.presentationml.presentation' }
+
+export const briefPptxBlob = async (doc) => (await buildBriefPptx(doc)).generateAsync({ type: 'blob', ...OPTS })
+export const briefPptxBuffer = async (doc) => (await buildBriefPptx(doc)).generateAsync({ type: 'nodebuffer', ...OPTS })

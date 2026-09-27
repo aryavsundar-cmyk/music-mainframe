@@ -54,7 +54,7 @@ be sent. So the template comes first, even though the upload is the headline ask
 
 ## Resolution
 
-### Workstream 1 — The A&M shell · *Sprint 40*
+### Workstream 1 — The A&M shell · *Sprint 40* ✅ shipped — 87 MB → 0.23 MB, pptxgenjs removed, 8 deck checks
 
 **Proven, not proposed.** Built and tested while writing this:
 
