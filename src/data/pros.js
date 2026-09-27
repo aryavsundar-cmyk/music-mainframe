@@ -293,9 +293,16 @@ export function getProProfile(id) {
   return { ...p, entity: e, latest, latestDist, growth, hasProfile: !!PROFILES[id], reforms: [...p.reforms].sort((a, b) => b.date.localeCompare(a.date)) }
 }
 
-/** Approximate USD conversion for cross-society ranking only (rates as of 2026-09, rounded). Never shown as the primary figure. */
-export const USD_RATE = { USD: 1, GBP: 1.32, EUR: 1.17, JPY: 0.0068, KRW: 0.00072, AUD: 0.66, CAD: 0.73 }
-export const toUsd = (v, cur) => (v == null ? null : v * (USD_RATE[cur] || 1))
+/**
+ * Re-exported from `data/fx.js`, which is the application's one rate table.
+ *
+ * This file used to carry its own: seven rounded rates "as of 2026-09", for cross-society ranking only. Two rate
+ * tables is one too many — they drift, and the day they disagree the app shows two different dollar figures for
+ * the same money. Sprint 42 made conversion universal, so the rates belong in one dated, sourced place.
+ */
+import { toUsd } from './fx.js'
+
+export { toUsd }
 
 export function listPros({ region = '', scope = '', q = '' } = {}) {
   const needle = q.trim().toLowerCase()

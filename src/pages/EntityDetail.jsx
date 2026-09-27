@@ -24,7 +24,7 @@ import { EntityChanges } from '../components/changes/EntityChanges.jsx'
 import { Coverage } from '../components/entities/Coverage.jsx'
 import { figureGap, coverageOf } from '../utils/coverage.js'
 import { pctChange, operatingMargin, freeCashFlow } from '../utils/financialConcepts.js'
-import { currencySymbol, formatDate as fmtDate } from '../utils/format.js'
+import { formatDate as fmtDate } from '../utils/format.js'
 
 function Fact({ label, children }) {
   return (
@@ -49,7 +49,7 @@ const STACK = 'flex flex-col gap-6 min-w-0'
  */
 function headlineStats({ m, fin, rev, deals }) {
   const out = []
-  const cur = (c) => ({ currency: currencySymbol(c) })
+  const cur = (c) => ({ code: c })
   if (rev) out.push({ label: rev.label, kind: 'money', value: rev.value, opts: cur(rev.currency), hint: rev.source === 'sec' ? `${rev.form} filed ${fmtDate(rev.filed)}` : rev.published ? `published ${fmtDate(rev.published)}` : rev.currency !== 'USD' ? `reported in ${rev.currency}` : undefined })
   const r = fin?.metrics?.revenue
   if (r?.quarter && !(rev?.source === 'sec' && rev.end === r.quarter.end)) out.push({ label: `Quarter to ${fmtDate(r.quarter.end)}`, kind: 'money', value: r.quarter.value, opts: cur(r.quarter.currency), hint: `${pctChange(r.quarter, r.priorQuarter)} on the year · ${r.quarter.form}` })

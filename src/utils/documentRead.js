@@ -21,7 +21,7 @@
 import { ENTITIES, getEntity } from '../data/entities.js'
 import { GLOSSARY } from '../data/glossary.js'
 import { currentRevenue } from './freshness.js'
-import { format, currencySymbol } from './format.js'
+import { format } from './format.js'
 
 /**
  * A name shorter than this matches too much to be worth reporting case-insensitively — "gamma" and "Apple" would
@@ -182,7 +182,7 @@ export function compareFigures(companies, figures, { financials = {} } = {}) {
       entityId: c.id,
       name: e.name,
       theirs: { text: near.text, value: near.value, currency: near.currency, context: near.context, from: near.from, page: near.page },
-      ours: { value: ours.value, currency: ours.currency, label: ours.label, text: format.money(ours.value, { currency: currencySymbol(ours.currency) }) },
+      ours: { value: ours.value, currency: ours.currency, label: ours.label, text: format.usd(ours.value, ours.currency) },
       sameCurrency,
       // Only ever a prompt. Under a percent apart they are almost certainly the same figure rounded differently.
       differs: apart == null ? null : apart > 0.01,

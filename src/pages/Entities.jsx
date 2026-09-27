@@ -9,7 +9,7 @@ import { filterEntities, COUNTS, TYPE_ORDER, headlineMetric, getEntity, getChild
 import { ENTITY_TYPES, OWNERSHIP } from '../data/entities/_schema.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
-import { format, currencySymbol } from '../utils/format.js'
+import { format } from '../utils/format.js'
 import { useForces } from '../hooks/useForces.js'
 import { useFinancials } from '../hooks/useFinancials.js'
 import { currentRevenue, freshnessOf } from '../utils/freshness.js'
@@ -37,7 +37,7 @@ const FILTER_LABELS = {
 const headline = (e) => {
   const m = headlineMetric(e)
   if (!m) return ''
-  const value = m.kind === 'money' ? format.money(m.value, { currency: currencySymbol(m.currency) }) : format.count(m.value)
+  const value = m.kind === 'money' ? format.usd(m.value, m.currency) : format.count(m.value)
   return `${value} ${m.label}`
 }
 
@@ -167,7 +167,7 @@ export default function Entities() {
         sort: params.type ? 'Name, within the selected type' : 'Grouped by type, then name',
         stats: [{ label: 'In this view', value: String(rows.length) }, { label: 'On record', value: String(COUNTS.total) }, { label: 'Publicly listed', value: String(rows.filter((e) => e.ownership === 'public').length) }, { label: 'Flagged to verify', value: String(rows.filter((e) => e.verify).length) }],
         columns: ['Entity', 'Type', 'Tier', 'Ownership', 'HQ', 'Parent', 'Headline', 'Figure status', 'Forces (evidence)'],
-        rows: rows.map((e) => { const r = currentRevenue(e, financials.companies[e.id]); const f = freshnessOf(e, financials.companies[e.id]); return [e.name, ENTITY_TYPES[e.type]?.label || e.type, e.tier || '', e.ownership || '', e.hq || '', e.parentId || '', r ? `${format.money(r.value, { currency: currencySymbol(r.currency) })} ${r.label}` : headline(e), f.status === 'none' ? '' : `${f.status}${f.dueSince ? ` since ${f.dueSince}` : ''}`, forcesOf(e.id).map((x) => `${x.number} ${x.short_title}`).join(' · ')] }),
+        rows: rows.map((e) => { const r = currentRevenue(e, financials.companies[e.id]); const f = freshnessOf(e, financials.companies[e.id]); return [e.name, ENTITY_TYPES[e.type]?.label || e.type, e.tier || '', e.ownership || '', e.hq || '', e.parentId || '', r ? `${format.usd(r.value, r.currency)} ${r.label}` : headline(e), f.status === 'none' ? '' : `${f.status}${f.dueSince ? ` since ${f.dueSince}` : ''}`, forcesOf(e.id).map((x) => `${x.number} ${x.short_title}`).join(' · ')] }),
         limits: ['force'],
         total: COUNTS.total,
         notes: rows.some((e) => e.verify) ? ['Rows flagged to verify carry facts from the source brief that are not yet sourced. They are marked in the app and should not be quoted without checking.'] : [],

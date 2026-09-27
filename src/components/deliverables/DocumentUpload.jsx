@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Upload, FileText, X, AlertTriangle, Check } from 'lucide-react'
 import { Card, Eyebrow, Tag, Loading, Caveat } from '../primitives/index.js'
@@ -22,11 +22,13 @@ export function DocumentUpload({ financials = {}, onChange }) {
   const [over, setOver] = useState(false)
   const input = useRef(null)
 
-  const publish = useCallback((next) => {
-    setFiles(next)
-    const ok = next.filter((f) => f.reading)
+  // Findings are published in an effect, not from inside a state updater. React runs an updater DURING render, so
+  // calling the parent's setter there is "cannot update a component while rendering a different component" — it
+  // worked, and warned, and would eventually have dropped an update.
+  useEffect(() => {
+    const ok = files.filter((f) => f.reading)
     onChange?.(ok.length ? mergeReadings(ok.map((f) => f.reading)) : null)
-  }, [onChange])
+  }, [files, onChange])
 
   const take = useCallback(async (list) => {
     const incoming = [...list]
@@ -41,15 +43,10 @@ export function DocumentUpload({ financials = {}, onChange }) {
       }
     }))
     setBusy((n) => Math.max(0, n - incoming.length))
-    setFiles((current) => {
-      const next = [...current.filter((c) => !results.some((r) => r.id === c.id)), ...results]
-      const ok = next.filter((f) => f.reading)
-      onChange?.(ok.length ? mergeReadings(ok.map((f) => f.reading)) : null)
-      return next
-    })
-  }, [financials, onChange])
+    setFiles((current) => [...current.filter((c) => !results.some((r) => r.id === c.id)), ...results])
+  }, [financials])
 
-  const remove = (id) => publish(files.filter((f) => f.id !== id))
+  const remove = (id) => setFiles((current) => current.filter((f) => f.id !== id))
   const found = files.filter((f) => f.reading)
   const merged = found.length ? mergeReadings(found.map((f) => f.reading)) : null
 

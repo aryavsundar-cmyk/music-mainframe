@@ -41,7 +41,7 @@ export const PAGE_GUIDE = [
     path: '/compare', group: 'Canvas', title: 'Compare',
     what: 'Up to six companies side by side on reported figures, growth, margins, cash flow and operating metrics.',
     use: ['Pick companies by search, from a ready-made set, or from a company page.', 'Read the ratios first: they are unit-free, so they travel across currencies.', 'Share the URL — the picks are in it — or export the table with its caveats.'],
-    not: 'Money is never ranked across currencies and fiscal years that end on different dates are stated, not lined up. A dash is a missing figure, never a zero.',
+    not: 'Money is converted to US dollars at one dated rate so the columns can be ranked, with each company\u2019s reported figure beside it \u2014 a converted historical figure is not what that money was worth at the time. Fiscal years that end on different dates are stated, not lined up. A dash is a missing figure, never a zero.',
   },
   {
     path: '/flows', group: 'Canvas', title: 'Flows',
@@ -108,7 +108,7 @@ export const CONVENTIONS = [
   {
     id: 'bar',
     title: 'The bar beside a figure',
-    text: 'A value against the largest value in the same list, and only ever within one currency — the app never converts money to draw a bar, and drops the bars entirely rather than ranking two currencies against each other. The figure is the fact; the bar is there so a column of figures has a shape.',
+    text: 'A value against the largest value in the same list, measured in US dollars so bars in a column of mixed currencies are actually comparable. The figure is the fact; the bar is there so a column of figures has a shape.',
   },
   {
     id: 'sparkline',

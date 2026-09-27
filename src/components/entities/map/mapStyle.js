@@ -1,4 +1,4 @@
-import { format, currencySymbol } from '../../../utils/format.js'
+import { format } from '../../../utils/format.js'
 import { currentRevenue } from '../../../utils/freshness.js'
 
 /** Lens → token classes. Gold is money and recording, verdigris is publishing: the app's fixed meanings. */
@@ -9,7 +9,7 @@ export const LENS = {
   structure: { title: 'text-ink-1', avatar: 'bg-ground-3 text-ink-2 border-line-2', rail: 'bg-ink-4' },
 }
 
-export const money = (v, cur) => format.money(v, { currency: currencySymbol(cur) })
+export const money = (v, cur) => format.usd(v, cur)
 
 /** The one figure a card can carry: the freshest revenue, else AUM, subscribers, users or catalog size. */
 export function cardMetric(e, fin) {

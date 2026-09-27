@@ -1,11 +1,10 @@
 import { useNavigate, Link } from 'react-router-dom'
 import { Tag, Num, DataTable, Th, EmptyState, EmptyAction, Sparkline } from '../primitives/index.js'
 import { ENTITY_TYPES, LENS_TONE, OWNERSHIP, getEntity, headlineMetric } from '../../data/entities.js'
-import { currencySymbol } from '../../utils/format.js'
+import { format } from '../../utils/format.js'
 import { currentRevenue, freshnessOf } from '../../utils/freshness.js'
 import { revenueTrend } from '../../utils/financialConcepts.js'
 import { BANDS } from '../../utils/researchQueue.js'
-import { format, currencySymbol as sym } from '../../utils/format.js'
 
 /**
  * The headline figure: the freshest revenue (a filing beats a hand-entered number for the same or an earlier
@@ -37,7 +36,7 @@ function trendLabel(trend, currency) {
   const { points } = trend
   const first = points[0]
   const last = points[points.length - 1]
-  const money = (v) => format.money(v, { currency: sym(currency) })
+  const money = (v) => format.usd(v, currency)
   return `Reported revenue ${first.year} to ${last.year}: ${money(first.value)} to ${money(last.value)}, ${points.length} years on file.`
 }
 
@@ -100,7 +99,7 @@ function Row({ e, fin, queueRow }) {
           ? <>
               <div className="flex items-center justify-end gap-2">
                 {trend && <Sparkline points={trend.points} label={trendLabel(trend, trend.currency)} className="text-ink-3" />}
-                <Num kind={hm.kind} value={hm.value} opts={hm.currency ? { currency: currencySymbol(hm.currency) } : undefined} className="t-data" />
+                <Num kind={hm.kind} value={hm.value} opts={hm.currency ? { code: hm.currency } : undefined} className="t-data" />
               </div>
               <div className="t-micro text-ink-4">{hm.label}</div>
               {status?.label && (

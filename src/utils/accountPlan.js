@@ -8,9 +8,9 @@ import { getTransactionsForEntity, TX_TYPES, partyName } from '../data/transacti
 import { getConsultingContext, CLIENT_CATEGORIES, SERVICE_LINES, SERVICE_ORDER } from '../data/consulting.js'
 import { hubLinks } from '../data/siblings.js'
 import { CITATION_FALLBACK } from './newsCitations.js'
-import { formatMoney, formatCount, formatDate, currencySymbol } from './format.js'
+import { formatMoney, formatMoneyUsd, formatCount, formatDate } from './format.js'
 
-const money = (v, cur = 'USD') => formatMoney(v, { currency: currencySymbol(cur), digits: 2 })
+const money = (v, cur = 'USD') => formatMoneyUsd(v, cur, { digits: 2 })
 const list = (xs) => (xs && xs.length ? xs.join(', ') : '—')
 
 export function buildAccountPlan(entityId, { citations = { items: [], source: 'unavailable' } } = {}) {

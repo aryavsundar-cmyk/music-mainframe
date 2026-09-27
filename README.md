@@ -126,6 +126,32 @@ and about a dozen section labels became real headings, so a page's outline is no
 `<tr>` may pretend to be a button, every panel must use the hook, no ARIA role may be claimed without its
 keyboard contract, and the dead-end empty states cannot come back.
 
+## One currency (Sprint 42)
+
+Companies on this canvas report in nine currencies. Every figure was exactly what that company published, and
+together they were unreadable: £315.3M beside ¥2.1T beside ₩333.6T. The comparison table refused to rank the
+three majors against each other because each reports in a different currency — principled, and useless.
+
+Money is now shown **in US dollars first, with the reported figure in parentheses**: `$421.6M (£315.3M)`.
+
+That replaced a rule this application had lived by since Sprint 30 — *never convert* — and it is worth being
+precise about what changed. The old rule was protecting against something real: a converted figure presented as
+though the company had reported it is a false statement. So the protection moved rather than disappearing:
+
+- **A converted figure is never shown alone.** The reported one always follows it, and `npm run test:fx` fails if
+  it ever doesn't.
+- **The rate is dated and sourced** — the Federal Reserve's H.10 release for a stated day, linked from `/about` —
+  and one table serves the whole application. The societies page used to keep its own rounded rates; two tables
+  drift, and the day they disagree the app shows two different dollar figures for the same money.
+- **An unknown currency is shown as reported**, never converted at a guess. A missing rate that fell back to 1:1
+  would turn "we don't know" into a wrong number that looks right.
+- **One rate for every period**, so dollar figures are comparable *with each other* — which is the point — and a
+  converted historical figure is therefore not what that money was worth at the time. The app says so rather than
+  letting anyone assume otherwise.
+
+`format.usd(value, code)` and `<Num kind="money" opts={{ code }}>` are the only ways money is rendered, so
+nothing can quietly opt out.
+
 ## Read what you were given (Sprint 41)
 
 Every deliverable this app produced was the app talking about what it already knew. A real engagement starts with

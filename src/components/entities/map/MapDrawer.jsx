@@ -4,7 +4,7 @@ import { X, ArrowRight } from 'lucide-react'
 import { getEntity, OWNERSHIP, TIERS } from '../../../data/entities.js'
 import { ENTITY_TYPES } from '../../../data/entities/_schema.js'
 import { TRANSACTIONS } from '../../../data/transactions.js'
-import { format, currencySymbol, formatDate } from '../../../utils/format.js'
+import { format, formatDate } from '../../../utils/format.js'
 import { currentRevenue, freshnessOf } from '../../../utils/freshness.js'
 import { initials, connectionsOf, dealsOf, columnOf, COLUMNS } from '../../../utils/entityMap.js'
 import { classifyDeal, entityExposure } from '../../../utils/forces.js'
@@ -58,7 +58,7 @@ export function MapDrawer({ id, fin, onClose, onSelect, highlight, onToggleHighl
               <span className="t-micro text-ink-3">{rev.label}</span>
               <FreshnessTag f={fresh} />
             </div>
-            <div className="t-data text-2xl text-money tabular mt-0.5">{format.money(rev.value, { currency: currencySymbol(rev.currency) })}</div>
+            <div className="t-data text-2xl text-money tabular mt-0.5">{format.usd(rev.value, rev.currency)}</div>
             <div className="t-micro text-ink-4">{rev.source === 'sec' ? `${rev.form} filed ${formatDate(rev.filed)} · SEC, refreshed daily` : rev.published ? `published ${formatDate(rev.published)}` : 'on record'}</div>
           </div>
         )}

@@ -1,11 +1,11 @@
 import { ExternalLink } from 'lucide-react'
 import { Tag, Eyebrow, Caveat } from '../primitives/index.js'
-import { format, currencySymbol, formatDate } from '../../utils/format.js'
+import { format, formatDate } from '../../utils/format.js'
 import { CONCEPTS, pctChange as change, sameYear, freeCashFlow, fiveYearRecord } from '../../utils/financialConcepts.js'
 import { kindLabel, periodLabel } from '../../utils/freshness.js'
 
 // Two decimals in billions ($6.04B, not $6B): these tables are read for year-on-year differences.
-const money = (v, cur) => (v == null ? '—' : format.money(v, { currency: currencySymbol(cur), digits: Math.abs(v) >= 1e9 ? 2 : 1 }))
+const money = (v, cur) => (v == null ? '—' : format.usd(v, cur, { digits: Math.abs(v) >= 1e9 ? 2 : 1 }))
 const to = (f) => (f ? `to ${formatDate(f.end)}` : '')
 
 /** What the freshness verdict means, in words and one tone — never a colour alone. */

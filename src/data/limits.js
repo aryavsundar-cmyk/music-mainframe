@@ -26,7 +26,7 @@ export const LIMITS = {
   comparison: {
     id: 'comparison',
     claim: 'A comparison lines up reported figures, not like-for-like businesses.',
-    detail: 'Each company defines its own revenue, reports it in its own currency and closes its year on its own date; a label group, a streaming service and a promoter earn money in ways that no single table makes equivalent. Ratios travel further than totals, and none of it adjusts for accounting policy, acquisitions or one-off items.',
+    detail: 'Each company defines its own revenue and closes its year on its own date; a label group, a streaming service and a promoter earn money in ways that no single table makes equivalent. Figures are converted to US dollars at one dated rate so they can be set side by side, with each company\u2019s reported figure beside them, and none of it adjusts for accounting policy, acquisitions or one-off items.',
     enforced: 'No figure is ranked against a figure in another currency, and no trend is drawn across a gap in the years — the tests check both.',
   },
 }

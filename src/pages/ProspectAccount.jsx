@@ -13,7 +13,7 @@ import { CLIENT_CATEGORIES, OVERLAY_LABEL } from '../data/consulting.js'
 import { partyName } from '../data/transactions.js'
 import { useProspectRecords } from '../hooks/useProspectRecords.js'
 import { useEnrichment } from '../hooks/useEnrichment.js'
-import { currencySymbol, formatMoney } from '../utils/format.js'
+import { formatMoneyUsd } from '../utils/format.js'
 import { useForces } from '../hooks/useForces.js'
 import { entityExposure } from '../utils/forces.js'
 import { ForceExposure } from '../components/forces/ForceExposure.jsx'
@@ -48,7 +48,7 @@ export default function ProspectAccount() {
               <div className="flex flex-wrap gap-x-6 gap-y-1 t-small text-ink-2">
                 <span>{account.hq}</span>
                 <span>{account.ownership}</span>
-                {metric > 0 && <span>{formatMoney(metric, { currency: currencySymbol(account.metrics.revenueCurrency) })}{account.metrics.revenueYear ? ` (${account.metrics.revenueYear})` : ''}</span>}
+                {metric > 0 && <span>{formatMoneyUsd(metric, account.metrics.revenueCurrency)}{account.metrics.revenueYear ? ` (${account.metrics.revenueYear})` : ''}</span>}
                 <span>Lead with {lineLabel(line)}</span>
               </div>
             </AccountHeader>

@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom'
 import { PageHeader, FilterBar, KeyFigures, Tag, Num, Card, Chip, DataTable, Th, EmptyState, EmptyAction, Reading } from '../components/primitives/index.js'
 import { MoneyBar } from '../components/rights/MoneyBar.jsx'
 import { listPros, SCOPES, MODELS, REGIONS, GLOBAL_COLLECTIONS, toUsd } from '../data/pros.js'
+import { FX_NOTE } from '../data/fx.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
-import { currencySymbol, format } from '../utils/format.js'
+import { format } from '../utils/format.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 import { readPros } from '../utils/readings.js'
@@ -34,11 +35,11 @@ export default function PROs() {
         answer={<><KeyFigures items={[
           { value: format.count(all.length, { full: true }), label: 'societies on file' },
           { value: format.count(disclosed.length, { full: true }), label: 'disclose collections' },
-          { value: format.money(totalUsd), label: 'collected, USD-equivalent' },
+          { value: format.money(totalUsd), label: 'collected, converted to USD' },
           { value: format.money(GLOBAL_COLLECTIONS.music, { currency: '€' }), label: `CISAC music collections ${GLOBAL_COLLECTIONS.year}` },
           disclosed[0] ? { value: disclosed[0].e.short || disclosed[0].e.name, label: 'largest by collections' } : null,
         ]} /><Reading reading={reading} className="mt-2" /></>}
-        lede="Performance, mechanical and neighbouring-rights societies side by side: what each collects, what it pays out, and how it decides who gets what. Figures in native currency from each society's own report." />
+        lede="Performance, mechanical and neighbouring-rights societies side by side: what each collects, what it pays out, and how it decides who gets what. Figures come from each society's own report, shown in US dollars with the reported currency beside them." />
       <FilterBar
         search={{ value: params.q, onChange: (v) => set({ q: v }), placeholder: 'Search societies' }}
         active={[
@@ -81,7 +82,7 @@ export default function PROs() {
           </tr></thead>
           <tbody>
             {rows.map(({ e, ...p }) => {
-              const cur = currencySymbol(p.currency)
+              const cur = p.currency
               return (
                 <tr key={e.id} className="hover:bg-ground-2 transition-colors duration-100">
                   <td className={TD}>
@@ -92,10 +93,10 @@ export default function PROs() {
                   <td className={TD}><div className="flex flex-wrap gap-1">{p.scopes.map((s) => <Tag key={s} tone={SCOPES[s].tone}>{SCOPES[s].label.split(' (')[0]}</Tag>)}</div></td>
                   <td className={`${TD} t-small text-ink-2`}>{MODELS[p.model]?.split(',')[0]}</td>
                   <td className={TD}>
-                    {p.latest ? <><MoneyBar value={p.latest.collections} currency={cur} share={toUsd(p.latest.collections, p.currency) / max} /><div className="t-micro text-ink-4 mt-0.5">{p.latest.year}{p.currency !== 'USD' ? ` · ${p.currency}` : ''}</div></> : <span className="t-small text-ink-4">{p.seriesNote ? 'not disclosed' : '—'}</span>}
+                    {p.latest ? <><MoneyBar value={p.latest.collections} code={cur} share={toUsd(p.latest.collections, p.currency) / max} /><div className="t-micro text-ink-4 mt-0.5">{p.latest.year}{p.currency !== 'USD' ? ` · ${p.currency}` : ''}</div></> : <span className="t-small text-ink-4">{p.seriesNote ? 'not disclosed' : '—'}</span>}
                   </td>
                   <td className={`${TD} text-right`}>{p.growth != null ? <Num kind="pct" value={p.growth} className="t-data" /> : <span className="t-data text-ink-4">—</span>}</td>
-                  <td className={`${TD} text-right`}>{p.latestDist ? <Num kind="money" value={p.latestDist.distributions} opts={{ currency: cur, digits: 2 }} className="t-data" /> : <span className="t-data text-ink-4">—</span>}</td>
+                  <td className={`${TD} text-right`}>{p.latestDist ? <Num kind="money" value={p.latestDist.distributions} opts={{ code: cur, digits: 2 }} className="t-data" /> : <span className="t-data text-ink-4">—</span>}</td>
                   <td className={`${TD} text-right`}>{p.overhead != null ? <Num kind="pct" value={p.overhead} className="t-data text-rate" /> : <span className="t-data text-ink-4">—</span>}</td>
                   <td className={`${TD} text-right`}>{p.members ? <Num kind="count" value={p.members} className="t-data" /> : <span className="t-data text-ink-4">—</span>}</td>
                 </tr>
@@ -114,14 +115,14 @@ export default function PROs() {
         sort: 'Latest collections, largest first',
         stats: [
           { label: 'In this view', value: String(rows.length) },
-          { label: 'Collections here (USD equiv.)', value: format.money(rows.filter((r) => r.latest).reduce((s, r) => s + toUsd(r.latest.collections, r.currency), 0)) },
+          { label: 'Collections here, in USD', value: format.money(rows.filter((r) => r.latest).reduce((s, r) => s + toUsd(r.latest.collections, r.currency), 0)) },
           { label: 'On record', value: String(all.length) },
           { label: 'CISAC music collections 2024', value: format.money(GLOBAL_COLLECTIONS.music) },
         ],
         columns: ['Society', 'Region', 'Rights', 'Model', 'Latest collections', 'Year', 'YoY', 'Paid out', 'Overhead', 'Members'],
-        rows: rows.map(({ e, ...p }) => [e.name, p.region || '', (p.scopes || []).map((s) => SCOPES[s]?.label || s).join(' · '), MODELS[p.model] || p.model || '', p.latest ? `${currencySymbol(p.currency)}${format.count(p.latest.collections)}` : '', p.latest?.year ? String(p.latest.year) : '', p.growth != null ? format.pct(p.growth) : '', p.latestDist ? `${currencySymbol(p.currency)}${format.count(p.latestDist.distributions)}` : '', p.overhead != null ? format.pct(p.overhead) : '', p.members ? format.count(p.members) : '']),
+        rows: rows.map(({ e, ...p }) => [e.name, p.region || '', (p.scopes || []).map((s) => SCOPES[s]?.label || s).join(' · '), MODELS[p.model] || p.model || '', p.latest ? format.usd(p.latest.collections, p.currency) : '', p.latest?.year ? String(p.latest.year) : '', p.growth != null ? format.pct(p.growth) : '', p.latestDist ? format.usd(p.latestDist.distributions, p.currency) : '', p.overhead != null ? format.pct(p.overhead) : '', p.members ? format.count(p.members) : '']),
         total: all.length,
-        notes: ['Collections are reported in each society\u2019s own currency; the summary converts at the rates in data/pros.js for comparison only.', GLOBAL_COLLECTIONS.note],
+        notes: [FX_NOTE, GLOBAL_COLLECTIONS.note],
       })} />
 
       <Card pad="lg" className="max-w-3xl">

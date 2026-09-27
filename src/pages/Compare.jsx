@@ -62,7 +62,7 @@ export default function Compare() {
   return (
     <>
       <PageHeader eyebrow="Canvas · side by side" title="Compare companies"
-        lede="Pick up to six companies and read their reported figures beside each other. Money stays in the currency each company reported, and is never ranked across currencies; the ratios are what travel." />
+        lede="Pick up to six companies and read their reported figures beside each other. Money is shown in US dollars with each company's reported figure beside it, so three companies reporting in three currencies can actually be put in order." />
 
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,380px)_minmax(0,1fr)] gap-4 items-start mb-6">
         <Picker q={q} onQ={setQ} results={results} onAdd={add} full={full} />

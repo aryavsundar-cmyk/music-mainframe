@@ -21,7 +21,7 @@ import { flowsForEntity, FLOWS } from '../data/flows.js'
 import { OVERLAY_LABEL, getConsultingContext, SERVICE_LINES } from '../data/consulting.js'
 import { hubFundLink, hubLinks } from '../data/siblings.js'
 import { CITATION_FALLBACK } from './newsCitations.js'
-import { formatMoney, formatCount, formatPct, formatRate, formatDate, currencySymbol } from './format.js'
+import { formatMoney, formatMoneyUsd, formatCount, formatPct, formatRate, formatDate } from './format.js'
 import { classifyDeal, entityExposure } from './forces.js'
 import { DIRECTIONS, FORCE_BY_ID } from '../data/forces.js'
 import { LIMITS } from '../data/limits.js'
@@ -52,7 +52,7 @@ export function modesFor(entity) {
   return ['full']
 }
 
-const money = (v, cur = 'USD') => formatMoney(v, { currency: currencySymbol(cur), digits: Math.abs(v) >= 1e9 ? 2 : 1 })
+const money = (v, cur = 'USD') => formatMoneyUsd(v, cur, { digits: Math.abs(v) >= 1e9 ? 2 : 1 })
 const dash = (v) => (v == null || v === '' ? '—' : String(v))
 const list = (xs) => (xs && xs.length ? xs.join(', ') : '—')
 

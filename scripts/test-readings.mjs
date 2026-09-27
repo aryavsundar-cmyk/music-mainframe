@@ -13,7 +13,8 @@
  *      taken from whatever the page happened to pass. If a page starts counting the wrong rows, these diverge.
  *
  * The rest of the checks are the rules from the head of `readings.js`: too few records is itself a reading; a
- * ranking claim ("the largest") is dropped when more than one currency is in play; and no sentence is empty.
+ * ranking claim ("the largest") names the conversion when more than one currency is in play; and no sentence is
+ * empty.
  */
 import assert from 'node:assert/strict'
 import fs from 'node:fs'
@@ -110,7 +111,7 @@ t('deals: too few to read is itself a reading, and it cites the count', () => {
   assert.equal(/too few/.test(readDeals({ rows: TOO_FEW, total: 9, disclosed: 1e9, undisclosed: 0, byYear: { 2025: 5 }, estimates: 0 }).text), false)
 })
 
-t('catalogs: "the largest" is only claimed when one currency covers the rows', () => {
+t('catalogs: a cross-currency ranking says that it converted', () => {
   const currencies = new Set(CATALOG_SALES.map((x) => x.currency || 'USD'))
   const largest = [...CATALOG_SALES].sort((a, b) => (b.value || 0) - (a.value || 0))[0]
   const input = {
@@ -125,10 +126,13 @@ t('catalogs: "the largest" is only claimed when one currency covers the rows', (
   const r = readCatalogs(input)
   citesAreVisible(r, 'readCatalogs')
   assert.match(r.text, new RegExp(`The largest is ${largest.catalogOf.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`))
-  // Two currencies and the ranking claim has to go, whatever the values say.
+  // Sprint 42: a ranking across currencies is now a real comparison, because every figure is converted at one
+  // dated rate with the reported figure beside it. What the sentence may NOT do is imply the figures were
+  // already alike, so it names the conversion the moment more than one currency is in play.
   const mixed = readCatalogs({ ...input, currencies: 2 })
-  assert.equal(/The largest is/.test(mixed.text), false, 'a "largest" claim survived a mixed-currency view')
-  assert.match(mixed.text, /superstar catalog sales on file/, 'the rest of the reading must still be said')
+  assert.match(mixed.text, /The largest is/, 'the ranking is available once the figures are in one currency')
+  assert.match(mixed.text, /ordered in US dollars/, 'a cross-currency ranking must say it converted')
+  assert.equal(/ordered in US dollars/.test(r.text), false, 'a single-currency view has nothing to disclaim')
 })
 
 t('abs: the table states that it is a floor against what KBRA has rated', () => {
@@ -155,11 +159,11 @@ t('pros: the sentence names the currency conversion, because this page ranks acr
   assert.ok(input.currencies > 1, 'every society reports in one currency — the conversion note would be untrue')
   const r = readPros(input)
   citesAreVisible(r, 'readPros')
-  assert.match(r.text, /converts at rounded rates/, 'an ordering across currencies must say so')
-  assert.equal(/league table/.test(r.text), true)
+  assert.match(r.text, /converted at one dated rate/, 'an ordering across currencies must say so')
+  assert.match(r.text, /shown in US dollars/)
   assert.match(r.text, new RegExp(`reporting year on file is ${input.latestYear}`))
   // One currency and there is nothing to disclaim.
-  assert.equal(/rounded rates/.test(readPros({ ...input, currencies: 1 }).text), false)
+  assert.equal(/converted at one dated rate/.test(readPros({ ...input, currencies: 1 }).text), false)
 })
 
 t('dsps: subscriber counts are never summed across periods', () => {

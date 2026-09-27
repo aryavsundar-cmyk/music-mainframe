@@ -9,17 +9,17 @@
  *
  * - **Cite the number.** Every claim carries the figure it rests on, so `cites` is the list of numbers in the
  *   sentence and `scripts/test-readings.mjs` checks each one against the data.
- * - **Never rank across currencies silently.** A "largest" claim is only made where one currency covers the rows
- *   (`readCatalogs` takes a `currencies` count and drops the claim otherwise). The one page that does order across
- *   currencies — societies, at the rounded rates in `data/pros.js` — says so in the sentence.
+ * - **Never rank across currencies silently.** Since Sprint 42 every figure is converted to US dollars at one
+ *   dated rate with the reported figure beside it, so a ranking IS a real comparison — and the sentence says it
+ *   converted rather than leaving the reader to assume the figures were already alike.
  * - **Say what the record holds, not what the market did.** "The busiest year ON RECORD" — this table is a
  *   record of what has been filed here, not a census of the industry.
  * - **Too few to read is a reading.** Below five records a page says so rather than describing noise.
  */
-import { format, currencySymbol, formatDate } from './format.js'
+import { format, formatDate } from './format.js'
 
 const n = (v) => format.count(v, { full: true })
-const money = (v, currency = 'USD') => format.money(v, { currency: currencySymbol(currency) })
+const money = (v, currency = 'USD') => format.usd(v, currency)
 
 /**
  * A reading is a sentence plus the figures it rests on, so the claim can be checked against the data.
@@ -86,15 +86,16 @@ export function readDeals({ rows, total, disclosed, undisclosed, byYear, estimat
 }
 
 /**
- * Catalog sales: the same caution about estimates, plus who has been buying. "The largest" is a ranking, so it is
- * only stated when one currency covers the rows — `currencies` is counted from the records, not assumed.
+ * Catalog sales: the same caution about estimates, plus who has been buying. "The largest" is a ranking, and it is
+ * made in dollars — so where the rows span more than one currency the sentence says the ordering was converted
+ * rather than implying the figures were already comparable.
  */
 export function readCatalogs({ rows, total, largest, buyers, estimates, currencies = 1 }) {
   if (!rows) return reading(['No catalog sale on file matches this view.'])
-  const top = currencies === 1 ? largest : null
+  const top = largest
   return reading([
     `${n(rows)} superstar catalog sales on file, worth ${money(total)} as reported.`,
-    top ? `The largest is ${top.catalogOf || top.title} at ${money(top.value, top.currency)}.` : '',
+    top ? `The largest is ${top.catalogOf || top.title} at ${money(top.value, top.currency)}${currencies > 1 ? ', ordered in US dollars because the sales are not all in one currency' : ''}.` : '',
     `${n(buyers)} buyers appear across them.`,
     estimates ? `${n(estimates)} of the values are press estimates, not filed figures.` : '',
   ], [{ label: 'rows', value: rows }, { label: 'total', value: total }, { label: 'buyers', value: buyers }, { label: 'estimates', value: estimates }])
@@ -125,7 +126,7 @@ export function readPros({ rows, total, disclosing, currencies, latestYear }) {
   return reading([
     `${n(rows)} of ${n(total)} societies on file, ${n(disclosing)} of which disclose what they collect.`,
     currencies > 1
-      ? `They report in ${n(currencies)} currencies; the table keeps each society's own, and the ordering converts at rounded rates, so it is indicative rather than a league table.`
+      ? `They report in ${n(currencies)} currencies; every figure is shown in US dollars with the society's own beside it, converted at one dated rate, so the ordering is a real comparison rather than a coincidence of denomination.`
       : '',
     latestYear ? `The most recent reporting year on file is ${latestYear}.` : '',
   ], [{ label: 'rows', value: rows }, { label: 'disclosing', value: disclosing }, { label: 'currencies', value: currencies }])

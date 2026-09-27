@@ -14,7 +14,7 @@ import { getEntity } from '../data/entities.js'
 import { TRANSACTIONS } from '../data/transactions.js'
 import { MILESTONES } from '../data/milestones.js'
 import { CONCEPTS } from './financialConcepts.js'
-import { formatDate, format, currencySymbol } from './format.js'
+import { formatDate, format } from './format.js'
 
 /** The kinds of change, in the order a reader cares about them when two land on the same day. */
 export const KINDS = {
@@ -51,7 +51,7 @@ export const windowStart = (days, today = new Date()) => iso(new Date(today).get
 const PERIODIC = /^(10-K|10-Q|20-F|40-F)/
 export const leadsFiling = (f) => f.weight >= 5 || PERIODIC.test(f.form)
 
-const money = (f) => (f?.value == null ? '—' : format.money(f.value, { currency: currencySymbol(f.currency), digits: Math.abs(f.value) >= 1e9 ? 2 : 1 }))
+const money = (f) => (f?.value == null ? '—' : format.usd(f.value, f.currency, { digits: Math.abs(f.value) >= 1e9 ? 2 : 1 }))
 
 /** "Revenue, quarter to 30 Jun 2026" — what moved, in the reader's words rather than the tag's. */
 const slotLabel = { annual: 'year', quarter: 'quarter', latest: 'balance' }
@@ -103,7 +103,7 @@ export function collectChanges({
     out.push({
       id: `deal:${d.id}`, kind: 'deal', at: day(d.date),
       entityId: parties.find((p) => named(p)) || parties[0] || '', entityName: parties.filter(named).map(name).join(' · ') || 'Market',
-      title: d.title, detail: [d.value ? format.money(d.value, { currency: currencySymbol(d.currency) }) : '', d.type].filter(Boolean).join(' · '),
+      title: d.title, detail: [d.value ? format.usd(d.value, d.currency) : '', d.type].filter(Boolean).join(' · '),
       url: `/deals#${d.id}`, weight: 10,
     })
   }

@@ -40,13 +40,19 @@ t('search finds a company by name, short name and ticker, and never re-offers on
   assert.deepEqual(searchEntities('  '), [])
 })
 
-t('money is never ranked across currencies; ratios always are', () => {
+t('money is ranked in one currency, and the table says it converted', () => {
   const data = buildComparison('wmg,umg', { financials: SEC })
   assert.equal(data.mixedCurrency, true, 'WMG reports in USD, UMG in EUR')
   const rev = row(data, 'revenue')
-  assert.equal(rev.rankable, false, 'a dollar figure must not be ranked against a euro figure')
-  assert.equal(rev.best, null)
-  assert.match(data.caveat, /never ranked across currencies/)
+  // Sprint 42 changed this rule deliberately. Money used to be unrankable the moment two currencies appeared,
+  // which protected against SILENT conversion at the cost of a table that could not compare the three majors.
+  // Conversion is now explicit, dated, and always shown beside the reported figure — so ranking is honest.
+  assert.equal(rev.rankable, true, 'converted figures are comparable, and refusing to compare them helps nobody')
+  assert.equal(rev.best, 1, 'UMG reports more revenue than WMG once both are in one currency')
+  assert.match(data.caveat, /converted to US dollars for comparison/)
+  assert.match(data.caveat, /reported figure in parentheses/)
+  // The protection that remains: the reader is told, in the table, that a conversion happened and when.
+  assert.match(data.caveat, /Federal Reserve H\.10/)
   const usd = buildComparison('wmg,live-nation', { financials: SEC })
   assert.equal(usd.mixedCurrency, false)
   assert.equal(row(usd, 'revenue').rankable, true, 'one currency across the row: ranking it means something')
@@ -113,7 +119,9 @@ t('a missing figure is a gap, never a zero, and every cell keeps its period', ()
   assert.equal(cellText({ unit: 'pct', value: 12.34 }), '12.3%')
   assert.equal(cellText({ unit: 'x', value: 3.456 }), '3.5×')
   assert.equal(cellText({ unit: 'money', value: 6.707e9, currency: 'USD' }), '$6.71B')
-  assert.equal(cellText({ unit: 'money', value: 2.64987e12, currency: 'KRW' }), '₩2.65T', 'each company keeps its own currency')
+  // USD first, the reported figure in parentheses — never one without the other.
+  assert.match(cellText({ unit: 'money', value: 2.64987e12, currency: 'KRW' }), /^\$1\.91B \(₩2\.65T\)$/, 'a converted figure must keep the reported one')
+  assert.equal(cellText({ unit: 'money', value: 6.43e9, currency: 'USD' }), '$6.43B', 'a dollar figure needs no parenthetical')
 })
 
 t('a stale balance is never ranked and never feeds a ratio', () => {
@@ -146,8 +154,14 @@ t('mismatched fiscal years are stated, not lined up silently', () => {
 t('the real comparisons hold up: the majors, and streaming', () => {
   const majors = buildComparison('umg,sony-music-group,wmg', { financials: SEC })
   assert.equal(majors.companies.length, 3)
-  assert.equal(majors.currencies.length, 3, 'EUR, JPY and USD — three currencies, three ways of counting')
-  assert.equal(row(majors, 'revenue').rankable, false)
+  assert.equal(majors.currencies.length, 3, 'EUR, JPY and USD — three currencies')
+  // The comparison this table exists for. Before Sprint 42 it refused to rank the three majors against each
+  // other, because each reports in a different currency; the refusal was principled and the table was useless.
+  const rev = row(majors, 'revenue')
+  assert.equal(rev.rankable, true, 'the three majors must be comparable')
+  assert.equal(rev.cells.filter(Boolean).length, 3)
+  assert.match(cellText(rev.cells[0]), /^\$[\d.]+B \(€[\d.]+B\)$/, 'UMG: dollars first, euro in parentheses')
+  assert.equal(typeof rev.best, 'number', 'one of them is the largest, and the table says which')
   const dsps = buildComparison('spotify,tencent-music,deezer', { financials: SEC })
   assert.equal(dsps.companies.length, 3)
   assert.ok(row(dsps, 'revenue').cells.every(Boolean), 'every listed streaming company has a figure on record')
@@ -168,7 +182,7 @@ t('the export states the caveat, the limit and the empty cells', () => {
   })
   const text = renderBriefText(doc).replace(/\s+/g, ' ')
   assert.ok(text.includes(LIMITS.comparison.claim), 'the export must carry the limit')
-  assert.ok(text.includes('never ranked across currencies'))
+  assert.ok(text.includes('converted to US dollars for comparison'))
   assert.ok(text.includes('never zero'))
   assert.ok(text.includes('Warner Music Group') && text.includes('Universal Music Group'))
 })

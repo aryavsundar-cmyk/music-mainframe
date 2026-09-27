@@ -5,7 +5,10 @@
  *
  * 1. A figure in one currency is never ranked against a figure in another. €988.8M is not "less than" $1.31B in
  *    this app, because nothing on record converts them at the right date. Money rows are shown, with each
- *    company's own currency, and marked not comparable the moment two currencies appear.
+ *    company's own currency AND in US dollars, so a ranking across currencies is a real comparison rather than
+ *    a category error. Sprint 42 changed this rule: money used to be unrankable the moment two currencies
+ *    appeared, which protected against silent conversion at the cost of a table that could not compare the three
+ *    majors. Conversion is now explicit, dated and always shown beside the reported figure.
  * 2. Ratios are unit-free, so margins, growth and multiples compare across currencies — as long as each side is
  *    built from one company's own figures for one period.
  * 3. Fiscal years differ (Reservoir's ends in March, WMG's in September). A comparison says so rather than
@@ -17,7 +20,8 @@
  */
 import { ENTITIES, getEntity } from '../data/entities.js'
 import { getTransactionsForEntity } from '../data/transactions.js'
-import { format, currencySymbol, formatDate } from './format.js'
+import { format, formatDate } from './format.js'
+import { toUsd, FX_SHORT } from '../data/fx.js'
 import { currentRevenue, freshnessOf, kindLabel } from './freshness.js'
 import { freeCashFlow, operatingMargin, sameYear, pctChange } from './financialConcepts.js'
 
@@ -164,13 +168,17 @@ export function buildComparison(ids, { financials = {}, today = new Date() } = {
     unit: opts.unit || 'money',
     lowerIsBetter: !!opts.lowerIsBetter,
     note: opts.note || '',
-    // Money is only rankable when one currency covers every figure present.
-    // `rank: false` for a count of what this app happens to hold (deals on record): more records is not better.
+    // Money is rankable because every figure is converted to one currency before it is compared. That is a
+    // change of rule, not a relaxation of it: the old rule refused to rank across currencies because converting
+    // SILENTLY is a way to state something false. Conversion is now explicit, dated and always shown beside the
+    // reported figure, so the comparison is honest — and a table that refused to rank the majors against each
+    // other was not protecting anyone, it was just unreadable.
+    //
+    // A stale balance is still never ranked, and `rank: false` still holds for a count of what this app happens
+    // to hold: more records on file is not a better company.
     rankable: opts.rank === false || cells.some((c) => c?.stale)
       ? false
-      : opts.unit === 'money' || !opts.unit
-        ? new Set(cells.filter(Boolean).map((c) => c.currency)).size === 1 && cells.filter(Boolean).length > 1
-        : cells.filter(Boolean).length > 1,
+      : cells.filter(Boolean).length > 1,
   })
 
   const rows = [
@@ -196,7 +204,13 @@ export function buildComparison(ids, { financials = {}, today = new Date() } = {
   for (const r of rows) {
     r.best = null
     if (!r.rankable || r.unit === 'text') continue
-    const vals = r.cells.map((c) => (c && typeof c.value === 'number' ? c.value : null))
+    // Compared in dollars, so two companies reporting in different currencies can actually be put in order.
+    const vals = r.cells.map((c) => {
+      if (!c || typeof c.value !== 'number') return null
+      if (r.unit !== 'money') return c.value
+      const usd = toUsd(c.value, c.currency)
+      return usd == null ? null : usd
+    })
     const present = vals.filter((v) => v != null)
     if (present.length < 2) continue
     const target = r.lowerIsBetter ? Math.min(...present) : Math.max(...present)
@@ -213,7 +227,7 @@ export function buildComparison(ids, { financials = {}, today = new Date() } = {
     index: indexedRevenue(companies),
     /** The sentence the page and every export lead with, so nobody reads the table as like-for-like. */
     caveat: [
-      mixedCurrency ? `These companies report in ${currencies.length} currencies (${currencies.join(', ')}). Money is shown as each reported it and is never ranked across currencies; only the ratios compare.` : '',
+      mixedCurrency ? `These companies report in ${currencies.length} currencies (${currencies.join(', ')}). Money is converted to US dollars for comparison, with each company's reported figure in parentheses. ${FX_SHORT}` : '',
       mixedFiscalYear ? 'Their fiscal years end on different dates, so the years beside each other are not the same twelve months.' : '',
       companies.some((c) => c.rev?.source === 'record') && companies.some((c) => c.rev?.source === 'sec') ? 'Some figures are filed with the SEC and refreshed daily; others are entered by hand from the company’s own results, with the source on each page.' : '',
       companies.filter((c) => c.segmentOf).map((c) => `${c.e.name}'s figure is segment revenue inside ${c.segmentOf}'s accounts, which report no margin or cash flow for the segment alone.`).join(' '),
@@ -221,11 +235,11 @@ export function buildComparison(ids, { financials = {}, today = new Date() } = {
   }
 }
 
-/** A cell's value in the unit it was reported in. Money keeps its own currency symbol — never converted. */
+/** A cell as the reader sees it. Money leads with US dollars and keeps the reported figure in parentheses. */
 export function cellText(cell) {
   if (!cell) return null
   if (cell.unit === 'text') return cell.text
-  if (cell.unit === 'money') return format.money(cell.value, { currency: currencySymbol(cell.currency), digits: Math.abs(cell.value) >= 1e9 ? 2 : 1 })
+  if (cell.unit === 'money') return format.usd(cell.value, cell.currency, { digits: Math.abs(cell.value) >= 1e9 ? 2 : 1 })
   if (cell.unit === 'pct') return format.pct(cell.value)
   if (cell.unit === 'x') return `${cell.value.toFixed(1)}×`
   return format.count(cell.value)

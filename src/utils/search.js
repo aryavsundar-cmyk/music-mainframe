@@ -22,7 +22,7 @@ import { TRANSACTIONS } from '../data/transactions.js'
 import { GLOSSARY } from '../data/glossary.js'
 import { PAGE_GUIDE } from '../data/pageGuide.js'
 import { ALIASES, SAVED_VIEWS } from '../data/aliases.js'
-import { format, currencySymbol, formatDate } from './format.js'
+import { format, formatDate } from './format.js'
 
 /** The kinds a result can be, in the order they are grouped. */
 export const KINDS = {
@@ -93,7 +93,7 @@ export function buildIndex({ entities = ENTITIES, transactions = TRANSACTIONS, g
       kind: 'deal',
       title: t.title,
       subtitle: [formatDate(String(t.date).slice(0, 10)), t.type, t.asset].filter(Boolean).join(' · '),
-      meta: t.value ? format.money(t.value, { currency: currencySymbol(t.currency) }) : '',
+      meta: t.value ? format.usd(t.value, t.currency) : '',
       to: `/deals?q=${encodeURIComponent(t.title.slice(0, 40))}#${t.id}`,
       tier: 2,
       keys: [

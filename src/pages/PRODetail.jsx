@@ -3,7 +3,7 @@ import { ArrowLeft, ExternalLink } from 'lucide-react'
 import { PageHeader, SectionHeader, Card, Stat, Tag, Num, FlowMark, Bar } from '../components/primitives/index.js'
 import { getEntityProfile } from '../data/entities.js'
 import { getProProfile, SCOPES, MODELS } from '../data/pros.js'
-import { currencySymbol, formatDate } from '../utils/format.js'
+import { formatDate } from '../utils/format.js'
 import { ExportButtons } from '../components/export/ExportButtons.jsx'
 
 export default function PRODetail() {
@@ -13,7 +13,7 @@ export default function PRODetail() {
     return (<><PageHeader eyebrow="PROs & CMOs" tone="muted" title="No such society." lede={`Nothing is filed under "${id}".`} /><Link to="/pros" className="t-small text-accent no-underline inline-flex items-center gap-1"><ArrowLeft size={14} aria-hidden="true" /> All societies</Link></>)
   }
   const p = getProProfile(id)
-  const cur = currencySymbol(p.currency)
+  const cur = p.currency
   const max = Math.max(...p.series.map((s) => s.collections || s.distributions || 0), 1)
   return (
     <>
@@ -28,8 +28,8 @@ export default function PRODetail() {
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-        <Stat label={`Collections ${p.latest?.year || ''}`} kind="money" value={p.latest?.collections} opts={{ currency: cur, digits: 2 }} hint={p.currency !== 'USD' ? `reported in ${p.currency}` : undefined} />
-        <Stat label={`Distributions ${p.latestDist?.year || ''}`} kind="money" value={p.latestDist?.distributions} opts={{ currency: cur, digits: 2 }} />
+        <Stat label={`Collections ${p.latest?.year || ''}`} kind="money" value={p.latest?.collections} opts={{ code: cur, digits: 2 }} hint={p.currency !== 'USD' ? `reported in ${p.currency}` : undefined} />
+        <Stat label={`Distributions ${p.latestDist?.year || ''}`} kind="money" value={p.latestDist?.distributions} opts={{ code: cur, digits: 2 }} />
         <Stat label="Growth (collections)" kind="pct" value={p.growth} hint={p.growth != null ? 'year on year' : 'insufficient series'} />
         <Stat label="Overhead" kind="rate" value={p.overhead} opts={{ kind: 'pct', digits: 1 }} hint={p.overheadNote} />
       </div>
@@ -48,8 +48,8 @@ export default function PRODetail() {
                         <Bar share={(s.collections || 0) / max} tone="publishing" />
                         <Bar share={(s.distributions || 0) / max} tone="secondary" height="h-1.5" />
                       </div>
-                      <Num kind="money" value={s.collections} opts={{ currency: cur, digits: 2 }} className="t-data text-right" />
-                      <Num kind="money" value={s.distributions} opts={{ currency: cur, digits: 2 }} className="t-data text-right text-ink-3" />
+                      <Num kind="money" value={s.collections} opts={{ code: cur, digits: 2 }} className="t-data text-right" />
+                      <Num kind="money" value={s.distributions} opts={{ code: cur, digits: 2 }} className="t-data text-right text-ink-3" />
                     </div>
                   ))}
                   <div className="grid grid-cols-[48px_minmax(0,1fr)_88px_88px] gap-3 t-micro text-ink-4"><span /><span /><span className="text-right">collected</span><span className="text-right">paid out</span></div>
@@ -57,8 +57,8 @@ export default function PRODetail() {
                 {p.seriesNote && <p className="t-small text-ink-3 mt-4 mb-0">{p.seriesNote}</p>}
                 {(p.domestic2025 || p.international2025) && (
                   <div className="flex gap-8 mt-4">
-                    {p.domestic2025 && <Stat label="Domestic 2025" kind="money" value={p.domestic2025} opts={{ currency: cur, digits: 2 }} size="sm" />}
-                    {p.international2025 && <Stat label="International 2025" kind="money" value={p.international2025} opts={{ currency: cur, digits: 2 }} size="sm" />}
+                    {p.domestic2025 && <Stat label="Domestic 2025" kind="money" value={p.domestic2025} opts={{ code: cur, digits: 2 }} size="sm" />}
+                    {p.international2025 && <Stat label="International 2025" kind="money" value={p.international2025} opts={{ code: cur, digits: 2 }} size="sm" />}
                   </div>
                 )}
               </>

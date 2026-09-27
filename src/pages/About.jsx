@@ -9,6 +9,7 @@ import { EDITION, EDITIONS, FRAMING, IS_WORK, has } from '../editions.js'
 import { guideFor, WORKFLOWS, CONVENTIONS } from '../data/pageGuide.js'
 import { canvasCoverage, GAPS, GAP_ORDER } from '../utils/coverage.js'
 import { citationQuality } from '../utils/citations.js'
+import { FX_NOTE, FX_SOURCE, FX_ASOF } from '../data/fx.js'
 import { MILESTONES } from '../data/milestones.js'
 import SOURCE_CHECK from '../../data/source-check.json'
 import { useFinancials } from '../hooks/useFinancials.js'
@@ -104,6 +105,20 @@ export default function About() {
           does not mean being undisclosed, as Bertelsmann&apos;s full annual report and Merlin&apos;s statutory
           transparency report both show. <Link to="/entities?cover=unresearched" className="text-accent no-underline hover:underline">The open gaps are ranked</Link> by
           what closing each one would buy.
+        </p>
+      </Card>
+
+      <SectionHeader title="Why every figure is in dollars" aside={`rates for ${FX_ASOF}`} />
+      <Card pad="md" className="mb-8">
+        <p className="t-small text-ink-2 m-0 mb-2 max-w-3xl">{FX_NOTE}</p>
+        <p className="t-small text-ink-2 m-0 max-w-3xl">
+          Companies on this canvas report in nine currencies. Each figure is exactly what that company published,
+          and together they cannot be read: a trillion won and a billion euro do not compare by eye. So money is
+          shown in dollars first with the reported figure beside it — and the reported figure never disappears,
+          which is checked in the build.
+        </p>
+        <p className="t-micro text-ink-4 m-0 mt-2">
+          <a href={FX_SOURCE.url} target="_blank" rel="noreferrer" className="text-ink-3 no-underline hover:text-accent">{FX_SOURCE.label}</a>
         </p>
       </Card>
 
