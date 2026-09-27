@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUpRight, ExternalLink } from 'lucide-react'
-import { Card, Tag } from '../primitives/index.js'
+import { Card, Tag, ServiceDown, Loading } from '../primitives/index.js'
 import { CopyButton, Draft, Field, ScoreBar, TierTag, selectFull } from './ProspectUi.jsx'
 import { LIMITS, briefText, draftOutreach } from '../../utils/outreach.js'
 import { hypothesesFor, lineLabel, recommendedLine, SEGMENT_BY_ID } from '../../utils/prospect.js'
@@ -215,8 +215,8 @@ export function AccountNews({ accountId }) {
       .catch(() => { if (alive) setState({ key: accountId, items: [], status: 'unavailable' }) })
     return () => { alive = false }
   }, [accountId])
-  if (state.key !== accountId || state.status === 'loading') return <p className="t-small text-ink-4 m-0">Loading the feed…</p>
-  if (state.status === 'unavailable') return <p className="t-small text-ink-4 m-0">News feed unreachable.</p>
+  if (state.key !== accountId || state.status === 'loading') return <Loading what="Reading the live feed for this account…" lines={2} />
+  if (state.status === 'unavailable') return <ServiceDown service="The live news feed" cost="nothing can be said about recent coverage of this account either way" />
   if (!state.items.length) return <p className="t-small text-ink-4 m-0">Nothing in the feed mentions this account yet.</p>
   return (
     <div className="space-y-2">

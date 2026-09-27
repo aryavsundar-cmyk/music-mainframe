@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowDown, ArrowUp, Table2 } from 'lucide-react'
-import { PageHeader, FilterBar, Chip, Segmented } from '../components/primitives/index.js'
+import { PageHeader, FilterBar, Chip, Segmented, SideScroller } from '../components/primitives/index.js'
 import { ENTITIES, OWNERSHIP, AS_OF } from '../data/entities.js'
 import { COLUMNS, DIRECTIONS, MARKET_STRIP, buildMap, filterEntitiesForMap, connectionsOf, columnOf } from '../utils/entityMap.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
@@ -9,7 +9,6 @@ import { useFinancials } from '../hooks/useFinancials.js'
 import { MapColumn, MapGroup, MapCard, MarketStrip } from '../components/entities/map/MapParts.jsx'
 import { LENS, cardMetric } from '../components/entities/map/mapStyle.js'
 import { MapDrawer } from '../components/entities/map/MapDrawer.jsx'
-import { TopScroll } from '../components/entities/map/TopScroll.jsx'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 
@@ -137,7 +136,7 @@ export default function EntityMap() {
         </div>
       </div>
 
-      <TopScroll target={scroller} />
+      <SideScroller target={scroller} label="Scroll the map sideways" />
       <div ref={scroller} className="overflow-x-auto pb-4 -mx-1 px-1" role="region" aria-label="Entity map — scroll sideways for more stages" tabIndex={0}>
         <div className="flex gap-6 items-start min-w-full">
           {map.map((c, i) => (

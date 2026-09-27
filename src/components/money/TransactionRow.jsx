@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronDown, ExternalLink } from 'lucide-react'
-import { Tag, Num } from '../primitives/index.js'
+import { Tag, Num, Bar } from '../primitives/index.js'
 import { TX_TYPES, ASSETS, partyName } from '../../data/transactions.js'
 import { formatDate } from '../../utils/format.js'
 import { AbsStructure } from './AbsStructure.jsx'
@@ -20,8 +20,12 @@ function Party({ p }) {
 /**
  * TransactionRow — one deal, expandable. Used by /deals, /pe/:id, /entities/:id, /catalogs.
  * `dense` hides the type tag column (when the list is already filtered by type).
+ *
+ * `scale` is the largest value in the list this row is part of, so the bar under the figure says how big this deal
+ * is against the others on screen. `TransactionList` works it out, and only when one currency covers the list —
+ * without that, the bar would rank euros against dollars with nothing on screen to give it away.
  */
-export function TransactionRow({ t, dense = false, defaultOpen = false }) {
+export function TransactionRow({ t, dense = false, defaultOpen = false, scale = 0 }) {
   const [open, setOpen] = useState(defaultOpen)
   const tt = TX_TYPES[t.type]
   const tag = classifyDeal(t)
@@ -46,6 +50,10 @@ export function TransactionRow({ t, dense = false, defaultOpen = false }) {
             <Num kind="money" value={t.value} className="t-data" />
             <ChevronDown size={14} className={`text-ink-4 transition-transform duration-150 ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
           </div>
+          {scale > 0 && t.value > 0 && (
+            <Bar share={t.value / scale} height="h-1" tone={ASSET_TONE[t.asset] === 'recording' ? 'recording' : ASSET_TONE[t.asset] === 'publishing' ? 'publishing' : 'accent'}
+              className="mt-1 ml-auto w-[88px]" />
+          )}
           <div className="mt-1 flex justify-end gap-1">
             {!dense && <Tag tone={tt?.tone || 'neutral'}>{tt?.label || t.type}</Tag>}
             <Tag tone={ASSET_TONE[t.asset] || 'neutral'}>{ASSETS[t.asset] || t.asset}</Tag>
@@ -70,7 +78,18 @@ export function TransactionRow({ t, dense = false, defaultOpen = false }) {
   )
 }
 
+/**
+ * A list of deals, each carrying a bar scaled to the largest DISCLOSED value in the list.
+ *
+ * The scale is dropped the moment more than one currency is present: a bar has no axis, so a €500M deal drawn
+ * against a $2B maximum would read as a quarter of the biggest deal rather than as a figure in another currency.
+ * Terminated deals are excluded from the maximum for the same reason the totals exclude them — the number was never
+ * paid, and letting it set the scale would shrink every deal that was.
+ */
 export function TransactionList({ items, dense = false, empty = 'No transactions match.' }) {
   if (items.length === 0) return <div className="py-12 text-center t-body text-ink-3">{empty}</div>
-  return <div className="border-t border-line-1">{items.map((t) => <TransactionRow key={t.id} t={t} dense={dense} />)}</div>
+  const priced = items.filter((t) => t.value > 0 && t.status !== 'terminated')
+  const oneCurrency = new Set(priced.map((t) => t.currency || 'USD')).size <= 1
+  const scale = oneCurrency && priced.length > 1 ? Math.max(...priced.map((t) => t.value)) : 0
+  return <div className="border-t border-line-1">{items.map((t) => <TransactionRow key={t.id} t={t} dense={dense} scale={scale} />)}</div>
 }

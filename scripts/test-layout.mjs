@@ -72,9 +72,10 @@ t('headline figures are one computed line, not a tile grid between the title and
     const src = read(`pages/${page}.jsx`)
     assert.equal(/grid-cols-2 md:grid-cols-4 gap-4 mb-8/.test(src), false, `${page} still has a stat-tile grid above its content`)
   }
-  // The pages that lead with figures rather than rows state them in the header instead.
+  // The pages that lead with figures rather than rows state them in the header instead. Sprint 35 puts a computed
+  // sentence beside those figures, so the slot holds a fragment on the pages that have one.
   for (const page of ['Entities', 'Deals', 'News', 'PROs', 'PE', 'Catalogs', 'CatalogScan', 'Prospecting', 'Changes', 'Glossary']) {
-    assert.match(read(`pages/${page}.jsx`), /answer=\{<KeyFigures/, `${page} does not say anything true before the reader works`)
+    assert.match(read(`pages/${page}.jsx`), /answer=\{(<>\s*)?<KeyFigures/, `${page} does not say anything true before the reader works`)
   }
 })
 
@@ -96,6 +97,24 @@ t('every component used in JSX is imported or defined in the same file', () => {
     }
   }
   assert.deepEqual(bad, [], 'a component used without an import renders a blank page, and nothing else catches it')
+})
+
+t('no file imports a component it no longer uses', () => {
+  // The mirror of the check above, and dead for the same reason: `varsIgnorePattern: '^[A-Z_]'` exempts every
+  // capitalised name from no-unused-vars, so an import left behind by a refactor is invisible to the linter. Three
+  // of them survived Sprint 35's extraction of the change row before this check was written.
+  const bad = []
+  for (const { file, src } of allJsx()) {
+    const body = src.replace(/^import[^\n]*\n/gm, '')
+    for (const m of src.matchAll(/^import \{([^}]*)\} from/gm)) {
+      for (const raw of m[1].split(',')) {
+        const name = raw.trim().split(/\s+as\s+/).pop().trim()
+        if (!/^[A-Z][A-Za-z0-9_]*$/.test(name)) continue
+        if (!new RegExp(`\\b${name}\\b`).test(body)) bad.push(`${file}: ${name}`)
+      }
+    }
+  }
+  assert.deepEqual(bad, [], 'an import nothing uses is a refactor that was not finished')
 })
 
 t('exactly one PageHeader renders at a time, so the browser title is never ambiguous', () => {

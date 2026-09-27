@@ -10,7 +10,7 @@
 import assert from 'node:assert/strict'
 import fs from 'node:fs'
 import { diffCompany, diffAll, appendChanges, MAX_ENTRIES } from '../src/utils/figureChanges.js'
-import { collectChanges, byDay, countByKind, coverageOf, windowStart, KIND_LIST, WINDOWS, leadsFiling } from '../src/utils/changes.js'
+import { collectChanges, byDay, countByKind, coverageOf, windowStart, KIND_LIST, WINDOWS, leadsFiling, DEFAULT_KINDS } from '../src/utils/changes.js'
 import { readLists, toggleInList, addList, removeList, isWatched, DEFAULT_LIST } from '../src/utils/watchlist.js'
 import { PAGE_GUIDE, guideFor, WORKFLOWS } from '../src/data/pageGuide.js'
 import { TRANSACTIONS } from '../src/data/transactions.js'
@@ -122,6 +122,18 @@ t('coverage: a window reaching before a source began says so', () => {
   assert.equal(full.complete, true, 'a window inside every source is complete')
   const down = coverageOf({ from: '2026-09-26', archiveSince: null, figuresSince: '2026-09-01' })
   assert.match(down.gaps[0], /not reachable/, 'a source that did not answer is named, not silently missing')
+})
+
+t('coverage never warns about a source the view has switched off', () => {
+  // A company strip runs with news off (DEFAULT_KINDS). It used to print "the news archive only holds stories
+  // from …" underneath a list that contained no news at all, which reads as a gap in what is on screen.
+  const args = { from: '2026-01-01', archiveSince: '2026-09-21', figuresSince: '2026-01-01', filingsSince: '2026-01-01' }
+  assert.equal(coverageOf(args).gaps.some((g) => /news archive/.test(g)), true, 'with news on, the late archive is a real gap')
+  const off = coverageOf({ ...args, kinds: DEFAULT_KINDS })
+  assert.equal(off.gaps.some((g) => /news archive/.test(g)), false, 'with news off, the archive is not a gap in this view')
+  assert.equal(DEFAULT_KINDS.includes('news'), false, 'the feed is for changes to the record; news is opt-in')
+  // A source that IS shown and cannot be reached still has to say so.
+  assert.match(coverageOf({ ...args, kinds: ['figure'], figuresSince: null }).gaps[0], /not reachable/)
 })
 
 t('windows are whole days ending today', () => {

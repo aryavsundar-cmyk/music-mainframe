@@ -1,8 +1,10 @@
 import { useNavigate, Link } from 'react-router-dom'
-import { Tag, Num, DataTable, Th, EmptyState, EmptyAction } from '../primitives/index.js'
+import { Tag, Num, DataTable, Th, EmptyState, EmptyAction, Sparkline } from '../primitives/index.js'
 import { ENTITY_TYPES, LENS_TONE, OWNERSHIP, getEntity, headlineMetric } from '../../data/entities.js'
 import { currencySymbol } from '../../utils/format.js'
 import { currentRevenue, freshnessOf } from '../../utils/freshness.js'
+import { revenueTrend } from '../../utils/financialConcepts.js'
+import { format, currencySymbol as sym } from '../../utils/format.js'
 
 /**
  * The headline figure: the freshest revenue (a filing beats a hand-entered number for the same or an earlier
@@ -18,6 +20,27 @@ function headline(e, fin) {
 const TD = 'py-2.5 px-3 border-b border-line-1 align-top'
 
 /**
+ * How a figure's status reads at a glance. The words stayed — a dot alone is colour-only, and this table is read by
+ * people who need to know a number is stale before they quote it — but the dot is what a skimming eye finds, and it
+ * puts the four verdicts in one column of the row instead of three different phrases in small text.
+ */
+const STATUS = {
+  due: { dot: 'bg-danger', text: 'text-danger', label: 'due for refresh' },
+  pending: { dot: 'bg-accent', text: 'text-accent', label: 'newer report filed' },
+  final: { dot: 'bg-ink-4', text: 'text-ink-4', label: 'last disclosed' },
+  current: { dot: 'bg-ink-4', text: 'text-ink-4', label: '' },
+}
+
+/** The trend a sparkline draws, said in words for anyone who cannot see the line. */
+function trendLabel(trend, currency) {
+  const { points } = trend
+  const first = points[0]
+  const last = points[points.length - 1]
+  const money = (v) => format.money(v, { currency: sym(currency) })
+  return `Reported revenue ${first.year} to ${last.year}: ${money(first.value)} to ${money(last.value)}, ${points.length} years on file.`
+}
+
+/**
  * One company. The row used to be a fake button — tabIndex on a <tr>, Enter but no Space, no role, wrapping two
  * real links — so every row was three tab stops that announced as "row". The name link is the control now; the
  * row itself only follows the pointer.
@@ -27,6 +50,9 @@ function Row({ e, fin }) {
   const parent = e.parentId ? getEntity(e.parentId) : null
   const hm = headline(e, fin)
   const t = ENTITY_TYPES[e.type]
+  // Only SEC filers have a multi-year record in one currency; everyone else shows the figure alone.
+  const trend = revenueTrend(fin)
+  const status = STATUS[hm?.f?.status]
   return (
     <tr className="group cursor-pointer transition-colors duration-100 hover:bg-ground-2" onClick={() => navigate(`/entities/${e.id}`)}>
       <td className={TD}>
@@ -49,10 +75,18 @@ function Row({ e, fin }) {
       </td>
       <td className={`${TD} text-right whitespace-nowrap`}>
         {hm
-          ? <><Num kind={hm.kind} value={hm.value} opts={hm.currency ? { currency: currencySymbol(hm.currency) } : undefined} className="t-data" /><div className="t-micro text-ink-4">{hm.label}</div>
-              {hm.f?.status === 'due' && <div className="t-micro text-danger" title={hm.f.reason}>due for refresh</div>}
-              {hm.f?.status === 'pending' && <div className="t-micro text-accent" title={hm.f.reason}>newer report filed</div>}
-              {hm.f?.status === 'final' && <div className="t-micro text-ink-4" title={hm.f.reason}>last disclosed</div>}</>
+          ? <>
+              <div className="flex items-center justify-end gap-2">
+                {trend && <Sparkline points={trend.points} label={trendLabel(trend, trend.currency)} className="text-ink-3" />}
+                <Num kind={hm.kind} value={hm.value} opts={hm.currency ? { currency: currencySymbol(hm.currency) } : undefined} className="t-data" />
+              </div>
+              <div className="t-micro text-ink-4">{hm.label}</div>
+              {status?.label && (
+                <div className={`t-micro ${status.text} inline-flex items-center gap-1.5`} title={hm.f.reason}>
+                  <span className={`w-1.5 h-1.5 rounded-full ${status.dot}`} aria-hidden="true" />{status.label}
+                </div>
+              )}
+            </>
           : <span className="t-data text-ink-4">—</span>}
       </td>
     </tr>

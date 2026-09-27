@@ -191,7 +191,7 @@ the built DOM.
 
 ---
 
-### 4 — Informative · *Sprint 35*
+### 4 — Informative · *Sprint 35* ✅ shipped — a computed sentence on 8 pages, marks inside 5 tables, 5 patterns consolidated
 
 > "Many data visualizations do the opposite of making big numbers comprehensible." — *UPUX*, 78, *make data lovable*
 > "Some complexity cannot be reduced." (Tesler's law) — *UPUX*, 46
@@ -207,7 +207,34 @@ the built DOM.
   a paragraph above the data.
 - **Company page**: a "what changed here" strip, and the five-year record as a chart rather than only a table.
 
-**Test:** extend `test:outcomes` so that every computed sentence cites a number that exists in the data.
+**Test:** `npm run test:readings` (new, 11 checks). Each reading carries `cites` — the figures the sentence rests
+on — and the test recomputes every input straight from the data modules, then asserts (a) each cited figure appears
+in the sentence and (b) it equals the figure the data holds. It also holds the rules: "too few to read" below five
+records, no "largest" claim across currencies, no summed subscriber counts across periods, and the ABS floor.
+
+**What shipped**
+
+| | |
+|---|---|
+| `utils/readings.js` + `<Reading>` | One computed sentence on `/entities`, `/deals`, `/catalogs`, `/abs`, `/pros`, `/dsps`, `/pe`, `/market/catalogs`. Counted off the rows on screen, so it narrows with the filters. |
+| `<Sparkline>` + `revenueTrend` | Every SEC filer's reported revenue across the years on file, drawn inside its row on `/entities`. One currency, three points minimum. |
+| Freshness dot | The four verdicts as one mark in the row, with the words kept beside it. |
+| `<Bar>` | Nine hand-drawn bars became one, with two rules the old ones disagreed on: a tiny-but-real value keeps a visible sliver, a genuine zero draws nothing, and a money bar is dropped rather than scaled across currencies. |
+| `<Caveat>` | Fine print leads with the line that changes the reading; the mechanics fold into a real `<details>`. |
+| `<EntityChanges>` | "What changed here" on every company page — the same feed as `/changes`, scoped to one company. |
+| `<ChangeList>` | The change row had three spellings across the feed, the digest and the company strip. One now. |
+| `<SearchInput>` | Five search boxes at three heights became one. |
+| `<ServiceDown>` | The same outage was phrased four ways in two tones. The tone now follows what the reader loses, and the message must say what that is. |
+| `<Loading>` | A waiting panel shows the shape of what is coming, not one line of grey text. |
+| `<SideScroller>` | The map's scrubber, now also under the flow diagrams. |
+| `CONVENTIONS` on `/about` | What every mark means, in one place, carried into the export. |
+
+**Two bugs the work surfaced.** A company strip with news switched off was still printing "the news archive only
+holds stories from…", warning about a gap in something that was never on screen — `coverageOf` now takes the kinds
+in play. And `test:layout` gained the mirror of its import check: five files imported components they no longer
+used, invisible to ESLint because `varsIgnorePattern: '^[A-Z_]'` exempts every capitalised name. One of them was
+`/pros` importing `EmptyState` and never rendering it, so a filtered-to-nothing society table showed a full header
+above an empty body.
 
 ---
 

@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUpRight, ExternalLink, Search, X } from 'lucide-react'
 import { format } from '../utils/format.js'
-import { PageHeader, Card, Tag, FilterBar, KeyFigures, EmptyState, EmptyAction } from '../components/primitives/index.js'
+import { PageHeader, Card, Tag, FilterBar, KeyFigures, EmptyState, EmptyAction, Reading } from '../components/primitives/index.js'
 import { ExportBar } from '../components/export/ExportBar.jsx'
 import { describeFilters, filterSentence } from '../utils/pageDocs.js'
 import { selectClass } from '../components/prospecting/ProspectUi.jsx'
@@ -15,6 +15,7 @@ import { ASSETS } from '../data/transactions.js'
 import { fmtM } from '../utils/valuation.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
 import { useDismissable } from '../hooks/useDismissable.js'
+import { readCatalogScan } from '../utils/readings.js'
 
 const money = (v) => (!v ? '—' : v >= 1e9 ? `$${(v / 1e9).toFixed(1)}B` : fmtM(v, 0))
 const BANDS = { live: { label: 'Live signal', tone: 'danger' }, watch: { label: 'Worth watching', tone: 'accent' }, quiet: { label: 'Quiet', tone: 'neutral' } }
@@ -29,19 +30,22 @@ export default function CatalogScan() {
   const stats = useMemo(() => marketStats(rows), [rows])
   const shown = filterCatalogs(rows, params)
   const selected = rows.find((r) => r.id === params.row) || null
+  // Scored off the filtered list, so narrowing to one owner reports that owner's scores rather than the market's.
+  const seen = marketStats(shown)
+  const reading = readCatalogScan({ rows: shown.length, total: rows.length, watch: seen.watch, live: seen.live, owners: seen.owners })
 
   return (
     <>
       <PageHeader eyebrow="Market · demand side" title="Catalog scan"
-        answer={<KeyFigures items={[
+        answer={<><KeyFigures items={[
           { value: format.count(stats.holdings, { full: true }), label: 'holdings tracked' },
           { value: format.count(stats.watch, { full: true }), label: 'worth watching', to: '/market/catalogs?band=watch' },
           { value: format.count(stats.live, { full: true }), label: 'with a live signal' },
           { value: format.count(stats.owners, { full: true }), label: 'owners' },
           { value: money(stats.tracked), label: 'disclosed value' },
-        ]} />}
+        ]} /><Reading reading={reading} className="mt-2" /></>}
         lede="Every catalog holding the app can trace to a sourced transaction, scored on how likely it is to come to market — owner behaviour, hold period, refinancing dates ahead, and sale-intent language in the live feed."
-        actions={<span className="t-micro text-ink-4">{!ready ? 'Loading enrichment…' : connectors.length ? `${connectors.filter((c) => c.live).length}/${connectors.length} connectors live` : 'Enrichment unreachable'}</span>} />
+        actions={<span className="t-micro text-ink-4">{!ready ? 'Reading the enrichment connectors…' : connectors.length ? `${connectors.filter((c) => c.live).length}/${connectors.length} connectors live` : 'Enrichment unreachable'}</span>} />
 
       <FilterBar
         search={{ value: params.q, onChange: (v) => set({ q: v }), placeholder: 'Search holdings, owners, sellers' }}

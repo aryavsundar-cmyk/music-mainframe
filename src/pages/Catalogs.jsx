@@ -1,11 +1,12 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { PageHeader, FilterBar, KeyFigures, Tag, Num, DataTable, Th, Eyebrow, Segmented } from '../components/primitives/index.js'
+import { PageHeader, FilterBar, KeyFigures, Tag, Num, DataTable, Th, Eyebrow, Segmented, Reading, Bar } from '../components/primitives/index.js'
 import { TransactionList } from '../components/money/TransactionRow.jsx'
 import { CATALOG_SALES, ASSETS, partyName } from '../data/transactions.js'
 import { formatDate, format } from '../utils/format.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc } from '../utils/pageDocs.js'
+import { readCatalogs } from '../utils/readings.js'
 
 const ASSET_TONE = { recording: 'recording', publishing: 'publishing', both: 'accent' }
 const TD = 'py-2.5 px-3 border-b border-line-1 align-top'
@@ -14,17 +15,31 @@ export default function Catalogs() {
   const [sort, setSort] = useState('value')
   const rows = useMemo(() => [...CATALOG_SALES].sort((a, b) => sort === 'value' ? (b.value || 0) - (a.value || 0) : b.date.localeCompare(a.date)), [sort])
   const total = CATALOG_SALES.reduce((s, t) => s + (t.value || 0), 0)
-  const largest = rows[0]
+  // By value, not rows[0]: the table can be sorted by date, and "largest" must mean largest either way.
+  const largest = useMemo(() => [...CATALOG_SALES].sort((a, b) => (b.value || 0) - (a.value || 0))[0], [])
+  const buyers = useMemo(() => new Set(CATALOG_SALES.flatMap((t) => t.acquirers.map(partyName))).size, [])
+  // The bar in the Value column is scaled against the largest sale in one currency; catalog sales are all filed in
+  // USD, and the guard is here so that adding one in euros drops the bars rather than mis-drawing them.
+  const oneCurrency = new Set(CATALOG_SALES.map((t) => t.currency || 'USD')).size <= 1
+  const scale = oneCurrency ? largest?.value || 0 : 0
+  const reading = readCatalogs({
+    rows: CATALOG_SALES.length,
+    total,
+    largest,
+    buyers,
+    estimates: CATALOG_SALES.filter((t) => t.verify).length,
+    currencies: new Set(CATALOG_SALES.map((t) => t.currency || 'USD')).size,
+  })
 
   return (
     <>
       <PageHeader eyebrow="Money · superstar rights" title="Catalog sales"
-        answer={<KeyFigures items={[
+        answer={<><KeyFigures items={[
           { value: format.count(CATALOG_SALES.length, { full: true }), label: 'sales on file' },
           { value: format.money(total), label: 'reported value' },
           { value: format.money(largest?.value), label: `largest — ${largest?.catalogOf || ''}` },
-          { value: format.count(new Set(CATALOG_SALES.flatMap((t) => t.acquirers.map(partyName))).size, { full: true }), label: 'buyers' },
-        ]} />}
+          { value: format.count(buyers, { full: true }), label: 'buyers' },
+        ]} /><Reading reading={reading} className="mt-2" /></>}
         lede="Publicly reported superstar catalog transactions: whose songs or masters, who bought them, which rights, for how much. Values are press estimates unless a filing says otherwise — see the verify tags." />
       <FilterBar
         count={{ shown: rows.length, total: CATALOG_SALES.length, noun: 'sales on file' }}
@@ -50,7 +65,10 @@ export default function Catalogs() {
                 <td className={`${TD} t-small`}>{t.acquirers.map((p, i) => <span key={i}>{i > 0 && ', '}{p.entityId ? <Link to={`/entities/${p.entityId}`} className="text-secondary no-underline hover:underline">{partyName(p)}</Link> : p.name}</span>)}</td>
                 <td className={TD}><Tag tone={ASSET_TONE[t.asset] || 'neutral'}>{ASSETS[t.asset]}</Tag></td>
                 <td className={`${TD} t-data text-ink-3`}>{formatDate(t.date)}</td>
-                <td className={`${TD} text-right`}><Num kind="money" value={t.value} className="t-data" /></td>
+                <td className={`${TD} text-right`}>
+                  <Num kind="money" value={t.value} className="t-data" />
+                  {scale > 0 && t.value > 0 && <Bar share={t.value / scale} height="h-1" tone={ASSET_TONE[t.asset] === 'publishing' ? 'publishing' : ASSET_TONE[t.asset] === 'recording' ? 'recording' : 'accent'} className="mt-1 ml-auto w-[80px]" />}
+                </td>
               </tr>
             ))}
           </tbody>

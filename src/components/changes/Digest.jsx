@@ -1,13 +1,11 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, ExternalLink } from 'lucide-react'
-import { Card, Tag } from '../primitives/index.js'
+import { ArrowRight } from 'lucide-react'
+import { Card, Loading } from '../primitives/index.js'
+import { ChangeList } from './ChangeList.jsx'
 import { useChanges } from '../../hooks/useChanges.js'
-import { KINDS } from '../../utils/changes.js'
 import { formatDate } from '../../utils/format.js'
 import { readLists, getList, lastSeen } from '../../utils/watchlist.js'
-
-const TONE = { figure: 'accent', deal: 'accent', filing: 'neutral', milestone: 'secondary', news: 'neutral' }
 
 /**
  * "Since you last looked" for the Overview: the few changes worth opening the app for, from the reader's own
@@ -44,31 +42,12 @@ export function Digest({ limit = 6 }) {
         <Link to="/changes" className="t-small text-accent no-underline inline-flex items-center gap-1 hover:underline">What changed <ArrowRight size={14} aria-hidden="true" /></Link>
       </div>
 
-      {state === 'loading' && <p className="t-small text-ink-3 m-0">Reading filings, figures and the archive…</p>}
+      {state === 'loading' && <Loading what="Reading filings, figures and the archive…" lines={4} />}
       {state !== 'loading' && shown.length === 0 && (
         <p className="t-small text-ink-3 m-0">Nothing on record changed in this window. That is what the sources hold, not a claim that the market was quiet{coverage.complete ? '' : ' — some of this window predates the archive'}.</p>
       )}
 
-      {shown.length > 0 && (
-        <ul className="m-0 p-0 list-none flex flex-col">
-          {shown.map((c) => (
-            <li key={c.id} className="grid grid-cols-[5.5rem_6.5rem_minmax(0,1fr)] gap-3 items-baseline py-1.5 border-b border-line-1 last:border-0">
-              <span className="t-micro font-mono text-ink-4 inline-flex items-center gap-1.5">
-                {since && c.at > since && <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" title="Since your last visit" />}
-                {formatDate(c.at)}
-              </span>
-              <Tag tone={TONE[c.kind]}>{KINDS[c.kind].label}</Tag>
-              <span className="min-w-0">
-                {c.url?.startsWith('http')
-                  ? <a href={c.url} target="_blank" rel="noreferrer" className="t-small text-ink-1 no-underline hover:text-accent inline-flex items-start gap-1">{c.title}<ExternalLink size={10} className="shrink-0 mt-1 text-ink-4" aria-hidden="true" /></a>
-                  : c.url ? <Link to={c.url} className="t-small text-ink-1 no-underline hover:text-accent">{c.title}</Link>
-                    : <span className="t-small text-ink-1">{c.title}</span>}
-                {c.entityName && <span className="block t-micro text-ink-4 truncate">{c.entityName}</span>}
-              </span>
-            </li>
-          ))}
-        </ul>
-      )}
+      <ChangeList items={shown} seen={since} secondary="entity" />
       {items.length > shown.length && <p className="t-micro text-ink-4 m-0 mt-2">{items.length - shown.length} more in the feed.</p>}
     </Card>
   )

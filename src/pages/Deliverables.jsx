@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Sparkles, FileText, Presentation, FileType, FileCode, ExternalLink, Check, AlertTriangle } from 'lucide-react'
-import { PageHeader, SectionHeader, Card, Tag, Button, Num, Stat, Chip } from '../components/primitives/index.js'
+import { PageHeader, SectionHeader, Card, Tag, Button, Num, Stat, Chip, SearchInput } from '../components/primitives/index.js'
 import { ENTITIES, getEntity, ENTITY_TYPES } from '../data/entities.js'
 import { CLIENT_CATEGORIES, getConsultingContext, SERVICE_LINES, SERVICE_ORDER } from '../data/consulting.js'
 import { ROLES, STAFFING } from '../data/rateCard.js'
@@ -94,7 +94,7 @@ export default function Deliverables() {
                   <button type="button" onClick={() => set({ entity: '', category: '' })} className="t-micro text-ink-3 hover:text-ink-1 bg-transparent border-0 cursor-pointer">change</button>
                 </div>
               ) : null}
-              <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search entities" className={select} />
+              <SearchInput value={q} onChange={setQ} size="sm" icon={false} placeholder="Search entities" label="Search companies on the canvas" />
               {matches.length > 0 && (
                 <div className="mt-1.5 rounded-md border border-line-1 bg-ground-2 divide-y divide-line-1">
                   {matches.map((e) => <button key={e.id} type="button" onClick={() => { set({ entity: e.id, category: '' }); setQ('') }} className="w-full text-left px-3 py-1.5 t-small text-ink-2 hover:bg-ground-3 hover:text-ink-1 bg-transparent border-0 cursor-pointer">{e.name} <span className="t-micro text-ink-4">{ENTITY_TYPES[e.type]?.label}</span></button>)}

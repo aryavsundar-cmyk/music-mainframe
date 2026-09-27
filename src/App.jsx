@@ -6,6 +6,7 @@ import { CURRENT, has, showsGroup } from './editions.js'
 import { PRIVATE_NAV } from './navPrivate.js'
 import { EditionNotice } from './components/EditionNotice.jsx'
 import { CommandPalette } from './components/search/CommandPalette.jsx'
+import { Loading } from './components/primitives/index.js'
 import { useArrival } from './hooks/useArrival.js'
 import Home from './pages/Home.jsx'
 import Entities from './pages/Entities.jsx'
@@ -37,6 +38,9 @@ const Glossary = lazy(() => import('./pages/Glossary.jsx'))
 const About = lazy(() => import('./pages/About.jsx'))
 import DesignSystem from './pages/DesignSystem.jsx'
 import NotFound from './pages/NotFound.jsx'
+
+/** One fallback for every lazily loaded route: the chunk's name, and the shape of a page. */
+const PAGE_LOADING = () => <Loading what="Opening the page…" lines={5} className="max-w-2xl" />
 
 const NAV = [
   { group: 'Canvas', items: [
@@ -201,11 +205,11 @@ export default function App() {
             <Route path="/market/buyers" element={<BuyerMatch />} />
             <Route path="/prospecting" element={<Prospecting />} />
             <Route path="/prospecting/:accountId" element={<ProspectAccount />} />
-            {has('lab') && <Route path="/lab" element={<Suspense fallback={<div className="t-small text-ink-3">Loading…</div>}><Lab /></Suspense>} />}
-            <Route path="/about" element={<Suspense fallback={<div className="t-small text-ink-3">Loading…</div>}><About /></Suspense>} />
-            <Route path="/glossary" element={<Suspense fallback={<div className="t-small text-ink-3">Loading…</div>}><Glossary /></Suspense>} />
-            <Route path="/lab/glossary" element={<Suspense fallback={<div className="t-small text-ink-3">Loading…</div>}><Glossary /></Suspense>} />
-            {has('lab') && <Route path="/lab/:caseId" element={<Suspense fallback={<div className="t-small text-ink-3">Loading…</div>}><LabCase /></Suspense>} />}
+            {has('lab') && <Route path="/lab" element={<Suspense fallback={<PAGE_LOADING />}><Lab /></Suspense>} />}
+            <Route path="/about" element={<Suspense fallback={<PAGE_LOADING />}><About /></Suspense>} />
+            <Route path="/glossary" element={<Suspense fallback={<PAGE_LOADING />}><Glossary /></Suspense>} />
+            <Route path="/lab/glossary" element={<Suspense fallback={<PAGE_LOADING />}><Glossary /></Suspense>} />
+            {has('lab') && <Route path="/lab/:caseId" element={<Suspense fallback={<PAGE_LOADING />}><LabCase /></Suspense>} />}
             <Route path="/design" element={<DesignSystem />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

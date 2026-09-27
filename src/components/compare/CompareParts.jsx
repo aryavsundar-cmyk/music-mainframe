@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import { X, Search, Plus } from 'lucide-react'
+import { X, Plus } from 'lucide-react'
+import { SearchInput } from '../primitives/index.js'
 import { formatDate } from '../../utils/format.js'
 import { FreshnessTag } from '../entities/Financials.jsx'
 import { ENTITY_TYPES } from '../../data/entities/_schema.js'
@@ -52,13 +53,9 @@ export function IndexSpark({ series, years, domain }) {
 export function Picker({ q, onQ, results, onAdd, full }) {
   return (
     <div className="relative">
-      <label className="relative block">
-        <Search size={14} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-ink-4" aria-hidden="true" />
-        <input type="search" value={q} onChange={(ev) => onQ(ev.target.value)} disabled={full}
-          placeholder={full ? 'Six companies is the limit — remove one to add another' : 'Add a company: name, ticker, city…'}
-          aria-label="Add a company to the comparison"
-          className="w-full h-9 pl-8 pr-2 bg-ground-1 border border-line-2 rounded-md t-small text-ink-1 placeholder:text-ink-4 outline-none focus:border-accent disabled:opacity-60" />
-      </label>
+      <SearchInput value={q} onChange={onQ} disabled={full} size="sm"
+        placeholder={full ? 'Six companies is the limit — remove one to add another' : 'Add a company: name, ticker, city…'}
+        label="Add a company to the comparison" />
       {results.length > 0 && (
         <ul className="absolute z-20 mt-1 w-full max-h-72 overflow-y-auto m-0 p-1 list-none bg-ground-1 border border-line-2 rounded-md shadow-2xl">
           {results.map((e) => (

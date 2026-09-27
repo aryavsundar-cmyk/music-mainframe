@@ -1,12 +1,13 @@
 import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { PageHeader, FilterBar, KeyFigures, Tag, Num, Card, Chip, DataTable, Th, EmptyState } from '../components/primitives/index.js'
+import { PageHeader, FilterBar, KeyFigures, Tag, Num, Card, Chip, DataTable, Th, EmptyState, EmptyAction, Reading } from '../components/primitives/index.js'
 import { MoneyBar } from '../components/rights/MoneyBar.jsx'
 import { listPros, SCOPES, MODELS, REGIONS, GLOBAL_COLLECTIONS, toUsd } from '../data/pros.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
 import { currencySymbol, format } from '../utils/format.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
+import { readPros } from '../utils/readings.js'
 
 const TD = 'py-3 px-3 border-b border-line-1 align-top'
 
@@ -17,17 +18,26 @@ export default function PROs() {
   const max = Math.max(...all.map((r) => toUsd(r.latest?.collections, r.currency) || 0))
   const disclosed = all.filter((r) => r.latest)
   const totalUsd = disclosed.reduce((s, r) => s + toUsd(r.latest.collections, r.currency), 0)
+  // Counted off the rows on screen, including how many currencies they span — this is the one page that orders
+  // money across currencies, so the sentence names the conversion rather than leaving it to the column header.
+  const reading = readPros({
+    rows: rows.length,
+    total: all.length,
+    disclosing: rows.filter((r) => r.latest).length,
+    currencies: new Set(rows.map((r) => r.currency)).size,
+    latestYear: rows.reduce((y, r) => Math.max(y, r.latest?.year || 0), 0) || null,
+  })
 
   return (
     <>
       <PageHeader eyebrow="Rights · collective management" tone="secondary" title="PROs & CMOs"
-        answer={<KeyFigures items={[
+        answer={<><KeyFigures items={[
           { value: format.count(all.length, { full: true }), label: 'societies on file' },
           { value: format.count(disclosed.length, { full: true }), label: 'disclose collections' },
           { value: format.money(totalUsd), label: 'collected, USD-equivalent' },
           { value: format.money(GLOBAL_COLLECTIONS.music, { currency: '€' }), label: `CISAC music collections ${GLOBAL_COLLECTIONS.year}` },
           disclosed[0] ? { value: disclosed[0].e.short || disclosed[0].e.name, label: 'largest by collections' } : null,
-        ]} />}
+        ]} /><Reading reading={reading} className="mt-2" /></>}
         lede="Performance, mechanical and neighbouring-rights societies side by side: what each collects, what it pays out, and how it decides who gets what. Figures in native currency from each society's own report." />
       <FilterBar
         search={{ value: params.q, onChange: (v) => set({ q: v }), placeholder: 'Search societies' }}
@@ -57,6 +67,13 @@ export default function PROs() {
         </div>
       </FilterBar>
 
+      {rows.length === 0 && (
+        <EmptyState title="No society matches these filters."
+          why="The table holds every performance, mechanical and neighbouring-rights society on file; the filters have narrowed it to none."
+          action={<EmptyAction onClick={clear}>Clear the filters</EmptyAction>} />
+      )}
+
+      {rows.length > 0 && (
       <DataTable minWidth={900} className="mb-10" caption="Every society on file: what it collects, what it pays out, and how it decides who gets what.">
           <thead><tr>
             <Th>Society</Th><Th>Rights</Th><Th>Model</Th>
@@ -86,6 +103,7 @@ export default function PROs() {
             })}
           </tbody>
       </DataTable>
+      )}
 
       <PageExport build={() => buildPageDoc({
         slug: 'pros-cmos',

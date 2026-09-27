@@ -1,13 +1,14 @@
 import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
-import { PageHeader, FilterBar, KeyFigures, Card, Tag, Num, Chip, EmptyState, EmptyAction } from '../components/primitives/index.js'
+import { PageHeader, FilterBar, KeyFigures, Card, Tag, Num, Chip, EmptyState, EmptyAction, Reading } from '../components/primitives/index.js'
 import { listFunds, FUND_KINDS, MONEY_TYPES, kindOf } from '../data/peFunds.js'
 import { OWNERSHIP } from '../data/entities.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 import { format } from '../utils/format.js'
+import { readPe } from '../utils/readings.js'
 
 
 export default function PE() {
@@ -15,16 +16,23 @@ export default function PE() {
   const all = useMemo(() => listFunds(), [])
   const rows = useMemo(() => listFunds(params), [sp]) // eslint-disable-line react-hooks/exhaustive-deps
   const groups = MONEY_TYPES.map((k) => [k, rows.filter((r) => kindOf(r.e) === k)]).filter(([, l]) => l.length)
+  const reading = readPe({
+    rows: rows.length,
+    total: all.length,
+    profiled: rows.filter((r) => r.hasProfile).length,
+    absIssuers: rows.filter((r) => r.absIssued.length).length,
+    volume: rows.reduce((sum, r) => sum + r.dealVolume, 0),
+  })
 
   return (
     <>
       <PageHeader eyebrow="Money · who holds the capital" title="PE funds & capital"
-        answer={<KeyFigures items={[
+        answer={<><KeyFigures items={[
           { value: format.count(all.length, { full: true }), label: 'money-side actors' },
           { value: format.count(all.filter((r) => r.hasProfile).length, { full: true }), label: 'with an investment profile' },
           { value: format.money(all.reduce((sum, r) => sum + r.dealVolume, 0)), label: 'deal volume on file' },
           { value: format.count(all.filter((r) => r.absIssued.length).length, { full: true }), label: 'ABS issuers', to: '/abs' },
-        ]} />}
+        ]} /><Reading reading={reading} className="mt-2" /></>}
         lede="Catalog investors, sponsors, credit and ABS players and strategic holders — with thesis, structure preference, portfolio and every transaction on file. Deal volume double-counts both sides; use it for ranking only." />
       <FilterBar
         search={{ value: params.q, onChange: (v) => set({ q: v }), placeholder: 'Search funds, sponsors, lenders' }}

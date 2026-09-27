@@ -1,5 +1,5 @@
 import { ExternalLink } from 'lucide-react'
-import { Tag, Eyebrow } from '../primitives/index.js'
+import { Tag, Eyebrow, Caveat } from '../primitives/index.js'
 import { format, currencySymbol, formatDate } from '../../utils/format.js'
 import { CONCEPTS, pctChange as change, sameYear, freeCashFlow, fiveYearRecord } from '../../utils/financialConcepts.js'
 import { kindLabel, periodLabel } from '../../utils/freshness.js'
@@ -83,7 +83,9 @@ export function FiveYear({ fin }) {
           </tbody>
         </table>
       </div>
-      <p className="t-micro text-ink-4 m-0 mt-1.5">Each year as last reported in an annual report, restatements included. Free cash flow is operating cash flow less capital expenditure, shown only where both are filed for the year. A dash means the filing does not give the figure.</p>
+      <Caveat className="mt-1.5" more={<>Free cash flow is operating cash flow less capital expenditure, and appears only where the filing gives both for the same year — never netted across years. A dash means the filing does not give the figure, not that the figure is zero. Years come from annual reports only, so a quarterly comparative for the same period never sets a year’s value.</>}>
+        Each year as last reported in an annual report, restatements included — so a year here may differ from the figure the company first published.
+      </Caveat>
     </div>
   )
 }

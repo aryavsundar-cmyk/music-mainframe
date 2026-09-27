@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
-import { PageHeader, SectionHeader, Card, Stat, Tag, Num, FlowMark } from '../components/primitives/index.js'
+import { PageHeader, SectionHeader, Card, Stat, Tag, Num, FlowMark, Bar } from '../components/primitives/index.js'
 import { getEntityProfile } from '../data/entities.js'
 import { getProProfile, SCOPES, MODELS } from '../data/pros.js'
 import { currencySymbol, formatDate } from '../utils/format.js'
@@ -45,8 +45,8 @@ export default function PRODetail() {
                     <div key={s.year} className="grid grid-cols-[48px_minmax(0,1fr)_88px_88px] gap-3 items-center">
                       <span className="t-data text-ink-3">{s.year}</span>
                       <div className="space-y-1">
-                        <div className="h-2 rounded-sm bg-ground-3 overflow-hidden"><div className="h-full bg-publishing" style={{ width: `${((s.collections || 0) / max) * 100}%` }} /></div>
-                        <div className="h-1.5 rounded-sm bg-ground-3 overflow-hidden"><div className="h-full bg-secondary-soft" style={{ width: `${((s.distributions || 0) / max) * 100}%` }} /></div>
+                        <Bar share={(s.collections || 0) / max} tone="publishing" />
+                        <Bar share={(s.distributions || 0) / max} tone="secondary" height="h-1.5" />
                       </div>
                       <Num kind="money" value={s.collections} opts={{ currency: cur, digits: 2 }} className="t-data text-right" />
                       <Num kind="money" value={s.distributions} opts={{ currency: cur, digits: 2 }} className="t-data text-right text-ink-3" />

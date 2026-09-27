@@ -107,3 +107,22 @@ export function fiveYearRecord(fin) {
     .filter((r) => (r.cells || r.text).some((c) => (r.cells ? c : c !== '—')))
   return { years, currency: years[0].currency, rows }
 }
+
+/**
+ * The reported revenue record as points for a sparkline: oldest first, one currency, values only.
+ *
+ * `history` is already one currency and one value per year (see `server/financials.js`), but a filter is cheap and
+ * this is the function a chart trusts — a mixed-currency line has no axis to give the switch away. Returns null
+ * below `min` points, because a two-point line draws a direction that one restatement could reverse.
+ */
+export function revenueTrend(fin, min = 3) {
+  const history = fin?.metrics?.revenue?.history || []
+  const currency = history[0]?.currency
+  if (!currency) return null
+  const points = history
+    .filter((h) => h.currency === currency && Number.isFinite(h.value) && h.end)
+    .map((h) => ({ year: Number(h.end.slice(0, 4)), value: h.value, end: h.end }))
+    .reverse()
+  if (points.length < min) return null
+  return { currency, points }
+}

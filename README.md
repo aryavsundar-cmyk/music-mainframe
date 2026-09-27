@@ -126,6 +126,47 @@ and about a dozen section labels became real headings, so a page's outline is no
 `<tr>` may pretend to be a button, every panel must use the hook, no ARIA role may be claimed without its
 keyboard contract, and the dead-end empty states cannot come back.
 
+## Saying what the numbers say (Sprint 35)
+
+Every data page could tell the reader what its rows add up to, and until this sprint only the news page did.
+
+`utils/readings.js` computes one sentence per page — `/entities`, `/deals`, `/catalogs`, `/abs`, `/pros`,
+`/dsps`, `/pe`, `/market/catalogs` — from the rows **on screen**, so it narrows with the filters rather than
+describing a canvas the reader is not looking at. Each reading returns its sentence and `cites`: every figure the
+sentence rests on. `npm run test:readings` recomputes each input straight from the data modules and asserts the
+figure is both in the sentence and in the data, so a page that starts counting the wrong rows fails the build
+rather than quietly misreporting.
+
+The rules are the app's usual ones, written down in one place:
+
+- **Too few to read is a reading.** Below five records a page says so instead of describing noise.
+- **A ranking claim needs one currency.** `/catalogs` drops "the largest" the moment two currencies appear.
+  `/pros` is the one page that orders money across currencies — at rounded rates, and its sentence says so.
+- **Say what the record holds, not what the market did.** "The busiest year *on record*"; "*a floor*, not the
+  size of the market"; the ABS table states what KBRA has rated against what this app holds.
+- **Never sum figures from different periods.** `/dsps` reports how many platforms disclose a subscriber count
+  and refuses to add them, because each reports as of its own quarter.
+
+The tables gained marks to go with the sentences. `Bar` replaced nine hand-drawn proportion bars and settled two
+things they disagreed on: a real-but-tiny value keeps a visible sliver (a 0.3% bar that vanishes reads as missing
+data), a genuine zero draws nothing, and a money bar is dropped rather than scaled across currencies. `Sparkline`
+draws each SEC filer's reported revenue across the years on file — one currency, three points minimum, because a
+two-point line is a direction one restatement could reverse. A freshness dot puts the four verdicts in one place
+in the row, with the words kept beside it. `Caveat` leads with the line that changes the reading and folds the
+mechanics into a real `<details>`. Every one of these marks is explained once on `/about`, and the explanation
+travels into the export.
+
+Company pages gained **"What changed here"** — the same feed as `/changes`, scoped to one company and the last
+90 days. Everything else on a company page is a current state; nothing said what had moved.
+
+Five more patterns were consolidated on the way: `SearchInput` (five boxes at three heights, one of them drawing
+two focus rings), `ServiceDown` (the same outage phrased four ways in two tones — the tone now follows what the
+*reader* loses, and the message must say what that is), `Loading` (a waiting panel shows the shape of what is
+coming, not one line of grey text), `SideScroller` (the entity map's scrubber, now also under the flow diagrams)
+and `ChangeList` (the change row had three spellings). `test:layout` also gained the mirror of its import check —
+nothing may import a component it no longer uses — which immediately found five, including `/pros` importing an
+`EmptyState` it never rendered, so a filtered-to-nothing table showed a full header over an empty body.
+
 ## Design system
 
 **Source of truth: [`src/tokens.js`](src/tokens.js).** `scripts/build-tokens.mjs` emits `src/tokens.css` (committed, regenerated before every `dev`/`build`); Tailwind 4 reads it as `@theme`, so utilities like `bg-ground-1 text-ink-2 text-accent border-line-1` are the tokens. Never hard-code a hex in a component. [`/design`](src/pages/DesignSystem.jsx) renders every token and primitive live in both themes.
@@ -164,7 +205,7 @@ Every formatter returns `—` for null/undefined. Never `null`, never `NaN`.
 
 ### Primitives (`src/components/primitives`)
 
-`PageHeader` · `SectionHeader` · `Eyebrow` · `Card` · `Stat` · `Num` · `Tag` · `Button` · `FlowMark` · `Stub`. One `primary` Button per view. Elevation on dark ground is a lighter ground plus a hairline, not a shadow.
+`PageHeader` · `SectionHeader` · `Eyebrow` · `Card` · `Stat` · `Num` · `Tag` · `Button` · `FlowMark` · `Stub` · `FilterBar` · `KeyFigures` · `Reading` · `Chip` · `Segmented` · `DataTable`/`Th` · `EmptyState` · `SearchInput` · `Bar` · `Sparkline` · `Caveat` · `ServiceDown` · `Loading` · `SideScroller`. One `primary` Button per view. Elevation on dark ground is a lighter ground plus a hairline, not a shadow.
 
 ### Theme
 

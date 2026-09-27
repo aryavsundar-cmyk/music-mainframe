@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUpRight, RotateCcw, Search, X } from 'lucide-react'
 import { format } from '../utils/format.js'
-import { PageHeader, SectionHeader, Card, Tag, Button, FilterBar, KeyFigures, EmptyState } from '../components/primitives/index.js'
+import { PageHeader, SectionHeader, Card, Tag, Button, FilterBar, KeyFigures, EmptyState, Bar } from '../components/primitives/index.js'
 import { ScoreBar, TierTag, selectClass } from '../components/prospecting/ProspectUi.jsx'
 import { AccountHeader, OutreachComposer, RecordEditor, ScoreReasons, TriggerList } from '../components/prospecting/AccountParts.jsx'
 import { ExportBar } from '../components/export/ExportBar.jsx'
@@ -55,7 +55,7 @@ export default function Prospecting() {
             <Button size="sm" variant={view === 'pipeline' ? 'primary' : 'secondary'} onClick={() => set({ view: 'pipeline' })}>Pipeline</Button>
             <Button size="sm" variant={view === 'coverage' ? 'primary' : 'secondary'} onClick={() => set({ view: 'coverage' })}>Coverage</Button>
           </div>
-          <span className="t-micro text-ink-4">{!ready ? 'Loading enrichment…' : connectors.length ? `${connectors.filter((c) => c.live).length}/${connectors.length} connectors live` : 'Enrichment unreachable'}</span>
+          <span className="t-micro text-ink-4">{!ready ? 'Reading the enrichment connectors…' : connectors.length ? `${connectors.filter((c) => c.live).length}/${connectors.length} connectors live` : 'Enrichment unreachable'}</span>
         </div>} />
 
       {view === 'coverage' ? (
@@ -168,7 +168,7 @@ function CoverageView({ cov, onPick }) {
                   ))}
                   <td className="py-2 px-2.5 border-b border-line-1 text-right">
                     <span className="inline-flex items-center gap-2">
-                      <span className="h-1.5 w-16 rounded-sm bg-ground-4 overflow-hidden"><span className="block h-full bg-accent" style={{ width: `${Math.round((r.coverage || 0) * 100)}%` }} /></span>
+                      <Bar as="span" share={r.coverage || 0} height="h-1.5" track="bg-ground-4" className="w-16" />
                       <span className="font-mono tabular t-data text-ink-2">{r.worked}/{r.priority}</span>
                     </span>
                   </td>
@@ -333,7 +333,7 @@ function PipelineView({ accounts, records, connectors, ready }) {
                 {steps.map(([label, value]) => (
                   <div key={label} className="grid grid-cols-[110px_minmax(0,1fr)_44px] gap-3 items-center">
                     <span className="t-small text-ink-2">{label}</span>
-                    <span className="h-5 rounded-sm bg-ground-4 overflow-hidden"><span className="block h-full bg-accent" style={{ width: `${(value / max) * 100}%` }} /></span>
+                    <Bar as="span" share={value / max} height="h-5" track="bg-ground-4" />
                     <span className="font-mono tabular t-data text-ink-1 text-right">{value}</span>
                   </div>
                 ))}

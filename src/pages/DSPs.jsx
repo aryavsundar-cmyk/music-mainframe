@@ -1,13 +1,14 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronDown, ExternalLink, Search, X } from 'lucide-react'
-import { PageHeader, SectionHeader, Stat, Tag, Num, Card, Chip, EmptyState, EmptyAction } from '../components/primitives/index.js'
+import { PageHeader, SectionHeader, Stat, Tag, Num, Card, Chip, EmptyState, EmptyAction, Reading, SearchInput } from '../components/primitives/index.js'
 import { listDsps, TIERS, TIER_ORDER, PAYOUT_MODELS, MARKET } from '../data/fundamentals.js'
 import { getEntity } from '../data/entities.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
 import { formatDate, format } from '../utils/format.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
+import { readDsps } from '../utils/readings.js'
 
 const rate = (v) => '$' + v.toFixed(4).replace(/0+$/, '').replace(/\.$/, '')
 
@@ -59,10 +60,17 @@ export default function DSPs() {
   const groups = TIER_ORDER.map((t) => [t, rows.filter((r) => r.tier === t)]).filter(([, l]) => l.length)
   const { ifpi, midia, splits, mechanicalRate } = MARKET
   const other = 100 - midia.shares.reduce((s, [, v]) => s + v, 0)
+  const reading = readDsps({
+    rows: rows.length,
+    total: all.length,
+    reporting: rows.filter((r) => r.subscribers).length,
+    withRate: rows.filter((r) => r.perStream).length,
+  })
 
   return (
     <>
       <PageHeader eyebrow="Rights · distribution economics" tone="secondary" title="DSPs"
+        answer={<Reading reading={reading} />}
         lede="Streaming economics by platform: who pays what per stream, on which model, at what price, to how many. Per-stream figures are commonly cited all-in ranges, never contractual rates; treat them as order of magnitude." />
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         <Stat label={`Recorded music ${ifpi.year} (IFPI)`} kind="money" value={ifpi.recordedRevenue} hint={<>+<Num kind="pct" value={ifpi.growth} className="t-micro" /> · streaming <Num kind="pct" value={ifpi.streamingShare} className="t-micro" /></>} />
@@ -100,11 +108,8 @@ export default function DSPs() {
 
       <div className="space-y-3 mb-6">
         <div className="flex items-center gap-3">
-          <label className="relative flex-1 max-w-xl">
-            <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-3" aria-hidden="true" />
-            <input type="search" value={params.q} onChange={(e) => set({ q: e.target.value })} placeholder="Search platforms"
-              className="w-full h-9 pl-9 pr-3 bg-ground-1 border border-line-2 rounded-md t-body text-ink-1 placeholder:text-ink-4 outline-none focus:border-accent" />
-          </label>
+          <SearchInput value={params.q} onChange={(v) => set({ q: v })} placeholder="Search platforms"
+            label="Search platforms" className="flex-1 max-w-xl" />
           <span className="t-small text-ink-3 tabular">{rows.length} of {all.length}</span>
           {any && <button type="button" onClick={clear} className="inline-flex items-center gap-1 t-small text-ink-3 hover:text-ink-1 bg-transparent border-0 cursor-pointer"><X size={13} aria-hidden="true" /> Clear</button>}
         </div>

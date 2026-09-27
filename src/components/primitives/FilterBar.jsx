@@ -1,5 +1,6 @@
 import { useId, useState } from 'react'
-import { Search, SlidersHorizontal, X } from 'lucide-react'
+import { SlidersHorizontal, X } from 'lucide-react'
+import { SearchInput } from './SearchInput.jsx'
 
 /**
  * FilterBar — search, then the data. Everything else waits until it is asked for.
@@ -31,17 +32,13 @@ export function FilterBar({
     <div className={className}>
       <div className="flex flex-wrap items-center gap-2">
         {search && (
-          <label className="relative flex-1 min-w-[16rem] max-w-xl">
-            <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-3" aria-hidden="true" />
-            <input
-              type="search"
-              value={search.value}
-              onChange={(ev) => search.onChange(ev.target.value)}
-              placeholder={search.placeholder}
-              aria-label={search.label || search.placeholder}
-              className="w-full h-9 pl-9 pr-3 bg-ground-1 border border-line-2 rounded-md t-body text-ink-1 placeholder:text-ink-4 focus:border-accent"
-            />
-          </label>
+          <SearchInput
+            value={search.value}
+            onChange={search.onChange}
+            placeholder={search.placeholder}
+            label={search.label || search.placeholder}
+            className="flex-1 min-w-[16rem] max-w-xl"
+          />
         )}
 
         {hasPanel && (

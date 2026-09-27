@@ -43,18 +43,15 @@ export function useChanges({ days = 7, ids = null, kinds = null, since = null } 
     }
     // Chip counts come from the whole window, uncapped: a kind that is switched off still says how much it holds.
     const everything = collectChanges({ since: from, ids, ...sources, newsPerDay: Infinity })
-    const { items: all, newsHidden: hidden } = collectChanges({
-      since: from,
-      ids,
-      kinds: kinds && kinds.length ? kinds : DEFAULT_KINDS,
-      ...sources,
-    })
+    const shownKinds = kinds && kinds.length ? kinds : DEFAULT_KINDS
+    const { items: all, newsHidden: hidden } = collectChanges({ since: from, ids, kinds: shownKinds, ...sources })
     return {
       items: all,
       newsHidden: hidden,
       counts: countByKind(everything.items),
       coverage: coverageOf({
         from,
+        kinds: shownKinds,
         archiveSince: archive.coverage?.since || null,
         figuresSince: figures.data?.startedAt ? String(figures.data.startedAt).slice(0, 10) : null,
         filingsSince: (filings.data?.items || []).map((f) => f.filed).sort()[0] || null,

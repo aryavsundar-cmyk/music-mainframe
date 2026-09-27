@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
-import { RefreshCw, Radio, WifiOff } from 'lucide-react'
+import { RefreshCw, Radio } from 'lucide-react'
 import { format } from '../utils/format.js'
 import { Link } from 'react-router-dom'
-import { PageHeader, FilterBar, KeyFigures, Tag, Card, Button, Chip } from '../components/primitives/index.js'
+import { PageHeader, FilterBar, KeyFigures, Card, Button, Chip, ServiceDown, Loading } from '../components/primitives/index.js'
 import { NewsItem } from '../components/news/NewsItem.jsx'
 import { useNewsStream } from '../hooks/useNewsStream.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
@@ -19,8 +19,8 @@ import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 const select = 'bg-ground-1 border border-line-2 rounded-md h-8 px-2 t-small text-ink-1 focus:border-accent outline-none'
 
 function StatusLine({ state, status, total }) {
-  if (state === 'unavailable') return <div className="flex items-center gap-2 t-small text-danger"><WifiOff size={14} aria-hidden="true" /> News backend unreachable. In dev, start <span className="font-mono">music-mainframe-server</span> (:3002); in prod, check the Render service.</div>
-  if (state === 'loading') return <div className="t-small text-ink-3">Connecting…</div>
+  if (state === 'unavailable') return <ServiceDown level="page" service="The live news feed" cost="this page has nothing to show and the force counts below rest on deals alone" />
+  if (state === 'loading') return <Loading what="Connecting to the live feed…" lines={2} />
   const ok = status?.sourceCount ? status.sourceCount - (status.errors?.length || 0) : null
   return (
     <div className="flex flex-wrap items-center gap-x-4 gap-y-1 t-small text-ink-3">

@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Card, Eyebrow } from '../primitives/index.js'
+import { Card, Eyebrow, ServiceDown, Loading } from '../primitives/index.js'
 import { useNewsStream } from '../../hooks/useNewsStream.js'
 import { useArchive } from '../../hooks/useForces.js'
 import { mergeUnique } from '../../utils/eventKeys.js'
@@ -27,8 +27,8 @@ export function EntityNews({ entityId }) {
         <Eyebrow as="h2" tone="muted">In the news</Eyebrow>
         <Link to={`/news?entity=${entityId}`} className="t-micro text-accent no-underline hover:underline">all</Link>
       </div>
-      {bothDown && <div className="t-small text-ink-4">News backend unreachable — start the server or check the deploy.</div>}
-      {!bothDown && state === 'loading' && archive.state === 'loading' && <div className="t-small text-ink-4">Loading…</div>}
+      {bothDown && <ServiceDown service="The live feed and the evidence archive" cost="there is no way to tell coverage of this company from silence" />}
+      {!bothDown && state === 'loading' && archive.state === 'loading' && <Loading what="Reading the live feed and the archive…" lines={3} />}
       {!bothDown && state !== 'loading' && archive.state !== 'loading' && items.length === 0 && <div className="t-small text-ink-4">No coverage {since ? `since ${formatDate(since)}` : 'in the current window'}.</div>}
       {items.length > 0 && <div className="-mb-2.5">{items.slice(0, shown).map((n) => <NewsItem key={n.id} n={n} compact hideEntity={entityId} />)}</div>}
       {items.length > shown && <button type="button" onClick={() => setShown((s) => s + STEP * 2)} className="mt-3 t-micro text-accent bg-transparent border-0 cursor-pointer p-0">Show more ({items.length - shown} left)</button>}

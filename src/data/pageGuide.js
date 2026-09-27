@@ -22,7 +22,7 @@ export const PAGE_GUIDE = [
   {
     path: '/entities', group: 'Canvas', title: 'Entities',
     what: 'Every company, society and platform on the canvas in one filterable table, with its type, tier, ownership, headline figure and freshness.',
-    use: ['Filter by type, tier, ownership, region or role; the facets carry counts.', '“Needs refresh” finds every company whose figure is due a newer result.', 'Export the filtered view; the file states the filters and the counts.'],
+    use: ['Read the line under the title first: it counts the rows on screen, how many file with the SEC, and how many figures are past due.', 'Filter by type, tier, ownership, region or role; the facets carry counts.', '“Needs refresh” finds every company whose figure is due a newer result.', 'The small line beside a figure is that company’s reported revenue over the years on file, in one currency; the coloured dot is its freshness.', 'Export the filtered view; the file states the filters and the counts.'],
     not: 'Tier is scale within a type, never prestige, and a headline figure is whatever the company last reported — not a valuation.',
   },
   {
@@ -34,7 +34,7 @@ export const PAGE_GUIDE = [
   {
     path: '/entities/:id', group: 'Canvas', title: 'Company pages',
     what: 'One company in full: reported financials with five years of history, five-forces exposure, connections, profile, hierarchy, news, SEC filings and related transactions.',
-    use: ['Read the headline strip for the freshest figure, the latest quarter, margins and free cash flow.', 'Use “Watch” to follow the company on What changed, and “Compare with…” to put it beside others.', 'Export a brief in Word, PowerPoint, Excel or text — it carries the same figures and their sources.'],
+    use: ['Read the headline strip for the freshest figure, the latest quarter, margins and free cash flow.', '“What changed here” is the last 90 days for this company alone — filings, figure moves, deals and milestones.', 'Use “Watch” to follow the company on What changed, and “Compare with…” to put it beside others.', 'Export a brief in Word, PowerPoint, Excel or text — it carries the same figures and their sources.'],
     not: 'Figures are as reported. Nothing here is adjusted for accounting policy, acquisitions or one-off items, and a figure whose tag has gone stale is marked rather than shown as current.',
   },
   {
@@ -89,6 +89,38 @@ export function guideFor(has = () => true) {
   }
   return groups
 }
+
+/**
+ * The marks and lines that mean the same thing on every page. A reader who learns these once does not have to
+ * re-learn a page; and every one of them is computed from the data at render time, never written into a page.
+ */
+export const CONVENTIONS = [
+  {
+    id: 'reading',
+    title: 'The sentence under the title',
+    text: 'Every table page states what its own rows add up to before you filter anything — how many of the total are on screen, how much of the money is actually disclosed, what the record does and does not cover. It is counted from the rows in front of you, so it narrows as you filter. Where there are fewer than five records it says so rather than describing noise.',
+  },
+  {
+    id: 'bar',
+    title: 'The bar beside a figure',
+    text: 'A value against the largest value in the same list, and only ever within one currency — the app never converts money to draw a bar, and drops the bars entirely rather than ranking two currencies against each other. The figure is the fact; the bar is there so a column of figures has a shape.',
+  },
+  {
+    id: 'sparkline',
+    title: 'The line beside a company’s figure',
+    text: 'A company’s reported revenue across the years on file, oldest to newest, in one currency and from annual reports only. It appears for SEC filers, who have a multi-year record; everyone else shows the figure alone. Fewer than three years and no line is drawn, because a two-point line is a direction one restatement could reverse.',
+  },
+  {
+    id: 'freshness',
+    title: 'The dot beside a figure',
+    text: 'Whether the figure is still the latest: current, a newer report filed whose figures are not yet in structured form, past the date a newer result was due, or the last thing the company ever disclosed. The dot is never the only signal — the words are beside it.',
+  },
+  {
+    id: 'coverage',
+    title: '“On record” and “a floor”',
+    text: 'These are not decoration. “On record” means this app holds it, not that the market contains nothing else. “A floor” means the real number is larger and the app cannot say by how much — usually because prices were undisclosed, or because a window reaches back past the day the archive started watching.',
+  },
+]
 
 /** Three things this tool is actually for, and the path through the pages for each. */
 export const WORKFLOWS = [

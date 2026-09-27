@@ -20,6 +20,7 @@ import { WatchButton } from '../components/changes/Digest.jsx'
 import { readLists, toggleInList } from '../utils/watchlist.js'
 import { SecFilings } from '../components/entities/SecFilings.jsx'
 import { Connections } from '../components/entities/Connections.jsx'
+import { EntityChanges } from '../components/changes/EntityChanges.jsx'
 import { pctChange, operatingMargin, freeCashFlow } from '../utils/financialConcepts.js'
 import { currencySymbol, formatDate as fmtDate } from '../utils/format.js'
 
@@ -133,6 +134,7 @@ export default function EntityDetail() {
           <div className={GRID}>
             <ForceExposure exposure={exposure} name={e.name} loading={loading} />
             <div className={STACK}>
+              <EntityChanges entityId={e.id} name={e.name} />
               <PepiLens entityId={e.id} />
               <Connections entityId={e.id} name={e.name} />
             </div>

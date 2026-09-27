@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { NavLink, Route, Routes, useNavigate, useSearchParams } from 'react-router-dom'
-import { PageHeader, Card, FlowMark, Tag } from '../components/primitives/index.js'
+import { PageHeader, Card, FlowMark, Tag, SideScroller } from '../components/primitives/index.js'
 import { FlowDiagram } from '../components/flows/FlowDiagram.jsx'
 import { FlowPanel } from '../components/flows/FlowPanel.jsx'
 import { FLOWS, getFlowNode } from '../data/flows.js'
@@ -21,6 +21,7 @@ function FlowView({ flowId }) {
   const select = (id) => { const n = new URLSearchParams(sp); id ? n.set('node', id) : n.delete('node'); setSp(n, { replace: true }) }
   const node = selected ? getFlowNode(flowId, selected) : null
   const panelRef = useRef(null)
+  const diagram = useRef(null)
   // Below xl the rail stacks under the diagram; bring it into view when a stage is picked.
   useEffect(() => {
     if (selected && window.innerWidth < 1280) panelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
@@ -32,7 +33,10 @@ function FlowView({ flowId }) {
           <FlowMark flow={flowId} />
           <span className="t-small text-ink-3">{flow.legend}</span>
         </div>
-        <div className="overflow-x-auto pb-2">
+        {/* The diagram is 720px wide inside a column that is often narrower, and the scrollbar sits below the whole
+            thing — so without this a reader never learns there is more to the right. */}
+        <SideScroller target={diagram} label="Scroll the flow sideways" step={240} sticky={false} />
+        <div ref={diagram} className="overflow-x-auto pb-2" role="region" aria-label={`${flow.title} — scroll sideways for the rest of the flow`} tabIndex={0}>
           <div className="min-w-[720px]">
             <FlowDiagram flow={flow} selected={selected} onSelect={select} />
           </div>

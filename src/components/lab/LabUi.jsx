@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { ExportBar } from '../export/ExportBar.jsx'
 import { ChevronDown, GraduationCap, Check, AlertTriangle } from 'lucide-react'
-import { Card, Tag, Eyebrow } from '../primitives/index.js'
+import { Card, Tag, Eyebrow, Bar } from '../primitives/index.js'
 
 /** Exercise — a numbered task card: what to do, the working area, and optional reviewer notes. */
 export function Exercise({ n, title, prompt, children, aside }) {
@@ -155,7 +155,7 @@ export function ScorecardCard({ sc }) {
             </div>
             <div>
               <div className="flex justify-end t-data font-mono text-ink-1">{row.score} / {row.max}</div>
-              <div className="h-1.5 rounded-sm bg-ground-4 overflow-hidden mt-1"><div className={`h-full ${row.score === row.max ? 'bg-secondary' : 'bg-accent'}`} style={{ width: `${(row.score / row.max) * 100}%` }} /></div>
+              <Bar share={row.score / row.max} tone={row.score === row.max ? 'secondary' : 'accent'} height="h-1.5" track="bg-ground-4" className="mt-1" />
             </div>
           </div>
         ))}

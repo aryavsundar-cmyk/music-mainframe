@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ExternalLink, Plus, X, Info, Check } from 'lucide-react'
-import { PageHeader, Card, Tag, FilterBar, KeyFigures, Chip, Segmented } from '../components/primitives/index.js'
+import { Plus, X, Info, Check } from 'lucide-react'
+import { PageHeader, Card, FilterBar, KeyFigures, Chip, Segmented, SearchInput, Loading } from '../components/primitives/index.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
 import { useChanges } from '../hooks/useChanges.js'
-import { KINDS, KIND_LIST, WINDOWS, DEFAULT_WINDOW, DEFAULT_KINDS, NEWS_PER_DAY, byDay } from '../utils/changes.js'
+import { ChangeList } from '../components/changes/ChangeList.jsx'
+import { KINDS, KIND_LIST, WINDOWS, DEFAULT_WINDOW, byDay } from '../utils/changes.js'
 import { readLists, saveLists, addList, removeList, getList, markSeen, lastSeen } from '../utils/watchlist.js'
 import { searchEntities } from '../utils/compare.js'
 import { getEntity } from '../data/entities.js'
@@ -12,7 +13,6 @@ import { formatDate } from '../utils/format.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 
-const TONE = { figure: 'accent', deal: 'accent', filing: 'neutral', milestone: 'secondary', news: 'neutral' }
 
 /**
  * What changed — one dated feed across everything the app watches on its own: SEC filings, figures that moved
@@ -123,8 +123,8 @@ export default function Changes() {
               </span>
             ))}
             <div className="relative ml-auto w-full max-w-xs">
-              <input type="search" value={q} onChange={(ev) => setQ(ev.target.value)} placeholder="Add a company to this list…" aria-label="Add a company to this watchlist"
-                className="w-full h-8 px-2 bg-ground-1 border border-line-2 rounded-md t-small text-ink-1 placeholder:text-ink-4 outline-none focus:border-accent" />
+              <SearchInput value={q} onChange={setQ} size="sm" icon={false}
+                placeholder="Add a company to this list…" label="Add a company to this watchlist" />
               {results.length > 0 && (
                 <ul className="absolute z-20 mt-1 w-full m-0 p-1 list-none bg-ground-1 border border-line-2 rounded-md shadow-2xl max-h-60 overflow-y-auto">
                   {results.map((e) => (
@@ -150,7 +150,7 @@ export default function Changes() {
         </div>
       )}
 
-      {state === 'loading' && items.length === 0 && <p className="t-small text-ink-3">Reading filings, figures and the archive…</p>}
+      {state === 'loading' && items.length === 0 && <Loading what="Reading filings, figures and the archive…" lines={6} className="mb-6" />}
 
       {state !== 'loading' && items.length === 0 && (
         <Card pad="lg">
@@ -166,26 +166,7 @@ export default function Changes() {
               <h2 className="t-body font-semibold text-ink-1 m-0">{formatDate(date)}</h2>
               <span className="t-micro text-ink-4">{list2.length} change{list2.length === 1 ? '' : 's'}</span>
             </div>
-            <ul className="m-0 p-0 list-none flex flex-col">
-              {list2.map((c) => (
-                <li key={c.id} className="grid grid-cols-[6.5rem_minmax(0,11rem)_minmax(0,1fr)] gap-3 items-baseline py-2 border-b border-line-1 last:border-0">
-                  <span className="inline-flex items-center gap-1.5">
-                    {seen && c.at > String(seen).slice(0, 10) && <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" title="Since your last visit" />}
-                    <Tag tone={TONE[c.kind]}>{KINDS[c.kind].label}</Tag>
-                  </span>
-                  <span className="t-small text-ink-2 truncate" title={c.entityName}>
-                    {c.entityId ? <Link to={`/entities/${c.entityId}`} className="text-ink-2 no-underline hover:text-accent">{c.entityName}</Link> : c.entityName}
-                  </span>
-                  <span className="min-w-0">
-                    {c.url?.startsWith('http')
-                      ? <a href={c.url} target="_blank" rel="noreferrer" className="t-small text-ink-1 no-underline hover:text-accent inline-flex items-start gap-1">{c.title}<ExternalLink size={10} className="shrink-0 mt-1 text-ink-4" aria-hidden="true" /></a>
-                      : c.url ? <Link to={c.url} className="t-small text-ink-1 no-underline hover:text-accent">{c.title}</Link>
-                        : <span className="t-small text-ink-1">{c.title}</span>}
-                    {c.detail && <span className="block t-micro text-ink-4">{c.detail}</span>}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <ChangeList items={list2} layout="grouped" seen={seen} />
           </section>
         ))}
       </div>

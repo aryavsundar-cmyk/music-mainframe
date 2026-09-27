@@ -1,8 +1,8 @@
 import { useMemo } from 'react'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
-import { PageHeader, FilterBar, KeyFigures, Chip, Eyebrow } from '../components/primitives/index.js'
+import { PageHeader, FilterBar, KeyFigures, Chip, Eyebrow, Reading } from '../components/primitives/index.js'
 import { TransactionList } from '../components/money/TransactionRow.jsx'
-import { filterTransactions, TX_TYPES, ASSETS, STRUCTURES, YEARS, TX_TOTALS, partyName } from '../data/transactions.js'
+import { filterTransactions, TX_TYPES, ASSETS, STRUCTURES, YEARS, TX_TOTALS, partyName, year } from '../data/transactions.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 import { format, formatDate } from '../utils/format.js'
@@ -14,6 +14,7 @@ import { EventList } from '../components/forces/EventList.jsx'
 import { useForces } from '../hooks/useForces.js'
 import { classifyDeal, filterTagged, forceBoard, forceActivity, geographiesIn } from '../utils/forces.js'
 import { buildForcesBrief, evidenceRows } from '../utils/forcesDocs.js'
+import { readDeals } from '../utils/readings.js'
 import { FORCE_BY_ID, FORCE_IDS, DIRECTIONS, EXPOSURE_TYPES, RIGHTS_TYPES } from '../data/forces.js'
 
 const KEYS = ['q', 'type', 'asset', 'structure', 'year', 'status', 'force', 'reach', 'exposure', 'dir', 'geo', 'rights']
@@ -74,17 +75,28 @@ export default function Deals() {
     label: `${f.label}: ${f.value}`,
     onRemove: () => set({ [KEYS.find((k) => (FILTER_LABELS[k]?.label || k) === f.label)]: '' }),
   }))
+  // The money line, counted off the rows on screen. A terminated deal's headline number is not value that moved, so
+  // it is excluded from the disclosed total exactly as TX_TOTALS excludes it.
+  const priced = rows.filter((t) => t.value && t.status !== 'terminated')
+  const reading = readDeals({
+    rows: rows.length,
+    total: TX_TOTALS.count,
+    disclosed: priced.reduce((sum, t) => sum + t.value, 0),
+    undisclosed: rows.filter((t) => !t.value).length,
+    byYear: rows.reduce((m, t) => ({ ...m, [year(t)]: (m[year(t)] || 0) + 1 }), {}),
+    estimates: rows.filter((t) => t.verify).length,
+  })
   const counts = useMemo(() => Object.fromEntries(Object.keys(TX_TYPES).map((t) => [t, filterTransactions({ ...params, type: t }).length])), [sp]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
       <PageHeader eyebrow="Money · who is buying" title="Deals"
-        answer={<KeyFigures items={[
+        answer={<><KeyFigures items={[
           { value: format.count(TX_TOTALS.count, { full: true }), label: `transactions, ${YEARS[YEARS.length - 1]}–${YEARS[0]}` },
           { value: format.money(TX_TOTALS.disclosed), label: 'disclosed value' },
           { value: format.money(TX_TOTALS.abs), label: 'ABS issued', to: '/abs' },
           { value: format.money(TX_TOTALS.catalog), label: 'superstar catalog sales', to: '/catalogs' },
-        ]} />}
+        ]} /><Reading reading={reading} className="mt-2" /></>}
         lede="Every catalog sale, sponsor round, securitisation, take-private and merger on file, newest first. Click a row for the terms and sources." />
 
       <FilterBar

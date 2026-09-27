@@ -1,10 +1,11 @@
 import { useMemo } from 'react'
-import { PageHeader, SectionHeader, Stat, Card, Num } from '../components/primitives/index.js'
+import { PageHeader, SectionHeader, Stat, Card, Num, Reading, Bar, Caveat } from '../components/primitives/index.js'
 import { TransactionList } from '../components/money/TransactionRow.jsx'
 import { ABS_DEALS, ABS_MARKET, partyName, year } from '../data/transactions.js'
 import { formatDate, format } from '../utils/format.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc } from '../utils/pageDocs.js'
+import { readAbs } from '../utils/readings.js'
 
 export default function ABS() {
   const byIssuer = useMemo(() => {
@@ -14,10 +15,20 @@ export default function ABS() {
   }, [])
   const byYear = useMemo(() => { const m = {}; for (const t of ABS_DEALS) { const y = year(t); m[y] = (m[y] || 0) + (t.value || 0) } return Object.entries(m).sort((a, b) => b[0] - a[0]) }, [])
   const max = Math.max(...byYear.map(([, v]) => v))
+  // The gap between what is filed here and what KBRA has rated is the honest frame for every figure above, so the
+  // reading states it rather than leaving it to the footnote under the bar chart.
+  const reading = readAbs({
+    deals: ABS_DEALS.length,
+    issued: ABS_DEALS.reduce((sum, t) => sum + (t.value || 0), 0),
+    issuers: byIssuer.length,
+    ratedSince2020: ABS_MARKET.ratedSince2020,
+    ratedIssuers: ABS_MARKET.issuers,
+  })
 
   return (
     <>
       <PageHeader eyebrow="Money · structured finance" title="Music-royalty ABS"
+        answer={<Reading reading={reading} />}
         lede="Every securitisation on file with the fixed-income view: issuer, series, rating, advance rate against collateral, anticipated repayment and legal final, arrangers. Expand a row for the structure." />
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
@@ -34,12 +45,14 @@ export default function ABS() {
             {byYear.map(([y, v]) => (
               <div key={y} className="grid grid-cols-[48px_minmax(0,1fr)_72px] gap-3 items-center">
                 <span className="t-data text-ink-3">{y}</span>
-                <div className="h-2.5 rounded-sm bg-ground-3 overflow-hidden"><div className="h-full bg-accent" style={{ width: `${(v / max) * 100}%` }} /></div>
+                <Bar share={v / max} height="h-2.5" />
                 <Num kind="money" value={v} className="t-data text-right" />
               </div>
             ))}
           </div>
-          <p className="t-micro text-ink-4 mt-4 mb-0">Only deals filed here; the market total (KBRA, {formatDate(ABS_MARKET.asOf)}) is larger. Private securitisations (HarbourView, Influence) included where sizes were disclosed.</p>
+          <Caveat className="mt-4" more={<>Private securitisations (HarbourView, Influence) are included where the size was disclosed and absent where it was not, so a quiet year on this chart can mean a year of private deals rather than a year of few deals. KBRA&apos;s market total as of {formatDate(ABS_MARKET.asOf)} is the wider count.</>}>
+            Every bar is a floor: only deals on file here, and the market is larger.
+          </Caveat>
         </Card>
         <Card pad="lg">
           <div className="t-eyebrow text-ink-3 mb-4">Issuers on file</div>

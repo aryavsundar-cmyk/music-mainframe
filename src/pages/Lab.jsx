@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
-import { PageHeader, SectionHeader, Card, Tag } from '../components/primitives/index.js'
+import { PageHeader, SectionHeader, Card, Tag, Bar } from '../components/primitives/index.js'
 import { CASE_LIST } from '../data/cases/index.js'
 import { readLabState } from '../hooks/useLabState.js'
 import { progress, STAGES } from '../utils/labState.js'
@@ -80,7 +80,7 @@ export default function Lab() {
                   {STAGES.map((st) => (
                     <div key={st.id}>
                       <div className="t-micro text-ink-3">{st.label}</div>
-                      <div className="h-1.5 rounded-sm bg-ground-4 overflow-hidden mt-1"><div className="h-full bg-accent" style={{ width: `${Math.round((pr?.[st.id] || 0) * 100)}%` }} /></div>
+                      <Bar share={pr?.[st.id] || 0} height="h-1.5" track="bg-ground-4" className="mt-1" />
                     </div>
                   ))}
                 </div>

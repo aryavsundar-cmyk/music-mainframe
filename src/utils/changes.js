@@ -175,14 +175,18 @@ export function countByKind(items) {
  * What the window could have shown. Each source states the first day it holds; a window that starts earlier is
  * partial, and the page says which part was not being watched.
  */
-export function coverageOf({ from, archiveSince, figuresSince, filingsSince, today = iso(new Date()) }) {
+export function coverageOf({ from, archiveSince, figuresSince, filingsSince, kinds = null, today = iso(new Date()) }) {
   const gaps = []
-  const mark = (label, start, note) => {
+  // A source that is switched off has no coverage problem worth stating: a company strip with news off was warning
+  // that the archive starts late, which reads as a gap in what is on screen when nothing from it was on screen.
+  const on = (kind) => !kinds || kinds.includes(kind)
+  const mark = (kind, label, start, note) => {
+    if (!on(kind)) return
     if (!start) { gaps.push(`${label}: not reachable, so nothing from it is in this feed.`); return }
     if (day(start) > day(from)) gaps.push(`${label} ${note} ${formatDate(day(start))}${day(start) > today ? '' : ''}, so anything earlier in this window is not shown.`)
   }
-  mark('The news archive', archiveSince, 'only holds stories from')
-  mark('The figure log', figuresSince, 'has been recording changes since')
-  if (filingsSince && day(filingsSince) > day(from)) gaps.push(`SEC filings are read from EDGAR's recent index, which here reaches back to ${formatDate(day(filingsSince))}.`)
+  mark('news', 'The news archive', archiveSince, 'only holds stories from')
+  mark('figure', 'The figure log', figuresSince, 'has been recording changes since')
+  if (on('filing') && filingsSince && day(filingsSince) > day(from)) gaps.push(`SEC filings are read from EDGAR's recent index, which here reaches back to ${formatDate(day(filingsSince))}.`)
   return { complete: gaps.length === 0, gaps }
 }

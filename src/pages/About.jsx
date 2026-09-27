@@ -6,7 +6,7 @@ import { ENTITIES } from '../data/entities.js'
 import { TRANSACTIONS } from '../data/transactions.js'
 import { GLOSSARY } from '../data/glossary.js'
 import { EDITION, EDITIONS, FRAMING, IS_WORK, has } from '../editions.js'
-import { guideFor, WORKFLOWS } from '../data/pageGuide.js'
+import { guideFor, WORKFLOWS, CONVENTIONS } from '../data/pageGuide.js'
 import { LIMIT_LIST } from '../data/limits.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc } from '../utils/pageDocs.js'
@@ -86,6 +86,16 @@ export default function About() {
         ))}
       </div>
 
+      <SectionHeader title="What the marks mean" aside="the same on every page" />
+      <div className="grid gap-3 md:grid-cols-2 mb-8">
+        {CONVENTIONS.map((c) => (
+          <Card key={c.id} pad="md">
+            <div className="t-eyebrow text-ink-3 mb-2">{c.title}</div>
+            <p className="t-small text-ink-2 m-0">{c.text}</p>
+          </Card>
+        ))}
+      </div>
+
       <SectionHeader title="Every page, and what it is for" aside={`${guide.reduce((n, g) => n + g.pages.length, 0)} pages in this build`} />
       <div className="flex flex-col gap-6 mb-8">
         {guide.map((g) => (
@@ -148,6 +158,7 @@ export default function About() {
         tableTitle: 'Provenance at a glance',
         extra: [
           { eyebrow: 'Guide', title: 'How to use it', blocks: WORKFLOWS.map((w) => ({ kind: 'facts', rows: [[w.title, w.steps.map((s2) => s2.replace(/\*\*/g, '')).join(' → ')]] })) },
+          { eyebrow: 'Guide', title: 'What the marks mean', blocks: [{ kind: 'facts', rows: CONVENTIONS.map((c) => [c.title, c.text]) }] },
           { eyebrow: 'Guide', title: 'Every page, and what it is for', blocks: [{
             kind: 'table',
             columns: ['Page', 'Path', 'What it is for', 'How to use it', 'What it will not tell you'],

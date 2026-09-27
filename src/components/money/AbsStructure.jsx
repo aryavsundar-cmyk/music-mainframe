@@ -1,4 +1,4 @@
-import { Num } from '../primitives/index.js'
+import { Num, Bar } from '../primitives/index.js'
 import { formatDate } from '../../utils/format.js'
 
 /**
@@ -32,10 +32,8 @@ export function AbsStructure({ abs, value }) {
             <span className="t-micro uppercase tracking-[0.08em] text-ink-4">Advance rate against collateral value</span>
             <span className="t-data text-ink-2"><Num kind="money" value={value} /> / <Num kind="money" value={abs.catalogValue} /></span>
           </div>
-          <div className="h-2.5 rounded-sm bg-ground-3 overflow-hidden flex" title={`${adv.toFixed(1)}% advance · ${(100 - adv).toFixed(1)}% overcollateralisation`}>
-            <div className="h-full bg-accent" style={{ width: `${Math.min(adv, 100)}%` }} />
-            <div className="h-full bg-secondary-soft flex-1" />
-          </div>
+          <Bar height="h-2.5" label={`${adv.toFixed(1)}% advance · ${(100 - adv).toFixed(1)}% overcollateralisation`}
+            segments={[{ share: Math.min(adv, 100) / 100, tone: 'accent' }, { rest: true, tone: 'secondary-soft' }]} />
           <div className="flex justify-between mt-1 t-micro font-mono">
             <span className="text-accent">notes <Num kind="pct" value={adv} className="text-accent" /></span>
             <span className="text-secondary">overcollateralisation <Num kind="pct" value={100 - adv} className="text-secondary" /></span>

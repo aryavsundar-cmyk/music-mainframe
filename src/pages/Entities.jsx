@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Network } from 'lucide-react'
-import { PageHeader, FilterBar, KeyFigures } from '../components/primitives/index.js'
+import { PageHeader, FilterBar, KeyFigures, Reading } from '../components/primitives/index.js'
 import { FacetControls } from '../components/entities/Facets.jsx'
 import { EntityTable } from '../components/entities/EntityTable.jsx'
 import { filterEntities, COUNTS, TYPE_ORDER, headlineMetric, getEntity } from '../data/entities.js'
@@ -13,6 +13,7 @@ import { format, currencySymbol } from '../utils/format.js'
 import { useForces } from '../hooks/useForces.js'
 import { useFinancials } from '../hooks/useFinancials.js'
 import { currentRevenue, freshnessOf } from '../utils/freshness.js'
+import { readEntities } from '../utils/readings.js'
 import { exposureIndex } from '../utils/forces.js'
 import { FORCE_BY_ID } from '../data/forces.js'
 
@@ -55,6 +56,16 @@ export default function Entities() {
   // "Needs refresh": figures past the date a newer result was due, or a newer report whose figures are pending.
   const rows = params.fresh ? byForce.filter((e) => (params.fresh === 'stale' ? ['due', 'pending'].includes(fresh(e)) : fresh(e) === params.fresh)) : byForce
   const staleCount = listed.filter((e) => ['due', 'pending'].includes(fresh(e))).length
+  // What this view adds up to, said before the reader touches a filter. Every figure is counted from the rows on
+  // screen, so the sentence narrows with the table rather than describing a canvas the reader is not looking at.
+  const verdicts = rows.map((e) => freshnessOf(e, financials.companies[e.id]))
+  const reading = readEntities({
+    total: rows.length,
+    listed: rows.filter((e) => e.ownership === 'public').length,
+    secFilers: rows.filter((e) => financials.companies[e.id]?.metrics).length,
+    due: verdicts.filter((v) => v.status === 'due').length,
+    pending: verdicts.filter((v) => v.status === 'pending').length,
+  })
   const forcesOf = (id) => [...(exposed.get(id) || [])].map((f) => FORCE_BY_ID[f]).sort((a, b) => a.number - b.number)
   const toggle = (id) => { const s = new Set(picked); if (s.has(id)) s.delete(id); else s.add(id); set({ force: [...s].join(',') }) }
   // What is on, in the reader's words, each one removable: a filtered table must never look like the whole table.
@@ -75,13 +86,13 @@ export default function Entities() {
       <PageHeader
         eyebrow="Structure · who owns what" tone="secondary"
         title="Entities"
-        answer={<KeyFigures items={[
+        answer={<><KeyFigures items={[
           { value: format.count(COUNTS.total, { full: true }), label: 'companies on the canvas' },
           { value: format.count(TYPE_ORDER.length), label: 'types' },
           { value: format.count(COUNTS.public, { full: true }), label: 'publicly listed', to: '/entities?ownership=public' },
           staleCount ? { value: format.count(staleCount, { full: true }), label: 'need a refresh', to: '/entities?fresh=stale' } : null,
           COUNTS.verify ? { value: format.count(COUNTS.verify, { full: true }), label: 'flagged to verify', to: '/entities?verify=1' } : null,
-        ]} />}
+        ]} /><Reading reading={reading} className="mt-2" /></>}
         lede="Every label, publisher, distributor, PRO, DSP, promoter, catalog fund, sponsor and registry on the canvas. Type is the primary bucket; roles carry the rest."
         actions={<Link to="/entities/map" className="inline-flex items-center gap-1.5 t-small text-ink-2 no-underline hover:text-ink-1"><Network size={14} aria-hidden="true" />Map view</Link>}
       />

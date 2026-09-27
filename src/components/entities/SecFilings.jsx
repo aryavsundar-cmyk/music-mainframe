@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ExternalLink } from 'lucide-react'
-import { Card, Eyebrow } from '../primitives/index.js'
+import { Card, Eyebrow, ServiceDown } from '../primitives/index.js'
 import { formatDate } from '../../utils/format.js'
 
 /**
@@ -45,7 +45,7 @@ export function SecFilings({ entityId }) {
         )}
       </div>
       {data.state === 'unavailable'
-        ? <p className="t-small text-ink-4 m-0">Filings service unreachable — start the server or check the deploy.</p>
+        ? <ServiceDown service="The filings service" cost="this company's filing history is missing rather than empty" />
         : (
           <>
             <p className="t-micro text-ink-3 m-0 mb-2">Straight from EDGAR, refreshed every six hours{data.status?.lastSuccess ? ` · last read ${formatDate(String(data.status.lastSuccess).slice(0, 10))}` : ''}.</p>

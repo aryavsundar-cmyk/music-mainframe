@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { ArrowLeft, RotateCcw, GraduationCap, BookOpenCheck } from 'lucide-react'
-import { PageHeader, Card, Button } from '../components/primitives/index.js'
+import { PageHeader, Card, Button, Bar } from '../components/primitives/index.js'
 import { CASES } from '../data/cases/index.js'
 import { useLabState } from '../hooks/useLabState.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
@@ -78,7 +78,7 @@ function CaseWorkspace({ c }) {
             className={['text-left rounded-md border px-3 py-2.5 cursor-pointer transition-colors', stage === s.id ? 'bg-ground-3 border-accent-line' : 'bg-ground-1 border-line-1 hover:bg-ground-2'].join(' ')}>
             <div className="flex items-baseline justify-between gap-2"><span className="t-small text-ink-1"><span className="font-mono text-ink-4 mr-1.5">{i + 1}</span>{s.label}</span><span className="t-micro font-mono text-ink-4">{Math.round(pr[s.id] * 100)}%</span></div>
             <div className="t-micro text-ink-4 mt-0.5 hidden md:block">{s.blurb}</div>
-            <div className="h-1 rounded-sm bg-ground-4 overflow-hidden mt-2"><div className="h-full bg-accent" style={{ width: `${Math.round(pr[s.id] * 100)}%` }} /></div>
+            <Bar share={pr[s.id]} height="h-1" track="bg-ground-4" className="mt-2" />
           </button>
         ))}
       </div>

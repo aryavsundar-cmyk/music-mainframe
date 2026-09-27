@@ -1,15 +1,23 @@
 import { useEffect, useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
-const STEP = 292 // one column and its gap
-
 /**
- * A horizontal scrubber that sits ABOVE a wide, sideways-scrolling region and sticks to the top of the window, so
- * the map can be moved without first scrolling to the bottom of its longest column. Not a mirrored native
- * scrollbar: macOS hides those until you scroll, which would make this invisible. Drag the thumb, click the
- * track, use the arrows, or focus it and use ← → Home End. It names the stages in view.
+ * SideScroller — a horizontal scrubber that sits ABOVE a wide, sideways-scrolling region, so the region can be
+ * moved without first scrolling to the bottom of its longest column.
+ *
+ * Not a mirrored native scrollbar: macOS hides those until you scroll, which would make this invisible at exactly
+ * the moment a reader needs to discover that there is more to the right. Drag the thumb, click the track, use the
+ * arrows, or focus it and use ← → PageUp PageDown Home End.
+ *
+ * It was the entity map's own component for two sprints. The flow diagrams have the same problem — 720px of
+ * diagram inside a column that is often narrower, with the scrollbar out of sight below it — so it moved here
+ * rather than being written twice.
+ *
+ * `step` is one "unit" of the content (a map stage, a flow column). `parts` is the selector for the labelled
+ * pieces it should name as they come into view; a region with no labelled parts simply says nothing, which is
+ * better than naming pieces the reader cannot see the edges of.
  */
-export function TopScroll({ target, label = 'Scroll the map sideways' }) {
+export function SideScroller({ target, label = 'Scroll sideways', step: STEP = 292, parts = 'section[aria-label]', sticky = true, className = '' }) {
   const track = useRef(null)
   const drag = useRef(null)
   const [s, setS] = useState({ left: 0, width: 1, client: 1, visible: '' })
@@ -20,7 +28,7 @@ export function TopScroll({ target, label = 'Scroll the map sideways' }) {
     const measure = () => {
       const lo = el.scrollLeft
       const hi = lo + el.clientWidth
-      const names = [...el.querySelectorAll('section[aria-label]')]
+      const names = [...el.querySelectorAll(parts)]
         .filter((c) => c.offsetLeft + c.offsetWidth / 2 > lo && c.offsetLeft + c.offsetWidth / 2 < hi)
         .map((c) => c.getAttribute('aria-label'))
       const visible = names.length ? (names.length === 1 ? names[0] : `${names[0]} → ${names.at(-1)}`) : ''
@@ -32,7 +40,7 @@ export function TopScroll({ target, label = 'Scroll the map sideways' }) {
     // content starts to overflow (a late stylesheet, a filter change) — the columns do.
     const ro = new ResizeObserver(measure)
     ro.observe(el)
-    const watchColumns = () => el.querySelectorAll('section[aria-label]').forEach((c) => ro.observe(c))
+    const watchColumns = () => el.querySelectorAll(parts).forEach((c) => ro.observe(c))
     watchColumns()
     const mo = new MutationObserver(() => { watchColumns(); measure() })
     mo.observe(el, { childList: true, subtree: false })
@@ -42,7 +50,7 @@ export function TopScroll({ target, label = 'Scroll the map sideways' }) {
     // timers too, once now and once after late styles and fonts.
     const timers = [setTimeout(measure, 0), setTimeout(measure, 600)]
     return () => { el.removeEventListener('scroll', measure); window.removeEventListener('resize', measure); ro.disconnect(); mo.disconnect(); timers.forEach(clearTimeout) }
-  }, [target])
+  }, [target, parts])
 
   const max = Math.max(0, s.width - s.client)
   if (max <= 1) return null
@@ -72,8 +80,8 @@ export function TopScroll({ target, label = 'Scroll the map sideways' }) {
   const btn = 'shrink-0 w-7 h-7 grid place-items-center rounded-md border border-line-2 bg-ground-1 text-ink-2 cursor-pointer hover:bg-ground-3 hover:text-ink-1 disabled:opacity-40 disabled:cursor-default disabled:hover:bg-ground-1'
 
   return (
-    <div className="sticky top-0 z-30 -mx-gutter px-gutter py-2 mb-3 bg-ground-0 border-b border-line-1 flex items-center gap-3">
-      <button type="button" className={btn} onClick={() => by(-STEP)} disabled={s.left <= 0} aria-label="Previous stage"><ChevronLeft size={15} aria-hidden="true" /></button>
+    <div className={`${sticky ? 'sticky top-0 z-30 -mx-gutter px-gutter border-b border-line-1 bg-ground-0' : ''} py-2 mb-3 flex items-center gap-3 ${className}`}>
+      <button type="button" className={btn} onClick={() => by(-STEP)} disabled={s.left <= 0} aria-label={`${label}: back`}><ChevronLeft size={15} aria-hidden="true" /></button>
       <div ref={track} onPointerDown={onTrackDown}
         role="scrollbar" aria-orientation="horizontal" aria-label={label} aria-valuemin={0} aria-valuemax={Math.round(max)} aria-valuenow={Math.round(s.left)}
         aria-valuetext={s.visible ? `Showing ${s.visible}` : undefined} tabIndex={0} onKeyDown={onKey}
@@ -82,7 +90,7 @@ export function TopScroll({ target, label = 'Scroll the map sideways' }) {
           className="absolute top-0 bottom-0 rounded-full bg-ink-4 hover:bg-ink-3 active:bg-accent cursor-grab active:cursor-grabbing touch-none"
           style={{ left: `${leftPct}%`, width: `${Math.max(thumbPct, 6)}%` }} />
       </div>
-      <button type="button" className={btn} onClick={() => by(STEP)} disabled={s.left >= max - 1} aria-label="Next stage"><ChevronRight size={15} aria-hidden="true" /></button>
+      <button type="button" className={btn} onClick={() => by(STEP)} disabled={s.left >= max - 1} aria-label={`${label}: forward`}><ChevronRight size={15} aria-hidden="true" /></button>
       <span className="hidden md:block t-micro text-ink-3 whitespace-nowrap min-w-[16rem] text-right truncate">{s.visible}</span>
     </div>
   )
