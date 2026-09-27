@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { RefreshCw, Radio, WifiOff } from 'lucide-react'
 import { format } from '../utils/format.js'
 import { Link } from 'react-router-dom'
-import { PageHeader, FilterBar, KeyFigures, Tag, Card, Button } from '../components/primitives/index.js'
+import { PageHeader, FilterBar, KeyFigures, Tag, Card, Button, Chip } from '../components/primitives/index.js'
 import { NewsItem } from '../components/news/NewsItem.jsx'
 import { useNewsStream } from '../hooks/useNewsStream.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
@@ -16,8 +16,6 @@ import { classifyDeal, classifyMilestone } from '../utils/forces.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 
-const chip = (a) => ['inline-flex items-center gap-1.5 rounded-sm border px-2 py-1 t-small cursor-pointer select-none transition-colors duration-100',
-  a ? 'bg-ground-4 border-line-3 text-ink-1' : 'bg-transparent border-line-1 text-ink-2 hover:bg-ground-2 hover:text-ink-1'].join(' ')
 const select = 'bg-ground-1 border border-line-2 rounded-md h-8 px-2 t-small text-ink-1 focus:border-accent outline-none'
 
 function StatusLine({ state, status, total }) {
@@ -89,8 +87,8 @@ export default function News() {
           <div className="flex items-start gap-2">
             <span className="t-micro text-ink-4 w-20 shrink-0 pt-1.5">Company type</span>
             <div className="flex flex-wrap gap-1.5">
-              <button type="button" aria-pressed={!params.type} className={chip(!params.type)} onClick={() => set({ type: '' })}>All types</button>
-              {TYPE_ORDER.filter((t) => stats?.byType?.[t]).map((t) => <button key={t} type="button" aria-pressed={params.type === t} className={chip(params.type === t)} onClick={() => set({ type: params.type === t ? '' : t })}>{ENTITY_TYPES[t].label}<span className="t-micro font-mono text-ink-3">{stats.byType[t]}</span></button>)}
+              <Chip pressed={!params.type} onClick={() => set({ type: '' })}>All types</Chip>
+              {TYPE_ORDER.filter((t) => stats?.byType?.[t]).map((t) => <Chip key={t} pressed={params.type === t} onClick={() => set({ type: params.type === t ? '' : t })}>{ENTITY_TYPES[t].label}<span className="t-micro font-mono text-ink-3">{stats.byType[t]}</span></Chip>)}
             </div>
           </div>
           <div className="flex items-start gap-2">

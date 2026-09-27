@@ -3,6 +3,7 @@ import { X, ArrowRight, ArrowLeft, ChevronRight } from 'lucide-react'
 import { Card, Tag, Num, FlowMark } from '../primitives/index.js'
 import { edgesFor } from '../../data/flows.js'
 import { getEntity } from '../../data/entities.js'
+import { useDismissable } from '../../hooks/useDismissable.js'
 
 function EdgeList({ title, edges, flow, dir }) {
   if (edges.length === 0) return null
@@ -30,6 +31,7 @@ function EdgeList({ title, edges, flow, dir }) {
 
 /** Right rail for a selected flow node: description, rights/money in and out, who plays the role, economics. */
 export function FlowPanel({ flow, node, onClose, onSelect }) {
+  const panel = useDismissable(!!node, onClose)
   if (!node) {
     return (
       <Card pad="lg" className="h-full">
@@ -52,7 +54,7 @@ export function FlowPanel({ flow, node, onClose, onSelect }) {
   const idx = flow.nodes.findIndex((n) => n.id === node.id)
   const prev = flow.nodes[idx - 1], next = flow.nodes[idx + 1]
   return (
-    <Card pad="lg" tone={flow.id} className="h-full">
+    <Card pad="lg" tone={flow.id} className="h-full" ref={panel}>
       <div className="flex items-start justify-between gap-3 mb-3">
         <div>
           <FlowMark flow={flow.id} className="mb-2" />

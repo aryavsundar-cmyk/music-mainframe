@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ExternalLink, Plus, X, Info, Check } from 'lucide-react'
-import { PageHeader, Card, Tag, FilterBar, KeyFigures } from '../components/primitives/index.js'
+import { PageHeader, Card, Tag, FilterBar, KeyFigures, Chip, Segmented } from '../components/primitives/index.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
 import { useChanges } from '../hooks/useChanges.js'
 import { KINDS, KIND_LIST, WINDOWS, DEFAULT_WINDOW, DEFAULT_KINDS, NEWS_PER_DAY, byDay } from '../utils/changes.js'
@@ -12,8 +12,6 @@ import { formatDate } from '../utils/format.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 
-const chip = (on) => ['inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 t-small cursor-pointer transition-colors duration-100 whitespace-nowrap',
-  on ? 'bg-ground-4 border-line-3 text-ink-1' : 'bg-transparent border-line-1 text-ink-2 hover:bg-ground-2 hover:text-ink-1'].join(' ')
 const TONE = { figure: 'accent', deal: 'accent', filing: 'neutral', milestone: 'secondary', news: 'neutral' }
 
 /**
@@ -79,23 +77,18 @@ export default function Changes() {
         ].filter(Boolean)}
         onClear={() => set({ kind: '', list: 'all' })}
         count={{ shown: items.length, total: items.length + newsHidden, noun: 'changes' }}
-        aside={<div role="group" aria-label="Window" className="inline-flex rounded-md border border-line-2 overflow-hidden">
-          {WINDOWS.map((w) => (
-            <button key={w.id} type="button" aria-pressed={w.id === win.id} onClick={() => set({ w: w.id })}
-              className={`px-2.5 py-1 t-small border-0 cursor-pointer transition-colors duration-100 ${w.id === win.id ? 'bg-ground-4 text-ink-1' : 'bg-transparent text-ink-2 hover:bg-ground-2 hover:text-ink-1'}`}>{w.label}</button>
-          ))}
-        </div>}
+        aside={<Segmented label="Window" value={win.id} onChange={(id) => set({ w: id })} options={WINDOWS.map((w) => ({ id: w.id, label: w.label }))} />}
       >
         <div className="flex flex-col gap-3">
           <div className="flex items-start gap-2">
             <span className="t-micro text-ink-4 w-20 shrink-0 pt-1.5">Show</span>
             <div className="flex flex-wrap items-center gap-1.5">
-              <button type="button" aria-pressed={kinds.length === 0} className={chip(kinds.length === 0)} onClick={() => set({ kind: '' })} title={`Changes to the record. News is not included by default — ${KINDS.news.hint}`}>Changes to the record</button>
-              <button type="button" aria-pressed={kinds.length === KIND_LIST.length} className={chip(kinds.length === KIND_LIST.length)} onClick={() => set({ kind: KIND_LIST.map((k) => k.id).join(',') })}>Everything, news included</button>
+              <Chip pressed={kinds.length === 0} onClick={() => set({ kind: '' })} title={`Changes to the record. News is not included by default — ${KINDS.news.hint}`}>Changes to the record</Chip>
+              <Chip pressed={kinds.length === KIND_LIST.length} onClick={() => set({ kind: KIND_LIST.map((k) => k.id).join(',') })}>Everything, news included</Chip>
               {KIND_LIST.map((k) => (
-                <button key={k.id} type="button" aria-pressed={kinds.includes(k.id)} className={chip(kinds.includes(k.id))} onClick={() => toggleKind(k.id)} title={k.hint}>
+                <Chip pressed={kinds.includes(k.id)} key={k.id} onClick={() => toggleKind(k.id)} title={k.hint}>
                   {k.label}<span className="t-micro font-mono text-ink-3">{counts[k.id] || 0}</span>
-                </button>
+                </Chip>
               ))}
             </div>
           </div>
@@ -103,21 +96,21 @@ export default function Changes() {
             <span className="t-micro text-ink-4 w-20 shrink-0 pt-1.5">Watching</span>
             <div className="min-w-0 flex-1">
         <div className="flex flex-wrap items-center gap-2">
-          <button type="button" aria-pressed={params.list === 'all'} className={chip(params.list === 'all')} onClick={() => set({ list: 'all' })}>All companies</button>
+          <Chip pressed={params.list === 'all'} onClick={() => set({ list: 'all' })}>All companies</Chip>
           {lists.map((l) => (
             <span key={l.id} className="inline-flex items-center">
-              <button type="button" aria-pressed={!params.list ? l.id === lists[0].id : params.list === l.id} className={chip(params.list === l.id || (!params.list && l.id === lists[0].id))} onClick={() => set({ list: l.id })}>
+              <Chip pressed={!params.list ? l.id === lists[0].id : params.list === l.id} onClick={() => set({ list: l.id })}>
                 {l.label}<span className="t-micro font-mono text-ink-4">{l.ids.length || 'all'}</span>
-              </button>
+              </Chip>
               {lists.length > 1 && (
                 <button type="button" onClick={() => setLists(removeList(readLists(), l.id))} aria-label={`Delete the list ${l.label}`}
                   className="ml-1 bg-transparent border-0 p-0 cursor-pointer text-ink-4 hover:text-danger"><X size={12} aria-hidden="true" /></button>
               )}
             </span>
           ))}
-          <button type="button" className={chip(false)} onClick={() => { const { lists: next, id } = addList(readLists(), `List ${lists.length + 1}`); setLists(next); set({ list: id }) }}>
+          <Chip pressed={false} onClick={() => { const { lists: next, id } = addList(readLists(), `List ${lists.length + 1}`); setLists(next); set({ list: id }) }}>
             <Plus size={12} aria-hidden="true" />New list
-          </button>
+          </Chip>
         </div>
 
         {list && (

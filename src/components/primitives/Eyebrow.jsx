@@ -1,5 +1,8 @@
 /**
- * Eyebrow — small-caps label above a heading.
+ * Eyebrow — small-caps label above a heading, or the heading itself.
+ *
+ * Roughly forty section labels in this app were plain <div>s, so a screen-reader heading list for /deals or
+ * /entities was one item long. `as="h2"` keeps the look and gives the page an outline.
  * `number` renders the export-style "§ 03 — " prefix; leave it off on entity pages (sections are peers).
  */
 const TONES = {

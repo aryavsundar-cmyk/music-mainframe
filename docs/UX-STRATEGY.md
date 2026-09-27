@@ -152,7 +152,7 @@ test fails if a page renders more than N interactive controls above it.
 
 ---
 
-### 3 — Consistent · *Sprint 34*
+### 3 — Consistent · *Sprint 34* ✅ shipped — 20 chip implementations → 1, sticky headers, every panel dismissable
 
 > "Internal consistency is a thankless feature. Only its absence is noticed." — *Consistency in UI Design*
 > Their checklist: colour · typography · language · general visuals · layout and location · interactions.

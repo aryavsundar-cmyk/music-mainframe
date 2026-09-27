@@ -1,5 +1,5 @@
 import { useNavigate, Link } from 'react-router-dom'
-import { Tag, Num } from '../primitives/index.js'
+import { Tag, Num, DataTable, Th, EmptyState, EmptyAction } from '../primitives/index.js'
 import { ENTITY_TYPES, LENS_TONE, OWNERSHIP, getEntity, headlineMetric } from '../../data/entities.js'
 import { currencySymbol } from '../../utils/format.js'
 import { currentRevenue, freshnessOf } from '../../utils/freshness.js'
@@ -15,24 +15,23 @@ function headline(e, fin) {
   return hm ? { ...hm, f: null } : null
 }
 
-const TH = 'text-left t-micro uppercase tracking-[0.08em] text-ink-3 font-medium py-2 px-3 border-b border-line-2 whitespace-nowrap'
 const TD = 'py-2.5 px-3 border-b border-line-1 align-top'
 
+/**
+ * One company. The row used to be a fake button — tabIndex on a <tr>, Enter but no Space, no role, wrapping two
+ * real links — so every row was three tab stops that announced as "row". The name link is the control now; the
+ * row itself only follows the pointer.
+ */
 function Row({ e, fin }) {
   const navigate = useNavigate()
   const parent = e.parentId ? getEntity(e.parentId) : null
   const hm = headline(e, fin)
   const t = ENTITY_TYPES[e.type]
   return (
-    <tr
-      className="cursor-pointer transition-colors duration-100 hover:bg-ground-2"
-      onClick={() => navigate(`/entities/${e.id}`)}
-      onKeyDown={(ev) => { if (ev.key === 'Enter') navigate(`/entities/${e.id}`) }}
-      tabIndex={0}
-    >
+    <tr className="group cursor-pointer transition-colors duration-100 hover:bg-ground-2" onClick={() => navigate(`/entities/${e.id}`)}>
       <td className={TD}>
         <div className="flex items-center gap-2">
-          <Link to={`/entities/${e.id}`} className="t-body text-ink-1 no-underline hover:underline" onClick={(ev) => ev.stopPropagation()}>{e.name}</Link>
+          <Link to={`/entities/${e.id}`} className="t-body text-ink-1 no-underline group-hover:underline" onClick={(ev) => ev.stopPropagation()}>{e.name}</Link>
           {e.short && e.short !== e.name && <span className="t-micro font-mono text-ink-4">{e.short}</span>}
           {e.status !== 'active' && <Tag tone="neutral">{e.status}</Tag>}
           {e.verify && <Tag tone="danger">verify</Tag>}
@@ -61,20 +60,20 @@ function Row({ e, fin }) {
 }
 
 /** Dense bordered table. Groups by type (with a group row) when `grouped`. */
-export function EntityTable({ rows, grouped = true, financials = {} }) {
+export function EntityTable({ rows, grouped = true, financials = {}, onClear }) {
   if (rows.length === 0) {
-    return <div className="py-16 text-center t-body text-ink-3">No entities match. Clear a facet or widen the search.</div>
+    return <EmptyState title="No company matches these filters." why="The table holds every company on the canvas; the filters have narrowed it to none." action={onClear && <EmptyAction onClick={onClear}>Clear the filters</EmptyAction>} />
   }
   const groups = grouped
     ? Object.entries(rows.reduce((acc, e) => ((acc[e.type] ||= []).push(e), acc), {}))
     : [['all', rows]]
   return (
-    <div className="overflow-x-auto -mx-3">
-      <table className="w-full border-collapse min-w-[760px]">
+    <DataTable minWidth={760} maxHeight={rows.length > 24 ? 'calc(100vh - 14rem)' : undefined}
+      caption="Every company on the canvas, with its type, tier, ownership, home and headline figure.">
         <thead>
           <tr>
-            <th className={TH}>Entity</th><th className={TH}>Type</th><th className={TH}>Tier</th><th className={TH}>Ownership</th>
-            <th className={TH}>HQ</th><th className={TH}>Parent</th><th className={`${TH} text-right`}>Headline</th>
+            <Th>Entity</Th><Th>Type</Th><Th>Tier</Th><Th>Ownership</Th>
+            <Th>HQ</Th><Th>Parent</Th><Th align="right">Headline</Th>
           </tr>
         </thead>
         <tbody>
@@ -82,8 +81,7 @@ export function EntityTable({ rows, grouped = true, financials = {} }) {
             <GroupRows key={type} type={type} list={list} showHeader={grouped && groups.length > 1} financials={financials} />
           ))}
         </tbody>
-      </table>
-    </div>
+    </DataTable>
   )
 }
 

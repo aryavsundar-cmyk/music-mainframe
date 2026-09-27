@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ExternalLink } from 'lucide-react'
-import { Card } from '../primitives/index.js'
+import { Card, Eyebrow } from '../primitives/index.js'
 import { formatDate } from '../../utils/format.js'
 
 /**
@@ -37,7 +37,7 @@ export function SecFilings({ entityId }) {
   return (
     <Card pad="md">
       <div className="flex items-baseline justify-between gap-2 mb-1">
-        <div className="t-eyebrow text-ink-3">SEC filings</div>
+        <Eyebrow as="h2" tone="muted">SEC filings</Eyebrow>
         {data.state === 'ok' && (
           <button type="button" onClick={() => { setAll((v) => !v); setN(SHOW) }} className="t-micro text-accent bg-transparent border-0 p-0 cursor-pointer hover:underline">
             {all ? `Reports and material only (${material.length})` : `Include routine (${data.items.length - material.length})`}

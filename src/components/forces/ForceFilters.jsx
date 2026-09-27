@@ -1,8 +1,7 @@
+import { Chip } from '../primitives/index.js'
 import { X } from 'lucide-react'
 import { FORCES, DIRECTIONS, EXPOSURE_TYPES, RIGHTS_TYPES } from '../../data/forces.js'
 
-const chip = (a) => ['inline-flex items-center gap-1.5 rounded-sm border px-2 py-1 t-small cursor-pointer select-none transition-colors duration-100',
-  a ? 'bg-ground-4 border-line-3 text-ink-1' : 'bg-transparent border-line-1 text-ink-2 hover:bg-ground-2 hover:text-ink-1'].join(' ')
 
 const list = (v) => String(v || '').split(',').filter(Boolean)
 const toggleIn = (v, x) => { const s = new Set(list(v)); if (s.has(x)) s.delete(x); else s.add(x); return [...s].join(',') }
@@ -13,7 +12,7 @@ function Facet({ label, keyName, options, params, set }) {
     <div className="flex flex-wrap items-center gap-1.5">
       <span className="t-micro text-ink-4 w-20 shrink-0">{label}</span>
       {options.map(([value, text]) => (
-        <button key={value} type="button" aria-pressed={on.includes(value)} className={chip(on.includes(value))} onClick={() => set({ [keyName]: toggleIn(params[keyName], value) })}>{text}</button>
+        <Chip pressed={on.includes(value)} key={value} onClick={() => set({ [keyName]: toggleIn(params[keyName], value) })}>{text}</Chip>
       ))}
     </div>
   )
@@ -31,8 +30,8 @@ export function ForceFilters({ params, set, geographies }) {
       <Facet label="Force" keyName="force" params={params} set={set} options={FORCES.map((f) => [f.id, `${f.number} ${f.short_title}`])} />
       <div className="flex flex-wrap items-center gap-1.5">
         <span className="t-micro text-ink-4 w-20 shrink-0">Reach</span>
-        <button type="button" aria-pressed={params.reach !== 'direct'} className={chip(params.reach !== 'direct')} onClick={() => set({ reach: '' })}>Direct and adjacent</button>
-        <button type="button" aria-pressed={params.reach === 'direct'} className={chip(params.reach === 'direct')} onClick={() => set({ reach: 'direct' })}>Direct only</button>
+        <Chip pressed={params.reach !== 'direct'} onClick={() => set({ reach: '' })}>Direct and adjacent</Chip>
+        <Chip pressed={params.reach === 'direct'} onClick={() => set({ reach: 'direct' })}>Direct only</Chip>
       </div>
       <Facet label="Exposure" keyName="exposure" params={params} set={set} options={Object.entries(EXPOSURE_TYPES)} />
       <Facet label="Direction" keyName="dir" params={params} set={set} options={Object.entries(DIRECTIONS)} />

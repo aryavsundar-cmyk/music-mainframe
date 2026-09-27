@@ -3,6 +3,7 @@ import { ArrowUp, ArrowDown, ExternalLink } from 'lucide-react'
 import { formatDate } from '../../utils/format.js'
 import { LimitLine } from '../prospecting/LimitNote.jsx'
 import { ForceChip } from './ForceChip.jsx'
+import { Eyebrow } from '../primitives/index.js'
 
 /**
  * Which of the five forces the record ties this company to. Built only from deals it is a party to and headlines
@@ -13,7 +14,7 @@ export function ForceExposure({ exposure, name, loading = false }) {
   const shown = exposure.forces.filter((f) => f.total)
   return (
     <div className="rounded-md border border-line-1 bg-ground-1 p-4">
-      <div className="t-eyebrow text-ink-3 mb-1">Five forces exposure</div>
+      <Eyebrow as="h2" tone="muted" className="mb-1">Five forces exposure</Eyebrow>
       <p className="t-micro text-ink-3 m-0 mb-3">From deals {name} is a party to and headlines that name it{loading ? ' — still reading the live feed and archive…' : '.'}</p>
       {shown.length ? shown.map((f) => (
         <div key={f.force.id} className="py-2.5 border-t border-line-1">

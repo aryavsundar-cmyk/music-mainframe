@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
-import { PageHeader, FilterBar, KeyFigures, Card, Tag, Num } from '../components/primitives/index.js'
+import { PageHeader, FilterBar, KeyFigures, Card, Tag, Num, Chip, EmptyState, EmptyAction } from '../components/primitives/index.js'
 import { listFunds, FUND_KINDS, MONEY_TYPES, kindOf } from '../data/peFunds.js'
 import { OWNERSHIP } from '../data/entities.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
@@ -9,8 +9,6 @@ import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 import { format } from '../utils/format.js'
 
-const chip = (a) => ['inline-flex items-center gap-1.5 rounded-sm border px-2 py-1 t-small cursor-pointer select-none transition-colors duration-100',
-  a ? 'bg-ground-4 border-line-3 text-ink-1' : 'bg-transparent border-line-1 text-ink-2 hover:bg-ground-2 hover:text-ink-1'].join(' ')
 
 export default function PE() {
   const { params, set, clear, sp } = useUrlFilters(['q', 'kind'])
@@ -40,13 +38,13 @@ export default function PE() {
         <div className="flex items-start gap-2">
           <span className="t-micro text-ink-4 w-16 shrink-0 pt-1.5">Kind</span>
           <div className="flex flex-wrap gap-1.5">
-            <button type="button" aria-pressed={!params.kind} className={chip(!params.kind)} onClick={() => set({ kind: '' })}>All</button>
-            {MONEY_TYPES.map((k) => <button key={k} type="button" aria-pressed={params.kind === k} className={chip(params.kind === k)} onClick={() => set({ kind: params.kind === k ? '' : k })}>{FUND_KINDS[k].label}<span className="t-micro font-mono text-ink-3">{all.filter((r) => kindOf(r.e) === k).length}</span></button>)}
+            <Chip pressed={!params.kind} onClick={() => set({ kind: '' })}>All</Chip>
+            {MONEY_TYPES.map((k) => <Chip key={k} pressed={params.kind === k} onClick={() => set({ kind: params.kind === k ? '' : k })}>{FUND_KINDS[k].label}<span className="t-micro font-mono text-ink-3">{all.filter((r) => kindOf(r.e) === k).length}</span></Chip>)}
           </div>
         </div>
       </FilterBar>
 
-      {groups.length === 0 && <div className="py-12 text-center t-body text-ink-3">Nothing matches.</div>}
+      {groups.length === 0 && <EmptyState title="No fund or sponsor matches these filters." why="Every money-side actor on the canvas is here; the filters have narrowed it to none." action={<EmptyAction onClick={clear}>Clear the filters</EmptyAction>} />}
       {groups.map(([k, list]) => (
         <section key={k} className="mb-12">
           <div className="flex items-baseline gap-3 mb-1"><span className="t-eyebrow text-accent">{FUND_KINDS[k].label}</span><span className="t-micro font-mono text-ink-4">{list.length}</span></div>

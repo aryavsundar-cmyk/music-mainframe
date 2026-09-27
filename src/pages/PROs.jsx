@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { PageHeader, FilterBar, KeyFigures, Tag, Num, Card } from '../components/primitives/index.js'
+import { PageHeader, FilterBar, KeyFigures, Tag, Num, Card, Chip, DataTable, Th, EmptyState } from '../components/primitives/index.js'
 import { MoneyBar } from '../components/rights/MoneyBar.jsx'
 import { listPros, SCOPES, MODELS, REGIONS, GLOBAL_COLLECTIONS, toUsd } from '../data/pros.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
@@ -8,9 +8,6 @@ import { currencySymbol, format } from '../utils/format.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 
-const chip = (a) => ['inline-flex items-center gap-1.5 rounded-sm border px-2 py-1 t-small cursor-pointer select-none transition-colors duration-100',
-  a ? 'bg-ground-4 border-line-3 text-ink-1' : 'bg-transparent border-line-1 text-ink-2 hover:bg-ground-2 hover:text-ink-1'].join(' ')
-const TH = 'text-left t-micro uppercase tracking-[0.08em] text-ink-3 font-medium py-2 px-3 border-b border-line-2 whitespace-nowrap'
 const TD = 'py-3 px-3 border-b border-line-1 align-top'
 
 export default function PROs() {
@@ -46,25 +43,24 @@ export default function PROs() {
           <div className="flex items-start gap-2">
             <span className="t-micro text-ink-4 w-16 shrink-0 pt-1.5">Region</span>
             <div className="flex flex-wrap gap-1.5">
-              <button type="button" aria-pressed={!params.region} className={chip(!params.region)} onClick={() => set({ region: '' })}>All regions</button>
-              {REGIONS.map((r) => <button key={r} type="button" aria-pressed={params.region === r} className={chip(params.region === r)} onClick={() => set({ region: params.region === r ? '' : r })}>{r}<span className="t-micro font-mono text-ink-3">{all.filter((x) => x.region === r).length}</span></button>)}
+              <Chip pressed={!params.region} onClick={() => set({ region: '' })}>All regions</Chip>
+              {REGIONS.map((r) => <Chip key={r} pressed={params.region === r} onClick={() => set({ region: params.region === r ? '' : r })}>{r}<span className="t-micro font-mono text-ink-3">{all.filter((x) => x.region === r).length}</span></Chip>)}
             </div>
           </div>
           <div className="flex items-start gap-2">
             <span className="t-micro text-ink-4 w-16 shrink-0 pt-1.5">Rights</span>
             <div className="flex flex-wrap gap-1.5">
-              <button type="button" aria-pressed={!params.scope} className={chip(!params.scope)} onClick={() => set({ scope: '' })}>All rights</button>
-              {Object.entries(SCOPES).map(([k, v]) => <button key={k} type="button" aria-pressed={params.scope === k} className={chip(params.scope === k)} onClick={() => set({ scope: params.scope === k ? '' : k })}>{v.label}</button>)}
+              <Chip pressed={!params.scope} onClick={() => set({ scope: '' })}>All rights</Chip>
+              {Object.entries(SCOPES).map(([k, v]) => <Chip key={k} pressed={params.scope === k} onClick={() => set({ scope: params.scope === k ? '' : k })}>{v.label}</Chip>)}
             </div>
           </div>
         </div>
       </FilterBar>
 
-      <div className="overflow-x-auto -mx-3 mb-10">
-        <table className="w-full border-collapse min-w-[900px]">
+      <DataTable minWidth={900} className="mb-10" caption="Every society on file: what it collects, what it pays out, and how it decides who gets what.">
           <thead><tr>
-            <th className={TH}>Society</th><th className={TH}>Rights</th><th className={TH}>Model</th>
-            <th className={TH}>Latest collections</th><th className={`${TH} text-right`}>YoY</th><th className={`${TH} text-right`}>Paid out</th><th className={`${TH} text-right`}>Overhead</th><th className={`${TH} text-right`}>Members</th>
+            <Th>Society</Th><Th>Rights</Th><Th>Model</Th>
+            <Th>Latest collections</Th><Th align="right">YoY</Th><Th align="right">Paid out</Th><Th align="right">Overhead</Th><Th align="right">Members</Th>
           </tr></thead>
           <tbody>
             {rows.map(({ e, ...p }) => {
@@ -89,8 +85,7 @@ export default function PROs() {
               )
             })}
           </tbody>
-        </table>
-      </div>
+      </DataTable>
 
       <PageExport build={() => buildPageDoc({
         slug: 'pros-cmos',

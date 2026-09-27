@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { X, Info } from 'lucide-react'
-import { PageHeader, Card } from '../components/primitives/index.js'
+import { PageHeader, Card, Chip } from '../components/primitives/index.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
 import { useFinancials } from '../hooks/useFinancials.js'
 import { buildComparison, searchEntities, readIds, cellText, PRESETS, MAX_COMPARE, MIN_TREND_YEARS } from '../utils/compare.js'
@@ -12,7 +12,6 @@ import { buildPageDoc } from '../utils/pageDocs.js'
 import { formatDate } from '../utils/format.js'
 import { LIMITS } from '../data/limits.js'
 
-const chip = 'inline-flex items-center gap-1.5 rounded-md border border-line-1 bg-transparent text-ink-2 px-2.5 py-1 t-small cursor-pointer hover:bg-ground-2 hover:text-ink-1'
 
 /**
  * Compare — companies side by side, on the figures they actually reported.
@@ -70,7 +69,7 @@ export default function Compare() {
         <div className="flex flex-wrap items-center gap-2">
           {ids.length === 0 && <span className="t-small text-ink-3 mr-1">Start with a set:</span>}
           {ids.length === 0
-            ? PRESETS.map((p) => <button key={p.id} type="button" className={chip} onClick={() => setIds(p.ids)}>{p.label}</button>)
+            ? PRESETS.map((p) => <Chip key={p.id} onClick={() => setIds(p.ids)}>{p.label}</Chip>)
             : (
               <>
                 {companies.map((c) => (

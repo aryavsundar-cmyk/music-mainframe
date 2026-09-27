@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUpRight, ExternalLink, Search, X } from 'lucide-react'
 import { format } from '../utils/format.js'
-import { PageHeader, Card, Tag, FilterBar, KeyFigures } from '../components/primitives/index.js'
+import { PageHeader, Card, Tag, FilterBar, KeyFigures, EmptyState, EmptyAction } from '../components/primitives/index.js'
 import { ExportBar } from '../components/export/ExportBar.jsx'
 import { describeFilters, filterSentence } from '../utils/pageDocs.js'
 import { selectClass } from '../components/prospecting/ProspectUi.jsx'
@@ -14,6 +14,7 @@ import { buildCatalogScan } from '../utils/marketDocs.js'
 import { ASSETS } from '../data/transactions.js'
 import { fmtM } from '../utils/valuation.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
+import { useDismissable } from '../hooks/useDismissable.js'
 
 const money = (v) => (!v ? '—' : v >= 1e9 ? `$${(v / 1e9).toFixed(1)}B` : fmtM(v, 0))
 const BANDS = { live: { label: 'Live signal', tone: 'danger' }, watch: { label: 'Worth watching', tone: 'accent' }, quiet: { label: 'Quiet', tone: 'neutral' } }
@@ -83,10 +84,14 @@ export default function CatalogScan() {
               <thead><tr>{['Holding', 'Owner', 'Asset', 'Value', 'Held', 'Signal'].map((h) => <th key={h} className="text-left t-micro uppercase tracking-[0.08em] text-ink-3 font-medium py-2 px-2.5 border-b border-line-2 whitespace-nowrap">{h}</th>)}</tr></thead>
               <tbody>
                 {shown.slice(0, ROW_CAP).map((r) => (
-                  <tr key={r.id} className={`cursor-pointer ${r.id === params.row ? 'bg-ground-3' : 'hover:bg-ground-2'}`} onClick={() => set({ row: r.id === params.row ? '' : r.id })}>
+                  <tr key={r.id} className={`transition-colors duration-100 ${r.id === params.row ? 'bg-ground-3' : 'hover:bg-ground-2'}`}>
                     <td className="py-2 px-2.5 border-b border-line-1">
-                      <span className="t-small text-ink-1 block max-w-[360px] truncate">{r.label}</span>
-                      <span className="t-micro text-ink-4">{r.genres.length ? r.genres.map((g) => g.tag).join(' · ') : 'no genre in the sourced text'}</span>
+                      {/* The button is the control: a <tr onClick> could not be reached with a keyboard at all. */}
+                      <button type="button" aria-expanded={r.id === params.row} onClick={() => set({ row: r.id === params.row ? '' : r.id })}
+                        className="text-left bg-transparent border-0 p-0 cursor-pointer w-full">
+                        <span className="t-small text-ink-1 block max-w-[360px] truncate hover:text-accent">{r.label}</span>
+                        <span className="t-micro text-ink-4">{r.genres.length ? r.genres.map((g) => g.tag).join(' · ') : 'no genre in the sourced text'}</span>
+                      </button>
                     </td>
                     <td className="py-2 px-2.5 border-b border-line-1"><span className="t-small text-ink-2 block">{r.owner}</span><span className="t-micro text-ink-4">{OWNER_BEHAVIOUR[r.ownerKind].label}</span></td>
                     <td className="py-2 px-2.5 border-b border-line-1"><span className="t-micro text-ink-3">{ASSETS[r.asset] || r.asset}</span></td>
@@ -103,7 +108,7 @@ export default function CatalogScan() {
               </tbody>
             </table>
           </div>
-          {!shown.length && <p className="t-body text-ink-3 m-0 py-6 text-center">No holdings match these filters.</p>}
+          {!shown.length && <EmptyState title="No holding matches these filters." why="Holdings are traced from sourced transactions, so a narrow brief can match none of them." action={<EmptyAction onClick={clear}>Clear the filters</EmptyAction>} />}
         </Card>
 
         <div className="xl:sticky xl:top-6 space-y-4">
@@ -120,9 +125,10 @@ export default function CatalogScan() {
 }
 
 function HoldingPanel({ row, onClose }) {
+  const panel = useDismissable(!!row, onClose)
   const buyerLink = `/market/buyers?asset=${row.asset === 'n/a' ? '' : row.asset}&size=${row.value || ''}&genre=${row.genres[0]?.tag || ''}`
   return (
-    <Card pad="lg" className="space-y-4">
+    <Card pad="lg" className="space-y-4" ref={panel}>
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <Tag tone={BANDS[row.availability.band].tone}>{BANDS[row.availability.band].label} · {row.availability.score}</Tag>

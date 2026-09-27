@@ -96,6 +96,36 @@ rebuild a filter row above its content, and must state its figures in the header
 component used in JSX is imported, which neither ESLint (no react plugin, capitalised names exempt from
 `no-unused-vars`) nor the build catches — a missing `KeyFigures` import shipped a blank page during this sprint.
 
+## One implementation per pattern (Sprint 34)
+
+The UX review counted twenty chip implementations (eleven files declaring `const chip`, one class string copied
+into ten of them, six padding pairs, two radii, three treatments of "selected"), seven search inputs, four
+segmented controls, nine copies of the table-header string, and thirty-two empty states of which six offered a
+way out. None of that was decided; it accumulated because nothing stopped it.
+
+- **`Chip`** — the one toggle, `aria-pressed`, optional count.
+- **`Segmented`** — one choice out of several, as a real radio group: `aria-checked`, roving focus (the group is
+  one tab stop) and arrow keys. Every window, period, bucket and direction switcher used to announce as a row of
+  unrelated on/off switches.
+- **`DataTable` / `Th`** — one shell, `scope="col"`, `aria-sort` on the sortable header, and a header that stays
+  put. Sticky needs something to stick to: a wrapper with `overflow-x` is already a scroll container, so long
+  tables now get a bounded scroll area (`maxHeight`) and the header sticks inside it.
+- **`EmptyState` / `EmptyAction`** — what is missing, why, and the way out. The bare "Nothing matches." dead ends
+  on PE funds, DSPs, the glossary, catalog scan and prospecting are gone.
+- **`useDismissable`** — Escape closes it and focus goes back where it came from. The entity map's drawer did
+  this correctly and nothing else did; the flows panel, holding panel, account panel and export popover now share
+  the hook.
+
+Also: the entity row stopped being a fake button (`tabIndex` on a `<tr>`, Enter but no Space, no role, wrapping
+two real links — three tab stops announcing as "row"); the prospecting and catalog-scan rows, which could not be
+reached by keyboard **at all**, carry their control in the first cell; the export popover dropped an ARIA menu
+role it never implemented; the lab's tabs gained `aria-controls`, real tab panels, roving focus and arrow keys;
+and about a dozen section labels became real headings, so a page's outline is no longer one item long.
+
+`npm run test:patterns` holds all of it: no page may declare its own chip, segmented control or table header, no
+`<tr>` may pretend to be a button, every panel must use the hook, no ARIA role may be claimed without its
+keyboard contract, and the dead-end empty states cannot come back.
+
 ## Design system
 
 **Source of truth: [`src/tokens.js`](src/tokens.js).** `scripts/build-tokens.mjs` emits `src/tokens.css` (committed, regenerated before every `dev`/`build`); Tailwind 4 reads it as `@theme`, so utilities like `bg-ground-1 text-ink-2 text-accent border-line-1` are the tokens. Never hard-code a hex in a component. [`/design`](src/pages/DesignSystem.jsx) renders every token and primitive live in both themes.

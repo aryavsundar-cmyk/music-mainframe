@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowDown, ArrowUp, Table2 } from 'lucide-react'
-import { PageHeader, FilterBar } from '../components/primitives/index.js'
+import { PageHeader, FilterBar, Chip, Segmented } from '../components/primitives/index.js'
 import { ENTITIES, OWNERSHIP, AS_OF } from '../data/entities.js'
 import { COLUMNS, DIRECTIONS, MARKET_STRIP, buildMap, filterEntitiesForMap, connectionsOf, columnOf } from '../utils/entityMap.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
@@ -13,9 +13,6 @@ import { TopScroll } from '../components/entities/map/TopScroll.jsx'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 
-const chip = (a) => ['inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 t-small cursor-pointer select-none transition-colors duration-100 whitespace-nowrap',
-  a ? 'bg-ground-4 border-line-3 text-ink-1' : 'bg-transparent border-line-1 text-ink-2 hover:bg-ground-2 hover:text-ink-1'].join(' ')
-const seg = (on) => `inline-flex items-center gap-1.5 px-2.5 py-1 t-small border-0 cursor-pointer transition-colors duration-100 ${on ? 'bg-ground-4 text-ink-1' : 'bg-transparent text-ink-2 hover:text-ink-1 hover:bg-ground-2'}`
 const list = (v) => String(v || '').split(',').filter(Boolean)
 const toggleIn = (v, x) => { const s = new Set(list(v)); if (s.has(x)) s.delete(x); else s.add(x); return [...s].join(',') }
 const OWNERSHIP_ORDER = ['public', 'pe-backed', 'private', 'subsidiary', 'member-owned', 'nonprofit', 'state']
@@ -99,29 +96,34 @@ export default function EntityMap() {
         ].filter(Boolean)}
         onClear={() => set({ q: '', col: '', tier: '', own: '' })}
         count={{ shown: filtered.length, total: ENTITIES.length, noun: 'companies' }}
-        aside={<div role="group" aria-label="Flow direction" className="inline-flex rounded-md border border-line-2 overflow-hidden">
-          <button type="button" aria-pressed={direction === 'down'} className={seg(direction === 'down')} onClick={() => set({ dir: '' })}><ArrowDown size={13} aria-hidden="true" />{DIRECTIONS.down.label}</button>
-          <button type="button" aria-pressed={direction === 'up'} className={seg(direction === 'up')} onClick={() => set({ dir: 'up' })}><ArrowUp size={13} aria-hidden="true" />{DIRECTIONS.up.label}</button>
-        </div>}
+        aside={<Segmented
+          label="Flow direction"
+          value={direction}
+          onChange={(id) => set({ dir: id === 'up' ? 'up' : '' })}
+          options={[
+            { id: 'down', label: DIRECTIONS.down.label, icon: <ArrowDown size={13} aria-hidden="true" />, hint: DIRECTIONS.down.flow },
+            { id: 'up', label: DIRECTIONS.up.label, icon: <ArrowUp size={13} aria-hidden="true" />, hint: DIRECTIONS.up.flow },
+          ]}
+        />}
       >
         <div className="flex flex-col gap-3">
           <div className="flex items-start gap-2">
             <span className="t-micro text-ink-4 w-20 shrink-0 pt-1.5">Stage</span>
             <div className="flex flex-wrap items-center gap-1.5">
-              <button type="button" aria-pressed={!params.col} className={chip(!params.col)} onClick={() => set({ col: '' })}>All stages</button>
-              {COLUMNS.map((c) => <button key={c.id} type="button" aria-pressed={list(params.col).includes(c.id)} className={chip(list(params.col).includes(c.id))} onClick={() => set({ col: toggleIn(params.col, c.id) })}>{c.title}</button>)}
+              <Chip pressed={!params.col} onClick={() => set({ col: '' })}>All stages</Chip>
+              {COLUMNS.map((c) => <Chip pressed={list(params.col).includes(c.id)} key={c.id} onClick={() => set({ col: toggleIn(params.col, c.id) })}>{c.title}</Chip>)}
             </div>
           </div>
           <div className="flex items-start gap-2">
             <span className="t-micro text-ink-4 w-20 shrink-0 pt-1.5">Tier</span>
             <div className="flex flex-wrap items-center gap-1.5">
-              {['1', '2', '3'].map((t) => <button key={t} type="button" aria-pressed={list(params.tier).includes(t)} className={chip(list(params.tier).includes(t))} onClick={() => set({ tier: toggleIn(params.tier, t) })}>T{t}</button>)}
+              {['1', '2', '3'].map((t) => <Chip pressed={list(params.tier).includes(t)} key={t} onClick={() => set({ tier: toggleIn(params.tier, t) })}>T{t}</Chip>)}
             </div>
           </div>
           <div className="flex items-start gap-2">
             <span className="t-micro text-ink-4 w-20 shrink-0 pt-1.5">Ownership</span>
             <div className="flex flex-wrap items-center gap-1.5">
-              {OWNERSHIP_ORDER.map((o) => <button key={o} type="button" aria-pressed={list(params.own).includes(o)} className={chip(list(params.own).includes(o))} onClick={() => set({ own: toggleIn(params.own, o) })}>{OWNERSHIP[o] || o}</button>)}
+              {OWNERSHIP_ORDER.map((o) => <Chip pressed={list(params.own).includes(o)} key={o} onClick={() => set({ own: toggleIn(params.own, o) })}>{OWNERSHIP[o] || o}</Chip>)}
             </div>
           </div>
         </div>

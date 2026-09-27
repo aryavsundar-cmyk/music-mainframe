@@ -62,9 +62,19 @@ function CaseWorkspace({ c }) {
         <Link to="/lab/glossary" className="t-small text-secondary no-underline whitespace-nowrap">Finance, explained →</Link>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-8" role="tablist" aria-label="Engagement stages">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-8" role="tablist" aria-label="Engagement stages"
+        onKeyDown={(ev) => {
+          const delta = { ArrowRight: 1, ArrowLeft: -1, ArrowDown: 1, ArrowUp: -1 }[ev.key]
+          if (!delta) return
+          ev.preventDefault()
+          const i = STAGES.findIndex((x) => x.id === stage)
+          const next = STAGES[(i + delta + STAGES.length) % STAGES.length]
+          goStage(next.id)
+          requestAnimationFrame(() => document.getElementById(`stage-tab-${next.id}`)?.focus())
+        }}>
         {STAGES.map((s, i) => (
-          <button key={s.id} type="button" role="tab" aria-selected={stage === s.id} onClick={() => goStage(s.id)}
+          <button key={s.id} type="button" role="tab" id={`stage-tab-${s.id}`} aria-controls={`stage-panel-${s.id}`}
+            aria-selected={stage === s.id} tabIndex={stage === s.id ? 0 : -1} onClick={() => goStage(s.id)}
             className={['text-left rounded-md border px-3 py-2.5 cursor-pointer transition-colors', stage === s.id ? 'bg-ground-3 border-accent-line' : 'bg-ground-1 border-line-1 hover:bg-ground-2'].join(' ')}>
             <div className="flex items-baseline justify-between gap-2"><span className="t-small text-ink-1"><span className="font-mono text-ink-4 mr-1.5">{i + 1}</span>{s.label}</span><span className="t-micro font-mono text-ink-4">{Math.round(pr[s.id] * 100)}%</span></div>
             <div className="t-micro text-ink-4 mt-0.5 hidden md:block">{s.blurb}</div>
@@ -73,10 +83,13 @@ function CaseWorkspace({ c }) {
         ))}
       </div>
 
-      {stage === 'pitch' && <PitchStage {...props} />}
-      {stage === 'plan' && <PlanStage {...props} />}
-      {stage === 'execute' && <Execute {...props} step={params.step} onStep={(id) => { set({ step: id }); window.scrollTo({ top: 0 }) }} />}
-      {stage === 'deliver' && <Deliver {...props} />}
+      {/* One panel per tab, so "tab 2 of 4" has something to point at. */}
+      <div role="tabpanel" id={`stage-panel-${stage}`} aria-labelledby={`stage-tab-${stage}`}>
+        {stage === 'pitch' && <PitchStage {...props} />}
+        {stage === 'plan' && <PlanStage {...props} />}
+        {stage === 'execute' && <Execute {...props} step={params.step} onStep={(id) => { set({ step: id }); window.scrollTo({ top: 0 }) }} />}
+        {stage === 'deliver' && <Deliver {...props} />}
+      </div>
 
       <Card pad="md" className="mt-8">
         <div className="flex items-center justify-between gap-4">

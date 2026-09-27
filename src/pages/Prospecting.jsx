@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUpRight, RotateCcw, Search, X } from 'lucide-react'
 import { format } from '../utils/format.js'
-import { PageHeader, SectionHeader, Card, Tag, Button, FilterBar, KeyFigures } from '../components/primitives/index.js'
+import { PageHeader, SectionHeader, Card, Tag, Button, FilterBar, KeyFigures, EmptyState } from '../components/primitives/index.js'
 import { ScoreBar, TierTag, selectClass } from '../components/prospecting/ProspectUi.jsx'
 import { AccountHeader, OutreachComposer, RecordEditor, ScoreReasons, TriggerList } from '../components/prospecting/AccountParts.jsx'
 import { ExportBar } from '../components/export/ExportBar.jsx'
@@ -15,6 +15,7 @@ import { ConnectorStatus } from '../components/prospecting/ConnectorStatus.jsx'
 import { LimitNote } from '../components/prospecting/LimitNote.jsx'
 import { conversionBy, funnel, staleAccounts, OUTCOMES } from '../utils/outcomes.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
+import { useDismissable } from '../hooks/useDismissable.js'
 
 const fmtDate = (d) => (d ? d : '—')
 
@@ -198,10 +199,14 @@ function TargetTable({ accounts, records, selectedId, onSelect, onStatus }) {
             {accounts.slice(0, 120).map((a) => {
               const r = records[a.id] || {}
               return (
-                <tr key={a.id} className={`cursor-pointer ${a.id === selectedId ? 'bg-ground-3' : 'hover:bg-ground-2'}`} onClick={() => onSelect(a.id)}>
+                <tr key={a.id} className={`transition-colors duration-100 ${a.id === selectedId ? 'bg-ground-3' : 'hover:bg-ground-2'}`}>
                   <td className="py-2 px-2.5 border-b border-line-1">
-                    <span className="t-small text-ink-1 block">{a.name}</span>
-                    <span className="t-micro text-ink-4">{a.type} · {a.region}</span>
+                    {/* The button is the control: a <tr onClick> could not be reached with a keyboard at all. */}
+                    <button type="button" aria-expanded={a.id === selectedId} onClick={() => onSelect(a.id)}
+                      className="text-left bg-transparent border-0 p-0 cursor-pointer w-full">
+                      <span className="t-small text-ink-1 block hover:text-accent">{a.name}</span>
+                      <span className="t-micro text-ink-4">{a.type} · {a.region}</span>
+                    </button>
                   </td>
                   <td className="py-2 px-2.5 border-b border-line-1"><span className="t-micro text-ink-3">{SEGMENT_BY_ID[a.segment]?.label}</span></td>
                   <td className="py-2 px-2.5 border-b border-line-1"><TierTag tier={a.score.tier} /></td>
@@ -222,14 +227,15 @@ function TargetTable({ accounts, records, selectedId, onSelect, onStatus }) {
         </table>
       </div>
       {accounts.length > 120 && <p className="t-micro text-ink-4 mt-3 mb-0">Showing the top 120 by score. Filter to narrow.</p>}
-      {!accounts.length && <p className="t-body text-ink-3 m-0 py-6 text-center">No accounts match these filters.</p>}
+      {!accounts.length && <EmptyState title="No account matches these filters." why="Scores come from the record; a narrow combination of side, segment, tier and status can match nobody." />}
     </Card>
   )
 }
 
 function AccountPanel({ account, record, update, logOutcome, removeOutcome, onClose }) {
+  const panel = useDismissable(!!account, onClose)
   return (
-    <Card pad="lg" className="space-y-5">
+    <Card pad="lg" className="space-y-5" ref={panel}>
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <AccountHeader account={account}>

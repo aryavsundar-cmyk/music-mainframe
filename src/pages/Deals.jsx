@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
-import { PageHeader, FilterBar, KeyFigures } from '../components/primitives/index.js'
+import { PageHeader, FilterBar, KeyFigures, Chip, Eyebrow } from '../components/primitives/index.js'
 import { TransactionList } from '../components/money/TransactionRow.jsx'
 import { filterTransactions, TX_TYPES, ASSETS, STRUCTURES, YEARS, TX_TOTALS, partyName } from '../data/transactions.js'
 import { PageExport } from '../components/export/PageExport.jsx'
@@ -34,8 +34,6 @@ const FILTER_LABELS = {
 }
 const FORCE_KEYS = ['force', 'reach', 'exposure', 'dir', 'geo', 'rights']
 const parties = (list) => (list || []).map(partyName).join(' · ')
-const chip = (a) => ['inline-flex items-center gap-1.5 rounded-sm border px-2 py-1 t-small cursor-pointer select-none transition-colors duration-100',
-  a ? 'bg-ground-4 border-line-3 text-ink-1' : 'bg-transparent border-line-1 text-ink-2 hover:bg-ground-2 hover:text-ink-1'].join(' ')
 const select = 'bg-ground-1 border border-line-2 rounded-md h-8 px-2 t-small text-ink-1 focus:border-accent outline-none'
 
 /** What the board is reading, stated plainly — including what it declined and whether the live half is there. */
@@ -100,9 +98,9 @@ export default function Deals() {
           <div className="flex items-start gap-2">
             <span className="t-micro text-ink-4 w-20 shrink-0 pt-1.5">Type</span>
             <div className="flex flex-wrap gap-1.5">
-              <button type="button" aria-pressed={!params.type} className={chip(!params.type)} onClick={() => set({ type: '' })}>All types</button>
+              <Chip pressed={!params.type} onClick={() => set({ type: '' })}>All types</Chip>
               {Object.entries(TX_TYPES).map(([k, v]) => (
-                <button key={k} type="button" aria-pressed={params.type === k} className={chip(params.type === k)} onClick={() => set({ type: params.type === k ? '' : k })}>{v.label}<span className="t-micro font-mono text-ink-3">{counts[k]}</span></button>
+                <Chip key={k} pressed={params.type === k} onClick={() => set({ type: params.type === k ? '' : k })}>{v.label}<span className="t-micro font-mono text-ink-3">{counts[k]}</span></Chip>
               ))}
             </div>
           </div>
@@ -128,7 +126,7 @@ export default function Deals() {
       <section id="five-forces" className="mt-12 mb-8 scroll-mt-6">
         <div className="flex flex-wrap items-end justify-between gap-3 mb-3">
           <div>
-            <div className="t-eyebrow text-accent">Five forces</div>
+            <Eyebrow as="h2" className="m-0">Five forces</Eyebrow>
             <p className="t-small text-ink-2 m-0 mt-1 max-w-2xl">Every deal on record and every item in the live feed, read against the five forces reshaping the market. Press a force to see its thesis and the evidence behind it.</p>
           </div>
           <FeedLine feed={feed} archive={archive} tagged={tagged} declined={unclassified.length} />
@@ -152,7 +150,7 @@ export default function Deals() {
 
       <section className="mt-10">
         <div className="flex flex-wrap items-baseline justify-between gap-3 mb-2">
-          <div className="t-eyebrow text-accent">Market events · live feed</div>
+          <Eyebrow as="h2" className="m-0">Market events · live feed</Eyebrow>
           {forcing && <span className="t-small text-ink-3 tabular">{events.length} matching</span>}
         </div>
         {forcing

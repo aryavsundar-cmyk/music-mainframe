@@ -5,6 +5,7 @@ import { Button } from '../primitives/index.js'
 import { MODES, modesFor } from '../../utils/brief.js'
 import { exportBrief, buildDeliverable, exportDoc } from '../../utils/download.js'
 import { EXPORT_FORMATS } from '../../editions.js'
+import { useDismissable } from '../../hooks/useDismissable.js'
 
 // The edition manifest decides the formats. A hard-coded list here offered Markdown in the work edition (whose
 // manifest excludes it) and never offered Excel anywhere — the one menu Sprint 20 missed.
@@ -17,11 +18,14 @@ const EXTRA = [['account-plan', 'Account plan', 'SCR, stakeholders, matrix, 30·
  * dropdown for mode × format. Status line under the buttons reports citations state so a quiet feed is never
  * mistaken for a broken one.
  */
+// A popover of buttons. It used to claim an ARIA menu role with none of that keyboard contract — announcing a
+// menu and then ignoring arrows and Escape is worse than not claiming one at all.
 export function ExportButtons({ entity, forceItems = null, financials = null }) {
   const [busy, setBusy] = useState('')
   const [last, setLast] = useState(null)
   const [open, setOpen] = useState(false)
   const ref = useRef(null)
+  useDismissable(open, () => setOpen(false), { focus: false })
   const modes = modesFor(entity)
 
   useEffect(() => {
@@ -45,15 +49,15 @@ export function ExportButtons({ entity, forceItems = null, financials = null }) 
       <div className="flex items-center gap-2" ref={ref}>
         <Button variant="primary" icon={Sparkles} onClick={() => run('full', 'docx')} disabled={!!busy}>{busy === 'full/docx' ? 'Building…' : 'Export full brief'}</Button>
         <div className="relative">
-          <Button variant="secondary" icon={Download} onClick={() => setOpen((o) => !o)} disabled={!!busy} aria-haspopup="menu" aria-expanded={open}>Export <ChevronDown size={13} aria-hidden="true" /></Button>
+          <Button variant="secondary" icon={Download} onClick={() => setOpen((o) => !o)} disabled={!!busy} aria-haspopup="true" aria-expanded={open}>Export <ChevronDown size={13} aria-hidden="true" /></Button>
           {open && (
-            <div role="menu" className="absolute right-0 mt-1 w-[300px] rounded-lg border border-line-2 bg-ground-2 shadow-[var(--shadow-popover)] p-1.5 z-20">
+            <div className="absolute right-0 mt-1 w-[300px] rounded-lg border border-line-2 bg-ground-2 shadow-[var(--shadow-popover)] p-1.5 z-20">
               {modes.map((m) => (
                 <div key={m} className="px-2 py-1.5">
                   <div className="flex items-baseline justify-between gap-2">
                     <div><div className="t-small text-ink-1">{MODES[m].label}</div><div className="t-micro text-ink-4">{MODES[m].blurb}</div></div>
                     <div className="flex gap-1 shrink-0">
-                      {FORMATS.map(([f, label]) => <button key={f} type="button" role="menuitem" onClick={() => run(m, f)} className="t-micro font-mono rounded-sm border border-line-1 px-1.5 py-0.5 text-ink-2 hover:bg-ground-3 hover:text-ink-1 bg-transparent cursor-pointer">{label}</button>)}
+                      {FORMATS.map(([f, label]) => <button key={f} type="button" onClick={() => run(m, f)} className="t-micro font-mono rounded-sm border border-line-1 px-1.5 py-0.5 text-ink-2 hover:bg-ground-3 hover:text-ink-1 bg-transparent cursor-pointer">{label}</button>)}
                     </div>
                   </div>
                 </div>
@@ -64,7 +68,7 @@ export function ExportButtons({ entity, forceItems = null, financials = null }) 
                     <div className="flex items-baseline justify-between gap-2">
                       <div><div className="t-small text-ink-1">{label}</div><div className="t-micro text-ink-4">{blurb}</div></div>
                       <div className="flex gap-1 shrink-0">
-                        {FORMATS.map(([f, fl]) => <button key={f} type="button" role="menuitem" onClick={() => run(m, f)} className="t-micro font-mono rounded-sm border border-line-1 px-1.5 py-0.5 text-ink-2 hover:bg-ground-3 hover:text-ink-1 bg-transparent cursor-pointer">{fl}</button>)}
+                        {FORMATS.map(([f, fl]) => <button key={f} type="button" onClick={() => run(m, f)} className="t-micro font-mono rounded-sm border border-line-1 px-1.5 py-0.5 text-ink-2 hover:bg-ground-3 hover:text-ink-1 bg-transparent cursor-pointer">{fl}</button>)}
                       </div>
                     </div>
                   </div>

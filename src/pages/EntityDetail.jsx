@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, ExternalLink, CornerDownRight, Network } from 'lucide-react'
-import { PageHeader, SectionHeader, Card, Stat, Tag, FlowMark } from '../components/primitives/index.js'
+import { PageHeader, SectionHeader, Card, Stat, Tag, FlowMark, Eyebrow } from '../components/primitives/index.js'
 import { ENTITY_TYPES, LENS_TONE, OWNERSHIP, TIERS, getEntityProfile, getEntity, getChildren, getParentChain, getBackers, getBackedBy } from '../data/entities.js'
 import { getTransactionsForEntity } from '../data/transactions.js'
 import { TransactionList } from '../components/money/TransactionRow.jsx'
@@ -143,7 +143,7 @@ export default function EntityDetail() {
             <div className={STACK}>
               <SecFilings entityId={e.id} />
               <Card pad="md">
-                <div className="t-eyebrow text-ink-3 mb-1">Profile</div>
+                <Eyebrow as="h2" tone="muted" className="mb-1">Profile</Eyebrow>
                 <Fact label="Headquarters">{e.hq || null}</Fact>
                 <Fact label="Founded">{e.founded ? <span className="font-mono tabular">{e.founded}</span> : null}</Fact>
                 <Fact label="Region">{e.region || null}</Fact>
@@ -154,7 +154,7 @@ export default function EntityDetail() {
               </Card>
 
               <Card pad="md">
-                <div className="t-eyebrow text-ink-3 mb-3">Corporate hierarchy</div>
+                <Eyebrow as="h2" tone="muted" className="mb-3">Corporate hierarchy</Eyebrow>
                 <div className="space-y-1">
                   {[...chain].reverse().map((p, i) => (
                     <div key={p.id} className="flex items-center gap-1.5 t-small" style={{ paddingLeft: i * 12 }}>
@@ -198,14 +198,14 @@ export default function EntityDetail() {
 
         <aside className="flex flex-col gap-6 xl:sticky xl:top-6 xl:max-h-[calc(100vh-3rem)] xl:overflow-y-auto">
           <Card pad="md">
-            <div className="t-eyebrow text-ink-3 mb-3">Operator notes</div>
+            <Eyebrow as="h2" tone="muted" className="mb-3">Operator notes</Eyebrow>
             {e.notes.length
               ? <ul className="m-0 pl-4 t-small text-ink-2 space-y-2">{e.notes.map((n) => <li key={n}>{n}</li>)}</ul>
               : <p className="t-small text-ink-4 m-0">No operator notes on file.</p>}
           </Card>
 
           <Card pad="md">
-            <div className="t-eyebrow text-ink-3 mb-3">Sources</div>
+            <Eyebrow as="h2" tone="muted" className="mb-3">Sources</Eyebrow>
             {e.sources.length === 0
               ? <div className="t-small text-ink-4">None filed.</div>
               : <ul className="m-0 p-0 list-none space-y-1.5">

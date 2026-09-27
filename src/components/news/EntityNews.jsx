@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Card } from '../primitives/index.js'
+import { Card, Eyebrow } from '../primitives/index.js'
 import { useNewsStream } from '../../hooks/useNewsStream.js'
 import { useArchive } from '../../hooks/useForces.js'
 import { mergeUnique } from '../../utils/eventKeys.js'
@@ -24,7 +24,7 @@ export function EntityNews({ entityId }) {
   return (
     <Card pad="md">
       <div className="flex items-baseline justify-between mb-2">
-        <div className="t-eyebrow text-ink-3">In the news</div>
+        <Eyebrow as="h2" tone="muted">In the news</Eyebrow>
         <Link to={`/news?entity=${entityId}`} className="t-micro text-accent no-underline hover:underline">all</Link>
       </div>
       {bothDown && <div className="t-small text-ink-4">News backend unreachable — start the server or check the deploy.</div>}

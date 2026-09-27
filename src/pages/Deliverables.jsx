@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Sparkles, FileText, Presentation, FileType, FileCode, ExternalLink, Check, AlertTriangle } from 'lucide-react'
-import { PageHeader, SectionHeader, Card, Tag, Button, Num, Stat } from '../components/primitives/index.js'
+import { PageHeader, SectionHeader, Card, Tag, Button, Num, Stat, Chip } from '../components/primitives/index.js'
 import { ENTITIES, getEntity, ENTITY_TYPES } from '../data/entities.js'
 import { CLIENT_CATEGORIES, getConsultingContext, SERVICE_LINES, SERVICE_ORDER } from '../data/consulting.js'
 import { ROLES, STAFFING } from '../data/rateCard.js'
@@ -120,7 +120,7 @@ export default function Deliverables() {
               <select className={select} value={categoryId} onChange={(e) => set({ category: e.target.value })}>{CLIENT_CATEGORIES.map((c) => <option key={c.id} value={c.id}>{c.label}{ctx.categories.some((x) => x.id === c.id) ? ' ·  matches entity' : ''}</option>)}</select>
               <div className="t-micro text-ink-3 mt-3 mb-1">Service lines</div>
               <div className="flex flex-wrap gap-1.5">
-                {SERVICE_ORDER.map((l) => { const on = lines.includes(l); return <button key={l} type="button" onClick={() => setLines((xs) => (on ? xs.filter((x) => x !== l) : [...xs, l]))} className={['rounded-sm border px-2 py-1 t-small cursor-pointer', on ? 'bg-ground-4 border-line-3 text-ink-1' : 'bg-transparent border-line-1 text-ink-2 hover:bg-ground-2'].join(' ')}>{SERVICE_LINES[l].label} <span className="t-micro font-mono text-ink-4">{STAFFING[l].weeks}w</span></button> })}
+                {SERVICE_ORDER.map((l) => { const on = lines.includes(l); return <Chip key={l} pressed={on} onClick={() => setLines((xs) => (on ? xs.filter((x) => x !== l) : [...xs, l]))}>{SERVICE_LINES[l].label} <span className="t-micro font-mono text-ink-3">{STAFFING[l].weeks}w</span></Chip> })}
               </div>
               <div className="grid grid-cols-[1fr_96px] gap-3 items-center mt-3"><div className="t-micro text-ink-3">Override duration (weeks)</div><input className={input} value={weeks} onChange={(e) => setWeeks(e.target.value.replace(/[^0-9]/g, ''))} placeholder="auto" /></div>
               <div className="t-micro text-ink-3 mt-4 mb-1">Day rates (indicative — edit before sending)</div>

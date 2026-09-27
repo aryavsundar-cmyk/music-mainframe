@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Network } from 'lucide-react'
-import { Card } from '../primitives/index.js'
+import { Card, Eyebrow } from '../primitives/index.js'
 import { connectionsOf } from '../../utils/entityMap.js'
 
 const REASON = { ownership: 'Ownership', backer: 'Backing', deal: 'Deal counterparties' }
@@ -15,7 +15,7 @@ export function Connections({ entityId, name }) {
   return (
     <Card pad="md">
       <div className="flex items-baseline justify-between gap-2 mb-2">
-        <div className="t-eyebrow text-ink-3">Connections on record · {links.length}</div>
+        <Eyebrow as="h2" tone="muted">Connections on record · {links.length}</Eyebrow>
         <Link to={`/entities/map?e=${entityId}`} className="t-micro text-accent no-underline hover:underline inline-flex items-center gap-1"><Network size={11} aria-hidden="true" />On the map</Link>
       </div>
       {groups.length === 0

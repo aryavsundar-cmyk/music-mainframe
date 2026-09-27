@@ -94,7 +94,7 @@ export default function Entities() {
         <FacetControls params={params} set={set} picked={picked} toggle={toggle} staleCount={staleCount} forcesLoading={loading} financials={financials} />
       </FilterBar>
 
-      <EntityTable rows={rows} grouped={!params.type} financials={financials.companies} />
+      <EntityTable rows={rows} grouped={!params.type} financials={financials.companies} onClear={clearAll} />
       <PageExport build={() => buildPageDoc({
         slug: 'entities',
         title: 'Entities',

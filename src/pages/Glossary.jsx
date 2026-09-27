@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { format } from '../utils/format.js'
-import { PageHeader, FilterBar, KeyFigures, SectionHeader, Card } from '../components/primitives/index.js'
+import { PageHeader, FilterBar, KeyFigures, SectionHeader, Card, EmptyState, EmptyAction } from '../components/primitives/index.js'
 import { TermRow } from '../components/reference/Concepts.jsx'
 import { GLOSSARY, TAGS } from '../data/glossary.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
@@ -53,7 +53,7 @@ export default function Glossary() {
           <Card pad="lg"><div className="divide-y divide-line-1">{g.terms.map((t) => <TermRow key={t.id} id={t.id} open={!!q} />)}</div></Card>
         </div>
       ))}
-      {!matches.length && <Card pad="lg"><p className="t-body text-ink-3 m-0">Nothing matches that search.</p></Card>}
+      {!matches.length && <EmptyState title={`No term matches “${params.q}”.`} why="Every term the app uses is here, with its synonyms. Try the plain-English word — “multiple”, “royalty”, “advance”." action={<EmptyAction onClick={() => set({ q: '', tag: '' })}>Show every term</EmptyAction>} />}
       <PageExport build={() => buildPageDoc({
         slug: 'finance-explained',
         title: 'Finance, explained',

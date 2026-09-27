@@ -1,3 +1,4 @@
+import { Chip, Segmented } from '../primitives/index.js'
 import { useState } from 'react'
 import { X, ExternalLink } from 'lucide-react'
 import { FORCES, FORCE_BY_ID, DIRECTIONS, EXPOSURE_TYPES } from '../../data/forces.js'
@@ -10,9 +11,6 @@ import { ForceSpark } from './ForceSpark.jsx'
 import { ForceChips } from './ForceChip.jsx'
 import { EventList } from './EventList.jsx'
 
-const seg = (on) => `px-2.5 py-1 t-small border-0 cursor-pointer transition-colors duration-100 ${on ? 'bg-ground-4 text-ink-1' : 'bg-transparent text-ink-2 hover:text-ink-1 hover:bg-ground-2'}`
-const chip = (a) => ['inline-flex items-center gap-1.5 rounded-sm border px-2 py-1 t-small cursor-pointer select-none transition-colors duration-100',
-  a ? 'bg-ground-4 border-line-3 text-ink-1' : 'bg-transparent border-line-1 text-ink-2 hover:bg-ground-2 hover:text-ink-1'].join(' ')
 const dateInput = 'bg-ground-1 border border-line-2 rounded-md h-8 px-2 t-small text-ink-1 focus:border-accent outline-none'
 const list = (v) => String(v || '').split(',').filter(Boolean)
 const toggleIn = (v, x) => { const s = new Set(list(v)); if (s.has(x)) s.delete(x); else s.add(x); return [...s].join(',') }
@@ -152,9 +150,7 @@ export function NewsForces({ tagged, deals = [], milestones = [], coverageSince,
           <div className="t-eyebrow text-accent">Five forces in the news</div>
           <p className="t-small text-ink-2 m-0 mt-1">Pick a period and the forces you care about to isolate their events and see how they are trending. Everything below the view — search, entity, topic, source — narrows it too.</p>
         </div>
-        <div role="group" aria-label="Period" className="inline-flex rounded-md border border-line-2 overflow-hidden">
-          {PERIOD_OPTIONS.map((id) => <button key={id} type="button" aria-pressed={period === id} className={seg(period === id)} onClick={() => setPeriod(id)}>{id === 'custom' ? 'Custom' : PERIODS[id].label}</button>)}
-        </div>
+        <Segmented label="Period" value={period} onChange={setPeriod} options={PERIOD_OPTIONS.map((id) => ({ id, label: id === 'custom' ? 'Custom' : PERIODS[id].label }))} />
       </div>
 
       {custom && (
@@ -169,9 +165,7 @@ export function NewsForces({ tagged, deals = [], milestones = [], coverageSince,
             {!bad && (
               <div className="inline-flex items-center gap-1.5">
                 <span className="t-micro text-ink-4">By</span>
-                <div role="group" aria-label="Bucket size" className="inline-flex rounded-md border border-line-2 overflow-hidden">
-                  {units.map((u) => <button key={u} type="button" aria-pressed={unit === u} className={seg(unit === u)} onClick={() => set({ fby: u === rangeBucket(range.from, range.to) ? '' : u })}>{cap(u)}</button>)}
-                </div>
+                <Segmented label="Bucket size" value={unit} onChange={(u) => set({ fby: u === rangeBucket(range.from, range.to) ? '' : u })} options={units.map((u) => ({ id: u, label: cap(u) }))} />
                 <span className="t-micro text-ink-4">{cards[0]?.a.series.length} {unit}s</span>
               </div>
             )}
@@ -179,7 +173,7 @@ export function NewsForces({ tagged, deals = [], milestones = [], coverageSince,
           <div className="flex flex-wrap items-center gap-1.5">
             <span className="t-micro text-ink-4 mr-1">Quick ranges</span>
             {presets.map(([label, from, title]) => (
-              <button key={label} type="button" title={title} aria-pressed={range.from === from && range.to === todayIso} className={chip(range.from === from && range.to === todayIso)} onClick={() => setRange(from, todayIso)}>{label}</button>
+              <Chip pressed={range.from === from && range.to === todayIso} key={label} title={title} onClick={() => setRange(from, todayIso)}>{label}</Chip>
             ))}
           </div>
           {bad && <p className="t-small text-danger m-0">{range.error} Choose a start on or before {formatDate(range.to)}.</p>}
@@ -213,16 +207,16 @@ export function NewsForces({ tagged, deals = [], milestones = [], coverageSince,
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-3">
             <div className="flex flex-wrap items-center gap-1.5">
               <span className="t-micro text-ink-4">Reach</span>
-              <button type="button" aria-pressed={reach !== 'direct'} className={chip(reach !== 'direct')} onClick={() => set({ freach: '' })}>Direct and adjacent</button>
-              <button type="button" aria-pressed={reach === 'direct'} className={chip(reach === 'direct')} onClick={() => set({ freach: 'direct' })}>Direct only</button>
+              <Chip pressed={reach !== 'direct'} onClick={() => set({ freach: '' })}>Direct and adjacent</Chip>
+              <Chip pressed={reach === 'direct'} onClick={() => set({ freach: 'direct' })}>Direct only</Chip>
             </div>
             <div className="flex flex-wrap items-center gap-1.5">
               <span className="t-micro text-ink-4">Direction</span>
-              {Object.entries(DIRECTIONS).map(([d, label]) => <button key={d} type="button" aria-pressed={list(params.fdir).includes(d)} className={chip(list(params.fdir).includes(d))} onClick={() => set({ fdir: toggleIn(params.fdir, d) })}>{label}</button>)}
+              {Object.entries(DIRECTIONS).map(([d, label]) => <Chip pressed={list(params.fdir).includes(d)} key={d} onClick={() => set({ fdir: toggleIn(params.fdir, d) })}>{label}</Chip>)}
             </div>
             <div className="flex flex-wrap items-center gap-1.5">
               <span className="t-micro text-ink-4">Evidence</span>
-              <button type="button" aria-pressed={withDeals} className={chip(withDeals)} onClick={() => { set({ fdeals: withDeals ? '0' : '1' }); setShown(LIST_STEP) }}>{deals.length} deals on record{auto ? ' · auto' : ''}</button>
+              <Chip pressed={withDeals} onClick={() => { set({ fdeals: withDeals ? '0' : '1' }); setShown(LIST_STEP) }}>{deals.length} deals on record{auto ? ' · auto' : ''}</Chip>
               {params.fdeals && <button type="button" className="t-micro text-ink-3 bg-transparent border-0 cursor-pointer p-0 hover:text-ink-1" onClick={() => set({ fdeals: '' })} title="Include deals automatically whenever the period starts before the news archive">reset to automatic</button>}
             </div>
             {any && <button type="button" className="inline-flex items-center gap-1 t-micro text-ink-3 bg-transparent border-0 cursor-pointer hover:text-ink-1" onClick={() => set({ fforce: '', freach: '', fdir: '' })}><X size={12} aria-hidden="true" />Clear forces</button>}

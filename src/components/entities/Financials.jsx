@@ -1,5 +1,5 @@
 import { ExternalLink } from 'lucide-react'
-import { Tag } from '../primitives/index.js'
+import { Tag, Eyebrow } from '../primitives/index.js'
 import { format, currencySymbol, formatDate } from '../../utils/format.js'
 import { CONCEPTS, pctChange as change, sameYear, freeCashFlow, fiveYearRecord } from '../../utils/financialConcepts.js'
 import { kindLabel, periodLabel } from '../../utils/freshness.js'
@@ -149,7 +149,7 @@ export function Financials({ e, fin, freshness }) {
   return (
     <section>
       <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3">
-        <div className="t-eyebrow text-accent">Financials</div>
+        <Eyebrow as="h2">Financials</Eyebrow>
         <FreshnessTag f={freshness} />
       </div>
       {fin?.metrics ? (

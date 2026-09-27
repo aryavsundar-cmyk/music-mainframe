@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { PageHeader, FilterBar, KeyFigures, Tag, Num } from '../components/primitives/index.js'
+import { PageHeader, FilterBar, KeyFigures, Tag, Num, DataTable, Th, Eyebrow, Segmented } from '../components/primitives/index.js'
 import { TransactionList } from '../components/money/TransactionRow.jsx'
 import { CATALOG_SALES, ASSETS, partyName } from '../data/transactions.js'
 import { formatDate, format } from '../utils/format.js'
@@ -8,7 +8,6 @@ import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc } from '../utils/pageDocs.js'
 
 const ASSET_TONE = { recording: 'recording', publishing: 'publishing', both: 'accent' }
-const TH = 'text-left t-micro uppercase tracking-[0.08em] text-ink-3 font-medium py-2 px-3 border-b border-line-2 whitespace-nowrap'
 const TD = 'py-2.5 px-3 border-b border-line-1 align-top'
 
 export default function Catalogs() {
@@ -29,18 +28,18 @@ export default function Catalogs() {
         lede="Publicly reported superstar catalog transactions: whose songs or masters, who bought them, which rights, for how much. Values are press estimates unless a filing says otherwise — see the verify tags." />
       <FilterBar
         count={{ shown: rows.length, total: CATALOG_SALES.length, noun: 'sales on file' }}
-        aside={<div className="flex items-center gap-1.5">
+        aside={<div className="flex items-center gap-2">
           <span className="t-micro text-ink-4">Sort</span>
-          {['value', 'date'].map((k) => (
-            <button key={k} type="button" aria-pressed={sort === k} onClick={() => setSort(k)}
-              className={['rounded-sm border px-2 py-1 t-small cursor-pointer transition-colors duration-100', sort === k ? 'bg-ground-4 border-line-3 text-ink-1' : 'bg-transparent border-line-1 text-ink-2 hover:bg-ground-2 hover:text-ink-1'].join(' ')}>{k === 'value' ? 'By value' : 'By date'}</button>
-          ))}
+          <Segmented label="Sort the table" value={sort} onChange={setSort} options={[{ id: 'value', label: 'By value' }, { id: 'date', label: 'By date' }]} />
         </div>}
       />
 
-      <div className="overflow-x-auto -mx-3 mb-12">
-        <table className="w-full border-collapse min-w-[720px]">
-          <thead><tr><th className={TH}>Catalog</th><th className={TH}>Buyer</th><th className={TH}>Rights</th><th className={TH}>Date</th><th className={`${TH} text-right`}>Value</th></tr></thead>
+      <DataTable minWidth={720} className="mb-12" caption="Publicly reported superstar catalog transactions, with buyer, rights and value.">
+          <thead><tr>
+            <Th>Catalog</Th><Th>Buyer</Th><Th>Rights</Th>
+            <Th sort={sort === 'date' ? 'desc' : 'none'} onSort={() => setSort('date')}>Date</Th>
+            <Th align="right" sort={sort === 'value' ? 'desc' : 'none'} onSort={() => setSort('value')}>Value</Th>
+          </tr></thead>
           <tbody>
             {rows.map((t) => (
               <tr key={t.id} className="hover:bg-ground-2 transition-colors duration-100">
@@ -55,10 +54,9 @@ export default function Catalogs() {
               </tr>
             ))}
           </tbody>
-        </table>
-      </div>
+      </DataTable>
 
-      <div className="t-eyebrow text-accent mb-4">Terms and sources</div>
+      <Eyebrow as="h2" className="mb-4">Terms and sources</Eyebrow>
       <TransactionList items={rows} dense />
       <PageExport build={() => buildPageDoc({
         slug: 'catalog-sales',

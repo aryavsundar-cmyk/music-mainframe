@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronDown, ExternalLink, Search, X } from 'lucide-react'
-import { PageHeader, SectionHeader, Stat, Tag, Num, Card } from '../components/primitives/index.js'
+import { PageHeader, SectionHeader, Stat, Tag, Num, Card, Chip, EmptyState, EmptyAction } from '../components/primitives/index.js'
 import { listDsps, TIERS, TIER_ORDER, PAYOUT_MODELS, MARKET } from '../data/fundamentals.js'
 import { getEntity } from '../data/entities.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
@@ -11,8 +11,6 @@ import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 
 const rate = (v) => '$' + v.toFixed(4).replace(/0+$/, '').replace(/\.$/, '')
 
-const chip = (a) => ['inline-flex items-center gap-1.5 rounded-sm border px-2 py-1 t-small cursor-pointer select-none transition-colors duration-100',
-  a ? 'bg-ground-4 border-line-3 text-ink-1' : 'bg-transparent border-line-1 text-ink-2 hover:bg-ground-2 hover:text-ink-1'].join(' ')
 const MODEL_TONE = { 'pro-rata': 'neutral', 'artist-centric': 'publishing', 'user-centric': 'publishing', statutory: 'recording', 'lump-sum': 'accent', direct: 'secondary' }
 
 function Row({ e, p }) {
@@ -111,16 +109,16 @@ export default function DSPs() {
           {any && <button type="button" onClick={clear} className="inline-flex items-center gap-1 t-small text-ink-3 hover:text-ink-1 bg-transparent border-0 cursor-pointer"><X size={13} aria-hidden="true" /> Clear</button>}
         </div>
         <div className="flex flex-wrap gap-1.5">
-          <button type="button" className={chip(!params.tier)} onClick={() => set({ tier: '' })}>All tiers</button>
-          {TIER_ORDER.map((t) => <button key={t} type="button" className={chip(params.tier === t)} onClick={() => set({ tier: params.tier === t ? '' : t })}>{TIERS[t]}<span className="t-micro font-mono text-ink-4">{all.filter((r) => r.tier === t).length}</span></button>)}
+          <Chip pressed={!params.tier} onClick={() => set({ tier: '' })}>All tiers</Chip>
+          {TIER_ORDER.map((t) => <Chip key={t} pressed={params.tier === t} onClick={() => set({ tier: params.tier === t ? '' : t })}>{TIERS[t]}<span className="t-micro font-mono text-ink-4">{all.filter((r) => r.tier === t).length}</span></Chip>)}
         </div>
         <div className="flex flex-wrap gap-1.5">
-          <button type="button" className={chip(!params.model)} onClick={() => set({ model: '' })}>All payout models</button>
-          {Object.keys(PAYOUT_MODELS).map((m) => <button key={m} type="button" className={chip(params.model === m)} onClick={() => set({ model: params.model === m ? '' : m })}>{m}</button>)}
+          <Chip pressed={!params.model} onClick={() => set({ model: '' })}>All payout models</Chip>
+          {Object.keys(PAYOUT_MODELS).map((m) => <Chip key={m} pressed={params.model === m} onClick={() => set({ model: params.model === m ? '' : m })}>{m}</Chip>)}
         </div>
       </div>
 
-      {groups.length === 0 && <div className="py-12 text-center t-body text-ink-3">Nothing matches.</div>}
+      {groups.length === 0 && <EmptyState title="No platform matches these filters." why="Every streaming service and platform on the canvas is here; the filters have narrowed it to none." action={<EmptyAction onClick={clear}>Clear the filters</EmptyAction>} />}
       {groups.map(([t, list]) => (
         <section key={t} className="mb-10">
           <SectionHeader eyebrow={TIERS[t]} tone="secondary" title={TIERS[t].split(' (')[0]} aside={`${list.length}`} />
