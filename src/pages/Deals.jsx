@@ -1,7 +1,6 @@
 import { useMemo } from 'react'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
-import { Search, X } from 'lucide-react'
-import { PageHeader, Stat } from '../components/primitives/index.js'
+import { PageHeader, FilterBar, KeyFigures } from '../components/primitives/index.js'
 import { TransactionList } from '../components/money/TransactionRow.jsx'
 import { filterTransactions, TX_TYPES, ASSETS, STRUCTURES, YEARS, TX_TOTALS, partyName } from '../data/transactions.js'
 import { PageExport } from '../components/export/PageExport.jsx'
@@ -55,7 +54,7 @@ function FeedLine({ feed, archive, tagged, declined }) {
 }
 
 export default function Deals() {
-  const { params, set, clear, any, sp } = useUrlFilters(KEYS)
+  const { params, set, clear, sp } = useUrlFilters(KEYS)
   const listed = useMemo(() => filterTransactions(params), [sp]) // eslint-disable-line react-hooks/exhaustive-deps
   const { tagged, unclassified, today, feed, archive, coverageSince } = useForces()
 
@@ -72,20 +71,61 @@ export default function Deals() {
   const events = filterTagged(tagged.filter((x) => x.kind === 'event'), facets).filter((x) => !q || x.title.toLowerCase().includes(q))
   const toggleForce = (id) => set({ force: selected.length === 1 && selected[0] === id ? '' : id })
   const forceFilters = describeFilters(Object.fromEntries(FORCE_KEYS.map((k) => [k, params[k]])), FILTER_LABELS)
+  const activeFilters = describeFilters(params, FILTER_LABELS).map((f, i) => ({
+    key: `${f.label}-${i}`,
+    label: `${f.label}: ${f.value}`,
+    onRemove: () => set({ [KEYS.find((k) => (FILTER_LABELS[k]?.label || k) === f.label)]: '' }),
+  }))
   const counts = useMemo(() => Object.fromEntries(Object.keys(TX_TYPES).map((t) => [t, filterTransactions({ ...params, type: t }).length])), [sp]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
       <PageHeader eyebrow="Money · who is buying" title="Deals"
-        lede="Every catalog sale, sponsor round, securitisation, take-private, and merger on file, newest first. Click a row for the terms and sources. ABS rows carry the structure." />
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-        <Stat label="Transactions" kind="count" value={TX_TOTALS.count} opts={{ full: true }} hint={`${YEARS[YEARS.length - 1]}–${YEARS[0]}`} />
-        <Stat label="Disclosed value" kind="money" value={TX_TOTALS.disclosed} hint="sum of reported values; excludes undisclosed" />
-        <Stat label="ABS issued" kind="money" value={TX_TOTALS.abs} hint="on file; KBRA counts $12.9B rated since 2020" />
-        <Stat label="Superstar catalog sales" kind="money" value={TX_TOTALS.catalog} />
-      </div>
+        answer={<KeyFigures items={[
+          { value: format.count(TX_TOTALS.count, { full: true }), label: `transactions, ${YEARS[YEARS.length - 1]}–${YEARS[0]}` },
+          { value: format.money(TX_TOTALS.disclosed), label: 'disclosed value' },
+          { value: format.money(TX_TOTALS.abs), label: 'ABS issued', to: '/abs' },
+          { value: format.money(TX_TOTALS.catalog), label: 'superstar catalog sales', to: '/catalogs' },
+        ]} />}
+        lede="Every catalog sale, sponsor round, securitisation, take-private and merger on file, newest first. Click a row for the terms and sources." />
 
-      <section className="mb-8">
+      <FilterBar
+        search={{ value: params.q, onChange: (v) => set({ q: v }), placeholder: 'Search title, parties, summary' }}
+        active={activeFilters}
+        onClear={clear}
+        count={{ shown: rows.length, total: TX_TOTALS.count, noun: 'deals' }}
+        aside={<a href="#five-forces" className="t-small text-ink-2 no-underline hover:text-ink-1 whitespace-nowrap">Five forces ↓</a>}
+      >
+        <div className="flex flex-col gap-3">
+          <div className="flex items-start gap-2">
+            <span className="t-micro text-ink-4 w-20 shrink-0 pt-1.5">Type</span>
+            <div className="flex flex-wrap gap-1.5">
+              <button type="button" aria-pressed={!params.type} className={chip(!params.type)} onClick={() => set({ type: '' })}>All types</button>
+              {Object.entries(TX_TYPES).map(([k, v]) => (
+                <button key={k} type="button" aria-pressed={params.type === k} className={chip(params.type === k)} onClick={() => set({ type: params.type === k ? '' : k })}>{v.label}<span className="t-micro font-mono text-ink-3">{counts[k]}</span></button>
+              ))}
+            </div>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="t-micro text-ink-4 w-20 shrink-0 pt-1.5">Terms</span>
+            <div className="flex flex-wrap gap-2">
+              <select className={select} value={params.asset} onChange={(e) => set({ asset: e.target.value })} aria-label="Asset"><option value="">Any asset</option>{Object.entries(ASSETS).map(([k, v]) => <option key={k} value={k}>{v}</option>)}</select>
+              <select className={select} value={params.structure} onChange={(e) => set({ structure: e.target.value })} aria-label="Structure"><option value="">Any structure</option>{Object.entries(STRUCTURES).map(([k, v]) => <option key={k} value={k}>{v}</option>)}</select>
+              <select className={select} value={params.year} onChange={(e) => set({ year: e.target.value })} aria-label="Year"><option value="">Any year</option>{YEARS.map((y) => <option key={y} value={y}>{y}</option>)}</select>
+              <select className={select} value={params.status} onChange={(e) => set({ status: e.target.value })} aria-label="Status"><option value="">Any status</option><option value="closed">Closed</option><option value="pending">Pending</option><option value="announced">Announced</option><option value="terminated">Terminated</option></select>
+            </div>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="t-micro text-ink-4 w-20 shrink-0 pt-1.5">Forces</span>
+            <div className="min-w-0 flex-1"><ForceFilters params={params} set={set} geographies={geographiesIn(tagged)} /></div>
+          </div>
+        </div>
+      </FilterBar>
+
+      <TransactionList items={rows} dense={!!params.type} />
+
+
+      <section id="five-forces" className="mt-12 mb-8 scroll-mt-6">
         <div className="flex flex-wrap items-end justify-between gap-3 mb-3">
           <div>
             <div className="t-eyebrow text-accent">Five forces</div>
@@ -101,6 +141,7 @@ export default function Deals() {
               : <>The evidence archive is unavailable, so events come from the live feed alone, which holds only a few weeks and empties on restart. Windows marked ≥ are floors.</>}
           </p>
         )}
+        {selected.length === 1 && <ForcePanel activity={forceActivity(boardItems, selected[0], { today, feed: 12, coverageSince })} />}
         <div className="mt-3">
           <ExportBar title={selected.length ? `Export the brief — ${selected.map((id) => FORCE_BY_ID[id].short_title).join(', ')}` : 'Export the five forces brief'}
             build={() => buildForcesBrief(filterTagged(tagged, facets), { today, unclassified, filters: forceFilters, forces: selected.length ? selected : FORCE_IDS, coverageSince, archive })} />
@@ -108,34 +149,6 @@ export default function Deals() {
       </section>
 
       {selected.length === 1 && <ForcePanel activity={forceActivity(boardItems, selected[0], { today, feed: 12, coverageSince })} />}
-
-      <ForceFilters params={params} set={set} geographies={geographiesIn(tagged)} />
-
-      <div className="space-y-3 mb-6">
-        <div className="flex items-center gap-3">
-          <label className="relative flex-1 max-w-xl">
-            <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-3" aria-hidden="true" />
-            <input type="search" value={params.q} onChange={(e) => set({ q: e.target.value })} placeholder="Search title, parties, summary"
-              className="w-full h-9 pl-9 pr-3 bg-ground-1 border border-line-2 rounded-md t-body text-ink-1 placeholder:text-ink-4 outline-none focus:border-accent" />
-          </label>
-          <span className="t-small text-ink-3 tabular">{rows.length} of {TX_TOTALS.count}</span>
-          {any && <button type="button" onClick={clear} className="inline-flex items-center gap-1 t-small text-ink-3 hover:text-ink-1 bg-transparent border-0 cursor-pointer"><X size={13} aria-hidden="true" /> Clear</button>}
-        </div>
-        <div className="flex flex-wrap gap-1.5">
-          <button type="button" className={chip(!params.type)} onClick={() => set({ type: '' })}>All types</button>
-          {Object.entries(TX_TYPES).map(([k, v]) => (
-            <button key={k} type="button" className={chip(params.type === k)} onClick={() => set({ type: params.type === k ? '' : k })}>{v.label}<span className="t-micro font-mono text-ink-4">{counts[k]}</span></button>
-          ))}
-        </div>
-        <div className="flex flex-wrap gap-2">
-          <select className={select} value={params.asset} onChange={(e) => set({ asset: e.target.value })} aria-label="Asset"><option value="">Any asset</option>{Object.entries(ASSETS).map(([k, v]) => <option key={k} value={k}>{v}</option>)}</select>
-          <select className={select} value={params.structure} onChange={(e) => set({ structure: e.target.value })} aria-label="Structure"><option value="">Any structure</option>{Object.entries(STRUCTURES).map(([k, v]) => <option key={k} value={k}>{v}</option>)}</select>
-          <select className={select} value={params.year} onChange={(e) => set({ year: e.target.value })} aria-label="Year"><option value="">Any year</option>{YEARS.map((y) => <option key={y} value={y}>{y}</option>)}</select>
-          <select className={select} value={params.status} onChange={(e) => set({ status: e.target.value })} aria-label="Status"><option value="">Any status</option><option value="closed">Closed</option><option value="pending">Pending</option><option value="announced">Announced</option><option value="terminated">Terminated</option></select>
-        </div>
-      </div>
-
-      <TransactionList items={rows} dense={!!params.type} />
 
       <section className="mt-10">
         <div className="flex flex-wrap items-baseline justify-between gap-3 mb-2">

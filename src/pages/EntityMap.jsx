@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { Search, X, ArrowDown, ArrowUp, Table2 } from 'lucide-react'
-import { PageHeader } from '../components/primitives/index.js'
+import { ArrowDown, ArrowUp, Table2 } from 'lucide-react'
+import { PageHeader, FilterBar } from '../components/primitives/index.js'
 import { ENTITIES, OWNERSHIP, AS_OF } from '../data/entities.js'
 import { COLUMNS, DIRECTIONS, MARKET_STRIP, buildMap, filterEntitiesForMap, connectionsOf, columnOf } from '../utils/entityMap.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
@@ -41,7 +41,6 @@ export default function EntityMap() {
   const opener = useRef('')
   const returnTo = useRef('')
   const scroller = useRef(null)
-  const filtersOn = params.q || params.col || params.tier || params.own
 
   const select = (id) => { if (!opener.current) opener.current = selected || id; set({ e: id }) }
   const close = () => {
@@ -90,32 +89,43 @@ export default function EntityMap() {
         lede="Every company on the canvas, placed in the value chain — from the capital that owns the rights to the platforms and promoters where fans pay. Select any company for its detail and connections; close it to come back to the whole map."
         actions={<Link to="/entities" className="inline-flex items-center gap-1.5 t-small text-ink-2 no-underline hover:text-ink-1"><Table2 size={14} aria-hidden="true" />Table view</Link>} />
 
-      <MarketStrip items={MARKET_STRIP} />
-
-      <div className="flex flex-wrap items-center gap-2 mb-3">
-        <label className="relative flex-1 min-w-[220px] max-w-md">
-          <Search size={14} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-ink-4" aria-hidden="true" />
-          <input type="search" value={params.q} onChange={(ev) => set({ q: ev.target.value })} placeholder="Search companies, tickers, segments, cities" aria-label="Search the map"
-            className="w-full h-9 pl-8 pr-2 bg-ground-1 border border-line-2 rounded-md t-small text-ink-1 placeholder:text-ink-4 outline-none focus:border-accent" />
-        </label>
-        <div role="group" aria-label="Flow direction" className="inline-flex rounded-md border border-line-2 overflow-hidden">
+      <FilterBar
+        search={{ value: params.q, onChange: (v) => set({ q: v }), placeholder: 'Search companies, tickers, segments, cities', label: 'Search the map' }}
+        active={[
+          params.q && { key: 'q', label: `“${params.q}”`, onRemove: () => set({ q: '' }) },
+          ...list(params.col).map((c) => ({ key: `col-${c}`, label: COLUMNS.find((x) => x.id === c)?.title || c, onRemove: () => set({ col: toggleIn(params.col, c) }) })),
+          ...list(params.tier).map((t) => ({ key: `tier-${t}`, label: `Tier ${t}`, onRemove: () => set({ tier: toggleIn(params.tier, t) }) })),
+          ...list(params.own).map((o) => ({ key: `own-${o}`, label: OWNERSHIP[o] || o, onRemove: () => set({ own: toggleIn(params.own, o) }) })),
+        ].filter(Boolean)}
+        onClear={() => set({ q: '', col: '', tier: '', own: '' })}
+        count={{ shown: filtered.length, total: ENTITIES.length, noun: 'companies' }}
+        aside={<div role="group" aria-label="Flow direction" className="inline-flex rounded-md border border-line-2 overflow-hidden">
           <button type="button" aria-pressed={direction === 'down'} className={seg(direction === 'down')} onClick={() => set({ dir: '' })}><ArrowDown size={13} aria-hidden="true" />{DIRECTIONS.down.label}</button>
           <button type="button" aria-pressed={direction === 'up'} className={seg(direction === 'up')} onClick={() => set({ dir: 'up' })}><ArrowUp size={13} aria-hidden="true" />{DIRECTIONS.up.label}</button>
+        </div>}
+      >
+        <div className="flex flex-col gap-3">
+          <div className="flex items-start gap-2">
+            <span className="t-micro text-ink-4 w-20 shrink-0 pt-1.5">Stage</span>
+            <div className="flex flex-wrap items-center gap-1.5">
+              <button type="button" aria-pressed={!params.col} className={chip(!params.col)} onClick={() => set({ col: '' })}>All stages</button>
+              {COLUMNS.map((c) => <button key={c.id} type="button" aria-pressed={list(params.col).includes(c.id)} className={chip(list(params.col).includes(c.id))} onClick={() => set({ col: toggleIn(params.col, c.id) })}>{c.title}</button>)}
+            </div>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="t-micro text-ink-4 w-20 shrink-0 pt-1.5">Tier</span>
+            <div className="flex flex-wrap items-center gap-1.5">
+              {['1', '2', '3'].map((t) => <button key={t} type="button" aria-pressed={list(params.tier).includes(t)} className={chip(list(params.tier).includes(t))} onClick={() => set({ tier: toggleIn(params.tier, t) })}>T{t}</button>)}
+            </div>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="t-micro text-ink-4 w-20 shrink-0 pt-1.5">Ownership</span>
+            <div className="flex flex-wrap items-center gap-1.5">
+              {OWNERSHIP_ORDER.map((o) => <button key={o} type="button" aria-pressed={list(params.own).includes(o)} className={chip(list(params.own).includes(o))} onClick={() => set({ own: toggleIn(params.own, o) })}>{OWNERSHIP[o] || o}</button>)}
+            </div>
+          </div>
         </div>
-        <span className="t-small text-ink-3 tabular ml-auto">{filtered.length} / {ENTITIES.length} entities</span>
-        {filtersOn && <button type="button" onClick={() => set({ q: '', col: '', tier: '', own: '' })} className="inline-flex items-center gap-1 t-small text-ink-3 bg-transparent border-0 cursor-pointer hover:text-ink-1"><X size={13} aria-hidden="true" />Clear filters</button>}
-      </div>
-
-      <div className="flex flex-wrap items-center gap-1.5 mb-2">
-        <button type="button" aria-pressed={!params.col} className={chip(!params.col)} onClick={() => set({ col: '' })}>All stages</button>
-        {COLUMNS.map((c) => <button key={c.id} type="button" aria-pressed={list(params.col).includes(c.id)} className={chip(list(params.col).includes(c.id))} onClick={() => set({ col: toggleIn(params.col, c.id) })}>{c.title}</button>)}
-      </div>
-      <div className="flex flex-wrap items-center gap-1.5 mb-4">
-        <span className="t-micro text-ink-4 mr-1">Tier</span>
-        {['1', '2', '3'].map((t) => <button key={t} type="button" aria-pressed={list(params.tier).includes(t)} className={chip(list(params.tier).includes(t))} onClick={() => set({ tier: toggleIn(params.tier, t) })}>T{t}</button>)}
-        <span className="t-micro text-ink-4 ml-3 mr-1">Ownership</span>
-        {OWNERSHIP_ORDER.map((o) => <button key={o} type="button" aria-pressed={list(params.own).includes(o)} className={chip(list(params.own).includes(o))} onClick={() => set({ own: toggleIn(params.own, o) })}>{OWNERSHIP[o] || o}</button>)}
-      </div>
+      </FilterBar>
 
       <div className="flex flex-wrap items-center justify-between gap-2 border-t border-line-1 pt-2 mb-3">
         <div className="t-micro text-ink-3"><span className="t-eyebrow text-accent mr-2">{DIRECTIONS[direction].label}</span>{DIRECTIONS[direction].flow}</div>
@@ -144,6 +154,8 @@ export default function EntityMap() {
           ))}
         </div>
       </div>
+
+      <MarketStrip items={MARKET_STRIP} />
 
       <PageExport build={build} label="Export this map — stages, filters and figures included" />
 

@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Search, X, RefreshCw, Radio, WifiOff } from 'lucide-react'
+import { RefreshCw, Radio, WifiOff } from 'lucide-react'
+import { format } from '../utils/format.js'
 import { Link } from 'react-router-dom'
-import { PageHeader, Stat, Tag, Card, Button } from '../components/primitives/index.js'
+import { PageHeader, FilterBar, KeyFigures, Tag, Card, Button } from '../components/primitives/index.js'
 import { NewsItem } from '../components/news/NewsItem.jsx'
 import { useNewsStream } from '../hooks/useNewsStream.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
@@ -35,7 +36,7 @@ function StatusLine({ state, status, total }) {
 }
 
 export default function News() {
-  const { params, set, clear, any } = useUrlFilters(['q', 'entity', 'type', 'topic', 'source', 'kind'])
+  const { params, set, clear } = useUrlFilters(['q', 'entity', 'type', 'topic', 'source', 'kind'])
   const { items, total, status, state, reload } = useNewsStream({ ...params, limit: 150 })
   const [stats, setStats] = useState(null)
   useEffect(() => { fetch('/api/news/stats').then((r) => r.json()).then(setStats).catch(() => {}) }, [status?.lastSuccess])
@@ -51,49 +52,57 @@ export default function News() {
   const milestones = useMemo(() => MILESTONES.map(classifyMilestone).filter((m) => m.primary_force_id), [])
   const filterLabels = { q: { label: 'Search' }, entity: { label: 'Entity', format: (v) => getEntity(v)?.name || v }, type: { label: 'Entity type', format: (v) => ENTITY_TYPES[v]?.label || v }, topic: { label: 'Topic', format: (v) => topics[v] || v }, source: { label: 'Source' }, kind: { label: 'Kind' } }
 
+  const activeFilters = [
+    params.q && { key: 'q', label: `“${params.q}”`, onRemove: () => set({ q: '' }) },
+    entity && { key: 'entity', label: entity.name, onRemove: () => set({ entity: '' }) },
+    params.type && { key: 'type', label: ENTITY_TYPES[params.type]?.label || params.type, onRemove: () => set({ type: '' }) },
+    params.topic && { key: 'topic', label: topics[params.topic] || params.topic, onRemove: () => set({ topic: '' }) },
+    params.source && { key: 'source', label: params.source, onRemove: () => set({ source: '' }) },
+    params.kind && { key: 'kind', label: params.kind === 'news' ? 'News only' : 'SEC filings only', onRemove: () => set({ kind: '' }) },
+  ].filter(Boolean)
+
   return (
     <>
       <PageHeader eyebrow="Live · movement" tone="muted" title="News"
-        lede="The trades, Google News queries, and SEC filings, aggregated every 15 minutes and tagged to entities and topics by the same table that drives the rest of the canvas."
+        answer={<KeyFigures items={[
+          { value: format.count(stats?.total ?? 0, { full: true }), label: 'items in the window' },
+          { value: format.count(Object.values(stats?.byEntity || {}).length, { full: true }), label: 'companies mentioned' },
+          { value: format.count(stats?.bySource?.sec_edgar || 0, { full: true }), label: 'SEC filings', to: '/changes?kind=filing' },
+          { value: format.count(total, { full: true }), label: 'match these filters' },
+        ]} />}
+        lede="The trades, Google News queries and SEC filings, aggregated every 15 minutes and tagged to the entities on the canvas."
         actions={<div className="flex items-center gap-3">
           <Link to="/changes" className="t-small text-ink-2 no-underline hover:text-ink-1 whitespace-nowrap">What changed →</Link>
           <Button variant="secondary" icon={RefreshCw} onClick={refresh} disabled={state === 'unavailable'}>Refresh now</Button>
         </div>} />
 
-      <div className="mb-6"><StatusLine state={state} status={status} total={status?.total ?? 0} /></div>
+      <div className="mb-4"><StatusLine state={state} status={status} total={status?.total ?? 0} /></div>
 
-      {stats && (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <Stat label="Items in window" kind="count" value={stats.total} opts={{ full: true }} hint="14-day Google window · latest 20 per feed" />
-          <Stat label="Tagged to an entity" kind="count" value={Object.values(stats.byEntity || {}).length} opts={{ full: true }} hint="distinct entities mentioned" />
-          <Stat label="Entity signals" kind="count" value={stats.signals?.entities} opts={{ full: true }} hint={`${stats.signals?.patterns} patterns, generated from entities.js`} />
-          <Stat label="SEC filings" kind="count" value={stats.bySource?.sec_edgar || 0} opts={{ full: true }} />
+      <FilterBar
+        search={{ value: params.q, onChange: (v) => set({ q: v }), placeholder: 'Search headlines and summaries' }}
+        active={activeFilters}
+        onClear={clear}
+        count={{ shown: items.length, total, noun: 'stories' }}
+        aside={<a href="#five-forces" className="t-small text-ink-2 no-underline hover:text-ink-1 whitespace-nowrap">Five forces ↓</a>}
+      >
+        <div className="flex flex-col gap-3">
+          <div className="flex items-start gap-2">
+            <span className="t-micro text-ink-4 w-20 shrink-0 pt-1.5">Company type</span>
+            <div className="flex flex-wrap gap-1.5">
+              <button type="button" aria-pressed={!params.type} className={chip(!params.type)} onClick={() => set({ type: '' })}>All types</button>
+              {TYPE_ORDER.filter((t) => stats?.byType?.[t]).map((t) => <button key={t} type="button" aria-pressed={params.type === t} className={chip(params.type === t)} onClick={() => set({ type: params.type === t ? '' : t })}>{ENTITY_TYPES[t].label}<span className="t-micro font-mono text-ink-3">{stats.byType[t]}</span></button>)}
+            </div>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="t-micro text-ink-4 w-20 shrink-0 pt-1.5">Feed</span>
+            <div className="flex flex-wrap gap-2">
+              <select className={select} value={params.topic} onChange={(e) => set({ topic: e.target.value })} aria-label="Topic"><option value="">Any topic</option>{Object.entries(topics).map(([k, v]) => <option key={k} value={k}>{v}{stats?.byTopic?.[k] ? ` (${stats.byTopic[k]})` : ''}</option>)}</select>
+              <select className={select} value={params.source} onChange={(e) => set({ source: e.target.value })} aria-label="Source"><option value="">Any source</option>{sources.map(([k, n]) => <option key={k} value={k}>{k} ({n})</option>)}</select>
+              <select className={select} value={params.kind} onChange={(e) => set({ kind: e.target.value })} aria-label="Kind"><option value="">News + filings</option><option value="news">News only</option><option value="filing">SEC filings only</option></select>
+            </div>
+          </div>
         </div>
-      )}
-
-      <NewsForces tagged={forces.tagged} deals={deals} milestones={milestones} coverageSince={forces.coverageSince} archive={forces.archive} today={today} pageFilters={params} pageFilterLabels={filterLabels} />
-
-      <div className="space-y-3 mb-6">
-        <div className="flex items-center gap-3">
-          <label className="relative flex-1 max-w-xl">
-            <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-3" aria-hidden="true" />
-            <input type="search" value={params.q} onChange={(e) => set({ q: e.target.value })} placeholder="Search headlines and summaries"
-              className="w-full h-9 pl-9 pr-3 bg-ground-1 border border-line-2 rounded-md t-body text-ink-1 placeholder:text-ink-4 outline-none focus:border-accent" />
-          </label>
-          <span className="t-small text-ink-3 tabular">{total} match</span>
-          {any && <button type="button" onClick={clear} className="inline-flex items-center gap-1 t-small text-ink-3 hover:text-ink-1 bg-transparent border-0 cursor-pointer"><X size={13} aria-hidden="true" /> Clear</button>}
-        </div>
-        {entity && <div className="flex items-center gap-2 t-small text-ink-2">Entity: <Tag tone="secondary">{entity.name}</Tag><button type="button" onClick={() => set({ entity: '' })} className="t-micro text-ink-3 hover:text-ink-1 bg-transparent border-0 cursor-pointer">remove</button></div>}
-        <div className="flex flex-wrap gap-1.5">
-          <button type="button" className={chip(!params.type)} onClick={() => set({ type: '' })}>All types</button>
-          {TYPE_ORDER.filter((t) => stats?.byType?.[t]).map((t) => <button key={t} type="button" className={chip(params.type === t)} onClick={() => set({ type: params.type === t ? '' : t })}>{ENTITY_TYPES[t].label}<span className="t-micro font-mono text-ink-4">{stats.byType[t]}</span></button>)}
-        </div>
-        <div className="flex flex-wrap gap-2">
-          <select className={select} value={params.topic} onChange={(e) => set({ topic: e.target.value })} aria-label="Topic"><option value="">Any topic</option>{Object.entries(topics).map(([k, v]) => <option key={k} value={k}>{v}{stats?.byTopic?.[k] ? ` (${stats.byTopic[k]})` : ''}</option>)}</select>
-          <select className={select} value={params.source} onChange={(e) => set({ source: e.target.value })} aria-label="Source"><option value="">Any source</option>{sources.map(([k, n]) => <option key={k} value={k}>{k} ({n})</option>)}</select>
-          <select className={select} value={params.kind} onChange={(e) => set({ kind: e.target.value })} aria-label="Kind"><option value="">News + filings</option><option value="news">News only</option><option value="filing">SEC filings only</option></select>
-        </div>
-      </div>
+      </FilterBar>
 
       {state === 'unavailable' ? (
         <Card pad="lg" className="max-w-2xl"><p className="t-body text-ink-2 m-0">Nothing to show because the backend is not reachable, not because nothing matched. The page will reconnect on its own.</p></Card>
@@ -102,6 +111,10 @@ export default function News() {
       ) : (
         <div className="border-t border-line-1 max-w-4xl">{items.map((n) => <NewsItem key={n.id} n={n} topics={topics} />)}</div>
       )}
+      <section id="five-forces" className="mt-12 scroll-mt-6">
+      <NewsForces tagged={forces.tagged} deals={deals} milestones={milestones} coverageSince={forces.coverageSince} archive={forces.archive} today={today} pageFilters={params} pageFilterLabels={filterLabels} />
+      </section>
+
       {!!items.length && <PageExport build={() => buildPageDoc({
         slug: 'news',
         title: 'Live news',

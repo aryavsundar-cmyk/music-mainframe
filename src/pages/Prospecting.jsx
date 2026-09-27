@@ -1,7 +1,8 @@
 import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUpRight, RotateCcw, Search, X } from 'lucide-react'
-import { PageHeader, SectionHeader, Card, Tag, Button } from '../components/primitives/index.js'
+import { format } from '../utils/format.js'
+import { PageHeader, SectionHeader, Card, Tag, Button, FilterBar, KeyFigures } from '../components/primitives/index.js'
 import { ScoreBar, TierTag, selectClass } from '../components/prospecting/ProspectUi.jsx'
 import { AccountHeader, OutreachComposer, RecordEditor, ScoreReasons, TriggerList } from '../components/prospecting/AccountParts.jsx'
 import { ExportBar } from '../components/export/ExportBar.jsx'
@@ -18,7 +19,7 @@ import { useUrlFilters } from '../hooks/useUrlFilters.js'
 const fmtDate = (d) => (d ? d : '—')
 
 export default function Prospecting() {
-  const { params, set, clear, any } = useUrlFilters(['view', 'side', 'segment', 'tier', 'status', 'kind', 'q', 'account'])
+  const { params, set, clear } = useUrlFilters(['view', 'side', 'segment', 'tier', 'status', 'kind', 'q', 'account'])
   const { records, update, logOutcome, removeOutcome, reset } = useProspectRecords()
   const { signals, filings, connectors, ready } = useEnrichment()
   const accounts = useMemo(() => buildAccounts({ records, signals, filings }), [records, signals, filings])
@@ -39,7 +40,13 @@ export default function Prospecting() {
   return (
     <>
       <PageHeader eyebrow="Pipeline · coverage & prospecting" title="Prospecting"
-        lede="Every account in the app scored on fit, timing and access, mapped to the buying role and the service line that fits, with LinkedIn and email drafts you can send yourself."
+        answer={<KeyFigures items={[
+          { value: format.count(cov.totals.accounts, { full: true }), label: 'accounts scored' },
+          { value: format.count(cov.totals.A, { full: true }), label: 'tier A', to: '/prospecting?view=targets&tier=A' },
+          { value: `${cov.totals.worked}/${cov.totals.priority}`, label: 'priority worked' },
+          { value: format.count(accounts.filter((x) => x.score.timing > 0).length, { full: true }), label: 'with a live trigger', to: '/prospecting?view=triggers' },
+        ]} />}
+        lede="Every account scored on fit, timing and access, mapped to the buying role and the service line that fits, with drafts you can send yourself. Status and notes stay in this browser."
         actions={<div className="flex flex-col items-end gap-2">
           <div className="flex gap-2">
             <Button size="sm" variant={view === 'targets' ? 'primary' : 'secondary'} onClick={() => set({ view: 'targets' })}>Targets</Button>
@@ -50,15 +57,6 @@ export default function Prospecting() {
           <span className="t-micro text-ink-4">{!ready ? 'Loading enrichment…' : connectors.length ? `${connectors.filter((c) => c.live).length}/${connectors.length} connectors live` : 'Enrichment unreachable'}</span>
         </div>} />
 
-      <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-3 mb-6">
-        <Stat label="Accounts" value={cov.totals.accounts} />
-        <Stat label="Tier A" value={cov.totals.A} tone="accent" />
-        <Stat label="Tier B" value={cov.totals.B} tone="secondary" />
-        <Stat label="Priority worked" value={`${cov.totals.worked}/${cov.totals.priority}`} hint="status beyond new" />
-        <Stat label="With a live trigger" value={accounts.filter((a) => a.score.timing > 0).length} />
-        <Stat label="Recorded relationships" value={Object.values(records).filter((r) => r.access && r.access !== 'none').length} />
-      </div>
-
       {view === 'coverage' ? (
         <CoverageView cov={cov} onPick={(segment, tier) => set({ view: 'targets', segment, tier: tier || '', account: '' })} />
       ) : view === 'pipeline' ? (
@@ -68,7 +66,7 @@ export default function Prospecting() {
       ) : (
         <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(0,420px)] gap-6 items-start">
           <div className="space-y-4 min-w-0">
-            <Filters params={params} set={set} clear={clear} any={any} count={filtered.length} />
+            <Filters params={params} set={set} clear={clear} count={filtered.length} total={accounts.length} />
             <TargetTable accounts={filtered} records={records} selectedId={params.account} onSelect={(id) => set({ account: id === params.account ? '' : id })} onStatus={(id, status) => update(id, { status })} />
           </div>
           <div className="xl:sticky xl:top-6">
@@ -106,31 +104,38 @@ function Stat({ label, value, hint, tone = 'ink' }) {
   )
 }
 
-function Filters({ params, set, clear, any, count }) {
+function Filters({ params, set, clear, count, total }) {
   return (
-    <div className="flex flex-wrap items-end gap-3">
-      <div className="relative">
-        <Search size={14} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-ink-4" aria-hidden="true" />
-        <input value={params.q} onChange={(e) => set({ q: e.target.value })} placeholder="Search accounts" aria-label="Search accounts"
-          className="bg-ground-1 border border-line-2 rounded-md h-8 pl-8 pr-2 t-small text-ink-1 placeholder:text-ink-4 focus:border-accent outline-none w-56" />
+    <FilterBar
+      className="mb-0"
+      search={{ value: params.q, onChange: (v) => set({ q: v }), placeholder: 'Search accounts' }}
+      active={[
+        params.q && { key: 'q', label: `“${params.q}”`, onRemove: () => set({ q: '' }) },
+        params.side && { key: 'side', label: params.side === 'buy' ? 'Buy side' : 'Sell side', onRemove: () => set({ side: '' }) },
+        params.segment && { key: 'segment', label: SEGMENTS.find((x) => x.id === params.segment)?.label || params.segment, onRemove: () => set({ segment: '' }) },
+        params.tier && { key: 'tier', label: `Tier ${params.tier}`, onRemove: () => set({ tier: '' }) },
+        params.status && { key: 'status', label: STATUS_LABEL[params.status] || params.status, onRemove: () => set({ status: '' }) },
+      ].filter(Boolean)}
+      onClear={clear}
+      count={{ shown: count, total, noun: 'accounts' }}
+    >
+      <div className="flex flex-wrap items-center gap-2">
+        <select value={params.side} onChange={(e) => set({ side: e.target.value })} className={`${selectClass} w-36`} aria-label="Side">
+          <option value="">Both sides</option><option value="buy">Buy side</option><option value="sell">Sell side</option>
+        </select>
+        <select value={params.segment} onChange={(e) => set({ segment: e.target.value })} className={`${selectClass} w-56`} aria-label="Segment">
+          <option value="">All segments</option>
+          {SEGMENTS.map((x) => <option key={x.id} value={x.id}>{x.label}</option>)}
+        </select>
+        <select value={params.tier} onChange={(e) => set({ tier: e.target.value })} className={`${selectClass} w-28`} aria-label="Tier">
+          <option value="">All tiers</option><option value="A">Tier A</option><option value="B">Tier B</option><option value="C">Tier C</option>
+        </select>
+        <select value={params.status} onChange={(e) => set({ status: e.target.value })} className={`${selectClass} w-36`} aria-label="Filter by status">
+          <option value="">Any status</option>
+          {STATUSES.map((x) => <option key={x} value={x}>{STATUS_LABEL[x]}</option>)}
+        </select>
       </div>
-      <select value={params.side} onChange={(e) => set({ side: e.target.value })} className={`${selectClass} w-36`} aria-label="Side">
-        <option value="">Both sides</option><option value="buy">Buy side</option><option value="sell">Sell side</option>
-      </select>
-      <select value={params.segment} onChange={(e) => set({ segment: e.target.value })} className={`${selectClass} w-56`} aria-label="Segment">
-        <option value="">All segments</option>
-        {SEGMENTS.map((s) => <option key={s.id} value={s.id}>{s.label}</option>)}
-      </select>
-      <select value={params.tier} onChange={(e) => set({ tier: e.target.value })} className={`${selectClass} w-28`} aria-label="Tier">
-        <option value="">All tiers</option><option value="A">Tier A</option><option value="B">Tier B</option><option value="C">Tier C</option>
-      </select>
-      <select value={params.status} onChange={(e) => set({ status: e.target.value })} className={`${selectClass} w-36`} aria-label="Filter by status">
-        <option value="">Any status</option>
-        {STATUSES.map((s) => <option key={s} value={s}>{STATUS_LABEL[s]}</option>)}
-      </select>
-      <span className="t-small text-ink-3 font-mono tabular">{count}</span>
-      {any && <button type="button" onClick={clear} className="t-small text-secondary bg-transparent border-0 cursor-pointer px-0">Clear</button>}
-    </div>
+    </FilterBar>
   )
 }
 

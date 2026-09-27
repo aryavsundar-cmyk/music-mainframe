@@ -95,7 +95,7 @@ cannot decay.
 
 ---
 
-### 1 — Findable · *Sprint 32*
+### 1 — Findable · *Sprint 32* ✅ shipped
 
 > "An effective IA allows all users to easily meet their different goals through clear information hierarchy,
 > labeling, categorization and classification." — *Universal Principles of UX*, 67
@@ -131,7 +131,7 @@ at least one alias; no alias resolves to nothing; results are ranked determinist
 
 ---
 
-### 2 — Readable · *Sprint 33*
+### 2 — Readable · *Sprint 33* ✅ shipped — first data row now 212–363px on every converted page (was 414–2,504)
 
 > "Set one primary goal for your users on each screen." — *50 UX Best Practices*, 19
 > "Too much choice stresses us out and prolongs our decision-making process." (Hick's law) — *UPUX*, 24

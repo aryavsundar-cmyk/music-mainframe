@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
-import { Search } from 'lucide-react'
-import { PageHeader, SectionHeader, Card } from '../components/primitives/index.js'
+import { format } from '../utils/format.js'
+import { PageHeader, FilterBar, KeyFigures, SectionHeader, Card } from '../components/primitives/index.js'
 import { TermRow } from '../components/reference/Concepts.jsx'
 import { GLOSSARY, TAGS } from '../data/glossary.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
@@ -20,23 +20,32 @@ export default function Glossary() {
   return (
     <>
       <PageHeader eyebrow="Reference · plain English" title="Finance, explained"
-        lede="Every term the lab uses, written for someone who has never worked on a deal: what it is, an example with round numbers, and the mistake people actually make with it." />
+        answer={<KeyFigures items={[
+          { value: format.count(GLOSSARY.length, { full: true }), label: 'terms explained' },
+          { value: format.count(Object.keys(TAGS).length), label: 'topics' },
+        ]} />}
+        lede="Every term the app uses, written for someone who has never worked on a deal: what it is, an example with round numbers, and the mistake people actually make with it." />
 
-      <div className="flex flex-wrap items-center gap-3 mb-6">
-        <div className="relative">
-          <Search size={14} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-ink-4" aria-hidden="true" />
-          <input value={params.q} onChange={(e) => set({ q: e.target.value })} placeholder="Search terms" aria-label="Search terms"
-            className="bg-ground-1 border border-line-2 rounded-md h-8 pl-8 pr-2 t-small text-ink-1 placeholder:text-ink-4 focus:border-accent outline-none w-64" />
+      <FilterBar
+        search={{ value: params.q, onChange: (v) => set({ q: v }), placeholder: 'Search terms, synonyms and examples' }}
+        active={[
+          params.q && { key: 'q', label: `“${params.q}”`, onRemove: () => set({ q: '' }) },
+          params.tag && { key: 'tag', label: TAGS[params.tag] || params.tag, onRemove: () => set({ tag: '' }) },
+        ].filter(Boolean)}
+        onClear={() => set({ q: '', tag: '' })}
+        count={{ shown: matches.length, total: GLOSSARY.length, noun: 'terms' }}
+      >
+        <div className="flex items-start gap-2">
+          <span className="t-micro text-ink-4 w-16 shrink-0 pt-1.5">Topic</span>
+          <div className="flex flex-wrap gap-1.5">
+            <button type="button" aria-pressed={!params.tag} onClick={() => set({ tag: '' })} className={`t-small rounded-sm border px-2 py-1 cursor-pointer ${!params.tag ? 'bg-ground-4 border-line-3 text-ink-1' : 'border-line-1 bg-transparent text-ink-2 hover:bg-ground-2 hover:text-ink-1'}`}>All</button>
+            {Object.entries(TAGS).map(([tag, label]) => (
+              <button key={tag} type="button" aria-pressed={params.tag === tag} onClick={() => set({ tag: params.tag === tag ? '' : tag })}
+                className={`t-small rounded-sm border px-2 py-1 cursor-pointer ${params.tag === tag ? 'bg-ground-4 border-line-3 text-ink-1' : 'border-line-1 bg-transparent text-ink-2 hover:bg-ground-2 hover:text-ink-1'}`}>{label}</button>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-wrap gap-1.5">
-          <button type="button" onClick={() => set({ tag: '' })} className={`t-micro rounded-md border px-2 py-1 cursor-pointer ${!params.tag ? 'border-accent-line bg-accent-soft text-accent' : 'border-line-2 bg-transparent text-ink-2 hover:text-ink-1'}`}>All</button>
-          {Object.entries(TAGS).map(([tag, label]) => (
-            <button key={tag} type="button" onClick={() => set({ tag: params.tag === tag ? '' : tag })}
-              className={`t-micro rounded-md border px-2 py-1 cursor-pointer ${params.tag === tag ? 'border-accent-line bg-accent-soft text-accent' : 'border-line-2 bg-transparent text-ink-2 hover:text-ink-1'}`}>{label}</button>
-          ))}
-        </div>
-        <span className="t-small text-ink-3 font-mono tabular">{matches.length}</span>
-      </div>
+      </FilterBar>
 
       {groups.map((g) => (
         <div key={g.tag} className="mb-8">

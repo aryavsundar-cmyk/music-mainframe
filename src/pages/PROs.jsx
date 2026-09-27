@@ -1,7 +1,6 @@
 import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { Search, X } from 'lucide-react'
-import { PageHeader, Stat, Tag, Num, Card } from '../components/primitives/index.js'
+import { PageHeader, FilterBar, KeyFigures, Tag, Num, Card } from '../components/primitives/index.js'
 import { MoneyBar } from '../components/rights/MoneyBar.jsx'
 import { listPros, SCOPES, MODELS, REGIONS, GLOBAL_COLLECTIONS, toUsd } from '../data/pros.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
@@ -15,7 +14,7 @@ const TH = 'text-left t-micro uppercase tracking-[0.08em] text-ink-3 font-medium
 const TD = 'py-3 px-3 border-b border-line-1 align-top'
 
 export default function PROs() {
-  const { params, set, clear, any, sp } = useUrlFilters(['q', 'region', 'scope'])
+  const { params, set, clear, sp } = useUrlFilters(['q', 'region', 'scope'])
   const all = useMemo(() => listPros(), [])
   const rows = useMemo(() => listPros(params), [sp]) // eslint-disable-line react-hooks/exhaustive-deps
   const max = Math.max(...all.map((r) => toUsd(r.latest?.collections, r.currency) || 0))
@@ -25,33 +24,41 @@ export default function PROs() {
   return (
     <>
       <PageHeader eyebrow="Rights · collective management" tone="secondary" title="PROs & CMOs"
-        lede="Performance, mechanical, and neighbouring-rights societies side by side: what each collects, what it pays out, how it decides who gets what, and what changed. Figures in native currency from each society's own report." />
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-        <Stat label="Societies on file" kind="count" value={all.length} opts={{ full: true }} hint={`${disclosed.length} disclose collections`} />
-        <Stat label="Latest collections, disclosed" kind="money" value={totalUsd} hint="USD-equivalent for scale only" />
-        <Stat label="CISAC music collections 2024" kind="money" value={GLOBAL_COLLECTIONS.music} opts={{ currency: '€' }} hint={<>+<Num kind="pct" value={GLOBAL_COLLECTIONS.musicGrowth} className="t-micro" /> · digital <Num kind="pct" value={GLOBAL_COLLECTIONS.digitalShare} className="t-micro" /></>} />
-        <Stat label="Largest by collections" value={disclosed[0]?.e.short || disclosed[0]?.e.name} hint={disclosed[0] ? `${disclosed[0].latest.year} · ${disclosed[0].currency}` : ''} />
-      </div>
-
-      <div className="space-y-3 mb-6">
-        <div className="flex items-center gap-3">
-          <label className="relative flex-1 max-w-xl">
-            <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-3" aria-hidden="true" />
-            <input type="search" value={params.q} onChange={(e) => set({ q: e.target.value })} placeholder="Search societies"
-              className="w-full h-9 pl-9 pr-3 bg-ground-1 border border-line-2 rounded-md t-body text-ink-1 placeholder:text-ink-4 outline-none focus:border-accent" />
-          </label>
-          <span className="t-small text-ink-3 tabular">{rows.length} of {all.length}</span>
-          {any && <button type="button" onClick={clear} className="inline-flex items-center gap-1 t-small text-ink-3 hover:text-ink-1 bg-transparent border-0 cursor-pointer"><X size={13} aria-hidden="true" /> Clear</button>}
+        answer={<KeyFigures items={[
+          { value: format.count(all.length, { full: true }), label: 'societies on file' },
+          { value: format.count(disclosed.length, { full: true }), label: 'disclose collections' },
+          { value: format.money(totalUsd), label: 'collected, USD-equivalent' },
+          { value: format.money(GLOBAL_COLLECTIONS.music, { currency: '€' }), label: `CISAC music collections ${GLOBAL_COLLECTIONS.year}` },
+          disclosed[0] ? { value: disclosed[0].e.short || disclosed[0].e.name, label: 'largest by collections' } : null,
+        ]} />}
+        lede="Performance, mechanical and neighbouring-rights societies side by side: what each collects, what it pays out, and how it decides who gets what. Figures in native currency from each society's own report." />
+      <FilterBar
+        search={{ value: params.q, onChange: (v) => set({ q: v }), placeholder: 'Search societies' }}
+        active={[
+          params.q && { key: 'q', label: `“${params.q}”`, onRemove: () => set({ q: '' }) },
+          params.region && { key: 'region', label: params.region, onRemove: () => set({ region: '' }) },
+          params.scope && { key: 'scope', label: SCOPES[params.scope]?.label || params.scope, onRemove: () => set({ scope: '' }) },
+        ].filter(Boolean)}
+        onClear={clear}
+        count={{ shown: rows.length, total: all.length, noun: 'societies' }}
+      >
+        <div className="flex flex-col gap-3">
+          <div className="flex items-start gap-2">
+            <span className="t-micro text-ink-4 w-16 shrink-0 pt-1.5">Region</span>
+            <div className="flex flex-wrap gap-1.5">
+              <button type="button" aria-pressed={!params.region} className={chip(!params.region)} onClick={() => set({ region: '' })}>All regions</button>
+              {REGIONS.map((r) => <button key={r} type="button" aria-pressed={params.region === r} className={chip(params.region === r)} onClick={() => set({ region: params.region === r ? '' : r })}>{r}<span className="t-micro font-mono text-ink-3">{all.filter((x) => x.region === r).length}</span></button>)}
+            </div>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="t-micro text-ink-4 w-16 shrink-0 pt-1.5">Rights</span>
+            <div className="flex flex-wrap gap-1.5">
+              <button type="button" aria-pressed={!params.scope} className={chip(!params.scope)} onClick={() => set({ scope: '' })}>All rights</button>
+              {Object.entries(SCOPES).map(([k, v]) => <button key={k} type="button" aria-pressed={params.scope === k} className={chip(params.scope === k)} onClick={() => set({ scope: params.scope === k ? '' : k })}>{v.label}</button>)}
+            </div>
+          </div>
         </div>
-        <div className="flex flex-wrap gap-1.5">
-          <button type="button" className={chip(!params.region)} onClick={() => set({ region: '' })}>All regions</button>
-          {REGIONS.map((r) => <button key={r} type="button" className={chip(params.region === r)} onClick={() => set({ region: params.region === r ? '' : r })}>{r}<span className="t-micro font-mono text-ink-4">{all.filter((x) => x.region === r).length}</span></button>)}
-        </div>
-        <div className="flex flex-wrap gap-1.5">
-          <button type="button" className={chip(!params.scope)} onClick={() => set({ scope: '' })}>All rights</button>
-          {Object.entries(SCOPES).map(([k, v]) => <button key={k} type="button" className={chip(params.scope === k)} onClick={() => set({ scope: params.scope === k ? '' : k })}>{v.label}</button>)}
-        </div>
-      </div>
+      </FilterBar>
 
       <div className="overflow-x-auto -mx-3 mb-10">
         <table className="w-full border-collapse min-w-[900px]">

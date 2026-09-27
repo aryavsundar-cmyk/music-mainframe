@@ -12,7 +12,8 @@ export function Stat({ label, value, kind = 'count', opts, hint, size = 'md', cl
       {typeof value === 'number' || value == null
         ? <Num kind={kind} value={value} opts={opts} className={sizeCls} />
         : <div className={`${sizeCls} text-ink-1`}>{value}</div>}
-      {hint && <div className="t-micro text-ink-4">{hint}</div>}
+      {/* The period or source is part of the figure — it is read, not decoration. */}
+      {hint && <div className="t-small text-ink-3">{hint}</div>}
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ExternalLink, Plus, X, Info, Check } from 'lucide-react'
-import { PageHeader, Card, Tag } from '../components/primitives/index.js'
+import { PageHeader, Card, Tag, FilterBar, KeyFigures } from '../components/primitives/index.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
 import { useChanges } from '../hooks/useChanges.js'
 import { KINDS, KIND_LIST, WINDOWS, DEFAULT_WINDOW, DEFAULT_KINDS, NEWS_PER_DAY, byDay } from '../utils/changes.js'
@@ -65,33 +65,44 @@ export default function Changes() {
   return (
     <>
       <PageHeader eyebrow="Live · change feed" title="What changed"
+        answer={<KeyFigures items={[
+          { value: String(items.length), label: `changes since ${formatDate(from)}` },
+          ...KIND_LIST.filter((k) => counts[k.id]).map((k) => ({ value: String(counts[k.id]), label: k.label.toLowerCase() })),
+        ]} />}
         lede={`Filings, figures that moved, deals and milestones on record — one dated feed.${seen ? ` This browser last opened it on ${formatDate(String(seen).slice(0, 10))}; anything since is marked new.` : ''}`}
         actions={<Link to="/news" className="t-small text-ink-2 no-underline hover:text-ink-1">The full news feed →</Link>} />
 
-      <div className="flex flex-wrap items-center gap-2 mb-3">
-        <div role="group" aria-label="Window" className="inline-flex rounded-md border border-line-2 overflow-hidden">
+      <FilterBar
+        active={[
+          ...kinds.map((k) => ({ key: `kind-${k}`, label: KINDS[k]?.label || k, onRemove: () => toggleKind(k) })),
+          list && list.ids.length ? { key: 'list', label: `${list.label}: ${list.ids.length} companies`, onRemove: () => set({ list: 'all' }) } : null,
+        ].filter(Boolean)}
+        onClear={() => set({ kind: '', list: 'all' })}
+        count={{ shown: items.length, total: items.length + newsHidden, noun: 'changes' }}
+        aside={<div role="group" aria-label="Window" className="inline-flex rounded-md border border-line-2 overflow-hidden">
           {WINDOWS.map((w) => (
             <button key={w.id} type="button" aria-pressed={w.id === win.id} onClick={() => set({ w: w.id })}
-              className={`px-2.5 py-1 t-small border-0 cursor-pointer ${w.id === win.id ? 'bg-ground-4 text-ink-1' : 'bg-transparent text-ink-2 hover:bg-ground-2 hover:text-ink-1'}`}>{w.label}</button>
+              className={`px-2.5 py-1 t-small border-0 cursor-pointer transition-colors duration-100 ${w.id === win.id ? 'bg-ground-4 text-ink-1' : 'bg-transparent text-ink-2 hover:bg-ground-2 hover:text-ink-1'}`}>{w.label}</button>
           ))}
-        </div>
-        <span className="t-small text-ink-3">since {formatDate(from)}</span>
-        <span className="t-small text-ink-3 tabular ml-auto">{state === 'loading' ? 'reading…' : `${items.length} change${items.length === 1 ? '' : 's'}`}{newsHidden > 0 ? ` · ${newsHidden} more stories` : ''}</span>
-      </div>
-
-      <div className="flex flex-wrap items-center gap-1.5 mb-3">
-        <button type="button" aria-pressed={kinds.length === 0} className={chip(kinds.length === 0)} onClick={() => set({ kind: '' })} title={`Changes to the record. News is not included by default — ${KINDS.news.hint}`}>Changes to the record</button>
-        <button type="button" aria-pressed={kinds.length === KIND_LIST.length} className={chip(kinds.length === KIND_LIST.length)} onClick={() => set({ kind: KIND_LIST.map((k) => k.id).join(',') })}>Everything, news included</button>
-        {KIND_LIST.map((k) => (
-          <button key={k.id} type="button" aria-pressed={kinds.includes(k.id)} className={chip(kinds.includes(k.id))} onClick={() => toggleKind(k.id)} title={k.hint}>
-            {k.label}<span className="t-micro font-mono text-ink-4">{counts[k.id] || 0}</span>
-          </button>
-        ))}
-      </div>
-
-      <Card pad="md" className="mb-5">
+        </div>}
+      >
+        <div className="flex flex-col gap-3">
+          <div className="flex items-start gap-2">
+            <span className="t-micro text-ink-4 w-20 shrink-0 pt-1.5">Show</span>
+            <div className="flex flex-wrap items-center gap-1.5">
+              <button type="button" aria-pressed={kinds.length === 0} className={chip(kinds.length === 0)} onClick={() => set({ kind: '' })} title={`Changes to the record. News is not included by default — ${KINDS.news.hint}`}>Changes to the record</button>
+              <button type="button" aria-pressed={kinds.length === KIND_LIST.length} className={chip(kinds.length === KIND_LIST.length)} onClick={() => set({ kind: KIND_LIST.map((k) => k.id).join(',') })}>Everything, news included</button>
+              {KIND_LIST.map((k) => (
+                <button key={k.id} type="button" aria-pressed={kinds.includes(k.id)} className={chip(kinds.includes(k.id))} onClick={() => toggleKind(k.id)} title={k.hint}>
+                  {k.label}<span className="t-micro font-mono text-ink-3">{counts[k.id] || 0}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="t-micro text-ink-4 w-20 shrink-0 pt-1.5">Watching</span>
+            <div className="min-w-0 flex-1">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="t-eyebrow text-ink-3 mr-1">Watching</span>
           <button type="button" aria-pressed={params.list === 'all'} className={chip(params.list === 'all')} onClick={() => set({ list: 'all' })}>All companies</button>
           {lists.map((l) => (
             <span key={l.id} className="inline-flex items-center">
@@ -131,7 +142,10 @@ export default function Changes() {
             </div>
           </div>
         )}
-      </Card>
+            </div>
+          </div>
+        </div>
+      </FilterBar>
 
       {!coverage.complete && (
         <div className="flex items-start gap-2 rounded-md border border-line-1 bg-ground-1 px-4 py-3 mb-5">

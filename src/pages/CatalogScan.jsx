@@ -1,7 +1,8 @@
 import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUpRight, ExternalLink, Search, X } from 'lucide-react'
-import { PageHeader, Card, Tag } from '../components/primitives/index.js'
+import { format } from '../utils/format.js'
+import { PageHeader, Card, Tag, FilterBar, KeyFigures } from '../components/primitives/index.js'
 import { ExportBar } from '../components/export/ExportBar.jsx'
 import { describeFilters, filterSentence } from '../utils/pageDocs.js'
 import { selectClass } from '../components/prospecting/ProspectUi.jsx'
@@ -21,7 +22,7 @@ const BANDS = { live: { label: 'Live signal', tone: 'danger' }, watch: { label: 
 const ROW_CAP = 80
 
 export default function CatalogScan() {
-  const { params, set, clear, any } = useUrlFilters(['q', 'asset', 'owner', 'band', 'genre', 'row'])
+  const { params, set, clear } = useUrlFilters(['q', 'asset', 'owner', 'band', 'genre', 'row'])
   const { news, filings, connectors, ready } = useEnrichment()
   const rows = useMemo(() => scanCatalogs({ news, filings }), [news, filings])
   const stats = useMemo(() => marketStats(rows), [rows])
@@ -31,42 +32,49 @@ export default function CatalogScan() {
   return (
     <>
       <PageHeader eyebrow="Market · demand side" title="Catalog scan"
-        lede="Every catalog holding the app can trace to a sourced transaction, scored on how likely it is to come to market — from how that kind of owner behaves, how long they have held it, refinancing dates ahead, and sale-intent language in the live feed."
+        answer={<KeyFigures items={[
+          { value: format.count(stats.holdings, { full: true }), label: 'holdings tracked' },
+          { value: format.count(stats.watch, { full: true }), label: 'worth watching', to: '/market/catalogs?band=watch' },
+          { value: format.count(stats.live, { full: true }), label: 'with a live signal' },
+          { value: format.count(stats.owners, { full: true }), label: 'owners' },
+          { value: money(stats.tracked), label: 'disclosed value' },
+        ]} />}
+        lede="Every catalog holding the app can trace to a sourced transaction, scored on how likely it is to come to market — owner behaviour, hold period, refinancing dates ahead, and sale-intent language in the live feed."
         actions={<span className="t-micro text-ink-4">{!ready ? 'Loading enrichment…' : connectors.length ? `${connectors.filter((c) => c.live).length}/${connectors.length} connectors live` : 'Enrichment unreachable'}</span>} />
 
-      <LimitNote ids={['availability']} className="mb-6" />
-
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
-        {[['Holdings tracked', stats.holdings], ['Live signal', stats.live], ['Worth watching', stats.watch], ['Owners', stats.owners], ['Disclosed value', money(stats.tracked)]].map(([label, value]) => (
-          <Card key={label} pad="md"><div className="t-micro uppercase tracking-[0.08em] text-ink-3">{label}</div><div className="t-stat text-ink-1">{value}</div></Card>
-        ))}
-      </div>
-
-      <div className="flex flex-wrap items-end gap-3 mb-4">
-        <div className="relative">
-          <Search size={14} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-ink-4" aria-hidden="true" />
-          <input value={params.q} onChange={(e) => set({ q: e.target.value })} placeholder="Search holdings, owners, sellers" aria-label="Search holdings"
-            className="bg-ground-1 border border-line-2 rounded-md h-8 pl-8 pr-2 t-small text-ink-1 placeholder:text-ink-4 focus:border-accent outline-none w-64" />
+      <FilterBar
+        search={{ value: params.q, onChange: (v) => set({ q: v }), placeholder: 'Search holdings, owners, sellers' }}
+        active={[
+          params.q && { key: 'q', label: `“${params.q}”`, onRemove: () => set({ q: '' }) },
+          params.asset && { key: 'asset', label: ASSETS[params.asset] || params.asset, onRemove: () => set({ asset: '' }) },
+          params.owner && { key: 'owner', label: OWNER_BEHAVIOUR[params.owner]?.label || params.owner, onRemove: () => set({ owner: '' }) },
+          params.band && { key: 'band', label: BANDS[params.band]?.label || params.band, onRemove: () => set({ band: '' }) },
+          params.genre && { key: 'genre', label: params.genre, onRemove: () => set({ genre: '' }) },
+        ].filter(Boolean)}
+        onClear={clear}
+        count={{ shown: Math.min(shown.length, ROW_CAP), total: rows.length, noun: 'holdings' }}
+      >
+        <div className="flex flex-wrap items-center gap-2">
+          <select value={params.asset} onChange={(e) => set({ asset: e.target.value })} className={`${selectClass} w-44`} aria-label="Asset type">
+            <option value="">Any asset</option>
+            {Object.entries(ASSETS).map(([id, label]) => <option key={id} value={id}>{label}</option>)}
+          </select>
+          <select value={params.owner} onChange={(e) => set({ owner: e.target.value })} className={`${selectClass} w-52`} aria-label="Owner kind">
+            <option value="">Any owner</option>
+            {Object.entries(OWNER_BEHAVIOUR).map(([id, b]) => <option key={id} value={id}>{b.label}</option>)}
+          </select>
+          <select value={params.band} onChange={(e) => set({ band: e.target.value })} className={`${selectClass} w-40`} aria-label="Availability">
+            <option value="">Any signal</option>
+            {Object.entries(BANDS).map(([id, b]) => <option key={id} value={id}>{b.label}</option>)}
+          </select>
+          <select value={params.genre} onChange={(e) => set({ genre: e.target.value })} className={`${selectClass} w-40`} aria-label="Genre tag">
+            <option value="">Any tag</option>
+            {stats.genres.map((g) => <option key={g} value={g}>{g}</option>)}
+          </select>
         </div>
-        <select value={params.asset} onChange={(e) => set({ asset: e.target.value })} className={`${selectClass} w-44`} aria-label="Asset type">
-          <option value="">Any asset</option>
-          {Object.entries(ASSETS).map(([id, label]) => <option key={id} value={id}>{label}</option>)}
-        </select>
-        <select value={params.owner} onChange={(e) => set({ owner: e.target.value })} className={`${selectClass} w-52`} aria-label="Owner kind">
-          <option value="">Any owner</option>
-          {Object.entries(OWNER_BEHAVIOUR).map(([id, b]) => <option key={id} value={id}>{b.label}</option>)}
-        </select>
-        <select value={params.band} onChange={(e) => set({ band: e.target.value })} className={`${selectClass} w-40`} aria-label="Availability">
-          <option value="">Any signal</option>
-          {Object.entries(BANDS).map(([id, b]) => <option key={id} value={id}>{b.label}</option>)}
-        </select>
-        <select value={params.genre} onChange={(e) => set({ genre: e.target.value })} className={`${selectClass} w-40`} aria-label="Genre tag">
-          <option value="">Any tag</option>
-          {stats.genres.map((g) => <option key={g} value={g}>{g}</option>)}
-        </select>
-        <span className="t-small text-ink-3 font-mono tabular">{shown.length > ROW_CAP ? `${ROW_CAP} of ${shown.length}` : shown.length}</span>
-        {any && <button type="button" onClick={clear} className="t-small text-secondary bg-transparent border-0 cursor-pointer px-0">Clear</button>}
-      </div>
+      </FilterBar>
+
+      <LimitNote ids={['availability']} className="mb-5" />
 
       <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(0,400px)] gap-6 items-start">
         <Card pad="md">

@@ -9,7 +9,7 @@ export const APP_NAME = 'Mainframe · Music'
  * It also owns the browser title. Every route renders exactly one PageHeader, so this is the one place that can
  * name the page in the tab, in history and in a bookmark — all 30 routes read "Mainframe · Music" without it.
  */
-export function PageHeader({ eyebrow, title, lede, tone = 'accent', actions, className = '' }) {
+export function PageHeader({ eyebrow, title, answer, lede, tone = 'accent', actions, className = '' }) {
   useEffect(() => {
     const text = typeof title === 'string' ? title : ''
     document.title = text ? `${text} · ${APP_NAME}` : APP_NAME
@@ -21,7 +21,8 @@ export function PageHeader({ eyebrow, title, lede, tone = 'accent', actions, cla
         <div className="max-w-3xl">
           {eyebrow && <Eyebrow tone={tone} className="mb-3">{eyebrow}</Eyebrow>}
           <h1 className="t-h1 text-ink-1 m-0">{title}</h1>
-          {lede && <p className="t-lede text-ink-2 mt-4 mb-0">{lede}</p>}
+          {answer && <div className="mt-3">{answer}</div>}
+          {lede && <p className="t-small text-ink-3 mt-2 mb-0 max-w-2xl">{lede}</p>}
         </div>
         {actions && <div className="flex items-center gap-2 shrink-0 pt-1">{actions}</div>}
       </div>

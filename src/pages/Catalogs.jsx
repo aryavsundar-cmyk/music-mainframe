@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { PageHeader, Stat, Tag, Num } from '../components/primitives/index.js'
+import { PageHeader, FilterBar, KeyFigures, Tag, Num } from '../components/primitives/index.js'
 import { TransactionList } from '../components/money/TransactionRow.jsx'
 import { CATALOG_SALES, ASSETS, partyName } from '../data/transactions.js'
 import { formatDate, format } from '../utils/format.js'
@@ -20,20 +20,24 @@ export default function Catalogs() {
   return (
     <>
       <PageHeader eyebrow="Money · superstar rights" title="Catalog sales"
-        lede="Publicly reported superstar catalog transactions: whose songs or masters, who bought them, which rights, for how much. Artists and estates sit outside the entity table; corporate catalog M&A (Recognition, Kobalt) lives under Deals." />
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-        <Stat label="Sales on file" kind="count" value={CATALOG_SALES.length} opts={{ full: true }} />
-        <Stat label="Reported value" kind="money" value={total} hint="press estimates; see verify tags" />
-        <Stat label="Largest" kind="money" value={largest?.value} hint={largest?.catalogOf || ''} />
-        <Stat label="Buyers" kind="count" value={new Set(CATALOG_SALES.flatMap((t) => t.acquirers.map(partyName))).size} opts={{ full: true }} />
-      </div>
+        answer={<KeyFigures items={[
+          { value: format.count(CATALOG_SALES.length, { full: true }), label: 'sales on file' },
+          { value: format.money(total), label: 'reported value' },
+          { value: format.money(largest?.value), label: `largest — ${largest?.catalogOf || ''}` },
+          { value: format.count(new Set(CATALOG_SALES.flatMap((t) => t.acquirers.map(partyName))).size, { full: true }), label: 'buyers' },
+        ]} />}
+        lede="Publicly reported superstar catalog transactions: whose songs or masters, who bought them, which rights, for how much. Values are press estimates unless a filing says otherwise — see the verify tags." />
+      <FilterBar
+        count={{ shown: rows.length, total: CATALOG_SALES.length, noun: 'sales on file' }}
+        aside={<div className="flex items-center gap-1.5">
+          <span className="t-micro text-ink-4">Sort</span>
+          {['value', 'date'].map((k) => (
+            <button key={k} type="button" aria-pressed={sort === k} onClick={() => setSort(k)}
+              className={['rounded-sm border px-2 py-1 t-small cursor-pointer transition-colors duration-100', sort === k ? 'bg-ground-4 border-line-3 text-ink-1' : 'bg-transparent border-line-1 text-ink-2 hover:bg-ground-2 hover:text-ink-1'].join(' ')}>{k === 'value' ? 'By value' : 'By date'}</button>
+          ))}
+        </div>}
+      />
 
-      <div className="flex items-center gap-2 mb-3">
-        <span className="t-small text-ink-3">Sort</span>
-        {['value', 'date'].map((k) => (
-          <button key={k} type="button" onClick={() => setSort(k)} className={['rounded-sm border px-2 py-1 t-small cursor-pointer', sort === k ? 'bg-ground-4 border-line-3 text-ink-1' : 'bg-transparent border-line-1 text-ink-2 hover:bg-ground-2'].join(' ')}>{k === 'value' ? 'By value' : 'By date'}</button>
-        ))}
-      </div>
       <div className="overflow-x-auto -mx-3 mb-12">
         <table className="w-full border-collapse min-w-[720px]">
           <thead><tr><th className={TH}>Catalog</th><th className={TH}>Buyer</th><th className={TH}>Rights</th><th className={TH}>Date</th><th className={`${TH} text-right`}>Value</th></tr></thead>

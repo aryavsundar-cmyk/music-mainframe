@@ -2,11 +2,11 @@ import { useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Network } from 'lucide-react'
-import { PageHeader, Stat } from '../components/primitives/index.js'
-import { Facets } from '../components/entities/Facets.jsx'
+import { PageHeader, FilterBar, KeyFigures } from '../components/primitives/index.js'
+import { FacetControls } from '../components/entities/Facets.jsx'
 import { EntityTable } from '../components/entities/EntityTable.jsx'
-import { filterEntities, COUNTS, TYPE_ORDER, headlineMetric } from '../data/entities.js'
-import { ENTITY_TYPES } from '../data/entities/_schema.js'
+import { filterEntities, COUNTS, TYPE_ORDER, headlineMetric, getEntity } from '../data/entities.js'
+import { ENTITY_TYPES, OWNERSHIP } from '../data/entities/_schema.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
 import { format, currencySymbol } from '../utils/format.js'
@@ -14,11 +14,9 @@ import { useForces } from '../hooks/useForces.js'
 import { useFinancials } from '../hooks/useFinancials.js'
 import { currentRevenue, freshnessOf } from '../utils/freshness.js'
 import { exposureIndex } from '../utils/forces.js'
-import { FORCES, FORCE_BY_ID } from '../data/forces.js'
+import { FORCE_BY_ID } from '../data/forces.js'
 
 const KEYS = ['q', 'type', 'tier', 'ownership', 'parent', 'verify', 'force', 'fresh']
-const forceChip = (a) => ['inline-flex items-center gap-1.5 rounded-sm border px-2 py-1 t-small cursor-pointer select-none transition-colors duration-100',
-  a ? 'bg-ground-4 border-line-3 text-ink-1' : 'bg-transparent border-line-1 text-ink-2 hover:bg-ground-2 hover:text-ink-1'].join(' ')
 /** How each facet reads in an exported document — "type=label" means nothing to someone opening the file. */
 const FILTER_LABELS = {
   q: { label: 'Search' },
@@ -59,36 +57,43 @@ export default function Entities() {
   const staleCount = listed.filter((e) => ['due', 'pending'].includes(fresh(e))).length
   const forcesOf = (id) => [...(exposed.get(id) || [])].map((f) => FORCE_BY_ID[f]).sort((a, b) => a.number - b.number)
   const toggle = (id) => { const s = new Set(picked); if (s.has(id)) s.delete(id); else s.add(id); set({ force: [...s].join(',') }) }
+  // What is on, in the reader's words, each one removable: a filtered table must never look like the whole table.
+  const activeFilters = [
+    params.q && { key: 'q', label: `“${params.q}”`, onRemove: () => set({ q: '' }) },
+    params.type && { key: 'type', label: ENTITY_TYPES[params.type]?.label || params.type, onRemove: () => set({ type: '' }) },
+    params.tier && { key: 'tier', label: `Tier ${params.tier}`, onRemove: () => set({ tier: '' }) },
+    params.ownership && { key: 'ownership', label: OWNERSHIP[params.ownership] || params.ownership, onRemove: () => set({ ownership: '' }) },
+    params.parent && { key: 'parent', label: `Parent: ${getEntity(params.parent)?.short || params.parent}`, onRemove: () => set({ parent: '' }) },
+    params.verify && { key: 'verify', label: 'Flagged to verify', onRemove: () => set({ verify: '' }) },
+    params.fresh && { key: 'fresh', label: 'Needs refresh', onRemove: () => set({ fresh: '' }) },
+    ...picked.map((f) => ({ key: `force-${f}`, label: `Exposed to ${FORCE_BY_ID[f]?.short_title || f}`, onRemove: () => toggle(f) })),
+  ].filter(Boolean)
+  const clearAll = () => set({ q: '', type: '', tier: '', ownership: '', parent: '', verify: '', fresh: '', force: '' })
 
   return (
     <>
       <PageHeader
         eyebrow="Structure · who owns what" tone="secondary"
         title="Entities"
-        lede="Every label, publisher, distributor, PRO, DSP, promoter, catalog fund, sponsor, and registry on the canvas — one flat table. Type is the primary bucket; roles carry the rest."
+        answer={<KeyFigures items={[
+          { value: format.count(COUNTS.total, { full: true }), label: 'companies on the canvas' },
+          { value: format.count(TYPE_ORDER.length), label: 'types' },
+          { value: format.count(COUNTS.public, { full: true }), label: 'publicly listed', to: '/entities?ownership=public' },
+          staleCount ? { value: format.count(staleCount, { full: true }), label: 'need a refresh', to: '/entities?fresh=stale' } : null,
+          COUNTS.verify ? { value: format.count(COUNTS.verify, { full: true }), label: 'flagged to verify', to: '/entities?verify=1' } : null,
+        ]} />}
+        lede="Every label, publisher, distributor, PRO, DSP, promoter, catalog fund, sponsor and registry on the canvas. Type is the primary bucket; roles carry the rest."
         actions={<Link to="/entities/map" className="inline-flex items-center gap-1.5 t-small text-ink-2 no-underline hover:text-ink-1"><Network size={14} aria-hidden="true" />Map view</Link>}
       />
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-        <Stat label="Entities" kind="count" value={COUNTS.total} opts={{ full: true }} />
-        <Stat label="Types" kind="count" value={TYPE_ORDER.length} opts={{ full: true }} />
-        <Stat label="Publicly listed" kind="count" value={COUNTS.public} opts={{ full: true }} />
-        <Stat label="Flagged to verify" kind="count" value={COUNTS.verify} opts={{ full: true }} hint="facts from the brief not yet sourced" />
-      </div>
-      <Facets params={params} set={set} resultCount={rows.length} />
-      <div className="flex flex-wrap items-center gap-1.5 -mt-2 mb-6">
-        <span className="t-micro text-ink-4 mr-1">Exposed to</span>
-        {FORCES.map((f) => (
-          <button key={f.id} type="button" aria-pressed={picked.includes(f.id)} className={forceChip(picked.includes(f.id))} onClick={() => toggle(f.id)}>
-            <span className="font-mono t-micro text-ink-3">{f.number}</span>{f.short_title}
-          </button>
-        ))}
-        <span className="t-micro text-ink-4 ml-1">{loading ? 'reading the feed and archive…' : 'a party to a deal, or named in a headline, tagged to the force'}</span>
-      </div>
-      <div className="flex flex-wrap items-center gap-1.5 -mt-3 mb-6">
-        <span className="t-micro text-ink-4 mr-1">Financials</span>
-        <button type="button" aria-pressed={params.fresh === 'stale'} className={forceChip(params.fresh === 'stale')} onClick={() => set({ fresh: params.fresh === 'stale' ? '' : 'stale' })}>Needs refresh <span className="font-mono t-micro text-ink-3">{staleCount}</span></button>
-        <span className="t-micro text-ink-4 ml-1">{financials.state === 'ok' ? `SEC filers refreshed daily${financials.updatedAt ? ` · last change ${financials.updatedAt.slice(0, 10)}` : ''}; hand-entered figures flagged once a newer result is due` : financials.state === 'loading' ? 'reading filings…' : 'filings unavailable — hand-entered figures only'}</span>
-      </div>
+      <FilterBar
+        search={{ value: params.q, onChange: (v) => set({ q: v }), placeholder: 'Search name, HQ, ticker, summary' }}
+        active={activeFilters}
+        onClear={clearAll}
+        count={{ shown: rows.length, total: COUNTS.total, noun: 'companies' }}
+      >
+        <FacetControls params={params} set={set} picked={picked} toggle={toggle} staleCount={staleCount} forcesLoading={loading} financials={financials} />
+      </FilterBar>
+
       <EntityTable rows={rows} grouped={!params.type} financials={financials.companies} />
       <PageExport build={() => buildPageDoc({
         slug: 'entities',

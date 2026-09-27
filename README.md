@@ -71,6 +71,31 @@ page, below its own name — and scrolls to the row when a link names one, which
 links from the map drawer and the forces panel work at all. A skip link jumps the 22-item sidebar. The page guide
 on `/about` is now clickable, so the app's only site map is navigable.
 
+## Content before controls (Sprint 33)
+
+Pages used to open with their apparatus: the entity table put four filter rows between its title and its first
+row, and the news page put a whole dashboard there. Measured at 1280×800, the first row of data sat at 644px on
+`/entities` and **2,504px** on `/news` — three screens down.
+
+- **`primitives/FilterBar.jsx`** is the one control bar. Search and the result count are always visible; every
+  other control lives in a panel behind a *Filters* button that carries the number of active filters. Whatever is
+  active stays on screen as removable chips whether the panel is open or shut, so a filtered view can never look
+  like the whole table.
+- **`primitives/KeyFigures.jsx`** replaces the four-tile stat grid with one computed line under the title —
+  "188 companies on the canvas · 15 types · 39 publicly listed · 3 need a refresh" — where any figure naming a
+  subset links to the filtered view that shows it. The same facts, a tenth of the height.
+- **`/deals` and `/news` lead with their subject again.** The deals table and the news feed come first; the Five
+  Forces board and the period view moved below them behind a "Five forces ↓" link in the bar. Nothing was
+  removed — the sequence changed.
+- **A figure's period and source are read, not fine print**: `Stat`'s hint moved from 11px `ink-4` to 13px
+  `ink-3`, because "10-K filed 20 Nov 2025" is part of the figure.
+
+First data row now: entities 315px · deals 284 · news 348 · catalog scan 352 · prospecting 363 · map 276 · buyer
+match 212. `npm run test:layout` holds the rule — a data page must route its controls through FilterBar, must not
+rebuild a filter row above its content, and must state its figures in the header. It also checks that every
+component used in JSX is imported, which neither ESLint (no react plugin, capitalised names exempt from
+`no-unused-vars`) nor the build catches — a missing `KeyFigures` import shipped a blank page during this sprint.
+
 ## Design system
 
 **Source of truth: [`src/tokens.js`](src/tokens.js).** `scripts/build-tokens.mjs` emits `src/tokens.css` (committed, regenerated before every `dev`/`build`); Tailwind 4 reads it as `@theme`, so utilities like `bg-ground-1 text-ink-2 text-accent border-line-1` are the tokens. Never hard-code a hex in a component. [`/design`](src/pages/DesignSystem.jsx) renders every token and primitive live in both themes.

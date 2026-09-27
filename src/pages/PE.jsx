@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { Search, X, ArrowRight } from 'lucide-react'
-import { PageHeader, Stat, Card, Tag, Num } from '../components/primitives/index.js'
+import { ArrowRight } from 'lucide-react'
+import { PageHeader, FilterBar, KeyFigures, Card, Tag, Num } from '../components/primitives/index.js'
 import { listFunds, FUND_KINDS, MONEY_TYPES, kindOf } from '../data/peFunds.js'
 import { OWNERSHIP } from '../data/entities.js'
 import { useUrlFilters } from '../hooks/useUrlFilters.js'
@@ -13,7 +13,7 @@ const chip = (a) => ['inline-flex items-center gap-1.5 rounded-sm border px-2 py
   a ? 'bg-ground-4 border-line-3 text-ink-1' : 'bg-transparent border-line-1 text-ink-2 hover:bg-ground-2 hover:text-ink-1'].join(' ')
 
 export default function PE() {
-  const { params, set, clear, any, sp } = useUrlFilters(['q', 'kind'])
+  const { params, set, clear, sp } = useUrlFilters(['q', 'kind'])
   const all = useMemo(() => listFunds(), [])
   const rows = useMemo(() => listFunds(params), [sp]) // eslint-disable-line react-hooks/exhaustive-deps
   const groups = MONEY_TYPES.map((k) => [k, rows.filter((r) => kindOf(r.e) === k)]).filter(([, l]) => l.length)
@@ -21,29 +21,30 @@ export default function PE() {
   return (
     <>
       <PageHeader eyebrow="Money · who holds the capital" title="PE funds & capital"
-        lede="Catalog investors, sponsors, credit and ABS players, and strategic holders — with thesis, structure preference, portfolio, exits, and every transaction on file." />
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-        <Stat label="Money-side actors" kind="count" value={all.length} opts={{ full: true }} />
-        <Stat label="With investment profile" kind="count" value={all.filter((r) => r.hasProfile).length} opts={{ full: true }} />
-        <Stat label="Deal volume on file" kind="money" value={all.reduce((s, r) => s + r.dealVolume, 0)} hint="double-counts both sides; use for ranking only" />
-        <Stat label="ABS issuers on file" kind="count" value={all.filter((r) => r.absIssued.length).length} opts={{ full: true }} />
-      </div>
-
-      <div className="space-y-3 mb-8">
-        <div className="flex items-center gap-3">
-          <label className="relative flex-1 max-w-xl">
-            <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-3" aria-hidden="true" />
-            <input type="search" value={params.q} onChange={(e) => set({ q: e.target.value })} placeholder="Search funds, sponsors, lenders"
-              className="w-full h-9 pl-9 pr-3 bg-ground-1 border border-line-2 rounded-md t-body text-ink-1 placeholder:text-ink-4 outline-none focus:border-accent" />
-          </label>
-          <span className="t-small text-ink-3 tabular">{rows.length} of {all.length}</span>
-          {any && <button type="button" onClick={clear} className="inline-flex items-center gap-1 t-small text-ink-3 hover:text-ink-1 bg-transparent border-0 cursor-pointer"><X size={13} aria-hidden="true" /> Clear</button>}
+        answer={<KeyFigures items={[
+          { value: format.count(all.length, { full: true }), label: 'money-side actors' },
+          { value: format.count(all.filter((r) => r.hasProfile).length, { full: true }), label: 'with an investment profile' },
+          { value: format.money(all.reduce((sum, r) => sum + r.dealVolume, 0)), label: 'deal volume on file' },
+          { value: format.count(all.filter((r) => r.absIssued.length).length, { full: true }), label: 'ABS issuers', to: '/abs' },
+        ]} />}
+        lede="Catalog investors, sponsors, credit and ABS players and strategic holders — with thesis, structure preference, portfolio and every transaction on file. Deal volume double-counts both sides; use it for ranking only." />
+      <FilterBar
+        search={{ value: params.q, onChange: (v) => set({ q: v }), placeholder: 'Search funds, sponsors, lenders' }}
+        active={[
+          params.q && { key: 'q', label: `“${params.q}”`, onRemove: () => set({ q: '' }) },
+          params.kind && { key: 'kind', label: FUND_KINDS[params.kind]?.label || params.kind, onRemove: () => set({ kind: '' }) },
+        ].filter(Boolean)}
+        onClear={clear}
+        count={{ shown: rows.length, total: all.length, noun: 'money-side actors' }}
+      >
+        <div className="flex items-start gap-2">
+          <span className="t-micro text-ink-4 w-16 shrink-0 pt-1.5">Kind</span>
+          <div className="flex flex-wrap gap-1.5">
+            <button type="button" aria-pressed={!params.kind} className={chip(!params.kind)} onClick={() => set({ kind: '' })}>All</button>
+            {MONEY_TYPES.map((k) => <button key={k} type="button" aria-pressed={params.kind === k} className={chip(params.kind === k)} onClick={() => set({ kind: params.kind === k ? '' : k })}>{FUND_KINDS[k].label}<span className="t-micro font-mono text-ink-3">{all.filter((r) => kindOf(r.e) === k).length}</span></button>)}
+          </div>
         </div>
-        <div className="flex flex-wrap gap-1.5">
-          <button type="button" className={chip(!params.kind)} onClick={() => set({ kind: '' })}>All</button>
-          {MONEY_TYPES.map((k) => <button key={k} type="button" className={chip(params.kind === k)} onClick={() => set({ kind: params.kind === k ? '' : k })}>{FUND_KINDS[k].label}<span className="t-micro font-mono text-ink-4">{all.filter((r) => kindOf(r.e) === k).length}</span></button>)}
-        </div>
-      </div>
+      </FilterBar>
 
       {groups.length === 0 && <div className="py-12 text-center t-body text-ink-3">Nothing matches.</div>}
       {groups.map(([k, list]) => (
