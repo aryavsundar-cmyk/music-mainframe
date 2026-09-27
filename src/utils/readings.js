@@ -49,8 +49,11 @@ export function readEntities({ total, listed, secFilers, due, pending, withFigur
   const waiting = pending ? `${n(pending)} ${pending === 1 ? 'company has' : 'companies have'} filed a newer report whose figures are not yet in structured form.` : ''
   // The coverage line is the one that changes how everything above it should be read, so it is said outright
   // rather than left for a reader to work out from a table of dashes.
+  // "The figure that measures them", not "a financial figure": a sponsor with revenue on record but no AUM has a
+  // figure and still cannot be compared with the other thirty-nine, and saying otherwise reads as a contradiction
+  // next to the SEC-filer count in the same sentence.
   const covered = withFigure != null
-    ? `${n(withFigure)} carry a financial figure${unresearched ? `, and ${n(unresearched)} have not been researched yet — work not done, not companies that disclose nothing` : ''}.`
+    ? `${n(withFigure)} carry the figure that measures them${unresearched ? `, and ${n(unresearched)} have not been researched yet — work not done, not companies that disclose nothing` : ''}.`
     : ''
   return reading(
     [`${n(total)} companies on record, ${n(listed)} of them publicly listed.`, covered, auto, stale, waiting],
