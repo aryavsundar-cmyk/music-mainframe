@@ -29,6 +29,39 @@ export const ENTITY_TYPES = {
   trade:            { label: 'Trade body',         lens: 'structure',  order: 15 },
 }
 
+/**
+ * The figure that measures a company of this kind — the question the canvas should be asking it.
+ *
+ * For most of the canvas that is revenue. For a third of it, revenue is the wrong question and always was. Asking
+ * a private-equity sponsor for revenue gets you fee income, which says nothing about the capital it can move;
+ * every one of these firms publishes assets under management instead, and that is the figure that compares across
+ * all forty money-side actors on the canvas. Asking Apple Music for revenue gets you silence for ever, because
+ * Apple has never broken it out — but the paid base is published.
+ *
+ * A type may name more than one: either answers the question. Anything not listed here is measured by revenue.
+ * `utils/coverage.js` reads this, and `test:coverage` fails if a type is added without a decision being made.
+ *
+ * This is NOT a way to turn "we do not know" into "not applicable". A sponsor with no AUM on record is still an
+ * open gap; the model only changes which figure closes it, and which one the page asks for.
+ */
+export const EXPECTED_FIGURE = {
+  'pe-fund': ['aum'],
+  'debt-investor': ['aum'],
+  'catalog-fund': ['aum', 'catalogSize'],
+  dsp: ['revenue', 'subscribers'],
+}
+export const DEFAULT_FIGURE = ['revenue']
+
+/** What each figure is called where a page has to name the one it is missing. */
+export const FIGURE_LABEL = {
+  revenue: 'revenue',
+  aum: 'assets under management',
+  subscribers: 'subscribers',
+  catalogSize: 'catalog size',
+}
+
+export const figuresFor = (type) => EXPECTED_FIGURE[type] || DEFAULT_FIGURE
+
 export const TIERS = { 1: 'Tier 1 · global', 2: 'Tier 2 · major indie / regional', 3: 'Tier 3 · niche' }
 
 export const OWNERSHIP = {

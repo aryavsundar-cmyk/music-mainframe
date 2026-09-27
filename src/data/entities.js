@@ -6,7 +6,7 @@
  * so detail pages render "—" naturally instead of crashing.
  */
 import { SECTIONS } from './entities/index.js'
-import { ENTITY_TYPES, TIERS, OWNERSHIP, LENS_TONE, AS_OF } from './entities/_schema.js'
+import { ENTITY_TYPES, TIERS, OWNERSHIP, LENS_TONE, AS_OF, figuresFor as figuresForType } from './entities/_schema.js'
 
 export { ENTITY_TYPES, TIERS, OWNERSHIP, LENS_TONE, AS_OF }
 
@@ -99,11 +99,26 @@ function revenueLabel(m) {
   return `${kind}${fy}`.trim()
 }
 
+/**
+ * One figure for the row, and it must be the one that measures THIS KIND of company: a sponsor led with fee income
+ * for thirty-six sprints because revenue was simply checked first. `_schema.js` declares the order now, and
+ * anything not expected by the type falls back behind it rather than being dropped — a figure on record is still
+ * worth showing when the expected one is missing.
+ */
+const FIGURES = {
+  revenue: (m) => (m.revenue ? { kind: 'money', value: m.revenue, label: revenueLabel(m), currency: m.revenueCurrency } : null),
+  aum: (m) => (m.aum ? { kind: 'money', value: m.aum, label: 'AUM' } : null),
+  subscribers: (m) => (m.subscribers ? { kind: 'count', value: m.subscribers, label: 'Subscribers' } : null),
+  catalogSize: (m) => (m.catalogSize ? { kind: 'count', value: m.catalogSize, label: 'Catalog (songs)' } : null),
+}
+
 export function headlineMetric(e) {
   const m = e.metrics
-  if (m.revenue) return { kind: 'money', value: m.revenue, label: revenueLabel(m), currency: m.revenueCurrency }
-  if (m.aum) return { kind: 'money', value: m.aum, label: 'AUM' }
-  if (m.subscribers) return { kind: 'count', value: m.subscribers, label: 'Subscribers' }
-  if (m.catalogSize) return { kind: 'count', value: m.catalogSize, label: 'Catalog (songs)' }
+  const expected = figuresForType(e.type)
+  const order = [...expected, ...Object.keys(FIGURES).filter((f) => !expected.includes(f))]
+  for (const f of order) {
+    const hit = FIGURES[f](m)
+    if (hit) return hit
+  }
   return null
 }

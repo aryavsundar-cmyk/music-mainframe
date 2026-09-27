@@ -14,8 +14,10 @@
 import assert from 'node:assert/strict'
 import fs from 'node:fs'
 import { figureGap, coverageOf, canvasCoverage, GAPS, GAP_ORDER } from '../src/utils/coverage.js'
-import { ENTITIES, getEntity } from '../src/data/entities.js'
+import { ENTITIES, getEntity, getChildren, getBackedBy } from '../src/data/entities.js'
+import { ENTITY_TYPES, FIGURE_LABEL, DEFAULT_FIGURE, figuresFor as expectedFor } from '../src/data/entities/_schema.js'
 import { getTransactionsForEntity } from '../src/data/transactions.js'
+import { buildQueue, blockedBy, SIGNALS, OPEN } from '../src/utils/researchQueue.js'
 import { freshnessOf, nextDue, LAG } from '../src/utils/freshness.js'
 
 let n = 0
@@ -82,10 +84,13 @@ t('the chain is walked past a silent ancestor, not stopped at the first one', ()
   assert.ok(GAP_ORDER.includes(looped.state))
 })
 
-t('a company that has a figure is never also reported as a gap', () => {
+t('a company that has the figure that measures it is never also reported as a gap', () => {
+  const holds = (e, f) => (f === 'revenue'
+    ? !!(e.metrics?.revenue || figuresFor(e.id)?.metrics?.revenue)
+    : !!e.metrics?.[f])
   for (const e of ENTITIES) {
-    const hasFigure = !!(e.metrics?.revenue || figuresFor(e.id)?.metrics?.revenue)
-    assert.equal(gapOf(e).state === 'reported', hasFigure, `${e.id}: coverage disagrees with the record`)
+    const answered = expectedFor(e.type).some((f) => holds(e, f))
+    assert.equal(gapOf(e).state === 'reported', answered, `${e.id}: coverage disagrees with the record`)
   }
   // Coverage answers "is there a figure", freshness answers "is it still current". Two systems, one question each.
   const ended = ENTITIES.filter((e) => e.metrics?.disclosure === 'ended')
@@ -94,6 +99,42 @@ t('a company that has a figure is never also reported as a gap', () => {
     assert.equal(gapOf(e).state, 'reported', `${e.id}: a company that stopped disclosing still HAS a figure on record`)
     assert.equal(freshnessOf(e, figuresFor(e.id)).status, 'final', `${e.id}: freshness owns the "is it current" question`)
   }
+})
+
+t('every entity type has a decision about which figure measures it', () => {
+  // A new type must not silently inherit "revenue" because nobody thought about it. Being in the default is a
+  // decision; not being considered is not.
+  for (const type of Object.keys(ENTITY_TYPES)) {
+    const want = expectedFor(type)
+    assert.ok(Array.isArray(want) && want.length, `${type}: no expected figure`)
+    for (const f of want) assert.ok(FIGURE_LABEL[f], `${type}: expects "${f}", which has no reader-facing name`)
+  }
+  // The decisions this sprint turned on, stated so that changing one is deliberate.
+  for (const t2 of ['pe-fund', 'debt-investor']) assert.deepEqual(expectedFor(t2), ['aum'], `${t2}: a sponsor's scale is AUM, not fee income`)
+  assert.deepEqual(expectedFor('catalog-fund'), ['aum', 'catalogSize'])
+  assert.deepEqual(expectedFor('dsp'), ['revenue', 'subscribers'], 'Apple has never broken out Apple Music; the paid base is published')
+  assert.deepEqual(expectedFor('label'), DEFAULT_FIGURE)
+})
+
+t('asking a better question never turns "we do not know" into "not applicable"', () => {
+  // The risk in Sprint 37 is laundering: redefine the question, watch the gap shrink, claim progress. So the
+  // money-side actors with no AUM on record must still be counted as open gaps, not quietly excused.
+  const sponsors = ENTITIES.filter((e) => ['pe-fund', 'debt-investor', 'catalog-fund'].includes(e.type))
+  assert.ok(sponsors.length >= 40, `only ${sponsors.length} money-side actors — this check would prove little`)
+  for (const e of sponsors) {
+    const g = gapOf(e)
+    if (g.state === 'reported') {
+      assert.ok(e.metrics?.aum || e.metrics?.catalogSize, `${e.id}: counted as answered without the figure that answers it`)
+      continue
+    }
+    if (g.state === 'consolidated' || g.state === 'none') continue
+    assert.ok(['partial', 'unresearched'].includes(g.state), `${e.id}: a sponsor with no AUM must stay an open gap`)
+    assert.match(g.note, /assets under management/, `${e.id}: the gap must name the figure to go and find`)
+  }
+  // And a sponsor that files revenue is NOT answered by it: revenue is fee income, and reads as scale if allowed to.
+  const filing = sponsors.filter((e) => (e.metrics?.revenue || figuresFor(e.id)?.metrics?.revenue) && !e.metrics?.aum)
+  for (const e of filing) assert.equal(gapOf(e).state, 'partial', `${e.id}: revenue was accepted as a sponsor's scale`)
+  assert.ok(filing.length > 0, 'no sponsor on the canvas files revenue — this check would prove nothing')
 })
 
 t('the checklist counts this app’s records, and says so', () => {
@@ -162,6 +203,62 @@ t('the four figures researched this sprint carry a primary source and the right 
   assert.match(getEntity('merlin').metrics.revenueNote, /not Merlin's own income/)
   // And the MLC's year-on-year trap is named rather than left for the reader to fall into.
   assert.match(getEntity('the-mlc').metrics.revenueNote, /reprocessing keeps adding to a usage year/)
+})
+
+t('the research queue ranks this app’s gaps, and every point carries its reason', () => {
+  const blocks = blockedBy(ENTITIES, gapOf)
+  const rows = buildQueue(ENTITIES, {
+    gapOf,
+    dealsOf: (id) => getTransactionsForEntity(id).length,
+    childrenOf: (id) => getChildren(id).length,
+    backsOf: (id) => getBackedBy(id).length,
+    blocksOf: (id) => blocks.get(id) || 0,
+  })
+  assert.ok(rows.length > 0, 'nothing is open — the queue would have nothing to rank')
+  // Only open gaps. A company consolidated into a parent that reports is answered; researching it buys nothing.
+  for (const r of rows) assert.ok(OPEN.includes(r.state), `${r.id}: a closed gap is in the work list`)
+  for (const e of ENTITIES) {
+    if (OPEN.includes(gapOf(e).state)) assert.ok(rows.some((r) => r.id === e.id), `${e.id}: an open gap missing from the queue`)
+  }
+  // Every score is the sum of its stated reasons — no unexplained points.
+  for (const r of rows) {
+    assert.equal(r.score, r.reasons.reduce((sum, x) => sum + x.points, 0), `${r.id}: score does not equal its reasons`)
+    for (const x of r.reasons) assert.ok(SIGNALS[x.key] && x.text.trim(), `${r.id}: a reason with no text`)
+    assert.ok(r.wanted.trim(), `${r.id}: the queue must say what to go and find`)
+  }
+  // Deterministic: same input, same order, never insertion order.
+  const again = buildQueue([...ENTITIES].reverse(), {
+    gapOf, dealsOf: (id) => getTransactionsForEntity(id).length, childrenOf: (id) => getChildren(id).length,
+    backsOf: (id) => getBackedBy(id).length, blocksOf: (id) => blocks.get(id) || 0,
+  })
+  assert.deepEqual(again.map((r) => r.id), rows.map((r) => r.id), 'the ranking depends on input order')
+  assert.deepEqual([...rows].sort((a, b) => b.score - a.score).map((r) => r.score), rows.map((r) => r.score), 'not sorted by score')
+})
+
+t('"blocks" only counts subsidiaries a silent parent actually blanks', () => {
+  // The signal exists because of Sprint 36's consolidation walk: researching Anschutz once answers AEG and AEG
+  // Presents. Counting subsidiaries whose parent ALREADY reports would inflate the queue with work that buys
+  // nothing — Sony Music Group reports, so The Orchard is answered and Sony Music Entertainment blocks no one.
+  const blocks = blockedBy(ENTITIES, gapOf)
+  for (const [parentId, count] of blocks) {
+    const parent = getEntity(parentId)
+    assert.ok(parent, `blocks names ${parentId}, which is not on the canvas`)
+    assert.equal(gapOf(parent).state === 'reported', false, `${parentId}: a reporting parent cannot block anything`)
+    assert.ok(count > 0)
+  }
+  assert.equal(blocks.get('sony-music-entertainment'), undefined, 'a parent whose own parent reports blocks nobody')
+  const anschutz = blocks.get('anschutz')
+  assert.ok(anschutz >= 2, `Anschutz should block its live subsidiaries, got ${anschutz}`)
+})
+
+t('the queue is a prompt to do work, and says so on screen', () => {
+  // Same discipline as every other score in the app: it ranks THIS APPLICATION's gaps, never the companies.
+  const page = fs.readFileSync(new URL('../src/pages/Entities.jsx', import.meta.url), 'utf8')
+  assert.match(page, /ranks this application/, 'the queue must state what it is ranking')
+  assert.match(page, /not more secretive or more important/, 'and what it is not saying about the company')
+  // The score itself stays off the screen: a number beside a company name reads as a judgement about the company.
+  const table = fs.readFileSync(new URL('../src/components/entities/EntityTable.jsx', import.meta.url), 'utf8')
+  assert.equal(/\{row\.score\}/.test(table), false, 'the raw score must not be rendered beside a company name')
 })
 
 console.log(`\n${n} coverage checks passed.`)

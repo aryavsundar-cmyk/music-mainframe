@@ -59,7 +59,7 @@ function headlineStats({ m, fin, rev, deals }) {
   if (om != null) out.push({ label: 'Operating margin', value: `${om.toFixed(1)}%`, hint: `year to ${fmtDate(r.annual.end)}` })
   const fcf = freeCashFlow(fin)
   if (fcf) out.push({ label: 'Free cash flow', kind: 'money', value: fcf.value, opts: cur(fcf.currency), hint: `year to ${fmtDate(fcf.end)} · OCF less capex` })
-  if (m.aum) out.push({ label: 'AUM', kind: 'money', value: m.aum, hint: m.metricsAsOf })
+  if (m.aum) out.push({ label: 'AUM', kind: 'money', value: m.aum, hint: m.metricsAsOf ? `as of ${fmtDate(m.metricsAsOf)}` : undefined })
   if (m.subscribers) out.push({ label: 'Paid subscribers', kind: 'count', value: m.subscribers, hint: m.metricsAsOf })
   if (m.mau) out.push({ label: 'Monthly active users', kind: 'count', value: m.mau, hint: m.metricsAsOf })
   if (m.catalogSize) out.push({ label: 'Catalog (songs)', kind: 'count', value: m.catalogSize })

@@ -4,6 +4,7 @@ import { ENTITY_TYPES, LENS_TONE, OWNERSHIP, getEntity, headlineMetric } from '.
 import { currencySymbol } from '../../utils/format.js'
 import { currentRevenue, freshnessOf } from '../../utils/freshness.js'
 import { revenueTrend } from '../../utils/financialConcepts.js'
+import { BANDS } from '../../utils/researchQueue.js'
 import { format, currencySymbol as sym } from '../../utils/format.js'
 
 /**
@@ -41,11 +42,32 @@ function trendLabel(trend, currency) {
 }
 
 /**
+ * What closing this gap would buy, in the column that has nothing else to say.
+ *
+ * For a company with no figure the Headline cell is a dash — so on the coverage views it carries the research
+ * queue's reasons instead. The score is deliberately not shown: it is an internal ordering, and a number beside a
+ * company name invites being read as a judgement about the company rather than about this app's own record.
+ */
+function WhyResearch({ row }) {
+  if (!row) return <span className="t-data text-ink-4">—</span>
+  const band = BANDS.find((b) => b.id === row.band)
+  return (
+    <div className="text-right">
+      <div className="t-small text-ink-2">{band?.label}</div>
+      <div className="t-micro text-ink-4 max-w-[18rem] ml-auto">
+        Needs {row.wanted} · {row.reasons[0]?.text || 'no signal beyond being on the canvas'}
+        {row.reasons.length > 1 && ` · +${row.reasons.length - 1} more`}
+      </div>
+    </div>
+  )
+}
+
+/**
  * One company. The row used to be a fake button — tabIndex on a <tr>, Enter but no Space, no role, wrapping two
  * real links — so every row was three tab stops that announced as "row". The name link is the control now; the
  * row itself only follows the pointer.
  */
-function Row({ e, fin }) {
+function Row({ e, fin, queueRow }) {
   const navigate = useNavigate()
   const parent = e.parentId ? getEntity(e.parentId) : null
   const hm = headline(e, fin)
@@ -73,8 +95,8 @@ function Row({ e, fin }) {
           ? <Link to={`/entities/${parent.id}`} className="text-secondary no-underline hover:underline" onClick={(ev) => ev.stopPropagation()}>{parent.short || parent.name}</Link>
           : <span className="text-ink-4">—</span>}
       </td>
-      <td className={`${TD} text-right whitespace-nowrap`}>
-        {hm
+      <td className={`${TD} text-right ${queueRow ? '' : 'whitespace-nowrap'}`}>
+        {queueRow ? <WhyResearch row={queueRow} /> : hm
           ? <>
               <div className="flex items-center justify-end gap-2">
                 {trend && <Sparkline points={trend.points} label={trendLabel(trend, trend.currency)} className="text-ink-3" />}
@@ -94,7 +116,7 @@ function Row({ e, fin }) {
 }
 
 /** Dense bordered table. Groups by type (with a group row) when `grouped`. */
-export function EntityTable({ rows, grouped = true, financials = {}, onClear }) {
+export function EntityTable({ rows, grouped = true, financials = {}, onClear, queue = null }) {
   if (rows.length === 0) {
     return <EmptyState title="No company matches these filters." why="The table holds every company on the canvas; the filters have narrowed it to none." action={onClear && <EmptyAction onClick={onClear}>Clear the filters</EmptyAction>} />
   }
@@ -103,23 +125,25 @@ export function EntityTable({ rows, grouped = true, financials = {}, onClear }) 
     : [['all', rows]]
   return (
     <DataTable minWidth={760} maxHeight={rows.length > 24 ? 'calc(100vh - 14rem)' : undefined}
-      caption="Every company on the canvas, with its type, tier, ownership, home and headline figure.">
+      caption={queue
+        ? 'Companies whose figures are not on record, ordered by what answering them would buy.'
+        : 'Every company on the canvas, with its type, tier, ownership, home and headline figure.'}>
         <thead>
           <tr>
             <Th>Entity</Th><Th>Type</Th><Th>Tier</Th><Th>Ownership</Th>
-            <Th>HQ</Th><Th>Parent</Th><Th align="right">Headline</Th>
+            <Th>HQ</Th><Th>Parent</Th><Th align="right">{queue ? 'Why answer this' : 'Headline'}</Th>
           </tr>
         </thead>
         <tbody>
           {groups.map(([type, list]) => (
-            <GroupRows key={type} type={type} list={list} showHeader={grouped && groups.length > 1} financials={financials} />
+            <GroupRows key={type} type={type} list={list} showHeader={grouped && groups.length > 1} financials={financials} queue={queue} />
           ))}
         </tbody>
     </DataTable>
   )
 }
 
-function GroupRows({ type, list, showHeader, financials }) {
+function GroupRows({ type, list, showHeader, financials, queue }) {
   const t = ENTITY_TYPES[type]
   return (
     <>
@@ -133,7 +157,7 @@ function GroupRows({ type, list, showHeader, financials }) {
           </td>
         </tr>
       )}
-      {list.map((e) => <Row key={e.id} e={e} fin={financials[e.id]} />)}
+      {list.map((e) => <Row key={e.id} e={e} fin={financials[e.id]} queueRow={queue?.get(e.id)} />)}
     </>
   )
 }

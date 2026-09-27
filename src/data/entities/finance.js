@@ -5,8 +5,11 @@ export const FINANCE = [
   // ── Catalog PE / royalty investors ────────────────────────────────────────
   { id: 'shamrock-capital', name: 'Shamrock Capital', type: 'catalog-fund', roles: ['catalog-fund', 'pe-fund'], tier: 2, subtype: 'content funds',
     hq: 'Los Angeles, CA', founded: 1978, ownership: 'private', region: 'US',
-    summary: 'Roy Disney-founded firm whose Content funds buy music, film, and TV rights; closed two new funds totalling $1.6B in November 2024. Bought Taylor Swift\'s first six masters from Ithaca in 2020 (reported ~$300–405M) and sold them back to Swift on 30 May 2025 for a reported ~$360M; holds Dr. Dre and Chainsmokers catalog stakes.',
-    sources: [src('Billboard — Swift regains masters from Shamrock', 'https://www.billboard.com/pro/taylor-swift-regains-control-master-recordings-shamrock/'), mbw('Shamrock Capital funds $1.6bn')] },
+    metrics: { aum: 7.4e9, metricsAsOf: '2026-05-20',
+      aumSource: src('Shamrock Capital — Content Fund IV close', 'https://shamrockcap.com/media/shamrock-capital-closes-oversubscribed-fourth-content-strategy-fund-with-813-million-in-commitments/'),
+      aumNote: 'Firm-wide AUM as of May 2026. Of that, $3.3B sits in the Content Strategy funds across equity and debt — the vehicles that buy music, film and TV rights. Content Fund IV closed oversubscribed at $813M against a $700M target.' },
+    summary: 'Roy Disney-founded firm whose Content funds buy music, film, and TV rights; closed two new funds totalling $1.6B in November 2024 and an oversubscribed Content Fund IV at $813M in May 2026. Bought Taylor Swift\'s first six masters from Ithaca in 2020 (reported ~$300–405M) and sold them back to Swift on 30 May 2025 for a reported ~$360M; holds Dr. Dre and Chainsmokers catalog stakes.',
+    sources: [src('Shamrock Capital — Content Fund IV close', 'https://shamrockcap.com/media/shamrock-capital-closes-oversubscribed-fourth-content-strategy-fund-with-813-million-in-commitments/'), src('Billboard — Swift regains masters from Shamrock', 'https://www.billboard.com/pro/taylor-swift-regains-control-master-recordings-shamrock/'), mbw('Shamrock Capital funds $1.6bn')] },
   { id: 'litmus-music', name: 'Litmus Music', type: 'catalog-fund', roles: ['catalog-fund', 'debt-investor'], tier: 3, subtype: 'catalog PE',
     hq: 'Los Angeles, CA', founded: 2022, ownership: 'pe-backed', region: 'US',
     backers: ['carlyle'],
@@ -47,6 +50,9 @@ export const FINANCE = [
   // ── PE / credit / infra sponsors with music exposure ─────────────────────
   { id: 'blackstone', name: 'Blackstone', type: 'pe-fund', roles: ['pe-fund', 'debt-investor'], tier: 1, subtype: 'alternative asset manager',
     hq: 'New York, NY', founded: 1985, ownership: 'public', ticker: 'NYSE: BX', region: 'Global',
+    metrics: { aum: 1346.3e9, metricsAsOf: '2026-06-30',
+      aumSource: src('Blackstone — Form 10-Q, quarter to 30 Jun 2026', 'https://www.sec.gov/Archives/edgar/data/0001393818/000119312526340208/d158269d10q.htm'),
+      aumNote: 'Total assets under management at 30 June 2026, as reported in Blackstone\'s own 10-Q. Revenue is also on record here from the daily SEC refresh, but for a sponsor that is fee income — AUM is the figure that says how much capital it can move.' },
     summary: 'Owns SESAC (2017, ~$1B; explored a ~$3B sale in 2025). Built the Hipgnosis platform — Hipgnosis Songs Capital (2021), take-private of the listed fund (Jul 2024, $1.584B), Recognition Music Group (2025) — and exited it to Sony Music Publishing in July 2026 for a reported $3.5–4B, the largest catalog sale on record.',
     sources: [mbw('Blackstone Recognition Sony Music Publishing'), ir('https://ir.blackstone.com')] },
   { id: 'kkr', name: 'KKR', type: 'pe-fund', roles: ['pe-fund', 'debt-investor'], tier: 1, subtype: 'alternative asset manager',

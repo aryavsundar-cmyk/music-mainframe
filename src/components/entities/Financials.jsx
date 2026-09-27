@@ -147,6 +147,28 @@ function SecTable({ fin }) {
  */
 export function Financials({ e, fin, freshness }) {
   const m = e.metrics || {}
+  // A sponsor has no revenue and never will; its AUM is the figure, and it carries a source and a caveat like any
+  // other. Before Sprint 37 this section simply did not render for them, so the note went nowhere.
+  if (!fin?.metrics && !m.revenue && m.aum) {
+    return (
+      <section>
+        <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3">
+          <Eyebrow as="h2">Scale</Eyebrow>
+          {m.verify && <Tag tone="danger">verify</Tag>}
+        </div>
+        <div className="space-y-1.5">
+          <div className="flex flex-wrap items-baseline gap-x-3">
+            <span className="t-data text-2xl text-ink-1">{money(m.aum, 'USD')}</span>
+            <span className="t-small text-ink-2">assets under management</span>
+            {m.metricsAsOf && <span className="t-micro text-ink-4">as of {formatDate(m.metricsAsOf)}</span>}
+          </div>
+          {m.aumSource && <a href={m.aumSource.url} target="_blank" rel="noreferrer" className="t-micro text-ink-3 no-underline hover:text-accent inline-flex items-center gap-1">{m.aumSource.label}<ExternalLink size={10} aria-hidden="true" /></a>}
+          {m.aumNote && <p className="t-small text-ink-2 m-0 max-w-2xl">{m.aumNote}</p>}
+          <p className="t-micro text-ink-4 m-0">Assets under management is committed and managed capital, not the value of what this firm owns in music.</p>
+        </div>
+      </section>
+    )
+  }
   if (!fin?.metrics && !m.revenue) return null
   return (
     <section>

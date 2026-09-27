@@ -71,9 +71,16 @@ export default function About() {
       <SectionHeader title="How much of the canvas carries a figure" aside={`${coverage.pct}% answered`} />
       <Card pad="md" className="mb-8">
         <p className="t-small text-ink-2 m-0 mb-3 max-w-3xl">
-          Every company on the canvas is a real company with sources and connections on record. Far fewer carry a
-          financial figure, and this is the breakdown — counted from the data as this page renders, not asserted.
-          A company with no figure is one of three things, and the app says which on the company&apos;s own page.
+          Every company on the canvas is a real company with sources and connections on record. Far fewer carry the
+          figure that measures them, and this is the breakdown — counted from the data as this page renders, not
+          asserted. A company with no figure is one of three things, and the app says which on its own page.
+        </p>
+        <p className="t-small text-ink-2 m-0 mb-3 max-w-3xl">
+          The figure is not the same question for every kind of company. A private-equity sponsor&apos;s revenue is
+          fee income and says nothing about the capital it can move, so the canvas asks it for assets under
+          management instead; a platform that will never break out music revenue is asked for its paid base.
+          &ldquo;Other figures only&rdquo; means the record holds something, but not the figure that measures a
+          company of that kind — which is an open gap, not a pass.
         </p>
         <ul className="m-0 p-0 list-none flex flex-col gap-1.5 max-w-2xl">
           {GAP_ORDER.map((id) => (
@@ -88,7 +95,8 @@ export default function About() {
           &ldquo;Not researched yet&rdquo; is the honest default and the largest bar: it means nobody has established
           whether that company publishes a figure. It is never read as &ldquo;discloses nothing&rdquo; — being private
           does not mean being undisclosed, as Bertelsmann&apos;s full annual report and Merlin&apos;s statutory
-          transparency report both show.
+          transparency report both show. <Link to="/entities?cover=unresearched" className="text-accent no-underline hover:underline">The open gaps are ranked</Link> by
+          what closing each one would buy.
         </p>
       </Card>
 

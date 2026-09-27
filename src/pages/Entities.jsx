@@ -2,10 +2,10 @@ import { useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Network } from 'lucide-react'
-import { PageHeader, FilterBar, KeyFigures, Reading } from '../components/primitives/index.js'
+import { PageHeader, FilterBar, KeyFigures, Reading, Card, Eyebrow } from '../components/primitives/index.js'
 import { FacetControls } from '../components/entities/Facets.jsx'
 import { EntityTable } from '../components/entities/EntityTable.jsx'
-import { filterEntities, COUNTS, TYPE_ORDER, headlineMetric, getEntity } from '../data/entities.js'
+import { filterEntities, COUNTS, TYPE_ORDER, headlineMetric, getEntity, getChildren, getBackedBy, ENTITIES } from '../data/entities.js'
 import { ENTITY_TYPES, OWNERSHIP } from '../data/entities/_schema.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc, describeFilters } from '../utils/pageDocs.js'
@@ -15,6 +15,9 @@ import { useFinancials } from '../hooks/useFinancials.js'
 import { currentRevenue, freshnessOf } from '../utils/freshness.js'
 import { readEntities } from '../utils/readings.js'
 import { figureGap, GAPS } from '../utils/coverage.js'
+import { buildQueue, blockedBy, queueSummary, OPEN } from '../utils/researchQueue.js'
+import { getTransactionsForEntity } from '../data/transactions.js'
+import { isWatched, readLists } from '../utils/watchlist.js'
 import { exposureIndex } from '../utils/forces.js'
 import { FORCE_BY_ID } from '../data/forces.js'
 
@@ -68,6 +71,24 @@ export default function Entities() {
   // What this view adds up to, said before the reader touches a filter. Every figure is counted from the rows on
   // screen, so the sentence narrows with the table rather than describing a canvas the reader is not looking at.
   const verdicts = rows.map((e) => freshnessOf(e, financials.companies[e.id]))
+  // On a coverage view of an open gap, the table becomes the research queue: ordered by what closing each gap
+  // would buy, with the reasons in the Headline column, which has nothing else to say for exactly these rows.
+  const queueing = OPEN.includes(params.cover)
+  const queue = useMemo(() => {
+    if (!queueing) return null
+    const blocks = blockedBy(ENTITIES, gapOf)
+    const lists = readLists()
+    const ranked = buildQueue(rows, {
+      gapOf,
+      dealsOf: (id) => getTransactionsForEntity(id).length,
+      childrenOf: (id) => getChildren(id).length,
+      backsOf: (id) => getBackedBy(id).length,
+      blocksOf: (id) => blocks.get(id) || 0,
+      isWatched: (id) => isWatched(lists, id),
+    })
+    return { map: new Map(ranked.map((r) => [r.id, r])), ranked, summary: queueSummary(ranked) }
+  }, [queueing, rows, financials.companies]) // eslint-disable-line react-hooks/exhaustive-deps
+  const ordered = queue ? queue.ranked.map((r) => getEntity(r.id)).filter(Boolean) : rows
   const covered = rows.reduce((m, e) => ((m[gapOf(e).state] = (m[gapOf(e).state] || 0) + 1), m), {})
   const reading = readEntities({
     total: rows.length,
@@ -118,7 +139,25 @@ export default function Entities() {
         <FacetControls params={params} set={set} picked={picked} toggle={toggle} staleCount={staleCount} forcesLoading={loading} financials={financials} gapCounts={gapCounts} />
       </FilterBar>
 
-      <EntityTable rows={rows} grouped={!params.type} financials={financials.companies} onClear={clearAll} />
+      {queue && (
+        <Card pad="md" className="mb-4">
+          <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+            <Eyebrow as="h2">What to answer first</Eyebrow>
+            <span className="t-micro text-ink-4">{queue.summary.byBand.first} of {queue.summary.total} worth doing first</span>
+          </div>
+          <p className="t-small text-ink-2 m-0 max-w-3xl">
+            Ordered by what closing each gap would buy this app — companies whose silence also blanks a subsidiary&apos;s
+            page, parties to transactions on record whose scale cannot be stated, and anything on your watchlist.
+            {queue.summary.blocked > 0 && ` ${queue.summary.blocked} of these block at least one other company's page.`}
+          </p>
+          <p className="t-micro text-ink-4 m-0 mt-2 max-w-3xl">
+            This ranks this application&apos;s own gaps. A company near the top is not more secretive or more important
+            than one below it — its silence just costs the record more.
+          </p>
+        </Card>
+      )}
+
+      <EntityTable rows={ordered} grouped={!params.type && !queue} financials={financials.companies} onClear={clearAll} queue={queue?.map || null} />
       <PageExport build={() => buildPageDoc({
         slug: 'entities',
         title: 'Entities',

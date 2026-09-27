@@ -27,10 +27,30 @@
  * Nothing here infers "does not publish" from "is private". That inference is exactly the kind of plausible
  * guess this app exists not to make.
  *
+ * Sprint 37 added the question itself. `_schema.js` declares which figure measures each kind of company, and
+ * `partial` now means "the record holds a scale figure, but not the one that measures a company of this kind" —
+ * so Blackstone, which files revenue but publishes no AUM here, reads as an open gap that names what to go and
+ * get. This is not a route for turning "we do not know" into "not applicable": a sponsor with no AUM is still an
+ * open gap, and the only thing the model changed is which figure closes it.
+ *
  * There is deliberately no "stopped disclosing" state. A company that stopped publishing still HAS a figure on
  * record, so coverage counts it as reported; whether that figure is still current is `freshness.js`'s question,
  * and two systems answering it would eventually answer it differently.
  */
+
+import { figuresFor as figuresForType, FIGURE_LABEL, EXPECTED_FIGURE, DEFAULT_FIGURE } from '../data/entities/_schema.js'
+
+/** Every figure the canvas can hold about scale, in the order a checklist should mention them. */
+const ALL_FIGURES = [...new Set([...DEFAULT_FIGURE, ...Object.values(EXPECTED_FIGURE).flat()])]
+
+/**
+ * The figure a company of this kind is measured by, and whether the record holds it. Sprint 37: the canvas used to
+ * ask every company for revenue, which for forty money-side actors is fee income rather than scale.
+ */
+const held = (e, fin, field) => {
+  if (field === 'revenue') return !!(fin?.metrics?.revenue || e?.metrics?.revenue)
+  return !!e?.metrics?.[field]
+}
 
 /** The states a figure can be in, in the order a reader should meet them. */
 export const GAPS = {
@@ -43,7 +63,12 @@ export const GAPS = {
 
 export const GAP_ORDER = Object.values(GAPS).sort((a, b) => a.rank - b.rank).map((g) => g.id)
 
-/** Where a figure would come from if the company had one. Used by the company page and the /about counts. */
+const capitalise = (t) => t.charAt(0).toUpperCase() + t.slice(1)
+
+/** Whether the record holds any of the figures that measure this kind of company. */
+const hasExpected = (e, fin) => figuresForType(e?.type).some((f) => held(e, fin, f))
+
+/** Whether it holds a revenue figure specifically — still what a parent has to have for a link to be worth following. */
 const hasRevenue = (e, fin) => !!(fin?.metrics?.revenue || e?.metrics?.revenue)
 
 /**
@@ -78,8 +103,9 @@ function consolidatedInto(e, { getEntity, figuresFor }) {
  * entity table's facet and in the export.
  */
 export function figureGap(e, fin, { getEntity, figuresFor = () => null } = {}) {
-  const m = e?.metrics || {}
-  if (hasRevenue(e, fin)) return { state: 'reported', label: GAPS.reported.label, note: '', via: null }
+  const expected = figuresForType(e?.type)
+  const wanted = expected.map((f) => FIGURE_LABEL[f] || f).join(' or ')
+  if (hasExpected(e, fin)) return { state: 'reported', label: GAPS.reported.label, note: '', via: null, expected }
 
   const up = e?.ownership === 'subsidiary' && getEntity ? consolidatedInto(e, { getEntity, figuresFor }) : null
   if (up) {
@@ -91,6 +117,7 @@ export function figureGap(e, fin, { getEntity, figuresFor = () => null } = {}) {
         : `${e.name} does not report separately. Its results are consolidated into ${up.parent.name}, which does not publish them either.`,
       via: up.parent,
       readable: up.readable,
+      expected,
     }
   }
 
@@ -101,25 +128,29 @@ export function figureGap(e, fin, { getEntity, figuresFor = () => null } = {}) {
       // A claim about another company's behaviour carries the sentence that was established, not a generic one.
       note: e.figures.note,
       via: null,
+      expected,
     }
   }
 
-  const other = [m.aum && 'assets under management', m.subscribers && 'subscribers', m.catalogSize && 'catalog size']
-    .filter(Boolean)
+  // Something is here, but not the figure that measures this kind of company — which is worth saying precisely,
+  // because it tells the reader exactly which number to go and find.
+  const other = ALL_FIGURES.filter((f) => !expected.includes(f) && held(e, fin, f)).map((f) => FIGURE_LABEL[f] || f)
   if (other.length) {
     return {
       state: 'partial',
       label: GAPS.partial.label,
-      note: `No revenue figure on record for ${e.name}. What is here is ${other.join(' and ')} — scale, not income.`,
+      note: `${e.name} has ${other.join(' and ')} on record, but not ${wanted} — which is what measures a company of this kind.`,
       via: null,
+      expected,
     }
   }
 
   return {
     state: 'unresearched',
     label: GAPS.unresearched.label,
-    note: `No figure on record for ${e.name}, and no finding yet on whether it publishes one. This is work not done, not a company that discloses nothing.`,
+    note: `No ${wanted} on record for ${e.name}, and no finding yet on whether it publishes ${expected.length > 1 ? 'either' : 'one'}. This is work not done, not a company that discloses nothing.`,
     via: null,
+    expected,
   }
 }
 
@@ -141,7 +172,8 @@ export function coverageOf(e, { fin, deals = 0, links = 0, gap } = {}) {
     held: [
       {
         id: 'figure',
-        label: 'Financial figure',
+        // Named, not generic: this row is the whole point on a page whose figure is AUM rather than revenue.
+        label: capitalise((gap?.expected || DEFAULT_FIGURE).map((f) => FIGURE_LABEL[f] || f).join(' or ')),
         has: gap?.state === 'reported',
         detail: gap?.state === 'reported'
           ? (filed ? 'read from EDGAR, refreshed daily' : 'entered by hand from a cited source')

@@ -126,6 +126,45 @@ and about a dozen section labels became real headings, so a page's outline is no
 `<tr>` may pretend to be a button, every panel must use the hook, no ARIA role may be claimed without its
 keyboard contract, and the dead-end empty states cannot come back.
 
+## Asking the right question, and ranking what's left (Sprint 37)
+
+Sprint 36 ended with 87 companies marked "not researched yet". Looking at who they were changed the diagnosis:
+**34 of them are private-equity sponsors, catalog funds and credit investors** — and not one entity on the canvas
+carried an assets-under-management figure, even though the schema had the field.
+
+The canvas had been asking every company the same question. For a third of it, revenue is the wrong question and
+always was: a sponsor's revenue is fee income and says nothing about the capital it can move, and Apple has never
+broken out Apple Music and never will. `_schema.js` now declares which figure measures each kind of company —
+`aum` for money-side actors, `catalogSize` as an alternative for catalog funds, `subscribers` for platforms,
+revenue for everyone else — and `headlineMetric` and coverage both read it.
+
+**This made the picture worse, which is how you know it isn't laundering.** Nine sponsors that counted as answered
+on the strength of a revenue figure moved to "other figures only" — an open gap that now names what to go and get.
+`npm run test:coverage` holds that line: a sponsor with no AUM stays an open gap, revenue may never be accepted as
+a sponsor's scale, and every entity type must have a decision rather than silently inheriting the default.
+
+Three AUM figures went in against the new question, each from the company's own disclosure: Shamrock Capital
+($7.4bn firm-wide as of May 2026, of which $3.3bn in the Content funds), HarbourView ($3.88bn regulatory AUM), and
+Blackstone ($1,346.3bn at 30 June 2026, from its own 10-Q). Each says on the page that AUM is committed and
+managed capital, not the value of what the firm owns in music.
+
+### The research queue
+
+An admission of 87 open gaps is not actionable — it reads as "this app is incomplete" rather than "here is the
+next hour's work". `utils/researchQueue.js` ranks them by what closing each one would *buy*, and every point
+carries the reason that earned it:
+
+- **It blocks other pages.** The signal only Sprint 36's consolidation walk makes visible: when a subsidiary
+  reports inside a parent that publishes nothing, the subsidiary's page is blank too. Researching Anschutz once
+  answers AEG and AEG Presents. A parent that already reports blocks nobody, so it scores nothing.
+- **It is a party to transactions on record** whose scale the app cannot state.
+- **Tier, what it backs, what it parents**, and anything on your watchlist.
+
+The queue *is* the coverage view of the entity table, with the reasons in the Headline column — which has nothing
+else to say for exactly those rows. Ordering is deterministic, and the raw score is never rendered next to a
+company name: this ranks *this application's* gaps, and a company near the top is not more secretive or more
+important than one below it.
+
 ## Coverage: what the canvas knows, and why it doesn't know the rest (Sprint 36)
 
 136 of 188 companies on the canvas carried no financial figure, and the app said nothing about it. The Financials
