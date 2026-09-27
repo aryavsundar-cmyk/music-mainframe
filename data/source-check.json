@@ -1,0 +1,906 @@
+{
+  "checkedAt": "2026-09-27T21:16:45.145Z",
+  "total": 360,
+  "ok": 235,
+  "dead": 0,
+  "unverified": 125,
+  "broken": [],
+  "unverifiedLinks": [
+    {
+      "url": "https://www.sonymusic.com",
+      "why": "the host refuses automated requests",
+      "from": [
+        "sony-music-entertainment"
+      ]
+    },
+    {
+      "url": "https://investors.wmg.com",
+      "why": "the host refuses automated requests",
+      "from": [
+        "wmg"
+      ]
+    },
+    {
+      "url": "https://hybecorp.com/eng/ir/",
+      "why": "the host refuses automated requests",
+      "from": [
+        "hybe"
+      ]
+    },
+    {
+      "url": "https://stem.is",
+      "why": "the host refuses automated requests",
+      "from": [
+        "stem"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Sony%20Music",
+      "why": "the host refuses automated requests",
+      "from": [
+        "sony-music-group"
+      ]
+    },
+    {
+      "url": "https://www.ascap.com/press/2026/02/02-12-financials-release",
+      "why": "the host refuses automated requests",
+      "from": [
+        "ascap"
+      ]
+    },
+    {
+      "url": "https://www.ascap.com/about-us/annual-report-2025",
+      "why": "the host refuses automated requests",
+      "from": [
+        "ascap"
+      ]
+    },
+    {
+      "url": "https://www.ascap.com/songview",
+      "why": "the host refuses automated requests",
+      "from": [
+        "songview"
+      ]
+    },
+    {
+      "url": "https://www.bmi.com/press/entry/589223",
+      "why": "the host refuses automated requests",
+      "from": [
+        "bmi",
+        "bmi-newmountain-2024"
+      ]
+    },
+    {
+      "url": "https://www.ascap.com/help/royalties-and-payment",
+      "why": "the host refuses automated requests",
+      "from": [
+        "publishing"
+      ]
+    },
+    {
+      "url": "https://www.digitalmusicnews.com/2025/01/02/sesac-sale-2025/",
+      "why": "the host refuses automated requests",
+      "from": [
+        "sesac"
+      ]
+    },
+    {
+      "url": "https://www.digitalmusicnews.com/2024/06/03/hipgnosis-songs-fund-blackstone-revised-offer/",
+      "why": "the host refuses automated requests",
+      "from": [
+        "hipgnosis-songs-fund",
+        "hipgnosis-blackstone-2024"
+      ]
+    },
+    {
+      "url": "https://www.digitalmusicnews.com/2026/04/07/pershing-square-umg-deal-terms-breakdown/",
+      "why": "the host refuses automated requests",
+      "from": [
+        "bollore"
+      ]
+    },
+    {
+      "url": "https://www.sacem.fr",
+      "why": "the host refuses automated requests",
+      "from": [
+        "sacem"
+      ]
+    },
+    {
+      "url": "https://investors.spotify.com",
+      "why": "the host refuses automated requests",
+      "from": [
+        "spotify"
+      ]
+    },
+    {
+      "url": "https://tidal.com",
+      "why": "the host refuses automated requests",
+      "from": [
+        "tidal"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Sony%20Music%20Entertainment",
+      "why": "the host refuses automated requests",
+      "from": [
+        "sony-music-entertainment"
+      ]
+    },
+    {
+      "url": "https://ir.music.163.com",
+      "why": "this client could not complete the TLS chain (ERR_TLS_CERT_ALTNAME_INVALID)",
+      "from": [
+        "netease-cloud-music"
+      ]
+    },
+    {
+      "url": "https://seatgeek.com",
+      "why": "the host refuses automated requests",
+      "from": [
+        "seatgeek"
+      ]
+    },
+    {
+      "url": "https://investor.msgentertainment.com",
+      "why": "the host refuses automated requests",
+      "from": [
+        "msg-entertainment"
+      ]
+    },
+    {
+      "url": "https://investor.sphereentertainmentco.com",
+      "why": "the host refuses automated requests",
+      "from": [
+        "sphere-entertainment"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20260406138476/en/Pershing-Square-Announces-Proposal-to-Universal-Music-Group-N.V.",
+      "why": "no answer within 15s",
+      "from": [
+        "umg",
+        "pershing-square",
+        "umg-pershing-proposal-2026"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Concord",
+      "why": "the host refuses automated requests",
+      "from": [
+        "concord"
+      ]
+    },
+    {
+      "url": "https://muso.ai",
+      "why": "the host refuses automated requests",
+      "from": [
+        "muso-ai"
+      ]
+    },
+    {
+      "url": "https://weareinstrumental.com",
+      "why": "could not connect (ERR_SSL_SSL/TLS_ALERT_HANDSHAKE_FAILURE)",
+      "from": [
+        "instrumental"
+      ]
+    },
+    {
+      "url": "https://www.forbes.com/sites/virginieberger/2025/12/18/launch-train-settle-how-suno-and-udios-licensing-deals-made-copyright-infringement-profitable/",
+      "why": "the host refuses automated requests",
+      "from": [
+        "suno",
+        "udio"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=BMG%20Concord%20merger%20complete",
+      "why": "the host refuses automated requests",
+      "from": [
+        "bmg",
+        "bmg-concord-2026"
+      ]
+    },
+    {
+      "url": "https://www.tiktok.com/business/en/music",
+      "why": "no answer within 15s",
+      "from": [
+        "tiktok"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=HYBE",
+      "why": "the host refuses automated requests",
+      "from": [
+        "hybe"
+      ]
+    },
+    {
+      "url": "https://www.mndigital.com",
+      "why": "could not connect (ECONNREFUSED)",
+      "from": [
+        "medianet"
+      ]
+    },
+    {
+      "url": "https://www.carlyle.com/media-room/news-release-archive/music-industry-veterans-hank-forsyth-and-dan-mccarroll-partner-with-carlyle-global-credit-to-launch-litmus-music",
+      "why": "the host refuses automated requests",
+      "from": [
+        "litmus-music"
+      ]
+    },
+    {
+      "url": "https://gamma.co",
+      "why": "could not connect (UND_ERR_CONNECT_TIMEOUT)",
+      "from": [
+        "gamma"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20240312879600/en/",
+      "why": "no answer within 15s",
+      "from": [
+        "harbourview",
+        "harbourview-abs-2024"
+      ]
+    },
+    {
+      "url": "https://ir.blackrock.com",
+      "why": "the host refuses automated requests",
+      "from": [
+        "blackrock"
+      ]
+    },
+    {
+      "url": "https://www.ai-cio.com/news/michigans-treasury-benefited-paul-mccartney-ariana-grande-song-owner/",
+      "why": "the host refuses automated requests",
+      "from": [
+        "michigan-retirement"
+      ]
+    },
+    {
+      "url": "https://www.bollore.com",
+      "why": "the host refuses automated requests",
+      "from": [
+        "bollore"
+      ]
+    },
+    {
+      "url": "https://www.globenewswire.com/news-release/2025/03/13/3042430/0/en/BELIEVE-Significant-profitability-improvement-and-solid-organic-growth-despite-currency-impacts-in-FY-24.html",
+      "why": "no answer within 15s",
+      "from": [
+        "believe"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Ingrooves",
+      "why": "the host refuses automated requests",
+      "from": [
+        "ingrooves"
+      ]
+    },
+    {
+      "url": "https://ir.liveone.com",
+      "why": "the host refuses automated requests",
+      "from": [
+        "liveone"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=DistroKid%20CVC",
+      "why": "the host refuses automated requests",
+      "from": [
+        "distrokid"
+      ]
+    },
+    {
+      "url": "https://www.axios.com/scoop-scooter-braun-sells-taylor-swift-masters-to-shamrock-capital-bc95f814-4411-4dcc-9922-13e94ff10472.html",
+      "why": "the host refuses automated requests",
+      "from": [
+        "swift-shamrock-2020"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Warner%20Music%20Group%20Revelator",
+      "why": "the host refuses automated requests",
+      "from": [
+        "revelator"
+      ]
+    },
+    {
+      "url": "https://ir.carlyle.com",
+      "why": "no answer within 15s",
+      "from": [
+        "carlyle"
+      ]
+    },
+    {
+      "url": "https://www.bloomberg.com/news/articles/2025-11-25/warner-music-settles-lawsuit-with-ai-music-startup-suno",
+      "why": "the host refuses automated requests",
+      "from": [
+        "wmg-suno-settlement-partnership"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20250130732128/en/",
+      "why": "no answer within 15s",
+      "from": [
+        "influence-media",
+        "influence-abs-2025"
+      ]
+    },
+    {
+      "url": "https://www.globenewswire.com/news-release/2026/09/16/3363385/0/en/bollor%C3%A9-first-half-2026-results.html",
+      "why": "no answer within 15s",
+      "from": [
+        "bollore"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Sony%20Music%20Publishing%20completes%20acquisition%20of%20Recognition%20Music%20Group",
+      "why": "the host refuses automated requests",
+      "from": [
+        "sony-music-publishing",
+        "recognition-music-group",
+        "recognition-smp-2026"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Primary%20Wave%20acquisition%20of%20Kobalt%20has%20closed",
+      "why": "the host refuses automated requests",
+      "from": [
+        "kobalt",
+        "kobalt-primarywave-2026"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20250417165307/en/",
+      "why": "no answer within 15s",
+      "from": [
+        "ares",
+        "goldstate-music",
+        "goldstate-2025"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Curve%20Royalty%20Systems%20Jamen%20Merlin",
+      "why": "the host refuses automated requests",
+      "from": [
+        "downtown"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20250722826534/en/Concord-Closes-%241.765-Billion-ABS-to-Fuel-Continued-Growth",
+      "why": "no answer within 15s",
+      "from": [
+        "concord-abs-2025"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Primary%20Wave%20Fund%204",
+      "why": "the host refuses automated requests",
+      "from": [
+        "primary-wave"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=HarbourView%20%24500m%20KKR",
+      "why": "the host refuses automated requests",
+      "from": [
+        "harbourview"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Influence%20Media%20Partners",
+      "why": "the host refuses automated requests",
+      "from": [
+        "influence-media"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20240621755499/en/KKR-to-Acquire-Pan-European-Live-Entertainment-Group-Superstruct-from-Providence-Equity-Partners",
+      "why": "no answer within 15s",
+      "from": [
+        "superstruct-kkr-2024"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Iconic%20Artists%20Group%20raises%20%241bn%20Rod%20Stewart",
+      "why": "the host refuses automated requests",
+      "from": [
+        "iconic-artists",
+        "iconic-hps-2024"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=BMI%20annual%20collections",
+      "why": "the host refuses automated requests",
+      "from": [
+        "bmi"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=SESAC%20raises%20%24889m%20whole%20business%20securitization",
+      "why": "the host refuses automated requests",
+      "from": [
+        "sesac",
+        "sesac-wbs-2025"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Hellman%20%26%20Friedman%20Global%20Music%20Rights",
+      "why": "the host refuses automated requests",
+      "from": [
+        "gmr"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Spotify%20hits%20300%20million%20Premium%20subscribers%20Q2%202026",
+      "why": "the host refuses automated requests",
+      "from": [
+        "spotify"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=YouTube%20Music%20subscribers",
+      "why": "the host refuses automated requests",
+      "from": [
+        "youtube-music"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=TikTok%20UMG",
+      "why": "the host refuses automated requests",
+      "from": [
+        "tiktok"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Bandcamp%20Songtradr",
+      "why": "the host refuses automated requests",
+      "from": [
+        "bandcamp",
+        "bandcamp-songtradr-2023"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=CTS%20Eventim%20completes%20acquisition%20of%20Vivendi%20ticketing",
+      "why": "the host refuses automated requests",
+      "from": [
+        "see-tickets"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=ASM%20Global%20Legends",
+      "why": "the host refuses automated requests",
+      "from": [
+        "asm-global"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Oak%20View%20Group",
+      "why": "the host refuses automated requests",
+      "from": [
+        "oak-view-group"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=CTS%20Eventim%20completes%20acquisition%20of%20Vivendi",
+      "why": "the host refuses automated requests",
+      "from": [
+        "cts-eventim"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=KKR%20Superstruct%20Providence",
+      "why": "the host refuses automated requests",
+      "from": [
+        "superstruct"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=AWAL%20Sony%20CMA",
+      "why": "the host refuses automated requests",
+      "from": [
+        "awal",
+        "awal-sony-2021"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Create%20Music%20Group",
+      "why": "the host refuses automated requests",
+      "from": [
+        "create-music-group"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Believe%20squeeze-out%20stops%20trading",
+      "why": "the host refuses automated requests",
+      "from": [
+        "believe"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=gamma%20Larry%20Jackson",
+      "why": "the host refuses automated requests",
+      "from": [
+        "gamma"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Suno%20Warner%20settlement",
+      "why": "the host refuses automated requests",
+      "from": [
+        "suno"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Udio%20Universal%20settlement",
+      "why": "the host refuses automated requests",
+      "from": [
+        "udio"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Shamrock%20Capital%20funds%20%241.6bn",
+      "why": "the host refuses automated requests",
+      "from": [
+        "shamrock-capital"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Carlyle%20nears%20%24464m%20bond%20sale%20Litmus",
+      "why": "the host refuses automated requests",
+      "from": [
+        "litmus-music",
+        "litmus-abs-2025"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Round%20Hill%20Concord",
+      "why": "the host refuses automated requests",
+      "from": [
+        "round-hill"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Done%20deal%20Blackstone%20new%20owner%20Hipgnosis%20Songs%20Fund",
+      "why": "the host refuses automated requests",
+      "from": [
+        "hipgnosis-songs-fund"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Chord%20Music-linked%20ABS%20vehicle%20plans%20%24500M",
+      "why": "the host refuses automated requests",
+      "from": [
+        "chord-music-partners",
+        "chord-canon-abs-2026"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Kobalt%20Capital",
+      "why": "the host refuses automated requests",
+      "from": [
+        "kobalt-capital"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Blackstone%20Recognition%20Sony%20Music%20Publishing",
+      "why": "the host refuses automated requests",
+      "from": [
+        "blackstone"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=HarbourView%20KKR",
+      "why": "the host refuses automated requests",
+      "from": [
+        "kkr"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Apollo%20Sony%20Music%20Group",
+      "why": "the host refuses automated requests",
+      "from": [
+        "apollo"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Primary%20Wave%20to%20acquire%20Kobalt%20from%20Francisco%20Partners",
+      "why": "the host refuses automated requests",
+      "from": [
+        "francisco-partners"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=New%20Mountain%20BMI",
+      "why": "the host refuses automated requests",
+      "from": [
+        "new-mountain"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Hellman%20%26%20Friedman%20GMR",
+      "why": "the host refuses automated requests",
+      "from": [
+        "hellman-friedman"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Carlyle%20Litmus%20bond",
+      "why": "the host refuses automated requests",
+      "from": [
+        "carlyle"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Vivendi%20CTS%20Eventim%20See%20Tickets",
+      "why": "the host refuses automated requests",
+      "from": [
+        "vivendi"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Great%20Mountain%20Partners",
+      "why": "the host refuses automated requests",
+      "from": [
+        "barings"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Influence%20Media%20Goldman%20Sachs",
+      "why": "the host refuses automated requests",
+      "from": [
+        "goldman-sachs"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Great%20Mountain%20Partners%20launches%20%24600m%20fund",
+      "why": "the host refuses automated requests",
+      "from": [
+        "great-mountain-partners"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Pophouse%20fund%20%241.3%20billion",
+      "why": "the host refuses automated requests",
+      "from": [
+        "pophouse"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Seeker%20Music%20Group%20closes%20%24267M%20ABS",
+      "why": "the host refuses automated requests",
+      "from": [
+        "seeker-music",
+        "seeker-abs-2026"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Sony%20Music%20Group%20GIC%20venture",
+      "why": "the host refuses automated requests",
+      "from": [
+        "gic"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=HarbourView%20secures%20%24500m%20additional%20debt%20financing%20KKR",
+      "why": "the host refuses automated requests",
+      "from": [
+        "harbourview-abs-2025"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Hipgnosis%20%241.47bn%20ABS",
+      "why": "the host refuses automated requests",
+      "from": [
+        "lyra-24-2-abs-2024"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Concord%20%24850m%20ABS",
+      "why": "the host refuses automated requests",
+      "from": [
+        "concord-abs-2024"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=KBRA%20rated%20%2412.9B%20music%20royalty-backed%20bonds",
+      "why": "the host refuses automated requests",
+      "from": [
+        "ABS_MARKET"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Pink%20Floyd%20Sony",
+      "why": "the host refuses automated requests",
+      "from": [
+        "pinkfloyd-sony-2024"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Queen%20catalog%20Sony%201.27bn",
+      "why": "the host refuses automated requests",
+      "from": [
+        "queen-sony-2024"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Rod%20Stewart%20Iconic%20Artists%20Group",
+      "why": "the host refuses automated requests",
+      "from": [
+        "rodstewart-iconic-2024"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Michael%20Jackson%20estate%20Sony",
+      "why": "the host refuses automated requests",
+      "from": [
+        "mj-estate-sony-2024"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Katy%20Perry%20Litmus",
+      "why": "the host refuses automated requests",
+      "from": [
+        "katy-perry-litmus-2023"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Genesis%20Concord%20catalog",
+      "why": "the host refuses automated requests",
+      "from": [
+        "genesis-concord-2022"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Sting%20Universal%20Music%20Publishing",
+      "why": "the host refuses automated requests",
+      "from": [
+        "sting-umpg-2022"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Bob%20Dylan%20Sony%20recorded%20catalog",
+      "why": "the host refuses automated requests",
+      "from": [
+        "dylan-sony-2022"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Springsteen%20Sony%20500%20million",
+      "why": "the host refuses automated requests",
+      "from": [
+        "springsteen-sony-2021"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Bob%20Dylan%20Universal%20Music%20Publishing",
+      "why": "the host refuses automated requests",
+      "from": [
+        "dylan-umpg-2020"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=CVC%20DistroKid",
+      "why": "the host refuses automated requests",
+      "from": [
+        "distrokid-cvc-2026"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Primary%20Wave%20Fund%204%20%242.225%20billion",
+      "why": "the host refuses automated requests",
+      "from": [
+        "primarywave-fund4-2026"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Suno%20Series%20C%20Menlo",
+      "why": "the host refuses automated requests",
+      "from": [
+        "suno-seriesc-2025"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Live%20Nation%20%24646%20million%20OCESA",
+      "why": "the host refuses automated requests",
+      "from": [
+        "liveNation-ocesa-2025"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Pershing%20Square%20sells%20UMG%20stake%202025",
+      "why": "the host refuses automated requests",
+      "from": [
+        "pershing-umg-sale-2025"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=biggest%20music%20business%20deals%20of%202024",
+      "why": "the host refuses automated requests",
+      "from": [
+        "shamrock-funds-2024",
+        "bmi-newmountain-2024"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Hellman%20Friedman%20GMR",
+      "why": "the host refuses automated requests",
+      "from": [
+        "hf-gmr-2024"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Done%20deal%20Blackstone%20Hipgnosis%20Songs%20Fund",
+      "why": "the host refuses automated requests",
+      "from": [
+        "hipgnosis-blackstone-2024"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Apollo%20Sony%20Music%20Group%20%24700%20million",
+      "why": "the host refuses automated requests",
+      "from": [
+        "apollo-sony-2024"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=CTS%20Eventim%20completes%20%24323M%20acquisition",
+      "why": "the host refuses automated requests",
+      "from": [
+        "seetickets-cts-2024"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Believe%20consortium%20squeeze-out",
+      "why": "the host refuses automated requests",
+      "from": [
+        "believe-consortium-2024"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Round%20Hill%20Music%20Royalty%20Fund%20Concord",
+      "why": "the host refuses automated requests",
+      "from": [
+        "roundhill-concord-2023"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Primary%20Wave%20Brookfield",
+      "why": "the host refuses automated requests",
+      "from": [
+        "primary-wave-brookfield-2022"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=KKR%20Kobalt%20Music%20Royalties",
+      "why": "the host refuses automated requests",
+      "from": [
+        "kobalt-fund-kkr-2021"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=Hipgnosis%20Songs%20Capital%20Blackstone",
+      "why": "the host refuses automated requests",
+      "from": [
+        "hipgnosis-capital-2021"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=SiriusXM%20Pandora%203.5%20billion",
+      "why": "the host refuses automated requests",
+      "from": [
+        "pandora-siriusxm-2019"
+      ]
+    },
+    {
+      "url": "https://www.musicbusinessworldwide.com/?s=IFPI%20global%20recorded%20music%20revenues%20hit%20%2431.7B%20in%202025",
+      "why": "the host refuses automated requests",
+      "from": [
+        "MARKET"
+      ]
+    }
+  ]
+}

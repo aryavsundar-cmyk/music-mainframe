@@ -1,0 +1,69 @@
+# Checks that the links this application cites can still be opened.
+#
+# Monthly, not on push: it walks ~190 third-party hosts, and nothing that depends on other people's servers being
+# up should ever sit between a commit and a deploy. A dead citation is a real defect, but it is never urgent in
+# the way a broken build is, and it is fixed by a person choosing a replacement — not by a retry.
+#
+# Only a server saying "gone" fails this. A publisher that refuses robots, a certificate chain Node will not
+# complete, a timeout: all reported, none treated as broken. Acting on those would delete working sources.
+name: sources
+
+on:
+  schedule:
+    # 06:20 UTC on the 1st. Off the hour, because every cron in the world runs on the hour.
+    - cron: '20 6 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: sources
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check every cited link
+        run: node scripts/check-sources.mjs 2>&1 | tee sources.txt
+      # The report is written whatever the outcome, so a run that finds nothing still records the date the links
+      # were last known good — which is what /about prints.
+      - name: Keep the report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-check
+          path: data/source-check.json
+          retention-days: 90
+      - name: Open or update an issue when a citation is gone
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs')
+            const out = fs.existsSync('sources.txt') ? fs.readFileSync('sources.txt', 'utf8') : 'no output captured'
+            const body = [
+              'The monthly source check found cited links that the server says are gone.',
+              '',
+              'Replace each with a working source that supports the same fact, or remove the claim. Run',
+              '`npm run sources` locally to re-check, and commit `data/source-check.json` so /about shows the new date.',
+              '',
+              '```',
+              out.slice(-6000),
+              '```',
+              '',
+              `Run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+            ].join('\n')
+            const title = 'Cited sources are gone'
+            const { data: open } = await github.rest.issues.listForRepo({ owner: context.repo.owner, repo: context.repo.repo, state: 'open', labels: 'sources' })
+            if (open.length) {
+              await github.rest.issues.createComment({ owner: context.repo.owner, repo: context.repo.repo, issue_number: open[0].number, body })
+            } else {
+              await github.rest.issues.create({ owner: context.repo.owner, repo: context.repo.repo, title, body, labels: ['sources'] })
+            }

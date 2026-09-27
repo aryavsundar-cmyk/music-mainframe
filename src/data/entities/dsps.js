@@ -36,7 +36,7 @@ export const DSPS = [
   { id: 'anghami', name: 'Anghami', type: 'dsp', roles: ['dsp', 'strategic'], tier: 3, subtype: 'interactive (MENA)',
     hq: 'Abu Dhabi, AE', founded: 2012, ownership: 'public', ticker: 'NASDAQ: ANGH', region: 'MENA',
     summary: "MENA streaming leader, Nasdaq-listed via SPAC (2022). OSN+ completed its acquisition of a 55.45% majority in April 2024 ($3.69 per share), merging the two into one platform under Anghami co-founder Elie Habib as CEO.",
-    sources: [ir('https://investor.anghami.com'), edgar('ANGH')] },
+    sources: [site('https://www.anghami.com'), edgar('ANGH')] },
 
   // ── Social / video-driven ─────────────────────────────────────────────────
   { id: 'tiktok', name: 'TikTok', type: 'dsp', roles: ['dsp', 'distributor'], tier: 1, subtype: 'social / short video',

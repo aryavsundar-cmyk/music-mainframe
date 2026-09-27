@@ -94,7 +94,7 @@ const PROFILES = {
     posture: 'MENA leader; merged with OSN+ (OSN majority) in 2024; low ARPU, telco bundles.',
     shifts: [{ date: '2024-04', text: 'OSN+ merger closes; OSN takes majority.' }],
     verify: true,
-    sources: [src('Anghami IR', 'https://investor.anghami.com')],
+    sources: [src('Anghami', 'https://www.anghami.com')],
   },
   tiktok: {
     tier: 'social', model: 'lump-sum', priceUS: null, priceNote: 'Free; music licensed via fixed-fee deals',

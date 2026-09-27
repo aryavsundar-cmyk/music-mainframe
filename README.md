@@ -126,6 +126,59 @@ and about a dozen section labels became real headings, so a page's outline is no
 `<tr>` may pretend to be a button, every panel must use the hook, no ARIA role may be claimed without its
 keyboard contract, and the dead-end empty states cannot come back.
 
+## Can the reader open what this app cites? (Sprint 39)
+
+`/about` stakes this application's credibility on `sources[]`. Nothing had ever checked whether the links open,
+and the oldest were eighteen months old.
+
+`npm run sources` requests all 360 of them. **It is deliberately not part of `npm test`** — it walks ~190
+third-party hosts, and a green build must never depend on other people's servers being up. It runs monthly, and
+files one issue when it finds something.
+
+### Getting the verdict right mattered more than getting it fast
+
+The first version reported 20 broken links. **Ten of them were fine.** `harman.com` serves 200 to curl using this
+checker's own honest User-Agent, and fails in Node with `UNABLE_TO_VERIFY_LEAF_SIGNATURE` because the host ships an
+incomplete certificate chain that curl and browsers resolve and Node does not. Acting on that list would have
+deleted three working Vivendi citations that carry actual figures.
+
+The second version trusted a 404 from a `HEAD` request. TikTok's newsroom answers `HEAD` with 404 and `GET` with
+200 for the same article, so a live citation was condemned — and I had already "fixed" it before noticing.
+
+So the checker splits outcomes by **cause**, and only a server saying *gone* is a defect:
+
+- every failing `HEAD` is confirmed with a `GET` before any verdict;
+- a TLS-chain failure is retried through curl with the **same** User-Agent — a better-configured client, never a
+  browser disguise;
+- `ENOTFOUND` is confirmed with a resolver before it counts as a dead domain;
+- everything else — a publisher refusing robots, a timeout, a server error — is reported as `unverified` **with its
+  reason**, and never as broken.
+
+Seven citations were genuinely gone and now resolve, including two where the *label* was corrected as well: a link
+labelled "FY26 Annual Report" that points at a listings page is its own kind of wrong. Five cited domains no longer
+exist at all — among them `anschutzcorp.com`, which the previous sprint had cited as the basis for a finding.
+Chasing one replacement also turned up a data error: Vine Alternative's portfolio sale to Shamrock was July 2024
+at an undisclosed price, not 2025 at ~$2.4bn.
+
+### The finding that needed no network
+
+**84 of the 360 citations were not sources.** They were Music Business Worldwide *search* urls — a query box with
+the words pre-filled — labelled plainly "Music Business Worldwide", which reads as the article that reports the
+fact. They resolve, so no link checker would ever flag one, and they had been accumulating since Sprint 1.
+
+`utils/citations.js` now classifies every cited link as a **document** (the page that reports the fact), a
+**search** (a lead, not a source) or a **home** page (fine for "here is the company", useless as evidence for a
+figure). The `mbw()` helper labels its output as a search, so all 84 call sites tell the truth at once, and
+`test:citations` fails if a search-style url is ever labelled as an article again.
+
+The rule that matters: **no figure may rest on a search or a front page.** Two explicit exceptions — a record that
+admits it is unverified, and a "does not publish" finding, where the absence of an investor-relations section *is*
+the evidence and a landing page is the right thing to point at.
+
+`/about` prints the split rather than folding it into one flattering "N sources" number: 144 documents, 82
+searches, 124 front pages. Counting them is how the backlog stays a backlog instead of quietly becoming
+acceptable.
+
 ## Working the queue (Sprint 38)
 
 Sprint 37 built a ranked list of what to research next. Working it found a bug rather than a research task.

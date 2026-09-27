@@ -86,4 +86,14 @@ export const src = (label, url) => ({ label, url })
 export const site = (url) => src('Company site', url)
 export const ir = (url) => src('Investor relations', url)
 export const edgar = (ticker) => src(`SEC EDGAR · ${ticker}`, `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${ticker}&type=10-K`)
-export const mbw = (q) => src('Music Business Worldwide', `https://www.musicbusinessworldwide.com/?s=${encodeURIComponent(q)}`)
+/**
+ * A Music Business Worldwide SEARCH, which is not the same thing as an article — and the label has to say so.
+ *
+ * 84 of the app's 361 citations are built by this helper, and every one of them was labelled plainly "Music
+ * Business Worldwide", which reads as "here is the piece that reports this". It is not: it is a query box with the
+ * words pre-filled. The link opens, so no checker would ever flag it, and that is exactly why it needed saying.
+ *
+ * Replacing them with the specific articles is real work and is tracked as such; until then the label is honest
+ * about what the reader is being handed.
+ */
+export const mbw = (q) => src(`Music Business Worldwide — search: “${q}”`, `https://www.musicbusinessworldwide.com/?s=${encodeURIComponent(q)}`)

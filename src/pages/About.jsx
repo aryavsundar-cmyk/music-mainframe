@@ -8,6 +8,9 @@ import { GLOSSARY } from '../data/glossary.js'
 import { EDITION, EDITIONS, FRAMING, IS_WORK, has } from '../editions.js'
 import { guideFor, WORKFLOWS, CONVENTIONS } from '../data/pageGuide.js'
 import { canvasCoverage, GAPS, GAP_ORDER } from '../utils/coverage.js'
+import { citationQuality } from '../utils/citations.js'
+import { MILESTONES } from '../data/milestones.js'
+import SOURCE_CHECK from '../../data/source-check.json'
 import { useFinancials } from '../hooks/useFinancials.js'
 import { LIMIT_LIST } from '../data/limits.js'
 import { PageExport } from '../components/export/PageExport.jsx'
@@ -37,6 +40,10 @@ export default function About() {
       checkedTo: dates[dates.length - 1] || '—',
     }
   }, [])
+  // Counted, like every other figure on this page. The uncomfortable half is the point: a quarter of the app's
+  // citations are publication searches rather than the article, and folding them into one "N sources" number
+  // would hide exactly the thing a provenance page exists to disclose.
+  const cites = useMemo(() => citationQuality([ENTITIES, TRANSACTIONS, MILESTONES]), [])
   const ed = EDITIONS[EDITION]
   const guide = useMemo(() => guideFor(has), [])
   // Coverage is measured here too, and it is the least flattering number on the page — which is why it is on it.
@@ -97,6 +104,41 @@ export default function About() {
           does not mean being undisclosed, as Bertelsmann&apos;s full annual report and Merlin&apos;s statutory
           transparency report both show. <Link to="/entities?cover=unresearched" className="text-accent no-underline hover:underline">The open gaps are ranked</Link> by
           what closing each one would buy.
+        </p>
+      </Card>
+
+      <SectionHeader title="How good the citations are" aside={`checked ${String(SOURCE_CHECK.checkedAt).slice(0, 10)}`} />
+      <Card pad="md" className="mb-8">
+        <p className="t-small text-ink-2 m-0 mb-3 max-w-3xl">
+          Every record carries sources, and that was true before anything checked whether they open. Now something
+          does: <span className="font-mono tabular text-ink-1">{SOURCE_CHECK.total}</span> cited links were
+          requested on {SOURCE_CHECK.checkedAt.slice(0, 10)}, <span className="font-mono tabular text-ink-1">{SOURCE_CHECK.ok}</span> answered,
+          and <span className="font-mono tabular text-ink-1">{SOURCE_CHECK.dead}</span> were gone. The
+          other <span className="font-mono tabular text-ink-1">{SOURCE_CHECK.unverified}</span> could not be settled
+          from a script — mostly publishers that refuse automated requests — which is reported as unsettled rather
+          than as broken, because a robot being turned away says nothing about whether you can open the page.
+        </p>
+        <p className="t-small text-ink-2 m-0 mb-3 max-w-3xl">
+          Opening is the low bar. What a link <em>is</em> matters more, and this is the honest split:
+        </p>
+        <ul className="m-0 p-0 list-none flex flex-col gap-1.5 max-w-2xl">
+          {[
+            ['A specific document', cites.documents, 'the page that reports the fact — what a citation should be'],
+            ['A publication search', cites.searches, 'a query box with the words filled in: a lead, not a source'],
+            ['A company or section front page', cites.homes, 'fine for “here is the company”, not evidence for a figure'],
+          ].map(([label, count, why]) => (
+            <li key={label} className="grid grid-cols-[minmax(0,14rem)_minmax(0,1fr)_3rem] gap-3 items-center">
+              <span className="t-small text-ink-2">{label}</span>
+              <span className="t-micro text-ink-4">{why}</span>
+              <span className="t-data text-ink-1 text-right tabular">{count}</span>
+            </li>
+          ))}
+        </ul>
+        <p className="t-micro text-ink-4 m-0 mt-3 max-w-3xl">
+          No figure in this application rests on a search or a front page; that is checked in the build. The
+          searches sit on company and deal records, where they point at where the reporting is rather than at the
+          reporting itself. Replacing them with the specific articles is outstanding work, and counting them here
+          is how it stays outstanding rather than quietly becoming acceptable.
         </p>
       </Card>
 
