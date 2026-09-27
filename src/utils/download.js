@@ -11,6 +11,7 @@
 import { buildBrief, briefFilename } from './brief.js'
 import { withFraming } from './framing.js'
 import { fetchCitations } from './newsCitations.js'
+import { withUploads } from './uploadSection.js'
 
 function save(blob, filename) {
   const url = URL.createObjectURL(blob)
@@ -46,10 +47,14 @@ export async function exportBrief(entityId, { mode = 'full', format = 'docx', fo
 }
 
 /** Build any deliverable kind with live citations. kind: brief | account-plan | proposal | category-deck */
-export async function buildDeliverable(kind, { entityId, mode = 'full', categoryId = '', lines = [], rates, staffing, weeksOverride } = {}) {
-  if (kind === 'category-deck') { const { buildCategoryDeck } = await import('./categoryDeck.js'); return buildCategoryDeck(categoryId) }
+export async function buildDeliverable(kind, { entityId, mode = 'full', categoryId = '', lines = [], rates, staffing, weeksOverride, uploads = null } = {}) {
+  // The canvas builders below are the only things allowed to build a canvas section, and none of them is told
+  // about the uploads. Supplied material is appended afterwards, as its own clearly-labelled section, so there is
+  // no path by which a figure out of someone's PDF can reach a section that reads as the record.
+  const withSupplied = (doc) => (uploads ? withUploads(doc, uploads) : doc)
+  if (kind === 'category-deck') { const { buildCategoryDeck } = await import('./categoryDeck.js'); return withSupplied(buildCategoryDeck(categoryId)) }
   const citations = await fetchCitations({ entityId, limit: 8 })
-  if (kind === 'account-plan') { const { buildAccountPlan } = await import('./accountPlan.js'); return buildAccountPlan(entityId, { citations }) }
-  if (kind === 'proposal') { const { buildProposal } = await import('./proposal.js'); return buildProposal(entityId, { categoryId, lines, rates, staffing, weeksOverride, citations }) }
-  return buildBrief(entityId, { mode, citations })
+  if (kind === 'account-plan') { const { buildAccountPlan } = await import('./accountPlan.js'); return withSupplied(buildAccountPlan(entityId, { citations })) }
+  if (kind === 'proposal') { const { buildProposal } = await import('./proposal.js'); return withSupplied(buildProposal(entityId, { categoryId, lines, rates, staffing, weeksOverride, citations })) }
+  return withSupplied(buildBrief(entityId, { mode, citations }))
 }

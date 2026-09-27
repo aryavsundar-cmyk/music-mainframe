@@ -100,7 +100,7 @@ governs: **verify the file, not the status line.**
 
 ---
 
-### Workstream 2 — Read what is given · *Sprint 41*
+### Workstream 2 — Read what is given · *Sprint 41* ✅ shipped — one new dependency, not three; 8 upload checks
 
 Mirror the sibling's shape, because it works: `pdfjs-dist`, `mammoth`, `xlsx`, client-side, multi-file, merged,
 each file independently parsed so one bad PDF does not lose the rest.

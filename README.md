@@ -126,6 +126,45 @@ and about a dozen section labels became real headings, so a page's outline is no
 `<tr>` may pretend to be a button, every panel must use the hook, no ARIA role may be claimed without its
 keyboard contract, and the dead-end empty states cannot come back.
 
+## Read what you were given (Sprint 41)
+
+Every deliverable this app produced was the app talking about what it already knew. A real engagement starts with
+the client's own material — an RFP, a CIM, a management pack, last year's deck — and none of it could get in.
+
+Drop a file on `/deliverables` and it is read **in the browser**. There is no upload endpoint, which is the point:
+`/about` says this tool holds no client data, and the absence of a route is what makes that structural rather than
+a promise. `npm run test:upload` asserts it — no multipart handler in the server, no `fetch` in the parser.
+
+**One new dependency, not three.** PDF text extraction genuinely needs a library, so `pdfjs-dist` is lazy-loaded.
+But Word, PowerPoint and Excel are OOXML — zips of XML — and this repository already reads and writes OOXML by
+hand over JSZip in `briefXlsx.js` and `briefPptx.js`. Adding `mammoth` and `xlsx` would have cost ~1.3 MB to
+duplicate knowledge the codebase has. Reading `.pptx` came free with that decision, and matters more than it
+sounds: an RFP is very often a deck. The parsers are proved by round-tripping this app's own exports.
+
+### The half that belongs in this app
+
+191 companies, 61 transactions and 68 explained terms sit one call away, so an uploaded pack comes back as
+**links, not text**: names resolved to entity ids, terms matched to the glossary, and figures set beside what the
+record holds — *your pack says £310M; PPL's own results say £315.3M*.
+
+That comparison is the most useful thing here and the most dangerous, and it was wrong the first time in a way
+that looked entirely plausible. Given *"Warner Music Group reported revenue of $6.4 billion, while Universal Music
+Group posted €12.5B"*, asking "is the company name in the context window" cheerfully attributed Warner's figure to
+Universal as well. A figure now belongs to the company whose name is **closest**, and at equal distance the one
+**before** it, because prose reads "X reported $N".
+
+### What it will not do
+
+- **It never picks a side.** A comparison reports two numbers and stops. The document may be measuring a different
+  period, a different company in the same group, or a different thing entirely — `test:upload` bans the
+  adjudicating phrases outright.
+- **Nothing uploaded becomes a record.** Every finding carries its filename and page and is `verify: true` with no
+  route to false. Supplied material reaches a deliverable only through its own last section, *From the documents
+  you provided* — `brief.js` and its siblings are never told the uploads exist, so no canvas section can carry a
+  filename. That is checked.
+- **A short name only matches when it cannot mean anything else.** "PPL" is a collecting society; "ppl" is chat.
+  Acronyms match case-sensitively, and a longer name wins the span it covers.
+
 ## Every deck is an A&M deck (Sprint 40)
 
 `briefPptx.js` used to draw the Mainframe's own identity with pptxgenjs — shellac cover, Georgia titles, gold

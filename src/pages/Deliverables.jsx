@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Sparkles, FileText, Presentation, FileType, FileCode, ExternalLink, Check, AlertTriangle } from 'lucide-react'
 import { PageHeader, SectionHeader, Card, Tag, Button, Num, Stat, Chip, SearchInput } from '../components/primitives/index.js'
+import { DocumentUpload } from '../components/deliverables/DocumentUpload.jsx'
+import { useFinancials } from '../hooks/useFinancials.js'
 import { ENTITIES, getEntity, ENTITY_TYPES } from '../data/entities.js'
 import { CLIENT_CATEGORIES, getConsultingContext, SERVICE_LINES, SERVICE_ORDER } from '../data/consulting.js'
 import { ROLES, STAFFING } from '../data/rateCard.js'
@@ -39,9 +41,13 @@ export default function Deliverables() {
   const [weeks, setWeeks] = useState('')
   const [busy, setBusy] = useState('')
   const [gamma, setGamma] = useState(null)
+  // Supplied material is an input to the deliverable like any other, so it belongs in the config key: adding a
+  // file must invalidate a built outline rather than leave a stale one on screen claiming to include it.
+  const [uploads, setUploads] = useState(null)
+  const financials = useFinancials()
   useEffect(() => { const t = setTimeout(() => fetch('/api/gamma/status').then((r) => r.json()).then(setGamma).catch(() => setGamma({ configured: false })), 0); return () => clearTimeout(t) }, [])
   // Built doc and last result are keyed to the configuration that produced them; a config change simply hides them.
-  const configKey = JSON.stringify([entity?.id, kind, params.mode, categoryId, lines, weeks, rates.map((r) => r.dayRate)])
+  const configKey = JSON.stringify([entity?.id, kind, params.mode, categoryId, lines, weeks, rates.map((r) => r.dayRate), uploads?.files.map((f) => f.filename) || null])
   const [built, setBuilt] = useState(null)
   const doc = built && built.key === configKey ? built.doc : null
   const last = built && built.key === configKey ? built.last : null
@@ -54,14 +60,14 @@ export default function Deliverables() {
 
   const build = async () => {
     setBusy('build')
-    try { setDoc(await buildDeliverable(kind, { entityId: entity?.id, mode: params.mode || 'full', categoryId, lines, rates, weeksOverride: weeks ? Number(weeks) : null })) }
+    try { setDoc(await buildDeliverable(kind, { entityId: entity?.id, mode: params.mode || 'full', categoryId, lines, rates, weeksOverride: weeks ? Number(weeks) : null, uploads })) }
     catch (err) { setLast({ ok: false, error: err.message }) }
     finally { setBusy('') }
   }
   const run = async (format) => {
     setBusy(format)
     try {
-      const d = doc || (await buildDeliverable(kind, { entityId: entity?.id, mode: params.mode || 'full', categoryId, lines, rates, weeksOverride: weeks ? Number(weeks) : null }))
+      const d = doc || (await buildDeliverable(kind, { entityId: entity?.id, mode: params.mode || 'full', categoryId, lines, rates, weeksOverride: weeks ? Number(weeks) : null, uploads }))
       setDoc(d); setLast({ ok: true, format, ...(await exportDoc(d, format)) })
     } catch (err) { setLast({ ok: false, error: err.message, code: err.code }) }
     finally { setBusy('') }
@@ -112,6 +118,10 @@ export default function Deliverables() {
               <select className={select} value={categoryId} onChange={(e) => set({ category: e.target.value })}>{CLIENT_CATEGORIES.map((c) => <option key={c.id} value={c.id}>{c.label}</option>)}</select>
             </Card>
           )}
+
+          {/* Supplied material is useful to every kind, not just a proposal: a brief, an account plan and a
+              sector deck all benefit from being read against what the client actually sent. */}
+          <DocumentUpload financials={financials.companies} onChange={setUploads} />
 
           {kind === 'proposal' && entity && (
             <Card pad="md">
