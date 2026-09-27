@@ -67,7 +67,7 @@ export const DSPS = [
     summary: 'Second Chinese DSP; community-led; listed in Hong Kong 2021.',
     sources: [ir('https://ir.music.163.com')] },
   { id: 'yandex-music', name: 'Yandex Music', type: 'dsp', roles: ['dsp'], tier: 2, subtype: 'interactive (Russia/CIS)',
-    hq: 'Moscow, RU', founded: 2010, ownership: 'subsidiary', region: 'Russia / CIS',
+    hq: 'Moscow, RU', founded: 2010, ownership: 'subsidiary', parentName: 'MKPAO Yandex', region: 'Russia / CIS',
     summary: "Dominant Russian DSP via the Yandex Plus bundle; majors withdrew new-release licensing after 2022. Yandex N.V. sold its Russian assets (including Yandex Music) to a Russian consortium for $5.4B in July 2024; the remaining international business became Nebius Group (Amsterdam).",
     sources: [site('https://music.yandex.ru')] },
   { id: 'melon', name: 'Melon', type: 'dsp', roles: ['dsp'], tier: 2, subtype: 'interactive (Korea)',
@@ -81,7 +81,7 @@ export const DSPS = [
   { id: 'gaana', name: 'Gaana', type: 'dsp', roles: ['dsp'], tier: 3, subtype: 'interactive (India)',
     hq: 'Gurugram, IN', founded: 2010, region: 'India',
     summary: "Times Internet-founded DSP; moved to paid-only in 2022. Sold in distress to Entertainment Network India (Radio Mirchi's parent) for ₹25 lakh in December 2023 after merger talks with Airtel's Wynk collapsed.",
-    ownership: 'subsidiary',
+    ownership: 'subsidiary', parentName: 'Entertainment Network (India)',
     sources: [site('https://gaana.com')] },
 
   // ── Non-interactive / legacy ──────────────────────────────────────────────

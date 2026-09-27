@@ -52,11 +52,87 @@ t('"does not publish" is never inferred from ownership', () => {
   }
 })
 
+t('a subsidiary names the company it reports inside', () => {
+  // Eight records declared themselves subsidiaries with no parent at all, naming the parent only in their prose
+  // summary — so the graph read them as roots and coverage called them unresearched, while their OWN subsidiaries
+  // were told the parent publishes nothing. Roon was three hops from Samsung and the canvas could not see one.
+  const orphans = ENTITIES.filter((e) => e.ownership === 'subsidiary' && !e.parentId && !e.parentName)
+  assert.deepEqual(orphans.map((e) => e.id), [], 'a subsidiary must name parentId (on the canvas) or parentName (outside it)')
+  const dangling = ENTITIES.filter((e) => e.parentId && !getEntity(e.parentId))
+  assert.deepEqual(dangling.map((e) => `${e.id}→${e.parentId}`), [], 'a parentId must resolve')
+  // parentName is for a reporting parent that is NOT a music company. Using it for one that IS on the canvas
+  // would hide a real link from the graph, so the two are mutually exclusive.
+  for (const e of ENTITIES.filter((x) => x.parentName)) {
+    assert.ok(!e.parentId, `${e.id}: has both parentId and parentName`)
+    assert.equal(getEntity(e.parentName.toLowerCase().replace(/[^a-z0-9]+/g, '-')), null, `${e.id}: ${e.parentName} looks like it is on the canvas — use parentId`)
+  }
+  // Nobody is their own ancestor.
+  for (const e of ENTITIES) {
+    const seen = new Set([e.id])
+    let cur = e
+    while (cur?.parentId) {
+      assert.equal(seen.has(cur.parentId), false, `${e.id}: parent cycle through ${cur.parentId}`)
+      seen.add(cur.parentId)
+      cur = getEntity(cur.parentId)
+    }
+  }
+})
+
+t('consolidation answers a revenue question, and only a revenue question', () => {
+  // Wiring PIMCO to Allianz must not mark PIMCO's missing AUM as answered: a sponsor's AUM is its own regulatory
+  // disclosure, not a line in a parent's consolidated accounts. This is the Sprint 37 laundering rule again,
+  // arriving sideways through the parent graph.
+  const aumSubs = ENTITIES.filter((e) => e.ownership === 'subsidiary' && !expectedFor(e.type).includes('revenue'))
+  assert.ok(aumSubs.length >= 3, `only ${aumSubs.length} AUM-measured subsidiaries — this check would prove little`)
+  for (const e of aumSubs) {
+    assert.notEqual(gapOf(e).state, 'consolidated', `${e.id}: a parent's accounts were accepted as an answer about AUM`)
+  }
+  // And a revenue-measured subsidiary still consolidates normally.
+  const harman = getEntity('harman')
+  if (harman) {
+    assert.equal(gapOf(harman).state, 'consolidated')
+    assert.equal(gapOf(harman).via.id, 'samsung', 'the walk must pass Harman itself and reach the reporting parent')
+  }
+})
+
+t('where a company reports is the parent link, not the ownership label', () => {
+  // `ownership` says who owns a company; `parentId` says where it reports. Four records disagree — AEG is filed
+  // as "private" and reports into Anschutz, Superstruct as "pe-backed" into KKR — and gating on the label left
+  // both reading as "nobody has looked" while the canvas held the answer.
+  for (const e of ENTITIES.filter((x) => x.parentId && expectedFor(x.type).includes('revenue'))) {
+    const g = gapOf(e)
+    // A company the canvas can already answer is answered — YouTube Music has a subscriber count, which is one of
+    // the two figures that measure a platform, so it never needs Alphabet's accounts.
+    if (g.state === 'reported') continue
+    assert.equal(g.state, 'consolidated', `${e.id}: has a parent on the canvas but is not read as reporting into it`)
+  }
+  // A separately listed subsidiary files its own figures, and answering beats consolidating.
+  for (const id of ['tencent-music', 'tko']) {
+    const e = getEntity(id)
+    if (!e?.parentId) continue
+    assert.equal(gapOf(e).state, 'reported', `${id}: a company that files its own figures must not read as consolidated`)
+  }
+})
+
+t('a reporting parent outside music is named, not invented as a canvas member', () => {
+  const named = ENTITIES.filter((e) => e.parentName)
+  assert.ok(named.length > 0, 'nothing uses parentName — this check would prove nothing')
+  for (const e of named) {
+    const g = gapOf(e)
+    if (!expectedFor(e.type).includes('revenue')) continue
+    assert.equal(g.state, 'consolidated', `${e.id}: a named parent is still an answer`)
+    assert.equal(g.readable, false, 'there is no page to send the reader to')
+    assert.equal(g.via, null, 'a named parent has no canvas record to link')
+    assert.match(g.note, /not on this canvas/, 'the reader must be told why there is no link')
+  }
+})
+
 t('a consolidated company names a parent that exists, and says whether that parent publishes', () => {
   for (const e of ENTITIES) {
     const g = gapOf(e)
     if (g.state !== 'consolidated') continue
-    assert.ok(g.via, `${e.id}: consolidated into nothing`)
+    // A parent outside music has no canvas record to point at; that case is covered by its own check above.
+    if (!g.via) { assert.ok(e.parentName, `${e.id}: consolidated into nothing`); continue }
     assert.ok(getEntity(g.via.id), `${e.id}: consolidated into an entity that is not on the canvas`)
     assert.notEqual(g.via.id, e.id, `${e.id}: consolidated into itself`)
     assert.match(g.note, new RegExp(g.via.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), `${e.id}: the note does not name the parent`)

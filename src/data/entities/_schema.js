@@ -5,6 +5,13 @@
  * roles[]   every bucket the entity plays in (Sony = label + publisher + distributor). Includes `type`.
  * tier      SCALE within type, never prestige. 1 = global/major · 2 = major-indie/regional leader · 3 = niche/boutique.
  * ownership public · private · pe-backed · subsidiary · member-owned · nonprofit · pension · state
+ * parentId    the canvas id of the company this one reports inside. REQUIRED for ownership: 'subsidiary'
+ *             unless `parentName` is given instead. This — NOT the ownership label — is what decides whether a
+ *             company's results are consolidated: AEG is filed as 'private' and reports into Anschutz.
+ * parentName  the reporting parent when it is NOT a music company and does not belong on this canvas —
+ *             Barings reports inside MassMutual, PIMCO inside Allianz. Eight records declared themselves
+ *             subsidiaries with no parent at all, naming the parent only in their prose summary, so the graph
+ *             read them as roots and the coverage model called them unresearched. `test:coverage` enforces it.
  * status    active · merged (absorbed into parent; kept for history) · defunct
  * verify    true when a fact in the record is from the kickoff brief or memory and not yet confirmed
  *           against a primary source. Surfaces as a "verify" tag in the UI. Sprint 1 discipline:

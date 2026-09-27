@@ -107,7 +107,17 @@ export function figureGap(e, fin, { getEntity, figuresFor = () => null } = {}) {
   const wanted = expected.map((f) => FIGURE_LABEL[f] || f).join(' or ')
   if (hasExpected(e, fin)) return { state: 'reported', label: GAPS.reported.label, note: '', via: null, expected }
 
-  const up = e?.ownership === 'subsidiary' && getEntity ? consolidatedInto(e, { getEntity, figuresFor }) : null
+  // Consolidation answers a REVENUE question and only a revenue question. A sponsor's AUM is its own regulatory
+  // disclosure, not a line in a parent's consolidated accounts — so wiring PIMCO to Allianz must not quietly mark
+  // PIMCO's missing AUM as answered. That would be the same laundering Sprint 37 closed, arriving sideways.
+  //
+  // The gate is the PARENT LINK, not the ownership label. `ownership` says who owns a company; `parentId` says
+  // where it reports, and the two disagree more often than they look like they should — AEG is filed as "private"
+  // and reports into Anschutz, Superstruct is "pe-backed" and reports into KKR. Keying off the label left both of
+  // them reading as "nobody has looked". A separately listed subsidiary like Tencent Music is unaffected, because
+  // a company that files its own figures is answered before this is reached.
+  const consolidates = expected.includes('revenue')
+  const up = consolidates && e?.parentId && getEntity ? consolidatedInto(e, { getEntity, figuresFor }) : null
   if (up) {
     return {
       state: 'consolidated',
@@ -117,6 +127,19 @@ export function figureGap(e, fin, { getEntity, figuresFor = () => null } = {}) {
         : `${e.name} does not report separately. Its results are consolidated into ${up.parent.name}, which does not publish them either.`,
       via: up.parent,
       readable: up.readable,
+      expected,
+    }
+  }
+
+  // A reporting parent that is not a music company and so is not on this canvas. The question still has an
+  // answer — this company does not report separately — but there is no page to send the reader to.
+  if (consolidates && e?.parentName) {
+    return {
+      state: 'consolidated',
+      label: GAPS.consolidated.label,
+      note: `${e.name} does not report separately. Its results are consolidated into ${e.parentName}, which is not on this canvas — it is not a music company.`,
+      via: null,
+      readable: false,
       expected,
     }
   }

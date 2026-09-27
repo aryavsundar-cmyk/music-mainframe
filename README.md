@@ -126,6 +126,44 @@ and about a dozen section labels became real headings, so a page's outline is no
 `<tr>` may pretend to be a button, every panel must use the hook, no ARIA role may be claimed without its
 keyboard contract, and the dead-end empty states cannot come back.
 
+## Working the queue (Sprint 38)
+
+Sprint 37 built a ranked list of what to research next. Working it found a bug rather than a research task.
+
+**Eight companies were declared subsidiaries with no parent at all** — naming the parent only in their prose
+summary. Barings' summary opened "MassMutual's asset manager"; Harman's said "Samsung's audio and automotive
+unit"; Reliance Jio's said "Reliance Industries' telecom". The record knew; the graph did not. So the coverage
+model read each of them as a root and called it "not researched yet", and their *own* subsidiaries were told the
+parent publishes nothing either — wrong twice over, because Samsung, Kakao and Reliance all publish. Roon was
+three hops from a reporting parent and the canvas could not see one of them.
+
+Fixing it turned up the same bug class a second time: **the consolidation walk gated on the `ownership` label
+rather than on the parent link.** `ownership` says who owns a company; `parentId` says where it reports, and they
+disagree — AEG is filed as "private" and reports into Anschutz, Superstruct as "pe-backed" into KKR. Both read as
+"nobody has looked" while the canvas held the answer. The gate is the parent link now, and a separately listed
+subsidiary like Tencent Music is unaffected because a company that files its own figures is answered first.
+
+Three changes came out of it:
+
+- **`parentName`** for a reporting parent that is not a music company and does not belong on this canvas — Barings
+  into MassMutual, PIMCO into Allianz SE. The question has an answer; there is just no page to link to, and the
+  note says so rather than inventing a canvas member or leaving the company looking unexamined.
+- **Three reporting parents added** — Samsung Electronics (KRW 333.6T, FY2025), Kakao Corp (KRW 8.099T, FY2025)
+  and Reliance Industries (₹1,175,919 crore for the year to 31 March 2026) — each from its own results release,
+  each the parent of a music business already on the canvas, and each saying on its page that the figure is the
+  whole group and not a music number. Same precedent as Apple, Alphabet, Amazon and Tencent.
+- **Consolidation answers a revenue question and only a revenue question.** A sponsor's AUM is its own regulatory
+  disclosure, not a line in a parent's consolidated accounts — so wiring PIMCO to Allianz must not mark its
+  missing AUM as answered. That is Sprint 37's laundering rule arriving sideways through the parent graph, and
+  the test now closes that door too.
+
+**The first established "does not publish."** The Anschutz Corporation is a US private holding company with no
+filing obligation whose results are kept internal, and AEG reports into it — so any AEG revenue figure quoted
+anywhere is a third-party estimate rather than a disclosure. That is a finding with a basis, which is the only
+thing that may set this state; "it is private, therefore it is silent" remains forbidden and tested against.
+
+Coverage went 54% → 58%, and six pages moved from "nobody knows" to a parent whose figure is on record.
+
 ## Asking the right question, and ranking what's left (Sprint 37)
 
 Sprint 36 ended with 87 companies marked "not researched yet". Looking at who they were changed the diagnosis:
