@@ -26,7 +26,7 @@ import { classifyDeal, entityExposure } from './forces.js'
 import { DIRECTIONS, FORCE_BY_ID } from '../data/forces.js'
 import { LIMITS } from '../data/limits.js'
 import { currentRevenue, freshnessOf } from './freshness.js'
-import { CONCEPTS, pctChange, freeCashFlow, fiveYearRecord } from './financialConcepts.js'
+import { CONCEPTS, pctChange, freeCashFlow, fiveYearRecord, basisFor } from './financialConcepts.js'
 
 const MONEY_TYPES = new Set(['catalog-fund', 'pe-fund', 'debt-investor', 'strategic'])
 const RIGHTS_OPS = new Set(['label', 'publisher', 'distributor', 'artist-services'])
@@ -94,13 +94,17 @@ export function buildBrief(entityId, { mode = 'full', citations = { items: [], s
   if (m.subscribers) stats.push({ label: 'Paid subscribers', value: formatCount(m.subscribers), hint: m.metricsAsOf || '' })
   if (m.mau) stats.push({ label: 'Monthly active users', value: formatCount(m.mau), hint: m.metricsAsOf || '' })
   if (m.catalogSize) stats.push({ label: 'Catalog (songs)', value: formatCount(m.catalogSize) })
-  const secRows = financials?.metrics ? Object.entries(CONCEPTS).filter(([k]) => financials.metrics[k] && CONCEPTS[k].kind === 'duration').map(([k, c]) => {
-    const f = financials.metrics[k]
+  // The same fallback the company page applies: EDGAR's figures where the refresh job has them, the company's own
+  // published results otherwise. A brief on UMG used to carry one revenue line where a brief on Warner carried a
+  // five-year record, for no reason a reader could see.
+  const basis = basisFor(e, financials)
+  const secRows = basis?.metrics ? Object.entries(CONCEPTS).filter(([k]) => basis.metrics[k] && CONCEPTS[k].kind === 'duration').map(([k, c]) => {
+    const f = basis.metrics[k]
     return [c.label, f.annual ? `${money(f.annual.value, f.annual.currency)} (to ${f.annual.end})` : '—', pctChange(f.annual, f.priorAnnual), f.quarter ? `${money(f.quarter.value, f.quarter.currency)} (to ${f.quarter.end})` : '—', pctChange(f.quarter, f.priorQuarter)]
   }) : []
-  const fcf = freeCashFlow(financials)
-  if (fcf) secRows.push(['Free cash flow (operating cash flow less capex)', `${money(fcf.value, fcf.currency)} (to ${fcf.end})`, pctChange(fcf, freeCashFlow(financials, 'priorAnnual')), '—', '—'])
-  const record = fiveYearRecord(financials)
+  const fcf = freeCashFlow(basis)
+  if (fcf) secRows.push(['Free cash flow (operating cash flow less capex)', `${money(fcf.value, fcf.currency)} (to ${fcf.end})`, pctChange(fcf, freeCashFlow(basis, 'priorAnnual')), '—', '—'])
+  const record = fiveYearRecord(basis)
   const recordTable = record ? {
     kind: 'table',
     columns: ['Year to', ...record.years.map((y) => y.end)],
@@ -110,8 +114,11 @@ export function buildBrief(entityId, { mode = 'full', citations = { items: [], s
     { kind: 'stats', items: stats },
     secRows.length ? { kind: 'table', columns: ['Figure', 'Latest year', 'Change', 'Latest quarter', 'Change on a year earlier'], rows: secRows } : null,
     recordTable,
-    recordTable ? { kind: 'note', text: `Five-year record: each fiscal year as last reported in an annual report, in ${record.currency}. A dash means the filing does not give the figure; growth is shown only between consecutive years.` } : null,
+    recordTable ? { kind: 'note', text: `Five-year record: each fiscal year as last reported in an annual report, in ${record.currency}. A dash means the source does not give the figure; growth is shown only between consecutive years.` } : null,
     financials?.latestFiling ? { kind: 'note', text: `As filed with the SEC — consolidated figures, from EDGAR's structured data. Latest filing: ${financials.latestFiling.form} filed ${financials.latestFiling.filed} (${financials.latestFiling.url}).` } : null,
+    // A forwarded document must never imply EDGAR for a figure that was read off a press release, or imply a
+    // company's own accounts for a figure that is one segment inside a parent's.
+    basis?.basis === 'reported' ? { kind: 'note', text: `${basis.scope === 'segment' ? `These are ${e.name}'s figures as reported in the segment note of its parent's accounts — sales and operating income only; the parent does not report net income, cash flow, cash or debt for the segment` : `${e.name} does not file with the SEC, so these figures are read by hand from its own published results`}. Source: ${basis.sourceLabel} — ${basis.source}${basis.published ? ` (published ${basis.published})` : ''}.${basis.note ? ` ${basis.note}` : ''}` } : null,
     rev?.source === 'record' && m.revenueSource ? { kind: 'note', text: `Source: ${m.revenueSource.label} — ${m.revenueSource.url}${m.revenuePublished ? ` (published ${m.revenuePublished})` : ''}.` } : null,
     m.revenueNote ? { kind: 'note', text: m.revenueNote } : null,
     m.projection ? { kind: 'note', text: `Projection, not a result: ${m.projection.label} — ${money(m.projection.value, m.projection.currency)} for ${m.projection.year}.` } : null,

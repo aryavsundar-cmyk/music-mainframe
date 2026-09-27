@@ -77,7 +77,11 @@ t('the limits exist once, and every screen and document carries them', () => {
   // Four since Sprint 30: match, availability, force, and comparison (what a side-by-side table is not).
   assert.equal(LIMIT_LIST.length, 4)
   assert.match(LIMITS.comparison.claim, /reported figures, not like-for-like businesses/)
-  assert.match(LIMITS.comparison.enforced, /ranked against a figure in another currency/)
+  // Not “never ranked across currencies”: Sprint 42 started converting, and this sentence was left behind,
+  // sitting two paragraphs under a caveat that explained the conversion. What is enforced now is that the
+  // reported figure always travels with the converted one, and that a stale balance stays out of the ranking.
+  assert.match(LIMITS.comparison.enforced, /never shown without the figure the company reported/)
+  assert.match(LIMITS.comparison.enforced, /never ranked or used in a ratio/)
   assert.match(LIMITS.force.claim, /evidence of, not what will happen next/)
   assert.match(LIMITS.match.claim, /has done deals like yours, not that they are interested/)
   assert.match(LIMITS.availability.claim, /prompt to do work, not a claim that an asset is for sale/)

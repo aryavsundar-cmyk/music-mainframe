@@ -3,7 +3,7 @@ import { Tag, Num, DataTable, Th, EmptyState, EmptyAction, Sparkline } from '../
 import { ENTITY_TYPES, LENS_TONE, OWNERSHIP, getEntity, headlineMetric } from '../../data/entities.js'
 import { format } from '../../utils/format.js'
 import { currentRevenue, freshnessOf } from '../../utils/freshness.js'
-import { revenueTrend } from '../../utils/financialConcepts.js'
+import { revenueTrend, basisFor } from '../../utils/financialConcepts.js'
 import { BANDS } from '../../utils/researchQueue.js'
 
 /**
@@ -72,7 +72,9 @@ function Row({ e, fin, queueRow }) {
   const hm = headline(e, fin)
   const t = ENTITY_TYPES[e.type]
   // Only SEC filers have a multi-year record in one currency; everyone else shows the figure alone.
-  const trend = revenueTrend(fin)
+  // A non-filer's reported years draw the same line a filer's do — nothing about a sparkline needs EDGAR, only a
+  // run of years in one currency.
+  const trend = revenueTrend(basisFor(e, fin))
   const status = STATUS[hm?.f?.status]
   return (
     <tr className="group cursor-pointer transition-colors duration-100 hover:bg-ground-2" onClick={() => navigate(`/entities/${e.id}`)}>

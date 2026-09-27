@@ -7,14 +7,47 @@ export const RECORDED = [
     hq: 'Hilversum, NL · Santa Monica, CA', founded: 1934, ownership: 'public', ticker: 'AMS: UMG', region: 'Global',
     backers: ['bollore', 'tencent', 'pershing-square'],
     metrics: { revenue: 12.507e9, revenueYear: 2025, revenueCurrency: 'EUR', revenuePublished: '2026-03-05', revenueSource: { label: 'UMG — Results for the fourth quarter and full year ended 31 Dec 2025', url: 'https://www.prnewswire.com/news-releases/universal-music-group-nv-reports-financial-results-for-the-fourth-quarter-and-full-year-ended-december-31-2025-302705513.html' },
-      interim: { period: 'H1 2026', end: '2026-06-30', revenue: 6.194e9, currency: 'EUR', published: '2026-07-30', source: { label: 'UMG — Results for the second quarter and half year ended 30 Jun 2026', url: 'http://www.prnewswire.com/news-releases/universal-music-group-nv-reports-financial-results-for-the-second-quarter-and-half-year-ended-june-30-2026-302839253.html' } }, metricsAsOf: '2026-09-22' },
+      interim: { period: 'H1 2026', end: '2026-06-30', revenue: 6.194e9, currency: 'EUR', published: '2026-07-30', source: { label: 'UMG — Results for the second quarter and half year ended 30 Jun 2026', url: 'http://www.prnewswire.com/news-releases/universal-music-group-nv-reports-financial-results-for-the-second-quarter-and-half-year-ended-june-30-2026-302839253.html' } }, metricsAsOf: '2026-09-22',
+      // UMG lists on Euronext Amsterdam, so EDGAR holds nothing and every margin, cash-flow and trend row on
+      // /compare was a dash for the largest music company in the world. These are UMG's own figures, read off the
+      // results releases linked on each year — €m, so the values below are millions times 1e6.
+      reported: { currency: 'EUR', scope: 'consolidated', published: '2026-03-05',
+        source: src('UMG — results for the fourth quarter and full year ended 31 Dec 2025', 'https://assets.ctfassets.net/e66ejtqbaazg/29H5pgbmmYOowQgJET2Wh8/4355ccb601037ecc345ccef3a9d9bc74/UMG_Q4___FY25_results_press_release.pdf'),
+        years: [
+          // Operating cash flow is the figure AFTER income tax paid (€1,739M), not UMG's headline "before income
+          // tax paid" (€2,142M), so it compares like for like with an SEC filer's cash-flow statement. Free cash
+          // flow is therefore computed here as cash flow less capex (€1,669M) rather than imported: UMG's own Free
+          // Cash Flow definition (€702M) nets catalogue and other investments too, and mixing two definitions in
+          // one column is the comparison this table exists to avoid.
+          { end: '2025-12-31', revenue: 12507e6, operatingIncome: 1998e6, netIncome: 1533e6, operatingCashFlow: 1739e6, capex: 70e6, cash: 377e6, longTermDebt: 2293e6 },
+          { end: '2024-12-31', revenue: 11834e6, operatingIncome: 1775e6, netIncome: 2086e6, operatingCashFlow: 1755e6, capex: 91e6, cash: 545e6, longTermDebt: 1810e6 },
+          { end: '2023-12-31', revenue: 11108e6, operatingIncome: 1418e6, netIncome: 1259e6, published: '2024-03-07',
+            source: src('UMG — results for the fourth quarter and full year ended 31 Dec 2023', 'https://assets.ctfassets.net/e66ejtqbaazg/1psEFHkZbqpN6GxbUUYhPL/eae1981f98c7c682e5d09a2b324e1df0/UMG_4Q___FY23_Press_Release.pdf') },
+          { end: '2022-12-31', revenue: 10340e6, operatingIncome: 1600e6, netIncome: 782e6, published: '2024-03-07',
+            source: src('UMG — results for the fourth quarter and full year ended 31 Dec 2023', 'https://assets.ctfassets.net/e66ejtqbaazg/1psEFHkZbqpN6GxbUUYhPL/eae1981f98c7c682e5d09a2b324e1df0/UMG_4Q___FY23_Press_Release.pdf') },
+          { end: '2021-12-31', revenue: 8504e6, operatingIncome: 1399e6, netIncome: 886e6, published: '2022-03-03',
+            source: src('UMG — results for the fourth quarter and full year ended 31 Dec 2021', 'https://assets.ctfassets.net/e66ejtqbaazg/2XTCMv1yxB5lOTuHL04pS5/c720c5606c82a9563e1e0835217bfdea/UMG_Press_Release_Q4__FY_2021_3March22.pdf') },
+        ],
+        note: 'Net profit is the figure attributable to equity holders of the parent. Long-term debt is bonds only; commercial paper and bank overdrafts are short-term and excluded. Operating cash flow and capital expenditure are held for 2024 and 2025 only, so the earlier years show no cash-flow figures rather than a borrowed one.' } },
     summary: 'Largest music company by revenue. Recorded music (Interscope Capitol, Republic, Island, Def Jam, Motown, Polydor, Deutsche Grammophon), publishing (UMPG), distribution and services (Virgin Music Group, which absorbed Downtown in February 2026). Listed on Euronext Amsterdam since the 2021 Vivendi spin; Bolloré (~28% per Pershing Square) and Pershing Square are anchor holders.',
     notes: ['UMG board unanimously declined Pershing Square\'s $64.4B proposal on 29 May 2026 as materially undervaluing the company; it never reached a shareholder vote.', 'Bought 25.8% of Chord Music Partners from KKR for $240M (Feb 2024).', 'TikTok licensing standoff Jan–May 2024 pulled UMG repertoire from the platform.'],
     sources: [ir('https://investors.universalmusic.com'), src('Pershing Square proposal (BusinessWire, 6 Apr 2026)', 'https://www.businesswire.com/news/home/20260406138476/en/Pershing-Square-Announces-Proposal-to-Universal-Music-Group-N.V.'), src('Variety — UMG completes Downtown acquisition (Feb 2026)', 'https://variety.com/2026/music/news/universal-virgin-music-complete-775-million-acquisition-downtown-1236668336/')] },
   { id: 'sony-music-group', name: 'Sony Music Group', short: 'SMG', type: 'label', roles: ['label', 'publisher', 'distributor'], tier: 1, subtype: 'major',
     hq: 'New York, NY', founded: 2021, ownership: 'subsidiary', parentId: 'sony', region: 'Global',
     metrics: { revenue: 2.1201e12, revenueYear: 2026, fiscalYearEnd: '03-31', revenueCurrency: 'JPY', revenueKind: 'segment sales', revenuePublished: '2026-05-08', revenueSource: { label: 'Sony Group (SEC Form 6-K) — Consolidated results for the fiscal year ended 31 Mar 2026', url: 'https://www.sec.gov/Archives/edgar/data/313838/000110465926057456/tm2613222d2_6k.htm' },
-      revenueNote: 'Sony Music segment sales for the year to 31 March 2026, which Sony calls FY2025. The figure previously on file (JPY 1,740B) matched no reported figure and was replaced after verification on 2026-09-22.', metricsAsOf: '2026-09-22' },
+      revenueNote: 'Sony Music segment sales for the year to 31 March 2026, which Sony calls FY2025. The figure previously on file (JPY 1,740B) matched no reported figure and was replaced after verification on 2026-09-22.', metricsAsOf: '2026-09-22',
+      // Sony reports the Music segment's sales AND its operating income, in a segment note audited inside the
+      // 20-F — three fiscal years in one table. What it does not break out at segment level is net income, cash
+      // flow, cash or debt, which is why those rows stay empty and `scope: 'segment'` says so on the page.
+      // Yen in millions in the filing, so these are millions times 1e6.
+      reported: { currency: 'JPY', scope: 'segment', published: '2026-06-18',
+        source: src('Sony Group (SEC Form 20-F, FY ended 31 Mar 2026) — segment information', 'https://www.sec.gov/Archives/edgar/data/313838/000119312526274893/d28719d20f.htm'),
+        years: [
+          { end: '2026-03-31', revenue: 2120110e6, operatingIncome: 446986e6 },
+          { end: '2025-03-31', revenue: 1842604e6, operatingIncome: 357255e6 },
+          { end: '2024-03-31', revenue: 1618958e6, operatingIncome: 301662e6 },
+        ],
+        note: 'Music segment total sales, including intersegment sales, and segment operating income, as reported in Sony Group\'s segment note. Sony does not report net income, cash flow, cash or debt for the Music segment alone.' } },
     summary: 'Umbrella for Sony Music Entertainment (recorded) and Sony Music Publishing under Sony Group. Music segment revenue is reported inside Sony Group filings (fiscal year to March).',
     notes: ['Segment figure includes visual media and platform revenue; recorded and publishing are reported as sub-lines.'],
     sources: [ir('https://www.sony.com/en/SonyInfo/IR/'), mbw('Sony Music')] },

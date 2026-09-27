@@ -27,7 +27,10 @@ export const LIMITS = {
     id: 'comparison',
     claim: 'A comparison lines up reported figures, not like-for-like businesses.',
     detail: 'Each company defines its own revenue and closes its year on its own date; a label group, a streaming service and a promoter earn money in ways that no single table makes equivalent. Figures are converted to US dollars at one dated rate so they can be set side by side, with each company\u2019s reported figure beside them, and none of it adjusts for accounting policy, acquisitions or one-off items.',
-    enforced: 'No figure is ranked against a figure in another currency, and no trend is drawn across a gap in the years — the tests check both.',
+    // This said “no figure is ranked against a figure in another currency” until Sprint 42 started converting
+    // them, two paragraphs below a caveat explaining the conversion. What actually protects the reader now is
+    // that a converted figure never appears without the reported one, and that a stale balance is never ranked.
+    enforced: 'A converted figure is never shown without the figure the company reported, a balance the company stopped updating is never ranked or used in a ratio, and no trend is drawn across a gap in the years — the tests check all three.',
   },
 }
 export const LIMIT_LIST = Object.values(LIMITS)

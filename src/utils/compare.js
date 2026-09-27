@@ -23,7 +23,7 @@ import { getTransactionsForEntity } from '../data/transactions.js'
 import { format, formatDate } from './format.js'
 import { toUsd, FX_SHORT } from '../data/fx.js'
 import { currentRevenue, freshnessOf, kindLabel } from './freshness.js'
-import { freeCashFlow, operatingMargin, sameYear, pctChange } from './financialConcepts.js'
+import { freeCashFlow, operatingMargin, sameYear, pctChange, basisFor } from './financialConcepts.js'
 
 export const MAX_COMPARE = 6
 /** At least this many consecutive years before a trend is drawn: two points are a line, not a trend. */
@@ -62,10 +62,16 @@ function readCompany(id, financials = {}, today = new Date()) {
   const fin = financials[id] || null
   const m = e.metrics || {}
   const rev = currentRevenue(e, fin)
-  const sec = fin?.metrics || null
+  // Where the FIGURES come from. `fin` is the SEC refresh job; `basis` falls back to the company's own published
+  // results for a non-filer (UMG on Euronext, Sony's Music segment), so a margin, a cash-flow row and a trend are
+  // computed the same way for every company that publishes the inputs. `rev` and `freshness` above stay on `fin`
+  // deliberately: which figure is the LATEST, and whether a newer one is overdue, are questions about the
+  // company's own reporting calendar, and `freshness.js` already answers them from the record.
+  const basis = basisFor(e, fin)
+  const sec = basis?.metrics || null
   const annual = sec?.revenue?.annual || null
   const history = sec?.revenue?.history || []
-  const fcf = freeCashFlow(fin)
+  const fcf = freeCashFlow(basis)
   const net = sec?.netIncome?.annual || null
   const ocf = sec?.operatingCashFlow?.annual || null
   // A balance last tagged years ago is shown with its date, never ranked, and never used in a ratio.
@@ -76,6 +82,7 @@ function readCompany(id, financials = {}, today = new Date()) {
     id,
     e,
     fin,
+    basis,
     rev,
     freshness: freshnessOf(e, fin, today),
     currency: rev?.currency || annual?.currency || null,
@@ -85,7 +92,7 @@ function readCompany(id, financials = {}, today = new Date()) {
     history,
     interim: m.interim || (sec?.revenue?.quarter ? { period: `quarter to ${formatDate(sec.revenue.quarter.end)}`, end: sec.revenue.quarter.end, revenue: sec.revenue.quarter.value, currency: sec.revenue.quarter.currency, filed: sec.revenue.quarter.filed } : null),
     growth: annual && sec?.revenue?.priorAnnual ? pctChange(annual, sec.revenue.priorAnnual) : null,
-    opMargin: operatingMargin(fin),
+    opMargin: operatingMargin(basis),
     netMargin: annual && net && sameYear(annual, net) && annual.currency === net.currency ? pct(net.value, annual.value) : null,
     fcf,
     fcfMargin: annual && fcf && sameYear(annual, fcf) && annual.currency === fcf.currency ? pct(fcf.value, annual.value) : null,
@@ -94,8 +101,11 @@ function readCompany(id, financials = {}, today = new Date()) {
     debt,
     debtToOcf: usable(debt) && ocf && ocf.value > 0 && debt.currency === ocf.currency ? debt.value / ocf.value : null,
     metrics: m,
-    // A company whose figure is a segment of a listed parent's accounts (Sony Music inside Sony Group) reports
-    // no margin or cash flow of its own — the empty cells below have a reason, and it belongs on the page.
+    // A company whose figure is a segment of a listed parent's accounts (Sony Music inside Sony Group). This used
+    // to say a segment reports "no margin or cash flow for the segment alone", which was simply wrong: Sony's
+    // segment note gives Music's operating income, and its operating margin is computed from it above. What a
+    // segment genuinely does not have is a bottom line and a balance sheet of its own, and the caveat now says
+    // that instead — naming the rows a reader can see are empty rather than the ones they can see are filled.
     segmentOf: m.revenueKind === 'segment sales' ? (getEntity(e.parentId)?.name || 'a listed parent') : null,
     deals: getTransactionsForEntity(id),
     kind: kindLabel(m),
@@ -229,8 +239,11 @@ export function buildComparison(ids, { financials = {}, today = new Date() } = {
     caveat: [
       mixedCurrency ? `These companies report in ${currencies.length} currencies (${currencies.join(', ')}). Money is converted to US dollars for comparison, with each company's reported figure in parentheses. ${FX_SHORT}` : '',
       mixedFiscalYear ? 'Their fiscal years end on different dates, so the years beside each other are not the same twelve months.' : '',
-      companies.some((c) => c.rev?.source === 'record') && companies.some((c) => c.rev?.source === 'sec') ? 'Some figures are filed with the SEC and refreshed daily; others are entered by hand from the company’s own results, with the source on each page.' : '',
-      companies.filter((c) => c.segmentOf).map((c) => `${c.e.name}'s figure is segment revenue inside ${c.segmentOf}'s accounts, which report no margin or cash flow for the segment alone.`).join(' '),
+      // Said once, as specifically as the table allows. The general sentence only appears where no company is on
+      // a reported basis, because the sentence after it already names who is not a filer and which rows it affects.
+      companies.some((c) => c.rev?.source === 'record') && companies.some((c) => c.rev?.source === 'sec') && !companies.some((c) => c.basis?.basis === 'reported') ? 'Some figures are filed with the SEC and refreshed daily; others are entered by hand from the company’s own results, with the source on each page.' : '',
+      companies.filter((c) => c.segmentOf).map((c) => `${c.e.name}'s figures are a segment of ${c.segmentOf}'s accounts: sales and operating income are reported for the segment, but net income, cash flow, cash and debt are not, so those rows are empty for it.`).join(' '),
+      companies.some((c) => c.basis?.basis === 'reported') ? `${companies.filter((c) => c.basis?.basis === 'reported').map((c) => c.e.name).join(' and ')} ${companies.filter((c) => c.basis?.basis === 'reported').length > 1 ? 'do' : 'does'} not file with the SEC, so the margin and cash-flow rows are read from published results rather than EDGAR's structured data; each company's page links the document.` : '',
     ].filter(Boolean).join(' '),
   }
 }

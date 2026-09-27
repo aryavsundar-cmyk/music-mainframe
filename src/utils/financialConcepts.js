@@ -126,3 +126,87 @@ export function revenueTrend(fin, min = 3) {
   if (points.length < min) return null
   return { currency, points }
 }
+
+/** The day a twelve-month period ending on `end` began. Keeps a non-December year honest: 2026-03-31 → 2025-04-01. */
+function yearStart(end) {
+  const d = new Date(`${end}T00:00:00Z`)
+  d.setUTCFullYear(d.getUTCFullYear() - 1)
+  d.setUTCDate(d.getUTCDate() + 1)
+  return d.toISOString().slice(0, 10)
+}
+
+/**
+ * A company's own published figures, expanded into exactly the shape `data/financials/sec.json` has.
+ *
+ * Two of the three majors are not SEC filers — UMG lists on Euronext Amsterdam, and Sony Music is a segment of
+ * Sony Group's accounts rather than a filer of its own. Every derived figure in this application (`operatingMargin`,
+ * `freeCashFlow`, `fiveYearRecord`, `cagr`, the comparison table's margin and cash-flow rows) reads `fin.metrics`,
+ * which only the SEC refresh job wrote. So the preset the /compare page offers as "the three majors" ranked
+ * Warner alone down nine rows of dashes: the figures existed, in documents this application already cited, and
+ * there was nowhere to put them.
+ *
+ * This is that place. A record declares `metrics.reported` — a list of years, newest or oldest first, each
+ * carrying whichever of the CONCEPTS the company actually publishes — and it is expanded here rather than typed
+ * out in the sec.json shape, so the data files stay readable and one function owns the shape.
+ *
+ * What it deliberately does NOT do:
+ *
+ * - **It never touches an SEC filer.** `basisFor` prefers `fin` whenever the refresh job has figures, so the rule
+ *   that an SEC filer's numbers are never hand-typed is untouched. A reported block on a filer is dead weight,
+ *   and `test:reported` fails on one.
+ * - **It never fills a figure in.** A year that omits operating cash flow gets no operating cash flow, and the
+ *   margin that would have needed it stays a dash. Only figures written into the record come out.
+ * - **It never claims to be a filing.** `latestFiling` is null and `basis` says `reported`, so the company page
+ *   and every export describe these as figures read from the company's own results, with the document linked —
+ *   never "as filed with the SEC".
+ * - **`priorAnnual` requires consecutive years**, so a gap in the record cannot become a year-on-year change.
+ */
+export function reportedFinancials(e) {
+  const r = e?.metrics?.reported
+  if (!r?.years?.length) return null
+  const currency = r.currency || 'USD'
+  const years = [...r.years].sort((a, b) => String(b.end).localeCompare(String(a.end)))
+  const where = (y) => ({ currency, source: y.source || r.source || null, published: y.published || r.published || null })
+  const metrics = {}
+  for (const [key, c] of Object.entries(CONCEPTS)) {
+    const held = years.filter((y) => Number.isFinite(y[key]))
+    if (!held.length) continue
+    if (c.kind === 'instant') {
+      const history = held.map((y) => ({ value: y[key], end: y.end, ...where(y) }))
+      // `prior` is what the change column on a balance compares against, and sec.json spells it the same way.
+      metrics[key] = { latest: history[0], prior: history[1] || null, history }
+      continue
+    }
+    const history = held.map((y) => ({ value: y[key], start: yearStart(y.end), end: y.end, ...where(y) }))
+    const consecutive = history[1] && Math.abs((Date.parse(history[0].end) - Date.parse(history[1].end)) / DAY_MS - 365) <= 20
+    metrics[key] = { annual: history[0], priorAnnual: consecutive ? history[1] : null, history }
+  }
+  if (!metrics.revenue) return null
+  // A balance is judged against the latest period the company reported, the same test the refresh job applies.
+  const latestEnd = metrics.revenue.annual.end
+  for (const c of Object.values(metrics)) {
+    if (!c.latest) continue
+    for (const f of c.history) f.stale = staleInstant(f, latestEnd)
+    c.latest.stale = staleInstant(c.latest, latestEnd)
+  }
+  return {
+    entityId: e.id,
+    name: e.name,
+    basis: 'reported',
+    scope: r.scope || 'consolidated',
+    currency,
+    source: r.source?.url || null,
+    sourceLabel: r.source?.label || null,
+    published: r.published || null,
+    note: r.note || '',
+    metrics,
+    latestFiling: null,
+  }
+}
+
+/**
+ * The figures a page, a comparison or a document should read for this company: the SEC refresh job's where it has
+ * them, the company's own published results otherwise. Never both — an SEC filer's figures are never hand-typed,
+ * so a record with a reported block and a filing shows the filing.
+ */
+export const basisFor = (e, fin) => (fin?.metrics ? fin : reportedFinancials(e))

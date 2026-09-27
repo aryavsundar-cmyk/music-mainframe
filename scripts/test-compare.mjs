@@ -106,9 +106,13 @@ t('the rebased trend uses one window for everyone, and names who is left out', (
 })
 
 t('a missing figure is a gap, never a zero, and every cell keeps its period', () => {
-  const data = buildComparison('wmg,umg', { financials: SEC })
+  // Sony's Music segment is the honest gap here: its parent reports the segment's sales and operating income and
+  // no cash flow at all, so the cell has nothing to hold. UMG used to stand in for this, which stopped being true
+  // when its own published cash-flow statement was added to the record — a test that pins a gap has to name a gap
+  // that is still one.
+  const data = buildComparison('wmg,sony-music-group', { financials: SEC })
   const ocf = row(data, 'ocf')
-  assert.equal(ocf.cells[1], null, 'UMG files no SEC cash-flow figure: the cell is empty')
+  assert.equal(ocf.cells[1], null, 'Sony reports no cash flow for the Music segment: the cell is empty')
   assert.notEqual(ocf.cells[0], null)
   for (const r of data.rows) for (const c of r.cells) {
     if (!c) continue

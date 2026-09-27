@@ -1,7 +1,7 @@
 import { ExternalLink } from 'lucide-react'
 import { Tag, Eyebrow, Caveat } from '../primitives/index.js'
 import { format, formatDate } from '../../utils/format.js'
-import { CONCEPTS, pctChange as change, sameYear, freeCashFlow, fiveYearRecord } from '../../utils/financialConcepts.js'
+import { CONCEPTS, pctChange as change, sameYear, freeCashFlow, fiveYearRecord, basisFor } from '../../utils/financialConcepts.js'
 import { kindLabel, periodLabel } from '../../utils/freshness.js'
 
 // Two decimals in billions ($6.04B, not $6B): these tables are read for year-on-year differences.
@@ -63,7 +63,7 @@ export function FiveYear({ fin }) {
                     <span className="block w-full max-w-[72px] h-8 flex items-end justify-end" aria-hidden="true">
                       <span className="block w-full rounded-t-sm bg-accent-line" style={{ height: `${Math.max(6, (Math.abs(y.value) / max) * 100)}%` }} />
                     </span>
-                    <a href={filingLink(fin, y)} target="_blank" rel="noreferrer" className="text-ink-3 no-underline hover:text-accent" title={`${y.form} filed ${formatDate(y.filed)}`}>{formatDate(y.end)}</a>
+                    <a href={filingLink(fin, y)} target="_blank" rel="noreferrer" className="text-ink-3 no-underline hover:text-accent" title={y.form ? `${y.form} filed ${formatDate(y.filed)}` : y.source?.label || undefined}>{formatDate(y.end)}</a>
                   </div>
                 </th>
               ))}
@@ -83,14 +83,16 @@ export function FiveYear({ fin }) {
           </tbody>
         </table>
       </div>
-      <Caveat className="mt-1.5" more={<>Free cash flow is operating cash flow less capital expenditure, and appears only where the filing gives both for the same year — never netted across years. A dash means the filing does not give the figure, not that the figure is zero. Years come from annual reports only, so a quarterly comparative for the same period never sets a year’s value.</>}>
+      <Caveat className="mt-1.5" more={<>Free cash flow is operating cash flow less capital expenditure, and appears only where the source gives both for the same year — never netted across years. A dash means the source does not give the figure, not that the figure is zero. Years come from annual reports only, so a quarterly comparative for the same period never sets a year’s value.</>}>
         Each year as last reported in an annual report, restatements included — so a year here may differ from the figure the company first published.
       </Caveat>
     </div>
   )
 }
 
-const filingLink = (fin, f) => (f?.accn ? `https://www.sec.gov/Archives/edgar/data/${fin.cik}/${String(f.accn).replace(/-/g, '')}/` : fin.source)
+// An SEC figure links to the filing it came from; a reported figure links to the results document the record cites
+// for THAT year, which is not always the same document as the headline year's.
+const filingLink = (fin, f) => (f?.accn ? `https://www.sec.gov/Archives/edgar/data/${fin.cik}/${String(f.accn).replace(/-/g, '')}/` : f?.source?.url || fin.source)
 
 function SecTable({ fin }) {
   const rows = Object.entries(CONCEPTS).filter(([k]) => fin.metrics[k])
@@ -147,9 +149,13 @@ function SecTable({ fin }) {
  */
 export function Financials({ e, fin, freshness }) {
   const m = e.metrics || {}
+  // The figures to show: EDGAR's where the refresh job has them, the company's own published results otherwise.
+  // Before this, a non-filer fell through to the single-figure block below and the five-year record it publishes
+  // went unread — the numbers were in documents this page already linked.
+  const basis = basisFor(e, fin)
   // A sponsor has no revenue and never will; its AUM is the figure, and it carries a source and a caveat like any
   // other. Before Sprint 37 this section simply did not render for them, so the note went nowhere.
-  if (!fin?.metrics && !m.revenue && m.aum) {
+  if (!basis?.metrics && !m.revenue && m.aum) {
     return (
       <section>
         <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3">
@@ -169,23 +175,34 @@ export function Financials({ e, fin, freshness }) {
       </section>
     )
   }
-  if (!fin?.metrics && !m.revenue) return null
+  if (!basis?.metrics && !m.revenue) return null
   return (
     <section>
       <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3">
         <Eyebrow as="h2">Financials</Eyebrow>
         <FreshnessTag f={freshness} />
       </div>
-      {fin?.metrics ? (
+      {basis?.metrics ? (
         <>
-          <SecTable fin={fin} />
-          <FiveYear fin={fin} />
-          <p className="t-micro text-ink-3 m-0 mt-2">
-            As filed with the SEC — consolidated figures for the whole company, read from EDGAR&apos;s structured data and refreshed daily.
-            {fin.latestFiling && <> Latest: <a href={fin.latestFiling.url} target="_blank" rel="noreferrer" className="text-ink-2 no-underline hover:text-accent inline-flex items-center gap-0.5">{fin.latestFiling.form} filed {formatDate(fin.latestFiling.filed)}<ExternalLink size={10} aria-hidden="true" /></a>.</>}
-          </p>
-          {fin.pending && <p className="t-micro text-ink-2 m-0 mt-1">{fin.pending.note} <a href={fin.pending.url} target="_blank" rel="noreferrer" className="text-accent no-underline">Open the filing</a>.</p>}
-          {m.revenue && m.revenueYear && String(m.revenueYear).match(/^(Q|H)/) && (
+          <SecTable fin={basis} />
+          <FiveYear fin={basis} />
+          {basis.basis === 'reported' ? (
+            <p className="t-micro text-ink-3 m-0 mt-2">
+              {basis.scope === 'segment'
+                ? 'Read from the segment note in the parent company\u2019s own accounts — not a filing of this company\u2019s own, and only the figures the parent reports for the segment.'
+                : 'Read from this company\u2019s own published results — entered by hand, not from EDGAR, because it does not file with the SEC.'}
+              {basis.sourceLabel && <> Source: <a href={basis.source} target="_blank" rel="noreferrer" className="text-ink-2 no-underline hover:text-accent inline-flex items-center gap-0.5">{basis.sourceLabel}<ExternalLink size={10} aria-hidden="true" /></a>{basis.published && <>, published {formatDate(basis.published)}</>}.</>}
+            </p>
+          ) : (
+            <p className="t-micro text-ink-3 m-0 mt-2">
+              As filed with the SEC — consolidated figures for the whole company, read from EDGAR&apos;s structured data and refreshed daily.
+              {basis.latestFiling && <> Latest: <a href={basis.latestFiling.url} target="_blank" rel="noreferrer" className="text-ink-2 no-underline hover:text-accent inline-flex items-center gap-0.5">{basis.latestFiling.form} filed {formatDate(basis.latestFiling.filed)}<ExternalLink size={10} aria-hidden="true" /></a>.</>}
+            </p>
+          )}
+          {basis.note && <p className="t-micro text-ink-3 m-0 mt-1 max-w-3xl">{basis.note}</p>}
+          {fin?.pending && <p className="t-micro text-ink-2 m-0 mt-1">{fin.pending.note} <a href={fin.pending.url} target="_blank" rel="noreferrer" className="text-accent no-underline">Open the filing</a>.</p>}
+          {basis.basis === 'reported' && m.interim && <p className="t-micro text-ink-3 m-0 mt-1">Since that year end: {money(m.interim.revenue, m.interim.currency)} for {m.interim.period} (to {formatDate(m.interim.end)}){m.interim.source && <> — <a href={m.interim.source.url} target="_blank" rel="noreferrer" className="text-ink-2 no-underline hover:text-accent">{m.interim.source.label}</a></>}.</p>}
+          {m.revenue && m.revenueYear && String(m.revenueYear).match(/^(Q|H)/) && basis.basis !== 'reported' && (
             <p className="t-micro text-ink-3 m-0 mt-1">More recent than the SEC&apos;s structured data: {kindLabel(m).toLowerCase()} {money(m.revenue, m.revenueCurrency)} for {periodLabel(m)}{m.revenueSource ? <>, <a href={m.revenueSource.url} target="_blank" rel="noreferrer" className="text-ink-2 no-underline hover:text-accent">{m.revenueSource.label}</a></> : ' (on record)'}.</p>
           )}
         </>

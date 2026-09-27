@@ -13,6 +13,16 @@
  *             subsidiaries with no parent at all, naming the parent only in their prose summary, so the graph
  *             read them as roots and the coverage model called them unresearched. `test:coverage` enforces it.
  * status    active · merged (absorbed into parent; kept for history) · defunct
+ * metrics.reported
+ *           A company's own published figures, for a company the SEC refresh job cannot reach — UMG lists on
+ *           Euronext, Sony Music is a segment of Sony Group's accounts. `{ currency, scope, source, published,
+ *           years: [{ end, revenue, operatingIncome, netIncome, operatingCashFlow, capex, cash, longTermDebt,
+ *           source? }] }`, one entry per fiscal year, each figure optional and each key a `CONCEPTS` key.
+ *           `utils/financialConcepts.js` `reportedFinancials` expands it into the shape sec.json has, so margins,
+ *           free cash flow, the five-year record and the comparison table all work for a non-filer. NEVER add one
+ *           to an SEC filer (`test:reported` fails): a filer's figures come only from EDGAR. Every figure must be
+ *           readable in the document `source` links to, and `scope: 'segment'` says the figures are a segment of a
+ *           parent's accounts, which is why the net-income and cash rows are empty rather than missing.
  * verify    true when a fact in the record is from the kickoff brief or memory and not yet confirmed
  *           against a primary source. Surfaces as a "verify" tag in the UI. Sprint 1 discipline:
  *           transcribe nothing you can't cite.
