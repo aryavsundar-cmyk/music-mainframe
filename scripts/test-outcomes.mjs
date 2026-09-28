@@ -74,8 +74,11 @@ t('the funnel and conversion read the records', () => {
   assert.equal(staleAccounts(accounts, records, TODAY).length, 0, 'everything here was touched recently')
 })
 t('the limits exist once, and every screen and document carries them', () => {
-  // Four since Sprint 30: match, availability, force, and comparison (what a side-by-side table is not).
-  assert.equal(LIMIT_LIST.length, 4)
+  // Five: match, availability, force, comparison (what a side-by-side table is not) and flow (what a split of a
+  // published dollar is not). The count is asserted so a limit cannot be added without a decision about where it
+  // is rendered and which exports carry it.
+  assert.equal(LIMIT_LIST.length, 5)
+  assert.match(LIMITS.flow.claim, /not an estimate of what anyone earns/)
   assert.match(LIMITS.comparison.claim, /reported figures, not like-for-like businesses/)
   // Not “never ranked across currencies”: Sprint 42 started converting, and this sentence was left behind,
   // sitting two paragraphs under a caveat that explained the conversion. What is enforced now is that the

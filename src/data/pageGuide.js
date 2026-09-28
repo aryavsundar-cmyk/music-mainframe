@@ -45,9 +45,9 @@ export const PAGE_GUIDE = [
   },
   {
     path: '/flows', group: 'Canvas', title: 'Flows',
-    what: 'How rights and money actually move: the recording chain and the publishing fan, with the splits and rates published at each step.',
-    use: ['Click any node to see who plays that role and what the economics are.', 'Follow a node through to the companies that occupy it.'],
-    not: 'Splits are published ranges and statutory rates, not the terms of any particular deal.',
+    what: 'How rights and money actually move: the recording chain and the publishing fan, the platform routes built on top of them, and — for each way money enters the industry — where one dollar of it lands.',
+    use: ['Click any node to see who plays that role and what the economics are.', 'Pick a money route under the diagram to follow a dollar down it; every step is indented under the step it is paid out of.', 'Compare the routes on the overview: a dollar of box office and a dollar of streaming revenue divide completely differently.'],
+    not: 'Splits are published ranges and statutory rates, not the terms of any particular deal — and a waterfall divides a published unit, it does not estimate what anyone earns. Where a platform does not publish how it allocates, the step says so rather than carrying an estimate.',
   },
   {
     path: '/deals', group: 'Money', title: 'Deals',

@@ -23,6 +23,12 @@ export const LIMITS = {
     detail: 'Each tag is read from the record itself — its deal type and structure, the companies involved, and the words in its title and summary — and keeps the evidence that produced it. Direction says whether the event supports or pushes against the thesis as written; it is not a forecast, and a count of events is not a measure of their size.',
     enforced: 'No force can be assigned without evidence in the record — the tests check every tag against the field or phrase it came from.',
   },
+  flow: {
+    id: 'flow',
+    claim: 'A flow waterfall divides one dollar at published rates. It is not an estimate of what anyone earns.',
+    detail: 'The splits are published ranges, statutory schedules and industry rules of thumb, read from the stage economics on the flows page — never the terms of a particular deal, and never anybody\u2019s actual statement. An artist\u2019s royalty arrives only after the advance is recouped, a distribution deal may be a flat fee rather than a percentage, and every one of these rates is negotiated in practice.',
+    enforced: 'No rate is written into a scenario \u2014 every one is read from the stage that publishes it; a branch whose children do not add up to it fails the tests; a published range is drawn as a range and never as a midpoint; and a step nobody discloses says so rather than carrying an estimate.',
+  },
   comparison: {
     id: 'comparison',
     claim: 'A comparison lines up reported figures, not like-for-like businesses.',

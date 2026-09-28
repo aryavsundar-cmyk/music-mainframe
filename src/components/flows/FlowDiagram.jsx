@@ -69,14 +69,18 @@ export function FlowDiagram({ flow, selected, onSelect, compact = false }) {
           const money = e.kind === 'money'
           const touches = selected && (e.from === selected || e.to === selected)
           const dim = selected && !touches
+          // A branch off the main line — the statutory route, the platform routes — is drawn back so the spine of
+          // the flow stays readable. The data has carried `tone: 'muted'` since Sprint 2; nothing drew it until
+          // the UGC and claiming edges arrived and swept across the diagram at full weight.
+          const muted = e.tone === 'muted'
           return (
             <path
               key={i} d={path(anchors(a, b, e.kind))} fill="none"
               stroke={money ? 'var(--mm-ink-3)' : color}
-              strokeWidth={money ? (touches ? 1.75 : 1.25) : (touches ? tok.stroke + 0.75 : tok.stroke)}
-              strokeDasharray={money ? '2 3' : (tok.dash === 'none' ? undefined : tok.dash)}
+              strokeWidth={money ? (touches ? 1.75 : 1.25) : (touches ? tok.stroke + 0.75 : tok.stroke) * (muted && !touches ? 0.6 : 1)}
+              strokeDasharray={money ? '2 3' : (muted ? '3 4' : tok.dash === 'none' ? undefined : tok.dash)}
               strokeLinecap="round"
-              opacity={dim ? 0.18 : money ? 0.7 : 1}
+              opacity={dim ? 0.18 : touches ? 1 : muted ? 0.4 : money ? 0.7 : 1}
               markerEnd={`url(#arr-${flow.id}${money ? '-money' : ''})`}
               style={{ transition: 'opacity 160ms' }}
             />
