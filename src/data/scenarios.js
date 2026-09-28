@@ -210,6 +210,68 @@ export const SCENARIOS = {
     sources: [src('ASCAP — how royalties work', 'https://www.ascap.com/help/royalties-and-payment')],
   },
 
+  'direct-to-fan': {
+    id: 'direct-to-fan',
+    label: 'Direct to fan',
+    short: 'Direct',
+    domains: ['recording'],
+    unit: 'one dollar a fan pays for a download on an artist\u2019s store',
+    unitNote: 'Bandcamp publishes its whole split, which is why this route can be drawn to the last cent while the two platform routes above it cannot. The digital share is used here; physical goods carry a 10% platform share instead of 15%.',
+    lede: 'The shortest chain on the page, and the only one whose platform publishes the whole of it. No label, no distributor, no society, no pro-rata pool \u2014 the artist sets the price and keeps about four-fifths of it. Set beside a stream, this is the clearest statement of what the intermediaries in every other route are being paid for.',
+    note: 'Four-fifths of a dollar is not four-fifths of a living: this route trades a high share of a small number of sales for a low share of a very large number of plays. The page divides the dollar and says nothing about how many there are.',
+    tree: {
+      children: [
+        { id: 'd2f-platform', label: 'The platform\u2019s share', sub: 'digital items', side: 'other', tone: 'ink', rate: rate('recording', 'directfan', 'Platform share \u00b7 digital'), node: { flow: 'recording', id: 'directfan' } },
+        { id: 'd2f-processing', label: 'Payment processing', sub: 'charged separately, and never a flat rate', side: 'other', tone: 'ink', rate: rate('recording', 'directfan', 'Payment processing'), node: { flow: 'recording', id: 'directfan' } },
+        {
+          id: 'd2f-artist', label: 'The artist', sub: 'or whoever owns the recording', side: 'recording', tone: 'recording', ...REST,
+          node: { flow: 'recording', id: 'artist' },
+          // Not a sibling: a mechanical is a fixed per-copy rate, not a share of the price, so it cannot divide
+          // this dollar. Forcing it into the tree as a percentage would be a unit error dressed as a split.
+          tail: { id: 'd2f-mechanical', label: 'if the song is somebody else\u2019s, a mechanical royalty is owed on every copy sold \u2014 a fixed per-copy rate set by the Copyright Royalty Board, not a share of the price, so it is not a slice of this dollar', node: { flow: 'publishing', id: 'mechanical' } },
+        },
+      ],
+    },
+    sources: [src('Bandcamp \u2014 Fair Trade Music Policy', 'https://bandcamp.com/fair_trade_music_policy')],
+  },
+
+  'ai': {
+    id: 'ai',
+    label: 'AI licensing',
+    short: 'AI',
+    domains: ['recording', 'publishing'],
+    unit: 'one dollar an AI developer pays for music rights',
+    unitNote: 'A dollar is already the wrong unit and the page says so: the announced settlements were paid in cash, equity and assets together, so no cash figure would be the whole consideration even if one were published.',
+    lede: 'The newest route, and the one where drawing the pipes correctly is the entire contribution. The 2024 infringement suits became licences \u2014 Universal settled with Udio in October 2025, Warner with Suno in November 2025 \u2014 and not one party published a rate. What can be said is that there are two distinct routes, an input and an output, and that only the input has been settled at all.',
+    note: 'The input side is a training licence on a catalogue. The output side \u2014 what is owed when a model generates something \u2014 has no settled model at all: the announced deals describe licensed platforms, not a royalty per generated track. GEMA is litigating the question in Europe rather than licensing it.',
+    tree: {
+      children: [
+        {
+          id: 'ai-input-recording', label: 'Training licence \u2014 recordings', sub: 'the input side', side: 'recording', tone: 'recording',
+          state: 'undisclosed', why: 'Every announced settlement is confidential, and the consideration included equity and assets as well as cash.',
+          node: { flow: 'recording', id: 'ai' },
+          children: [
+            { id: 'ai-artist', label: 'Then to the artist under the recording contract', state: 'undisclosed', why: 'No major has published how an AI licence fee is credited to an artist account, or whether it is recoupable.', node: { flow: 'recording', id: 'artist' } },
+          ],
+        },
+        {
+          id: 'ai-input-publishing', label: 'Training licence \u2014 compositions', sub: 'a separate licence on the songs inside the recordings', side: 'publishing', tone: 'publishing',
+          state: 'undisclosed', why: 'Publishing catalogues are licensed separately and on equally confidential terms; some societies are litigating rather than licensing.',
+          node: { flow: 'publishing', id: 'ai' },
+        },
+        {
+          id: 'ai-output', label: 'Output royalties', sub: 'the unsettled side', side: 'other', tone: 'ink',
+          state: 'undisclosed', why: 'There is no published model for what a generated track owes, to whom, or on what basis attribution would be measured. The announced deals licensed platforms, not outputs.',
+          node: { flow: 'recording', id: 'ai' },
+        },
+      ],
+    },
+    sources: [
+      src('UMG and Udio \u2014 strategic agreements for a licensed AI music platform (PR Newswire, Oct 2025)', 'https://www.prnewswire.com/news-releases/universal-music-group-and-udio-announce-udios-first-strategic-agreements-for-new-licensed-ai-music-creation-platform-302599129.html'),
+      src('Variety \u2014 major labels sue Suno and Udio (Jun 2024)', 'https://variety.com/2024/music/news/record-labels-sue-ai-music-services-suno-and-udio-copyright-infringement-1236045366/'),
+    ],
+  },
+
   'live': {
     id: 'live',
     label: 'Live performance',

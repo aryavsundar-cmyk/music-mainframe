@@ -38,9 +38,13 @@ export function resolveRate(ref) {
   if (!ref) return null
   const node = getFlowNode(ref.flow, ref.node)
   const entry = node?.econ?.find((e) => e.label === ref.label)
-  if (!entry || typeof entry.value !== 'number') return null
+  // A rate is usable with a point value OR with a published band and no point. Requiring a point would have
+  // forced a midpoint onto every figure a source states only as a range, which is the invention this file exists
+  // to prevent \u2014 Bandcamp publishes payment processing as "4\u20137%" and names no typical figure.
+  const banded = typeof entry?.low === 'number' && typeof entry?.high === 'number'
+  if (!entry || (typeof entry.value !== 'number' && !banded)) return null
   return {
-    value: entry.value,
+    value: typeof entry.value === 'number' ? entry.value : null,
     low: typeof entry.low === 'number' ? entry.low : null,
     high: typeof entry.high === 'number' ? entry.high : null,
     label: entry.label,
@@ -78,27 +82,51 @@ export function buildWaterfall(scenarioId) {
       return { step, rate }
     })
     const unknown = (st) => st.state === 'undisclosed' || st.basis === 'unknown'
-    const taken = resolved.reduce((sum, r) => sum + (r.step.rest || unknown(r.step) ? 0 : (r.rate?.value ?? 0)), 0)
+    // What each sibling takes, as a RANGE. Some published figures are a range with no midpoint at all —
+    // Bandcamp states payment processing as "4\u20137%" and names no typical figure — and a remainder computed
+    // from a range is itself a range. Stating it as a point would be inventing a precision the source refuses.
+    const share_ = (r) => {
+      if (r.step.rest || unknown(r.step)) return { lo: 0, hi: 0, pt: 0 }
+      const v = r.rate?.value ?? null
+      return { lo: r.rate?.low ?? v ?? 0, hi: r.rate?.high ?? v ?? 0, pt: v }
+    }
+    const parts = resolved.map(share_)
+    const takenLo = parts.reduce((a, p) => a + p.lo, 0)
+    const takenHi = parts.reduce((a, p) => a + p.hi, 0)
+    // A point remainder survives only while every sibling has a point of its own.
+    const takenPt = parts.every((p) => p.pt != null) ? parts.reduce((a, p) => a + p.pt, 0) : null
     const restCount = resolved.filter((r) => r.step.rest).length
     if (restCount > 1) problems.push(`${scenarioId}: ${restCount} steps claim the remainder of the same branch; at most one may`)
     const checkable = resolved.length > 0 && resolved.every((r) => r.step.rest || r.rate)
-    if (checkable && restCount === 0 && Math.abs(taken - 100) > EPSILON) {
-      problems.push(`${scenarioId}: a branch's children come to ${taken}%, not 100% — a split that does not add up is a defect, not a rounding question`)
+    if (checkable && restCount === 0 && takenPt != null && Math.abs(takenPt - 100) > EPSILON) {
+      problems.push(`${scenarioId}: a branch's children come to ${takenPt}%, not 100% — a split that does not add up is a defect, not a rounding question`)
     }
-    if (checkable && taken > 100 + EPSILON) problems.push(`${scenarioId}: children take ${taken}% of their branch, leaving the remainder negative`)
+    if (checkable && takenLo > 100 + EPSILON) problems.push(`${scenarioId}: children take at least ${takenLo}% of their branch, leaving the remainder negative`)
 
     for (const { step, rate } of resolved) {
       // A branch holding an undisclosed sibling cannot also hold a meaningful remainder: the remainder is
       // whatever is left of an unknown subtraction, which is unknown.
       const siblingUnknown = resolved.some((r) => r.step !== step && unknown(r.step))
+      // The remainder of a branch runs from "what is left when the siblings take the most they can" to "what is
+      // left when they take the least" — so a ranged sibling widens the remainder rather than disappearing into it.
       const local = step.rest
-        ? (siblingUnknown ? null : Math.max(0, 100 - taken))
+        ? (siblingUnknown || takenPt == null ? null : Math.max(0, 100 - takenPt))
         : (unknown(step) ? null : rate?.value ?? null)
-      const localLow = step.rest || !rate ? null : rate.low
-      const localHigh = step.rest || !rate ? null : rate.high
-      const known = parentKnown && local != null
-      const share = known ? (parentShare * local) / 100 : null
+      const localLow = siblingUnknown || unknown(step) ? null
+        : step.rest ? Math.max(0, 100 - takenHi)
+        : rate?.low ?? null
+      const localHigh = siblingUnknown || unknown(step) ? null
+        : step.rest ? Math.max(0, 100 - takenLo)
+        : rate?.high ?? null
+      // "Placeable on this scale" is having a point OR a band. A row with only a band is still a real share of
+      // the dollar; it is a figure the source declined to collapse, not a figure nobody publishes.
+      const placed = local != null || (localLow != null && localHigh != null)
+      const known = parentKnown && placed
+      const share = known && local != null ? (parentShare * local) / 100 : null
       const band = (b) => (known && b != null ? (parentShare * b) / 100 : null)
+      if (step.children?.length && known && share == null) {
+        problems.push(`${scenarioId}/${step.id}: a step with only a range cannot be divided further — a range of a range is not a figure`)
+      }
 
       rows.push({
         id: step.id,
@@ -115,7 +143,7 @@ export function buildWaterfall(scenarioId) {
         leaf: !step.children?.length,
         // Three different kinds of "no number", kept apart because they mean different things to a reader:
         // nobody publishes it; the split inside is published but the base is not; it is simply reported.
-        state: step.state || (step.basis === 'unknown' ? 'split-unknown' : (local == null && !step.rest ? 'undisclosed' : 'reported')),
+        state: step.state || (step.basis === 'unknown' ? 'split-unknown' : (!placed ? 'undisclosed' : 'reported')),
         why: step.why || '',
         note: step.note || '',
         rest: !!step.rest,
@@ -162,11 +190,19 @@ export const allWaterfalls = () => SCENARIO_IDS.map((id) => buildWaterfall(id))
  */
 export function landingTable() {
   return allWaterfalls().map((w) => {
-    // Summed from the steps that DECLARE a side, which are the top of each branch — so a parent and its children
-    // are never added together, and a route that does not touch a domain reports null rather than zero.
+    // Summed from the steps that DECLARE a side, which are the top of each branch \u2014 so a parent and its
+    // children are never added together, and a route that does not touch a domain reports null rather than zero.
+    // A side may come out as a BAND rather than a figure: where a published share is a range with no midpoint,
+    // so is the total, and collapsing it to a point here would undo the honesty of the row it came from.
     const sum = (side) => {
-      const hit = w.rows.filter((r) => r.side === side && !r.relative && r.share != null)
-      return hit.length ? hit.reduce((a, r) => a + r.share, 0) : null
+      const hit = w.rows.filter((r) => r.side === side && !r.relative && (r.share != null || (r.low != null && r.high != null)))
+      if (!hit.length) return null
+      const at = (r, k) => r[k] ?? r.share
+      return {
+        value: hit.every((r) => r.share != null) ? hit.reduce((a, r) => a + r.share, 0) : null,
+        low: hit.reduce((a, r) => a + at(r, 'low'), 0),
+        high: hit.reduce((a, r) => a + at(r, 'high'), 0),
+      }
     }
     return {
       id: w.scenario.id,
@@ -183,3 +219,6 @@ export function landingTable() {
     }
   })
 }
+
+/** The one figure a total stands on: its point where there is one, otherwise the middle of nothing \u2014 its low. */
+export const point = (t) => (t == null ? null : t.value ?? t.low)

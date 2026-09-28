@@ -21,7 +21,9 @@ import assert from 'node:assert/strict'
 import fs from 'node:fs'
 import { FLOWS, FLOW_IDS, getFlowNode } from '../src/data/flows.js'
 import { SCENARIOS, SCENARIO_IDS, scenariosForFlow } from '../src/data/scenarios.js'
-import { buildWaterfall, allWaterfalls, landingTable, resolveRate } from '../src/utils/waterfall.js'
+import { buildWaterfall, allWaterfalls, landingTable, resolveRate, point } from '../src/utils/waterfall.js'
+import { readFlows } from '../src/utils/readings.js'
+import { classifyCitation } from '../src/utils/citations.js'
 import { getEntity } from '../src/data/entities.js'
 import { LIMITS } from '../src/data/limits.js'
 import { GLOSSARY_BY_ID } from '../src/data/glossary.js'
@@ -36,7 +38,7 @@ t('every scenario resolves with nothing left unexplained', () => {
   for (const w of allWaterfalls()) {
     assert.deepEqual(w.problems, [], `${w.scenario.id}: ${w.problems.join(' · ')}`)
     assert.ok(w.rows.length, `${w.scenario.id} resolved to no rows`)
-    assert.ok(w.scenario.unit.startsWith('one dollar of'), `${w.scenario.id}: every unit is one dollar of a named thing`)
+    assert.ok(w.scenario.unit.startsWith('one dollar'), `${w.scenario.id}: every unit is one dollar of a named thing`)
     assert.ok(w.scenario.unitNote && w.scenario.lede, `${w.scenario.id}: a unit needs saying what it is and is not`)
     for (const d of w.scenario.domains) assert.ok(FLOW_IDS.includes(d), `${w.scenario.id}: "${d}" is not a flow`)
   }
@@ -84,7 +86,9 @@ t('no rate is written into a scenario — every one is an address into the stage
   // Every address resolves, and resolves to the stage economics a reader can read on the page.
   for (const w of allWaterfalls()) {
     for (const r of w.rows.filter((x) => x.rate)) {
-      assert.equal(typeof r.rate.value, 'number', `${w.scenario.id}/${r.id}: rate did not resolve`)
+      // A rate resolves to a point, a band, or both — never to nothing.
+      const usable = typeof r.rate.value === 'number' || (typeof r.rate.low === 'number' && typeof r.rate.high === 'number')
+      assert.ok(usable, `${w.scenario.id}/${r.id}: rate did not resolve to a figure or a range`)
       assert.ok(r.rate.sources.length, `${w.scenario.id}/${r.id}: a rate with no source`)
       assert.ok(r.rate.sources.every((s) => s.url?.startsWith('http')), `${w.scenario.id}/${r.id}: a source a reader cannot open`)
     }
@@ -98,8 +102,11 @@ t('a published range stays a range, on the same base as the figure beside it', (
     for (const r of w.rows) {
       if (r.low == null && r.high == null) continue
       assert.ok(r.low <= r.high, `${w.scenario.id}/${r.id}: a band that runs backwards`)
-      // The band brackets the figure. A band that does not contain its own point value means the two were
-      // computed on different bases, which is exactly the cell that reads as "33% (50–75%)".
+      // A row may be a band with no point: a source that publishes "4–7%" and names no typical figure gets a
+      // range here and no midpoint anywhere. Where there IS a point, the band must bracket it — a band that
+      // does not contain its own figure means the two were computed on different bases, which is exactly the
+      // cell that used to read "33% (50–75%)".
+      if (r.share == null) continue
       assert.ok(r.share >= r.low - 0.0005 && r.share <= r.high + 0.0005, `${w.scenario.id}/${r.id}: ${r.share} is outside its own band ${r.low}–${r.high}`)
     }
   }
@@ -109,6 +116,9 @@ t('a published range stays a range, on the same base as the figure beside it', (
       for (const e of node.econ || []) {
         if (e.kind !== 'pct' || !/\d+\s*[–-]\s*\d+%/.test(e.note || '')) continue
         assert.equal(typeof e.low, 'number', `${flow.id}/${node.id} "${e.label}": the note states a range and the record holds no low`)
+        assert.ok(e.low <= e.high, `${flow.id}/${node.id} "${e.label}": a band that runs backwards`)
+        // A point is optional; where the source names one it has to sit inside its own band.
+        if (typeof e.value !== 'number') continue
         assert.ok(e.low <= e.value && e.value <= e.high, `${flow.id}/${node.id} "${e.label}": ${e.value} is outside its own ${e.low}–${e.high}`)
       }
     }
@@ -208,18 +218,94 @@ t('the comparison across routes compares shape, and never sums two different dol
   const table = landingTable()
   assert.equal(table.length, SCENARIO_IDS.length)
   for (const r of table) {
-    const parts = [r.recording, r.publishing, r.other].filter((v) => v != null)
+    const parts = [r.recording, r.publishing, r.other].filter(Boolean)
     if (!parts.length) continue
-    const total = parts.reduce((a, b) => a + b, 0)
-    assert.ok(total <= 1.0005, `${r.id}: the sides come to ${total} of one dollar — a parent and its children have been added together`)
+    // The LOW ends must fit inside a dollar. Summing the highs of several independent ranges would over-count,
+    // because they cannot all be at their maximum at once.
+    const floor = parts.reduce((a, t) => a + (t.value ?? t.low), 0)
+    assert.ok(floor <= 1.0005, `${r.id}: the sides come to ${floor} of one dollar — a parent and its children have been added together`)
   }
   const stream = table.find((r) => r.id === 'paid-stream')
-  assert.ok(near(stream.recording + stream.publishing + stream.other, 1), 'a paid stream is fully accounted for')
-  assert.ok(stream.recording > stream.publishing * 3, 'the recording share is several times the publishing share — the structural fact of streaming')
+  assert.ok(near(stream.recording.value + stream.publishing.value + stream.other.value, 1), 'a paid stream is fully accounted for')
+  assert.ok(stream.recording.value > stream.publishing.value * 3, 'the recording share is several times the publishing share — the structural fact of streaming')
   const live = table.find((r) => r.id === 'live')
-  assert.ok(live.publishing < 0.05 && live.other > 0.9, 'almost all of a ticket is not a music-rights payment')
+  assert.ok(live.publishing.value < 0.05 && live.other.value > 0.9, 'almost all of a ticket is not a music-rights payment')
   const sync = table.find((r) => r.id === 'sync')
-  assert.ok(near(sync.recording, sync.publishing), 'MFN means the two sides of a sync are paid the same')
+  assert.ok(near(sync.recording.value, sync.publishing.value), 'MFN means the two sides of a sync are paid the same')
+  // The route whose platform publishes its whole split is the contrast the rest of the page is read against.
+  const d2f = table.find((r) => r.id === 'direct-to-fan')
+  assert.equal(d2f.recording.value, null, 'Bandcamp publishes a range and names no typical figure; neither may this')
+  assert.ok(d2f.recording.low > stream.recording.value, 'the shortest chain must leave the artist more of the dollar than a stream leaves the recording side')
+})
+
+t('a range with no midpoint stays a range, all the way to the total', () => {
+  // Bandcamp publishes its share as 15%, payment processing as "4–7%", and names no typical processing figure.
+  // Inventing one would have been the easiest thing in this whole sprint and would have made every figure
+  // downstream of it false by a number nobody could check.
+  const w = buildWaterfall('direct-to-fan')
+  const fee = w.rows.find((r) => r.id === 'd2f-processing')
+  assert.equal(fee.share, null, 'a midpoint was invented for a figure published only as a range')
+  assert.ok(near(fee.low, 0.04) && near(fee.high, 0.07))
+  assert.equal(fee.state, 'reported', 'a banded figure is reported, not undisclosed — the source published it')
+  // And the remainder inherits the uncertainty rather than swallowing it.
+  const artist = w.rows.find((r) => r.id === 'd2f-artist')
+  assert.equal(artist.share, null)
+  assert.ok(near(artist.low, 0.78) && near(artist.high, 0.81), `the artist keeps ${artist.low}–${artist.high}, not a point`)
+  // A remainder of ranged siblings is ranged everywhere, including where a point also exists.
+  const stream = buildWaterfall('paid-stream')
+  const service = stream.rows.find((r) => r.id === 'service')
+  assert.ok(near(service.share, 0.30), 'the point remains where every sibling has a point')
+  assert.ok(service.high > service.share, 'and it carries the band its ranged siblings imply')
+  // A range cannot be divided further: a share of a range is not a figure.
+  assert.deepEqual(w.problems, [])
+})
+
+t('the newest routes draw the pipes and refuse to price them', () => {
+  const ai = buildWaterfall('ai')
+  assert.ok(ai.rows.length >= 3, 'the value of the AI route is the routes, so there must be more than one')
+  assert.equal(ai.rows.every((r) => r.share == null && r.low == null), true, 'not one AI figure may be invented')
+  assert.equal(ai.rows.every((r) => r.state === 'undisclosed' && r.why), true, 'every AI step must say why it has no figure')
+  // Input and output are different questions and the page must not merge them.
+  assert.ok(ai.rows.some((r) => r.id === 'ai-output'), 'the output side is the unsettled one and needs its own row')
+  assert.ok(ai.rows.some((r) => r.side === 'recording') && ai.rows.some((r) => r.side === 'publishing'), 'a model is trained on both rights')
+  // The deals are real even though the rates are not published, so the route cites the deals.
+  assert.ok(ai.sources.length >= 2)
+  assert.ok(ai.sources.every((x) => classifyCitation(x.url) === 'document'), 'a route with no figures rests entirely on its citations')
+  assert.match(ai.scenario.unitNote, /equity/, 'a cash unit is the wrong unit here and the page must say so')
+  for (const flow of ['recording', 'publishing']) assert.ok(getFlowNode(flow, 'ai'), `${flow} is missing the AI stage`)
+  assert.ok(getFlowNode('recording', 'ai').entityIds.includes('suno'))
+})
+
+t('a money edge is drawn at the weight of the share it carries', () => {
+  const diagram = fs.readFileSync(new URL('../src/components/flows/FlowDiagram.jsx', import.meta.url), 'utf8')
+  assert.match(diagram, /moneyWeight/, 'money edges are still all drawn at one weight')
+  assert.match(diagram, /strokeWidth=\{money \? moneyWeight\(e\)/)
+  // Only money carries magnitude: a rights edge is a licence, which has no size.
+  assert.equal(/kind === 'rights'[^\n]*moneyWeight/.test(diagram), false)
+  const weighted = Object.values(FLOWS).flatMap((f) => f.edges).filter((e) => e.kind === 'money' && e.econ?.kind === 'pct')
+  assert.ok(weighted.length >= 5, 'too few edges declare a share for weighting to say anything')
+  for (const e of weighted) assert.ok(e.econ.value > 0 && e.econ.value <= 100, `${e.from}→${e.to}: ${e.econ.value} is not a share`)
+})
+
+t('the page states what its own routes add up to, and cites every figure in the sentence', () => {
+  const rows = landingTable()
+  const ref = rows.find((r) => r.id === 'paid-stream')
+  const r = readFlows({
+    routes: rows.length,
+    priced: rows.filter((x) => point(x.recording) != null || point(x.publishing) != null).length,
+    undisclosed: rows.reduce((a, x) => a + x.undisclosed, 0),
+    reference: { label: ref.label, recording: ref.recording.value, publishing: ref.publishing.value },
+  })
+  // Sprint 35's rule: a reading is counted off the data, and every number in it is checkable against the data.
+  assert.match(r.text, new RegExp(`\\b${rows.length}\\b`))
+  for (const c of r.cites) assert.ok(r.text.includes(String(Math.round(c.value))), `the sentence claims ${c.label} and does not show it`)
+  assert.ok(r.cites.every((c) => c.value !== 0), 'a zero is never cited')
+  assert.match(r.text, /no published figure at all/, 'the reading must carry the part a slide would drop')
+  const page = read('pages/Flows.jsx')
+  assert.match(page, /answer=\{<Reading/, 'the reading belongs in the PageHeader answer slot, like every other page')
+  assert.equal(/\d+ ways money reaches/.test(page), false, 'a sentence with a number in it was written into the page')
+  // An empty reading is still a sentence, not a gap.
+  assert.match(readFlows({ routes: 0 }).text, /No money route/)
 })
 
 console.log(`\n${n} flow checks passed.`)

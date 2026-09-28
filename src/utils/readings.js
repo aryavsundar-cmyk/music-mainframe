@@ -150,6 +150,37 @@ export function readDsps({ rows, total, reporting, withRate }) {
   ], [{ label: 'rows', value: rows }, { label: 'reporting', value: reporting }, { label: 'withRate', value: withRate }])
 }
 
+/**
+ * Flows: what the routes on screen actually say about who is paid, and how much of the picture is missing.
+ *
+ * The last clause is the one that matters and the one a slide would drop: the routes whose economics nobody
+ * publishes. A page that divided five dollars and said nothing about the two it could not divide would be
+ * describing the disclosed half of the industry as though it were the whole of it.
+ *
+ * The middle clause names the reference route rather than the extremes. A "widest and narrowest" reading picked
+ * statutory radio at 100%, which is true and meaningless: a SoundExchange dollar is a recording royalty by
+ * definition, so the recording side keeping all of it is a restatement of the unit, not a finding.
+ */
+export function readFlows({ routes, priced, undisclosed, reference }) {
+  if (!routes) return reading(['No money route is on screen.'])
+  const split = reference?.recording != null && reference?.publishing != null
+    ? `On ${/^[aeiou]/i.test(reference.label) ? 'an' : 'a'} ${reference.label.toLowerCase()}, ${format.pct(reference.recording * 100, { digits: 0 })} of the dollar reaches the recording and ${format.pct(reference.publishing * 100, { digits: 0 })} the composition; the service keeps the rest.`
+    : ''
+  return reading([
+    `${n(routes)} ways money reaches this industry, ${priced ? `${n(priced)} of which divide at published rates` : 'none of which divides at a published rate'}.`,
+    split,
+    undisclosed
+      ? `${n(undisclosed)} steps across these routes have no published figure at all — platform pools and AI licences, where the non-disclosure is the finding rather than a gap in this record.`
+      : 'Every step on these routes carries a published figure.',
+  ], [
+    { label: 'routes', value: routes },
+    { label: 'priced', value: priced },
+    { label: 'undisclosed', value: undisclosed },
+    { label: 'reference recording share', value: reference?.recording != null ? reference.recording * 100 : null },
+    { label: 'reference publishing share', value: reference?.publishing != null ? reference.publishing * 100 : null },
+  ])
+}
+
 /** Money-side actors: how much of the capital side is profiled rather than merely listed. */
 export function readPe({ rows, total, profiled, absIssuers, volume }) {
   if (!rows) return reading(['No fund or sponsor matches these filters.'])

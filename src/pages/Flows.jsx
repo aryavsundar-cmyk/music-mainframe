@@ -1,15 +1,16 @@
 import { useEffect, useRef } from 'react'
 import { NavLink, Route, Routes, useNavigate, useSearchParams } from 'react-router-dom'
-import { PageHeader, Card, FlowMark, Tag, SideScroller, Segmented, Bar, DataTable, Th, Caveat } from '../components/primitives/index.js'
+import { PageHeader, Card, FlowMark, Tag, SideScroller, Segmented, Bar, DataTable, Th, Caveat, Reading } from '../components/primitives/index.js'
 import { FlowDiagram } from '../components/flows/FlowDiagram.jsx'
 import { FlowPanel } from '../components/flows/FlowPanel.jsx'
 import { Waterfall } from '../components/flows/Waterfall.jsx'
 import { FLOWS, getFlowNode } from '../data/flows.js'
 import { scenariosForFlow, getScenario } from '../data/scenarios.js'
-import { buildWaterfall, landingTable } from '../utils/waterfall.js'
+import { buildWaterfall, landingTable, point } from '../utils/waterfall.js'
 import { LIMITS } from '../data/limits.js'
 import { PageExport } from '../components/export/PageExport.jsx'
 import { buildPageDoc } from '../utils/pageDocs.js'
+import { readFlows } from '../utils/readings.js'
 
 const TABS = [
   { to: '/flows', flow: null, label: 'Both', end: true },
@@ -146,13 +147,19 @@ const cents = (v) => `${(v * 100).toFixed(v < 0.1 ? 1 : 0)}\u00A2`
  */
 function LandingTable() {
   const rows = landingTable()
-  const cell = (v, tone, nothing) => (v == null
+  // A total may be a point or a band. Where the published shares it is built from are ranges with no midpoint,
+  // so is the total, and it is shown as one rather than collapsed to give the column something tidy.
+  const cell = (t, tone, nothing) => (t == null
     ? (nothing
         ? <span className="t-small text-ink-3" title={nothing}>nothing</span>
         : <span className="text-ink-4" title="No figure on record for this route.">—</span>)
     : <span className="inline-flex flex-col items-end gap-1 w-full">
-        <span className="t-data text-ink-1">{cents(v)}</span>
-        <Bar share={v} tone={tone} height="h-1.5" className="w-full" label={`${cents(v)} in the dollar`} />
+        <span className="t-data text-ink-1">{t.value != null ? cents(t.value) : `${cents(t.low)}\u2013${cents(t.high)}`}</span>
+        <Bar
+          share={t.value ?? t.low}
+          segments={t.value == null ? [{ share: t.low, tone }, { share: t.high - t.low, tone: 'secondary-soft' }] : null}
+          tone={tone} height="h-1.5" className="w-full"
+          label={`${t.value != null ? cents(t.value) : `${cents(t.low)} to ${cents(t.high)}`} in the dollar`} />
       </span>)
   return (
     <Card pad="lg">
@@ -211,6 +218,21 @@ function Overview() {
   )
 }
 
+/**
+ * The page's own reading, counted off the routes rather than written into the page. Sprint 35's rule: never put
+ * a sentence with a number in it on a page — compute it from what is on screen, and cite every figure.
+ */
+function flowsReading() {
+  const rows = landingTable()
+  const ref = rows.find((r) => r.id === 'paid-stream')
+  return readFlows({
+    routes: rows.length,
+    priced: rows.filter((r) => point(r.recording) != null || point(r.publishing) != null).length,
+    undisclosed: rows.reduce((a, r) => a + r.undisclosed, 0),
+    reference: ref && { label: ref.label, recording: ref.recording?.value ?? null, publishing: ref.publishing?.value ?? null },
+  })
+}
+
 export default function Flows() {
   return (
     <>
@@ -218,6 +240,7 @@ export default function Flows() {
         eyebrow="Structure · two rights domains"
         title="Flows"
         lede="Recording and publishing are structurally different. The master runs down a chain and the money runs back up it. The composition fans out to three collection routes and dozens of licensees, and the money collects back in."
+        answer={<Reading reading={flowsReading()} />}
       />
       <nav className="flex gap-1 mb-6 border-b border-line-1">
         {TABS.map((t) => (

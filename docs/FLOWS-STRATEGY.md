@@ -147,7 +147,7 @@ midpoint presented as a rate. Where a figure is a rule of thumb it says so. Wher
 most of UGC allocation, most of AI — the row is drawn as *undisclosed*, which is a finding, not a
 gap: the canvas already distinguishes those (`coverage.js`).
 
-### Workstream 3 — The modern layer, on top of the legacy structure · *Sprint 43 in part* — UGC, platform claiming and black box shipped; AI and direct-to-fan deferred to 44
+### Workstream 3 — The modern layer, on top of the legacy structure · *Sprints 43–44* ✅ shipped in full — UGC, platform claiming, black box, direct-to-fan and AI
 
 New nodes and edges, added to the existing two flows rather than a third diagram, each carrying real
 `entityIds` so every one links to a company page that already exists:
@@ -179,7 +179,7 @@ rate is not public — UGC pool allocation, every AI settlement — the node say
 cites the reporting that establishes the deal exists. The app's whole posture is that a plausible
 number is worse than an honest absence.
 
-### Workstream 4 — The page, and the honesty infrastructure · *Sprint 43 in part* — comparator table, `LIMITS.flow`, `test:flows` (10 checks) and 8 glossary terms shipped; edge weighting and the computed reading deferred to 44
+### Workstream 4 — The page, and the honesty infrastructure · *Sprints 43–44* ✅ shipped in full — comparator, `LIMITS.flow`, weighted edges, the computed reading, `test:flows` (14 checks), 8 glossary terms
 
 - **Scenario comparator**: one table, every scenario as a row, "where $1 lands" as columns
   (recording side / publishing side / intermediary / platform). This is the single most useful
@@ -254,3 +254,38 @@ Two things turned out better than planned:
 - **`tone: 'muted'` had been in the edge data since Sprint 2 and nothing drew it.** The new UGC and claiming
   edges swept across the diagram at full weight, which is what surfaced it. The statutory branch has read better
   ever since.
+
+
+---
+
+## Sprint 44, and the rule it added
+
+The two routes left over from 43 turned out to be the two ends of the same spectrum, which is why they were
+worth shipping together.
+
+**Direct to fan** is the only route on the page whose platform publishes the whole split. Bandcamp's own Fair
+Trade Music Policy states 15% on digital, 10% on physical, payment processing of 4–7% charged separately, and
+the artist keeping the rest. Having one fully-disclosed route is what makes the others legible: the reader now
+has something to read a 55¢ recording share *against*.
+
+**AI** is the opposite, and the contribution is the pipes rather than the prices. Two distinct routes exist — a
+training licence on the input side and, in principle, a royalty on the output side — and only the input has
+been settled at all. The 2024 suits became licences (Universal/Udio, October 2025; Warner/Suno, November 2025)
+and no party published a rate. The route cites the deals and prices nothing. Its unit note says the further
+thing that matters: consideration included equity and assets, so even a disclosed cash figure would not be the
+whole payment.
+
+**The rule they forced.** Bandcamp publishes payment processing as "4–7%" and names no typical figure, and the
+engine had no way to hold that: every rate needed a point. Inventing a midpoint would have been the easiest
+thing in the sprint and would have made every figure below it false by an amount nobody could check. So a rate
+may now be a band with no point, a remainder computed from ranged siblings is itself a range, and a band-only
+row draws solid to its low with the uncertain part in a soft tone.
+
+That change improved routes nobody was looking at. The paid stream's "service retains" had been stated as a
+flat 30¢ when its inputs were ranges; it is now 30–38¢, which is what the published figures actually imply.
+A range cannot be divided further — a share of a range is not a figure — and the engine now says so rather than
+quietly multiplying.
+
+**Deferred, and named:** ad-supported streaming (needs a split published for advertising revenue rather than
+extrapolated from the paid one) and a numeric deduction layer (needs a citable threshold this app does not yet
+hold).

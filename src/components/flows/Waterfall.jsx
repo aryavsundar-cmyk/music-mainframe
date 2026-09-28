@@ -40,6 +40,17 @@ function Figure({ row }) {
   // it either way, so a cell can never show a figure and a range measured against two different things.
   const show = row.relative ? (v) => pct(v * 100) : cents
   const band = row.low != null && row.high != null && row.low !== row.high
+  // A row with a band and no point is a figure the source declined to collapse — Bandcamp states payment
+  // processing as "4–7%" and names no typical figure. It is shown as the range it is, with no midpoint invented
+  // to give the column something tidy to align on.
+  if (row.share == null && band) {
+    return (
+      <span className="t-data text-ink-1">
+        {show(row.low)}–{show(row.high)}
+        {row.relative && <span className="t-micro text-ink-4 ml-1">of the route</span>}
+      </span>
+    )
+  }
   return (
     <span className={`t-data ${row.relative ? 'text-ink-2' : 'text-ink-1'}`}>
       {show(row.share)}
@@ -53,7 +64,12 @@ function Row({ row, onSelectNode }) {
   const indent = Math.min(row.depth, 4) * 14
   const tone = TONE[row.tone] || (row.depth === 0 ? 'accent' : 'secondary-soft')
   const missing = row.state === 'undisclosed' || row.state === 'split-unknown'
-  const width = missing ? 0 : row.share
+  // A band-only row draws to its LOW in the solid tone and carries the rest of the range in a soft one: the
+  // certain part and the uncertain part, distinguishable, with neither overstated.
+  const width = missing ? 0 : row.share ?? row.low
+  const segments = !missing && row.share == null && row.low != null
+    ? [{ share: row.low, tone: TONE[row.tone] || 'secondary' }, { share: row.high - row.low, tone: 'secondary-soft' }]
+    : null
   // A relative row is drawn against its own branch, so its bar is honest only within that block; it gets the
   // muted track so it never reads as the same scale as the rows above it.
   return (
@@ -73,8 +89,8 @@ function Row({ row, onSelectNode }) {
         <div className="flex flex-col gap-1">
           <Figure row={row} />
           {!missing && (
-            <Bar share={width} tone={tone} height="h-1.5" track={row.relative ? 'bg-ground-2' : 'bg-ground-3'}
-              label={`${row.label}: ${row.relative ? pct(row.share * 100) : cents(row.share)}`} />
+            <Bar share={width} segments={segments} tone={tone} height="h-1.5" track={row.relative ? 'bg-ground-2' : 'bg-ground-3'}
+              label={`${row.label}: ${row.share == null ? `${cents(row.low)} to ${cents(row.high)}` : row.relative ? pct(row.share * 100) : cents(row.share)}`} />
           )}
           {missing && <div className="h-1.5 rounded-sm border border-dashed border-line-2" aria-hidden="true" />}
         </div>

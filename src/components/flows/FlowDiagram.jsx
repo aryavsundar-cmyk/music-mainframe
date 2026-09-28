@@ -28,6 +28,18 @@ function path({ x1, y1, x2, y2, v }) {
   return `M${x1},${y1} C${x1 + h},${y1} ${x2 - h},${y2} ${x2},${y2}`
 }
 
+/**
+ * How thick a money edge is drawn. An edge that declares a share carries it: 5% of a dollar and 55% of it are
+ * different facts, and drawing them at the same weight said they were the same. Clamped at both ends so a small
+ * share stays visible and a large one does not become a slab, and applied ONLY to money edges with a declared
+ * share \u2014 a rights edge is a licence, which has no magnitude.
+ */
+const moneyWeight = (edge) => {
+  const share = edge.econ?.kind === 'pct' ? edge.econ.value : null
+  if (share == null) return 1.25
+  return Math.max(1, Math.min(4, 1 + (share / 100) * 4))
+}
+
 export function FlowDiagram({ flow, selected, onSelect, compact = false }) {
   const ref = useRef(null)
   const [rects, setRects] = useState({})
@@ -77,7 +89,7 @@ export function FlowDiagram({ flow, selected, onSelect, compact = false }) {
             <path
               key={i} d={path(anchors(a, b, e.kind))} fill="none"
               stroke={money ? 'var(--mm-ink-3)' : color}
-              strokeWidth={money ? (touches ? 1.75 : 1.25) : (touches ? tok.stroke + 0.75 : tok.stroke) * (muted && !touches ? 0.6 : 1)}
+              strokeWidth={money ? moneyWeight(e) + (touches ? 0.75 : 0) : (touches ? tok.stroke + 0.75 : tok.stroke) * (muted && !touches ? 0.6 : 1)}
               strokeDasharray={money ? '2 3' : (muted ? '3 4' : tok.dash === 'none' ? undefined : tok.dash)}
               strokeLinecap="round"
               opacity={dim ? 0.18 : touches ? 1 : muted ? 0.4 : money ? 0.7 : 1}
