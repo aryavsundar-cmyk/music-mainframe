@@ -1,5 +1,858 @@
 [
  {
+  "id": "81981a6efd29845d",
+  "url": "https://www.digitalmusicnews.com/2026/10/02/music-industry-hires-oct-2-2026/",
+  "title": "Latest Music Industry Hires: Warner Music, SESAC, Universal Music, SoundExchange, BandLab, Live Nation, Chrysalis/Blue Raincoat, More",
+  "summary": "Here’s a recap of recent music industry hires and in-house promotions as of October 2nd, 2026. If you have a job shuffle to share, we’re all ears. Send us a note to news@digitalmusicnews.com. If you’d like to post a job on our Job Board, just send us a request to noah@digitalmus…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-03T00:18:00.000Z",
+  "entities": [
+   "live-nation",
+   "sesac",
+   "soundexchange",
+   "umg",
+   "wmg"
+  ],
+  "types": [
+   "label",
+   "live",
+   "pro"
+  ],
+  "topics": [],
+  "score": 88,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "61b7b2af91302f4b",
+  "url": "https://www.digitalmusicnews.com/2026/10/02/diddy-high-life-in-prison/",
+  "title": "Diddy Enjoying a High-Luxury Lifestyle on the Inside: Private Meals, Massages, Top-Shelf Liquor, Around-the-Clock ‘Staff’",
+  "summary": "Diddy is reportedly living a luxury lifestyle in prison, complete with a team of fellow inmates who act as his personal staff. Sean “Diddy” Combs arrived at Fort Dix in New Jersey last October after more than a year at the Metropolitan Detention Center in Brooklyn, and since the…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T23:36:18.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "b48cf93415edc903",
+  "url": "https://www.digitalmusicnews.com/2026/10/02/gabe-jagger-wmg-emp-merch/",
+  "title": "Gabe Jagger’s whynow Snags WMG’s Distressed EMP Merch Play",
+  "summary": "Gabe Jagger’s whynow scoops up Warner Music Group’s direct-to-consumer brand, EMP, to create an “integrated global fan commerce platform.” Gabe Jagger’s entertainment company whynow has acquired Warner Music Group’s (WMG) EMP Merchandise, a leading rock and pop culture merch ret…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T22:39:08.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "4c74ac554f033af9",
+  "url": "https://www.digitalmusicnews.com/2026/10/02/ai-music-separate-chart-debate/",
+  "title": "Should AI Music Get a Separate Chart? — Kelly Clarkson Thinks So",
+  "summary": "Should AI music get its own separate chart? Kelly Clarkson thinks it should, even amid her own enthusiasm for AI developments, and she’s not alone. Kelly Clarkson believes that AI can play a significant role in the music industry, but a clear distinction should be made between A…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T22:34:55.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "1c1317ed57cd5877",
+  "url": "https://www.billboard.com/pro/universal-music-canada-lays-off-employees-canada-news/",
+  "title": "In Canada: Universal Music Canada Lays Off Staff Across Several Departments",
+  "summary": "Also this week: Billboard Canada 40 Under 40 is returning in November.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T22:00:59.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "36753b100fd31062",
+  "url": "https://www.billboard.com/pro/erica-campbell-label-settles-lawsuit-gospel-music-royalties/",
+  "title": "Erica Campbell’s Label Quickly Settles Music Royalties Lawsuit Against Distributor",
+  "summary": "SRG/ILS Group is still locked in a separate legal fight over money with R&B singer Kenny Lattimore.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T20:46:17.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "2e85ae2a17947de6",
+  "url": "https://news.pollstar.com/2026/10/02/pollstar-live-2027-to-take-place-in-april-in-greater-palm-springs-area/",
+  "title": "Pollstar Live! 2027 To Take Place In April In Greater Palm Springs Area",
+  "summary": "Dates and a location are set for Pollstar Live! 2027, marking the conference’s desert debut in the greater Palm Springs area. The world’s largest gathering of live entertainment professionals promises three full days of bold ideas, meaningful connections and engaging conversatio…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-02T20:03:24.000Z",
+  "entities": [
+   "ticketmaster"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 20,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "dddd26b7a641cc68",
+  "url": "https://www.digitalmusicnews.com/2026/10/02/creator-nation-launch-live-nation/",
+  "title": "Live Nation Launches ‘Creator Nation’ to ‘Turn Followers Into Lasting Fans’ — Acquisitions Expected ‘In the Coming Months’",
+  "summary": "With an eye on helping content creators turn their “followers into lasting fans” – and aggressively pursuing acquisitions in the space – Live Nation has launched “Creator Nation.” The Ticketmaster parent formally announced Creator Nation’s debut yesterday, after closing out 2024…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T19:54:24.000Z",
+  "entities": [
+   "live-nation",
+   "ticketmaster"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "pe-capital"
+  ],
+  "score": 48,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "9f317f4b1a062a2d",
+  "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPTkZzb2xXSnVFX1gtOVVzMnFXdW5hUUVVVnkzdjNURFItaE5lT2FXRWlyM3hRS1pmRmxGLWoxYVBpTEIySEs2TkZRU3RScjVTQVdkbmsxOUM5TXZSNEd4Ql9QMGZTc0YwUmpyR2d2cGx6Q3VOUF9FNzZOWG9zeVFkRUM1bnRjb2hVRnpoalpYbFduRXhOXzVvZTMtblhsRGZET1V5dldVcFlrRG92T3c?oc=5",
+  "title": "The Mechanical Licensing Collective distributes more than $5B in music royalties",
+  "summary": "The Mechanical Licensing Collective distributes more than $5B in music royalties The Business Journals",
+  "source": "The Business Journals",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-02T19:18:00.000Z",
+  "entities": [
+   "the-mlc"
+  ],
+  "types": [
+   "pro"
+  ],
+  "topics": [
+   "pro-reform"
+  ],
+  "score": 36,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "b396210bfa0db681",
+  "url": "https://www.billboard.com/lists/executive-turntable-bandlab-ceo-warner-execs/",
+  "title": "Executive Turntable: Ivan Chen Named CEO of BandLab Technologies",
+  "summary": "This week, Warner Music Central Europe and Warner Music Mexico saw executive promotions and more.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T19:01:01.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "575e9087e11fbb7a",
+  "url": "https://www.digitalmusicnews.com/2026/10/02/youtube-shorts-prioritize-original-content/",
+  "title": "YouTube Shorts Recommendations Will Prioritize Original Content",
+  "summary": "To surface better Shorts recommendations for users, YouTube has adjusted its algorithm to “focus on originality.” YouTube says it will “focus on originality” in recommending Shorts to users, adjusting its algorithm so that users will see less unoriginal content. As a result of t…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T18:59:28.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "bc81ee36f4a5145d",
+  "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQWEdoWTZnT0QzelJIdG9TVkFQanFlb0lOUzVvd09qd2hSbk1RcWVqdHM4Y1k1QXIzVGp6YmU0MUxINTA3TFpIWWtXaFpNU0xlSlpHMGVaY2JFb2NSVzNRWEl3RGtBcXlEZnIxanZveTBVQnRnN0ZiTWUwazdFd2NDUUtkNUYyOHN2U29GSFFxcFBVQ1I1TFFhQ3NYSFA1WVZrRTNDX1RHSVVGUXdTRTFEd29JdVdlbl81ZkFvT000QXRSVFV6U1c0bVlLbVM?oc=5",
+  "title": "Protesters target new Live Nation venue with 'illegal monopoly' messages",
+  "summary": "Protesters target new Live Nation venue with 'illegal monopoly' messages The Tennessean",
+  "source": "The Tennessean",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-02T18:58:00.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 25,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "ada8181e0dcfe3e7",
+  "url": "https://variety.com/2026/music/news/victoria-monet-frequency-of-love-vocal-issues-motherhood-1236897279/",
+  "title": "Victoria Monét Returns: The R&B Star on How She Overcame Vocal Issues and Embraced Motherhood for Her New Album ‘Frequency of Love’",
+  "summary": "At her Los Angeles home, Victoria Monét sits perched on the edge of her off-white couch, enjoying the stillness in the moments leading up to her sophomore album, “Frequency of Love,” dropping in less than 48 hours. A lit candle with three wicks burns in front of her as she gazes…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T18:44:37.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "2a758d2ee2e29dc4",
+  "url": "https://news.pollstar.com/2026/10/02/oak-view-group-taps-laura-alexander-as-vice-president-of-lexingtons-rupp-arena/",
+  "title": "Oak View Group Taps Laura Alexander As Vice President Of Lexington’s Rupp Arena",
+  "summary": "Oak View Group (OVG) recently promoted Laura Alexander to Vice President of Rupp Arena, Central Bank Center, Lexington Opera House and the OVG Concert Series at Gatton Park in Lexington, Kentucky. Alexander become the first woman to serve as the top executive overseeing Rupp Are…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-02T18:44:34.000Z",
+  "entities": [
+   "oak-view-group"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 25,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "853c9450fd0d6b67",
+  "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNTVRhZE16OWFmNjJoME9BN2g5aWhsS19WYm14RVNXYWFucTZObFBEdnZicVhCbWF2c1ZFMm5mSE9EaDdHQnhaOVlIeVFHZlVDMlRRZlNtUmZHMUNnZXZSZTJyaFdOTFFuRGRUSHZfOWpyeHpGeFFBUkVmOE1HNGxqNEFOUTN5VUIwbkZmVUliZTJtWjlH?oc=5",
+  "title": "Apple Music Pays Up to 10 Percent More for Dolby Atmos Tracks. Nobody Has to Listen in Atmos for It to Count.",
+  "summary": "Apple Music Pays Up to 10 Percent More for Dolby Atmos Tracks. Nobody Has to Listen in Atmos for It to Count. InterSpace Music Distribution",
+  "source": "InterSpace Music Distribution",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-02T18:42:43.000Z",
+  "entities": [
+   "apple-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "6a0d7ac31963df19",
+  "url": "https://news.pollstar.com/2026/10/02/kennedy-center-honors-to-be-held-at-capital-one-arena-amid-fight-over-adding-trumps-name/",
+  "title": "Kennedy Center Honors To Be Held At Capital One Arena Amid Fight Over Adding Trump’s Name",
+  "summary": "This year’s Kennedy Center Honors will be held at Washington’s Capital One Arena, not the riverfront building that’s been at the center of a legal fight over adding President Donald Trump’s name to the building. The 49th annual awards are set to take place at Washington’s downto…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-02T18:42:25.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "ccc4fd9bb2ff379c",
+  "url": "https://news.pollstar.com/2026/10/02/yes-stadium-concerts-in-russia-canceled/",
+  "title": "Ye’s Stadium Concerts In Russia Canceled",
+  "summary": "After weeks of confusion, Moscow-based event producer Say Agency confirmed it is not moving forward with the two sold-out Ye concerts in St. Petersburg. The rapper formerly known as Kanye West was scheduled to perform at Gazprom Arena in St. Petersburg on Oct. 10 and 11. Say Age…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-02T18:33:34.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "37ef597886ec1f8c",
+  "url": "https://news.pollstar.com/2026/10/02/fontaines-d-c-announce-2027-north-american-tour/",
+  "title": "Fontaines D.C. Announce 2027 North American Tour",
+  "summary": "Irish rockers Fontaines D.C. will tour North America next year in support of their album Dopamine Chamber. The 19-date run begins April 23 at MGM Music Hall at Fenway in Boston and visits mostly theaters and amps, though there are arena plays at Toronto’s Scotiabank Arena and In…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-02T18:03:11.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "310376beee4fcada",
+  "url": "https://www.digitalmusicnews.com/2026/10/02/grammys-best-asian-pop-music-performance-category-decision/",
+  "title": "Grammys Won’t Retire the ‘Asian Pop’ Category — Harvey Mason Says ‘It’s the Right Conclusion for the Music Community Overall’ Despite BTS and Stray Kids Boycotts",
+  "summary": "Despite facing considerable pushback – and prompting multiple boycotts – the Grammys’ controversial “Best Asian Pop Music Performance” award category will still be part of the 2027 event. Recording Academy CEO Harvey Mason Jr. confirmed as much in a statement today, following un…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T17:12:21.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "461b9a1593999528",
+  "url": "https://www.musicbusinessworldwide.com/from-warners-emp-sell-off-to-universal-musics-briegmann-promotion-its-mbws-weekly-round-up/",
+  "title": "From Warner’s EMP sell-off to Universal Music’s Briegmann promotion… it’s MBW’s Weekly Round-Up",
+  "summary": "The biggest headlines from the past few days... Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T16:52:54.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "70e3ddfc26ab46cd",
+  "url": "https://www.musicbusinessworldwide.com/bill-withers-publisher-sues-umg-sony-and-kobalt-claiming-olivia-deans-ive-seen-it-copies-just-the-two-of-us/",
+  "title": "Bill Withers’ publisher sues UMG, Sony, and Kobalt, claiming Olivia Dean’s ‘I’ve Seen It’ copies ‘Just the Two of Us’",
+  "summary": "The plaintiff says its representatives came to what they considered to be the \"obvious and inescapable conclusion\" that Dean's song copied the Withers track. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T16:51:23.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [
+   "litigation",
+   "policy"
+  ],
+  "score": 42,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "a2e3f7c20b204b52",
+  "url": "https://www.musicbusinessworldwide.com/tyler-brown-i-would-rather-have-1-of-a-hit-record-than-100-of-a-record-that-wasnt/",
+  "title": "‘I would rather have 1% of a hit record than 100% of a record that wasn’t.’",
+  "summary": "Tyler Brown, founder of London-based Funfair, on hits, loyalty, and why songwriters should be taking a share of master income Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T16:49:40.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "fb6fdc7006d5115a",
+  "url": "https://www.musicbusinessworldwide.com/suno-is-far-beyond-2m-subscribers-and-300m-in-revenue-says-mikey-shulman-who-argues-its-good-that-ai-music-has-no-firm-rules-of-the-road-yet/",
+  "title": "Suno is ‘far beyond’ 2m subscribers and $300m in revenue, says Mikey Shulman – who argues it’s ‘good’ that AI music has no ‘firm rules of the road’ yet",
+  "summary": "Shulman also set out what WMG and BMG get from their deals, and who should be setting AI's rules. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T16:42:55.000Z",
+  "entities": [
+   "bmg",
+   "suno"
+  ],
+  "types": [
+   "label",
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "dsp-economics"
+  ],
+  "score": 56,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "1b20d61548d210e3",
+  "url": "https://www.musicbusinessworldwide.com/an-8m-streaming-fraud-two-plays-a-day-heres-the-pro-rata-math-behind-the-bot-scheme-and-the-rule-change-that-would-have-killed-it/",
+  "title": "An $8M streaming fraud, two plays a day. Here’s the pro-rata math behind the bot scheme – and the rule change that would have killed it.",
+  "summary": "Ahead of Tuesday's sentencing in the first US criminal streaming fraud case, MBW breaks down the pro-rata arithmetic behind Michael Smith's bot scheme. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T16:42:39.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "dsp-economics"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "eb70be67769fc374",
+  "url": "https://www.musicbusinessworldwide.com/yusim-aladro-promoted-to-general-manager-at-warner-music-mexico/",
+  "title": "Yusim Aladro promoted to General Manager at Warner Music Mexico",
+  "summary": "She reports to Tomas Rodríguez, President of Warner Music Mexico and Música Mexicana. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T16:42:21.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "fb7f4d9d6c8cd33d",
+  "url": "https://news.pollstar.com/2026/10/02/dylan-gossett-unveils-the-ramblin-tour-for-spring-2027/",
+  "title": "Dylan Gossett Unveils Spring 2027 US Leg Of ‘The Ramblin’ Tour’",
+  "summary": "Dylan Gossett, the multi-platinum singer, songwriter, and producer, has unveiled his US headline tour set for spring 2027. The US leg of the tour will begin on March 25 at the Charleston Music Hall in Charleston, SC. Gossett will then travel to The Signal in Chattanooga, TN; the…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-02T16:32:09.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "ad650ed88e6f0b3c",
+  "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQWTZ2VUhfS3BmUy1OcTNCNFREcVdubnFyVGNyU01pM3RPSUlybzVYWmVjVUhDSm9aRzhEek9Za1RhSXBTblg2aXNFX2o5SmtMSnlNYmRHNDU4Z0pfVDFic2NLNVdLUzBLMkZRSW1aSndSc2FaSjdCLUVuQmlCT1ZIWjVEUC15RGpLcC1mdGtxOWRJSG9rdXRDSmVOTFdYWmc?oc=5",
+  "title": "Kobalt Founder Willard Ahdritz Launches Music Tech Investment Firm",
+  "summary": "Kobalt Founder Willard Ahdritz Launches Music Tech Investment Firm famemagazine.co.uk",
+  "source": "famemagazine.co.uk",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-02T16:13:34.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "pe-capital"
+  ],
+  "score": 20,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "c5604484a8c08f9d",
+  "url": "https://news.pollstar.com/2026/10/02/from-beyonce-to-blur-to-bz-japans-summer-sonic-celebrates-25-years/",
+  "title": "From Beyoncé To Blur To B’z, Japan’s Summer Sonic Celebrates 25 Years",
+  "summary": "Please login to your Pollstar subscriber account to view this content.",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-02T15:41:51.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "fc341ab9d63a5a88",
+  "url": "https://www.billboard.com/pro/concord-music-publishing-progessive-pop-underscores-oklou/",
+  "title": "How Concord’s Roster of Progressive Pop Producers Is Evolving Mainstream Music",
+  "summary": "Years after making bets on a slew of producers on the cutting edge of internet culture, the publisher is reaping the benefits as pop follows suit.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T15:41:16.000Z",
+  "entities": [
+   "concord"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "216b861447ede974",
+  "url": "https://news.pollstar.com/2026/10/02/phillys-mann-center-celebrates-50-years-70m-renovation-with-help-from-willie-nelson-neil-young/",
+  "title": "Philly’s Mann Center Celebrates 50 Years, $70M Renovation With Help From Willie Nelson & Neil Young",
+  "summary": "Please login to your Pollstar subscriber account to view this content.",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-02T15:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "64157a49418c0103",
+  "url": "https://variety.com/2026/gaming/news/eminem-nerds-clothing-merch-marshalls-massacre-video-game-1236897557/",
+  "title": "Eminem Teams With NERDS Clothing for Original Video Game, New Streetwear Collab Out of New York Comic Con (EXCLUSIVE)",
+  "summary": "Eminem will release a limited-edition merch collection with streetwear and pop culture brand NERDS Clothing during New York Comic Con next week, including the launch of an original video game. Per the partners, the NYCC debut will feature original artwork created by NERDS, inclu…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T15:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "88128a349b518d7a",
+  "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPNGkxNm94cTNBVkk0Z0hnV2Z4T0RJNktYNW1OTlBRWU01QldpRUFkSUZSRG5ZbExhMGczeWtaS2dXN0VUQWEtWnNabFhlU0pnQmZHaDhPOXRadGY2ckR5dVc2cnNGenFaUFdKcGx4UUUwbERnODBGYmJfVTBSNllpVThGbjVHaWVJaE1ITV9RT2pSMXpVbzM2T3VLTFoyZVUxQThvaDF2aHVCVXB4N0VaNW1NOWtiQU0?oc=5",
+  "title": "Historic ruling on 'fair use' and AI may help Nashville songwriters",
+  "summary": "Historic ruling on 'fair use' and AI may help Nashville songwriters The Tennessean",
+  "source": "The Tennessean",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-02T15:23:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "2b5f662e35a1fbbc",
+  "url": "https://www.billboard.com/pro/music-companies-stock-market-stumble-why-its-happening/",
+  "title": "Behind Music Companies’ Stock Market Stumble: ‘They Are Caught in Crosswinds’",
+  "summary": "Entertainment and media stocks are down almost across the board, but analysts say investors fear some issues may be systemic.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T15:19:13.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "a9d1d869329db649",
+  "url": "https://news.pollstar.com/2026/10/02/baltimores-camden-yards-scores-renovation/",
+  "title": "Baltimore’s Camden Yards Scores Renovation",
+  "summary": "The left-field upper deck at Baltimore’s Camden Yards will be undergoing significant renovations ahead of the 2027 season. The Orioles announced that their home ballpark will have approximately 2,000 seats removed to build a new social space in the upper deck in left field. The…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-02T15:06:26.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "bedb3b62273fd20a",
+  "url": "https://completemusicupdate.com/streaming-fraud-is-fuelled-by-perceived-lack-of-a-legal-risk-industry-stakeholders-tell-judge-in-michael-smith-sentencing/",
+  "title": "Streaming fraud is fuelled by “perceived lack of a legal risk”, industry stakeholders tell judge in Michael Smith sentencing",
+  "summary": "The streaming fraudster who pleaded guilty to wire fraud conspiracy in relation to an $8 million streaming scam will be sentenced next week. The Music Fights Fraud Alliance says the sentence should “reflect the systemic harm” caused by the scam, so that it deters others involved…",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T14:55:02.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "4a3d6c3353290224",
+  "url": "https://news.pollstar.com/2026/10/02/mrs-green-apple-dominates-arenas-stadiums-elevating-japanese-touring-to-new-heights/",
+  "title": "Mrs. GREEN APPLE Dominates Arenas & Stadiums, Takes J-Pop To New Heights (Subscribers Only)",
+  "summary": "Please login to your Pollstar subscriber account to view this content.",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-02T14:40:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "dsp-economics"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "7b3eb673f64dd356",
+  "url": "https://www.musicbusinessworldwide.com/the-intimacy-economy-why-music-stars-are-going-small/",
+  "title": "The Intimacy Economy: Why Music Stars Are Going Small",
+  "summary": "Charli XCX called it “anti-marketing.” MBW columnist Diana Umana argues it’s a structural shift that the biggest artists have already caught on to… Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T13:53:25.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "246ad62afddf66e2",
+  "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQOGY5aVdvOXFpYXhXVGlfLUk5cUlpOTJsbjY5VnotVFZFVkdEUVQwd1ZLd0d1VWRSZDJ1N2ctWUF2a2RBQmNfVnRyaklEWlRfZGk0VmJwUjc3Y0RzNWhKZE5DNXpCNjhpblp2OU5VNmVnTnBJS002d0k2ZmhqUnhzYg?oc=5",
+  "title": "Opinion | I loved Bobby Pulido’s music. But should he be in Congress?",
+  "summary": "Opinion | I loved Bobby Pulido’s music. But should he be in Congress? The Boston Globe",
+  "source": "The Boston Globe",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-02T13:18:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "policy"
+  ],
+  "score": 16,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "9ad46ab41b58f34e",
+  "url": "https://variety.com/2026/music/news/stray-kids-bts-not-submitting-grammy-awards-1236897475/",
+  "title": "Stray Kids Join BTS in Sitting Out Grammy Awards",
+  "summary": "Popular K-pop group Stray Kids let the submission window for the 69th Grammy Awards close without entering any music, their agency JYP Entertainment confirmed on Friday, joining BTS in sitting out the ceremony. The agency confirmed to local media that the group filed no entry be…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T13:09:11.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "174784ab0e7b2ceb",
+  "url": "https://musically.com/2026/10/02/grammy-awards-to-press-on-with-controversial-asian-pop-category/",
+  "title": "Grammy Awards to press on with controversial ‘Asian Pop’ category",
+  "summary": "The Recording Academy has been fighting a fire in recent weeks after BTS declined to submit their latest music to the Grammy Awards in protest at the event’s new ‘Asian Pop’ category. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "2ffa7102f654619c",
+  "url": "https://musically.com/2026/10/02/canadian-report-breaks-down-the-climate-risks-for-live-music/",
+  "title": "Canadian report breaks down the climate risks for live music",
+  "summary": "The latest research into the climate emergency’s impact on live music comes from the Canadian Live Music Association with its ‘Sound Check: Climate Risk and Resilience in Canada’s Live Music Sector’ report. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "560cfc53d6dc7807",
+  "url": "https://musically.com/2026/10/02/live-nation-backs-new-firm-creator-nations-plans-for-a-roll-up/",
+  "title": "Live Nation backs new firm Creator Nation’s plans for a roll-up",
+  "summary": "Live Nation’s latest corporate move isn’t about music: it’s about the creatorsphere. The company has announced a new firm called Creator Nation, for which it is a “capital partner and strategic backer”. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T12:30:00.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 20,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "98601c71b31af46b",
+  "url": "https://musically.com/2026/10/02/tiktok-report-claims-it-helped-generate-81bn-in-us-gdp-in-2025/",
+  "title": "TikTok report claims it helped generate $81bn in US GDP in 2025",
+  "summary": "Reports about how brilliant you are for the economy have long been a standard part of the lobbying process. YouTube does it, music industry bodies do it… and TikTok isn’t shirking the tactic either. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T12:30:00.000Z",
+  "entities": [
+   "tiktok"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "aaaf86c418bca464",
+  "url": "https://musically.com/2026/10/02/christmas-music-is-already-getting-36-2m-daily-spotify-streams/",
+  "title": "Christmas music is already getting 36.2m daily Spotify streams",
+  "summary": "A Santa-hat tip this morning to music-streamers in the Philippines, who are famously early to popping on their holiday playlists. 2026 is no exception. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T12:30:00.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "c374b0449382ee38",
+  "url": "https://musically.com/2026/10/02/youtube-shorts-algorithm-will-now-prioritise-original-content/",
+  "title": "YouTube Shorts algorithm will now ‘prioritise original content’",
+  "summary": "The ‘our algorithm is now recommending less unoriginal slop’ seems to have become a rite of passage for every big social or video platform. Even if boasting about this begs the question of why they didn’t adopt that policy earlier. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "e94100ceb7fd798d",
+  "url": "https://musically.com/2026/10/02/billionaires-can-buy-the-empty-pockets-new-album-for-285k/",
+  "title": "Billionaires can buy The Empty Pockets’ new album for $285k",
+  "summary": "Who would pay $285,000 for a CD album? Billionaires, that’s who! Well, that’s the hope for Chicago band The Empty Pockets, with a special edition of their new album ‘Dear Billionaires’. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-02T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
   "id": "4bd1b7fb51d5c48b",
   "url": "https://musically.com/2026/10/02/strategy-spotlight-sandbox-guide-the-smartest-campaigns-so-far-in-2026/",
   "title": "Strategy Spotlight: Sandbox Guide – The smartest campaigns (so far!) in 2026",
@@ -278,6 +1131,28 @@
   "firstSeen": "2026-10-02T12:29:12.456Z"
  },
  {
+  "id": "9d64e4f8c7fedbf0",
+  "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPa1R3Tk1VNzhzNUZabkRudWlRdjNjenF2d1RTU2UzSWdyQ1o4NzYzVkhTR0hicWRXVk1LeEhYRGlxU2J1cnJxbUU4Rm9veWtMRnpBb3pkcDVheGdtektibGh5Y1VLSDN5LUc1RGdxQUxkbG93R05XR2tzMmszalhva2RyS1Q1cGp1M3pmSUVYMjljSzBqSHpVbnZPbDRFR2dTcktyNElmSk9Gc25ZQnNR0gG0AUFVX3lxTFBvakJES1NfLTNrNGFwSHUwZEhRUDhmT3RKbndEM1lPc2tMN0RfZWdKaW9sUmVoZ01RdENTWVNualJYOGVseUs1ZnhnWVBzRGFHT1lyamFMQTFwVWkwa0kyRzU3N0xlc1BRWnJ4SnlaZjNuSFQzWDI4Q2NXYTJEVGZ6T1BKbUJlb3JySTVTNG9maHEyY2NVUE9xMUxaNzRwZlQ3ZGx5eUE1SGZnV2c4RGFMX1EwVQ?oc=5",
+  "title": "Live Nation, Justice Department reach settlement in antitrust case - ABC News",
+  "summary": "Live Nation, Justice Department reach settlement in antitrust case ABC News - Breaking News, Latest News and Videos",
+  "source": "Breaking News, Latest News and Videos",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-02T01:49:18.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 23,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
   "id": "63a20ebf7e87d475",
   "url": "https://www.billboard.com/pro/the-game-lawsuit-umg-under-promoting-2022-album/",
   "title": "The Game’s Label Sues UMG for Under-Promoting His 2022 Album: ‘Diminished Commercial Performance’",
@@ -405,6 +1280,22 @@
   "topics": [],
   "score": 28,
   "firstSeen": "2026-10-02T12:29:12.456Z"
+ },
+ {
+  "id": "8641cd67a2dbe0c0",
+  "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOT3JGN0hBU1FWT2tGbWdENng1VDN6U2JXMThoN0FXcm51bjE1R3NVYmdXM2JGTkNWX1FvdzBYMm5ZVGxCVms0TGlWblNZM3BEbzAxekNkM0hCSExOUEd6cG5sa09ldEttNnlTZk9IZmQ0dDRTLWNvd25ncVBSZFR6dmdjZENNQUNvU1ljNmVxUlhGWmx3UnoxMjdjSmZ2bUswSWtNUTFLSzV0WFZtUThEc05Hdw?oc=5",
+  "title": "Money for something: why public funding for NZ’s live music scene needs retuning",
+  "summary": "Money for something: why public funding for NZ’s live music scene needs retuning The Conversation",
+  "source": "The Conversation",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-01T22:25:07.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
  },
  {
   "id": "a26105ab813cd7b4",
@@ -669,6 +1560,24 @@
   ],
   "score": 18,
   "firstSeen": "2026-10-02T12:29:12.456Z"
+ },
+ {
+  "id": "dd5739b90b754611",
+  "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9xbkVPMnNPNmJOazFmbXZucEhLVmhQYy16LTV5b0FtYWp2VUJSaXRvZE14N2tKMFF6WEprTUZ0YlNOT09HZ0w2NGt6WDJxNU9EeGNScXB6RGxSQWg3?oc=5",
+  "title": "Private Equity, Music Rights, and the Art of Keeping Control",
+  "summary": "Private Equity, Music Rights, and the Art of Keeping Control YouTube",
+  "source": "YouTube",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-01T19:27:30.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "pe-capital"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-03T11:36:06.433Z"
  },
  {
   "id": "f222e4274cfb1cb9",
