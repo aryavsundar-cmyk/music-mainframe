@@ -1,5 +1,95 @@
 [
  {
+  "id": "22bb10bd20489c2e",
+  "url": "https://variety.com/2026/music/news/taylor-swift-snl-cameo-dakota-johnson-saturday-night-live-1236898411/",
+  "title": "Taylor Swift Crashes Dakota Johnson’s ‘SNL’ Monologue as Her Breakup Therapist, Shows Travis Kelce Love with Cleveland Shoutout",
+  "summary": "Predictions that Taylor Swift would make a cameo on “Saturday Night Live” with host Dakota Johnson came to fruition when the duo appeared together in the opening monologue. After Johnson joked about her failed relationships, she said “I have really good friends. They don’t judge…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-04T03:49:52.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-04T12:17:43.993Z"
+ },
+ {
+  "id": "45485744e291d300",
+  "url": "https://variety.com/2026/music/news/lawrence-rothman-here-lies-love-album-producer-americana-1236898339/",
+  "title": "Lawrence Rothman on Their New Album, ‘Here Lives Love/Sawdust to Stardust,’ a Growing Legacy Producing Other Artists, and the Talk with Bowie That Changed Everything",
+  "summary": "Lawrence Rothman has a lot of nerve, starting an album with a song called “The Meaning,” and then daring to ask some of the questions inherent in the big picture created by those two words — like, if not what is the meaning of life, then what is the meaning of music? (Of course,…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-03T23:50:49.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [],
+  "score": 28,
+  "firstSeen": "2026-10-04T12:17:43.993Z"
+ },
+ {
+  "id": "91ffb2f750d7e5ba",
+  "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQdlBzVHYta2lyclFqeUVERE03R0kwbFJNaEM3c1NxXzhIWE42YWVxWnhKSkRNcG0tQ2lkRFRtZm5CWUc3NDJPMTJIaGRaXzN4V2xUdzhTT1BjazFLUEY3MGptcDYzUjBhZ2FuZHJES1kxS2VOQy01QVF0bTJ1XzNoUHZ0M3JFcnlOYjZoaTVGY1d1R2k0cHhsUXRiOHdUWldwcllXMjA0TXY1QWNUODdIMjh0Tk1Yb3hPdm5aWGNsOUpCQ0ls?oc=5",
+  "title": "LyricFind To Provide Global Lyric Distribution And Artist Visual Tools To VIEENT Music",
+  "summary": "LyricFind To Provide Global Lyric Distribution And Artist Visual Tools To VIEENT Music CelebrityAccess",
+  "source": "CelebrityAccess",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-03T19:47:11.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-04T12:17:43.993Z"
+ },
+ {
+  "id": "7ed4e3bcbe06c19f",
+  "url": "https://variety.com/2026/artisans/news/behemoth-who-are-nine-composers-tony-gilroy-1236893524/",
+  "title": "‘Behemoth!’: Why Tony Gilroy Needed Nine Composers to Score His Latest Film, and a Guide to Who Did What in the Film (EXCLUSIVE)",
+  "summary": "SPOILER ALERT: This story contains minor spoilers for “Behemoth!” in theaters Dec. 4 Tony Gilroy’s “Behemoth!” bowed at the New York Film Festival Friday, and Lincoln Center’s Tully Hall seemed a fitting place to showcase a film about a musician. Written and directed by Gilroy,…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-03T17:41:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-04T12:17:43.993Z"
+ },
+ {
+  "id": "2aa3354686c630b3",
+  "url": "https://variety.com/2026/music/news/zach-bryan-palestine-shirt-robert-kraft-gillette-stadium-1236898152/",
+  "title": "Zach Bryan Wears ‘Free Palestine’ Shirt While Headlining Robert Kraft’s Gillette Stadium; Drummer Honors Slain Palestinian Girl",
+  "summary": "Macklemore may have been barred from saying “Free Palestine!” at Robert Kraft’s Gillette Stadium — and indeed, from anywhere else on Ed Sheeran’s tour, as that headliner agreed with Kraft that the controversial rapper should be removed from the opening slot on all the shows he w…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-03T16:07:04.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-04T12:17:43.993Z"
+ },
+ {
   "id": "81981a6efd29845d",
   "url": "https://www.digitalmusicnews.com/2026/10/02/music-industry-hires-oct-2-2026/",
   "title": "Latest Music Industry Hires: Warner Music, SESAC, Universal Music, SoundExchange, BandLab, Live Nation, Chrysalis/Blue Raincoat, More",
@@ -1080,6 +1170,24 @@
   "firstSeen": "2026-10-02T12:29:12.456Z"
  },
  {
+  "id": "93a244ae40e732b2",
+  "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQRHhjWUtvM2M5SkdyMmdTYU1lUHFYclM1X0ppM1V6M2FnbFE4SDZQcldQeVJCRlVZangxV01tQXZDbmdXeFhjbDFfTmVCRGtyNUI5STdvdjM1ekR1ZkhrTUpUU3hnSk5mcjh5SFZSOXI5elM2b0V4QlNQWnlyOVlMeGoyU2hnT3JrSm52VTA2MVpscnM5cGRiQkp5LU5UVGhlVTY0LWxfUWZFN1FkSlBiemRSSm9qYm5CMnVnUUlQOUJFb1dPdkZkOTN5aUtIOHA1Zkk2NzNzajFrNW1lU0E0SENDeVVWYWM?oc=5",
+  "title": "Music deals in focus after Pophouse acquires stake in Sia’s master music rights; Forward Consumer Partners featured in They Said It",
+  "summary": "Music deals in focus after Pophouse acquires stake in Sia’s master music rights; Forward Consumer Partners featured in They Said It pehub.com",
+  "source": "pehub.com",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-02T04:58:12.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "m&a"
+  ],
+  "score": 13,
+  "firstSeen": "2026-10-04T12:17:43.993Z"
+ },
+ {
   "id": "2dcb1b2fa98f9137",
   "url": "https://www.digitalmusicnews.com/2026/10/01/doj-cites-mffa-streaming-fraud-case/",
   "title": "Spotify, Amazon Music, Merlin, Empire, Downtown, Distrokid, Meta, Others Join the DOJ In Recommending Prison Time for Streaming Fraudster Michael Smith",
@@ -1280,6 +1388,26 @@
   "topics": [],
   "score": 28,
   "firstSeen": "2026-10-02T12:29:12.456Z"
+ },
+ {
+  "id": "8d323ce94fbb99d1",
+  "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOX0VtazBFR0M3cm9HOUJ2dkpSZTkzRlp5ZWh6bXRUMlViWGg4Z1JfYVZnUHJ2QzRNaUFzMzd2Szl5YWwyMllJLXFoVHlBMk56cjhmcThtLU1kVG9OMHJhaS1SNVFxWFlQaU1laTZGZ1VPTVItclNSR3dLaDhqT1hlaTFnNDFtdW93YTRlQk1ZMTlkNjhvSnlDSXJWYmxsc24xMUJBYktzOVVMdHlxNENxX0E2WVFWenhQ?oc=5",
+  "title": "List of 17 Acquisitions by Universal Music Group (Oct 2026)",
+  "summary": "List of 17 Acquisitions by Universal Music Group (Oct 2026) Tracxn",
+  "source": "Tracxn",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-01T22:27:02.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 19,
+  "firstSeen": "2026-10-04T12:17:43.993Z"
  },
  {
   "id": "8641cd67a2dbe0c0",
@@ -2716,6 +2844,26 @@
   "topics": [],
   "score": 5,
   "firstSeen": "2026-10-02T12:29:12.456Z"
+ },
+ {
+  "id": "83e640e04044fcc6",
+  "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBJSHNPaWdYMmFIeHVLQ0hUaVVPZHRRN1ItLTRiLUJ1YUJLYXRZeXNfdlgxNDk0cDZTTkp0aURKWFNwRDhnWEFMdDl6N040aHV5YVgzRHpqU2h1ZEhVTENGVTNfZEZxaG9Lb3JCeUVaWG02eDR5S0Vhaw?oc=5",
+  "title": "The MLC’s Lengthy Legal Battle Against Pandora Is About to Get Lengthier",
+  "summary": "The MLC’s Lengthy Legal Battle Against Pandora Is About to Get Lengthier Digital Music News",
+  "source": "Digital Music News",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-01T05:14:31.000Z",
+  "entities": [
+   "the-mlc"
+  ],
+  "types": [
+   "pro"
+  ],
+  "topics": [],
+  "score": 18,
+  "firstSeen": "2026-10-04T12:17:43.993Z"
  },
  {
   "id": "546d63c4446d22ec",

@@ -1456,6 +1456,29 @@
   "firstSeen": "2026-09-30T12:30:24.177Z"
  },
  {
+  "id": "06ed36b1054a2eab",
+  "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPVG5xNmZOcVkwak1KeUhlSDUtZWFYLUZ1TVI4V0tEaGtBUnBJb0RUT2g0TjhyUEJqQlRVTF9VV2M3TGR3c2VPZUZQZFJsNnVkM25oOTVQSGl5Vm5hWE9hdXE4VnYzYXBwT2h2bVBmeUFXY3RfRzg4RUJMU0ZxN2hqTVU4THRFTmtwTHdyQlNZQkFhQmNIM3RFVnpUMUxWMVZOUzBkSEN1WQ?oc=5",
+  "title": "Live Nation, Ticketmaster Bid to Dismiss FTC Suit Denied",
+  "summary": "Live Nation, Ticketmaster Bid to Dismiss FTC Suit Denied Yahoo Finance",
+  "source": "Yahoo Finance",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-29T17:07:28.000Z",
+  "entities": [
+   "live-nation",
+   "ticketmaster"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "policy"
+  ],
+  "score": 36,
+  "firstSeen": "2026-10-04T12:17:43.993Z"
+ },
+ {
   "id": "8120bff2d7ebe4ab",
   "url": "https://variety.com/2026/music/global/graham-norton-opalite-taylor-swift-conspiracy-theory-1236878178/",
   "title": "Graham Norton Shoots Down ‘Conspiracy Theory’ That Taylor Swift’s ‘Opalite’ Video Was Shot Before She Came on His Show",
@@ -2813,6 +2836,26 @@
   "topics": [],
   "score": 24,
   "firstSeen": "2026-09-29T12:48:18.319Z"
+ },
+ {
+  "id": "82a9261f7599bed4",
+  "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOTnY3enprU0VGTzIxYVJvY21WcFNobmlHTXBvczU1cVhFQUgwaU1maXpCQUJqS2lSZE5sNTRTak5jLTk0OUlYNjM1UzA5WnhQczJjVmo3dUYxeGFJU2VSWmQ1b1BKUXgxOXRUY2xnVTcta1pzaldfa09fbUpFeTQ1NHUtVWFGRTlJdUc4RHJkaTdSS3o2a3F0YUplaVhvZE4t?oc=5",
+  "title": "UNIVERSAL MUSIC GROUP APPOINTS ÒSCAR CELMA AS SENIOR VICE PRESIDENT, APPLIED AI AND MACHINE LEARNING",
+  "summary": "UNIVERSAL MUSIC GROUP APPOINTS ÒSCAR CELMA AS SENIOR VICE PRESIDENT, APPLIED AI AND MACHINE LEARNING Yahoo Finance",
+  "source": "Yahoo Finance",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-28T14:06:00.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 16,
+  "firstSeen": "2026-10-04T12:17:43.993Z"
  },
  {
   "id": "4d60b49de55cf687",
