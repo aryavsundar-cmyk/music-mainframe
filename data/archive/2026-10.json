@@ -1,5 +1,724 @@
 [
  {
+  "id": "844a9f63310109c8",
+  "url": "https://www.digitalmusicnews.com/2026/10/05/what-your-music-data-does-not-know/",
+  "title": "What Your Music Data Doesn’t Know Could Be Costing You Money",
+  "summary": "Data quality in the music business is no longer just an administrative concern — it’s a revenue issue. When repertoire and rights information is incomplete, inconsistent, or poorly reconciled across the ecosystem, royalties get delayed, misallocated, or missed altogether. This a…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-05T14:30:03.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "9b56e352301c968b",
+  "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQTW9NLUh1bEtBaDJhbFI0eHZPQlJDZUJFSE5NbHQ3RmRVZ1RaVDhpLVMxdXg3V3FpcjlueDNWZlZmanMwcWV5TGdvdHoxRWRTNG5yRHhHZWhXc0lfVzZkVHJzc3hZVzRkeGlvOGxCWFZzVXhxNHNXdGFwOTVEVkpyb3VzVF9lemt3SWl2dEtza0syLVlMZk9GaU8xTGhfcmNjYzZRajI4MUNjMUZEQmVv?oc=5",
+  "title": "BREAKING: Big Loud Records Adds Dusty Miller As President Of Catalog Acquisitions",
+  "summary": "BREAKING: Big Loud Records Adds Dusty Miller As President Of Catalog Acquisitions MusicRow.com",
+  "source": "MusicRow.com",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-05T14:13:54.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "catalog-deal"
+  ],
+  "score": 27,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "36069b1b67de8d5b",
+  "url": "https://www.billboard.com/pro/wisin-signs-wme-all-areas/",
+  "title": "Wisin Signs With WME in All Areas: ‘I’m Ready to Expand Beyond Music’",
+  "summary": "The news comes on the heels of the Puerto Rican artist announcing his new management team last month.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-05T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "61d80fcdced5a0ab",
+  "url": "https://news.pollstar.com/2026/10/05/flo-announces-2027-therapy-at-the-club-north-america-uk-eu-tour/",
+  "title": "FLO Announces 2027 ‘Therapy At The Club’ North America, UK & EU Tour",
+  "summary": "FLO are ready to take their critically acclaimed sophomore album, Therapy at the Club, on the road, announcing their 2027 North America, UK and EU tour, promoted by Live Nation. Kicking off in Seattle, WA on Jan. 22, 2027, FLO will headline their biggest venues across North Amer…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-05T13:58:11.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 30,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "8063400836c9bc8b",
+  "url": "https://variety.com/2026/music/news/bowie80-david-bowie-80th-birthday-events-1236898767/",
+  "title": "‘Bowie80’ to Celebrate David Bowie’s 80th Birthday With Events, Exhibits, Releases and More Throughout 2027",
+  "summary": "The late, legendary musician David Bowie will have his 80th birthday celebrated with a series of events, exhibits, releases, collaborations and experiences beginning in November and spanning 2027, his estate announced on Monday. Details will be announced on the new website bowie…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-05T13:22:01.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "c749420ca5a38152",
+  "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQT3BZOXdpWkxpVi1hZjBYZlkxcFM5OHhVZTBFU3hDbzU0dzI2dUNUVjlNeGVPdXp1dWVsRS05cjdJUVpZV1hlLXpqaVJSWVVBMXdOaUFlMmJaUlJCbkJZN3hzT3c0OWRlX3JGOXBqUlhIbk9HSlJYY0pSamt3aVhaMW5XRlBjajkxTmowT1JLUVR5NVlVTU5memstR1VXZkozNnBna2xIdVNtYlJxSG5xME9IVVZBN1E?oc=5",
+  "title": "ADA CENTRAL EUROPE ANNOUNCES EXCLUSIVE PARTNERSHIP DEAL WITH SWISS LABEL SOUND DISTRIBUTION",
+  "summary": "ADA CENTRAL EUROPE ANNOUNCES EXCLUSIVE PARTNERSHIP DEAL WITH SWISS LABEL SOUND DISTRIBUTION Warner Music Group",
+  "source": "Warner Music Group",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-05T13:17:32.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 29,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "3b51e8db156489f3",
+  "url": "https://musically.com/2026/10/05/pope-delivers-ai-warning-algorithms-lack-the-spark-of-humanity/",
+  "title": "Pope delivers AI warning: ‘Algorithms lack the spark of humanity’",
+  "summary": "We did not expect to be writing a story about the Pope in 2026, let alone two, but here we are. Pope Leo XIV has been sounding off again about artificial intelligence and art – this time in a post on X. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-05T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai"
+  ],
+  "score": 23,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "51532fda1be55ec8",
+  "url": "https://musically.com/2026/10/05/seatgeek-launches-predictive-intelligence-tool-for-live-bookers/",
+  "title": "SeatGeek launches predictive-intelligence tool for live bookers",
+  "summary": "Ticketing-tech firm SeatGeek has launched a new product that’s for promoters and venues rather than music fans. TourIQ is a predictive-intelligence tool. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-05T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "7778fe361c4f1787",
+  "url": "https://musically.com/2026/10/05/beatport-gets-backing-from-investment-firm-square-nine-capital/",
+  "title": "Beatport gets backing from investment firm Square Nine Capital",
+  "summary": "Electronic-music firm Beatport has a new investor: Square Nine Capital. Announced last week, it has refinanced an “existing credit facility” of the company, providing “additional capital to support Beatport’s strategic priorities”. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-05T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "pe-capital"
+  ],
+  "score": 25,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "b0b5be1413482340",
+  "url": "https://musically.com/2026/10/05/zach-bryan-breaks-gillette-stadium-record-in-a-free-palestine-t-shirt/",
+  "title": "Zach Bryan breaks Gillette Stadium record (in a Free Palestine t-shirt)",
+  "summary": "AEG Presents had a new number to trumpet this weekend: country star Zach Bryan broke the attendance record for the Gillette Stadium in Foxborough, with 73,538 fans attending his second night there. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-05T12:30:00.000Z",
+  "entities": [
+   "aeg",
+   "aeg-presents"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 43,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "36db08e35cd6c648",
+  "url": "https://www.digitalmusicnews.com/2026/10/05/best-music-distributor-for-independent-artists/",
+  "title": "Best Services for Independent Artists Ready to Go Beyond Basic Distribution",
+  "summary": "I spend most of my time thinking about a fairly narrow question: what does an independent artist actually need from a distribution platform once “upload and wait” stops being enough? I’ve been building the DIY product for artists at Amuse for years, and the honest answer keeps c…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-05T12:16:49.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "6ccadcd26211574b",
+  "url": "https://musically.com/2026/10/05/sony-music-has-now-filed-260k-takedowns-of-ai-deepfake-tracks/",
+  "title": "Sony Music has now filed 260k takedowns of AI-deepfake tracks",
+  "summary": "In March 2025, Sony Music said that it had successfully gotten more than 75k AI-generated deepfakes of its artists from various online platforms. A year later, in March 2026, the company said that it had now filed more than 135k of these takedown notices. The post is from Music…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-05T11:30:00.000Z",
+  "entities": [
+   "sony-music-entertainment"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 37,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "f6d0057f3ea27f35",
+  "url": "https://www.billboard.com/pro/billboard-uk-2026-40-under-40-list-revealed/",
+  "title": "Billboard U.K.’s 2026 40 Under 40 List: Revealed",
+  "summary": "These 40 executives are setting the standard for their peers in the U.K. music industry.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-05T11:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "0d109cab2fe96812",
+  "url": "https://www.musicbusinessworldwide.com/sony-music-has-now-asked-platforms-to-remove-more-than-260000-ai-deepfakes-imitating-artists-like-harry-styles-adele-and-michael-jackson/",
+  "title": "Sony Music has now asked platforms to remove more than 260,000 AI deepfakes imitating artists like Harry Styles, Adele, and Michael Jackson",
+  "summary": "Sony told the Financial Times that the fight against AI tracks impersonating artists such as Harry Styles and Adele is \"becoming an uphill struggle.\" Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-05T10:19:00.000Z",
+  "entities": [
+   "sony-music-entertainment"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 29,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "dae073068a7e9528",
+  "url": "https://www.musicbusinessworldwide.com/grammys-will-keep-asian-pop-category-for-2027-awards-as-stray-kids-follow-bts-in-declining-to-submit-music/",
+  "title": "Grammys will keep ‘Asian Pop’ category for 2027 awards, as Stray Kids follow BTS in declining to submit music",
+  "summary": "Recording Academy CEO Harvey Mason jr. said the organization was \"confident it's the right conclusion for the music community overall.\" Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-05T10:02:28.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "4475d3ce97388da6",
+  "url": "https://www.musicbusinessworldwide.com/beatport-secures-financing-led-by-square-nine-capital-refinancing-existing-credit-facility/",
+  "title": "Beatport secures financing led by Square Nine Capital, refinancing existing credit facility",
+  "summary": "The deal refinances an existing Beatport credit facility and brings additional capital into the company. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-05T10:02:08.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "8fc8772f170cddcb",
+  "url": "https://www.musicbusinessworldwide.com/a-us-appeals-court-has-rejected-a-fair-use-defense-over-ai-training-what-does-it-mean-for-the-labels-fight-with-suno/",
+  "title": "A US appeals court has rejected a ‘fair use’ defense over AI training. What does it mean for the labels’ fight with Suno?",
+  "summary": "The US Court of Appeals ruled for Thomson Reuters and against AI legal research company ROSS Intelligence on September 29 Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-05T10:01:47.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 39,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "26f73ef16e29f682",
+  "url": "https://www.musicbusinessworldwide.com/live-nation-is-bankrolling-creator-nation-a-creator-management-roll-up-with-its-first-acquisitions-due-in-the-coming-months/",
+  "title": "Live Nation is bankrolling Creator Nation, a creator-management roll-up, with its first acquisitions due in the coming months",
+  "summary": "Alongside creator-management firms, Creator Nation will acquire and scale what Live Nation describes as \"adjacent businesses\". Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-05T10:00:29.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 25,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "f0684df4ffe8a4e6",
+  "url": "https://www.musicbusinessworldwide.com/sony-music-uk-hires-jack-fryer-from-universal-music-as-president-of-catalogue-digital-media-and-sync/",
+  "title": "Sony Music UK hires Jack Fryer from Universal Music as President of Catalogue, Digital Media and Sync",
+  "summary": "After spending more than a decade at Universal Music in senior strategy roles, Fryer now reports to Azi Eftekhari, Sony Music UK's Chief Operating Officer. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-05T09:59:37.000Z",
+  "entities": [
+   "sony-music-entertainment",
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "catalog-deal"
+  ],
+  "score": 63,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "cceb8d7e992e6c89",
+  "url": "https://www.musicbusinessworldwide.com/erica-campbells-label-settles-royalty-lawsuit-against-distributor-srg-ils-group-15-days-after-suing-for-1m/",
+  "title": "Erica Campbell’s label settles royalty lawsuit against distributor SRG/ILS Group, 15 days after suing for $1M+",
+  "summary": "The two sides settled before SRG had formally responded to the lawsuit in court, and no court has ruled on whether My Block's claims were valid. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-05T09:59:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 23,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "9ef83a6dc0d2cb29",
+  "url": "https://news.pollstar.com/2026/10/05/legends-global-appoints-andy-price-general-manager-of-coventry-building-society-arena-uk/",
+  "title": "Legends Global Appoints Andy Price General Manager Of Coventry Building Society Arena UK",
+  "summary": "Legends Global has appointed Andy Price as General Manager of Coventry Building Society Arena, home of English soccer club Coventry City Football Club. Price will lead Legends Global’s new partnership with the venue, working with the Club and the arena team to shape its future,…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-05T09:38:30.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "83cad79afba47dc3",
+  "url": "https://news.pollstar.com/2026/10/05/glastos-emily-eavis-among-2026-ivors-recipients/",
+  "title": "Glasto’s Emily Eavis Among 2026 Ivors Recipients",
+  "summary": "The Ivors Academy honored its 2026 winners last week, Oct. 1, during a ceremony at the Intercontinental London Park Lane. Glastonbury organizer Emily Eavis was among them. Eavis, a 2025 Pollstar Women of Live honoree, was recognized for her impact on music and culture, and her c…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-05T09:26:08.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "bbe42f80b707d2b4",
+  "url": "https://news.pollstar.com/2026/10/05/polands-atlas-arena-unveils-upgraded-backstage-facilities/",
+  "title": "Poland’s Atlas Arena Unveils Upgraded Backstage Facilities",
+  "summary": "Atlas Arena in is completing the largest upgrade of its backstage facilities in years, covering 12 rooms, including four artist dressing rooms and eight changing rooms comprising a total area of 657.67 square meters, as well as a foyer and more than 1,000-square-meters of warm-u…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-05T08:26:56.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "38e23bc6b8f71f6c",
+  "url": "https://musically.com/2026/10/05/childrens-speaker-firm-yotos-revenues-grew-by-43-in-2025/",
+  "title": "Children’s speaker firm Yoto’s revenues grew by 43% in 2025",
+  "summary": "We recently reported on the latest devices from children’s speakers maker Yoto. Now the company has published its financial results. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-05T08:18:08.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "earnings"
+  ],
+  "score": 16,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "173a34341a3992bf",
+  "url": "https://www.digitalmusicnews.com/2026/10/04/ed-sheeran-macklemore-replacement-atlanta/",
+  "title": "Ed Sheeran Surprises Fans in Atlanta with a Possible Macklemore Replacement",
+  "summary": "Ed Sheeran brings out a surprise opener at his October 3 show in Atlanta amid the controversy surrounding Macklemore’s exit. On Saturday, October 3, Ed Sheeran brought out a surprise guest opener at his show in Atlanta, following Macklemore’s controversial exit from the tour. Af…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-05T05:25:11.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "d45ea104731fc621",
+  "url": "https://www.digitalmusicnews.com/2026/10/04/umg-apple-corps-refresh-rubber-soul/",
+  "title": "UMG and Apple Corps Refresh The Beatles’ ‘Rubber Soul’ With Unreleased Tracks, New Stereo and Dolby Atmos Mixes",
+  "summary": "UMG and Apple Corps have re-released The Beatles’ 1965 album Rubber Soul in an expanded form, featuring previously unreleased session recordings. On Friday, Universal Music Group (UMG) and The Beatles’ Apple Corps released an expanded special edition of the band’s landmark 1965…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-05T04:34:12.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "3d3a04a340405466",
+  "url": "https://www.digitalmusicnews.com/2026/10/04/shakira-amazon-music-livestream-stats/",
+  "title": "Shakira Makes Amazon Music History as the Most-Watched Livestream Performance by a Female Artist of All Time",
+  "summary": "Shakira’s concert in Madrid on October 3 was the most-viewed livestream performance by a female artist on Amazon Music in history. Shakira’s highly anticipated concert in Madrid on October 3 set a new record for the most-watched livestream performance by a female artist on Amazo…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-05T04:30:31.000Z",
+  "entities": [
+   "amazon-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "d57330efca814370",
+  "url": "https://news.pollstar.com/2026/10/04/shakiras-madrid-concert-is-amazon-musics-most-livestreamed-performance-by-a-female-artist/",
+  "title": "Shakira’s Madrid Concert Is Amazon Music’s Most Livestreamed Performance By A Female Artist",
+  "summary": "Shakira has achieved yet another milestone with her record-breaking “Las Mujeres Ya No Lloran World Tour.” The Colombian star’s show in Madrid, Spain, on Oct. 3 was the most-viewed livestream by a female artist on Amazon Music, the major streamer announced Sunday. Saturday’s sho…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-05T04:15:04.000Z",
+  "entities": [
+   "amazon-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 27,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "69fa81c041327e05",
+  "url": "https://news.pollstar.com/2026/10/04/inside-the-dc-power-to-the-people-festival-headlined-by-bruce-springsteen/",
+  "title": "Inside The DC ‘Power To The People’ Festival Headlined By Bruce Springsteen",
+  "summary": "Columbia, Md. (AP) — In the shadow of Washington, D.C., Bruce Springsteen and a few musical giants had a message for the world: “Let them hear you in Washington,” he cheered. The Boss played a number of political songs during his headlining set at the inaugural “Power to the Peo…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-05T01:42:04.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "19205800b4763c23",
+  "url": "https://news.pollstar.com/2026/10/04/oak-view-group-announces-cisco-as-an-official-technology-partner-across-venue-network/",
+  "title": "Oak View Group Announces Cisco As An Official Technology Partner Across Venue Network",
+  "summary": "Oak View Group (Pollstar’s parent company) announced Cisco as an Official Technology Partner to standardize, scale and simplify the technological infrastructure across OVG’s venue network. Through the agreement, Cisco will also become an Official Partner of five OVG venues – Cli…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-05T01:31:40.000Z",
+  "entities": [
+   "oak-view-group"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 25,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "adac975616880bd4",
+  "url": "https://news.pollstar.com/2026/10/04/zach-bryan-sets-record-at-gillette-stadium-with-73538-fans/",
+  "title": "Zach Bryan Sets Record At Gillette Stadium With 73,538 Fans",
+  "summary": "Zach Bryan broke the Gillette Stadium attendance record Oct. 3 performing for 73,538 fans, the largest crowd for any event in the venue’s history. The show was the second of two nights at the stadium, as part of Bryan’s “With Heaven On Tour.” The Foxborough shows are part of Bry…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-05T01:18:48.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "18e09ea7ca39ec24",
+  "url": "https://news.pollstar.com/2026/10/04/2027-gulf-coast-jam-reveals-full-lineup/",
+  "title": "2027 Gulf Coast Jam Reveals Full Lineup",
+  "summary": "Organizers of the 2027 Gulf Coast Jam Presented by Jim Beam revealed the full lineup for the 15th annual country music festival set for June 3-6, 2027, at Frank Brown Park in Panama City Beach, Florida, with Jason Aldean, Luke Bryan, Zach Top and Bailey Zimmerman set to headline…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-05T01:03:28.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "2f47ccaab0fa973d",
+  "url": "https://variety.com/2026/music/album-reviews/beatles-rubber-soul-super-deluxe-boxed-set-review-1236898774/",
+  "title": "Is ‘Rubber Soul’ the Beatles’ Best Album? The Answer to That is as Malleable as the Shifting Track Lists, but This ‘Super Deluxe’ Is Super Essential: Boxed Set Review",
+  "summary": "What is the Beatles’ best album? “The one you’re listening to right now” is always the correct answer, of course, and that could encompass “Meet the Beatles” or “Let It Be” at any given moment. But for most fans who aren’t just being sentimental about their first point of entry,…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-04T22:56:30.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "dbe4ad896ebe754c",
+  "url": "https://variety.com/2026/music/news/taylor-swift-showgirl-encore-album-chart-number-one-1236898681/",
+  "title": "Taylor Swift’s ‘Encore’ Edition Boosts ‘The Life of a Showgirl’ Back to No. 1 for First Time Since January, Adding a 13th Week on Top",
+  "summary": "Taylor Swift’s “The Life of a Showgirl” returned to the No. 1 spot on the Billboard 200 album chart after last vacating that position in January, thanks to the release of an expanded edition titled “The Life of a Showgirl: The Encore” with four new bonus tracks. This resumption…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-04T21:17:51.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "1c386e633cb506d2",
+  "url": "https://news.pollstar.com/2026/10/04/massconcerts-radio-room-team-up-to-operate-renovate-1200-cap-the-foundry-in-greenville-s-c/",
+  "title": "MassConcerts / Radio Room Team Up To Operate, Renovate 1,200-Cap The Foundry In Greenville, S.C.",
+  "summary": "A partnership between John Peters/MassConcerts and Wesley Gilliam of Radio Room will take over operations of the 1,200-capacity The Foundry at Judson Mill in Greenville, South Carolina, effective Jan. 1. The partnership will build on the venue’s history, which includes hosting a…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-04T17:55:31.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "cc0d524463007d01",
+  "url": "https://variety.com/2026/music/people-news/sass-jordan-dead-canadian-idol-singer-1236898644/",
+  "title": "Sass Jordan, Singer and Longtime ‘Canadian Idol’ Judge, Dies at 65",
+  "summary": "Sass Jordan, the singer, songwriter and longtime “Canadian Idol” judge, died on Oct. 2. She was 65. Her family confirmed her death, noting that she “died peacefully” and was “surrounded by those who loved her most.” They remembered her as “an inimitable force of nature” and “an…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-04T17:37:12.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "9656df84f84cca94",
+  "url": "https://variety.com/2026/music/news/zach-bryan-breaks-record-kraft-free-palestine-1236898609/",
+  "title": "Zach Bryan Breaks Attendance Record at Robert Kraft’s Gillette Stadium While Wearing ‘Free Palestine’ Shirt for Second Night in a Row",
+  "summary": "Zach Bryan broke the attendance record at Robert Kraft’s Gillette Stadium on Saturday night, performing for 73,538 fans — the largest crowd for any event in the venue’s history — while wearing a “Free Palestine” shirt for the second night in a row. The move was a statement on se…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-04T16:09:22.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "8b508739808659bd",
+  "url": "https://variety.com/gallery/stevie-nicks-make-a-fared-carpet-photos-october-2026-celebrity/",
+  "title": "Pedro Pascal Premieres ‘Behemoth!’ in NYC, Sarah Jessica Parker and Stevie Nicks Make a Fashionable Pair and More Red Carpet Photos: October 2026",
+  "summary": "October began with Ben Affleck and Kerry Washington premiering “Animals,” their new political thriller about a Los Angeles mayoral candidate (Affleck) whose family is thrust into an unimaginable situation involving their son and housekeeper and her undocumented immigrant boyfrie…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-04T15:00:38.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "ff7841854293f932",
+  "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPWFNPZlhyVDlMbm1Nb282ZjVmNkRWS095TXBmTHZSajZyVVVEZHZaQnhSNG1JLVdOQlhScldxdTNzOVd2ZWVkamQzV3Mya3dTRkhJc2FhNy05aGNRMERURy1YM0NKbDUyZ3F5Nnc3VU5RM0c2bFYyOEF1a1FNMjMxd19mWFk3VkpYVkYyZWp0WGFxSDJFZWR4eWhRZE5IeWRDNHFydHJqZ9IBpwFBVV95cUxPWFNPZlhyVDlMbm1Nb282ZjVmNkRWS095TXBmTHZSajZyVVVEZHZaQnhSNG1JLVdOQlhScldxdTNzOVd2ZWVkamQzV3Mya3dTRkhJc2FhNy05aGNRMERURy1YM0NKbDUyZ3F5Nnc3VU5RM0c2bFYyOEF1a1FNMjMxd19mWFk3VkpYVkYyZWp0WGFxSDJFZWR4eWhRZE5IeWRDNHFydHJqZw?oc=5",
+  "title": "The surprising ways music stars actually make their money | lovemoney.com",
+  "summary": "The surprising ways music stars actually make their money | lovemoney.com lovemoney.com",
+  "source": "lovemoney.com",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-04T15:00:17.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
   "id": "22bb10bd20489c2e",
   "url": "https://variety.com/2026/music/news/taylor-swift-snl-cameo-dakota-johnson-saturday-night-live-1236898411/",
   "title": "Taylor Swift Crashes Dakota Johnson’s ‘SNL’ Monologue as Her Breakup Therapist, Shows Travis Kelce Love with Cleveland Shoutout",
@@ -90,6 +809,26 @@
   "firstSeen": "2026-10-04T12:17:43.993Z"
  },
  {
+  "id": "a145ea92451d0687",
+  "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE90VDZuc25QclVpeWVtSEU0SGo4TTZ1bmRzWWl0UkJIcWdWalNlZ21HTGRVcnVqZElvSjZ6eVdac2hWWFJfWGFDbm83V2pGT01GXy13M0VEdUpYdVVlU2dXZFFpLVZwTmVwaEVzejJDYU0xempGTTVvUWp6Q2FOWXc?oc=5",
+  "title": "Cause for ‘Celebration’: Primary Wave Partners With Kool & the Gang Founder Robert Bell",
+  "summary": "Cause for ‘Celebration’: Primary Wave Partners With Kool & the Gang Founder Robert Bell Billboard",
+  "source": "Billboard",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-03T07:00:00.000Z",
+  "entities": [
+   "primary-wave"
+  ],
+  "types": [
+   "publisher"
+  ],
+  "topics": [],
+  "score": 19,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
   "id": "81981a6efd29845d",
   "url": "https://www.digitalmusicnews.com/2026/10/02/music-industry-hires-oct-2-2026/",
   "title": "Latest Music Industry Hires: Warner Music, SESAC, Universal Music, SoundExchange, BandLab, Live Nation, Chrysalis/Blue Raincoat, More",
@@ -114,6 +853,28 @@
   "topics": [],
   "score": 88,
   "firstSeen": "2026-10-03T11:36:06.433Z"
+ },
+ {
+  "id": "500afd6936b70173",
+  "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1lT21NS0FGYkh6T3VZUHhZLWtsVU02V2UxSGJrME0xRTlTTk5jSmJOUEhVblpvMHVwMWNMRVF0SDdCVmItdzdZQ2xROFY1UFZyU3lldkVFbHlnVWo3ZnV4N2l3bl9tRUdyYXZQTURYUWxSX3JEbHhN?oc=5",
+  "title": "Warner Music Group Acquires AI Attribution Tool Sureel AI",
+  "summary": "Warner Music Group Acquires AI Attribution Tool Sureel AI Billboard",
+  "source": "Billboard",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-02T23:43:53.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "m&a"
+  ],
+  "score": 27,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
  },
  {
   "id": "61b7b2af91302f4b",
@@ -1613,6 +2374,22 @@
   "firstSeen": "2026-10-02T12:29:12.456Z"
  },
  {
+  "id": "7ee9965a10b65b15",
+  "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9NckxZdVVYMzV5Z2JMcEVURi1fV3l5R2FPSzNSY3lNdUo4alpIWndSNndXbmRVTUNGejlFSUxqZF9TMUl5V0NoVUo3dEdxbE5XZ3dDelc3SVJ2aFNnMHpqN1lGb25xYXh3WTVuaVZOYmVjRzFfRlRENHFJZmE?oc=5",
+  "title": "New Gift Will Support Technology and Innovation in Music",
+  "summary": "New Gift Will Support Technology and Innovation in Music U of T Magazine",
+  "source": "U of T Magazine",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-01T20:28:05.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 2,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
   "id": "076e8de150569e22",
   "url": "https://news.pollstar.com/2026/10/01/the-red-clay-strays-add-2027-dates-to-grateful-tour/",
   "title": "The Red Clay Strays Add 2027 Dates To ‘Grateful Tour’",
@@ -2477,6 +3254,24 @@
   "firstSeen": "2026-10-02T12:29:12.456Z"
  },
  {
+  "id": "7264e8bd66f0acc1",
+  "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPcXNhNi1CNEtlV196RnY0cTVEODhSM0NUNG9sUFc4RjBJVkxlWG5XcDI2eTVueDEtcDA0YjlHczBVSWx5Z0VkU2RKQjZoUWlxNXQtSTYtMFNhZWhweUFmNGNSM2puNDZrMTdSZ3RTaUY3ZnBpTDgzaHM1dVpyRDZMSUxDSUdJTHp3S1BTWURmS2RkTkUzZVBVbXVpdW8wbXRDVjhpZndWRlBMMHVIaC1zSU1VWXZ0TFVQSWxPT3FCVHVHb3VSMnFRU21LbWU0VkU?oc=5",
+  "title": "MLC Reports $4.2 Billion in Royalties Distributed, Sets April 2027 Start for Market Share Distributions",
+  "summary": "MLC Reports $4.2 Billion in Royalties Distributed, Sets April 2027 Start for Market Share Distributions Music Industry Weekly",
+  "source": "Music Industry Weekly",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-01T11:22:10.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "pro-reform"
+  ],
+  "score": 12,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
   "id": "6f5af4fd342eb96b",
   "url": "https://www.musicbusinessworldwide.com/sia-sells-50-of-music-catalog-to-pophouse-for-a-reported-180m/",
   "title": "Sia sells 50% of music catalog to Pophouse in $180M deal",
@@ -2721,6 +3516,26 @@
   "topics": [],
   "score": 5,
   "firstSeen": "2026-10-02T12:29:12.456Z"
+ },
+ {
+  "id": "758fa98bd823ad83",
+  "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1nNVJoSHBCMHNVZjdJQ2UxZ1ZuS2VBbHRhRW9DM3c3dlZ2VGhyYTBaWG5rNE1ZSlNzTmQtSkNWUmV5YmtFUFc4MjZKZUtTQkdxWWVtbUUyOWMwYmhEejVDYjI4WnY?oc=5",
+  "title": "Warner Music Group (WMG) Stock Forecast and Price Target 2026",
+  "summary": "Warner Music Group (WMG) Stock Forecast and Price Target 2026 MarketBeat",
+  "source": "MarketBeat",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-01T07:00:00.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 16,
+  "firstSeen": "2026-10-05T14:31:40.483Z"
  },
  {
   "id": "321053ec2e40a917",
