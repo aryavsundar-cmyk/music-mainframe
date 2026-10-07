@@ -3485,6 +3485,28 @@
   "firstSeen": "2026-09-28T13:48:47.751Z"
  },
  {
+  "id": "ca29948c37ddc230",
+  "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxObEF2TmVfejVCakw5bU5SVGRUWXpPcDBzT0xmcE92dm9jcGhoWGFDTkRfOWlJOWNwWEVQRlhubnFzNzZvYTlOdE9SX2UzeWV0OUFkM0owbUpLZ3lEeWozUmp4MDRZalppZVAtcllFSUhEZHpJQ2JyZE53eTBXRXlDNTIzZE9WR3IzUkdCcmdDZjNKZVdObFF1YW1rV01ldVhjZldpeTFmbVczNnM?oc=5",
+  "title": "Sony and UMG Sue Suno Again Over AI Music Training – What ‘Model Laundering’ Means",
+  "summary": "Sony and UMG Sue Suno Again Over AI Music Training – What ‘Model Laundering’ Means RouteNote",
+  "source": "RouteNote",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-27T20:18:45.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 16,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
   "id": "18eb925ee517269c",
   "url": "https://variety.com/2026/music/news/chuck-varga-dead-gwar-founding-member-1236876474/",
   "title": "Chuck Varga, Founding Member of Heavy Metal Band Gwar, Dies at 68",
@@ -4958,6 +4980,28 @@
   ],
   "score": 29,
   "firstSeen": "2026-09-25T11:47:35.716Z"
+ },
+ {
+  "id": "ad00f0f04a3fa617",
+  "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPLUM2TzhuekJ0ZlpIeVhhQ1RtV3d0RUlQXzB2Mm9DQnZYS0pZakJyc2tkYm12QXlMLVVZMTZTb3g1UUw4ejRVdUYzWHdTbF9rUEhsaFRxdXJGREg0amRaNlZvRktFSVFuREFuNnd0MkdQb0U4X1ZkMHhuZmVqc3RvbjY2eE5JNXpVSWFqVzFLS3FCVEZS?oc=5",
+  "title": "Sony and UMG are suing Suno again",
+  "summary": "Sony and UMG are suing Suno again The Verge",
+  "source": "The Verge",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-25T07:00:00.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 16,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
  },
  {
   "id": "e3c066d500991d11",

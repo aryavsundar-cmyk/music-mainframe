@@ -1,5 +1,1237 @@
 [
  {
+  "id": "c66cf4c438a1aedd",
+  "url": "https://www.musicbusinessworldwide.com/with-a-new-cfo-three-licensing-deals-and-775m-raised-whats-stopping-5-4b-valued-suno-from-an-ipo/",
+  "title": "With a new CFO, three licensing deals, and $775M+ raised, what’s stopping $5.4B-valued Suno from an IPO?",
+  "summary": "The signals pointing to the firm's potential stock market ambitions and the barriers it faces in getting there. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T13:00:10.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 31,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "2dff3cf39f0c5347",
+  "url": "https://musically.com/2026/10/07/david-bowies-80th-birthday-gets-a-year-long-bowie80-celebration/",
+  "title": "David Bowie’s 80th birthday gets a year-long Bowie80 celebration",
+  "summary": "David Bowie died shortly after his 69th birthday, in 2016. The tenth anniversary of that was marked by tributes earlier this year, but now attention is turning to 8 January 2027, which would have been his 80th birthday. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "8035d369bbe048be",
+  "url": "https://musically.com/2026/10/07/humanculture-bags-first-clients-for-its-predictive-intelligence-tech/",
+  "title": "HumanCulture bags first clients for its predictive intelligence tech",
+  "summary": "Earlier this year we reported on a startup founded by former Defected Records and AWAL execs developing tech to predict how well content would perform on social media before it was posted. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "a7d5399315e8e9ba",
+  "url": "https://musically.com/2026/10/07/italys-competition-watchdog-probes-suno-over-unfair-terms/",
+  "title": "Italy’s competition watchdog probes Suno over ‘unfair terms’",
+  "summary": "Suno’s legal headaches expanded beyond the US some time ago, with lawsuits filed by collecting societies in Europe and Scandinavia. Now Italy is getting in on the act – although this isn’t about copyright infringement. Well, not directly. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T12:30:00.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 31,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "bfa06a10beca7ffd",
+  "url": "https://musically.com/2026/10/07/spotify-expands-music-quiz-and-preps-sao-paulo-superfans-experience/",
+  "title": "Spotify expands Music Quiz and preps São Paulo ‘Superfans Experience’",
+  "summary": "Back in 2022, Spotify seemed to be making a move into gaming with the acquisition of Wordle-inspired music quiz Heardle – only to shut it down less than a year later. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T12:30:00.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "m&a"
+  ],
+  "score": 35,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "c6e28b2efe19e960",
+  "url": "https://musically.com/2026/10/07/dima-hopes-for-timely-resolution-of-phonorecords-v-proceeding/",
+  "title": "DiMA hopes for ‘timely resolution’ of Phonorecords V proceeding",
+  "summary": "Fans of the US music-publishing industry and streaming services exploding into bitter recriminations have had this week red-pen-circled in their calendars for some time. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "pro-reform"
+  ],
+  "score": 25,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "0c2a62fbb243858a",
+  "url": "https://www.musicbusinessworldwide.com/tencent-music-integrated-deepseek-into-its-streaming-service-now-parent-company-tencent-is-among-the-biggest-backers-of-the-ai-companys-12b-funding-round-report/",
+  "title": "Tencent Music integrated DeepSeek into its streaming service. Now parent company Tencent is among the biggest backers of the AI company’s $12B+ funding round (report)",
+  "summary": "DeepSeek has been built into TME's AI songwriting tool, AI assistant, comment sections, and more Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T11:49:26.000Z",
+  "entities": [
+   "tencent-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 27,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "792389a0a4b617f2",
+  "url": "https://musically.com/2026/10/07/music-streaming-fraudster-michael-smith-gets-18-month-jail-sentence/",
+  "title": "Music-streaming fraudster Michael Smith gets 18-month jail sentence",
+  "summary": "American producer Michael Smith has been sentenced to 18 months in prison for his infamous AI-powered streaming scam that netted him more than $8m in royalties. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T11:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "203c87a215483073",
+  "url": "https://news.pollstar.com/2026/10/07/the-o2-until-2038-aeg-o2-extend-landmark-naming-rights-partnership/",
+  "title": "The O2 Until 2038: AEG & O2 Extend Landmark Naming Rights Partnership",
+  "summary": "Following a series of record-breaking years for The O2 and ahead of the venue’s 20th anniversary in 2027, AEG and O2 today announced the extension of their long-standing naming rights partnership. Financial details of the agreement weren’t disclosed, but AEG said it was “a major…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-07T11:24:34.000Z",
+  "entities": [
+   "aeg"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 30,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "6ccd1bab09c66ea1",
+  "url": "https://www.musicbusinessworldwide.com/majors-and-bmg-tell-us-supreme-court-not-to-let-appeals-court-decision-radically-disrupt-copyright-worldwide-in-songwriter-termination-rights-case/",
+  "title": "Majors and BMG tell US Supreme Court not to let appeals court decision ‘radically disrupt copyright worldwide’ in songwriter termination rights case",
+  "summary": "January 12 ruling held that termination under US law returns an author's rights across the world, and not only in the US Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T11:08:02.000Z",
+  "entities": [
+   "bmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 37,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "10cdd2f3fe4b1350",
+  "url": "https://musically.com/2026/10/07/kakao-entertainment-plots-k-pop-growth-with-atlantic-music-group/",
+  "title": "Kakao Entertainment plots K-Pop growth with Atlantic Music Group",
+  "summary": "K-Pop isn’t exactly struggling to reach global listeners at the moment, through streaming and stadium tours alike. But now South Korean firm Kakao Entertainment has inked a deal with WMG’s Atlantic Music Group to continue the momentum. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T10:57:56.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "df47fa8a93081c2a",
+  "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPRmZNcEg5QUY1QUo3emJtUDg3VHdWQ0JzVGtXX0hEOVVVTUo3c1FnQ0dUT2VNZlNMckl5b3RTR2xpLUZSVDM0aWdfOUZyTG93ZUFEdXRYM0VrSlZxZm5kSDhTSFZ5VFM2Z0dYTC1xTWlFUkYtZm5kdzNvN3RCcldYYURGejdtRnhXd2RFM0FTTXV1YXJ1R2o5cjI2XzZoTVgzYlRvMjlnRmV5Sk9WTS1sb0ZVdzVCTGFhWTk1bXdsV3FNcmZo0gHKAUFVX3lxTFBsNmJTSjBYVno5dkVoYmM5XzVpRlphcHFOLUhlT0puOHlGVm5JaS1POVZvTHVTMUJVMDNEOVp3V3JSa1BPVU56RDJzTjBacHQ2Vmk0VXpjTm1kS2R4WEctcVJ0MjlmRzlibnZQeWR2anJZQVZvM0hwaHdDNFNLd2VZY1lGbGVLQV8xemNWcVFwVG1nX1FSZmlJWllLeW9iM0FVVE9vc1kzaXlUNXlqWm5VTEJwT3BpVmhmZDJleHdxRnA3emZoZk9qbmc?oc=5",
+  "title": "Musician sent to prison for $10 million streaming fraud using AI bots",
+  "summary": "Musician sent to prison for $10 million streaming fraud using AI bots BleepingComputer",
+  "source": "BleepingComputer",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-07T10:35:15.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "4865867bc0945d48",
+  "url": "https://www.musicbusinessworldwide.com/aria-boss-tells-australian-lawmakers-openai-and-anthropic-are-asking-government-for-a-free-ride-on-copyright/",
+  "title": "ARIA boss tells Australian lawmakers OpenAI and Anthropic are ‘asking Government for a free ride’ on copyright",
+  "summary": "Annabelle Herd warned that changing Australian copyright law to accommodate the two AI companies could make the country \"the Trojan horse for Big AI.\" Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T09:59:51.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "477a91e162736355",
+  "url": "https://news.pollstar.com/2026/10/07/jim-glancy-john-moore-step-away-from-the-bowery-presents-as-4-execs-elevated-to-leadership-roles/",
+  "title": "Jim Glancy, John Moore Step Away From The Bowery Presents As 4 Execs Elevated To Leadership Roles",
+  "summary": "Longtime Bowery Presents Co-Presidents Jim Glancy and John Moore have exited the company, the AEG Presents-owned promoter recently announced. Glancy and Moore will step aside to make way for new senior leadership. Josh Bhatti, Charley Magrew, Andrew Martin and Josh Moore have ea…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-07T08:14:02.000Z",
+  "entities": [
+   "aeg",
+   "aeg-presents"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 48,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "956c3e8e123d9cda",
+  "url": "https://www.musicbusinessworldwide.com/tiktok-brings-its-global-ad-network-to-the-us-and-unveils-agentic-ai-tools/",
+  "title": "TikTok brings its global ad network to the US and unveils agentic AI tools",
+  "summary": "The ad network, called TikTok Ad Network (TTAN), lets advertisers extend their TikTok campaigns to third-party apps. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T08:10:41.000Z",
+  "entities": [
+   "tiktok"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 27,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "a9847dc363208e24",
+  "url": "https://www.musicbusinessworldwide.com/londons-o2-arena-keeps-its-name-until-2038-as-aeg-and-o2-strike-uks-largest-ever-naming-rights-renewal/",
+  "title": "AEG and O2 strike UK’s ‘largest-ever naming rights renewal’ in reported £200M deal",
+  "summary": "Under the deal, O2 and Virgin Media broadband customers will get 50% more tickets to shows at The O2 through Priority Tickets. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T08:00:30.000Z",
+  "entities": [
+   "aeg"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 25,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "82554de049ab04d3",
+  "url": "https://www.musicbusinessworldwide.com/man-behind-8m-ai-song-and-bot-streaming-fraud-is-sentenced-to-18-months-in-prison/",
+  "title": "Michael Smith, man behind $8M AI song and bot streaming fraud, sentenced to 18 months in prison",
+  "summary": "US District Judge John G. Koeltl also ordered Michael Smith to forfeit USD $8,091,843.64, the loss figure agreed by both sides. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T07:29:53.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 41,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "9d0d9aaae6797051",
+  "url": "https://www.billboard.com/pro/spotify-audiobooks-service-expand-180-countries-2026/",
+  "title": "The Next Chapter of Spotify’s Audiobooks Speaks Volumes About Where the Streamer Is Heading",
+  "summary": "Spotify executives have described audiobook streamers as \"very valuable users,\" and now they're rolling it out to customers worldwide.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T07:00:00.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "63118a1ca4c7675c",
+  "url": "https://news.pollstar.com/2026/10/06/market-focus-washington-d-c-the-dmvs-expansive-dynamic-live-market/",
+  "title": "Market Focus Washington D.C: The DMV’s Expansive & Dynamic Live Market",
+  "summary": "Witness a new $4B stadium, $1B arena renovation, $600M+ proposal for an Audi Field upgrade, a Grand Prix, the 2027 NFL draft and, of course, John Cena. The Washington, D.C. live market is dynamic and expanding and entering a new era, with massive investment in new and upgraded b…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-07T06:55:02.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "0105f1d5ffb0c7e5",
+  "url": "https://news.pollstar.com/2026/10/06/here-to-stay-the-slickee-boys-mark-noone-on-why-d-c-s-music-scene-is-so-friggin-awesome/",
+  "title": "Here To Stay: The Slickee Boys’ Mark Noone On Why D.C.’s Music Scene Is So Friggin Awesome",
+  "summary": "The Slickee Boys are one of Washington, D.C.’s all-time greatest bands with their mighty stew of garage rock, psychedelia and power pop. Led by Mark Noone’s power vocals, Marshall Keith’s incendiary lead guitar, Kim Kane’s art-damaged freakiness and pounding drummer Dan Palenski…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-07T06:54:47.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "48a619c46d7c7f9c",
+  "url": "https://www.billboard.com/pro/new-zealand-awning-signs-winspear/",
+  "title": "New Zealand’s Awning Signs With Winspear",
+  "summary": "Awning is Winspear's second international signing after Adelaide, Australia's Swapmeet.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T06:08:05.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "937f13c719395c8d",
+  "url": "https://news.pollstar.com/2026/10/06/doechii-phoebe-bridgers-hayley-williams-lead-primavera-sound-25th-anniversary-lineup/",
+  "title": "Doechii, Phoebe Bridgers, Hayley Williams Lead Primavera Sound 25th Anniversary Lineup",
+  "summary": "Primavera Sound has unveiled the lineup for its 25th edition, taking place at Barcelona’s Parc del Forum, June 3-5, 2027. The bill is led by Doechii, Phoebe Bridgers, Fontaines D.C., Hayley Williams, FKA twigs, Turnstile, Massive Attack, The Chemical Brothers, Robyn, Bad Gyal, L…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-07T05:11:50.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "policy"
+  ],
+  "score": 16,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "b6d6e4fe911a0a01",
+  "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNQ2xpUWFIb0NKbXQ4OG5USHNEZXgzaHUxLWN3QlVsX1JnY2dWb2praWxZNkw1QjJaRU5VQ2d3RjlkUlN0N0hLUjlFcDU0UnVnUzkzRVNwUE1CRmhCdVB3LU1DUGgyWm43dHNZTmV1RUFEWjdxajQ3U2tiMHdFajA4M3BRang2RjJKTXpqaFR2Rmd3cGcwWGdhMUFQb01LSzJnMEpV?oc=5",
+  "title": "Applications open for Heritage Fund scholarships, music awards",
+  "summary": "Applications open for Heritage Fund scholarships, music awards The Republic News",
+  "source": "The Republic News",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-07T04:10:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "12e29cf189c9c64e",
+  "url": "https://www.digitalmusicnews.com/2026/10/06/google-penske-media-lawsuit-dismissal/",
+  "title": "Google Wins Dismissal Over Penske Media’s ‘Zero-Click’ AI Summary Lawsuit",
+  "summary": "Google secures a major win against Penske Media as a federal judge dismisses claims that the tech giant unlawfully used their content in its AI-generated summaries. A federal judge has dismissed lawsuits from education technology company Chegg and Penske Media that alleged Googl…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T04:00:56.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 26,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "25f3aff44c8f70e4",
+  "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPbGxUWVNYT3FBVXkxajBWWkpKb1dUYWxfU1YzalhXVkQ5Rk92UG90QVFkd2Y4M1VDRVpGTVBic3hlNlZ2QWdJVWNpUW1xS1BtdXhZSFZHMzd6eDNvNU9yQ0FGZ2JRSmVabGJ0MWU5eXU3MGR1NDdfbmlDOS1ZNE5jMGI5VTR3QnhWQmJNSXhmcjU5NXFYMGR1S2NwYWxjWUNfblpTQk1JZDdOVTdGcnYxcFZZLUgtS1M3b1I4N0xsR3luOHPSAcMBQVVfeXFMT2xsVFlTWE9xQVV5MWowVlpKSm9XVGFsX1NWM2pYV1ZEOUZPdlBvdEFRZHdmODNVQ0VaRk1QYnN4ZTZWdkFnSVVjaVFtcUtQbXV4WUhWRzM3engzbzVPckNBRmdiUUplWmxidDFlOXl1NzBkdTQ3X25pQzktWTROYzBiOVU0d0J4VkJiTUl4ZnI1OTVxWDBkdUtjcGFsY1lDX25aU0JNSWQ3TlU3RnJ2MXBWWS1ILUtTN29SODdMbEd5bjhz?oc=5",
+  "title": "#SHOWBIZ: RIM seeks dedicated Budget 2027 fund to push Malaysian music globally",
+  "summary": "#SHOWBIZ: RIM seeks dedicated Budget 2027 fund to push Malaysian music globally NST Online",
+  "source": "NST Online",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-07T02:00:23.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "bc9c82efeaf02758",
+  "url": "https://www.digitalmusicnews.com/2026/10/06/freddie-jackson-rb-singer-dead-69/",
+  "title": "R&B Singer Freddie Jackson Passes Away, Aged 69",
+  "summary": "Freddie Jackson, the silky-voiced R&B singer known for hits like “Rock Me Tonight” and “You Are My Lady,” passed away on Monday at age 69. Freddie Jackson, the R&B singer best known for hits like “Rock Me Tonight (For Old Times Sake)” and “You Are My Lady,” passed away on Monday…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T01:49:28.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "77ddc63c6c81e0fd",
+  "url": "https://variety.com/2026/music/news/megyn-kelly-slams-olivia-rodrigo-cornell-7-1236903939/",
+  "title": "Megyn Kelly Tells Olivia Rodrigo to ‘Stick to Singing’ After Speaking Out About Cornell 7 Case: ‘You Don’t Know What the F— You’re Talking About’",
+  "summary": "Following Olivia Rodrigo’s statement in support of the Jane Doe at the center of the Cornell 7 lawsuit on Sunday, Megyn Kelly is firing off at the singer, calling her a “know-nothing moron” who should “sit down and be quiet.” “Olivia, in sum, you don’t know what the fuck you’re…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T01:32:55.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "5bb6e9b5e94047e5",
+  "url": "https://news.pollstar.com/2026/10/06/artists-announced-for-cma-present-i-will-always-love-you-a-celebration-of-dolly-parton/",
+  "title": "Artists Announced For “CMA Present I Will Always Love You: A Celebration Of Dolly Parton”",
+  "summary": "The Country Music Association (CMA) and ABC revealed the lineup of artists set to perform in “CMA Presents I Will Always Love You: A Celebration of Dolly Parton,” the two-hour live television tribute to the global music icon announced last month. Revealed on ABC’s “Good Morning…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-07T01:16:48.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "policy"
+  ],
+  "score": 16,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "f6cd6f3b95547a31",
+  "url": "https://news.pollstar.com/2026/10/06/brooks-dunn-announce-first-australian-tour-in-nearly-two-decades-in-2027/",
+  "title": "Brooks & Dunn Announce First Australian Tour In Nearly Two Decades In 2027",
+  "summary": "Brooks & Dunn continue their global momentum in 2027 with two headline Australian dates after closing out CMC Rocks QLD’s 20th anniversary in March. Returning to Australia for the first time in 18 years, the Country Music Hall of Famers will bring their live show to Sydney’s Aft…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-07T00:57:38.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "4c1927488e32046b",
+  "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNMk5IaVJaV3g2RkJZUk1mMXFrTUJERmpGZU9PR0NpeDNMdi03UEx0MHFrUlUyNWJpb1ZublpzNVZwT2k1VVNVdWN3ZlJZNXl2SGVrSF9yTkQxUHNvX1F6aGNsdWVVaFIzMjRUcWZjSXBwdlM5VURpNjAzZUU0dTVzTkVKd3h3eDgwZTln?oc=5",
+  "title": "Phonorecords V Proposal Seeks Flat On-Demand Streaming Rate",
+  "summary": "Phonorecords V Proposal Seeks Flat On-Demand Streaming Rate Digital Music News",
+  "source": "Digital Music News",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-07T00:40:57.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "pro-reform"
+  ],
+  "score": 20,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "738ea96c5292f388",
+  "url": "https://www.billboard.com/pro/diddy-pay-500000-failed-nbc-defamation-lawsuit-judge/",
+  "title": "Diddy Must Pay Nearly $500,000 for Failed NBC Defamation Lawsuit Over Documentary, Judge Rules",
+  "summary": "The now-imprisoned mogul is on the hook for legal fees after a judge threw out his claims over The Making of a Bad Boy.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T00:18:18.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "4b52091a079fceb0",
+  "url": "https://www.digitalmusicnews.com/2026/10/06/michael-smith-streaming-fraud-sentence/",
+  "title": "Streaming Fraudster Michael Smith Sentenced to 18 Months in Prison On Top of $8 Million Fine",
+  "summary": "Michael Smith, the North Carolina man convicted of stealing over $8 million in streaming royalties, has been sentenced to 18 months in prison. The U.S. Attorney for the Southern District of New York, Jamie McDonald, has announced that Michael Smith was sentenced to 18 months in…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T00:12:54.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "0548806cb2ac0f28",
+  "url": "https://news.pollstar.com/2026/10/06/lumen-field-leeds-sustainability/",
+  "title": "Lumen Field LEEDs Sustainability",
+  "summary": "In honor of Green Sports Day, the Seahawks announced Lumen Field’s achievement of LEED Platinum certification. LEED Platinum is the highest certification in the LEED (Leadership in Energy and Environmental Design) green building rating system, administered by the U.S. Green Buil…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-07T00:05:33.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "d42de5eaa882beea",
+  "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNRU5INzdweFpWc2R5cUJQTE9HbkNvUmEycHZSZWN0MVZ1NzY0LUt1VVlaemY2LXd3X1FpbEFRYVpQZDBrRmw2WFNxQ0tycXMtdmoxZVNrVzEyRVNZdFhTMEZOeF94QXFFdkM5Z05Ua3o3d0ZHczYzeDhTYkQtdGRpcEZRdGNmWTVi?oc=5",
+  "title": "MLC Announces Initial Black Box Royalties Distribution for April '27",
+  "summary": "MLC Announces Initial Black Box Royalties Distribution for April '27 Digital Music News",
+  "source": "Digital Music News",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-06T23:47:43.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "a1bbba54369d9365",
+  "url": "https://www.digitalmusicnews.com/2026/10/06/mlc-black-box-royalties-distribution/",
+  "title": "The MLC Tees Up First Multimillion-Dollar ‘Black Box’ Royalty Distribution for April 2027; Major Pubs Expecting Small Fortunes Based on ‘Relative Market Shares’",
+  "summary": "The Mechanical Licensing Collective (MLC) is officially set to begin distributing a sizable pile of unmatched and unclaimed “black box” royalties in April 2027. The MLC disclosed the distribution timetable during its annual membership meeting, which also saw the entity confirm n…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T23:45:17.000Z",
+  "entities": [
+   "the-mlc"
+  ],
+  "types": [
+   "pro"
+  ],
+  "topics": [
+   "pro-reform"
+  ],
+  "score": 36,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "a46ddaff674297eb",
+  "url": "https://variety.com/2026/music/news/jack-white-trump-iran-comment-take-out-los-angeles-san-diego-1236903867/",
+  "title": "Jack White Slams Trump as ‘Worst American of All Time’ Following Comment That Iran Can ‘Take Out’ L.A. and San Diego",
+  "summary": "Musician Jack White has fired back at Donald Trump following the president’s remarks made that Iran could “take out Los Angeles” and “San Diego” while speaking about the international conflict on Monday at a rally in Nebraska. “Hey republicans and conservatives that live in L.A.…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T23:41:54.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "52f6d90f72f0f0bf",
+  "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNc29RN0lhMGFCVWo2RkVCdlkzQ2xMZEF4dmVMc29mT25sYzdHdDRYRUc2LTZRVWRmVmx6eG55eXJaR01UMWozRlR1SlFuM0NsamVXeFNrRHZyckUySTlQYzZYdnJKNU5ISWdqQ3Y5MHRDc1FYRm1FMHVQMEc4dE1Ea3Y0M19yNWZWVm0yWE9MV1hmNldySkUtblN3R2FIT283QTE5Xzl3?oc=5",
+  "title": "Enduring music rights mispriced by AI fears: Universal Music Group",
+  "summary": "Enduring music rights mispriced by AI fears: Universal Music Group Livewire Markets",
+  "source": "Livewire Markets",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-06T22:36:56.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "e042b2b6e6cd02bd",
+  "url": "https://www.billboard.com/pro/ai-music-streaming-fraud-sentence-man-18-months-prison-scam/",
+  "title": "AI Music Streaming Fraudster Sentenced to 1.5 Years in Prison for $8M Royalties Scam",
+  "summary": "Michael Smith admitted earlier this year to using bots to stream fake songs billions of times in a first-ever criminal case over streaming fraud.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T22:26:32.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "4c29aef1c2dc3f08",
+  "url": "https://variety.com/2026/music/news/miley-cyrus-biggest-drop-after-number-one-album-debut-1236903472/",
+  "title": "Miley Cyrus’ ‘Bass Persuades’ Has the Biggest Chart Drop Ever for an Album in the Week After a No. 1 Debut",
+  "summary": "How far down the Billboard 200 did Miley Cyrus’ “Bass Persuades” album fall in its second week? Curiosity about that grew over the last few days, particularly as Billboard announced the top 10 of its album chart on Sunday, and Cyrus’ album was not in it, after having debuted at…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T20:58:54.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "ba56b552bfed84c6",
+  "url": "https://www.digitalmusicnews.com/2026/10/06/fka-twigs-settles-shia-labeouf-sexual-battery-lawsuit/",
+  "title": "FKA twigs Settles Ugly Shia LaBeouf Sexual Battery Lawsuit",
+  "summary": "FKA twigs settles her long-running legal battle against actor Shia LaBeouf over ugly sexual battery allegations, enabling her to discuss the matter. FKA twigs is finally free to speak about the alleged abuse she suffered from actor Shia LaBeouf after resolving a long-running dis…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T20:42:18.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "ef3fb7707aaa4724",
+  "url": "https://www.digitalmusicnews.com/2026/10/06/dolly-parton-estate-lawsuit-seaver/",
+  "title": "Dolly Parton Estate Claims Nephew is Using Physical Barriers, Including Barbed Wire and Signs, to Avoid a Lawsuit",
+  "summary": "Dolly Parton’s estate claims that her nephew and former head of security is using barbed wire and a “no trespassing” sign to evade a lawsuit. The estate of Dolly Parton alleges that Bryan Seaver, the late singer’s “beloved” nephew and former head of security, is attempting to ev…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T20:33:21.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "bb108a4ec16df926",
+  "url": "https://news.pollstar.com/2026/10/06/mexican-pop-star-kenia-os-unveils-us-tour-dates/",
+  "title": "Mexican Pop Star Kenia Os Unveils US Tour Dates",
+  "summary": "Kenia Os is making her way back to the States early next year. The Mexican pop star announced her “K De Karma U.S. Tour,” a six-date trek that includes shows in New York, Los Angeles and Chicago. The Live Nation-promoted tour kicks off Feb. 10 at Majestic Theatre in Dallas, and…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-06T20:23:28.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 25,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "e9c68c422cc14a80",
+  "url": "https://news.pollstar.com/2026/10/06/pollstars-venue-pulse-launches/",
+  "title": "Pollstar Venue Pulse Launches",
+  "summary": "On the heels of the 2026 VenuesNow Conference in Seattle, Pollstar today launched Venue Pulse, a biweekly news e-blast covering all things venues – from stadiums to theaters to clubs and everything in between. The inaugural outing included an exclusive interview with Chicago Bla…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-06T20:05:28.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "7f499f6dd8f4a638",
+  "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxONFMwUmtNZ2ctLXdUbi1rVkhnRm1Rb2JpNDFzaTI0VElYYzFVU294eEJ0QW5OUFVFVUR3NmtGV1BCaklnQUFJZlJvTk40bzBSaHpBOGNLZTB6Zkt3Q21WOFhlZ3U4TlZ0LWZSMkdveEpncGJhOHBHZjk0U3hNS2V1RFNCc2NoUQ?oc=5",
+  "title": "Interscope Hit With $25 Million Lawsuit Over Gigi Perez Recording Rights",
+  "summary": "Interscope Hit With $25 Million Lawsuit Over Gigi Perez Recording Rights Law Commentary",
+  "source": "Law Commentary",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-06T20:01:53.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "3976d409b29480d9",
+  "url": "https://www.billboard.com/pro/dolly-parton-estate-lawsuit-hearing-delayed-nephew-lawyer/",
+  "title": "Dolly Parton Estate Hearing Delayed So Nephew Can Lawyer Up After Allegedly Making Violent Threats",
+  "summary": "The court showdown, originally scheduled for Friday (Oct. 9), has been pushed to Oct. 20.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T20:00:31.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "6c88136d4716ad15",
+  "url": "https://www.digitalmusicnews.com/2026/10/06/phonorecords-v-streaming-rate-proposal/",
+  "title": "Time for a Simpler Mechanical? Bernie Taupin, Songwriters Guild of America, Word Collections, Others Backing a $0.003 Uniform Per-Play Rate In the US",
+  "summary": "Is it time to put overly complex (and easily exploitable) mechanical rate formulas in the rearview? Organizations including the Songwriters Guild of America (SGA) believe so, and they’re now backing a Phonorecords V proposal that would swap convoluted calculations for a flat per…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T19:22:11.000Z",
+  "entities": [
+   "believe"
+  ],
+  "types": [
+   "artist-services"
+  ],
+  "topics": [
+   "dsp-economics",
+   "pro-reform"
+  ],
+  "score": 36,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "59df02d4bf4ca7c2",
+  "url": "https://www.billboard.com/pro/sara-landry-sues-ex-managers-lawsuit-used-name-after-split/",
+  "title": "DJ Sara Landry Sues Ex-Managers for Allegedly Using Her Name After Split: ‘Betraying the Artist’",
+  "summary": "The lawsuit adds a new front to an ongoing legal war between the breakout techno artist and her former managers at The Night Department.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T19:19:17.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "c2718204deb8a4eb",
+  "url": "https://www.billboard.com/lists/blake-whiten-caa-ruby-rose-turner-atlantic-signings/",
+  "title": "Signed: Thomas Rhett Strikes New Deal With HYBE AMERICA’s Blue Highway; HARDY Inks TRIPPP-y Trio",
+  "summary": "Other recent artist signings include Blake Whiten, Jesse Jo Stark, Ruby Rose Turner, Hudson Freeman, Baby Rasta & Gringo and serpentwithfeet.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T19:00:37.000Z",
+  "entities": [
+   "hybe"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "53098bb54f8b38bd",
+  "url": "https://www.digitalmusicnews.com/2026/10/06/saudi-arabia-soundstorm-festival-canceled/",
+  "title": "More Cancellations Hit MENA as Saudi Arabia’s Soundstorm Officially Nixed",
+  "summary": "Saudi Arabia’s Soundstorm festival will not be taking place this year, the organizer MDLBEAST announced, but promises it will return in 2027. Saudi Arabia’s Soundstorm festival, which was due to take place in Riyadh in December, has been canceled this year. Organizer MDLBEAST ma…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T18:51:21.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "06de7a2315f9f8c2",
+  "url": "https://www.digitalmusicnews.com/2026/10/06/godigital-apac-expansion-japan/",
+  "title": "GoDigital Eyes APAC Expansion with Pony Canyon Partnership in Japan",
+  "summary": "GoDigital Music expands into Asia with a partnership with Japanese entertainment company Pony Canyon and a new president for the APAC market. GoDigital Music has announced a significant expansion in the Asia-Pacific (APAC) market, appointing executive Sebastian Mair as President…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T18:25:23.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "a2bfdffb90371c39",
+  "url": "https://www.musicbusinessworldwide.com/google-picks-base-for-music-for-its-gemini-startup-forum-as-1-7m-backed-french-company-says-it-uses-ai-to-predict-music-marketing-roi/",
+  "title": "Google picks Base for Music for its Gemini Startup Forum – as $1.7M-backed French company says it uses AI to predict music marketing ROI",
+  "summary": "More than 100 startups taking part, from 17 countries, were selected from over 2,000 applications, according to Google Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T18:13:58.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "2d53670228bb051f",
+  "url": "https://variety.com/2026/music/news/busta-rhymes-discusses-dillagence-ii-j-dilla-grammy-museum-1236903197/",
+  "title": "Busta Rhymes Breaks Down ‘Dillagence II’ Album and Writing to J Dilla Beats in Grammy Museum Q&A With Anderson .Paak",
+  "summary": "Busta Rhymes discussed the fundamentals of his new album “Dillagence II” last night at Los Angeles’ Grammy Museum, breaking down a handful of key tracks during a Q&A with musician Anderson .Paak and performing a string of his greatest hits along with a guest appearance from Comm…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T17:53:04.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "3fca278ab107b7a4",
+  "url": "https://variety.com/2026/music/news/record-store-day-black-friday-2026-vinyl-noah-kahan-katseye-1236902199/",
+  "title": "Record Store Day Black Friday 2026 Lineup Unveiled: Noah Kahan, Katseye, Sombr, Springsteen, ‘Wicked,’ ‘KPop Demon Hunters’ and 180 More Exclusives",
+  "summary": "Another Black Friday, another Record Store Day Black Friday… that also happens to be pink Friday, yellow Friday, silver Friday, crystal clear Friday, “red and yellow splatter” Friday, “organic earth brown” Friday, “sky blue” Friday, “black-and-white galaxy” Friday and… well, you…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T17:30:32.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "f057957372510dda",
+  "url": "https://variety.com/2026/film/global/noel-gallagher-explains-oasis-reunion-family-is-different-1236902192/",
+  "title": "Noel Gallagher Explains His Mostly Silent Reunion With Liam in Unseen Footage From Oasis Tour Doc: ‘Family Is Different, You Don’t Have to Say Anything’",
+  "summary": "There’s perhaps a good reason why the long-awaited reunion of Oasis brothers Liam and Noel Gallagher after more than a decade apart wasn’t filled with emotion or, indeed, a whole lot of conversation, and it’s not simply due to the nature of the individuals. Noel explained it him…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T17:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "8888366caba0eb21",
+  "url": "https://www.billboard.com/pro/cmas-investment-in-music-teachers/",
+  "title": "How a Pre-School Of Rock Program Affirms CMA’s Investment in Music Teachers",
+  "summary": "This week's Country Update lead story explores Kids on Stage, the program at Hillsboro Elementary and Middle School in Tennessee that helped Miley Cyrus and Kesha get their start.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T17:28:33.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "policy"
+  ],
+  "score": 16,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "acaae842bf260d95",
+  "url": "https://www.musicbusinessworldwide.com/godigital-music-expands-in-asia-with-pony-canyon-partnership-and-appointment-of-sebastian-mair-as-president-apac/",
+  "title": "GoDigital Music expands in Asia with Pony Canyon partnership and appointment of Sebastian Mair as President, APAC",
+  "summary": "Mair's background includes roles at Creativeman Productions, Fujipacific Music, Live Nation Japan, AEG Presents, and Ubisoft. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T16:52:57.000Z",
+  "entities": [
+   "aeg",
+   "aeg-presents",
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 48,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "13443bacffe2251c",
+  "url": "https://musically.com/2026/10/06/yung-sammy-arma-sixth-ocean-join-the-hello-group-indias-management-roster/",
+  "title": "Yung Sammy, Arma, Sixth Ocean join The Hello Group India’s management roster",
+  "summary": "Rapper Yung Sammy, singer-songwriter Arma and electronic music producer Sixth Ocean are the newest set of acts to sign exclusive global management deals with The Hello Group (THG) India, the […] The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T16:45:35.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "02f20cf590fed962",
+  "url": "https://www.billboard.com/pro/fka-twigs-drops-shai-labeouf-lawsuit-after-actor-voids-nda/",
+  "title": "FKA Twigs Lawsuit Against Shia LaBeouf Ends After Singer Says Actor Voided NDA: ‘An Important Victory’",
+  "summary": "The case had claimed that LaBeouf was using an illegal gag agreement to silence her: \"Women who speak out about sexual abuse should not be silenced by NDAs.\"",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T16:34:47.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "cdc9188660c0415e",
+  "url": "https://musically.com/2026/10/06/arijit-singh-to-stage-his-biggest-ever-india-tour-in-2027/",
+  "title": "Arijit Singh to stage his “biggest-ever India tour” in 2027",
+  "summary": "In January, when Arijit Singh announced that he would no longer be accepting playback singing assignments — a declaration that was incorrectly interpreted as his retirement — we speculated that […] The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T16:30:16.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "761dd902d7a02edc",
+  "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1oem04V3I1aElXcVdlMy1kQVF0VlhGNks1dXk5SnE1OE5wVTZ2TVc4WjJZU0pjSzdLTEs5RUxpeXVINVV5RVJETE5pZGNjS1ZvU0I0WEsweFlxTktGczBGY0phQVNSRnVQWXFab0JYeTdGOURvYTN1cg?oc=5",
+  "title": "DJ Bruck Up remixes ‘Good Life,’ signs distribution deal with BBS Entertainment-Warner Music Group",
+  "summary": "DJ Bruck Up remixes ‘Good Life,’ signs distribution deal with BBS Entertainment-Warner Music Group Caribbean Life News",
+  "source": "Caribbean Life News",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-06T15:54:16.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "d56f27eba0693ab4",
+  "url": "https://www.digitalmusicnews.com/2026/10/06/suno-italy-investigation/",
+  "title": "Italian Competition Watchdog Launches Suno Investigation ‘Over Unfair Terms,’ Says ‘The Contractual Provisions on Copyright Deserve Particular Attention’",
+  "summary": "When it rains, it pours and, in Suno’s case, keeps on pouring: Besides facing a number of stateside lawsuits as well as international copyright claims, the AI music generator is now grappling with a formal investigation in Italy over its allegedly “unfair terms.” The Italian Com…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T15:39:23.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "policy"
+  ],
+  "score": 32,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "67a94872572f2c9c",
+  "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPc2lTSVJjMmFNSDFjZ19vakJNc210ZWN1YktPZW9MYnl0SXN1a2tVcXV3bjQyTWhJTENxMG5tQTRtMXBrWVRfU2pyaUUwMGE1OGdWU2pXQk1wel9PSF9ZLURIb3U0bzZJYnZ5b1p6Y3FYZVFwNkJ0ZkJrSHFTQjZPdEdWaXp0QkI3TEZYVHJ1b0t5Q3BGOXZiSk16S0UyaHpmSUx6YUdQUXQ?oc=5",
+  "title": "Sia Sells Half Of Music Catalog To Pophouse In Reported $180M Deal",
+  "summary": "Sia Sells Half Of Music Catalog To Pophouse In Reported $180M Deal CelebrityAccess",
+  "source": "CelebrityAccess",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-06T15:21:24.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "catalog-deal"
+  ],
+  "score": 22,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "f4580e56e7d40b10",
+  "url": "https://www.musicbusinessworldwide.com/thomas-rhett-launches-fifty-one-forty-nine-records-with-hybe-americas-blue-highway-in-deal-he-says-gives-him-the-opportunity-to-own-his-body-of-work/",
+  "title": "Thomas Rhett launches Fifty-One/Forty-Nine Records with HYBE America’s Blue Highway, in deal he says gives him ‘the opportunity to own’ his body of work",
+  "summary": "Blue Highway describes Fifty-One/Forty-Nine as an artist-led record company \"built around long-term ownership, creative independence and artist development.\" Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T15:00:35.000Z",
+  "entities": [
+   "hybe"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "de18878d9dfb8c07",
+  "url": "https://variety.com/2026/music/news/thomas-rhett-label-partnership-hybe-blue-highway-1236899774/",
+  "title": "Music Industry Moves: Thomas Rhett Strikes Label Partnership With Hybe’s Blue Highway Records",
+  "summary": "Country star Thomas Rhett and Hybe Americas’ Nashville-based label Blue Highway Records have announced a new partnership, Fifty-One/Forty-Nine Records. Described as “artist-led,” the partnership offers “an innovative approach to the artist-label relationship,” according to the a…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T15:00:00.000Z",
+  "entities": [
+   "hybe"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "99cb8824992e5388",
+  "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9VN2hXb3JORXFMNmtQOVRoeDg5ZS1acjdZY01BRE1rX0sxc0J2SjJoWWFmN1VMdFV5ejMtMkI5bzU2TkNiRGhHQjdYVHBQOHlXMmNNdG5vdXV2WUJ2YlRDQ3ppLUVzTXRxemZNQkhiajVOdXZGaWc?oc=5",
+  "title": "Billboard’s 2026 Top Music Business Schools",
+  "summary": "Billboard’s 2026 Top Music Business Schools Billboard",
+  "source": "Billboard",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-06T14:07:26.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "7a8372dc43185273",
+  "url": "https://completemusicupdate.com/approved-clinic/",
+  "title": "🎧 Approved: Clinic",
+  "summary": "Liverpool duo Clinic have been making genuinely strange art-punk since the late 90s - surgical masks, acidic vocals, jumble sale organs, a Grammy nomination. Tenth album ‘Wild In The Streets’ is out 30 Oct. New single ‘Energies’ is the closest they’ve ever come to the dancefloor",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T13:42:49.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "df125156194acf6d",
+  "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxONEhVa3ZNanFpTVhjdm52Z3FGdU5ySW9TR2pzYmZOUGpLaWpSSHl2NzFXb3pNY19hVmNVSVJvNEFlQ2wxVlR0WHJvT2paYURNYzJvWmpBd2s2by1LUXE0dmVGOUwzRkJlbmdta0VuWTE0WE9oRC0zVm5veURybkc0azRPNVZKSUVRQm5zaktXZHdCWk9vcnlvbUxvZExtUHhuMGpVSE54MA?oc=5",
+  "title": "Agency that landed 50B+ views for brands like Perplexity and Universal Music sold for at least $100M",
+  "summary": "Agency that landed 50B+ views for brands like Perplexity and Universal Music sold for at least $100M Fortune",
+  "source": "Fortune",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-06T13:30:00.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
   "id": "ec5618cefd34b9c8",
   "url": "https://variety.com/2026/music/news/aap-rocky-roc-nation-school-scholarship-1236899729/",
   "title": "A$AP Rocky Announces Four-Year Full-Tuition Roc Nation School Scholarship",
@@ -106,6 +1338,28 @@
   "topics": [],
   "score": 23,
   "firstSeen": "2026-10-06T13:15:41.112Z"
+ },
+ {
+  "id": "38089bf397feecf1",
+  "url": "https://news.google.com/rss/articles/CBMisAJBVV95cUxOaFlOcXdxdHF1ME53Y2VfdkZrY1ZtXzgzTjUtX0Noa0s3bmVpMmtwdzgxWnAydEF1Tk5OUks1cVcxQzdGTTdXczJPZVF4aDczMmFGSXptQzJsQ1c4ak81ZmtCSHlEd2F1Y3FJWlZJSk9zUFNaTWV3dkRqOWxYdVpsTThick83NnpoQWZOalVVWU5qNWdQTDN1cGlZMlFLdXdvcGN3bjhiV2pHVkEwNEc0aHl1bzRSaGZlMTZzc3VhOUQ4d1lucHJ1RDJBbGwtRjdGQjV5RGNLZ2xUVUltNngxWk5ZYUpwREh0c3dFNW5IazNCQldqTnBsczZEYXBJaHBqd0tFQm1kVnV4bk5rRWRpT09jS19xX3FfT1RjaTd4MVhaaVN6UnYzUDRiRWhsbEgx?oc=5",
+  "title": "The MLC has paid out more than $4.2B to songwriters and publishers to date – and will begin market share distributions of unmatched and unclaimed royalties in April 2027",
+  "summary": "The MLC has paid out more than $4.2B to songwriters and publishers to date – and will begin market share distributions of unmatched and unclaimed royalties in April 2027 Music Business Worldwide",
+  "source": "Music Business Worldwide",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-06T12:07:38.000Z",
+  "entities": [
+   "the-mlc"
+  ],
+  "types": [
+   "pro"
+  ],
+  "topics": [
+   "pro-reform"
+  ],
+  "score": 31,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
  },
  {
   "id": "1c00a41b46758807",
@@ -220,6 +1474,27 @@
   "topics": [],
   "score": 15,
   "firstSeen": "2026-10-06T13:15:41.112Z"
+ },
+ {
+  "id": "1e013d1267515466",
+  "url": "https://www.digitalmusicnews.com/2026/10/06/apple-music-new-logo/",
+  "title": "Apple Music Launches New Logo to Accompany New Era",
+  "summary": "Apple Music introduces a new logo alongside its latest software updates, intensifying its competition with Spotify for the top paid DSP in the US. After Apple debuted a new logo in the press materials and on the official website of its Apple Music Hall announcement last month, s…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-06T09:28:59.000Z",
+  "entities": [
+   "apple-music",
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 37,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
  },
  {
   "id": "38e1619a4599c2ab",
@@ -407,6 +1682,24 @@
   "topics": [],
   "score": 10,
   "firstSeen": "2026-10-06T13:15:41.112Z"
+ },
+ {
+  "id": "f79e5106cb0a4aa7",
+  "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPenN4bEhRV1ZNeDVFaTdLVXFkZi1JVmkyWmNGV2pXQUxta2tsNGVIZzRCdXpVamVOQU9hbmNDb1hBOGxnbEt2eXBLVUYzTjVHRmhJemt6MHhoZ0lNSjBlZVNWNEtWMGVFRmViRTktMjhENkI0bDhROE9PMVhaeG5EOVRxekowNGlPdldnNlB3Vjl5WDZhZVJJUUw4OHowSTA?oc=5",
+  "title": "Sia Reportedly Sells Rights to Half of Her Music Catalog for $180 Million",
+  "summary": "Sia Reportedly Sells Rights to Half of Her Music Catalog for $180 Million Yahoo",
+  "source": "Yahoo",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-06T03:07:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "catalog-deal"
+  ],
+  "score": 17,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
  },
  {
   "id": "1565d006b55de77a",
@@ -888,6 +2181,22 @@
   "topics": [],
   "score": 10,
   "firstSeen": "2026-10-06T13:15:41.112Z"
+ },
+ {
+  "id": "4f5b178d83654653",
+  "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9id0dxLW9VSzhOQkFNOG5EaDhhMmRuM0dJV1hfc1cteU5EZG1tbVVWbFd6d19RSEpQdXZqMzlCeXphX3ZHWFFZc28wZzNjZ2Z1MEhXRzJranducmNXeGpZVzlPUVljMm9NdGFuQjh0QVpQd1FSWHFV?oc=5",
+  "title": "Miller To Lead Big Loud Acquisitions - RAMP",
+  "summary": "Miller To Lead Big Loud Acquisitions RAMP - Radio and Music Pros",
+  "source": "Radio and Music Pros",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-05T15:19:30.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
  },
  {
   "id": "844a9f63310109c8",
@@ -1607,6 +2916,24 @@
   "topics": [],
   "score": 10,
   "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "a7b8e024baae0b2c",
+  "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQZG5pQW5xX2cxSXAyS2ZreEJaMTZCd3pfdms3c3owSzZIenBUdjA3eFRCQ3JzeEZ0RzI4dHdRQVB6aVl2ZThjWGdNZ1pjSTQ1eHlabGxWVDNrTENMc010enhoWjhQeGphTjRSN2F5NXZFWi1OOHN0SWpUREVPcERjcG9UZFlia0xlUmMtUFV3?oc=5",
+  "title": "Inside Baltazar, the New AI-Powered Music Valuation Platform: ‘Bloomberg Terminal for Music Assets’",
+  "summary": "Inside Baltazar, the New AI-Powered Music Valuation Platform: ‘Bloomberg Terminal for Music Assets’ Billboard",
+  "source": "Billboard",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-04T07:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "pe-capital"
+  ],
+  "score": 12,
+  "firstSeen": "2026-10-07T13:17:33.950Z"
  },
  {
   "id": "22bb10bd20489c2e",
