@@ -2132,6 +2132,29 @@
   "firstSeen": "2026-09-29T12:48:18.319Z"
  },
  {
+  "id": "1dd26d16d43dd5e5",
+  "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOa1JaN1NiWF9FaFgxdXBpbHVrTlkzYWs0TE5FUEg3RDdWNU5xTVFGMXBJWHRFMGZPYjlMVkRZdFFBU1o2WlBUR3lNcEI0ejNOc0ExZ3lYU0FSUDB4RmZNRXRLdHNUZEZfM0ZOTE04VURyM2ZwbjFfREhSX0lqc2UxNjFuazFoeUkzV2pCdmx0ZFY1UQ?oc=5",
+  "title": "Ticketmaster Must Face FTC Lawsuit After Executive Said It Turns ‘Blind Eye’ to Scalpers",
+  "summary": "Ticketmaster Must Face FTC Lawsuit After Executive Said It Turns ‘Blind Eye’ to Scalpers Law Commentary",
+  "source": "Law Commentary",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-29T07:00:00.000Z",
+  "entities": [
+   "ticketmaster"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "litigation",
+   "policy"
+  ],
+  "score": 24,
+  "firstSeen": "2026-10-08T13:23:57.878Z"
+ },
+ {
   "id": "f65ed0dc48abec5e",
   "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOWWNLc3dLWHRTM2JEODhZenZJQk5MR1JLdjFlQ19CbHd3TmNJbXY5dFNnN1EtM1U0bnVIRVZlNlI4LTJmY2cyakplRzk1OEtnVllpRHJoYnY5SHRpR3FISzd2SGZJTkxJQTBMckJWeW15TXNueVp5UGtOOHMzLXJaRUpxaXkwZW9VbllOemhnR2ZQclk1N3p4eHdJa25IVGg5M1JnMVlqRmFtUmNUZVkyaDJBT2lja1lJWjZISEF3RXVYUmw1bkdPR2Q2RHpiTHRwYWF5NA?oc=5",
   "title": "Luxembourg's ANote Music raises €2 million to transform music royalties into an accessible asset class - EU-Startups",
@@ -2284,6 +2307,22 @@
   "topics": [],
   "score": 10,
   "firstSeen": "2026-09-29T12:48:18.319Z"
+ },
+ {
+  "id": "4d5df475338bbae3",
+  "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQOWR5UWpWZnZKUzdJTlBrUER0RWhUNTZlMExYWE5hcUhXY2M3UHVYdTRyTlNGZVZoM295U2FHLVZTMDlCbXQ4NjZkR2ZYSkozN2RuZWkybXRkMURhWENqY0Zzd2tiMHRuM0plbEJKMVdrY2RLY2lBcHc0ZkZRV1VDNTVUOG5Ncm45Z2lWUFdZWWswNE5pQVhQa3NBNTRiVFBwdWRuVzJTZW01bFlWSURIYjdvdHRieFNwaGFzZlhQWnloUzBVNEE?oc=5",
+  "title": "From Ma Rainey to AI: New Technology Amplifies an Old Fight Over Artist Control",
+  "summary": "From Ma Rainey to AI: New Technology Amplifies an Old Fight Over Artist Control Howard University News Service",
+  "source": "Howard University News Service",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-29T01:20:52.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 0,
+  "firstSeen": "2026-10-08T13:23:57.878Z"
  },
  {
   "id": "32062571be2cfcfd",
@@ -3247,6 +3286,29 @@
   ],
   "score": 20,
   "firstSeen": "2026-09-28T13:48:47.751Z"
+ },
+ {
+  "id": "9a17e6d73e83db0a",
+  "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPUzVWZno2TWtPakRpRFhYUnBfN2xwRlRDdHBaUV9wVTJZbGFSQjBnVDdZWTRRSE9pOU82eS1aaFNTSUluNEQ3ZzBUNGR0clNiTEdxMXhZN1B2ZW16THBHRElha2NTWWozV0J0VTdFeVBkYWp4ZkN6VWpQbW9JYkpwWDZEUDlIWXB3ZHQ0dm0tVXNaM1BvR3c?oc=5",
+  "title": "Universal and Sony Launch a New $9 Billion Lawsuit Against AI Music Generator Suno",
+  "summary": "Universal and Sony Launch a New $9 Billion Lawsuit Against AI Music Generator Suno Android Headlines",
+  "source": "Android Headlines",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-09-28T07:00:00.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 24,
+  "firstSeen": "2026-10-08T13:23:57.878Z"
  },
  {
   "id": "ef3845fb18688217",
