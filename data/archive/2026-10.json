@@ -1,5 +1,832 @@
 [
  {
+  "id": "81a42c5ec02fa9e5",
+  "url": "https://www.digitalmusicnews.com/2026/10/09/music-industry-hires-oct-9-2026/",
+  "title": "Latest Music Industry Hires: Live Nation, Suno, Warner Music MENA, GoDigital, Empire Publishing, Believe, Music Publishers Association, More",
+  "summary": "Here’s a recap of recent music industry hires and in-house promotions as of October 9th, 2026. If you have a job shuffle to share, we’re all ears. Send us a note to news@digitalmusicnews.com. If you’d like to post a job on our Job Board, just send us a request to noah@digitalmus…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-10T01:05:27.000Z",
+  "entities": [
+   "believe",
+   "live-nation",
+   "suno",
+   "wmg"
+  ],
+  "types": [
+   "artist-services",
+   "label",
+   "live",
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 66,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "103f8f608979e753",
+  "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOYnN2NVpRaWFzMEtYcjg2SUhrQ2dLamtTS09CSDBIWnV1MThKRFIzcjZzazU5Tzl5clVaZzRxbHh1Q1NyNTlPV01HLXNQQVljYlJsdDVQWTdyRnR5Vm1DMTJuWXJBNExXbW0yV3NKZHM4dXNVZTNyUDlRcXRVajhON3VxdkxHQjB6TmtQNUlqRjhDNS1CUVNlQ0QtaWdSNXc?oc=5",
+  "title": "Billboard Names Three Bmg Executives To Its 2026 Latin Power Players List",
+  "summary": "Billboard Names Three Bmg Executives To Its 2026 Latin Power Players List www.bmg.com",
+  "source": "www.bmg.com",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-10T00:39:58.000Z",
+  "entities": [
+   "bmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "7efcce30cd614a85",
+  "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQemh1Y3g4eEhqdmV2cEdhakVpTHdqN2Z2NGpDUk1rSk9XVktialpUdGJqRU1ocjdSSDRMMFhkVm15REZMbEtxXzBiZklDWWJFcFh3Qm9odlU0WDdjQUVNTUMtZ1pfT1RybjRtblNzbVJoSTFhbkNzTlNRc19IS1RVMU9nQXNYQkRvR0dYZWg1TlVsclF1d3NEYzJmdkNQTTN3Vkh5ZFU5ZXZXajJKQnI3Zk5TVHNvZzg5SHlUUjRqQWJPT3M?oc=5",
+  "title": "Theater Resources Unlimited to Launch Music Licensing Workshop Series",
+  "summary": "Theater Resources Unlimited to Launch Music Licensing Workshop Series BroadwayWorld",
+  "source": "BroadwayWorld",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-10T00:25:55.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "1ac2c52012514b91",
+  "url": "https://www.billboard.com/pro/summer-walker-legal-dispute-interscope-record-deal/",
+  "title": "Summer Walker in Legal Dispute With Interscope Over Record Deal",
+  "summary": "Walker invoked California's seven-year statute to terminate her contract with Interscope. The label has now responded with a lawsuit.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T22:56:15.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "ee1e38dcdba0150b",
+  "url": "https://variety.com/2026/music/news/adela-brings-sass-vocals-razor-sharp-moves-la-fonda-theatre-1236907126/",
+  "title": "Adéla Brings Sass, Vocals and Razor-Sharp Moves to Los Angeles’ Fonda Theatre",
+  "summary": "Amid the first of two sold-out nights at Los Angeles’ Fonda Theatre on Thursday night, Adéla paused to shout out Katseye members Lara Raj and Megan Skindiel, who were watching in the balcony alongside Saint Satine’s Emily Kelavos. “I moved out here a couple of years ago; I moved…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T22:34:05.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "c2b5b96f1fed3b41",
+  "url": "https://www.digitalmusicnews.com/2026/10/09/top-dawg-entertainment-doxxing/",
+  "title": "Top Dawg Cleared of Doxxing Claim Amid Ugly Sexual Harassment Lawsuit — Jury Trial Tentatively Scheduled for May 2027",
+  "summary": "Amid a sexual harassment and breach of contract lawsuit filed by PR professional Linda Luna, Top Dawg Entertainment and several of its higher-ups have officially beaten a doxxing claim. That’s according to a new decision from the California Court of Appeal for the Second Distric…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T22:01:53.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "682264ca4fc2c574",
+  "url": "https://www.digitalmusicnews.com/2026/10/09/jack-white-vegas-concert-poster-board-game/",
+  "title": "Jack White’s Vegas Concert Poster Doubles as a Board Game—And Now You’ll Have to Rely on eBay to Secure a Copy",
+  "summary": "Jack White’s Las Vegas concert poster doubles as a playable board game, with a 52-card deck, six wooden playing pieces, a custom wooden die, and more. Jack White’s October 2 show at Fontainebleau Las Vegas featured a unique poster with a fun secret: it also serves as a playable…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T21:21:21.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "e2fbb5284cf53ee9",
+  "url": "https://www.billboard.com/pro/travis-scott-sample-lawsuit-astroworld-utopia-songs-ends/",
+  "title": "Travis Scott No Longer Facing Lawsuit Over ‘Alright’ Sample on ‘Astroworld’ and ‘Utopia’",
+  "summary": "A pair of songwriters dropped their nearly three-year-old copyright infringement case against the star rapper.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T21:06:18.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "6162539951d7af38",
+  "url": "https://www.billboard.com/pro/backstreet-boys-touring-record-canada-music-news/",
+  "title": "In Canada: Backstreet Boys Set New Touring Record; Vans Warped Tour Not Returning",
+  "summary": "Also up north this week: Noise complaints at Toronto's Rogers Stadium are way up — thanks in part to shows by Chris Brown & Usher and Bruno Mars.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T20:56:36.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "53f5fcf125de7a1e",
+  "url": "https://variety.com/2026/music/reviews/danielle-ponder-everything-has-changed-album-review-1236907098/",
+  "title": "Danielle Ponder Meshes Old-School Soul With Future Sounds on the Dazzling ‘Everything Has Changed’: Album Review",
+  "summary": "There have been many innovative R&B albums made over the past decade, but few have meshed futurism and tradition in quite the way that Danielle Ponder does on her second full-length, “Everything Has Changed.” She possesses a glass-shatteredly powerful, church-reared soul shouter…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T20:50:39.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "2712830465bb4e4d",
+  "url": "https://news.pollstar.com/2026/10/09/prodi-in-partnership-with-universidad-de-guadalajara-to-develop-new-soccer-stadium-in-guadalajara/",
+  "title": "PRODI, In Partnership With UdeG, To Develop New Soccer Stadium In Guadalajara",
+  "summary": "Guadalajara will soon have yet another large venue at its disposal. Weeks after OCESA launched Coliseo GNP Seguros, the owners of storied soccer club Atlas F.C. unveiled plans for a new stadium in Jalisco’s capital. Ownership group PRODI (Grupo Promoter de Desarrollo e Infraestr…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-09T20:30:38.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "4e06d52dbe5d0a4d",
+  "url": "https://www.digitalmusicnews.com/2026/10/09/daisy-chain-fields-vendor-complaints/",
+  "title": "Olivia Rodrigo’s Daisy Chain Fields Festival Goes Into Damage Control After Vendors Say They Weren’t Paid",
+  "summary": "At least two vendors claim that Olivia Rodrigo’s Live Nation-produced Daisy Chain Fields festival not only failed to pay them but also issued costly fees. Olivia Rodrigo’s inaugural Daisy Chain Fields festival was a major success, with its charitable focus on reproductive rights…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T20:26:52.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 25,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "6d63c95e6ab2325e",
+  "url": "https://www.digitalmusicnews.com/2026/10/09/diddy-prison-release-date-pushed-back/",
+  "title": "Diddy’s Release Date Delayed After Details of Lavish Prison Lifestyle Emerge",
+  "summary": "After details of Diddy’s lavish prison lifestyle emerge, the rap mogul’s release date has been pushed back, alongside a half-million-dollar fine. Following NBC News’ report about Sean “Diddy” Combs’ life behind bars—which revealed that he evidently has fellow inmates cook and cl…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T20:02:27.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "def982af75dd802a",
+  "url": "https://news.pollstar.com/2026/10/09/remi-wolf-releases-new-album-announces-north-american-headline-tour/",
+  "title": "Remi Wolf Releases New Album, Announces North American Headline Tour",
+  "summary": "Remi Wolf has announced dates for a North American headline tour to go along with her new album, Mud, out today via Island Records. Mud includes the previously released singles “Twiggy,” “Bottle,” and “I Won’t Cry,” which Remi performed last night on Jimmy Kimmel Live! The 11-so…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-09T19:54:38.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 33,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "952ca2dc5e4deecf",
+  "url": "https://news.pollstar.com/2026/10/09/ubs-arena-and-delaware-north-unveil-new-fb-items-for-nhl-islanders-season/",
+  "title": "UBS Arena And Delaware North Unveil New F&B Items For NHL Islanders’ Season",
+  "summary": "With the New York Islanders on the ice for the 2026-27 season, UBS Arena and hospitality partner Delaware North Sportservice have debuted their season-defining lineup of new food, beverage and retail offerings – from re-imagined desserts and creative handhelds to locally inspire…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-09T19:40:41.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "21c199a05ebbba86",
+  "url": "https://news.pollstar.com/2026/10/09/colorado-teen-gets-make-a-wish-surprise-ahead-of-harry-styles-concert-in-nyc/",
+  "title": "Colorado Teen Gets Make-A-Wish Surprise Ahead Of Harry Styles Concert in NYC",
+  "summary": "Oak View Group Chief Executive Officer Chris Granger joined Make-A-Wish America Director Camille Horn and Make-A-Wish Colorado President & CEO Scott Dishong last night (Oct. 8) to surprise a Denver teen with the news that her wish to meet Harry Styles and attend his concert woul…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-09T19:40:29.000Z",
+  "entities": [
+   "oak-view-group"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 20,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "825f6119c1a3be50",
+  "url": "https://www.billboard.com/pro/tinashe-popstar-biggest-album-yet-how-it-happened/",
+  "title": "How Tinashe Scored the Biggest Album of Her Career With ‘Popstar’",
+  "summary": "“The music industry moves fast,” says her manager Simonne Solitro, adding, “We constantly need to think outside the box and build intriguing, fresh campaigns.”",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T19:34:32.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "7666b65a781a6e92",
+  "url": "https://www.digitalmusicnews.com/2026/10/09/kanye-antisemitism-removal-lawsuit-shut-down/",
+  "title": "Kanye West Tries to Remove Pages of His Extreme Antisemitism From a Copyright Court Battle, Federal Judge Shuts Him Down",
+  "summary": "A federal judge has rejected Kanye’s attempt to strike references to his past antisemitic statements from Alice Merton’s copyright lawsuit against him. Ye, the disgraced rapper formerly known as Kanye West, attempted to strike references to his past antisemitic statements and be…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T19:02:58.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "a86e567505b484ca",
+  "url": "https://news.pollstar.com/2026/10/09/florida-theatre-in-jacksonville-names-kevin-stone-president/",
+  "title": "Florida Theatre In Jacksonville Names Kevin Stone President",
+  "summary": "The Florida Theatre Performing Arts Center, Inc. Board of Directors, named Kevin Stone President of the PAC. Stone will lead the organization’s operations and strategic initiatives while working with the board, staff, artists and community to advance the theatre’s mission and co…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-09T18:57:39.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "cc6852cb7c406196",
+  "url": "https://variety.com/2026/music/news/remi-wolf-mud-off-campus-hayley-willians-1236906301/",
+  "title": "Remi Wolf on the Meaning Behind Her New Album ‘Mud,’ Her ‘Off Campus’ Cameo and Friendship with Hayley Williams",
+  "summary": "Remi Wolf hasn’t landed a spot on “Survivor,” one of her favorite shows she’s always wanted to be on, so she instead put her mental fortitude to the test by rolling around in a makeshift mud pit. She quickly realized she’s “never gonna make it on that show if I can’t handle this…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T18:32:30.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "e2364a7694b0ac5d",
+  "url": "https://variety.com/2026/music/news/journey-drummer-deen-castronovo-leaves-concert-hospitalized-1236906851/",
+  "title": "Journey Drummer Deen Castronovo Leaves Concert After Two Songs and Is Hospitalized, as Show Eventually Resumes With Drum Tech",
+  "summary": "A Journey concert in Tulsa, Oklahoma had an unnerving moment Thursday night when longtime drummer Deen Castronovo had to be helped off the stage after the group had performed just two songs, leading to a substantial pause before the show resumed with a quickly drafted substitute…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T18:26:19.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "db5e00a210efc71e",
+  "url": "https://www.billboard.com/lists/executive-turntable-dasha-smith-named-coo-of-caa/",
+  "title": "Executive Turntable: Dasha Smith Named COO of CAA, Warner Music MENA Expands Leadership",
+  "summary": "Plus Michael McCall retires from the Country Music Hall of Fame Museum and more music industry hires and promotions.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T18:18:38.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "2097f124f6da549c",
+  "url": "https://www.billboard.com/pro/rawayana-new-management-team-carlos-salas-brocoli-records/",
+  "title": "Rawayana Unveils New Management Team Led by Carlos Salas at Brocoli Records: ‘We’ve Grown Together’",
+  "summary": "Salas will lead the Venezuelan band’s management alongside the label's partner Jeff D. Fontanez.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T18:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "2842192c5cfec1fa",
+  "url": "https://variety.com/2026/artisans/awards/laika-wildwood-oscars-decemberists-better-part-of-bravery-1236906575/",
+  "title": "Laika Submits Original Song From ‘Wildwood’ for Oscars, ‘The Better Part of Bravery,’ Performed by The Decemberists (EXCLUSIVE)",
+  "summary": "Laika will submit “The Better Part of Bravery” from the animated feature “Wildwood” for consideration in the original song category at the Academy Awards, Variety has learned. The song is performed by The Decemberists and plays at the end of the film. “Wildwood” follows teenager…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T18:00:00.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [],
+  "score": 28,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "599c697e1fb4cefc",
+  "url": "https://variety.com/2026/music/focus/air-supply-hollywood-walk-fame-1236906736/",
+  "title": "Air Supply Rocks on With World Tours, a New Album and a Star on the Hollywood Walk of Fame: ‘The Term Soft Rock Makes Me Sick’",
+  "summary": "When it comes to Russell Hitchcock and Graham Russell — partners behind the 50-year-plus hit machine Air Supply — the only four-letter word in their vocabulary is “soft.” Sure, British-born songwriter-harmonist Russell and Australian vocalist Hitchcock sing luscious love songs l…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T17:18:10.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "4a9052c244ab5d6d",
+  "url": "https://www.billboard.com/pro/billboard-latin-power-players-2026-list/",
+  "title": "Latin Power Players: Billboard’s 2026 List Revealed",
+  "summary": "Nominated by their companies and chosen by Billboard editors, these are the executives within the genre leading the field this year.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T17:00:59.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "9b64860495568d81",
+  "url": "https://www.billboard.com/pro/hans-schafer-latin-power-players-executive-of-the-year/",
+  "title": "How Live Nation’s Hans Schafer Redefined Latin Touring’s Global Potential: ‘It’s Not One-Size-Fits-All’",
+  "summary": "Billboard's Latin Power Players Executive of the Year has shepherded major talents including Bad Bunny, Karol G, Fuerza Regida and Los Bukis to stadiums.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T17:00:16.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 20,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "dbd4453dad761296",
+  "url": "https://www.digitalmusicnews.com/2026/10/09/spotify-technology-launch/",
+  "title": "Introducing ‘Spotify Technology’: DSP Kicks Off Enterprise-Focused Software Sales Expansion, Says Its Products Are ‘Becoming the R&D Operating System’",
+  "summary": "Introducing Spotify Technology: The DSP is officially in the business of selling software and has already made several “battle-tested” products available to clients. Spotify disclosed the enterprise-focused expansion in a detail-oriented article, touting the buildout as an initi…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T16:47:16.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "7091f4abc4928906",
+  "url": "https://www.billboard.com/pro/top-dawg-wins-ruling-rejecting-doxxing-claim/",
+  "title": "Top Dawg Wins Court Ruling Rejecting Doxxing Claims by Sexual Assault Accusers",
+  "summary": "Two women claimed the label broke the law by revealing their names, but an appeals court says they \"simply had no right to remain anonymous while suing in court.”",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T16:43:30.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "e557e87a284c1991",
+  "url": "https://www.musicbusinessworldwide.com/from-sony-musics-260000-deepfake-takedowns-to-sunos-live-music-expansion-its-mbws-weekly-round-up/",
+  "title": "From Sony Music’s 260,000 deepfake takedowns to Suno’s live music expansion… it’s MBW’s Weekly Round-Up",
+  "summary": "The biggest headlines from the past few days... Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T15:54:26.000Z",
+  "entities": [
+   "sony-music-entertainment",
+   "suno"
+  ],
+  "types": [
+   "label",
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 48,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "94d340f457e186c3",
+  "url": "https://news.pollstar.com/2026/10/09/globally-golden-anniversary-from-down-under-michael-coppel-celebrates-50-years-in-the-live-biz-countless-aussie-music-milestones/",
+  "title": "Globally Golden Anniversary From Down Under: Michael Coppel Celebrates 50 Years In The Live Biz & Countless Aussie Music Milestones",
+  "summary": "Please login to your Pollstar subscriber account to view this content.",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-09T15:47:57.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "dc6ec4de65f1b713",
+  "url": "https://variety.com/2026/legit/news/dolly-parton-remembered-actors-broadway-musical-1236906569/",
+  "title": "Classic Moments With Dolly Parton, Remembered by the Actors Portraying Her in the Broadway Musical, ‘A True Original’: ‘I’m Jezebel, and God Loves Me Anyway!’",
+  "summary": "For actors, portraying a real-life person is a huge challenge. But portraying a real-life singer-songwriter-actress-icon like Dolly Parton when she’s standing right in front of you is a whole other realm. That was the experience and the challenge for the actors and co-creators o…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T15:05:55.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "2fde367ac128fe87",
+  "url": "https://news.pollstar.com/2026/10/09/how-danny-wimmer-presents-1-million-strongs-partnership-is-continuing-to-expand-in-bringing-together-community-supporting-mental-wellness/",
+  "title": "How Danny Wimmer Presents & 1 Million Strong’s Partnership Is Continuing To Bring Together Community & Support Mental Wellness",
+  "summary": "World Mental Health Day, celebrated Oct. 10, aims to raise awareness of mental health issues around the world and to mobilize efforts in support of mental health. A focus on building community while supporting fans struggling with mental health or addiction can be seen in action…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-09T15:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "7c8468816c3195c6",
+  "url": "https://variety.com/2026/music/album-reviews/troye-sivan-shes-the-best-album-review-1236905931/",
+  "title": "Troye Sivan Is at His Best on ‘She’s the Best,’ a Weird, Wild Exploration of Desire: Album Review",
+  "summary": "Ahead of his third album, 2023’s “Something to Give Each Other,” Troye Sivan teased the era as a dance-pop fantasia with singles “Rush” and “Got Me Started.” It was his post-pandemic record, one that promised to capture the crackle of electricity that came with no longer being o…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T15:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "5a9a231079244b8e",
+  "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPOFdITXpPa3hhLUJoQ0RUQkdORTJlbl9VWDJ2dWJwX0ZVZWQtWDFEZ0UwVUdyOWU5Yi1zakZWRHdpaVBZXzUtcFRqSlphSjNXTDVGdVg5ZS1uY0RUSWZGLWNpZFlsOVdUR25zb19mZl9kUmhNM08wS0lDT2xYbDlYcWEybUtNNzFzRTNNLUoyMnhYWlB1dDBlcU1mRGMwakRBOUNvWlFDRWY2UmRPdk1RM3RsV0VvV1NpYVJZeWIxei1pMmUtbjhPdmhwNV_SAdIBQVVfeXFMTnUwQlViMkxqa2dVUTNCS0ZtejBnY1RRT25yMzJzWHBLSDQ4MFNQcjFxczhtX0llLVFxLUhNNEdUWGhJTlM4UUU4SkMyaE1uSmk4ay1IengzUnNmVEtBNjkwYkp0S3QwS3dPcUJ6RlpndWpvN0FVUWNTS2VSMWFBdWZRWFpJaG9HNXgxRmJSZF9fZ0dxdzFiM1BEeVM3T1ZaOXFSQmVWQm8zQnd3bWNGTk9zdDVmQzdaQl9NU1g3M00xWXdXdEFhODJOeThiN0dzTVl3?oc=5",
+  "title": "Leadership Expansion Might Change The Case For Investing In Warner Music Group (WMG)",
+  "summary": "Leadership Expansion Might Change The Case For Investing In Warner Music Group (WMG) Simply Wall Street",
+  "source": "Simply Wall Street",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-09T14:58:47.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "0b455b5630ce078c",
+  "url": "https://variety.com/2026/music/news/phoebe-bridgers-performance-video-boygenius-lance-oppenheim-1236906285/",
+  "title": "Phoebe Bridgers Reunites Boygenius as Part of Three-Song Studio Performance Video, Directed by ‘Primetime’ Helmer Lance Oppenheim",
+  "summary": "Phoebe Bridgers fans may not be getting glimpses of her current arena tour, because of the prohibition on cameras and phones, but as far as performance footage goes, she’s given them something better — a three-song in-studio video, shot by her “Primetime” director Lance Oppenhei…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T14:44:49.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 33,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "d2cd04dd3d6daf91",
+  "url": "https://news.pollstar.com/2026/10/09/country-roads-lead-him-home-brandon-flowers-explores-uncharted-territory-to-tell-his-story-cover/",
+  "title": "Country Roads Lead Him Home: Brandon Flowers Explores Uncharted Territory To Tell His Story (Subscribers Only)",
+  "summary": "Please login to your Pollstar subscriber account to view this content.",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-09T14:40:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "dsp-economics"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "f917ae235f4b32e0",
+  "url": "https://news.pollstar.com/2026/10/09/top-tours-shakira-hits-the-charts-with-stadium-sized-ticket-sales-from-madrid-residency/",
+  "title": "Top Tours: Shakira Hits The Charts With Stadium-Sized Ticket Sales From Madrid Residency",
+  "summary": "Please login to your Pollstar subscriber account to view this content.",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-09T14:37:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "e82b9f46788e6ce1",
+  "url": "https://news.pollstar.com/2026/10/09/weekly-signings-lany-to-caa-blind-guardian-to-cobra-the%c2%b7team-inks-8/",
+  "title": "Weekly Signings: LANY To CAA, Blind Guardian To Cobra; THE·TEAM Inks 8",
+  "summary": "Please login to your Pollstar subscriber account to view this content.",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-09T14:15:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "45e4f127a72df53e",
+  "url": "https://completemusicupdate.com/denmarks-new-digital-replica-law-should-go-into-effect-in-early-2027-says-danish-culture-minister/",
+  "title": "Denmark’s new digital replica law should go into effect in early 2027, says Danish culture minister",
+  "summary": "Danish copyright law could provide new protections around voice and likeness in the context of AI-generated digital replicas by the start of next year. Building on previous proposals, culture minister Zenia Stampe presented proposed legislation to the Danish parliament yesterday",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T13:59:29.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai",
+   "policy"
+  ],
+  "score": 24,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "2e218f6bbc4ad800",
+  "url": "https://musically.com/2026/10/09/meta-and-tiktok-engage-in-tit-for-tat-ad-bans-on-their-platforms/",
+  "title": "Meta and TikTok engage in tit-for-tat ad bans on their platforms",
+  "summary": "If you’re a fan of SOCIAL MEDIA TITANS BEEF, prepare to record your direct-to-camera ragebait hot take: Meta, the parent company of Instagram and Facebook, has banned ads from ByteDance from running on its platforms in the US, as well as some other territories, including Canada,…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T13:24:18.000Z",
+  "entities": [
+   "bytedance",
+   "tiktok"
+  ],
+  "types": [
+   "dsp",
+   "strategic"
+  ],
+  "topics": [],
+  "score": 36,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "1e7511b5978c51de",
+  "url": "https://musically.com/2026/10/09/jack-whites-latest-concert-poster-is-also-a-150-board-game/",
+  "title": "Jack White’s latest concert poster is also a $150 board game",
+  "summary": "When Jack White played a show at BleauLive Theater in Las Vegas on October 2, 2026, the show’s poster was also available for sale – as a board game. All 350 copies of Jack White: Las Vegas Frenzy sold out immediately, but more go on sale online today – at price that means it’s m…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T13:22:55.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "9f4b79d29e675206",
+  "url": "https://musically.com/2026/10/09/new-suno-live-music-division-to-help-make-it-the-first-creative-entertainment-platform/",
+  "title": "New Suno live music division to help make it the “first creative entertainment platform”",
+  "summary": "Part of Suno’s licensing deal with Warner Music Group last November involved acquiring concert-discovery platform Songkick. It felt like a strange quirk at the time – what does an AI music-generating platform have to do with live gigs? – but now we’ll find out how this seemingly…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T13:20:53.000Z",
+  "entities": [
+   "suno",
+   "wmg"
+  ],
+  "types": [
+   "label",
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 48,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "6752df81d49c7b33",
+  "url": "https://musically.com/2026/10/09/spotify-launches-enterprise-technology-division-rogan-re-signs-for-reported-250m/",
+  "title": "Spotify launches enterprise Technology division; Rogan re-signs for reported $250m",
+  "summary": "Spotify has been feeling confident recently about its internally-built tools – for instance its bespoke “large taste model” to better recommend music, and its Studio platform that can build bespoke podcasts for users. As such, it sees itself as more than a streaming platform – r…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T13:19:35.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "6300e661215ce1ff",
+  "url": "https://musically.com/2026/10/09/sollos-re-engineers-olivia-dean-and-sam-smith-songs-to-help-you-sleep-and-focus/",
+  "title": "Sollos “re-engineers” Olivia Dean and Sam Smith songs to help you sleep and focus",
+  "summary": "It’s comforting to remember that music isn’t merely a thing that exists in a series of breathless AI press releases – it’s also a nice thing that makes people feel nice. Feeling good can sometimes seem like a scarce resource in 2026, and while listening to your favourite artists…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T13:18:07.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
   "id": "ad84999b8bf60b80",
   "url": "https://musically.com/2026/10/09/super-intelligence-round-up-sonilo-laylo-base-for-music-and-more/",
   "title": "Super Intelligence round-up: Sonilo, Laylo, Base for Music and more",
@@ -198,6 +1025,80 @@
   "firstSeen": "2026-10-09T13:12:13.498Z"
  },
  {
+  "id": "af8acf1bf257f058",
+  "url": "https://www.digitalmusicnews.com/2026/10/08/gta-vi-radio-station-hosts/",
+  "title": "GTA VI Radio Stations Will Feature Hosts Bad Bunny, Burna Boy, Slayer, Trina, Robyn, Lana Del Rey, and Even Lana’s Husband",
+  "summary": "Ahead of the much-anticipated release of the latest Grand Theft Auto game, Rockstar Games reveals that the in-game radio stations will feature some serious talent on hosting duty. Rockstar Games’ highly anticipated new entry in the Grand Theft Auto franchise, Grand Theft Auto VI…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T05:02:46.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "16a64ff3df053d63",
+  "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOMFNldTJYZmsxSHo2S1ZfOFA4ZF8xTGVheld5SUtiWmpZSUREd3p2aFc5dDRPamlzUmRLeHk1SkhvVl9ZWnJJNmhkRXJMM055YThBZkhlcDc2eldBR3MyQWZuLWdiWHg4SDlIVEZxNVdPTVJPdTV3U0diaERnaDR6RHN4a0lLeHc?oc=5",
+  "title": "UMG Inks Deal With ElevenLabs to Develop AI Music Remix Platform",
+  "summary": "UMG Inks Deal With ElevenLabs to Develop AI Music Remix Platform Billboard",
+  "source": "Billboard",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-09T04:09:18.000Z",
+  "entities": [
+   "elevenlabs"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 21,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "ccd460ebda31d24f",
+  "url": "https://www.digitalmusicnews.com/2026/10/08/apple-umg-pop-therapy-wellness/",
+  "title": "Apple + UMG Announce ‘Pop Therapy’ Audio Wellness Project; Olivia Dean, Jon Batiste, Shawn Mendes Among the Mellowed-Out Artists",
+  "summary": "Audio wellness platform Sollos is marking World Mental Health Day with a release of re-engineered tracks from major artists via Apple Music. Today, audio wellness platform Sollos is marking World Mental Health Day by releasing a slew of re-engineered tracks from artists like Oli…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T04:00:48.000Z",
+  "entities": [
+   "apple-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 17,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "da6c31b19d5346d3",
+  "url": "https://www.digitalmusicnews.com/2026/10/08/sean-welch-business-manager-prison-sentence/",
+  "title": "A Bad Week for Music Criminals: Business Manager Sean Welch Begins Eight-Month Prison Sentence After Stealing from Juice WRLD and Others",
+  "summary": "It’s been a bad week for music criminals – including streaming fraudster Michael Smith and now business manager Sean Welch, who’s reported to federal prison after pleading guilty to wire fraud. Said guilty plea arrived in December 2025, following an initial indictment in early 2…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-09T02:33:46.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
   "id": "0d4465af0f650781",
   "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOSHJhM1ltNkdTdlZyU19pWnhhZHNwNFhuT3lRUW9objlfQ1lybmp0YmV5dVJfT0FUUEpYcXY1RFRtWElvajdTZTNYTWUtN3JpOW82alVtbXpYV3VtWlFndjdtVlpxeWpNbi1GemdLWjRsdDJwX1lWYVhDa1luYzFLVFppSS1CVS02akZIRA?oc=5",
   "title": "Music Industry program celebrates milestone anniversary",
@@ -212,6 +1113,40 @@
   "topics": [],
   "score": 10,
   "firstSeen": "2026-10-09T13:12:13.498Z"
+ },
+ {
+  "id": "de0035d9bab0ef7d",
+  "url": "https://www.digitalmusicnews.com/2026/10/08/dr-luke-sd-broadcaster-lawsuit-settlement/",
+  "title": "Who Really Wrote Katy Perry’s ‘Hot N Cold’? A Bizarre Twist Could Derail a Dr. Luke Copyright Settlement In South Dakota",
+  "summary": "A copyright case involving Dr. Luke enters settlement proceedings, but a third party has filed an intervention request, alleging an authorship stake. This week, in the ever-shifting world of copyright infringement lawsuits, two parties on opposing sides of a copyright infringeme…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-08T23:08:25.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 13,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "d703d23865100a42",
+  "url": "https://www.digitalmusicnews.com/2026/10/08/grammys-navigate-drake-bts-stray-kids-boycotts/",
+  "title": "Who’s Next? Grammys Navigating Drake, BTS, and Stray Kids Boycotts",
+  "summary": "On the heels of K-pop groups BTS and Stray Kids boycotting the Grammys, Drake makes it clear that he too is boycotting the awards event—again. Drake has a storied history of distaste for the Grammy Awards, having said previously that “what was once the highest form of recognitio…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-08T23:02:24.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
  },
  {
   "id": "e1d39c7d07b6f817",
@@ -264,6 +1199,28 @@
   "topics": [],
   "score": 10,
   "firstSeen": "2026-10-09T13:12:13.498Z"
+ },
+ {
+  "id": "7e329c97e28b8eb5",
+  "url": "https://www.digitalmusicnews.com/2026/10/08/live-nation-michael-rapino-contract/",
+  "title": "Live Nation Renews CEO Michael Rapino’s Contract Through 2031 — Massive Deal Includes a $20 Million Stock Bonus and Upwards of $60 Million in Annual Compensation",
+  "summary": "One massive contract renewal later, Michael Rapino is set to continue as Live Nation’s president and CEO – pulling down upwards of $60 million per year, provided the company hits certain performance targets – through 2031. The publicly traded promoter (NYSE: LYV) shed light on t…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-08T21:32:56.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
  },
  {
   "id": "da4469f04fb2701c",
@@ -418,6 +1375,26 @@
   "firstSeen": "2026-10-09T13:12:13.498Z"
  },
  {
+  "id": "e8115116abbfe432",
+  "url": "https://www.digitalmusicnews.com/2026/10/08/joe-rogan-spotify-deal-renewed/",
+  "title": "Joe Rogan Renews Multiyear Partnership with Spotify, Reports Suggest $250 Million Deal",
+  "summary": "Joe Rogan enters into a new multiyear partnership with Spotify, estimated at around $250 million, sources say. Rogan first inked with Spotify in 2020. Today, Spotify announced that Joe Rogan, the top podcaster in the country for several years, has renewed his multiyear partnersh…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-08T18:19:44.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 17,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
   "id": "a8001d8e9d1bac3d",
   "url": "https://news.pollstar.com/2026/10/08/travis-scott-charli-xcx-david-guetta-headlining-south-american-lollapaloozas-estereo-picnic/",
   "title": "Travis Scott, Charli xcx, David Guetta Headlining South American Lollapaloozas & Estereo Picnic",
@@ -450,6 +1427,30 @@
   ],
   "score": 15,
   "firstSeen": "2026-10-09T13:12:13.498Z"
+ },
+ {
+  "id": "17eab92c51be53f4",
+  "url": "https://www.digitalmusicnews.com/2026/10/08/michael-chua-suno-hire/",
+  "title": "Suno Taps Ticketmaster Vet Michael Chua to Lead Its Live Division, Says the Team’s ‘Central Focus’ Is ‘Helping Emerging Artists’",
+  "summary": "Suno the live music specialist? About one year after acquiring Songkick, the AI upstart has tapped longtime Ticketmaster partnerships exec Michael Chua to lead the concert discovery platform. Cambridge-headquartered Suno made the high-profile hire official today, noting that Chu…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-08T17:31:12.000Z",
+  "entities": [
+   "suno",
+   "ticketmaster"
+  ],
+  "types": [
+   "live",
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 39,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
  },
  {
   "id": "95a6ee6b156c8b90",
@@ -1191,6 +2192,26 @@
   "firstSeen": "2026-10-08T13:23:57.878Z"
  },
  {
+  "id": "c4a099c4dbffa744",
+  "url": "https://www.digitalmusicnews.com/2026/10/07/live-nation-data-breach-class-action-lawsuits/",
+  "title": "Live Nation Is Battling Multiple Class Action Lawsuits Following Its Latest Data Breach. DMN Has Already Discovered Three Separate Suits.",
+  "summary": "Live Nation recently disclosed a data breach that exposed sensitive customer information, according to details unearthed by DMN. Already, multiple class action lawsuits have emerged, with potentially more on the way. The disclosure was easy to miss. On October 1st, Live Nation q…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-08T05:44:29.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
   "id": "ff74d4152b5969ef",
   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOcEtEZ3NjLTg4Z2JuRWNIVlVYTGExazRUb3N0aWthNGZUNGIzRExiV3BKSFAyajFIbHBnbWNCbjJoSGVWTUlmdV9kYVc2MFlnZVpfb21hVEktcS05aGJJR2F4SVU5aEF5dkNwM2tZZUtnQTFPSWVCQjQxSE53TEdQNDR1ZFVSSnJ3MWw3UzZkWU5COW9p?oc=5",
   "title": "As Suno Rolls Out Its New AI Models With Industry Licenses, What Does That Mean For the Music Business?",
@@ -1229,6 +2250,22 @@
   "firstSeen": "2026-10-08T13:23:57.878Z"
  },
  {
+  "id": "8d44f3c0ae376539",
+  "url": "https://www.digitalmusicnews.com/2026/10/07/us-copyright-office-streaming-fraud-investigation/",
+  "title": "The US Copyright Office Launches a Formal Investigation Into Music Streaming Fraud. Let’s Open This Cellar Door, Shall We?",
+  "summary": "Following the sentencing of Michael Smith, the US Copyright Office launches a formal notice of inquiry (NOI) into music streaming fraud. After the conviction and sentencing of music streaming fraudster Michael Smith, the U.S. Copyright Office published a notice of inquiry (NOI)…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-08T05:36:42.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
   "id": "926e980033a63acc",
   "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOcXZ6bjloWmJQeGZkMzFKM1FCQnJjT1drT2M5VDE0R0FZMmFENU1naWFwazJVdFV4T2dORlk4REdrajJKNGVlNU5MZV9IYVgxQVF3NHBFaTdNdDhJOHdjWllNamRVSzNLcUlxaG1POXVlT0VKczJ0Z2xrTDlfWVRfUU9Ha2lvZnE2N0dWMFZaZHlCd2JYRm50bFVvUGFTLUZOWl9vVWp1cjBDZEFFRDVvQ1B3X1lfRkZWblU0SWU5TmVUV25LcXZLT0ZFY3pXeWlka1pr0gHTAUFVX3lxTE5xdnpuOWhaYlB4ZmQzMUozUUJCcmNPV2tPYzlUMTRHQVkyYUQ1TWdpYXBrMlV0VXhPZ05GWThER2tqMko0ZWU1TkxlX0hhWDFBUXc0cEVpN010OEk4d2NaWU1qZFVLM0txSXFobU85dWVPRUpzMnRnbGtMOV9ZVF9RT0draW9mcTY3R1YwVlpkeUJ3YlhGbnRsVW9QYVMtRk5aX29VanVyMENkQUVENW9DUHdfWV9GRlZuVTRJZTlOZVRXbktxdktPRkVjeld5aWRrWms?oc=5",
   "title": "Warner Music Group (WMG) Could Be 26% Undervalued Following Its International Expansion Push",
@@ -1249,6 +2286,28 @@
   "firstSeen": "2026-10-08T13:23:57.878Z"
  },
  {
+  "id": "f8f4576c180504f6",
+  "url": "https://www.digitalmusicnews.com/2026/10/07/spotify-audiobooks-plus-subscribers-stats/",
+  "title": "Publishers Call Spotify’s Audiobook ‘Bundle’ a Scam; Spotify Says It Has Over a Million Audiobooks+ Subscribers Worldwide",
+  "summary": "Spotify expands its audiobook access to over 180 markets as subscriptions to its Audiobook+ tier surpass one million users. It’s a well-known fact at this point that music publishers, particularly in the United States, led by the National Music Publishers Association (NMPA), hav…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-08T00:30:54.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "dsp-economics"
+  ],
+  "score": 25,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
   "id": "e06884a2e1af7464",
   "url": "https://variety.com/2026/music/concert-reviews/hayley-williams-hollywood-bowl-concert-tour-review-1236905172/",
   "title": "Hayley Williams Proves There’s a Lot More to Her Than Paramore in a Galvanizing Solo Show at the Hollywood Bowl: Concert Review",
@@ -1263,6 +2322,22 @@
   "topics": [],
   "score": 10,
   "firstSeen": "2026-10-08T13:23:57.878Z"
+ },
+ {
+  "id": "346e8e56ed26ad0c",
+  "url": "https://www.digitalmusicnews.com/2026/10/07/deepseek-funding-tencent/",
+  "title": "DeepSeek Reportedly Set to Raise Up to $15 Billion — With Tencent Among the Leading Backers",
+  "summary": "DeepSeek is reportedly poised to raise as much as $15 billion, with Tencent among the gargantuan round’s leading participants. The massive figure just recently entered the stateside media spotlight; CNBC and others attributed the high-end total to anonymous sources as opposed to…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T23:48:03.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
  },
  {
   "id": "062bf72a1ebd578d",
@@ -1283,6 +2358,26 @@
   "topics": [],
   "score": 20,
   "firstSeen": "2026-10-08T13:23:57.878Z"
+ },
+ {
+  "id": "79001bab22b6b77e",
+  "url": "https://www.digitalmusicnews.com/2026/10/07/super-bowl-61-halftime-rumors/",
+  "title": "Halftime Party In the USA Ahead? Apple Music Strategically Spills Some Beans On the Upcoming Super Bowl LXI Halftime Show",
+  "summary": "Following a leak from Apple Music implying that Miley Cyrus would be the next Super Bowl halftime headliner—Miley has fun on social media with the rumors. This week, Apple Music appeared to leak a hint about the upcoming Super Bowl LXI halftime headliner with a since-deleted Ins…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-07T20:40:29.000Z",
+  "entities": [
+   "apple-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 17,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
  },
  {
   "id": "b6c303a44ef8d861",
@@ -1409,6 +2504,22 @@
   "topics": [],
   "score": 10,
   "firstSeen": "2026-10-08T13:23:57.878Z"
+ },
+ {
+  "id": "2d3173b2ae517bea",
+  "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPV3hmQng4eEVTb21NdUdlRVhYODJJN0VIMjA4MU9JWHVKNjA2WFJIbkl6UXdtSTktTHVRcVNGZGRTdzVPN2hwU2I4TVZyS2xDYk9aNVJ6SERRbzJ2b1VjODl2WElJX1BudXM4WjFra0ZXOHZ3M21LNFFxSGZncDRmZE1LQTNzTlp1SjRLQmRBN3luSUFkcmFObE9lWTVFeExidVFZd0V1M0xQU0tmejJtZjVlQUJ6NVJfb0E?oc=5",
+  "title": "A Musician Made $8 Million From Fake Streams. An Expert Says 1 Fix Is Surprisingly Simple",
+  "summary": "A Musician Made $8 Million From Fake Streams. An Expert Says 1 Fix Is Surprisingly Simple Inc.com",
+  "source": "Inc.com",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-07T19:43:21.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
  },
  {
   "id": "5be45338bad1a0e5",
@@ -2161,6 +3272,40 @@
   "firstSeen": "2026-10-07T13:17:33.950Z"
  },
  {
+  "id": "c64ae95cd0854e6e",
+  "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPQ0NoUzA1b0g4NnI5am9PcEQ3ZE10WG1vRWlwRjlPRk04TWdMMC1rVU9LdlJaVnR0TmxSX2UtMU9ZUHFnalI3cU5wcDR3ejJLOW84ZkM2eXVxd1BhdHk1Mko0Rk05c0hpc1JPSUJaMFZhazYzQ0ZfRkFLTVlUbG1OTm9CUFAtc2FpRXJxNTYwR0VKUEdtWk1SendTSmZkX0F4aEttSTZhQWo4TzQzd0YyNnlZeWEtZlJtREJkd2ZpWUJlV1Q4ZVBrcE9yaW8yN3d3bEVWRTNCbWU?oc=5",
+  "title": "North Carolina Man Gets 18-Month Prison Sentence For $8 Million AI Music Streaming Fraud",
+  "summary": "North Carolina Man Gets 18-Month Prison Sentence For $8 Million AI Music Streaming Fraud Forbes",
+  "source": "Forbes",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-07T09:58:36.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai"
+  ],
+  "score": 10,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
+  "id": "b7d71ea5baf126bf",
+  "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPYjhqUXA2c2NKaEZoUFVFZUphUlNqcXhDU3BXazdDU095YlhZdUlPY1JTLWphcTZRUjRUM2RuQ0gzYXpDWGtYajYzLTM4M3BBdTZYZHlXUWptdFp2UlZIOWFXQUl3RjFMU2pSeDJQZi0yMm43Q3BFQWpkNEI4eEpMMXM2X25sQUp5UTFweHk5YVcxQklJT2VVY2NyOGw5bENkYlhTOW90VjRqR3cxR3VDRXUzeHpJREltMEh0MGhMRGR5RjhoV2pvcGNn?oc=5",
+  "title": "Apply now for 2 Heritage Fund-Bartholomew County music scholarships",
+  "summary": "Apply now for 2 Heritage Fund-Bartholomew County music scholarships Local News Digital",
+  "source": "Local News Digital",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-07T09:21:24.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 2,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
+ },
+ {
   "id": "477a91e162736355",
   "url": "https://news.pollstar.com/2026/10/07/jim-glancy-john-moore-step-away-from-the-bowery-presents-as-4-execs-elevated-to-leadership-roles/",
   "title": "Jim Glancy, John Moore Step Away From The Bowery Presents As 4 Execs Elevated To Leadership Roles",
@@ -2264,6 +3409,29 @@
   "topics": [],
   "score": 22,
   "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "def5aa101b692418",
+  "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQRXRDSDRtMVRtdFZ5MF9heXZyc3NSUWdpQnItb1JzOUo0b0NjWEN5REtBUnotdG1IMVBGRlc5TUdhdHZNeXNzNHdkN3dzSnJxcWZoa1NvdmNzMlFoMUR0ZXh5OWFCMUxSa3VlRjMwOHBmdDFYMjBYR21FemhYMXJTTGppb0hvM3M?oc=5",
+  "title": "RIAA, IFPI & More Come Together to Create System for Tagging AI-Generated Songs",
+  "summary": "RIAA, IFPI & More Come Together to Create System for Tagging AI-Generated Songs Billboard",
+  "source": "Billboard",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-07T07:00:00.000Z",
+  "entities": [
+   "ifpi",
+   "riaa"
+  ],
+  "types": [
+   "trade"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 30,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
  },
  {
   "id": "63118a1ca4c7675c",
@@ -4997,6 +6165,26 @@
   ],
   "score": 15,
   "firstSeen": "2026-10-04T12:17:43.993Z"
+ },
+ {
+  "id": "d59c05d7453d2898",
+  "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPd3ZrYWU5Ukg3eTZVRW42djlRRGdIWjYwOHJmc2M4bVphNDBzZ2tkWFVITnFaaUU2dTRoYTFIakN1RFhpMWFJaU54cmVVai11aXc5YURKYl9aTVdmZGVtRlpyd0c4WFJBUjNqMDkzQnB2a0tHcURXekdxVGZyNGNwc3ZVcWFpMnJXZHpHZVFoYmxtcTJvWW5aQ25lTWw3bmExUmFCYmJDOHRWdFdnSlB0QlBsVnd6N2Z6Tm1tX19hN09mZTBpM2xPbUZxQ20?oc=5",
+  "title": "Zacks Research Downgrades Warner Music Group (NASDAQ:WMG) to Strong Sell",
+  "summary": "Zacks Research Downgrades Warner Music Group (NASDAQ:WMG) to Strong Sell MarketBeat",
+  "source": "MarketBeat",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-03T10:11:16.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 14,
+  "firstSeen": "2026-10-10T12:27:10.388Z"
  },
  {
   "id": "a145ea92451d0687",
