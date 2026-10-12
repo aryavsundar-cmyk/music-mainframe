@@ -1,5 +1,352 @@
 [
  {
+  "id": "4cbe6e6f7df6a80d",
+  "url": "https://variety.com/2026/music/columns/kelly-clarkson-art-of-play-brooklyn-twitter-1236908964/",
+  "title": "In Defense of Kelly Clarkson (Kind Of) and the $15,000 Singing Bird Saga",
+  "summary": "Kelly Clarkson does not seem to be winning the war she haphazardly declared against a Brooklyn novelty store. But the mere fact of its existence is proof that Clarkson is providing the public a service, of sorts. For too long, celebrities have been PR-trained and social-media-ma…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T14:51:13.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "c8e7369ae2ba563e",
+  "url": "https://news.pollstar.com/2026/10/12/ayra-starr-announces-2027-starrgirl-world-tour-in-support-of-latest-album/",
+  "title": "Ayra Starr Announces 2027 ‘Starrgirl World Tour’ In Support Of Latest Album",
+  "summary": "Ayra Starr has announced the “Starrgirl World Tour,” a 20-city international run in support of her latest critically acclaimed new album, Starrgirl, which was released on Aug. 14. On the heels of her NFL halftime performance in London, the global Afrobeats superstar is gearing u…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-12T14:29:44.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "2bea88003677837b",
+  "url": "https://variety.com/2026/music/news/britney-spears-drops-unreleased-justin-timberlake-collaboration-1236908996/",
+  "title": "Britney Spears Drops Previously Unreleased Justin Timberlake Collaboration, ‘She’ll Never Be Me’",
+  "summary": "Britney Spears has posted a previously unreleased collaboration with Justin Timberlake titled “She’ll Never Be Me,” originally recorded for her 2001 album “Britney,” as a preview of the album’s 25 th anniversary edition, out on Nov. 6. Spears and Timberlake, who were dating at t…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T13:59:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "53fa2db7e532426f",
+  "url": "https://musically.com/2026/10/12/netflix-reportedly-cutting-850-jobs-as-tech-and-media-layoffs-continue/",
+  "title": "Netflix reportedly cutting 850 jobs as tech and media layoffs continue",
+  "summary": "Netflix is allegedly about to cut 850 jobs as early as next week, according to media industry reporting service Puck. If that’s true – Netflix has not commented – that’s about 5% of its global workforce, which currently stands at about 17,000. Taking a look at parallel industrie…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T12:45:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "72259ab43c135e40",
+  "url": "https://musically.com/2026/10/12/apple-hires-employees-and-licenses-tech-from-ai-podcast-startup-huxe/",
+  "title": "Apple hires employees and licenses tech from AI podcast startup Huxe",
+  "summary": "We’re used to reading about novel ways of recruiting people en masse from another company, but a “reverse acqui-hire deal” was a new one to us. You’ll be aware of an acqui-hire deal, where one company – usually a major corporation – buys another outright in order to absorb the e…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T12:45:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "c7d6f9e2cf836660",
+  "url": "https://musically.com/2026/10/12/gta-vi-previews-in-game-radio-stations-and-introduces-podcasts/",
+  "title": "GTA VI previews in-game radio stations – and introduces podcasts",
+  "summary": "Rockstar Games is slowly drip-feeding a ravenous fanbase small nuggets of Grand Theft Auto VI before its launch on 19 November. The company has often led with music in this teasing process, and it has now launched a site where fans can get a blast of the radio stations and songs…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T12:45:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "fb49584db2cca999",
+  "url": "https://musically.com/2026/10/12/distrokid-is-removing-songs-in-response-to-umg-lawsuit-and-some-artists-arent-happy/",
+  "title": "DistroKid is removing songs in response to UMG lawsuit – and some artists aren’t happy",
+  "summary": "In September, UMG sued distributer DistroKid over the latter’s “illegal, deceptive, and unlawful practices” – with two specific and fairly blockbuster accusations at the lawsuit’s heart: that DistroKid is “flooding” streaming services with “AI-generated slop”; and that it is als…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T12:45:00.000Z",
+  "entities": [
+   "distrokid"
+  ],
+  "types": [
+   "distributor"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 41,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "9496fc4afec21ddb",
+  "url": "https://www.musicbusinessworldwide.com/distrokid-confirms-it-has-removed-tracks-in-response-to-umg-claims/",
+  "title": "DistroKid confirms it has removed tracks in response to UMG claims",
+  "summary": "The Verge reported that independent artists had been posting on social media about their music being taken down without notice. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T11:16:46.000Z",
+  "entities": [
+   "distrokid"
+  ],
+  "types": [
+   "distributor"
+  ],
+  "topics": [],
+  "score": 25,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "f441531d3c733bee",
+  "url": "https://www.musicbusinessworldwide.com/warner-music-sues-ray-ban-and-oakley-owner-luxottica-over-alleged-use-of-427-works-in-social-media-posts/",
+  "title": "Warner Music sues Ray-Ban and Oakley owner Luxottica over alleged use of 427+ works in social media posts",
+  "summary": "The complaint alleges that Luxottica's brands set their social media videos to Warner-controlled music without a license and without paying Warner. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T11:15:41.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 37,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "0124ccd8d9b7569d",
+  "url": "https://www.musicbusinessworldwide.com/umgs-interscope-sues-summer-walker-for-50m-after-she-moves-to-exit-her-deal-under-californias-seven-year-rule/",
+  "title": "UMG’s Interscope sues Summer Walker for $50M+ after she moves to exit her deal under California’s ‘seven-year rule’",
+  "summary": "Walker signed a joint deal with Interscope and Atlanta-based label and management company LVRN in 2017. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T11:15:24.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 23,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "723f3cc5ca6bce8b",
+  "url": "https://www.musicbusinessworldwide.com/gunna-launches-sb-the-label-in-partnership-with-warners-atlantic-music-group/",
+  "title": "Gunna launches SB THE LABEL in partnership with Warner’s Atlantic Music Group",
+  "summary": "The new label's first three signings are Atlanta artists Casper Bluff, Nechie, and Dracc. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T11:14:42.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "e1185db059aa95ad",
+  "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQXzZKYktEQzFjYzA5bXRKbDVCYTlJU2hHei16c2FrRlhjNlc3U3BRazh4NTF0RnNNRlY2bG5Sbm0wN0h5VW85RFNVaHlsVUNSSmZ4aE5wdXNubi0xZFpjUUpjMml6WERZbTRZZ2hYN0xDNVlGWDhlYnlNb1huUkhyTTRaNnJoaVpYaUNJTk1pSzRGUnAzMHEyNXp6VkN5X1c5eEllallob1M?oc=5",
+  "title": "DistroKid Publishing vs RouteNote Publishing: Which Should Songwriters Choose?",
+  "summary": "DistroKid Publishing vs RouteNote Publishing: Which Should Songwriters Choose? RouteNote",
+  "source": "RouteNote",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-12T11:01:38.000Z",
+  "entities": [
+   "distrokid"
+  ],
+  "types": [
+   "distributor"
+  ],
+  "topics": [],
+  "score": 25,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "3bb60c1614e56717",
+  "url": "https://variety.com/2026/music/news/beach-boys-mike-love-play-nashville-ryman-john-stamos-1236908660/",
+  "title": "The Beach Boys Play Nashville’s Ryman in What John Stamos Says ‘Could Be the Last Time I Stand Behind Mike’ Love in Concert",
+  "summary": "When the Beach Boys played Nashville’s Ryman Auditorium Sunday night, no major announcements were made from the stage, but the sense of import for fans on hand was palpable, with many believing they might be witnessing Mike Love’s last show leading the touring edition of the gro…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T05:30:12.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "9a04c899caa5ecc4",
+  "url": "https://news.pollstar.com/2026/10/11/grammy-nominated-rb-singer-freddie-jackson-known-for-80s-hits-like-you-are-my-lady-dies-at-70/",
+  "title": "Grammy-Nominated R&B Singer Freddie Jackson, Known for ‘80s Hits like ‘You Are My Lady,’ Dies At 70",
+  "summary": "Grammy-nominated R&B singer Freddie Jackson, known for his smooth ‘80s hits “Rock Me Tonight (For Old Times Sake)” and “You Are My Lady,” has died. He was 70. A statement shared by his family on his official Instagram account confirmed Jackson died Oct. 5, three days after his 7…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-12T03:58:31.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "4624f99a08b52d15",
+  "url": "https://www.digitalmusicnews.com/2026/10/11/ed-sheeran-loop-tour-new-opening-acts/",
+  "title": "Ed Sheeran Quietly Adds Another Opening Act as the Loop Tour Soldiers Onward",
+  "summary": "After Isaac Slade’s surprise performance at Ed Sheeran’s Atlanta show, he and American Idol’s Brooks Rosser will join him on several more dates. Isaac Slade of The Fray surprised fans by first joining Ed Sheeran on his Loop Tour stop at Atlanta’s Mercedes-Benz Stadium on October…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T03:44:34.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "0a260ea374e7fd03",
+  "url": "https://www.digitalmusicnews.com/2026/10/11/live-music-new-geography/",
+  "title": "Live Music’s New Geography",
+  "summary": "Welcome to the decentralization of opportunity. There was a time when opportunity in music had an address in a big city. The Troubadour in Los Angeles, The Bitter End in New York and The Bluebird Cafe in Nashville were not simply great clubs with famous photographs on the walls.…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T00:49:25.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "09e55238e1c52895",
+  "url": "https://variety.com/2026/music/news/kelly-clarkson-slams-brooklyn-store-business-responds-1236908372/",
+  "title": "After Kelly Clarkson Slams Brooklyn Novelty Store, Shop Says the ‘One-of-a-Kind’ Singing Bird She Wanted Wasn’t Actually For Sale",
+  "summary": "After Kelly Clarkson took to X on Saturday to share her experience “being treated like Julia Roberts” in “Pretty Woman” during a visit to Art of Play, a novelty shop in Brooklyn, the local business is responding to her claims, saying it has received “widespread outrage” since an…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-11T22:01:43.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "56198d228c1c11a9",
+  "url": "https://variety.com/2026/music/news/mike-love-john-stamos-statement-beach-boys-health-concern-1236908432/",
+  "title": "John Stamos Addresses Mike Love’s Health as Beach Boys Concert Footage Raises Concerns: ‘We Don’t Know What the Future Holds — We Have Tonight’",
+  "summary": "Following many Beach Boys fans and followers expressing concern for Mike Love after seeing footage from the group’s Saturday night show in Cincinnati, John Stamos has stepped in with a statement acknowledging that Love is in poor health as they are doing these shows and suggesti…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-11T21:49:56.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "ab0746cff07c3d40",
+  "url": "https://variety.com/2026/music/news/taylor-swift-100th-week-billboard-200-number-one-beatles-1236908356/",
+  "title": "Taylor Swift Spends Her 100th Week at No. 1 on the Billboard 200, as ‘Life of a Showgirl’ Stays on Top in Week 2 of ‘Encore’ Rebound",
+  "summary": "Taylor Swift is fond of the number 13, but here’s betting she also considers the numeral 100 lucky, too. She can now celebrate having 100 weeks at No. 1 on the Billboard 200 chart, for all of her albums combined, further extending a record among solo artists that will be difficu…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-11T20:22:14.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "eb313ae67443c881",
+  "url": "https://www.billboard.com/pro/inside-halftime-music-strategy-nfl-international-games/",
+  "title": "Inside the Halftime Music Strategy For the NFL’s International Games: ‘The Biggest Challenge Is Expectation’",
+  "summary": "As the NFL expands with seven new halftime performances in seven cities around the world, the league's Tim Tubito breaks down their music strategy.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-11T17:54:47.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
   "id": "86eba74f2632119e",
   "url": "https://variety.com/2026/music/news/journey-deen-castronovo-drummer-returns-stage-san-antonio-1236908003/",
   "title": "Journey Drummer Deen Castronovo Returns to the Stage to Play Full Show, Two Nights After Medical Scare",
@@ -1044,6 +1391,30 @@
   "firstSeen": "2026-10-09T13:12:13.498Z"
  },
  {
+  "id": "70da958d16db164a",
+  "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPd2tvY2VMV3FWQXRHVVNfaXllWk1ySmlKcWd3UEhSQmJ5Zy1wU1l0RDhYWUM4QUJwdlNPck1rWkNCRHQ3LVZ6V1dxSThXUGh2a2xmS0h6ZnZpTlY5Ukk2bXVLWkxabW1rT1AxRW9rSTNsTXdaQVBlVnViVWN6TUs0b01fNlVyWC1oTnhNREdfU2JTWWR4NFEtdWRtQUNvT0hYbEZr?oc=5",
+  "title": "Suno Poaches Ticketmaster’s Michael Chua to Head Live Music Division",
+  "summary": "Suno Poaches Ticketmaster’s Michael Chua to Head Live Music Division Music Industry Weekly",
+  "source": "Music Industry Weekly",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-09T11:20:31.000Z",
+  "entities": [
+   "suno",
+   "ticketmaster"
+  ],
+  "types": [
+   "live",
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 36,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
   "id": "4360e08db7df1ccd",
   "url": "https://www.musicbusinessworldwide.com/meta-bans-tiktok-parent-bytedance-from-advertising-on-its-apps-in-the-us-and-six-other-countries/",
   "title": "Meta bans TikTok parent ByteDance from advertising on its apps in the US and six other countries",
@@ -1188,6 +1559,26 @@
   "topics": [],
   "score": 5,
   "firstSeen": "2026-10-11T12:44:39.831Z"
+ },
+ {
+  "id": "6cdf112d851fbc7a",
+  "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1GUHFmRUZmRDAzQW96NktYelhFaFNzS1Z2amxBTnI1cl8tTEY5NzNBaExNMXFvRzVtZ1ZGYWROYXhsSVo4cE1EQmM5dW5tUTduMFZVbjk4a000VXpfYWRnUTlKcnhNNDUtbklRYjJkYlJNay1qMWJXLUlmbkl2UQ?oc=5",
+  "title": "Spotify Technology (NYSE:SPOT) Stock Forecast & Analyst Predictions",
+  "summary": "Spotify Technology (NYSE:SPOT) Stock Forecast & Analyst Predictions Simply Wall Street",
+  "source": "Simply Wall Street",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-09T07:00:00.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 14,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
  },
  {
   "id": "67da3105c2d6f8fa",
@@ -1815,6 +2206,24 @@
   "firstSeen": "2026-10-09T13:12:13.498Z"
  },
  {
+  "id": "5609dcfd7d14d4e8",
+  "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE43TU11WUk5NmVlRGV6YWdRNkRQZko5VFBvOTk4WlVhNjdQcmRaRnZPX0p5a3BSRWgzT0NKMkQzT0IyVzZ6eE01NUtuODNyOElHanBLcm5OemhSb1RXOUs3Vng5LXVfd3NSdzZxcm8yRUtBaHg4?oc=5",
+  "title": "New Report Finds a 'Supermajority' of Canadians Dislike AI-Generated Music",
+  "summary": "New Report Finds a 'Supermajority' of Canadians Dislike AI-Generated Music Billboard",
+  "source": "Billboard",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-08T16:55:26.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai"
+  ],
+  "score": 10,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
   "id": "2ca8d4c042466e71",
   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQSWZEcU1EY0lOalFiZ1Z3YUpDWk9TS3ItRzBvLUcxOW1RY3RhU2xxTmhFLXlYbHhlZWRuT1duVGdtUTBjemxCWTBuWGg2NC1OTkdEWURLNDZNeGxZZEMwS0R3WGktRUlXUERxVmJQcDRscUJ2Y2FKYmMzU3lUZFVtNjhYVExXTEpVZlZxVlBWazhILU9ldnRCSkxtVlBKT3c?oc=5",
   "title": "Olivia Rodrigo shares \"hard line\" stance on using AI in music",
@@ -2293,6 +2702,42 @@
   "topics": [],
   "score": 27,
   "firstSeen": "2026-10-08T13:23:57.878Z"
+ },
+ {
+  "id": "31261964fba051ea",
+  "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQZGNld19INzNOcEZvSENHYmJGNXpQdmI1UDdhOGYxQjBrQnlkanZMWTh0Qnl1Skk3dlU2U3d3Y1lEak5JeFFLNjJSMEZEdmhObnR5TVo0MzVpSERMb0RCLTZXZERKekdBNzl3eHhZWURyd2tJZzRrV0RoYnR2Q1JBRU40SzJvcGxhZHc?oc=5",
+  "title": "US man sentenced to prison for $14 million AI music streaming fraud",
+  "summary": "US man sentenced to prison for $14 million AI music streaming fraud DJ Mag",
+  "source": "DJ Mag",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-08T11:59:43.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai"
+  ],
+  "score": 10,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "44688ec24b6cdf88",
+  "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPSkl5bnRlMG10OFdtX0Q4Wi1YZTFFcnhEVE1fVWZITUVnQVZuQUpreE9XV2JRRllGVWw2bDNiQTN1cXRQZ0tjemdmazgyWkkyaVJYa3lvRC1pMGRYNWw1Qk5YTU5DaWVRd1FXdURIa1piZTdpbzRHYWtTVHRCWWYwQ3VFYXQ?oc=5",
+  "title": "AI Music Streaming Fraud: Musician Gets 18 Months for $8M Scheme",
+  "summary": "AI Music Streaming Fraud: Musician Gets 18 Months for $8M Scheme TechRepublic",
+  "source": "TechRepublic",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-08T11:48:29.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai"
+  ],
+  "score": 10,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
  },
  {
   "id": "a4a798c3adfa32bc",
@@ -2831,6 +3276,27 @@
   "firstSeen": "2026-10-08T13:23:57.878Z"
  },
  {
+  "id": "50063a04981374c3",
+  "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQb2VPS2tabXZRbW0yTGxLS2dqR2FDeHJuQTdOTC00OGp3eWdHVkdHUGhuNW9PYVFEaGRkSUxxNkZ2TXBLZTdJbVloNVh1NmVlTTFvUGNJZ0tuZFBUQW5IS3d2Z3VOVUU4Y2MyQ25TTGl1WlhQQkNEZGJFSi12QThqQmdwdHI0anJCX3c?oc=5",
+  "title": "Spotify, Apple Music and Others Respond to Phono V Rate Proposal",
+  "summary": "Spotify, Apple Music and Others Respond to Phono V Rate Proposal Digital Music News",
+  "source": "Digital Music News",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-07T19:00:21.000Z",
+  "entities": [
+   "apple-music",
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 34,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
   "id": "eb5e5cf2b9bb0ca3",
   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOU2MwUTlNamZnT1BFZmR6SVhuRlRTODkxZFBDMS0wS0JDVEFFVGtDSTVqeXY2cjY3cWdyelpaNWNqdXNJU1NSajk2b0t3TjdSejh0bXpsaU1DT1RYWjZ3T2hkSC1PWmtjaUd2eTNSWFp2SjZSS0JKVktpTWVfS3J6VHVnNDZJUFhYRko5S21fMEFCbzU0YlE?oc=5",
   "title": "Word Collections Receives Direct DSP Royalties Outside the U.S.",
@@ -3143,6 +3609,29 @@
   "firstSeen": "2026-10-08T13:23:57.878Z"
  },
  {
+  "id": "b42547217e605a6e",
+  "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOTEVIS3pwVzZkQ2VPdlY3R0p5NU1FX0VMTmlVYTV2dm50dWsyOXA4MmFnemNnNHlVZHMtS2YybWdvTTZycTZpdlhvUnNkdk96Q0dlbk5LUl9vUXM2RGhqbUxWQlNXQ2htOExKbFZrOTdoaVI5NUFxRGVaUlpVLVVyTlVoQnlPYzZBTmVBcF9kcG5iUG9IaUk0NVJPUGtxN2llQ2k2cVc5Z3R2MFpNazZTZg?oc=5",
+  "title": "Appeals Court Rejects AI Training Fair Use Defense In Ruling That Could Shape Suno Fight",
+  "summary": "Appeals Court Rejects AI Training Fair Use Defense In Ruling That Could Shape Suno Fight USA Herald",
+  "source": "USA Herald",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-07T15:29:09.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 26,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
   "id": "b85d6bb644c3092a",
   "url": "https://completemusicupdate.com/horizon-leaders-rowanne-chang/",
   "title": "🌅 Horizon Leaders - Rowanne Chang",
@@ -3285,6 +3774,28 @@
   ],
   "score": 31,
   "firstSeen": "2026-10-07T13:17:33.950Z"
+ },
+ {
+  "id": "e30ae8e0fad82ac9",
+  "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQQ2ZrZWxTUlVZdHZrN21HVDNJUkwwOWxxV2xMUGdUVzJ1dE85Nk0ybTNBNllkSmtqM08yeGZpNjI5ZFRsSEtyeThQWGNvWlNRQzVKeUJybHdSdVljNUpBYWlxRzlCclpxZXA1MDRmU3NxUkNsZ09GV0xDQjJSc0xyZVg4VHFzQ2R6blczc1A3RHRrTVhSRTg1Rzl6clRlWE9OeC1Zcg?oc=5",
+  "title": "PARLOPHONE RECORDS AND WARNER CHAPPELL MUSIC UK SIGN UP-AND-COMING BAND TOOTH",
+  "summary": "PARLOPHONE RECORDS AND WARNER CHAPPELL MUSIC UK SIGN UP-AND-COMING BAND TOOTH Warner Music Group",
+  "source": "Warner Music Group",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-07T12:51:51.000Z",
+  "entities": [
+   "warner-chappell",
+   "wmg"
+  ],
+  "types": [
+   "label",
+   "publisher"
+  ],
+  "topics": [],
+  "score": 38,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
  },
  {
   "id": "2dff3cf39f0c5347",
@@ -7600,6 +8111,28 @@
   "firstSeen": "2026-10-08T13:23:57.878Z"
  },
  {
+  "id": "c663c0e4834abe22",
+  "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOMXYwVWx1akN4aHlqc3A5bjh5V3BUTkVjMXd1dFlMOU92T0lBUVplTzBuWEVuVnc2anNtYm9uOGdjd3NYdldxWjBmUXcxSGpkODZMU2Vwb0R2dlAxcmlTZGY4ei1ZaEpnaGs5SFk3M0RvWUVPNGE0alZtb1dPLU9xT05XdzQ0WjhwMTU0Z0RFU1dUdEN6R0ZyZ3lwZEpfVWg1NGttWC1OYWZ1dw?oc=5",
+  "title": "AI music maker Suno now generates spoken words",
+  "summary": "AI music maker Suno now generates spoken words The Verge",
+  "source": "The Verge",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-02T07:00:00.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 16,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
   "id": "d57add350b0f79a2",
   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBIVzBQQUw2V3Frc05HMFJwLTljVlV1b18wcVJMTFFSM3ZKb1REc0VnLV9VX2RWYmdKOFhFdkNPQzVaRUM3U2JINGJlZEZadHF0UU5EdkhMdzNnRHU5cmFWb2pRb1p1cmxmeDdzRC1JeGdxWU9nWnlTbDIxOGc?oc=5",
   "title": "Cloud 9fin — Subprime Time — What does music royalty ABS look like today?",
@@ -9245,6 +9778,22 @@
   "topics": [],
   "score": 15,
   "firstSeen": "2026-10-01T13:08:15.179Z"
+ },
+ {
+  "id": "2c5b90958726fcfd",
+  "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQbHZ3TXpuRUNYa1NEa3JFQTVKb253RS1XcTc0OXJXMi1RVWxsMV8yVmFNZ2N0VzZBSTlvRFlYRVJnbU1vanpQZ2txTTRlVTlRUFBCblZWaWdVemduazhKRTFNNGJlZDJlcUFkaVpyZU9QclNldkluX3JXU0RpaUY0YlRaeV85M0I0ZGlreklGODdiZ3Rlc05ZeGVCYUp0My16eDA2R2hvd01CLUFYbnBEd0NzOVd0TGdsdWh5SElpYnJtNWdCalVGWlEzcWFpU0hvcGJoaTBBV3QtSmxWWTFfQg?oc=5",
+  "title": "Milestone 5-Year Celebration: NAACP Santa Clarita Hosts Harlem Renaissance Gala Live Music & Benefit Auction",
+  "summary": "Milestone 5-Year Celebration: NAACP Santa Clarita Hosts Harlem Renaissance Gala Live Music & Benefit Auction Santa Clarita Magazine",
+  "source": "Santa Clarita Magazine",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-01T08:11:19.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 0,
+  "firstSeen": "2026-10-12T15:16:53.637Z"
  },
  {
   "id": "f9a0763257792746",
