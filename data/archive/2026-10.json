@@ -1,5 +1,972 @@
 [
  {
+  "id": "38fd57313a854d86",
+  "url": "https://www.billboard.com/pro/elderbrook-new-album-counter-records-label-signing/",
+  "title": "Elderbrook Signs With Counter Records, Announces New Album: ‘Well Positioned for Even Greater Success’",
+  "summary": "The producer's new album, Heart on A Wire, is coming in January via the Ninja Tune imprint.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T14:00:00.000Z",
+  "entities": [
+   "ninja-tune"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 29,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "ab3c4579564c78d6",
+  "url": "https://variety.com/2026/music/columns/rose-lacmas-art-film-gala-2026-1236909498/",
+  "title": "Rosé to Perform at LACMA’s Art+Film Gala",
+  "summary": "Rosé is set to perform at this year’s LACMA Art+Film Gala. The Los Angeles County Museum of Art event takes place Nov. 7. The evening, as previously announced, will honor “Dune” filmmaker Denis Villeneuve and artist Vija Celmins. “The LACMA Art+Film Gala celebrates creative icon…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "fdd4f9d7ffbe8285",
+  "url": "https://www.musicbusinessworldwide.com/a-certain-amount-of-almost-unreasonable-self-belief-is-necessary/",
+  "title": "‘A certain amount of almost unreasonable self-belief is necessary’",
+  "summary": "With production credits on Don Toliver’s chart-topping OCTANE, Jaasu’s star is on the rise. Here he breaks down his philosophy on success, collaboration, leadership, honesty, and much more… Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T13:30:10.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "525fda704fd2fb00",
+  "url": "https://completemusicupdate.com/approved-ex-re/",
+  "title": "🎧 Approved: Ex:Re",
+  "summary": "Elena Tonra’s solo project Ex:Re returns with ‘Sleep’ - demoed alone in a Paris hotel room, acoustic guitar run through a vocoder, late-night and muffled. Second album ‘Save As’ is out 30 Oct. The in-store shows are already sold out",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T13:06:09.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "4ac7fd645f2315de",
+  "url": "https://www.musicbusinessworldwide.com/live-nation-moves-to-acquire-majority-stake-in-concert-promoter-bizarro-chile-months-after-buying-into-bizarro-peru/",
+  "title": "Live Nation moves to acquire majority stake in concert promoter Bizarro Chile, months after buying into Bizarro Peru",
+  "summary": "The deal comes less than nine months after Live Nation agreed to take a majority stake in Bizarro Peru Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T13:00:22.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live",
+   "m&a",
+   "pe-capital"
+  ],
+  "score": 48,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "b1d04123fcd424d0",
+  "url": "https://news.pollstar.com/2026/10/13/wacken-open-air-founders-relinquish-control-to-superstruct/",
+  "title": "Wacken Open Air Founders Relinquish Control To Superstruct",
+  "summary": "The founders of Wacken Open Air, Holger Hübner and Thomas Jensen, have given up more of their shares in operating company ICS GmbH to Superstruct, which first invested in the world-famous German festival in 2019, according to a local news report. According to an investigative re…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-13T12:37:29.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "46bdcf3b6f13e0d4",
+  "url": "https://musically.com/2026/10/13/deezer-lets-users-hide-ai-music-playhead-generates-signal-chains-for-producers/",
+  "title": "Deezer lets users hide AI music; Playhead generates signal chains for producers",
+  "summary": "Deezer has been notably open about sharing information on the impact of AI-generated music on its platform, and has announced that it will allow users to “fully exclude” AI-generated music from their listening. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T12:30:00.000Z",
+  "entities": [
+   "deezer"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 35,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "600e3dc62d10dd60",
+  "url": "https://musically.com/2026/10/13/youtube-argues-for-more-business-support-and-funding-for-eu-creators/",
+  "title": "YouTube argues for more business support and funding for EU creators",
+  "summary": "YouTube has published a “proposal for unlocking the EU Creator Economy”, which argues that its community of creators in Europe should be treated more like small businesses, given access to the same EU funding (like the Creative Europe programme, or tax incentives) as established…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "b0e0fcc38209dc49",
+  "url": "https://musically.com/2026/10/13/umg-sues-artist-trying-to-exit-deal-wmg-sues-ray-ban-owner-over-unlicensed-syncs/",
+  "title": "UMG sues artist trying to exit deal; WMG sues Ray-Ban owner over unlicensed syncs",
+  "summary": "Two lawsuits caught our eye today, both of which tell you something about the tension between established artist contracts and music rights – and how they fit in a modern media and legal landscape. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 23,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "6de607f164bebb07",
+  "url": "https://news.pollstar.com/2026/10/13/82-tourists-swedish-house-mafia-luke-combs-economic-impact-measured-in-sweden/",
+  "title": "82% Tourists: Swedish House Mafia & Luke Combs Economic Impact Measured In Sweden",
+  "summary": "The two biggest concerts of the summer at Ullevi stadium in Gothenburg, Sweden, had “a significant impact on the local economy,” according to a press release from Live Nation Sweden. In connection with both the Aug. 29 Swedish House Mafia concert, and Luke Combs‘ gig on July 4,…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-13T12:15:00.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 25,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "b46c1ed09f0f4343",
+  "url": "https://www.musicbusinessworldwide.com/deezer-to-let-users-block-ai-generated-music-from-search-results/",
+  "title": "Deezer to let users block AI-generated music from search results",
+  "summary": "Deezer is introducing an on/off toggle that will let users exclude fully AI-generated music from their search results Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T12:14:11.000Z",
+  "entities": [
+   "deezer"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "ai",
+   "earnings"
+  ],
+  "score": 41,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "4655d33ddf3c8947",
+  "url": "https://news.pollstar.com/2026/10/13/starlight-festival-debut-exit-venture-lifestyle-make-history-at-the-great-pyramids-of-giza/",
+  "title": "Starlight Festival Debut: EXIT & Venture Lifestyle Make History At The Great Pyramids Of Giza",
+  "summary": "EXIT festival together with P+US, the electronic music brand of live entertainment powerhouse Venture Lifestyle, launched Starlight Festival in spectacular fashion against the backdrop of the Great Pyramids of Giza, Oct. 9-10. Fans arrived from 114 countries and witnessed a few…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-13T11:56:49.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "726e32b481051841",
+  "url": "https://www.billboard.com/pro/rebecca-allen-departs-universal-music-uk/",
+  "title": "Rebecca Allen Departs Universal Music U.K. After 27 Years: ‘It’s Been Quite a Ride’",
+  "summary": "Allen previously held the title of president at EMI and Decca and most recently served as UMG U.K.'s chief artist and strategy officer.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T11:13:17.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 29,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "315b54d189a748f6",
+  "url": "https://www.musicbusinessworldwide.com/rebecca-allen-to-exits-umg-uk-chief-artist-and-strategy-officer-role-after-27-years-at-universal/",
+  "title": "Rebecca Allen to exit UMG UK Chief Artist and Strategy Officer role after 27 years at Universal",
+  "summary": "Allen was promoted to the newly formed role of Chief Artist and Strategy Officer at UMG UK in December 2025 Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T10:31:19.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "fcc2a6735cf39c89",
+  "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQS2FYUnNKT0s2NjU1aDF4dnNYTWRocWNhM1l2VzdIMWFKMHkySmJZcmp6UVpVX0F3aHQ5bWpXUkY0QzRQTUdheHM0TmNadDlwVHBCYmxMblFlbHk0Yl96bUllNGFhTmdxdEVfVVpscmx2b09Eb0RSVGlnVGpLY0RQX0VzblBGMG00cEFjNzB0VTRWRmxvcGFDUnBOaXA1Qk1ONk5QVXVvYXVONWN6VkE?oc=5",
+  "title": "Warner Music Sues Ray-Ban and Oakley Owner Over Alleged Unlicensed Music Use",
+  "summary": "Warner Music Sues Ray-Ban and Oakley Owner Over Alleged Unlicensed Music Use The Music Network",
+  "source": "The Music Network",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-13T10:30:00.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 37,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "d7a641906e9a93c7",
+  "url": "https://www.musicbusinessworldwide.com/uks-copyright-tribunal-backs-prs-for-music-in-cinema-licensing-dispute/",
+  "title": "UK’s Copyright Tribunal backs PRS For Music in cinema licensing dispute",
+  "summary": "The Tribunal had approved changes to its cinema tariff, known as Tariff C, including an increase in the royalty rate cinemas pay to use its members' music. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T10:08:55.000Z",
+  "entities": [
+   "prs"
+  ],
+  "types": [
+   "pro"
+  ],
+  "topics": [
+   "dsp-economics"
+  ],
+  "score": 39,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "69ab7833ea2766a6",
+  "url": "https://musically.com/2026/10/13/creativity-and-change-in-songwriting-stay-in-the-river-keep-swimming/",
+  "title": "Creativity and change in songwriting: ‘Stay in the river, keep swimming’",
+  "summary": "This is coverage from the Music Ally Publishing Summit 2026 – read full details of the event here. This week’s Music Ally Publishing Summit kicked off with a keynote interview […] The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T09:19:59.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "3973375082faf227",
+  "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNR01kTGlCSXdycnIySXVMaGRlSXp5LUdpanFhWEltajBMemR3dWo3bFlxcFl4ejRYbE0xVkVPQmF6VldzLXVLTTZubWdzMjFCbkhONHVybXZTUmp1emhNRUNrcUljbjVyM05saGl0T1RqUkVHLXg4RG9TRTRTNG80d3ViRGlDUGMwenRaQ19sbHhsTHVDajhTRktCbUg?oc=5",
+  "title": "BMG signs Nina Nesbitt to exclusive songwriter deal",
+  "summary": "BMG signs Nina Nesbitt to exclusive songwriter deal MusicWeek.com",
+  "source": "MusicWeek.com",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-13T06:00:00.000Z",
+  "entities": [
+   "bmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "7771bdd700b225a9",
+  "url": "https://www.digitalmusicnews.com/2026/10/12/music-industry-handle-rightsholder-payouts/",
+  "title": "Will the Music Industry Ever Get a Handle on Rightsholder Payouts?",
+  "summary": "Digital formats have been around for decades. So why is the music industry still struggling with sluggish payouts, metadata mismatches, and the accumulation of enormous unpaid tranches? According to mass payments processing innovators like Tipalti, most companies still struggle…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T04:18:41.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "9d9a983c414d6123",
+  "url": "https://www.digitalmusicnews.com/2026/10/12/you-release-music-and-chase-the-audience/",
+  "title": "You Release Music and Chase The Audience.",
+  "summary": "Attention loyalty and affection must be voluntary. Congratulations. Your brand new album is on Spotify (and about 150 other music streaming platforms). Nobody has declared an international holiday, your neighbors remain suspiciously calm, and the world has continued spinning wit…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T04:16:50.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "10524915f146b986",
+  "url": "https://www.digitalmusicnews.com/2026/10/12/muni-long-manager-dispute-subpoena-denied/",
+  "title": "Judge Denies Bid to Subpoena Muni Long’s Medical Records Amid Ugly Contract and Defamation Dispute With Ex-Managers",
+  "summary": "A federal court has rejected a push from Muni Long’s ex-managers to subpoena the artist’s medical records, which are “protected by the patient-doctor/psychotherapist privilege.” Magistrate Judge Sarah Netburn made that development official with a recent order handed down amid an…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T00:45:47.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "4eaeccdef8af7cea",
+  "url": "https://variety.com/2026/music/news/kacey-musgraves-fires-back-kristi-noem-dog-joke-talarico-1236909604/",
+  "title": "Kacey Musgraves Fires Back After Kristi Noem Disses Her: You Don’t ‘Have a Dog in This Fight, but If You Did You Would’ve Shot It’",
+  "summary": "Kristi Noem might have thought twice before initiating a war of words with Kacey Musgraves, who had a mic-drop of a comeback post after the ousted Secretary of Homeland Security went on X to pick a fight with the country-pop star. Because when things get rough in a Noem feud, it…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T23:52:55.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "34dca92b1ea49900",
+  "url": "https://www.digitalmusicnews.com/2026/10/12/distrokid-v-umg-removals/",
+  "title": "DistroKid Extends Response Deadline, Removes Certain Tracks Amid UMG Lawsuit — But How Many Non-AI Uploads Are Being Pulled?",
+  "summary": "Amid a contentious courtroom confrontation with Universal Music Group (UMG), DistroKid has received a response-deadline extension and started removing tracks. But is the AI-audio crackdown affecting proper music as well? Multiple individuals are answering in the affirmative on s…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T22:25:29.000Z",
+  "entities": [
+   "distrokid",
+   "umg"
+  ],
+  "types": [
+   "distributor",
+   "label"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 50,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "9a3c1e439413b3a4",
+  "url": "https://www.musicbusinessworldwide.com/catalog-surging-on-spotify-making-frontline-hits-an-even-harder-game/",
+  "title": "Catalog Is Surging On Spotify – Making Frontline Hits An Even Harder Game",
+  "summary": "The latest Tim's Take from MBW founder, Tim Ingham Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T22:16:33.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "catalog-deal"
+  ],
+  "score": 34,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "7c32c89cbb97c680",
+  "url": "https://www.billboard.com/pro/wmg-ray-ban-owner-lawsuit-unlicensed-social-media-music/",
+  "title": "Warner Music Sues Ray-Ban Owner for $64 Million Over Unlicensed Social Media Ad Synchs",
+  "summary": "Italian eyewear conglomerate EssilorLuxottica is accused of using uncleared music by Taylor Swift, Drake, Dua Lipa and Rihanna.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T21:47:59.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 32,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "d72203ad71a02f07",
+  "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNV0Rhc1hGeUxMeXFFWHFvbmxyQ2ZzdEVLa1M5aGRYTTY1WjhwaGFKTTFQZ2h3RGR2OUZqcVotbG54Yl9hVnZyWEdERkVqdnhtS2E2OG15Rl9oVGxVSG1NOWVqV0tRem5kSkRobjE3NHJfSTNJOFIwdUtEQ1dlQVptWS1QbHVoVk1sWUg5V2dXbUZnbkh1NjZ6LXhXR2Fzd3JYaVNBbA?oc=5",
+  "title": "DistroKid Removed Songs From Streaming Platforms in Response to UMG Copyright Suit",
+  "summary": "DistroKid Removed Songs From Streaming Platforms in Response to UMG Copyright Suit Rolling Stone",
+  "source": "Rolling Stone",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-12T21:18:01.000Z",
+  "entities": [
+   "distrokid"
+  ],
+  "types": [
+   "distributor"
+  ],
+  "topics": [],
+  "score": 20,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "e1f47bdaae6d7186",
+  "url": "https://variety.com/2026/music/news/grammy-record-of-year-predictions-2027-ella-taylor-olivia-1236909331/",
+  "title": "Record and Song of the Year Grammy Predictions: With Ella Langley, Taylor Swift, the Two Olivias and Other Frontrunners in the Race, Expect a Nail-Biter",
+  "summary": "Predicting the Record of the Year race for the 2027 Grammys is both super easy and super challenging… depending on whether we’re focused on narrowing down the thousands of first-ballot contenders to eight nominees, or whether we’re jumping ahead to fixate on who the ultimate win…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T21:13:07.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "9653a2cb850a88d6",
+  "url": "https://www.digitalmusicnews.com/2026/10/12/travis-scott-alright-lawsuit-dismissed/",
+  "title": "‘Alright, Alright, Alright’ Infringement Case Against Travis Scott Goes Poof After Years of Litigation",
+  "summary": "A copyright case filed against Travis Scott by two songwriters over an iconic sample has been dismissed without prejudice after nearly three years. A copyright infringement case against Travis Scott, filed by two songwriters over the “alright, alright, alright” sample used in mu…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T20:52:33.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "775e6653afc1e696",
+  "url": "https://variety.com/2026/music/news/sean-diddy-combs-rushed-to-hospital-head-injury-prison-1236909473/",
+  "title": "Sean ‘Diddy’ Combs Hospitalized After Suffering Head Injury in Prison",
+  "summary": "Sean “Diddy” Combs was taken from federal prison to the hospital on Saturday after suffering a reported head injury. The 56-year-old mogul, who is currently serving a 50-month sentence at Fort Dix in New Jersey, was apparently rushed to the hospital early on Saturday morning for…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T20:47:47.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "940df9e55377e889",
+  "url": "https://www.billboard.com/pro/live-nation-latin-america-strategy-why-concert-doubled-down/",
+  "title": "Why Live Nation Is Doubling Down on Latin America & How Indie Promoters Are Adjusting: ‘Surf the Wave’",
+  "summary": "The company is shifting from building relationships to owning local promoters, venues, and infrastructure to support the region's growing live-music market.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T20:04:04.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 20,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "8d6d2a64814c9735",
+  "url": "https://www.digitalmusicnews.com/2026/10/12/apple-music-releases-a-serious-apple-tv-upgrade/",
+  "title": "Low-Key Bundle-Flex: Apple Music Quietly Releases a Serious Apple TV Upgrade",
+  "summary": "Apple quietly rolls out a major upgrade for Apple TV users, offering high-resolution lossless audio support for the Apple Music app on Apple TV. As Apple Music continues to vie with Spotify for music streaming dominance in the United States, the company quietly rolled out a seri…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T20:01:21.000Z",
+  "entities": [
+   "apple-music",
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "dsp-economics"
+  ],
+  "score": 50,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "4124c2484a7f4cd1",
+  "url": "https://www.billboard.com/pro/summer-walker-responds-interscope-lawsuit-record-deal/",
+  "title": "Summer Walker ‘Disappointed’ by Interscope Lawsuit But ‘Open to a Constructive Resolution’",
+  "summary": "The R&B singer's attorney released a statement amid her legal dispute with the UMG label.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T19:57:53.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "cd5b1c9ae845019b",
+  "url": "https://news.pollstar.com/2026/10/12/kansas-citys-city-council-approves-plan-to-help-fund-1-9b-stadium-project/",
+  "title": "Kansas City’s City Council Approves Plan To Help Fund $1.9B Stadium Project",
+  "summary": "Kansas City Royals fans are another step closer to getting a new ballpark for their beloved MLB team. To support the $1.9 billion stadium project, the city council approved plans on Thursday to establish a tax increment financing plan and authorize issuing bonds for the city’s $…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-12T19:27:21.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "65f49a5187a48759",
+  "url": "https://www.musicbusinessworldwide.com/songwriters-drop-alright-alright-alright-sample-lawsuit-against-travis-scott-and-sony-music/",
+  "title": "Songwriters drop ‘alright, alright, alright’ sample lawsuit against Travis Scott and Sony Music",
+  "summary": "The notice of voluntary dismissal does not say whether they reached a settlement with Travis Scott or Sony Music. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T19:12:28.000Z",
+  "entities": [
+   "sony-music-entertainment"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 32,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "6c77d0542dc4f410",
+  "url": "https://www.musicbusinessworldwide.com/spotify-launches-spotify-technology-to-sell-its-internal-software-tools-to-other-companies-says-the-brand-is-becoming-the-rd-operating-system/",
+  "title": "Spotify launches Spotify Technology to sell its internal software tools to other companies, says the brand is ‘becoming the R&D operating system’",
+  "summary": "Spotify Technology, groups four products – Portal, Confidence, Xirp, and Spotify for Backstage – under one name, with its own website. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T19:12:15.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "2a03315281c570e0",
+  "url": "https://news.pollstar.com/2026/10/12/the-biz-class-action-suits-roll-in-after-ln-data-breach-disclosure-feds-probe-streaming-fraud-nycs-click-to-cancel-more/",
+  "title": "The Biz: Class Action Suits Roll In After LN Data Breach Disclosure; Feds Probe Streaming Fraud; NYC’s ‘Click To Cancel’ & More",
+  "summary": "On Oct. 1, Live Nation disclosed a data breach to Vermont’s attorney general, saying “a small number of individuals” had sensitive information including Social Security and government ID numbers exposed. In the wake of that disclosure, the live giant is facing at least three cla…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-12T19:04:31.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 20,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "25efb9e064f3c56c",
+  "url": "https://news.pollstar.com/2026/10/12/weekend-disruptions-cancellations-ella-langley-barry-manilow-art-garfunkel-head-trip-festival/",
+  "title": "Weekend Disruptions & Cancellations: Ella Langley, Barry Manilow, Art Garfunkel & Head Trip Festival",
+  "summary": "Cancellations and disruptions affected notable tours and a festival this past weekend, with Ella Langley’s show making the most headlines. The country music star’s concert scheduled for Oct. 9 at BOK Center in Tulsa, Oklahoma, was canceled hours before showtime because of a “ser…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-12T19:03:27.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "9f1ab1ab0a31b9fb",
+  "url": "https://www.billboard.com/pro/distrokid-removes-songs-to-umg-slop-lawsuit/",
+  "title": "DistroKid Removes Songs in Response to UMG’s Streaming ‘Slop’ Lawsuit",
+  "summary": "UMG accused the distributor last month of flooding the internet with \"mass AI-generated, SEO-optimized, and copyright-infringing slop.\"",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T17:59:34.000Z",
+  "entities": [
+   "distrokid"
+  ],
+  "types": [
+   "distributor"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 36,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "a94e3b67a5b1d930",
+  "url": "https://news.pollstar.com/2026/10/12/rock-the-bells-i-need-luv-cruise-to-set-sail-nov-2027/",
+  "title": "Rock The Bells ‘I Need Luv’ Cruise To Set Sail Nov. 2027",
+  "summary": "Long-running hip-hop brand Rock The Bells continues to expand its live experience reach, with the announcement of Rock The Bells Presents: I Need Luv Cruise — described as a new R&B vacation in partnership with Sixthman. Sailing Nov.15-19, 2027 from Miami to Nassau, Bahamas aboa…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-12T17:58:39.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "b017f96ce7f97e28",
+  "url": "https://www.digitalmusicnews.com/2026/10/12/interscope-umg-summer-walker-lawsuit/",
+  "title": "Watch This Court Battle: Interscope/UMG Sues Summer Walker for $50 Million as Ugly Contract Dispute Intensifies",
+  "summary": "Interscope Records has now sued R&B singer Summer Walker for $50 million, alleging she still owes them more albums before she can even think about getting out of her contract. Universal Music imprint Interscope Records is escalating its ongoing dispute with R&B singer Summer Wal…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T17:57:40.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 32,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "59312adbbaa1a08b",
+  "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPWGk3ZTZhQzlERVVWQTkzNXdLVTNkTmt6VnlqUGpWWTRFbmVQakJfMkxrSU51OWZqbUxhdUVrbHJsRDZlb0t3QjBmdmhyTTZ4bDFyY0RxVWpvLUZGM3F0V3lWVXI1eThGUDhPaFotWEFzX0xJakdfbE1Zb0dQaWQxcG5QMWZkOWQydkNKa3ZkZ2xEeTBw?oc=5",
+  "title": "Artist Digital Likeness: Consent and AI Licensing",
+  "summary": "Artist Digital Likeness: Consent and AI Licensing InterSpace Music Distribution",
+  "source": "InterSpace Music Distribution",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-12T17:50:21.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "e98db1c0e9eae87f",
+  "url": "https://www.billboard.com/pro/muni-long-ex-managers-cant-subpoena-medical-records/",
+  "title": "Muni Long’s Ex-Managers Cannot Subpoena Her Medical Records in Lawsuit, Judge Says",
+  "summary": "Chaka Zulu and Jeff Dixon claim the singer defamed them by accusing them of involuntarily committing her to a mental health facility.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T17:42:52.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "797b9d3b3e415598",
+  "url": "https://variety.com/2026/music/news/taylor-swift-patient-zero-no-1-second-week-singles-chart-1236909200/",
+  "title": "Taylor Swift’s ‘Patient Zero’ Holds Steady at No. 1 for Second Week on Singles Chart",
+  "summary": "Taylor Swift has scored a second week atop the Billboard Hot 100 with “Patient Zero,” the lead single off of “The Life of Showgirl: The Encore.” “Patient Zero” is one of four new Swift songs included on “Encore,” which, just yesterday, earned her a 100th week at No. 1 on the Bil…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T17:34:12.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "30a02eef526327c6",
+  "url": "https://www.digitalmusicnews.com/2026/10/12/warner-music-essilorluxottica-lawsuit/",
+  "title": "Atlantic/WMG Sues Ray-Ban Owner Luxottica, Demands Over $64 Million in Damages as Social Media Infringement Crackdown Continues",
+  "summary": "The social media copyright crackdown continues: Warner Music Group (WMG) is now suing multiple subsidiaries of eyewear giant EssilorLuxottica for allegedly infringing on north of 400 compositions and recordings in Instagram and TikTok posts. Plaintiffs including Atlantic Music G…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T17:28:17.000Z",
+  "entities": [
+   "tiktok",
+   "warner-chappell",
+   "wmg"
+  ],
+  "types": [
+   "dsp",
+   "label",
+   "publisher"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 66,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "0841a88928a6044d",
+  "url": "https://variety.com/2026/music/news/how-the-grammys-should-recognize-revived-hits-iris-dreams-1236909151/",
+  "title": "Out With the New, in With the Old?: How the Grammys Should Recognize Revived Hits",
+  "summary": "Earlier this year, Goo Goo Dolls’ “Iris” had another sudden resurgence — one of many since its release in 1998 — after social media users and celebrities spanning Drew Barrymore to Kevin Bacon used the song to showcase photos of what they looked like in the 1990s. By late Septem…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T17:06:56.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [],
+  "score": 28,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "92466d2e310343c3",
+  "url": "https://www.billboard.com/pro/how-andrea-bocellis-co-managers-shepherd-his-career/",
+  "title": "How Andrea Bocelli’s Co-Managers Shepherd His Legendary Career (And Voice): ‘It’s Like an Athlete’",
+  "summary": "Bocelli's wife Veronica has managed his career alongside Francesco Pasquero for more than two decades. They're busier than ever.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T16:55:21.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "cbb584c8dfc7b57f",
+  "url": "https://musically.com/2026/10/12/vp-nordics-and-baltics-the-orchard-sweden/",
+  "title": "VP, Nordics and Baltics – The Orchard – Sweden",
+  "summary": "The Orchard is seeking a dynamic, entrepreneurial leader to manage and execute its growth strategy, team building and client relationship initiatives in the Nordics & Baltics. Driving efficient communication and […] The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T16:49:30.000Z",
+  "entities": [
+   "the-orchard"
+  ],
+  "types": [
+   "distributor"
+  ],
+  "topics": [],
+  "score": 20,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "4b4eb9fed169f410",
+  "url": "https://completemusicupdate.com/sara-landrys-legal-battle-with-ex-managers-over-commissions-copyrights-and-trademarks-now-being-fought-out-in-us-and-uk/",
+  "title": "Sara Landry’s legal battle with ex-managers over commissions, copyrights and trademarks now being fought out in US and UK",
+  "summary": "In August, London-based management firm The Night Department sued techno producer Sara Landry for breach of contract. She has now responded and countersued. The core dispute is over the management company’s involvement in her label, though there’s also some griping over a Coache…",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T16:45:18.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "2d898baefc383aa1",
+  "url": "https://variety.com/2026/artisans/news/universal-fourth-film-composers-initiative-2026-1236909047/",
+  "title": "Universal Launches Fourth Film Composers Initiative",
+  "summary": "Universal Talent Development, in partnership with Universal Film Music and the participation of DreamWorks Animation and Universal Studio Group Music, has launched its fourth composers initiative, a program designed to seek and amplify rising talent in the entertainment industry…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T16:42:46.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "5292b10e90cfec8c",
+  "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPVFk1N1F3RHExVmdvS3I4QmE0bEJWSjRJM3JEQnFxelplYVM1UkRpcEExOTdXZTFmcE1ZazgyZUdHRUJQOXNpNjJLemxpWmVRN2VkNUt1NXptUTF0NThqOVdURlVUWkk3aWVQN2FmNEhmOEI4V3NmZ2pXc2MwQlg0T1dkYmxSdENkeFA4T3B2bXVWU05FVXhPZFFvZC1fd1Y1SXNOZWo1cw?oc=5",
+  "title": "MPA Appoints Faber Music CEO Richard King As Its New Board Chair",
+  "summary": "MPA Appoints Faber Music CEO Richard King As Its New Board Chair CelebrityAccess",
+  "source": "CelebrityAccess",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-12T16:00:40.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "e6d98330d4d81d51",
+  "url": "https://variety.com/2026/film/global/the-beatles-films-producer-on-releasing-four-movies-at-once-1236909058/",
+  "title": "‘The Beatles’ Biopics Producer Says Releasing All Four Movies at Once in 2028 Will Have a ‘Cumulative Power That’s Greater Than the Sum of Its Parts’",
+  "summary": "The release strategy for Sam Mendes’ much-hyped and all-star Beatles biopics — all four of which are hitting cinemas simultaneously in April 2028 with Sony Pictures Entertainment — has caused several in the industry to scratch their heads in wonder. But Pippa Harris, who is prod…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T15:39:41.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
   "id": "4cbe6e6f7df6a80d",
   "url": "https://variety.com/2026/music/columns/kelly-clarkson-art-of-play-brooklyn-twitter-1236908964/",
   "title": "In Defense of Kelly Clarkson (Kind Of) and the $15,000 Singing Bird Saga",
@@ -48,6 +1015,24 @@
   "topics": [],
   "score": 15,
   "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "e75b83894298bc6d",
+  "url": "https://www.digitalmusicnews.com/2026/10/12/furnace-fest-mug-kid-rock-merch/",
+  "title": "Alabama’s Furnace Fest Baffles Attendees With AI-Designed Merch and Fyre Festival-Style Meals",
+  "summary": "Furnace Fest 2026, the event’s first installment under new ownership, has been a disaster, not least of all for its merch-related missteps. Over the weekend, the annual metal festival Furnace Fest made a not-so-triumphant return to Birmingham, Alabama, under new management. The…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T12:48:57.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 10,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
  },
  {
   "id": "53fa2db7e532426f",
@@ -197,6 +1182,22 @@
   "firstSeen": "2026-10-12T15:16:53.637Z"
  },
  {
+  "id": "2ddfe9e52717a94f",
+  "url": "https://www.digitalmusicnews.com/2026/10/12/diddy-head-injury-in-prison/",
+  "title": "Diddy Rushed to Hospital After Suffering a Head Injury in Prison",
+  "summary": "Sean Combs was rushed from federal prison to the hospital over the weekend after suffering a reported head injury. Details remain scarce. Sean “Diddy” Combs, who is currently serving a 50-month prison sentence at Fort Dix in New Jersey, was rushed to the hospital on Saturday aft…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-12T11:11:10.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
   "id": "e1185db059aa95ad",
   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQXzZKYktEQzFjYzA5bXRKbDVCYTlJU2hHei16c2FrRlhjNlc3U3BRazh4NTF0RnNNRlY2bG5Sbm0wN0h5VW85RFNVaHlsVUNSSmZ4aE5wdXNubi0xZFpjUUpjMml6WERZbTRZZ2hYN0xDNVlGWDhlYnlNb1huUkhyTTRaNnJoaVpYaUNJTk1pSzRGUnAzMHEyNXp6VkN5X1c5eEllallob1M?oc=5",
   "title": "DistroKid Publishing vs RouteNote Publishing: Which Should Songwriters Choose?",
@@ -265,6 +1266,25 @@
   ],
   "score": 15,
   "firstSeen": "2026-10-12T15:16:53.637Z"
+ },
+ {
+  "id": "c3cccbc597847d28",
+  "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQeXhLOFRDZGpSU2k5cjNma2RMOWF3Z1pFU00yeDVYMWFsbUl0M0FoM00xTmU4NnVFS09JendwYW1QdkxMaG4zVzMtYl9SUk1hSkV2YnRhVFJPUkpfeUhqLXNrU2lFX053bjNXMXg4bE9wd0ZmX3c3MmRFV2c3eWxhOUs0Q3JrY1prdzh5d1BUUVFIU2JIWlE2elNOQTB0RlFUV2JQeUh3?oc=5",
+  "title": "A Rights-Service Acquisition Should Trigger a Catalogue Mandate Check",
+  "summary": "A Rights-Service Acquisition Should Trigger a Catalogue Mandate Check InterSpace Music Distribution",
+  "source": "InterSpace Music Distribution",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-12T02:33:42.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "catalog-deal",
+   "m&a"
+  ],
+  "score": 25,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
  },
  {
   "id": "0a260ea374e7fd03",
@@ -8089,6 +9109,24 @@
   ],
   "score": 27,
   "firstSeen": "2026-10-02T12:29:12.456Z"
+ },
+ {
+  "id": "5543ada9a77d56f4",
+  "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1WS1c1WVluRGY5ZEZZeXZfdHpfV1NDbWo2NDAxak45bDNpM01UN0FCSDJYc1ZhRno5WFl6S2hzOUtvTkZDc19hdkFTOXV1eE5FdWhkZFZJOU1ZNHdMZkFpQg?oc=5",
+  "title": "Britney Spears sells rights to iconic music catalog in massive nine-figure deal",
+  "summary": "Britney Spears sells rights to iconic music catalog in massive nine-figure deal Ynetnews",
+  "source": "Ynetnews",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-02T07:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "catalog-deal"
+  ],
+  "score": 12,
+  "firstSeen": "2026-10-13T14:07:03.238Z"
  },
  {
   "id": "71140d68be3b85cd",
