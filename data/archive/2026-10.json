@@ -1,5 +1,680 @@
 [
  {
+  "id": "57ee5a8761df6117",
+  "url": "https://musically.com/2026/10/14/report-highlights-inequality-in-licensing-and-policing-of-londons-black-and-south-asian-music-events/",
+  "title": "Report highlights inequality in licensing and policing of London’s Black and South Asian music events",
+  "summary": "UK-based organisation Black Lives in Music (BLiM) has launched a new report titled Race Equality in Music Event Licensing (REMEL) – which it says is “the most comprehensive investigation to date into how licensing and policing shape the fortunes of Black and South Asian artists,…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-14T11:45:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "6f95fc2a89e68624",
+  "url": "https://www.musicbusinessworldwide.com/summer-walker-sues-lvrn-for-fraud-asks-court-to-void-2017-deal-as-interscope-pursues-50m-claim-against-her-report/",
+  "title": "Summer Walker sues LVRN for fraud, asks court to void 2017 deal as Interscope pursues $50M+ claim against her (report)",
+  "summary": "The suit came to light days after Universal Music Group's Interscope Records sued Walker for more than USD $50 million. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-14T10:56:54.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 37,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "85f948c8b60f7275",
+  "url": "https://www.musicbusinessworldwide.com/btss-arirang-passes-5-billion-spotify-streams-around-2-billion-more-than-any-other-album-released-in-2026-says-bighit-music/",
+  "title": "BTS’s ARIRANG passes 5 billion Spotify streams – around 2 billion more than any other album released in 2026, says BigHit Music",
+  "summary": "BigHit Music announced the figure on Wednesday (October 14), naming the runner-up as Olivia Rodrigo's \"you seem pretty sad for a girl so in love.\" Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-14T10:29:31.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 27,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "63a6cee85302861d",
+  "url": "https://musically.com/2026/10/14/post-merger-bmg-doesnt-see-itself-as-the-fourth-major-for-a-good-reason/",
+  "title": "Post-merger BMG doesn’t see itself as ‘the fourth major’ – for a good reason",
+  "summary": "BMG and Concord are now one company, but is it a merger or an acquisition? Chief transformation officer Kent Hoskins used another word when he appeared at this week’s Music Ally Publishing Summit. “I would suggest it’s a combination,” he said. “When you look at Concord and BMG a…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-14T06:09:00.000Z",
+  "entities": [
+   "bmg",
+   "concord"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "m&a"
+  ],
+  "score": 59,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "0d72da6c40e9b099",
+  "url": "https://variety.com/2026/music/news/kelly-clarkson-art-of-play-molly-bird-footage-revealed-1236910838/",
+  "title": "Kelly Clarkson vs. Art of Play: Footage Revealed of Singer’s Visit to Brooklyn Novelty Store She Slammed for ‘Pretty Woman’ Treatment",
+  "summary": "Footage of Kelly Clarkson visiting the Brooklyn novelty store she slammed on Saturday has now been acquired and released by Pablo Torre, the host and executive editor of the investigative podcast, “Pablo Torre Finds Out.” The video offers another perspective to the ongoing drama…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-14T02:00:04.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "185d20e3e0ff7a27",
+  "url": "https://www.billboard.com/pro/the-chainsmokers-leaves-columbia-disruptor-records/",
+  "title": "The Chainsmokers Parts Ways With Columbia/Disruptor Records: ‘We Have No Idea What to Expect’",
+  "summary": "After 11 years with the labels, the duo is now independent.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T22:54:08.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "c5b22a0b2e3d62fe",
+  "url": "https://www.billboard.com/pro/summer-walker-lvrn-lawsuit-label-pocketed-money/",
+  "title": "Summer Walker Is Suing LVRN for Fraud, Says Label/Management Firm Pocketed Her Money",
+  "summary": "The R&B singer is pursuing a lawsuit against LVRN amid her separate dispute with Interscope Records.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T22:37:28.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "4d7e0693626d4fdd",
+  "url": "https://www.musicbusinessworldwide.com/raye-says-scalpers-used-ai-bots-to-create-hundreds-of-thousands-of-fake-registrations-as-1-8m-sign-up-for-5000-royal-albert-hall-seats/",
+  "title": "Raye says ticket scalpers used AI bots to create ‘hundreds of thousands of fake registrations’ as 1.8M sign up for 5,000 Royal Albert Hall seats",
+  "summary": "Presale registration for the show ran through a sign-up page hosted by fan marketing platform co:brand. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T21:37:46.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "acbb97010d4826d4",
+  "url": "https://variety.com/2026/music/news/jesse-jo-stark-wme-1236910696/",
+  "title": "Music Industry Moves: Jesse Jo Stark Signs With WME, Rebecca Allen Steps Down at Universal Music U.K.",
+  "summary": "Singer-songwriter-actress and Chrome Hearts co-creative director Jesse Jo Stark has signed with WME for worldwide representation in all areas. Stark’s new album “Muse” is out Nov. 6, which follows dates opening for or performing with Post Malone, Guns N’ Roses and Jane’s Addicti…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T20:43:57.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 29,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "8dd6e2945c5dfe2f",
+  "url": "https://www.billboard.com/pro/country-music-association-2026-broadcast-award-winners-list/",
+  "title": "Country Music Association Reveals 2026 Broadcast Award Winners: Full List",
+  "summary": "Reigning CMA new artist of the year Zach Top surprises stations and broadcast personalities with the news.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T20:34:33.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "policy"
+  ],
+  "score": 16,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "550fd23367457876",
+  "url": "https://news.pollstar.com/2026/10/13/john-mayer-adds-june-2027-dates-to-live-at-sphere-residency/",
+  "title": "John Mayer Adds June 2027 Dates To ‘Live At Sphere’ Residency",
+  "summary": "UPDATE:Citing “overwhelming demand,” John Mayer has added three more performances to his “Live At Sphere” residency that promises to “combine immersive sound, visual spectacle, and sensory feedback to make each show a unique, unforgettable celebration.” The new dates are booked…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-13T19:32:01.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "66bda4dc63860062",
+  "url": "https://www.billboard.com/pro/dolly-parton-nephew-fights-restraining-order-denies-threats/",
+  "title": "Dolly Parton’s Nephew Fights Restraining Order, Says Estate Is Twisting ‘Friendly Exchange’",
+  "summary": "Bryan Seaver has submitted his first written response denying that he made violent threats against Parton's estate after her death.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T19:30:12.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "cecbef8510edae37",
+  "url": "https://variety.com/2026/music/news/joni-mitchell-american-citizen-sworn-in-1236910447/",
+  "title": "Joni Mitchell Sworn In as a U.S. Citizen, Capping ‘a Journey That Began 62 Years Ago’",
+  "summary": "When the New York Times ran a list of the greatest living American songwriters earlier this year, the ranking was greeted with a lot of reader flack for not including Joni Mitchell. The newspaper’s explanation at the time was that Mitchell was — and remained — a Canadian citizen…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T19:14:26.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "72b085398987baf3",
+  "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPWmxPWU4zQlltb0Nzd09GaXg5ZGQ5aVE5Z2ZJNXhCTFpHaXNSNGVHb1IyX25ydWYyRFBTZkg0c1BWbm42UXBmd3BVek4tbmktYk9KYUJDWlJ6cDl0UDdCTWZFM0NfZ3F6RUc5N09aRzVia1FBMkpEbTR6bm51Q3M1VE40RQ?oc=5",
+  "title": "Song Biz With Sublime, Ashley Gorley, and More",
+  "summary": "Song Biz With Sublime, Ashley Gorley, and More Music Connection Magazine",
+  "source": "Music Connection Magazine",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-13T19:13:06.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "c3a5f521aa8c4a58",
+  "url": "https://www.billboard.com/pro/tupac-murder-sentence-duane-davis-40-years-prison/",
+  "title": "Tupac Killer Duane Davis Sentenced to 40 Years To Life in Prison for Murdering Rap Icon",
+  "summary": "Three decades after the superstar was murdered, someone is finally going to prison: \"You are going to face justice for what you did,\" the judge said.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T19:08:48.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "2b6cee8333b94ac2",
+  "url": "https://variety.com/2026/music/news/duane-keffe-d-davis-sentenced-40-years-tupac-shakur-murder-1236909531/",
+  "title": "Duane ‘Keffe D’ Davis Sentenced to 40 Years to Life for Role in Tupac Shakur’s Murder",
+  "summary": "Duane “Keffe D” Davis has been sentenced to 40 years to life after being found guilty of orchestrating the 1996 murder of Tupac Shakur. Davis appeared in a Nevada court on Tuesday for his sentencing in the case, with the judge handing him 20 years to life for first-degree murder…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T18:59:02.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "bccd28543b4dfc67",
+  "url": "https://www.billboard.com/pro/country-update-laura-veltz-songwriter-soup-podcast/",
+  "title": "‘Songwriter Soup’: Laura Veltz’s Insider Podcast About Stability in an Unstable Gig",
+  "summary": "In this week's Country Update lead story, Laura Veltz works to help songwriters figure out financial planning.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T18:12:23.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "4ac224c2c6b631b7",
+  "url": "https://www.billboard.com/lists/latin-music-week-2026-key-issues-business-panels/",
+  "title": "10 Key Issues Driving the Latin Music Industry Today: AI, Distribution, Touring & More at Latin Music Week",
+  "summary": "From global touring to the rise of music podcasters, the Billboard event will put the Latin business’s biggest questions front and center.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T18:09:24.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "0b56b18833719382",
+  "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPVjF4N0I5WjFNbVdadmlHTGVTNmxuUnBOdHhwUHdQV01LUGFWOUdmWXhacUxnRWQzRm1TMTUxSk1QZGdhYnRiczBKWnBnUjRUMUdQcDlmeks0akFRdm5SZzJTQ2JrR1hDMV9acE1odVJWVG8zQnBGc2JPZExVanVjUnU0N0RJbHo5NGdFVnpzWDdFVndXRFVTTlBnSTRLaEd5dFBN?oc=5",
+  "title": "Warner Music Sues Ray-Ban Owner Over 427 Songs Used in Social Media Ads",
+  "summary": "Warner Music Sues Ray-Ban Owner Over 427 Songs Used in Social Media Ads Law Commentary",
+  "source": "Law Commentary",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-13T17:49:32.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 32,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "f3d85ab2982dd8dd",
+  "url": "https://www.musicbusinessworldwide.com/primary-wave-partners-with-brian-vander-ark-frontman-of-the-verve-pipe-covering-his-publishing-and-recorded-music-catalogs/",
+  "title": "Primary Wave partners with Brian Vander Ark, frontman of The Verve Pipe, covering his publishing and recorded music catalogs",
+  "summary": "The deal covers Vander Ark's publishing and recorded music catalogs, including the songs he wrote for The Verve Pipe. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T17:36:41.000Z",
+  "entities": [
+   "primary-wave"
+  ],
+  "types": [
+   "publisher"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "0aa0980bec3bf4d9",
+  "url": "https://news.pollstar.com/2026/10/13/matchbox-twenty-announces-52-date-30th-anniversary-north-america-tour/",
+  "title": "Matchbox Twenty Announces 52-Date 30th Anniversary North America Tour",
+  "summary": "Matchbox Twenty has announced a 30th Anniversary Tour, an extensive North American run taking in 52 dates and kicking off May 15, promoted by Live Nation. The tour will bring the Rob Thomas-fronted hit-makers to amphitheaters and arenas across the U.S. and Canada, with dates inc…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-13T17:24:04.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 25,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "16ddaef324d20058",
+  "url": "https://www.billboard.com/pro/summer-walker-lawsuit-distrokid-ai-slop-case/",
+  "title": "Summer Walker Lawsuit, DistroKid AI Slop Case, Top Dawg Ruling & More Top Music Law News",
+  "summary": "In this week's Legal Beat newsletter, Summer Walker battles Interscope, DistroKid pulls down songs, Top Dawg wins a \"doxxing\" ruling and much more.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T17:10:36.000Z",
+  "entities": [
+   "distrokid"
+  ],
+  "types": [
+   "distributor"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 28,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "6af296f7a7358c8c",
+  "url": "https://variety.com/2026/tv/news/michael-jackson-super-bowl-documentary-hulu-espn-1236910198/",
+  "title": "‘Michael Jackson at the Super Bowl’ Documentary Coming to Hulu and ESPN",
+  "summary": "Michael Jackson’s iconic performance during the the 1993 Super Bowl halftime show will be chronicled in a new documentary coming to Hulu and ESPN. Debuting in February 2027, “Spectacle: Michael Jackson at the Super Bowl” will follow the King of Pop as he prepares for his landmar…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T17:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "f54e9369f76313e6",
+  "url": "https://variety.com/2026/music/news/kelly-clarkson-jbrandi-carlile-girls-just-wanna-weekend-1236910209/",
+  "title": "Kelly Clarkson Joins Brandi Carlile’s Girls Just Wanna Weekend Festival as Co-Headliner",
+  "summary": "It may not be the biggest headline Kelly Clarkson will make this week, but the most talked-about celebrity of the moment has other news, as she is joining Brandi Carlile’s 8th annual female-centric Girls Just Wanna Weekend gathering in January, the festival announced Tuesday. Cl…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T16:51:15.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "4605b1cf335c34c7",
+  "url": "https://news.pollstar.com/2026/10/13/usher-chris-brown-cancel-four-us-stadium-dates/",
+  "title": "Usher, Chris Brown Cancel Four US Stadium Dates",
+  "summary": "Usher and Chris Brown recently announced the cancellation of four dates of their “R&B Tour” to “prioritize the health and well-being of the touring party and crew,” according to a message from the event organizer. Those who purchased tickets for upcoming shows at Baltimore’s MT&…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-13T16:33:29.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "5ed34e70764e8e73",
+  "url": "https://variety.com/2026/music/news/olivia-rodrigo-chappell-roan-expectations-remix-video-1236909332/",
+  "title": "Olivia Rodrigo and Chappell Roan Team Up for ‘Expectations’ Remix and Music Video",
+  "summary": "Olivia Rodrigo and Chappell Roan are officially teaming up on an “Expectations” remix and music video. Rodrigo confirmed the news on Instagram Tuesday, sharing a photo of her and Roan posing on a yellow car with the license plate “XPECT8NS.” The uptempo song is the 12th track on…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T16:18:34.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [],
+  "score": 28,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "000bb21bf74a9c40",
+  "url": "https://news.pollstar.com/2026/10/13/calvin-harris-embarking-on-his-north-american-tour-next-spring/",
+  "title": "Calvin Harris To Embark On North American Tour Next Spring",
+  "summary": "Fresh off his performance at Head Trip festival in Indio, California, Calvin Harris announced he’s returning to North American arenas next spring. It marks the first time the Scottish DJ is headlining a North American tour. The 18-date Live Nation-promoted trek kicks off April 1…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-13T16:00:00.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 25,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "484f231f96e13fa8",
+  "url": "https://news.pollstar.com/2026/10/13/jack-johnson-mt-joy-top-high-water-fest/",
+  "title": "Jack Johnson, Mt. Joy Top High Water Fest",
+  "summary": "High Water Fest returns to North Charleston, South Carolina’s Riverfront Park April 17 and 18 with a 20-act bill topped by Jack Johnson and Mt. Joy. The two-day festival with no overlapping sets will also feature Death Cab For Cutie, Rainbow Kitten Surprise, The Revivalists, The…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-13T15:59:33.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live",
+   "policy"
+  ],
+  "score": 21,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "642e705575d08c79",
+  "url": "https://completemusicupdate.com/uk-copyright-tribunal-ruling-recognises-increased-value-of-music-in-cinema-says-prs/",
+  "title": "UK Copyright Tribunal ruling recognises “increased value of music in cinema” says PRS",
+  "summary": "A dispute over what royalties cinemas should pay PRS for music contained in the films they screen went before the UK Copyright Tribunal earlier this year. It has ruled in favour of a higher royalty rate which, PRS says, “recognises the increased value of music in the overall cin…",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T15:38:20.000Z",
+  "entities": [
+   "prs"
+  ],
+  "types": [
+   "pro"
+  ],
+  "topics": [
+   "dsp-economics"
+  ],
+  "score": 34,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "35dbe635793efca4",
+  "url": "https://www.musicbusinessworldwide.com/viktoria-siniavskaia-appointed-president-emea-at-believe/",
+  "title": "Viktoria Siniavskaia appointed President EMEA at Believe",
+  "summary": "The appointment is part of what Believe calls its \"evolution toward a stronger regional leadership model,\" the company said. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T15:26:15.000Z",
+  "entities": [
+   "believe"
+  ],
+  "types": [
+   "artist-services"
+  ],
+  "topics": [],
+  "score": 18,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "ab8763ea484971a1",
+  "url": "https://variety.com/2026/film/festivals/hildur-gudnadottir-sarah-polley-the-bell-jar-billie-eilish-1236908104/",
+  "title": "‘Joker’ Composer Hildur Guðnadóttir Confirms She’s Scoring Sarah Polley’s ‘The Bell Jar,’ Starring Billie Eilish",
+  "summary": "Composer Hildur Guðnadóttir, who won an Oscar with “Joker,” is already deep into “The Bell Jar.” Sarah Polley’s Sylvia Plath adaptation, which recently wrapped, will give pop icon Billie Eilish her first starring role, while offering the composer a new kind of creative partnersh…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T15:09:42.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "e8e6cc0ca8ba9d76",
+  "url": "https://news.pollstar.com/2026/10/13/slayyyter-announces-2027-madison-square-garden-headline-show/",
+  "title": "SLAYYYTER Announces 2027 Madison Square Garden Headline Show",
+  "summary": "SLAYYYTER has announced a headline show at Madison Square Garden in New York City set for June 21, 2027. Tickets go on sale Oct. 16 at 10 a.m. EST, and fans can register now on her website HERE for a reminder when they go on sale. The upcoming show marks her biggest headline per…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-13T15:06:04.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "166357d233970ff2",
+  "url": "https://www.billboard.com/pro/believe-names-viktoria-siniavskaia-president-emea/",
+  "title": "Believe Names Viktoria Siniavskaia President of EMEA in Global Leadership Restructure",
+  "summary": "\"I will contribute to solutions that empower independent talent at every stage of their careers,\" the executive said in a statement.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T14:45:14.000Z",
+  "entities": [
+   "believe"
+  ],
+  "types": [
+   "artist-services"
+  ],
+  "topics": [],
+  "score": 18,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "82dff4184f83616c",
+  "url": "https://www.musicbusinessworldwide.com/when-you-control-your-ip-you-control-your-destiny/",
+  "title": "‘When you control your IP, you control your destiny.’",
+  "summary": "Loud And Live boss and grammy-winning producer turned promoter Nelson Albareda talks venues, brand partnerships, and the economics of Latin touring Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T14:43:58.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "f117d094db349e21",
+  "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPS2lxdzFLZGE1SDFUNTZ6WW42MVZNNkhGMFZ0TU85R1p5TU93WFdJeV9kdjZUMXhWLVNRSTZJUmIxYzBlSnNlRHJnN0RFUERGQ2lnNVZwQ2pnbHR6UWJzdGh0WjZrOVg4NzhmZlV0MHgtWVE0NVRNQ25zVGNTMFQxQkRuYTVPYlBFWjdGY2J1amhuVDhGcWRHUFhR?oc=5",
+  "title": "DistroKid Pulls Independent Artists' Music From Spotify, Apple Music After UMG Copyright Lawsuit",
+  "summary": "DistroKid Pulls Independent Artists' Music From Spotify, Apple Music After UMG Copyright Lawsuit Law Commentary",
+  "source": "Law Commentary",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-13T14:39:29.000Z",
+  "entities": [
+   "apple-music",
+   "distrokid",
+   "spotify"
+  ],
+  "types": [
+   "distributor",
+   "dsp"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 60,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "e2785641573b0843",
+  "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQUlJDd3NROHFLd3lUeEx5MHZqcGN5UjNzdFdmRnlkS251REZTa0lBZDZMQ0dWNU9RRUNHdWJSbXFGWElKMzB0Mk1FU3RuS3NxR2pwNHhubDU1aWZQX1VMZXpzU2Y0RzJKNVFOQ0I0cmdXMk5yWFNJMFYtRmM2Y0p2bk41RTZhUQ?oc=5",
+  "title": "What to Do If Your Song Is Removed Without Warning",
+  "summary": "What to Do If Your Song Is Removed Without Warning RouteNote",
+  "source": "RouteNote",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-13T14:09:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
   "id": "38fd57313a854d86",
   "url": "https://www.billboard.com/pro/elderbrook-new-album-counter-records-label-signing/",
   "title": "Elderbrook Signs With Counter Records, Announces New Album: ‘Well Positioned for Even Greater Success’",
@@ -245,6 +920,22 @@
   "topics": [],
   "score": 29,
   "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "ebb980bfc39f454e",
+  "url": "https://www.musicbusinessworldwide.com/independent-artists-in-india-deserve-the-same-infrastructure-access-royalty-transparency-and-global-reach-that-western-artists-have-been-exposed-to/",
+  "title": "‘Independent artists in India deserve the same infrastructure access, royalty transparency, and global reach that Western artists have been exposed to.’",
+  "summary": "Madverse boss Rohan Nesho Jain on the platform's positioning in the independent space, his predictions for the India's music market, and more… Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-13T11:00:52.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
  },
  {
   "id": "315b54d189a748f6",
@@ -1218,6 +1909,38 @@
   "firstSeen": "2026-10-12T15:16:53.637Z"
  },
  {
+  "id": "42cb0e4b28625a63",
+  "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOd1BRMFNzVWw3M1RzMDU5MTAwN085TzlTb045emtFeGpCcnRudzh5YVpySnc0TzhUTmN4aFlsY0ZXcU1EcXNJQllMMG1XVVhXS05RV1ZJZlBQTkI2MlRFRHc2OEo4cjFBZXNUOVVsNlJSXzJTQzktU2FDTG9SLUJxdkJlWTlWVkJRWm9jbzhRUlJkTFQ2S3pEdE9PQ3VsdFU?oc=5",
+  "title": "@ArtistRights Symposium 5 Panel: Beware the AI Opt-In: Hidden Right of Publicity Waivers",
+  "summary": "@ArtistRights Symposium 5 Panel: Beware the AI Opt-In: Hidden Right of Publicity Waivers InterSpace Music Distribution",
+  "source": "InterSpace Music Distribution",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-12T07:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
+  "id": "81419c8989940b69",
+  "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNZHlUT0pIdnpiRUdOdi01QVoteFd0WlhvMlRvWTI5N0drT1daeENNWk5WNENvLWJLRVN3a1pHYWx1NFg1aWtrRmdRdUtudE83LU1fcHVCb184M0xpSWtHVUhiUTEwa2dPOEtLZzVVRVc3VFpZb3poOFl3c1JSUkJ6UXJnVG5sMjhYa0g4ZWhaU3BLemFQeGk1ZEFn?oc=5",
+  "title": "Nigeria’s Music Royalty System Faces Scrutiny Over Financial Disclosure",
+  "summary": "Nigeria’s Music Royalty System Faces Scrutiny Over Financial Disclosure The Whistler Newspaper",
+  "source": "The Whistler Newspaper",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-12T05:57:23.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
   "id": "3bb60c1614e56717",
   "url": "https://variety.com/2026/music/news/beach-boys-mike-love-play-nashville-ryman-john-stamos-1236908660/",
   "title": "The Beach Boys Play Nashville’s Ryman in What John Stamos Says ‘Could Be the Last Time I Stand Behind Mike’ Love in Concert",
@@ -1458,6 +2181,26 @@
   "topics": [],
   "score": 10,
   "firstSeen": "2026-10-11T12:44:39.831Z"
+ },
+ {
+  "id": "7c5f2331888f4c2b",
+  "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQSE1rWXh1N3Q0VG04YldFM1cwQUphN3BodXluM2d2RHlQaEdmV3loRDhENUFJa3RkZ0JWbnN1dEl2NlVvaGdiVW8waG15M2tlMWFBbjRzaWVCNGU2Z2lhNE1lY0tqSUJHODRQbnFmSEJxX3lxUWxFT1ZBNExNLXdMamxLcnBLSFpmMHMtU2g4OXJyLXlJQWpkVWZ0X052X2xxdUR1NG94aXZidXdwWEJkRDcta0pycmMwOEJGVjB6alEyYTI1UTZ2eU5PQmNFVFlpU014WS1HV005V2pUQlRvbWhUNFVJU09QRFpkT216azhZQQ?oc=5",
+  "title": "ERATO CROWNED LABEL OF THE YEAR AS JEAN RONDEAU’S MONUMENTAL HARPSICHORD COLLECTION WINS RECORDING OF THE YEAR AT 2026 GRAMOPHONE AWARDS",
+  "summary": "ERATO CROWNED LABEL OF THE YEAR AS JEAN RONDEAU’S MONUMENTAL HARPSICHORD COLLECTION WINS RECORDING OF THE YEAR AT 2026 GRAMOPHONE AWARDS Warner Music Group",
+  "source": "Warner Music Group",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-10T20:29:53.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 16,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
  },
  {
   "id": "34ed35be3f6e58fc",
@@ -2395,6 +3138,22 @@
   "firstSeen": "2026-10-09T13:12:13.498Z"
  },
  {
+  "id": "c848f546072c9892",
+  "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPcDcyazNzMG1vNS0ydFA0WHRyX21WNzNSekNodktFcXd6X0NrWDFJNF9BVWEyY0dGdmxVV0RDOGhnNFhqR3BUN19tY1Q1RHVodlIzSkszMG5MMmx1T2JFNHZCbDJXeExfSE5fTXFmdlN1V1hvUVZ2UmEwMWYxY1J6aUJBOXhILUsxN0hQZzVoNHFxeVNMTDRORkY0OV9aLW5D?oc=5",
+  "title": "Elevest Capital Launches MADE, Helping Musicians and Athletes Turn Career Income Into Lasting Ownership",
+  "summary": "Elevest Capital Launches MADE, Helping Musicians and Athletes Turn Career Income Into Lasting Ownership Yahoo Finance",
+  "source": "Yahoo Finance",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-09T12:41:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 2,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
+ },
+ {
   "id": "75e0ea3381859613",
   "url": "https://news.pollstar.com/2026/10/09/dynamic-demanding-diversified-why-germany-remains-one-of-the-most-resilient-markets-in-the-world/",
   "title": "Dynamic, Demanding, Diversified: Why Germany Remains ‘One Of The Most Resilient Markets In The World’",
@@ -3085,6 +3844,22 @@
   ],
   "score": 33,
   "firstSeen": "2026-10-09T13:12:13.498Z"
+ },
+ {
+  "id": "bd46400eff8081a5",
+  "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNV1dDbWxmcno0dXVzUlJUZnpjSFlDSFhNemlrMWxmMWZkaGRiN1pDcjMzSnlCd2R1UXlCS09rbFlXZVpHMkFwYUxJNE94dDhMbWlqZUw2cmNacDNGWk5hdGJXYnAtN0JhTWh0eWhoTjcySzBvQkU4WW9GZkFNYkxWb3NJVUg5elprZzZPTENiUVdZSnBKTnRIZUM3UnhjWWlaaWFOSTlPZw?oc=5",
+  "title": "Olivia Rodrigo has vowed to never use AI in her music",
+  "summary": "Olivia Rodrigo has vowed to never use AI in her music Paste Magazine",
+  "source": "Paste Magazine",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-08T17:29:03.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 2,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
  },
  {
   "id": "9491f0947ad36d6b",
@@ -10890,6 +11665,28 @@
   "topics": [],
   "score": 16,
   "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "bbe6514cf16d7835",
+  "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQQkZyME92T2F4TDloakhVeERyb0o4cVZwc3ZJUzF1NlFyYTNBREpEUHM2dGhnR1M1bGtaQzVKTDVMcndxSnp0bEhxYjA3Q1FGTDRoOEhxeU8wc1BidHRKSldKNFVadWFGekVMU0NMUWc5R3lETlFnRjhvUmVpUnA5U0dFNlpmdTU3SGI4Ykc1dm9YNlBlRG1fRGV0eG1BQQ?oc=5",
+  "title": "Warner Music Seen Posting Strong Fiscal 2026 Finish With Margin Gains, UBS Says",
+  "summary": "Warner Music Seen Posting Strong Fiscal 2026 Finish With Margin Gains, UBS Says Yahoo Finance",
+  "source": "Yahoo Finance",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-01T07:00:00.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "earnings"
+  ],
+  "score": 20,
+  "firstSeen": "2026-10-14T11:47:08.809Z"
  },
  {
   "id": "321053ec2e40a917",
