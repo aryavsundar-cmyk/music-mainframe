@@ -1,5 +1,165 @@
 [
  {
+  "id": "55f0789f3e96412c",
+  "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9CV0lzeXEwOEdrMUhkb3Z0ODVNUDFyd19RelMycG85amM2bld6U2RZVEd3VXpqbm0zWEN2NEYtSElLVXpwRS1rRHVBdEZnSkNLdUVpa2g3RWZCVXM?oc=5",
+  "title": "Funding for new 'Mackem' musical history project",
+  "summary": "Funding for new 'Mackem' musical history project BBC",
+  "source": "BBC",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-18T09:20:54.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-18T10:59:41.641Z"
+ },
+ {
+  "id": "d927641e181f1d98",
+  "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPRDhkZERIR2t1NlJQdWpKWFNxeWFvdml3OUIyY2NUN2NyMHlXTllFSEJXTThJMzc3YW9lY0pGUkdQV1hCRXdRN01ueW9nRUJZck1ZYXEzTGJIWExZR0F3cmNkVW5NUE95S3pHS0pFS2ZsVkx0bmdPU3hkb19XRUxHaER6ZmxXTkJNSGdKNEgwYjJodnE4MVNrdWtWUk9XQktDWm5PX3V3?oc=5",
+  "title": "Top Music Stocks To Watch Today - October 17th",
+  "summary": "Top Music Stocks To Watch Today - October 17th MarketBeat",
+  "source": "MarketBeat",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-17T19:25:58.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-18T10:59:41.641Z"
+ },
+ {
+  "id": "785b039a41c8aeb0",
+  "url": "https://variety.com/2026/film/news/harry-styles-john-wilson-tour-documentary-universal-1236914875/",
+  "title": "Harry Styles ‘Together, Together’ Tour Doc Coming From John Wilson, Universal Pictures Content Group (EXCLUSIVE)",
+  "summary": "Harry Styles has invited one of the buzziest documentary filmmakers on the market behind the curtain of his historic Madison Square Garden residency. John Wilson, the director behind indie box-office surprise “The History of Concrete” and HBO’s “How To with John Wilson,” has bee…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-17T19:00:20.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-18T10:59:41.641Z"
+ },
+ {
+  "id": "be4847470e6b77ef",
+  "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPRHV0QTVEMDY2cDBqT04wSEJLSFpFOTB1NUdldDNONEk2bGtRVTJlQkxPalktQnN5a2g3UFEwVk83Y28xaUtxbkRwdkc1YW5zM0NVM3FKcWI0ZzFTZEV5TVpxejRacjZkMEdObUdDSGhJX1RudkRKTGtMbWNOZTlJdExHdHpVX2Zt?oc=5",
+  "title": "DistroKid Pulls Tracks After UMG AI Lawsuit, Artists Protest",
+  "summary": "DistroKid Pulls Tracks After UMG AI Lawsuit, Artists Protest Pasquale Pillitteri",
+  "source": "Pasquale Pillitteri",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-17T17:24:59.000Z",
+  "entities": [
+   "distrokid"
+  ],
+  "types": [
+   "distributor"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 28,
+  "firstSeen": "2026-10-18T10:59:41.641Z"
+ },
+ {
+  "id": "99cf789efa5cbe30",
+  "url": "https://variety.com/2026/music/news/harry-styles-liam-payne-song-debut-what-is-enough-msg-1236914863/",
+  "title": "Harry Styles Debuts Unreleased Song He Wrote in Memory of Liam Payne, ‘What Is Enough,’ on Second Anniversary of Ex-Bandmate’s Death",
+  "summary": "The mood was typically celebratory at Harry Styles’ residency show at New York’s Madison Square Garden Friday night, but Harry Styles was not about to let the second anniversary of the death of former One Direction bandmate Liam Payne go unremarked upon — or, to the shock of fan…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-17T17:02:16.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-18T10:59:41.641Z"
+ },
+ {
+  "id": "7ea91c699e5233ba",
+  "url": "https://variety.com/2026/music/news/miley-cyrus-tears-up-honoring-dolly-parton-hollywood-bowl-1236914884/",
+  "title": "Miley Cyrus Tears Up While Honoring Dolly Parton During Hollywood Bowl Show: ‘Nothing In This Life Could Ever Tear Us Apart’",
+  "summary": "Miley Cyrus paid tribute to her late godmother and country icon Dolly Parton onstage at the Hollywood Bowl Friday as she performed her first major show in years. The “Bass Persuades” singer began by sharing memories with Parton, telling the audience she was partly inspired to pl…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-17T16:51:16.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-18T10:59:41.641Z"
+ },
+ {
+  "id": "6186333c91227684",
+  "url": "https://www.digitalmusicnews.com/2026/10/17/music-industry-networking-build-relationships/",
+  "title": "How Smart Musicians Build Relationships to Get Ahead (Even If They’re Broke)",
+  "summary": "In the music business, who you know matters, but what you do with those connections matters even more. Talent, hard work, and great music are essential, but they don’t automatically open doors. After decades in this industry, I’ve learned that careers often move forward because…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-17T16:36:21.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-18T10:59:41.641Z"
+ },
+ {
+  "id": "2419cb663619e9c3",
+  "url": "https://variety.com/2026/film/features/50-cent-diddy-trump-street-fighter-courtney-kemp-power-gay-mom-1236914411/",
+  "title": "50 Cent Opens Up About Diddy’s Secret Smear Campaign Against Him, Why He Won’t Work With Courtney Kemp Again and Learning His Mom Was Gay: ‘I’m Not Ashamed of That in Any Way’",
+  "summary": "50 Cent is having trouble logging in to our Zoom. Multiple links have been sent his way — three, by my count — to no avail. The imbroglio is excusable given the early hour and the number of different directions he’s currently being pulled, with 40 projects spread across 12 diffe…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-17T15:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-18T10:59:41.641Z"
+ },
+ {
+  "id": "bec603dd159d8636",
+  "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQTjhESUVhZHlwajFyaTVLQ0RGTzNKRS1yRE1SYUJoLUFqWjNlNzdrQTcyMHFmQmJyQ2JlRmRJUWtzcWxod1BoTWFxTUR6OGxlTDhtRE9oVHl2X19VM2ktQkpjTlRZZUt3NVNqaHltVWFlRFR1N3B6MkduRTZ1T3pidzdpN2NLTlFfU2FjLWUzSmtsQnVpNVhFNnRFbXBmcDlSYmk2Qk93SWpzcXRBWXNSXw?oc=5",
+  "title": "Will Streaming And Publishing Strength Change Warner Music's (WMG) Narrative",
+  "summary": "Will Streaming And Publishing Strength Change Warner Music's (WMG) Narrative Yahoo Finance",
+  "source": "Yahoo Finance",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-17T13:16:57.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-18T10:59:41.641Z"
+ },
+ {
   "id": "6f1912bb1db80cdd",
   "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNdWFPbmtCelNHN1dXcm50TFFqM3RiWnhOVzRVRDlyT3FPSnF1Yk9mQWMzcjN4WmpWV05uZ19vODJWY1JaUUNtaVo5MFNqdXpEUDFuOW5BcFJjcXdYdzZwczlkTk8zblphQTlqV2MwdHJlWkJVQ3ZsSEhoVkZoR3pnZE4tTVlwa2lDY3o3ZTlQQmFfa1ZLbmpyZmxRak9KTHktZEhjbFZPaWFCenVUUTlESkZIVlNIUUh4RHNUdUwzNkFuYlFWXy1haVlJc1FPYXU4YnfSAdIBQVVfeXFMTXVhT25rQnpTRzdXV3JudExRajN0Ylp4Tlc0VUQ5ck9xT0pxdWJPZkFjM3IzeFpqVldObmdfbzgyVmNSWlFDbWlaOTBTanV6RFAxbjluQXBSY3F3WHc2cHM5ZE5PM25aYUE5aldjMHRyZVpCVUN2bEhIaFZGaEd6Z2ROLU1ZcGtpQ2N6N2U5UEJhX2tWS25qcmZsUWpPSkx5LWRIY2xWT2lhQnp1VFE5REpGSFZTSFFIeERzVHVMMzZBbmJRVl8tYWlZSXNRT2F1OGJ3?oc=5",
   "title": "What Warner Music Group Shares Improved Publishing Momentum Means For Shareholders",
@@ -34,6 +194,22 @@
   "topics": [],
   "score": 15,
   "firstSeen": "2026-10-17T10:38:24.667Z"
+ },
+ {
+  "id": "678313eeb36c1e73",
+  "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQc3dna1o4d3pDQ2xDOWU4NGpfRlBpaF9HLVRHbVJsNEdVd0xVLVl2NWlhc2lPS1YwZmphVk9ybzZFMFZ2LXFvaE5GT091V3ZFekdLRzlGRGhaaXBndEZTQThUaU1sUzNxWEhsWXB1ek9yaW1MV25FTmN0akxvZjhLLVl1d1JPdXpHYVV0RVhwWXNDOTJDRkRvZ1lqT28?oc=5",
+  "title": "Should Music Ads Launch Require Action From Meitu (SEHK:1357) Investors?",
+  "summary": "Should Music Ads Launch Require Action From Meitu (SEHK:1357) Investors? Yahoo Finance",
+  "source": "Yahoo Finance",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-17T07:17:35.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-10-18T10:59:41.641Z"
  },
  {
   "id": "87ae5675d3c90cc4",
@@ -3429,6 +3605,26 @@
   "firstSeen": "2026-10-16T11:18:23.860Z"
  },
  {
+  "id": "febff25216c68263",
+  "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNU3EtZUFzRURMVmdYa2hiU3I1dV8wMDBXTUhqTjVMOWVqVG1kbXYySXBKQWpia1RGYU1telFpU2xoT3Q1VU5qMFpYVzVqdjdsd2JpdlpabE5jd2lPMGxxQzJiVzQ4NjJIaE1FU3B1cEctdDluV25ZV0xhMkRFczdaRHB6T1FCOWFYQTJicmVRQWZfNWs5ajExbnExYzk4eDFicDRSUg?oc=5",
+  "title": "China Merchant Upgrades Tencent Music Entertainment to Buy From Hold, $10.50 Price Target",
+  "summary": "China Merchant Upgrades Tencent Music Entertainment to Buy From Hold, $10.50 Price Target Yahoo Finance",
+  "source": "Yahoo Finance",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-14T11:11:24.000Z",
+  "entities": [
+   "tencent-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 14,
+  "firstSeen": "2026-10-18T10:59:41.641Z"
+ },
+ {
   "id": "6f95fc2a89e68624",
   "url": "https://www.musicbusinessworldwide.com/summer-walker-sues-lvrn-for-fraud-asks-court-to-void-2017-deal-as-interscope-pursues-50m-claim-against-her-report/",
   "title": "Summer Walker sues LVRN for fraud, asks court to void 2017 deal as Interscope pursues $50M+ claim against her (report)",
@@ -4633,6 +4829,28 @@
   ],
   "score": 39,
   "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "0b7df0cb85a49320",
+  "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOazBRcjhZbDl0dE84aDMxdWwwT2hWZVU1SmhpUmVzS3AzMno3YXpoWVM2aGQ5NU01NmhGWlNnR2kxVndwSTM2YWxtb29XWTRzSmFZc3JzUzVnTm5ZeG5WbEpRWnNOM1l0THE3MXJVM0k0d3Z1ZkduMXR6ai1oUEY2V3VTNDM2OVF6UjZoak5vODFTVzZpUmx0R1hSTThfY0JGaHNuOHpYa3M?oc=5",
+  "title": "Tencent Music Entertainment Group to Report Third Quarter 2026 Financial Results on November 17, 2026",
+  "summary": "Tencent Music Entertainment Group to Report Third Quarter 2026 Financial Results on November 17, 2026 Yahoo Finance",
+  "source": "Yahoo Finance",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-13T10:00:00.000Z",
+  "entities": [
+   "tencent-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "earnings"
+  ],
+  "score": 20,
+  "firstSeen": "2026-10-18T10:59:41.641Z"
  },
  {
   "id": "69ab7833ea2766a6",
@@ -12107,6 +12325,26 @@
   "firstSeen": "2026-10-05T14:31:40.483Z"
  },
  {
+  "id": "e3c58f867099701c",
+  "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9odjRyMTBraWFkQks0aGtDdF9qeTJJanBtRGM3VXI4al9SdVlhX1V2ZjFERk00OXVzWWw1cFU5TEk0NmRFcy1CblhwOWEwS1puT0dWWlY3ZG5OTDJtRDNLY3ZIeUFIZlBfa0ZJZmM2SGQ5OWNpX0Rn?oc=5",
+  "title": "Sony Music AI Deepfake Takedowns Top 260K, Report Says",
+  "summary": "Sony Music AI Deepfake Takedowns Top 260K, Report Says Digital Music News",
+  "source": "Digital Music News",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-05T07:00:00.000Z",
+  "entities": [
+   "sony-music-entertainment"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 14,
+  "firstSeen": "2026-10-18T10:59:41.641Z"
+ },
+ {
   "id": "173a34341a3992bf",
   "url": "https://www.digitalmusicnews.com/2026/10/04/ed-sheeran-macklemore-replacement-atlanta/",
   "title": "Ed Sheeran Surprises Fans in Atlanta with a Possible Macklemore Replacement",
@@ -12363,6 +12601,28 @@
   ],
   "score": 15,
   "firstSeen": "2026-10-05T14:31:40.483Z"
+ },
+ {
+  "id": "adc751f0bb30363c",
+  "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNZFhiTU9PX2xkc1NlV094LXlRUDZZTzRnZGprczNaRlNzVHlTa3N6NWVNenp4MWhTQzJhTDdwaFlSbXM5ZVRjSi1mbF83NkhzSTNMbG1qSzYwMGdRM3gyVUhPOHZFYThSNnNkSlAyelZyUjEzYnNUTl9POUFXWDgwZld3T2xuc1dCc25ucTdoOTZRSko3TTlwbnMxWTl0Z0V2Y2NDM1lqZ1B2dw?oc=5",
+  "title": "Live Nation Pushes Back on States’ Renewed Bid for DOJ Settlement Records",
+  "summary": "Live Nation Pushes Back on States’ Renewed Bid for DOJ Settlement Records PYMNTS.com",
+  "source": "PYMNTS.com",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-04T15:50:54.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-18T10:59:41.641Z"
  },
  {
   "id": "8b508739808659bd",
