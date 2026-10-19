@@ -1,5 +1,706 @@
 [
  {
+  "id": "cb656bfa7f6be97a",
+  "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOcWczTG1HQ18tRDFVVGZ5ZHhXWm9BQW9laXpoTzZBVGJCWUl4Z2NOSUdPdlNlR0I4d0dPdkQzeGdCeWhkNFhSZWdoenJQaVFVZGx4Rm1DdkRlUjFMVzFnSUh5Wl85dzVxZ25QRUpsakh1Q09zRW9henczMElSb0k5eUU5aFNPLWRkWWJJX0FPcDlMc1lSOUVNeU11Y1FSY0RpTHc2Wl9YdWVrc0Z2WjhBaVBKLVVteWg0a3B3dzlMRFpKdw?oc=5",
+  "title": "Aussies desert local music, but foreigners are loving it",
+  "summary": "Aussies desert local music, but foreigners are loving it AFR",
+  "source": "AFR",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-19T13:01:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "07ec38bd727b5f4d",
+  "url": "https://musically.com/2026/10/19/umaw-wants-to-raise-the-bar-for-venue-policies-in-the-us/",
+  "title": "UMAW wants to ‘Raise the Bar’ for venue policies in the US",
+  "summary": "US union United Musicians and Allied Workers (UMAW) has launched its latest campaign, targeting “the worst practices at music venues across North America”. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "125f6ad21a3974f5",
+  "url": "https://musically.com/2026/10/19/youth-musics-latest-fund-targets-racial-inequity-in-the-arts/",
+  "title": "Youth Music’s latest fund targets racial inequity in the arts",
+  "summary": "British charity Youth Music has a new fund, and it has a clear aim: tackling racial inequity in the arts. The £2.4m fund will offer grants of up to £120k to organisations working on that challenge. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "28c981c1761d33a8",
+  "url": "https://musically.com/2026/10/19/digital-agency-round-raises-4m-funding-round-for-expansion/",
+  "title": "Digital agency Round raises £4m funding round for expansion",
+  "summary": "We’re used to writing about multi-million pound funding rounds for tech startups. Music marketing agencies… less so. Congratulations are thus due to Round Group, which works across music and entertainment, for a £4m round announced last week. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "330e46ab260d8f6a",
+  "url": "https://musically.com/2026/10/19/sync-startup-maia-universe-inks-more-deals-and-raises-funding/",
+  "title": "Sync startup Maia Universe inks more deals and raises funding",
+  "summary": "We’ve been keeping tabs on sync-licensing startup Maia Universe since the Swedish/UK firm was one of the winners of our 2024 Music Ally SI:X startups contest. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "cfa2856bbbd956d5",
+  "url": "https://musically.com/2026/10/19/musixmatch-acquires-songdex-and-blokur-owner-music-reports/",
+  "title": "Musixmatch acquires Songdex and Blokur owner Music Reports",
+  "summary": "Lyrics firm Musixmatch was founded 16 years ago, but has never bought another company… until now. It has announced the acquisition of Music Reports, the US firm that owns the Songdex copyright registry as well as rights and licensing firm Blokur. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "m&a"
+  ],
+  "score": 23,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "ec6332dd214564f5",
+  "url": "https://musically.com/2026/10/19/traditional-arabesk-music-is-proving-popular-with-young-turks/",
+  "title": "Traditional Arabesk music is proving popular with young Turks",
+  "summary": "In Türkiye, Arabesk music has been popular since the 1960s: a genre that wears its heart firmly on its sleeve with themes of yearning, grief and unrequited love. Which, as it turns out, is striking a chord anew with young Turkish listeners in 2026. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "bbde8559360f1668",
+  "url": "https://www.digitalmusicnews.com/2026/10/19/materia-music-anniversary-original-game-music/",
+  "title": "Materia Music Turns 10 as Deltarune Lands at #3 on Billboard’s Soundtracks Chart",
+  "summary": "Materia Music is turning 10, and the timing is hard to beat. A decade ago, original game soundtracks rarely made it past the game itself. Now the company behind Deltarune’s music has a #3 placement on Billboard’s Soundtracks chart. This article was created in collaboration with…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T12:16:55.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "17c580e5ea618883",
+  "url": "https://variety.com/2026/music/news/miley-cyrus-fires-back-criticism-hollywood-bowl-concert-1236916307/",
+  "title": "Miley Cyrus Fires Back at Criticism of Hollywood Bowl Concert and Considered Not Doing Second Show: ‘It’s Hard for Me to Stand Up Here’",
+  "summary": "Miley Cyrus has responded to criticism of her comeback Hollywood Bowl show on Friday night, telling the audience at Sunday’s concert that she almost didn’t come on stage. “I’ve never heard that I don’t put my heart into something,” Cyrus said in fan-captured video from the show.…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T12:09:11.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "4685b383e4e13ef8",
+  "url": "https://musically.com/2026/10/19/new-studies-explore-ai-expectations-jobs-impact-and-gender-gap/",
+  "title": "New studies explore AI expectations, jobs impact and gender gap",
+  "summary": "Beyond the AI-music debates that have been gripping our industry, there’s a lot to think about in terms of the other ways AI will affect our jobs and wider society. Several studies published in recent days offer new perspectives on that. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T11:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "f6fd7f8d22268a71",
+  "url": "https://news.pollstar.com/2026/10/19/no-stage-no-lighting-no-sight-in-the-dark-show-to-tour-uk-cathedrals/",
+  "title": "No Stage, No Lighting, No Sight: ‘In The Dark’ Show To Tour UK Cathedrals",
+  "summary": "“In The Dark” is a critically acclaimed show, performed entirely in darkness, founded by Andrea Cockerton in Cambridge in 2017. It grew from individual shows into a full London season in 2024, and now comes on tour into cathedrals and historic venues across the country for the f…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-19T10:48:43.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "ee81ca31d93cd229",
+  "url": "https://www.musicbusinessworldwide.com/sony-and-universal-ask-court-to-force-suno-investor-lightspeed-to-testify-about-the-legal-risk-of-training-data/",
+  "title": "Sony and Universal ask court to force Suno investor Lightspeed to testify about the ‘legal risk of training data’",
+  "summary": "The labels made their case in a filing in Boston federal court last Tuesday (October 13), opposing Lightspeed's motion to quash their subpoena. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T10:37:19.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 39,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "ba36e15d12704705",
+  "url": "https://www.musicbusinessworldwide.com/shakiras-las-mujeres-ya-no-lloran-tour-has-grossed-534m-to-date-as-her-13-show-madrid-residency-closes-with-more-than-700000-fans/",
+  "title": "Shakira’s Las Mujeres Ya No Lloran tour has grossed $534M to date… as her 13-show Madrid residency closes with more than 700,000 fans",
+  "summary": "Shakira's team said demand for tourism and accommodation generated by the residency outstripped that of events including Pope Leo XIV's visit to the city and Formula 1. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T10:36:13.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "597307a261f525fa",
+  "url": "https://www.musicbusinessworldwide.com/doj-sues-ticket-broker-reps-alleging-it-made-120-8m-profit-reselling-tickets-to-beyonce-concerts-and-other-shows-after-bypassing-limits/",
+  "title": "DOJ sues ticket broker REPS, alleging it made $120.8M profit reselling tickets to Beyoncé concerts and other shows after bypassing limits",
+  "summary": "According to the complaint, REPS bought more than eight tickets to each of at least 83,000 events between January 2022 and October 2025. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T10:35:44.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation",
+   "live"
+  ],
+  "score": 28,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "2aaf365906f35604",
+  "url": "https://www.musicbusinessworldwide.com/mike-sistad-and-evyn-mustoe-johnston-exit-ascap-nashville-after-a-combined-39-years-at-the-pro-report/",
+  "title": "Mike Sistad and Evyn Mustoe Johnston exit ASCAP Nashville after a combined 39 years at the PRO (report)",
+  "summary": "Sistad had worked at ASCAP since 2001, while Johnston joined the Nashville team in 2012. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T10:35:10.000Z",
+  "entities": [
+   "ascap"
+  ],
+  "types": [
+   "pro"
+  ],
+  "topics": [],
+  "score": 31,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "8effb05398e593b9",
+  "url": "https://www.musicbusinessworldwide.com/maree-hamblion-promoted-to-evp-ar-and-creative-australia-and-new-zealand-at-universal-music-publishing/",
+  "title": "Maree Hamblion promoted to EVP, A&R and Creative, Australia and New Zealand, at Universal Music Publishing",
+  "summary": "Hamblion, who is based in Sydney, will lead UMPG's creative and talent development strategy in both markets. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T10:34:01.000Z",
+  "entities": [
+   "umg",
+   "umpg"
+  ],
+  "types": [
+   "label",
+   "publisher"
+  ],
+  "topics": [],
+  "score": 51,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "e7ba3d9efb150bd0",
+  "url": "https://www.musicbusinessworldwide.com/uk-mps-press-cma-to-investigate-live-nations-market-power-before-the-end-of-2026/",
+  "title": "UK politicians press CMA to investigate Live Nation’s market power before the end of 2026",
+  "summary": "The House of Commons' Business, Innovation, Science and Trade Committee renewed the call on Sunday (October 18), citing what it described as Live Nation's \"dominance\" across promotion, venues, festivals, and ticketing Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T10:32:50.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live",
+   "policy"
+  ],
+  "score": 36,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "9342de2927468d65",
+  "url": "https://www.musicbusinessworldwide.com/dua-lipa-urges-judge-to-reject-samsungs-bid-to-throw-out-her-15m-tv-box-lawsuit-accusing-company-of-theft/",
+  "title": "Dua Lipa urges judge to reject Samsung’s bid to throw out her $15M TV box lawsuit, accusing company of ‘theft’",
+  "summary": "Dua Lipa is seeking at least $15 million in damages, plus punitive damages, legal fees, and a permanent court order barring Samsung from using her image. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T10:26:44.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 23,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "74aec2082f9b482e",
+  "url": "https://www.musicbusinessworldwide.com/drake-and-umg-sued-by-songwriter-who-claims-janice-stfu-chorus-is-literally-identical-to-his-demo/",
+  "title": "Drake and UMG sued by songwriter who claims ‘Janice STFU’ chorus is ‘literally identical’ to his demo",
+  "summary": "Aviel Calev Hirschfield alleges that the song's chorus is \"literally identical\" to one he completed in January 2026 and sent to producers who work with Drake. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T10:26:14.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 41,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "aeec8ced6889fdc0",
+  "url": "https://www.musicbusinessworldwide.com/90000-synthetic-tracks-a-day-why-deezer-is-handing-users-the-ultimate-ai-kill-switch/",
+  "title": "90,000 synthetic tracks a day: Why Deezer is handing users the ultimate AI ‘kill switch’",
+  "summary": "Fully AI-generated tracks now make up more than half of Deezer’s new deliveries on peak days, yet just 1% to 3% of its streams. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T10:21:55.000Z",
+  "entities": [
+   "deezer"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 35,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "e48ca9dc3128505d",
+  "url": "https://news.pollstar.com/2026/10/19/jack-johnson-announces-european-surfilmusic-tour-dates/",
+  "title": "Jack Johnson Announces European ‘Surfilmusic’ Tour Dates",
+  "summary": "Jack Johnson will bring the “Surfilmusic Tour” to Europe next summer for a run of dates, kicking off at the Tollwood Festival in Munich, Germany, June 23, and closing at Ageas Cooljazz in Cascais, Portugal, July 15. The “Surfilmusic Tour” will also visit the Netherlands, Belgium…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-19T10:21:22.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "987b1202347cbc91",
+  "url": "https://www.musicbusinessworldwide.com/musixmatch-acquires-songdex-owner-music-reports-as-it-looks-to-become-a-full-stack-rights-and-royalties-platform/",
+  "title": "Musixmatch acquires Songdex owner Music Reports, as it looks to become a ‘full-stack rights and royalties platform’",
+  "summary": "The deal marks the first acquisition in Bologna-based Musixmatch's 16-year history. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T10:20:46.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "m&a"
+  ],
+  "score": 23,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "a2a4b6c7ec144480",
+  "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPa0Z4NDI1TXE3bnpRdFJ2MVY5Q2VhcDJsMmE4Z3NYTTBVZjRHelJwNjRabU1ONTAwaFRfNVowVHFabXZtTnoxdGtCdnFwdmVsNUxWZXI4WlBWbkZ4OFBLcGZMMWpYSklfQ3ZJMVFaQnlzbzVUT1F2a1dIWGlkV3NXUC1zaEFTa00zSGkyRmo2R0ZfM1JsNk95S2MxZjQ5WUF4Nml5c1NRQWliQUZacFRpMF9waUVPQ1hCbWltOXBScw?oc=5",
+  "title": "UMG and Sony ask court to force DistroKid to hand over AI music data for Suno case",
+  "summary": "UMG and Sony ask court to force DistroKid to hand over AI music data for Suno case Music Business Worldwide",
+  "source": "Music Business Worldwide",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-19T10:20:15.000Z",
+  "entities": [
+   "distrokid",
+   "suno"
+  ],
+  "types": [
+   "distributor",
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 57,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "8b325127df527292",
+  "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQWjlCMHRSOW8xcDJ2WXlTUDVEMENtekFQVTdjQkZaeG9nMC1feGktamwxeEItSHNXcGRSM0Rka29ZbE45MTBtVTBwQUFpTm00LXlJQ0xyTjQ5V2tzZEtFc3hBMV9zTzl6SENlTlcyWndQUVFsdlZIeVE2M01wQnZrejVXNHRVNlFWX1Z6WVVjRjFmMXRialNkNGViWUZFWWZZb2s5WDJGZk1nb0ZCNU5LUHJRM0xwbmtNS2JIT043RnRCenNGSEVQcnQycUVBS3YwclZrQk5oTUJVRU5xS1VPb09Wa0F0ckM4QzRtaGxZcU5qQzRTS1VNUWZBR2o0ZVlvRF9fUjBLaw?oc=5",
+  "title": "Warner Music India acquires Gemini Music catalog, inks deals with filmmaker Gautham Vasudev Menon and Malayalam film company Magic Frames",
+  "summary": "Warner Music India acquires Gemini Music catalog, inks deals with filmmaker Gautham Vasudev Menon and Malayalam film company Magic Frames Music Business Worldwide",
+  "source": "Music Business Worldwide",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-19T10:19:55.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "catalog-deal",
+   "m&a"
+  ],
+  "score": 49,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "50ba70a43c22ea8a",
+  "url": "https://variety.com/2026/music/news/seventeen-jeonghan-joshua-jxj-debut-dreamscape-1236915561/",
+  "title": "Seventeen’s Jeonghan and Joshua Find Their JxJ Duo Sound on ‘Dreamscape’: ‘Right in the Middle Between Strong and Subtle’ (EXCLUSIVE)",
+  "summary": "For more than a decade, Seventeen’s Jeonghan and Joshua have shared the spotlight with 11 bandmates in one of K-pop’s best-selling groups. Now they get it to themselves with “Dreamscape,” their first album as the duo JxJ. The record is also Jeonghan’s first new music since he co…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T09:01:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "b771e2713f2e0274",
+  "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNWEx6dFBnWnhxQ1lOSm5tT1RFemhzVk9ndkd5bUMyZ0pleTFJMWQ1eFJHSllodkt6WFBKUk5PbDBQRVAzV01sUU1KRjU2Mk9US0s4MmlxZGhCVzJMQlVLWmxKYzBiUGN6aUstQ25aM1hKTkZPWi1PdE9lN2kxdGYyU1U1bjU4bUhVZWd5Qm1lSGRyQkZHNWRmemFpcldtQ2U3c2tITDhZcUM?oc=5",
+  "title": "Sony and Universal Demand DistroKid AI Music Upload Data in Copyright Battle",
+  "summary": "Sony and Universal Demand DistroKid AI Music Upload Data in Copyright Battle RouteNote",
+  "source": "RouteNote",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-19T08:46:02.000Z",
+  "entities": [
+   "distrokid"
+  ],
+  "types": [
+   "distributor"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 33,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "96bc3eef051c19cc",
+  "url": "https://www.digitalmusicnews.com/2026/10/18/cordae-lawsuit-anderson-paak-collab/",
+  "title": "Cordae Slapped with $25 Million Lawsuit Following Anderson .Paak Album Collaboration",
+  "summary": "Cordae is getting sued for $25 million over allegedly violating an exclusive recording agreement with his forthcoming Anderson .Paak collaboration project, Heavy is the Crown. Florida-based label MMMG Inc. has slapped rapper Cordae with a $25 million lawsuit for allegedly violat…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T04:28:14.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "0b4498ce1c100aeb",
+  "url": "https://www.digitalmusicnews.com/2026/10/18/drake-sued-over-janice-stfu/",
+  "title": "Drake Sued Over ‘Janice STFU’ by Producer Who Says Rapper Stole His Chorus",
+  "summary": "Drake is being sued for copyright infringement on his hit “Janice STFU” by a producer who says the rapper and his team “shamelessly refuse to acknowledge” his substantial contributions. Drake has been hit with a copyright infringement lawsuit over his hit song “Janice STFU” by a…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T04:12:55.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 36,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "63cbc820031237ad",
+  "url": "https://www.digitalmusicnews.com/2026/10/18/ed-sheeran-new-opener-charlotte/",
+  "title": "Ed Sheeran’s Politics-Free Loop Tour Quietly Adds Another Opener in Charlotte",
+  "summary": "Ed Sheeran quietly adds another little-known opener to his North American LOOP Tour, this time in TikTok star and singer-songwriter Zach Hood. Since embarking on the rest of his LOOP Tour solo, Ed Sheeran has been featuring lesser-known artists in the opening spot on the North A…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T04:06:45.000Z",
+  "entities": [
+   "tiktok"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 27,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "68e90b0bc5375362",
+  "url": "https://www.billboard.com/pro/universal-music-publishing-group-promotes-maree-hamblion/",
+  "title": "Universal Music Publishing Group Promotes Maree Hamblion to EVP of A&R and Creative in AUNZ",
+  "summary": "The executive, who recently signed Tones and I, will also build out a new writing room at the publisher’s Sydney base.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T03:05:34.000Z",
+  "entities": [
+   "umg",
+   "umpg"
+  ],
+  "types": [
+   "label",
+   "publisher"
+  ],
+  "topics": [],
+  "score": 46,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "a01a7b64f0f2c706",
+  "url": "https://www.billboard.com/pro/bmi-coral-gables-miami-office-opening/",
+  "title": "BMI Opens Coral Gables Office, Expanding Its Presence in Miami Area",
+  "summary": "The ribbon-cutting ceremony featured a performance by Zulia, who was introduced by Billboard's Leila Cobo.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T01:14:49.000Z",
+  "entities": [
+   "bmi"
+  ],
+  "types": [
+   "pro"
+  ],
+  "topics": [],
+  "score": 26,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "ae446e08e11a672c",
+  "url": "https://variety.com/2026/music/news/katseye-sophia-return-1236916064/",
+  "title": "Katseye Says They’re ‘So Proud’ of Sophia Ahead of Her Return to the Group: ‘She’s Our Sister’",
+  "summary": "Katseye is excited to welcome Sophia Laforteza back to the group after a brief hiatus. Members Lara Raj, Daniela Avanzini, Megan Skiendiel and Yoonchae Jeung shared their support for their “sister” on the carpet at the Victoria’s Secret Fashion Show on Sunday. “We are so happy t…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-18T23:47:38.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "68f6ed8e9f0c793b",
+  "url": "https://variety.com/2026/music/news/taylor-swift-the-life-of-a-showgirl-15th-week-no-1-chart-1236915983/",
+  "title": "Taylor Swift’s ‘The Life of a Showgirl’ Spends 15th Week at No. 1 on Albums Chart",
+  "summary": "Taylor Swift holds steady at No. 1 on the Billboard 200 as “The Life of a Showgirl” spends a 15th non-consecutive week atop the chart. This week, “Showgirl” earned an additional 87,000 equivalent album units thanks to its “Encore” edition, which touted four new tracks including…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-18T19:49:28.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "7cc5e2a49acc46e5",
+  "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNVGVqNHVYWTNPMDlHMzF5aUxScTFRYmhKZEYtOEI0QzJwQ3VaTl9JdnpxT190STJXaDFkaFczSjYxUHlsaUlzZ3pEdnhFRUhTWEdUaWJkcHAyN01QSWRJcGpPbzVvLTRvUWlhZkhCN3QxN3BpNVVsYkhZQWRNTHBraS0zb1lmSlZOeGFSZDBuek1VeFExVG9iQ3VfVE5pWVRHZFRuOUVIRlhQdFQ3V1E?oc=5",
+  "title": "Promising Music Stocks Worth Watching - October 18th",
+  "summary": "Promising Music Stocks Worth Watching - October 18th MarketBeat",
+  "source": "MarketBeat",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-18T18:07:35.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "1140437cc9c0235a",
+  "url": "https://variety.com/2026/film/news/taylor-swift-performance-academy-gala-five-songs-1236915817/",
+  "title": "Taylor Swift Fires Up Academy Gala With Four Songs in Her First Band Performance Since the Eras Tour",
+  "summary": "Taylor Swift got some of the old gang back together for her first full-band performance since the Eras Tour, delivering a four-song set to a black-tie audience Saturday night at the Academy Museum 6th Annual Gala. Conan O’Brien introduced her by saying, “It’s an insane, unpreced…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-18T18:05:24.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 33,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "9b6affd478108bbc",
+  "url": "https://variety.com/2026/music/news/chappell-roan-charli-xcx-boom-clap-los-angeles-1236915831/",
+  "title": "Charli xcx Brings Out Chappell Roan for ‘Boom Clap’ at Los Angeles Concert",
+  "summary": "As anyone who’s seen her in concert knows, Charli xcx is usually laser-focused on her current material and rarely looks back for more than a couple of songs. But she made an exception on Saturday night at the Kia Forum in Los Angeles, when she performed her 2014 breakthrough hit…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-18T17:53:29.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
+  "id": "75f3c08c353f7ff0",
+  "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPczRlZzRhMzcwbXZpaGlDSHNiTXJxYk4taVV5STJzRHpIZEVwakdXVjQ4eXZIdndxZHB5M19zWHlUbEJHcXRkSlI5alFTeHNEZE8zOXdyUGZxZzZhYTMyZjJHdHpiZF85YTdSU1lYOXdGa0ZYY0V0ZGVWRFE5NDdnbGh4NGJYNlM4WlV1WW1fanBBYVAtREUteWtDNmFsb21pMUhCSXdGdTB1ZmlPQXAtWVZFSXVQUGZhMmtRTk9QSWJBTVJIckdoeWdnNW1xUdIB0wFBVV95cUxPbFZOMVdTQXFLRjY3WnZ2NjlnN2RHamFLOWlPbGx0UkVzZ2k5cXo5aTEyREdGYWFrVnZneS0xaUcxYk13UXdNT3ptYk5EMWhxeGFuQlpmV3BFZVUtUkNFRzA2bTltRUFpX05uQ2FuVDJfX0tBNDltY19YOE8yUUd1ajdiak9lSkl6b0YwYnd5TktlbkFSaTgtaERFTkg3cXdRdEY1bEdJMGJIZEVuajJIZXlTNUhDV0t6LTRQZk53SnBuYzJfTFlNLTlfYlBOUXZsX2Zv?oc=5",
+  "title": "Warner Music Group (WMG) Draws Fresh Interest, Is A 17% Discount Still On Offer?",
+  "summary": "Warner Music Group (WMG) Draws Fresh Interest, Is A 17% Discount Still On Offer? Simply Wall Street",
+  "source": "Simply Wall Street",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-18T16:37:05.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
   "id": "55f0789f3e96412c",
   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9CV0lzeXEwOEdrMUhkb3Z0ODVNUDFyd19RelMycG85amM2bld6U2RZVEd3VXpqbm0zWEN2NEYtSElLVXpwRS1rRHVBdEZnSkNLdUVpa2g3RWZCVXM?oc=5",
   "title": "Funding for new 'Mackem' musical history project",
@@ -347,6 +1048,22 @@
   "firstSeen": "2026-10-17T10:38:24.667Z"
  },
  {
+  "id": "f0a3ab36acdcd054",
+  "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1tdndCUTdFRzluMHhUaDNnQ0Q2VWF0UEhRalBXem9KY1Y1SkFKMEdoaXJtb2lsc0tvTl9CcnNWbVhxYzdEdHB2ZEJOdUpxaG5OU1hzc1hSZVJ6UGpvOWNTcGd5QVFWdG5pbnVlOWdQUEV5Mi1wN0NvaXgtWFJJdw?oc=5",
+  "title": "WHY WE NEED RACIAL EQUITY IN ARTS FUNDING",
+  "summary": "WHY WE NEED RACIAL EQUITY IN ARTS FUNDING Youth Music",
+  "source": "Youth Music",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-16T23:42:12.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
+ },
+ {
   "id": "82e343af8afcb123",
   "url": "https://www.digitalmusicnews.com/2026/10/16/music-industry-hires-oct-16-2026/",
   "title": "Latest Music Industry Hires: Revolution Records, Pipeline, Angry Mob Music, UMG, Believe, Pophouse, Hybe",
@@ -435,6 +1152,29 @@
   ],
   "score": 18,
   "firstSeen": "2026-10-17T10:38:24.667Z"
+ },
+ {
+  "id": "7731866118934e6f",
+  "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOZWZ2bVRVSTA1SUF2QVZTd0FHdDlFRzU0STB2OWw4SjNqb21MbFRoUlhoX09UU1ZGam11dWJ3Y2lCRVAwOTR4Xy16WHo2OVYyOGh2cmRaMm1PWXFmSTRBcUV6Y0tzanpIckhQc1M2TEFranYxeFJwU1hZckhCTFBUbjB5TlRrRTg?oc=5",
+  "title": "SeatGeek Urges Rejection of Live Nation Settlement, Warns It Could Entrench Ticketmaster",
+  "summary": "SeatGeek Urges Rejection of Live Nation Settlement, Warns It Could Entrench Ticketmaster TicketNews",
+  "source": "TicketNews",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-16T20:40:44.000Z",
+  "entities": [
+   "live-nation",
+   "ticketmaster"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 41,
+  "firstSeen": "2026-10-19T13:06:31.357Z"
  },
  {
   "id": "1398357b53c345d8",
