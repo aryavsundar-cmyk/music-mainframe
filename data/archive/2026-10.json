@@ -1,5 +1,749 @@
 [
  {
+  "id": "7ab113ae7dd81d7b",
+  "url": "https://musically.com/2026/10/20/apple-acquires-team-behind-ultimate-audio-editor-for-musicians/",
+  "title": "Apple acquires team behind ‘ultimate audio editor for musicians’",
+  "summary": "One of the unexpected bonuses (for nosy journalists at least) of Europe’s Digital Markets Act is that big tech companies have to publicly disclose some of their acquisitions, with the details published on the European Commission website. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-20T11:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "m&a",
+   "policy"
+  ],
+  "score": 29,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "de26d945dbd8979a",
+  "url": "https://www.musicbusinessworldwide.com/jim-freeman-ex-amazon-prime-video-vp-joins-ticketmaster-as-cto-to-lead-ai-first-push/",
+  "title": "Jim Freeman, ex-Amazon Prime Video VP, joins Ticketmaster as CTO to lead ‘AI-first’ push",
+  "summary": "The Live Nation-owned company hired Rachel Smith from Block and ex-Disney executive Chuck Mortimore as SVPs. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-20T11:04:08.000Z",
+  "entities": [
+   "live-nation",
+   "ticketmaster"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 43,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "21ec3a64dbca4138",
+  "url": "https://www.musicbusinessworldwide.com/abbas-bjorn-ulvaeus-invests-in-maia-universe-as-sync-platform-strikes-deals-with-bmg-kobalt-and-wmg/",
+  "title": "Björn Ulvaeus invests in MAIA Universe, as sync platform strikes deals with BMG, Kobalt and WMG",
+  "summary": "MAIA has also secured investment from Max Martin's MxM, and the RMV studio team, led by Ludvig Andersson, son of ABBA member Benny Andersson. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-20T10:59:26.000Z",
+  "entities": [
+   "bmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 29,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "0bd3d4d672dfcd68",
+  "url": "https://www.musicbusinessworldwide.com/reservoir-acquires-billy-strayhorns-publishing-catalog-will-participate-in-jazz-composers-name-image-and-likeness-rights/",
+  "title": "Reservoir acquires Billy Strayhorn’s publishing catalog, will participate in jazz composer’s name, image, and likeness rights",
+  "summary": "The acquisition builds on a relationship between Reservoir and the estate (Billy Strayhorn Songs, Inc.) that dates back to 2014. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-20T10:47:50.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "catalog-deal",
+   "m&a"
+  ],
+  "score": 35,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "8ee0a88141702565",
+  "url": "https://news.pollstar.com/2026/10/20/olympia-events-appoints-karen-cmela-as-fb-director/",
+  "title": "Olympia Events Appoints Karen Cmela As F&B Director",
+  "summary": "Olympia Events, managed by Legends Global, has appointed Karen Cmela as Food & Beverage Director to lead the next phase of its in-house f&b operation. Cmela brings extensive experience across the hospitality, sports and live events sector, having held senior leadership roles at…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-20T10:14:57.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "7c259693a41ee6c5",
+  "url": "https://news.pollstar.com/2026/10/20/superstruct-launches-event-series-to-explore-brand-partnerships/",
+  "title": "Superstruct Launches Event Series To Explore Brand Partnerships At Festivals",
+  "summary": "Superstruct Entertainment has launched The Front Row, a new event series designed to give brands and agencies the opportunity to connect with live event audiences. As live entertainment grows in cultural significance and ecnonomic value, the opportunities for brands extend beyon…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-20T09:46:26.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "13d5dc2e8c3f15eb",
+  "url": "https://variety.com/2026/music/news/human-ai-music-label-raagverse-launches-janaa-hai-toh-jao-1236916309/",
+  "title": "Human-AI Indian Music Label Raagverse Launches With ‘Janaa Hai Toh Jao’ (EXCLUSIVE)",
+  "summary": "Raagverse, a new Indian music label that pairs human songwriting with AI production tools, will release its first album, “Janaa Hai Toh Jao,” on Oct. 20. The label is the latest venture from Amita Madhvani, CEO of Equinox Virtual, which she co-founded with Ram Madhvani. Equinox…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-20T05:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "77d7d1c626ae7f3d",
+  "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxONDh4aFUzZTkwOUZzaVZNN2VVdkVfV0NHNUNLeUVLaXpvcjJXZFpUeFNRNnVMaFBJbS1jazRQcFNIbGNPVFFtS3h2RHZDRGwtVnFRSjJ0RzVSWi1zbjB3S1l2R0JaQ0R2Yk5CNXA4SzEzNXRxR0gzY1dGa2FhRVgzOUR3Tl81bWdCVUVPN3NIemFoZ3ZUVURZLXFKTXVuMlpRTm9mZTdhVjM5Y3JiSkdz?oc=5",
+  "title": "Hit Songs, Empty Pockets: The Hidden Math Behind India's Viral Music Boom",
+  "summary": "Hit Songs, Empty Pockets: The Hidden Math Behind India's Viral Music Boom NDTV",
+  "source": "NDTV",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-20T02:58:41.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "a588cee2efc6db58",
+  "url": "https://www.billboard.com/pro/believe-romain-vivien-expands-global-head-music-role/",
+  "title": "Romain Vivien Expands Duties as Believe’s Global Head of Music",
+  "summary": "Vivien will now directly lead the French company's EMEA, Americas and APAC regions.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T23:14:23.000Z",
+  "entities": [
+   "believe"
+  ],
+  "types": [
+   "artist-services"
+  ],
+  "topics": [],
+  "score": 18,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "35f59e980d24f112",
+  "url": "https://www.billboard.com/pro/beyonce-alien-superstar-case-label-blasts-lawsuit-sample/",
+  "title": "Beyoncé’s Label Condemns Second ‘Objectively Baseless’ Lawsuit Over ‘Alien Superstar’ Sample",
+  "summary": "Parkwood Entertainment is urging a judge to end the case permanently — and punish the plaintiff with monetary sanctions.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T22:33:31.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "804168dd94a0bac2",
+  "url": "https://variety.com/2026/music/news/bob-buziak-dead-rca-records-president-1236916935/",
+  "title": "Bob Buziak, Former President of RCA Records and Sony’s Tristar Music Group, Dies at 83",
+  "summary": "Bob Buziak, former president of both RCA Records and Sony’s TriStar Music Group, died on October 19, a rep confirms to Variety. No cause of death was announced; he was 83. Buziak was best known for reviving RCA’s fortunes in the 1980s with hit albums by Bruce Hornsby, Eurythmics…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T22:06:34.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "61ea9a427c0d6636",
+  "url": "https://www.billboard.com/pro/mariah-carey-wins-dismissal-brother-defamation-lawsuit/",
+  "title": "Mariah Carey Wins Dismissal of Brother’s Defamation Lawsuit Over Bestselling Memoir",
+  "summary": "The singer's lawyer says she's \"gratified\" by the court ruling. Her brother, Morgan Carey, plans to appeal.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T21:40:55.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "a67f3a79728b332c",
+  "url": "https://variety.com/2026/music/news/role-model-jake-shane-renee-rapp-concert-report-1236916776/",
+  "title": "Role Model Shouts Out Jake Shane and Renee Rapp, Channels Chuck Timely on Final North American Tour Date: Concert Report",
+  "summary": "Without stretching the metaphor too far, Chuck Timely’s hourglass was closer to running out than he might have thought: While the second of two Los Angeles dates of Role Model’s “Chuck on Tour” jaunt in support of his third studio album — titled (naturally enough) “Chuck Timely…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T21:37:29.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "33125d20f4d2d877",
+  "url": "https://www.billboard.com/pro/black-music-action-coalition-statement-music-layoffs/",
+  "title": "Diversity ‘Is a Profitable Business Strategy, Not Charity’: Black Music Action Coalition Weighs in on Recent Industry Layoffs",
+  "summary": "\"Somewhere out there is the next Berry Gordy, Sylvia Rhone or Andre Harrell. We have to make sure they get their shot.”",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T21:32:55.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "01d55eb732d41d6e",
+  "url": "https://www.billboard.com/pro/music-industry-change-how-does-business-guest-column/",
+  "title": "Culture Can’t Be Consolidated: Why the Music Industry Must Reconsider How It Does Business (Guest Column)",
+  "summary": "Amid a growing emphasis on data and market share, the business is forgetting the importance of ownership, cultural connection and investment in people.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T21:14:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "b37997bc5eb216f1",
+  "url": "https://news.pollstar.com/2026/10/19/the-wombats-announce-north-american-leg-of-love-loss-desperation-anniversary-tour/",
+  "title": "The Wombats Announce North American Leg Of ‘Love, Loss & Desperation’ Anniversary Tour",
+  "summary": "The Wombats have added a run of North American dates to their 2027 schedule as they prepare to hit the road in celebration of “Twenty Years Of A Guide to Love, Loss & Desperation.” The English indie rock band’s debut album includes the fan favorite tunes “Let’s Dance to Joy Divi…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-19T21:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "0468374d255e66ac",
+  "url": "https://variety.com/2026/artisans/news/kris-bowers-composer-original-score-hexed-disney-1236916751/",
+  "title": "Kris Bowers Set to Compose Original Score For Disney’s Animated Feature ‘Hexed’ (EXCLUSIVE)",
+  "summary": "Academy Award winning composer Kris Bowers is set to score the music for the upcoming Disney animated feature “Hexed.” The film stars Hailee Steinfeld, Rashida Jones, Jodie Foster and Walton Goggins in a magical coming-of-age saga. “Hexed” follows an unconventional teenage girl…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T19:48:06.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "bc6d973390bbe843",
+  "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOa2hLeXRlc2F0ZzcxTTNkQlZlb3dzSW1mQ1hlU0x3U0tJRmNjb1o2eldfeTk2WjgweDREeW9PTWZGOUVEaXM3cWt0SWhTY2JYcWJ5R015RjJqWGFPZGxfYjF4b2VMd3ZPa2luc3VnMUZISUMxTkE2LTFncUhZRzJkZlpIcnNFRi16WWRtaTNZemlaSWNVMEpMSG5ZNEg0eU1yTlBIUDRqZlZ5MmNBa3R0cEhyVko1azJT?oc=5",
+  "title": "My Chemical Romance Signs Exclusive Worldwide Publishing Deal With Warner Chappell Music",
+  "summary": "My Chemical Romance Signs Exclusive Worldwide Publishing Deal With Warner Chappell Music 95.9 The Rat",
+  "source": "95.9 The Rat",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-19T19:37:38.000Z",
+  "entities": [
+   "warner-chappell"
+  ],
+  "types": [
+   "publisher"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "c2ed8770a9f73f91",
+  "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNU2xzaTJ6SEdmSVoyMUhvRWRyMTNqR2R6SlNwMFpLZndMSXFEUE1raDQtTzhYVlgtY200Tk5UWUhvVFJLTU5nLWVvQXZkRzQ5aTg5UFc1bG4xZXVtcnNxdWFpSGhma1N4MTlTYWpxejRyT2M0a24tMk85d0RTREtrdHUzT0JhYU5PWjRPX1JfNW53WWdRTGFwLW5KNVg?oc=5",
+  "title": "Music Stocks To Research - October 19th",
+  "summary": "Music Stocks To Research - October 19th MarketBeat",
+  "source": "MarketBeat",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-19T19:30:58.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "47cf48900fd258d7",
+  "url": "https://www.musicbusinessworldwide.com/i-have-a-new-outlook-now-its-supposed-to-be-fun-its-not-supposed-to-be-scary/",
+  "title": "‘I HAVE A NEW OUTLOOK NOW: IT’S SUPPOSED TO BE FUN; IT’S NOT SUPPOSED TO BE SCARY’",
+  "summary": "Music school dropout Sasha Alex Sloan has already co-written hits with three of the biggest (and most influential) pop stars of the last few years – Camila Cabello, Charli XCX, and Olivia Rodrigo. And she’s only just getting started… Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T19:25:20.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "e33bf815eb7ad598",
+  "url": "https://news.pollstar.com/2026/10/19/rolling-loud-india-lineup-topped-by-burna-boy-metro-boomin-karan-aujla-skepta-dec-12-13/",
+  "title": "Rolling Loud India Lineup Topped By Burna Boy, Metro Boomin, Karan Aujla, Skepta Dec. 12-13",
+  "summary": "Rolling Loud India has announced its lineup, topped by Bruna Boy, Metro Bomin, Karan Aujla and Skepta Dec. 12-13 in Mumbai. The event marks first-time Indian performances for multiple artists on the bill, notably including Burna Boy, Metro Boomin and Skepta. “One thing that real…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-19T19:01:44.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "policy"
+  ],
+  "score": 16,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "63520889e997d3ba",
+  "url": "https://www.billboard.com/lists/d4vd-murder-case-timeline-celeste-rivas-hernandez-death/",
+  "title": "D4vd Murder Case: A Timeline of the Investigation & Charges Over Celeste Rivas Hernandez’s Death",
+  "summary": "Billboard is tracking developments in the singer's criminal case for allegedly killing the 14-year-old and dismembering her body.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T18:32:36.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "e645aeeb946980a0",
+  "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNcXpobGxGVkxEMmNFdWlaQWo3UWliSHZqTlB5a00tMy1wSXJpQ2hMeWVxR1FqWmhEcHJqMEpydVRtcFppSUdKb1RzZ0xSUlExODdySWVMOW0tejIxSE1vbGUtS0lZQUVWc014dm1rTXp5M2ttQnFNTXpRWWJKazBrTTduYmo1TjNKV2J5Nw?oc=5",
+  "title": "UMG, Sony Sue DistroKid to Reveal Scale of Suno and AI Music",
+  "summary": "UMG, Sony Sue DistroKid to Reveal Scale of Suno and AI Music Hypebot",
+  "source": "Hypebot",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-19T18:20:49.000Z",
+  "entities": [
+   "distrokid",
+   "suno"
+  ],
+  "types": [
+   "distributor",
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 44,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "74bc2624575e4754",
+  "url": "https://variety.com/2026/music/news/dolly-parton-candlelight-tribute-concert-la-buy-ticekts-1236916659/",
+  "title": "Dolly Parton to Be Celebrated at L.A. Tribute Concert Featuring Instrumental Renditions of ‘Jolene,’ ‘9 to 5’ and ‘I Will Always Love You’",
+  "summary": "Just two months after Dolly Parton’s death, fans will have another opportunity to celebrate the country music legend’s extraordinary catalog. Fever’s popular Candlelight concert series is bringing a tribute to Parton to the Ritz-Carlton in Marina del Rey on Oct. 30, featuring cl…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T17:47:46.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "catalog-deal"
+  ],
+  "score": 22,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "4b3d8bd01b64594e",
+  "url": "https://www.billboard.com/pro/ade-amsterdam-2026-jan-willem-van-de-ven-interview/",
+  "title": "As ADE Turns 30 This Week, Its Managing Director Reflects on Dance Music as ‘An Emotions Industry’",
+  "summary": "ADE 2026 happens in Amsterdam this week, Oct. 21-24.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T17:32:20.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "3b9388348e3c84c9",
+  "url": "https://completemusicupdate.com/the-three-big-debates-around-music-and-generative-ai/",
+  "title": "The three big debates around music and generative AI",
+  "summary": "This Friday, CMU’s Chris Cooke will join a panel discussion at Un-Convention on music and AI. Generative AI models that output music pose lots of questions for the music industry, which can make such discussions complex. Here we organise all the questions and issues into three b…",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T17:05:25.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "f1b50e6073d2d44c",
+  "url": "https://news.pollstar.com/2026/10/19/tinashe-announces-2027-the-show-must-go-on-tour/",
+  "title": "Tinashe Announces 2027 ‘The Show Must Go On’ Tour",
+  "summary": "Tinashe has announced the 2027 “The Show Must Go On” tour, with the first stop scheduled for Dallas on April 14. The multi-platinum-selling singer, songwriter, producer and DJ will then travel to major cities, including Atlanta, Philadelphia, Vancouver, Seattle, Los Angeles and…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-19T16:39:26.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "7704827568b66b32",
+  "url": "https://www.musicbusinessworldwide.com/aaron-bay-schuck-the-only-way-to-properly-create-value-in-music-is-to-make-lasting-copyrights/",
+  "title": "‘The only way to properly create value in music is to make lasting copyrights.’",
+  "summary": "Newly confirmed as sole Chairman and CEO of Warner Records Group, Aaron Bay-Schuck tells MBW why patience beats volume, why WMG needs two frontline label groups, and why the AI flood only makes a very human record company worth more... Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T16:35:28.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "a984467dce5aa934",
+  "url": "https://www.billboard.com/pro/alberto-brigado-prime-culture-management-bibi-pawsa-anotr/",
+  "title": "Inside Prime Culture, the Dance Music Management Company Turning Underground Talent Into Global Headliners",
+  "summary": "Alberto Bragado built Prime Culture to focus on culture over commerce, with the company now offering event production, A&R and agency services for a roster including Michael Bibi, PAWSA and ANOTR.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T16:24:17.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "46bd6768b398afda",
+  "url": "https://news.pollstar.com/2026/10/19/papa-roach-adds-2027-rise-of-the-roach-us-tour-joined-by-ice-nine-kills-ninth-key/",
+  "title": "Papa Roach Adds 2027 ‘Rise Of The Roach’ US Tour, Joined by Ice Nine Kills, Ninth Key",
+  "summary": "Papa Roach has announced a lengthy 2027 US run as part of its global infestation known as the “Rise of the Roach Tour.” The 30-date across the United States follows up on 2025’s 34-stop of the same title, promising “an unforgettable night of high energy rock and metal spectacle…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-19T16:04:20.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "2315de267806ea08",
+  "url": "https://variety.com/2026/biz/news/ticketmaster-all-in-ai-amazon-exec-chief-technology-officer-1236914016/",
+  "title": "Ticketmaster Goes All-In on AI, Names Ex-Amazon Exec as Chief Technology Officer",
+  "summary": "Bot attacks have plagued Ticketmaster for years, so to combat it, the ticketing service is shaking up its executive ranks and going all-in on AI. Ticketmaster has hired Jim Freeman as its chief technology officer, filling a slot left vacant since February after its London-based…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T16:00:00.000Z",
+  "entities": [
+   "ticketmaster"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 25,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "6d7bf9efb3d931f1",
+  "url": "https://news.pollstar.com/2026/10/19/veteran-promoter-jason-legassie-launches-off-the-rails-presents-booking-otr-boston-worcester-more/",
+  "title": "Veteran Promoter Jason Legassie Launches Off The Rails Presents, Booking OTR Boston, Worcester, More",
+  "summary": "Veteran concert promoter Jason Legassie has announced the launch of Off The Rails Presents, a Massachusetts-based independent concert promoter booking venues including Off The Rails Worcester and the new 400-capacity Off The Rails Boston. Legassie will serve as vice president an…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-19T16:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "d2a2b9087edfd26c",
+  "url": "https://news.pollstar.com/2026/10/19/top-tours-north-american-stadium-shows-earn-foo-fighters-top-live75-debut/",
+  "title": "Top Tours: North American Stadium Shows Earn Foo Fighters Top Live75 Debut",
+  "summary": "The LIVE75 chart features a debut appearance in the top 10 by Foo Fighters, based on ticket sales at four sold-out concerts in North American stadiums during the band’s “Take Cover Tour.” With a total of 146,202 tickets sold, the group averaged 36,550 tickets per concert, the mo…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-19T15:52:35.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "a7e2ce1fd42ea0a7",
+  "url": "https://news.pollstar.com/2026/10/19/bon-jovi-announces-new-stadium-dates-for-forever-tour/",
+  "title": "Bon Jovi Announces New Stadium Dates For ‘Forever Tour’",
+  "summary": "Rock and Roll Hall of Famers Bon Jovi will bring the “Forever Tour” to six more stadiums — and BST Hyde Park — next year. The iconic band returned to the stage in 2026 with a sold-out run of nine shows at Madison Square Garden, three at Wembley Stadium and one-offs at both Dubli…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-19T15:49:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "ef6c819845a50b67",
+  "url": "https://variety.com/2026/legit/columns/rosie-odonnell-kristin-chenoweth-dance-moms-parody-musical-reading-1236916332/",
+  "title": "Rosie O’Donnell and Kristin Chenoweth Join ‘Dance Moms’ Parody Musical Reading (EXCLUSIVE)",
+  "summary": "Rosie O’Donnell and Kristin Chenoweth have joined the cast for a reading of “The Pyramid: An Unauthorized ‘Dance Moms’ Musical.” O’Donnell is said to be playing embattled instructor and series star Abby Lee Miller while Tony winner Chenoweth will take on the role of Cathy Nesbit…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T15:45:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "a2b567e7cdeb86d4",
+  "url": "https://www.billboard.com/pro/supreme-court-wont-overturn-vetter-ruling/",
+  "title": "Supreme Court Won’t Overturn Landmark Music Copyright Termination Ruling",
+  "summary": "The justices used a rare maneuver to uphold a ruling for songwriter Cyril Vetter that major music companies have warned will cause \"chaos\" for the industry.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T15:39:55.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "0f541e77a946b086",
+  "url": "https://www.musicbusinessworldwide.com/majors-and-bmg-lose-supreme-court-fight-over-songwriters-worldwide-copyright-reclaims-on-a-technicality/",
+  "title": "Majors and BMG lose Supreme Court fight over songwriters’ worldwide copyright reclaims – on a technicality",
+  "summary": "Their challenge ended on Monday (October 19) without the court ruling on its merits, after four of its nine justices sat the case out Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T15:10:56.000Z",
+  "entities": [
+   "bmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 32,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "de8f0c23259c9c84",
+  "url": "https://news.pollstar.com/2026/10/19/meek-mill-announces-dream-chasers-nights-one-night-only-hometown-show/",
+  "title": "Meek Mill Announces ‘Dream Chasers Nights,’ One-Night-Only Hometown Show",
+  "summary": "Meek Mill announces “Dream Chasers Nights: Meek Mill & Friends,” a one-night-only hometown show celebrating Philadelphia and “the music that shaped his journey,” going down at the Xfinity Mobile Arena on Nov. 24 in partnership with Live Nation Urban. The Philadelphia performance…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-19T15:07:01.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 25,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "5f370f2168c554c2",
+  "url": "https://www.musicbusinessworldwide.com/believe-expands-romain-viviens-role-as-global-head-of-music-with-three-regional-presidents-now-reporting-to-him/",
+  "title": "Believe expands Romain Vivien’s role as Global Head of Music, with three Regional Presidents now reporting to him",
+  "summary": "Vivien will now directly lead the company's three geographic regions – EMEA, the Americas, and APAC – and drive its strategic partnerships Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-19T14:38:02.000Z",
+  "entities": [
+   "believe"
+  ],
+  "types": [
+   "artist-services"
+  ],
+  "topics": [],
+  "score": 18,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "ca12336619f28ba7",
+  "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxONUVSVjUzYUVWQTRKdWNnTXdIYk9BMFp3VHFWbFVPMnNJNTNKcUhTVFZHR0syV05vaHpzdUI3YXZ5YTBBd2lCMDJuUDBQdGo4a0c0YkhGWjYzWXlzOEFiT1J2VGhuZlpRNE13dk9oNFhTOHVsMkRzR29MVV9QYUplcWY5VWViQnF3OFlzT0FRZkNCdzZNa1RvQ192eDRFQWtGT21RckVxdERicE44SEpiZnFIa3FyeFpRdFJkaWdmZzNCUXR4MVF3dkREcXVSRGVoUWc?oc=5",
+  "title": "Warner Music India Strengthens Presence With Catalog Acquisition And Partnerships In South India",
+  "summary": "Warner Music India Strengthens Presence With Catalog Acquisition And Partnerships In South India CelebrityAccess",
+  "source": "CelebrityAccess",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-19T13:22:04.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "catalog-deal",
+   "m&a"
+  ],
+  "score": 44,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
+  "id": "0edee536fd0d9500",
+  "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNWnBQS3NUcEVDOUZPYWFFbDViNHN3WFozNmcwQzd1cTd6b2lla1NfTkplWEYwSHAzcFZyNXdmbEQzUVFTMXRRU0ZZVDBXcm85X09sbzlNamw3Qjlfa3VaNGlFWVRaeUxQcU0tMnFuSk4xSm8tRjNKSWZNT1UyQ09aM2Z0eWk0YUdKdFVqQnlGQ0V2THhpY25xT2o2WGtQd253UTVJTl9tNUdac3RSUkJLWQ?oc=5",
+  "title": "Musixmatch Acquires Music Reports, Songdex and Blokur in Major Music Royalties Deal",
+  "summary": "Musixmatch Acquires Music Reports, Songdex and Blokur in Major Music Royalties Deal RouteNote",
+  "source": "RouteNote",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-19T13:19:07.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "m&a"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
   "id": "cb656bfa7f6be97a",
   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOcWczTG1HQ18tRDFVVGZ5ZHhXWm9BQW9laXpoTzZBVGJCWUl4Z2NOSUdPdlNlR0I4d0dPdkQzeGdCeWhkNFhSZWdoenJQaVFVZGx4Rm1DdkRlUjFMVzFnSUh5Wl85dzVxZ25QRUpsakh1Q09zRW9henczMElSb0k5eUU5aFNPLWRkWWJJX0FPcDlMc1lSOUVNeU11Y1FSY0RpTHc2Wl9YdWVrc0Z2WjhBaVBKLVVteWg0a3B3dzlMRFpKdw?oc=5",
   "title": "Aussies desert local music, but foreigners are loving it",
@@ -2518,6 +3262,24 @@
   "firstSeen": "2026-10-17T10:38:24.667Z"
  },
  {
+  "id": "e18419d7e730e775",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBFVmxiVFBKWXRaNWl1enhxcHdBTWZJQ0hqR1Zld3ZVTkFLMmk1NWFwZXRaSWFuanNjYVRuaU5lNEJHTFI1dFZ4bjFxUGRtbE9Pb3ZER2xPX3FyUl9tcVRSby1za3dyN0NHYk5R?oc=5",
+  "title": "Music Lawsuit United States of America: 2026 Case Guide",
+  "summary": "Music Lawsuit United States of America: 2026 Case Guide LawFold.com",
+  "source": "LawFold.com",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-15T18:38:57.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 10,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
+ },
+ {
   "id": "00d7368d05d24884",
   "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNUUpBTm8xNVAzSmxTX2ZOejV2cU1HSGwwTTVGbklMeUlCeDFfQVBmNTRKTVl6YmFSSEF1czUwZElUVktXa250QmNFcXltRGxGOGx4TVpZU1RBTWhDUG1JNDVsTHd4UnNMUktBMklRR2N1cGgzMWVCeFItVTYzWkxMVURVekpFU2QyeWF6OThBZGJwejJNLThfc005WWszY2VVcUxVbVVRejNKMG9tOEh2aWRPelpDYTJIb21zaHFoQ1h2eXNTdUF3cUJMeWctRi13MkJBVXRMM0ZaRzNxUi03N2M2QXE?oc=5",
   "title": "Judge presses states to negotiate after DOJ’s shock Live Nation-Ticketmaster deal — but holdout AGs push for mistrial",
@@ -3432,6 +4194,26 @@
   ],
   "score": 16,
   "firstSeen": "2026-10-15T11:23:32.273Z"
+ },
+ {
+  "id": "aab04cb2e1a09e34",
+  "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQWUVJRmhEMzZETGVGOXJabHVST1ZReWpBX0NKSzRzU2hmcDM0RTM1UkJRVWppVkFWSXZ3VDh3eUx1T3pmSmlPWkdzamQ2cXNNM3NBc28wU3NUNF9vVjJaQnV4ZlNPNzlWaUtKZXZqaU5aLWhIVlNHMkg4RVhDeTlIdUxJa3J5WFF2Tkg3UUl3MTVCVmU1?oc=5",
+  "title": "Spotify brings audiobooks to Kenya at Sh489 a month",
+  "summary": "Spotify brings audiobooks to Kenya at Sh489 a month TechTrendsKE",
+  "source": "TechTrendsKE",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-15T04:04:35.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 14,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
  },
  {
   "id": "30987f9647183706",
@@ -5607,6 +6389,22 @@
   "topics": [],
   "score": 15,
   "firstSeen": "2026-10-13T14:07:03.238Z"
+ },
+ {
+  "id": "c08465dbb156dbfc",
+  "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPWXZVMHhqMmU4cnRjbmpuUnlGMVZrUVJreWxfRUdianQza1pDQ1Y1cVRhZDNKdU9UbDNFM2ExU3V2MU5uM3h0U2NQQUUtdk9wVlUwWXpqUmNsNWRNbnhWem14dGZjRllMVU1pVHBKZTNFeGNReVV3OEhZN3l2U2tTYjduS19remJxSi1PVGVSaGxZSDZxdm5hTXhOZGJaVHY3ZjdiU0dEQndiN0JzVEl4cDFkODZST1pOR0tjNEpFeFlFUnhyRGJfYkVSNUQ4UXlmaTR2cDR3a9IB3AFBVV95cUxPeVlrYW8wR09iVl9DYjU1ZkU1NTFvUDdOQ2FmSmJSNnM0dzJhTDdYOTdoOTlQR1BCZlV6eGdMbUJWME5ocHl1ZFg0Y1RQWDlmRlVjUVpWcUJOanR2QnZTTlphNGgwLWJyUS14bkVhUzljTklGUks4bVM2NXV3UTRreEdHdmZ1WDFwLUZwWGhyUm9RaE5JcWpqbk5LdUgwSjJkc21iNWlkei1xcFh4T2Y2NkV2NkQ5bV9ZeWNlLWlubVN3MUY2SkV5VVVpanZ0SnF0bWZFcE5DaC1VUnA4?oc=5",
+  "title": "Music Australia Export Development Fund: International Performance and Touring Activity (Category 1) - fundsforNGOs",
+  "summary": "Music Australia Export Development Fund: International Performance and Touring Activity (Category 1) fundsforNGOs - Grants and Resources for Sustainability",
+  "source": "Grants and Resources for Sustainability",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-13T07:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 0,
+  "firstSeen": "2026-10-20T11:31:20.459Z"
  },
  {
   "id": "3973375082faf227",
