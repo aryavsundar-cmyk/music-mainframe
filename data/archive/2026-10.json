@@ -1,5 +1,1332 @@
 [
  {
+  "id": "04ddc089c2d6f323",
+  "url": "https://www.musicbusinessworldwide.com/spotify-is-on-course-for-a-3-3b-annual-operating-profit-in-2026-after-adding-6m-subscribers-in-q3/",
+  "title": "Spotify is on course for $3.3B annual operating profit in 2026 – after adding 6M subscribers in Q3",
+  "summary": "Spotify published its financial results for Q3 2026 (the three months to the end of September) earlier today (October 22). Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-22T11:40:03.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "dsp-economics",
+   "earnings"
+  ],
+  "score": 41,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "5f2926e1210da693",
+  "url": "https://variety.com/2026/music/global/mark-ronson-amy-winehouse-back-to-black-20-tribute-show-1236919513/",
+  "title": "Mark Ronson, Jessie Reyez, Jorja Smith and More Celebrate Amy Winehouse for the Musical Genius She Was at ‘Back to Black’ 20th Anniversary Show: Concert Review",
+  "summary": "At the “Back to Black” 20th anniversary concert in London on Wednesday night, Amy Winehouse’s essence was everywhere. The eager crowd lined up outside was full of winged eyeliner, leopard print, big hair and cigarette smoke; nary a vape in sight. Even the venue itself — the Roun…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-22T11:34:37.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "13209a9f96ce0dab",
+  "url": "https://musically.com/2026/10/22/anthropic-takes-on-meta-muse-and-openai-dots-with-claude-duet/",
+  "title": "Anthropic takes on Meta Muse and OpenAI Dots with Claude Duet",
+  "summary": "It’s a strange moment for AI and humanity. Lots of headlines about how unregulated frontier-models could kill us all in the next decade – but of course, the big AI firms have some ideas on how that regulation should work – and growing unrest around the impact of the data centres…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-22T11:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "bd557f7b093167dd",
+  "url": "https://musically.com/2026/10/22/arijit-singh-karan-aujla-to-co-headline-shah-rukh-khan-curated-music-fest-in-abu-dhabi/",
+  "title": "Arijit Singh, Karan Aujla to co-headline Shah Rukh Khan-curated music fest in Abu Dhabi",
+  "summary": "Hindi film and Punjabi-language music are the two most-streamed categories on Indian DSPs and now the highest-played artists in those segments, Arijit Singh and Karan Aujla, will co-headline a music […] The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-22T11:25:14.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "39485abc6746c6c1",
+  "url": "https://musically.com/2026/10/22/universal-music-aims-for-grammy-glory-with-new-cross-cultural-act-indilat/",
+  "title": "Universal Music aims for Grammy glory with new cross-cultural act IndiLat",
+  "summary": "Universal Music India has launched IndiLat, a new cross-cultural act made up of composer-producers Siddhant Bhatia and Raghav Mehta from India, Cristóbal “Tibo” Gajardo from Chile, and Raniero Palm from […] The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-22T11:15:25.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 29,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "046cf99c1ed1c5da",
+  "url": "https://musically.com/2026/10/22/spotify-q3-2026-financial-results/",
+  "title": "Spotify Q3 2026 financial results reveal double-digit revenue and subscriber growth",
+  "summary": "Spotify is closing in on the milestone of 800 million active users this side of Christmas, based on its Q3 2026 financial results. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-22T10:22:19.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "earnings"
+  ],
+  "score": 33,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "e3b16f1670f10e58",
+  "url": "https://variety.com/2026/music/news/spotify-q3-2026-earnings-results-paid-subscribers-1236919528/",
+  "title": "Spotify Hums Along in Q3, Reaching 306 Million Paid Subscribers: ‘There Is More Runway Ahead’",
+  "summary": "Spotify hit the mark on all its key targets in the third quarter of 2026, as the streaming-audio giant packed on 6 million subscribers in the period — to reach 306 million — and saw healthier growth in ad revenue. On the free, ad-supported side, Spotify added a net 11 million mo…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-22T10:15:41.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "dsp-economics"
+  ],
+  "score": 35,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "cdf0283cdc6e1696",
+  "url": "https://www.billboard.com/pro/spotify-q3-earnings-report-subscriber-gains-revenue-growth/",
+  "title": "Spotify Subscriber Gains Beat Expectations, Driving Double-Digit Revenue Growth in Q3",
+  "summary": "\"This was a quarter where we did what we said,\" said Spotify Co-CEO Alex Norström.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-22T10:01:00.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 27,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "f839ca90a10f4a91",
+  "url": "https://musically.com/2026/10/22/tips-music-released-fewer-film-songs-in-q2-fy-2027-than-in-q1/",
+  "title": "Tips Music released fewer film songs in Q2 FY 2027 than in Q1",
+  "summary": "Tips Music’s revenue from operations rose 34.5% year-on-year to Rs120.1 crore (approx. $12.7 million) during Q2 FY2027 when profit after tax increased 23.5% to Rs65.7 crore (approx. $6.9 million). The […] The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-22T08:00:23.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "76620b49fafe5604",
+  "url": "https://www.digitalmusicnews.com/2026/10/21/collab-platform-chaos-startup-capital-funding/",
+  "title": "Music Collab Platform Chaos Secures $1.4 Million in Startup Capital, With Amuse Among the Backers",
+  "summary": "Chaos AI, a space for music creators to collaborate, has announced a $1.4 million pre-seed fundraising round led by Bridford Group and Amuse. Chaos AI, an app providing a “unified space” for music creators to collaborate, has announced a £1 million ($1.4 million) pre-seed fundra…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-22T06:41:39.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "3ecce939c6fccb88",
+  "url": "https://www.digitalmusicnews.com/2026/10/21/country-music-star-john-anderson-death/",
+  "title": "Country Music Hall of Famer John Anderson, Famous for Hits Like ‘Straight Tequila Night,’ Passes Away",
+  "summary": "Country star John Anderson, a Country Music Hall of Fame member and singer of hits like “Straight Tequila Night” and “Seminole Wind,” has passed away. John Anderson, the Country Music Hall of Fame member known for hits like “Straight Tequila Night” and “Seminole Wind,” has passe…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-22T06:30:58.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "e86172cafe074f4a",
+  "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPcXhnYUpPNk53ZWtHRmx1bmQzQXN5cV9HcWFoaWFEU1pNRWNyWTAxeGZtX09ONGY2dWt6eXZqSXNBWm1kTklkbUZiUHV1b0J1QmZ3LUtBaXJ0czlJM0RTS2lEZnpDUEU1TVZQY2hsM2NsbnZLNDlLeDRGUHd0SXBSRFRkcDdyM1RPRmJDMmZfUnJsUXgyV3dKcWpCUDI?oc=5",
+  "title": "Independent Music Publisher Red Brick Songs Celebrates 25th Anniversary",
+  "summary": "Independent Music Publisher Red Brick Songs Celebrates 25th Anniversary V13 Media",
+  "source": "V13 Media",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-22T05:09:22.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "cacbd8b3ed963c65",
+  "url": "https://news.pollstar.com/2026/10/21/john-anderson-on-his-hall-of-fame-career-the-pollstar-qa/",
+  "title": "John Anderson On His Hall Of Fame Career: The Pollstar Q&A",
+  "summary": "Update: With the unfortunate passing today (Oct. 21) of beloved country music artist John Anderson, Pollstar is re-running his extensive Pollstar Q&A cover story conducted by Ray Waddell, Pollstar’s Chief Content Officer, that originally ran in Aug. 2024 . The occasion was Ander…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-22T04:51:08.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "c817f4b978d8ec31",
+  "url": "https://www.digitalmusicnews.com/2026/10/21/galaxy-corporation-dancing-robot-demo-canceled/",
+  "title": "Galaxy Corporation’s Halloween-Inspired Dancing Robot Performance Abruptly Canceled",
+  "summary": "Shortly after announcing a Halloween-inspired event in California on October 30, Galaxy Corporation’s humanoid robot performance has been canceled. Galaxy Corporation has abruptly canceled its Halloween-inspired humanoid robot performance, originally set for October 30 in Sarato…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-22T04:20:19.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "b5d85d8bfd27f128",
+  "url": "https://www.billboard.com/pro/live-nation-north-melbourne-venue-australian-portfolio/",
+  "title": "Live Nation Adds North Melbourne Venue to Australian Portfolio",
+  "summary": "The concerts giant will deliver and operate a new purpose-built venue at Arden Central, about one mile from the city’s CBD.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-22T04:00:29.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 25,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "267aad526b43e44c",
+  "url": "https://variety.com/2026/music/news/cmas-celebration-of-dolly-parton-1236919337/",
+  "title": "Dolly Parton CMA Tribute: Sabrina Carpenter, Julia Roberts, Oprah and More Remember the Country Icon as the ‘Great Unifier’",
+  "summary": "Sabrina Carpenter, Julia Roberts and Oprah were among the stars who paid tribute to Dolly Parton during the Country Music Association’s celebration of the late country icon Wednesday night. Oprah, who appeared in a pre-recorded video at the beginning of the broadcast, shared wha…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-22T03:41:08.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "policy"
+  ],
+  "score": 16,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "8088c3c3d7fc5dfe",
+  "url": "https://variety.com/2026/music/people-news/john-anderson-dead-seminole-wind-swingin-die-1236919387/",
+  "title": "John Anderson, Country Hall of Famer Whose Hits Included ‘Seminole Wind’ and ‘Swingin’,’ Dies at 71",
+  "summary": "John Anderson, the country Hall of Famer behind hits like “Seminole Wind” and “Swingin’,” has died. He was 71. Anderson’s death was announced by his family across his social media accounts on Wednesday. No cause of death or further information was noted. “It is with the heaviest…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-22T02:08:03.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "6d03d237c6b9f1fa",
+  "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNX3Z3YlZwWjRtdjkzdmIydUlfR2U0by1lMXV0ZjFFdnBCbE1kLU82aG5UejJZbzJUUXp4UlQ0Ung0UVNrZW9JeXBHeEpXR0NDWlVnMTd0NndmaE1qVjJLYWFXOXJUVUs2ZEN0aXlSVXlTTEVBRkphLTBBOV9PZjF1ZV9XdU9vUVRSRlpJQjBrMmo?oc=5",
+  "title": "It Looks Like a Music Festival. It’s Really a Sales Pitch for Private Credit.",
+  "summary": "It Looks Like a Music Festival. It’s Really a Sales Pitch for Private Credit. WSJ",
+  "source": "WSJ",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-22T01:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "eb9ca7a96889c8fa",
+  "url": "https://musically.com/2026/10/22/wmg-is-merging-its-recorded-music-and-publishing-sync-divisions/",
+  "title": "WMG is merging its recorded-music and publishing sync divisions",
+  "summary": "The reorganisations continue in major label-land, with Warner Music Group announcing that it is merging its recorded-music and publishing sync divisions. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-22T00:30:00.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "2f606f446693afad",
+  "url": "https://variety.com/2026/music/news/iron-maidens-nicko-mcbrain-rejected-invite-trump-1236919360/",
+  "title": "Iron Maiden’s Nicko McBrain Rejected an Invite to Golf With Trump, Says He Should Be ‘Put in Jail’: ‘I’m Not Amused by the Narcissism’",
+  "summary": "Nicko McBrain, the long-time drummer for heavy metal band Iron Maiden, recently admitted he’d been invited to play golf with Donald Trump, but turned down the offer because of his staunch anti-MAGA beliefs — and that the president and his “bunch of cronies,” in McBrain’s words,…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-22T00:17:19.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "81b3df15c872ad4b",
+  "url": "https://www.digitalmusicnews.com/2026/10/21/chad-hugo-pharrell-williams-lawsuit-2/",
+  "title": "Chad Hugo v. Pharrell Williams Gets Even Uglier — Neptunes Co-Founders Clash Amid Intensifying Dismissal Dispute",
+  "summary": "The Chad Hugo v. Pharrell Williams legal battle just got even uglier: Now, Team Hugo is aggressively pushing back against Williams’ dismissal motion and alleged effort to “turn The Neptunes’ success into the work of only one person.” Hugo just recently urged the court to reject…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-22T00:10:03.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "b963dc12f3733ab8",
+  "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPOE9KcGFDdXI5TUFOcXFVdU5aU085NGg1VHhONnhRSkRudWhKMDlFdXJQNG9qVWFyVjFCbFJWeVFZRDQ1WWdYT2lUVk5FZ3EwVFY3bVhGRW1YazdZUER4YjZBZlJjZ3gwa2lwTXFDTW5DWXV2aUlaWnRZTzk5cFNXWl9XY1VzeVBhSWpnVTR3?oc=5",
+  "title": "Kroger and LG Sued Over Unauthorized Use of Viral 'Cheese Tax' Song in TikTok Ads",
+  "summary": "Kroger and LG Sued Over Unauthorized Use of Viral 'Cheese Tax' Song in TikTok Ads Law Commentary",
+  "source": "Law Commentary",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-22T00:09:36.000Z",
+  "entities": [
+   "tiktok"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 30,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "aab553deb11fa70c",
+  "url": "https://www.billboard.com/pro/aaron-carter-family-settles-death-lawsuit-walgreens-xanax/",
+  "title": "Aaron Carter Estate Settles With Walgreens in Wrongful Death Lawsuit Over Xanax Prescriptions",
+  "summary": "The late singer’s family has resolved their claims against Walgreens and another Los Angeles pharmacy. They’re still suing his former dentist.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T22:18:35.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "eb5fbb73c49da2c7",
+  "url": "https://www.billboard.com/pro/ai-music-protect-human-creators-billboard-latin-music-week/",
+  "title": "AI-Generated Music and the Future of Creativity Discussed at Billboard Latin Music Week",
+  "summary": "Experts talk about the challenges authors face, and whether regulation is enough, in the era of artificial intelligence.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T22:08:29.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "fcf38b88cc82fc9d",
+  "url": "https://www.billboard.com/pro/streaming-fraud-hurts-songwriters-find-solutions/",
+  "title": "Streaming Fraud Threatens More Than Songwriters. We Must Find Meaningful Solutions (Guest Column)",
+  "summary": "“Fraudsters will take a bigger and bigger slice if we don’t put a stop to it,” writes NMPA president and CEO David Israelite.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T21:29:20.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "af7395ba829b22b2",
+  "url": "https://www.digitalmusicnews.com/2026/10/21/reservoir-jose-feliciano-catalog-deal/",
+  "title": "Just in Time for the Holidays, Reservoir Invests in ‘Feliz Navidad’ Singer-Songwriter José Feliciano’s Recorded Catalog",
+  "summary": "Reservoir Media has taken a stake in the recorded catalog and all-important name, image, and likeness rights of “Feliz Navidad” singer-songwriter José Feliciano. New York City-based Reservoir and Lares, Puerto Rico-born Feliciano disclosed their partnership agreement today. And…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T21:24:09.000Z",
+  "entities": [
+   "reservoir"
+  ],
+  "types": [
+   "publisher"
+  ],
+  "topics": [
+   "catalog-deal"
+  ],
+  "score": 36,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "48bdad5a9bf02fc3",
+  "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQLWc5Z1R4bmU5Y01CVzNFUzh1cmRCT1VLUWdNX2thR3BSRFRtSVktY3FOT1d3bTJWNkZxbWtyY2JxSndRc2lkZmxSTjlTWjZWX3k4Tm1zeGZhOXlwRVNnc2JjS2V3andLTF9jaXVnWnJzWW5ER01CWEZoalRNYTg5VlFTTGpCb3JORzJsb3dHSUFpZ1E?oc=5",
+  "title": "Spotify lets podcasters keep 90% of fan Membership revenue in 34 markets",
+  "summary": "Spotify lets podcasters keep 90% of fan Membership revenue in 34 markets PPC Land",
+  "source": "PPC Land",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-21T21:21:46.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "a1702862289dda96",
+  "url": "https://www.digitalmusicnews.com/2026/10/21/google-tickitto-live-event-search/",
+  "title": "Tickitto Bags a Big Google Deal: 70,000 Live Events Now Integrating Into Search",
+  "summary": "Live event sales API platform Tickitto teams up with Google to place its live-event inventory in the Events section of relevant Google search listings. Tickitto, the API platform powering live-event sales for travel and tech companies, has announced a partnership with Google to…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T21:07:36.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "64223e9516a2bf5f",
+  "url": "https://www.billboard.com/pro/goldman-sachs-music-industry-growth-forecast-music-in-air/",
+  "title": "Goldman Sachs Raises Music Industry Growth Forecast for First Time in 3 Years",
+  "summary": "This year's \"Music in the Air\" report expects growth to come from subscription price hikes, live events and physical sales.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T21:00:33.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "a73ec65738643187",
+  "url": "https://www.digitalmusicnews.com/2026/10/21/spotify-audi-in-car-app-collab/",
+  "title": "Car Thing Take 2? Spotify and Audi Launch Native In-Car App Collaboration Independent of Apple’s CarPlay",
+  "summary": "Spotify and Audi launch a next-gen native in-car app built on Google’s Android Automotive operating system, available now in select Audi models. On Wednesday, Spotify and Audi announced the launch of a new native in-car app built using Google’s Android Automotive operating syste…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T20:29:03.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "54e8c0cf05df4e02",
+  "url": "https://news.pollstar.com/2026/10/21/settlement-reached-ensuring-the-future-of-forest-hills-stadium-through-2040/",
+  "title": "Settlement Reached Ensuring The Future Of Forest Hills Stadium Through 2040",
+  "summary": "Forest Hills Gardens Corporation (FHGC), West Side Tennis Club (WSTC) and Tiebreaker Productions, LLC (operator of Forest Hills Stadium) announced an agreement that resolves all pending litigation among the parties and sets a collaborative path forward for the century-old Queens…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-21T20:03:18.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "99b8e910deda6f12",
+  "url": "https://www.billboard.com/pro/supreme-court-music-case-explained-copyright-termination/",
+  "title": "SCOTUS Copyright Termination Music Case Explained: What Happened? What Comes Next?",
+  "summary": "The Supreme Court upheld a landmark copyright ruling, leaving an uncertain future for artists and labels. Here's what you need to know.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T19:59:14.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "5803b1b08e204540",
+  "url": "https://www.billboard.com/pro/ghazi-supply-chain-global-launch-hires-beatport-ampsuite/",
+  "title": "Ghazi’s Supply Chain Launches Globally, Sets New Hires & Partners With Beatport’s Ampsuite",
+  "summary": "First announced in 2023, Supply Chain offers SaaS and API solutions allowing distributors, labels, brands and more to distribute music to any service provider.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T19:25:24.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "f749cfa61891af91",
+  "url": "https://news.pollstar.com/2026/10/21/ben-folds-five-announces-first-tour-in-15-years/",
+  "title": "Ben Folds Five Announces First Tour In 15 Years",
+  "summary": "Ben Folds Five is back! The beloved alt-rock trio has announced initial dates for the band’s first tour in 15 years. Along with Ben Folds on piano and vocals, the group formed in 1993 in Chapel Hill, North Carolina, includes Robert Sledge on bass and Darren Jessee on drums. As a…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-21T19:14:44.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "0d3d5572cd72e3a7",
+  "url": "https://www.digitalmusicnews.com/2026/10/21/angine-de-poitrine-2027-tour-dates/",
+  "title": "Angine de Poitrine Announce Epic 2027 Tour as Their Sold-Out 2026 Tour Resumes Next Month",
+  "summary": "Angine de Poitrine have announced an expansive global tour for 2027, including festival appearances and some of their biggest headline shows yet. Angine de Poitrine have announced a wide-ranging global tour schedule for 2027, including top-billed festival appearances and some of…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T19:10:40.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "e8b58d1a17dd53da",
+  "url": "https://variety.com/2026/music/news/brandi-carlile-humanitarian-honor-los-angeles-press-club-1236919076/",
+  "title": "Brandi Carlile to Receive Humanitarian Honor at National Arts & Entertainment Journalism Awards",
+  "summary": "Brandi Carlile will be the recipient of the Los Angeles Press Club’s annual Visionary Award for Humanitarian Work, to be given out at the National Arts and Entertainment Journalism Awards Gala in December, the organization has announced. Carlile’s honor will be part of the dinne…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T19:10:12.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "e0019e6bc9786725",
+  "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQel9kYVZXbUQxOGlvZEFaeWgxbG1WT0RYWFFiMWNJVEFDQ0hZMXhZZm5xS2QxNTJjbFdxdmhSNU9GQmF5Z1ZlR1c1SVIxSy1iV0M4UUk1N0ExdFdBYlQzRHZjRV9vUEpPLXExTURDbE93dlpGZEx4b3dWZWZMc0tZcVd5bW44X2Z5RW8xSDFEYl9oUUtPeGJfdDZUbFliUjl6czJMNTdwLTlCOHl3VVo1NHRLaWF4dFR3R1c5eW51dGgzQ3lMelJ6azF0Yw?oc=5",
+  "title": "From A Music Video To Venture Capital Founder: The Payoff Of A Zigzag Career",
+  "summary": "From A Music Video To Venture Capital Founder: The Payoff Of A Zigzag Career Forbes",
+  "source": "Forbes",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-21T19:02:34.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "dacbdca30da768f1",
+  "url": "https://variety.com/2026/film/news/kid-cudi-to-star-jean-michel-basquiat-film-1236919008/",
+  "title": "Kid Cudi to Star as Jean-Michel Basquiat in Self-Written and Directed Film ‘Jean’",
+  "summary": "Kid Cudi has announced that he will star as famed artist Jean-Michel Basquiat in “Jean,” a film that he also wrote and directed. The musician made the announcement on social media, posting images of himself in character and revealing that the film will begin shooting in 2027. “F…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T17:53:55.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "ba90dc3d1ad0d4d0",
+  "url": "https://www.digitalmusicnews.com/2026/10/21/sony-patent-virtual-concerts-fake-fans/",
+  "title": "Soft Digital Demand? A New Sony Patent Fills Virtual Concerts with Fake Fans",
+  "summary": "Sony’s new patent fills in empty seats at virtual concerts with computer-controlled spectators to give the illusion of a full audience. Sony Interactive Entertainment has filed a patent application for technology that fills empty seats with computer-controlled virtual spectators…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T17:46:44.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "043ff4cff45d2719",
+  "url": "https://news.pollstar.com/2026/10/21/trevor-noah-sets-special-new-york-city-performance-at-beacon-theatre/",
+  "title": "Trevor Noah Sets Special New York City Performance At Beacon Theatre",
+  "summary": "Trevor Noah is preparing for a special performance at New York City’s Beacon Theatre on Dec. 15. The show will feature all-new material from the Emmy Award-winning host of “The Daily Show.” Tickets for the exclusive show will be available starting with the Artist presale on Oct.…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-21T17:34:12.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "84ad1df37dbdb3c7",
+  "url": "https://news.pollstar.com/2026/10/21/venue-pulse-shakira-stadium-madison-square-garden-top-100k-in-ticket-sales/",
+  "title": "Venue Pulse: Shakira Stadium, Madison Square Garden Top 100K In Ticket Sales",
+  "summary": "Among the concert venues ranked No. 1 in each of the eight venue size categories determined by seating capacity from Oct. 1 through 14, Shakira Stadium in Madrid, Spain and New York’s Madison Square Garden are the only two to surpass 100,000 in ticket sales, according to box-off…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-21T17:14:07.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "c2f4270ecfae9230",
+  "url": "https://news.pollstar.com/2026/10/21/live-events-marketing-platform-hive-scores-27m-in-series-b-funding/",
+  "title": "Live Events Marketing Platform Hive Scores $27M In Series B Funding",
+  "summary": "Hive, a live events marketing platform, has raised $27 million in Series B funding from Charlotte-based growth equity firm Frontier Growth. The funding will go to product development, further ticketing and data integration and international expansion. Hive says more than 1,600 v…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-21T17:09:12.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "42f436e0d307b12a",
+  "url": "https://news.pollstar.com/2026/10/21/clubland-the-orange-peel-overcomes-asheville-hurricane-with-hellbender/",
+  "title": "Clubland: The Orange Peel Overcomes Asheville Hurricane With Hellbender",
+  "summary": "Hellbender by The Orange Peel, Asheville’s latest outdoor concert venue, derives its name from the giant salamander native to Western North Carolina’s rivers that evokes the resilience and adaptability of Appalachia. The choice is deliberate and a fitting symbol for a region tha…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-21T17:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "6a32fb57e37a1b70",
+  "url": "https://news.pollstar.com/2026/10/21/market-focus-seattle-from-emerald-city-to-silicon-forest/",
+  "title": "Market Focus Seattle: From Emerald City To Silicon Forest",
+  "summary": "Seattle Continues To Grow As Tech And Live Entertainment Mecca Seattle’s music scene is much more than the grunge story that made it famous. The market, which includes Tacoma, has one of the deepest and most distinctive music cultures in the country with the Seattle Sound spanni…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-21T17:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "eef9189c758751ec",
+  "url": "https://news.pollstar.com/2026/10/21/melanie-granado-named-gm-at-caney-pines-convention-center-in-texas/",
+  "title": "Melanie Granado Named GM At Caney Pines Convention Center In Texas",
+  "summary": "Melanie Granado was named general manager of the new Caney Pines Convention Center in New Caney, Texas. Granado is the first general manager, and first woman, to lead the Caney Pines Convention Center, the 210,070-square-foot facility scheduled to open in December and operated b…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-21T17:00:00.000Z",
+  "entities": [
+   "oak-view-group"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 20,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "4ee197e6f41ef77a",
+  "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQN3RCc2dLcEtPZHhtcXk5ak01Ty1HR1NwTzFaS1hfRFRLUGxRWHN0SGNFdVdXS0Mxb3YwTExtZi1xNlE5cEEtRzBwZzZyck5majJJVFRPZUtxaC1DMkpscGM5SjFfa1M5a0VQczV6QXRzUkZ2a0ZaUEI5MlE1MkRsc3BINkFMM010S3JnTnpGZTlaN0V6S19CZEI2dzRLa2NkZ2VQcmZsQmdtNk5IQ2ZtUzRSU3BUbVl3UDFUQUVIaFZQX3Zo?oc=5",
+  "title": "Reservoir Media, Inc. (RSVR) Acquires José Feliciano Recorded Catalog",
+  "summary": "Reservoir Media, Inc. (RSVR) Acquires José Feliciano Recorded Catalog TradingView",
+  "source": "TradingView",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-21T16:58:00.000Z",
+  "entities": [
+   "reservoir"
+  ],
+  "types": [
+   "publisher"
+  ],
+  "topics": [
+   "catalog-deal",
+   "m&a"
+  ],
+  "score": 44,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "9937c337106dc737",
+  "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOaXBjNkxBZmlYQThPRmNFNl8yWlN5LTgyZEkyVGJxQTd4QlE2MHdvODhOMkZuYnJ4UjV0VVFtNWpBZUVleTdKZEE1NDlIakU2V0JGSUpJRUNkSmFnUXVWei1UNzNONndsT05PdVVwcWZjY1N6UWRJa0hpV0tIQzVQaWlqc3BkRTJ1OW0wX1hDRl93TVM2bV9CSXdhR2o4dFA1VUx0WV9mVXBVZkxiUjVELQ?oc=5",
+  "title": "WARNER MUSIC GROUP UNIFIES GLOBAL SYNC OPERATIONS ACROSS RECORDED MUSIC AND PUBLISHING",
+  "summary": "WARNER MUSIC GROUP UNIFIES GLOBAL SYNC OPERATIONS ACROSS RECORDED MUSIC AND PUBLISHING Warner Music Group",
+  "source": "Warner Music Group",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-21T16:56:47.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "079e57b328d87ad1",
+  "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPQW1FZ0tNMWxlWnl4NWg1Ri1QUGdhamxVUmlGdXZPVTJTRDFkOHRlcjZoUFNrY2JIYm84LXN4UEk3Vlg4N3lVMWdJdktXajNMNnMyanFaeDk0V0hNV2NLX0E0UjRJQ2ZhZDZ0d0NZMGtabldKMTJfTUxQdEVKWmI2Y1kwaHAzWnRSWFU4?oc=5",
+  "title": "Musicians Union Escalates AI Pay Fight With Universal, Sony and Warner Ahead of Contract Talks",
+  "summary": "Musicians Union Escalates AI Pay Fight With Universal, Sony and Warner Ahead of Contract Talks Law Commentary",
+  "source": "Law Commentary",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-21T16:48:48.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "560e2cadd0d4f31b",
+  "url": "https://news.pollstar.com/2026/10/21/angine-de-poitrine-announce-global-dates-into-summer-2027/",
+  "title": "Angine de Poitrine Announce Global Dates Into Summer 2027",
+  "summary": "Everyone’s favorite extraterrestrial math-rock duo, Angine de Poitrine, have added to its sold-out tour schedule, with global dates well into summer 2027, with major headline plays and high profile festival appearances. The “microtonal cardboard duo” kicks off newly scheduled da…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-21T16:32:43.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "2b8e4f32baff6e99",
+  "url": "https://www.musicbusinessworldwide.com/universal-music-group-signs-thai-artist-jeff-satur-aiming-to-make-him-t-pops-first-global-superstar/",
+  "title": "Universal Music Group signs Thai artist Jeff Satur, aiming to make him ‘T-Pop’s first global superstar’",
+  "summary": "The signing is the latest step in UMG's expansion in Thailand. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T16:21:41.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "93f61948d552e9ca",
+  "url": "https://www.digitalmusicnews.com/2026/10/21/warner-music-group-sync-reorganization/",
+  "title": "WMG Streamlines Its Global Sync Operations Across Recorded Music and Publishing, Taps Ron Broitman to Lead the Unified Division",
+  "summary": "Less than one year after overhauling Warner Chappell’s sync team, Warner Music Group (WMG) has announced a wider sync-side reorganization designed to streamline operations across recorded music and publishing. The major formally disclosed its revamped sync-department structure t…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T16:09:59.000Z",
+  "entities": [
+   "warner-chappell",
+   "wmg"
+  ],
+  "types": [
+   "label",
+   "publisher"
+  ],
+  "topics": [],
+  "score": 46,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "55005fc1eb4b45bf",
+  "url": "https://variety.com/2026/music/news/david-macias-thirty-tigers-book-music-circulation-algorithm-1236918516/",
+  "title": "Thirty Tigers President David Macias Previews His First Book, ‘Circulation,’ a Look at What Gets Lost When the Algorithm Dominates Music Consumption (EXCLUSIVE)",
+  "summary": "Have you been listening to more music and enjoying it less? David Macias thinks he knows what might ail you: an over-reliance on the algorithm in the modern music industry. It’s a system that the Thirty Tigers president believes keeps feeding music fans more of what they want, o…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T16:01:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "c7f977f2abd08893",
+  "url": "https://variety.com/2026/music/news/interscope-promotes-michelle-an-laura-carter-ramon-alvarez-smikle-1236918825/",
+  "title": "Interscope Promotes Michelle An, Laura Carter and Ramon Alvarez-Smikle to Executive Posts",
+  "summary": "Interscope Geffen A&M (IGA) today announced new Creative and Urban leadership roles. Michelle An has been promoted to President & Chief Creative Officer, IGA, reporting to John Janick. She will continue to lead IGA Pop/Rock and expand her role across IGA, “helping artists shape…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T15:40:49.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "66975b71f4ad2ae5",
+  "url": "https://www.musicbusinessworldwide.com/warner-music-group-unifies-its-recorded-music-and-publishing-sync-teams-under-ron-broitman/",
+  "title": "Warner Music Group unifies its recorded music and publishing sync teams under Ron Broitman",
+  "summary": "Ron Broitman has been promoted to President, Global Sync Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T15:28:46.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "76a12c75f81f25f9",
+  "url": "https://www.musicbusinessworldwide.com/spotify-cracks-down-on-family-plan-sharing-as-goldman-sachs-estimates-meaningful-share-of-users-are-friends-sharing-a-plan-to-reduce-costs/",
+  "title": "Spotify cracks down on Family plan sharing – as Goldman Sachs estimates ‘meaningful share’ of users are ‘friends sharing a plan to reduce costs’",
+  "summary": "Members who fail the check, or who don't complete it within seven days of being notified, can't join a different Family or Duo plan for 12 months. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T15:16:36.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "f6d1e38d4abe83d1",
+  "url": "https://completemusicupdate.com/major-labels-are-getting-massive-corporate-payouts-for-ai-licensing-but-paying-musicians-zero-says-afms-human-made-human-paid-campaign/",
+  "title": "Major labels are getting “massive corporate payouts” for AI licensing but “paying musicians zero”, says AFM’s ‘Human Made Human Paid’ campaign",
+  "summary": "US performer union AFM has launched a new campaign around AI calling on labels to ensure musician consent is secured before including their recordings in any AI deals. It’s not clear how labels plan to manage those deals and share AI income, but AFM wants to ensure all musicians…",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T15:04:18.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "7c1345dd4b176af1",
+  "url": "https://variety.com/2026/music/news/warner-music-combines-music-publishing-sync-operations-1236918656/",
+  "title": "Warner Music Group Combines Music and Publishing Sync Operations",
+  "summary": "Warner Music Group has announced a plan to combine its global sync operations, bringing together its recorded music and publishing divisions into a single unit. The streamlined group will be led by industry vet Ron Broitman, who has been promoted to President of Global Sync. Bas…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T14:27:48.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "894544c8e0933550",
+  "url": "https://www.musicbusinessworldwide.com/i-would-stop-thinking-the-fan-is-the-end-of-the-value-chain/",
+  "title": "‘I would stop thinking the fan is the end of the value chain.’",
+  "summary": "Fave was founded in 2020 by Jacquelle Amankonah Horton, who spent nearly five years at YouTube on the creator side of the business. Here, the exec explains how she defines a superfan... Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T14:14:11.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "dsp-economics"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "def856725bb4588f",
+  "url": "https://completemusicupdate.com/horizon-leaders-alex-hehir/",
+  "title": "🌅 Horizon Leaders - Alex Hehir",
+  "summary": "This week we caught up with Alex Hehir, Managing Director of Wixen Music UK, one of the most respected independent music publishers, known for its artist-first ethos.",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T14:08:13.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "d3c6bb99fbf83239",
+  "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPNXdhbWc5cDJWWGZrVVdadGNkV0R3Wjl1cUNidGtGdHZ6djFGV0VGaXE0YjIxZEF6R2VJSktPUmdNTDdUUnFsZElmaTU5dWxSMld5MktQdnBWT1MzZ1ZuSFRZZTdpQnNRWk9VMzR3d19GcEwwVjAyRkk5OFR6Nk8yTW1R?oc=5",
+  "title": "Tammy Wynette’s Legacy Celebrated in New PBS Special",
+  "summary": "Tammy Wynette’s Legacy Celebrated in New PBS Special www.bmg.com",
+  "source": "www.bmg.com",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-21T14:02:27.000Z",
+  "entities": [
+   "bmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "4a95e7becea8d2eb",
+  "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPczlHLVFCMkQ5cEQzUEQ2cFF1ZUx4bmJHUVFlWnV6ZUhZOEVzMjhDMGxhZEZsVk4xamI3ZmxqYzlnTFQzYTRBX0Y3eHh2Yy03NWs2YW1ZUHhoVTZ4WGh4aldOSFkzMVVMQlJMS2NvbjNPWmZ2VFpQQjBLSXUzSXhZOTVTaThVZzcydzJZR0RvUEg2TDN2Q3otNEJXdlNnWHFBNUEyN2Y3TjQxbE9KV2NRaXN5Zw?oc=5",
+  "title": "Empire Founder Ghazi Launches Supply Chain, New Rights Management/ Distribution Company for Independent Music",
+  "summary": "Empire Founder Ghazi Launches Supply Chain, New Rights Management/ Distribution Company for Independent Music Variety",
+  "source": "Variety",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-21T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "9971480054c5afdf",
+  "url": "https://www.billboard.com/pro/ozuna-empire-publishing-deal/",
+  "title": "Ozuna Inks Publishing Deal With EMPIRE",
+  "summary": "Announced live at Billboard's Latin Music Week, the Puerto Rican star has struck a go-forward agreement for publishing administration.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T13:56:27.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "7c85a8ae0a39c73c",
+  "url": "https://www.musicbusinessworldwide.com/is-musics-next-great-licensing-failure-already-underway/",
+  "title": "Is music’s next great licensing failure already underway?",
+  "summary": "As Grand Theft Auto VI nears launch, AI tools like GPT-6 Astra are turning prompts into playable games. Deviate Digital founder Sammy Andrews warns that music could be about to miss another platform shift… Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T13:47:41.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "df45d750d3c18ddd",
+  "url": "https://www.musicbusinessworldwide.com/live-events-marketing-platform-hive-raises-27m-series-b-from-frontier-growth/",
+  "title": "Live events marketing platform Hive raises $27M Series B from Frontier Growth",
+  "summary": "More than 1,600 venues, promoters, and festivals use the platform, which Hive says has helped its customers generate more than $1 billion in ticket sales. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T13:00:55.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "84699883e6bc521b",
+  "url": "https://www.musicbusinessworldwide.com/interscope-geffen-am-names-michelle-an-president-chief-creative-officer-promotes-laura-carter-and-ramon-alvarez-smikle-to-co-presidents-urban/",
+  "title": "Interscope Geffen A&M names Michelle An President & Chief Creative Officer, promotes Laura Carter and Ramon Alvarez-Smikle to Co-Presidents, Urban",
+  "summary": "IGA said the new Creative and Urban leadership roles are 'designed to give artists deeper partnership and more ways to break through' Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T13:00:08.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "046d7b1f89769ee1",
+  "url": "https://musically.com/2026/10/21/music-tech-funding-artmaster-bags-2-4m-and-chaos-raises-1m/",
+  "title": "Music-tech funding: ArtMaster bags $2.4m and Chaos raises £1m",
+  "summary": "Today brings news of two promising music-tech startups raising early funding: music-education firm ArtMaster and collaboration platform Chaos. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "84d9d2ef70f3fa2b",
+  "url": "https://musically.com/2026/10/21/country-profile-philippines-2026/",
+  "title": "Country Profile – Philippines 2026",
+  "summary": "People in The Philippines are music mad, which is good news for a booming local market, even if exports may struggle. While most Western observers might think of Japan as the home of karaoke, The Philippines would beg to differ. Most houses have some kind of karaoke machine and…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "996a13b687cd8f29",
+  "url": "https://musically.com/2026/10/21/uk-update-bbc-campaign-beatles-plans-luminate-stats-mvt-festival/",
+  "title": "UK update: BBC campaign, Beatles plans, Luminate stats, MVT festival",
+  "summary": "It’s a busy day for news from the UK music industry, with four stories from various parts of the ecosystem. Starting with a campaign from industry body UK Music to support public broadcaster the BBC. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T12:30:00.000Z",
+  "entities": [
+   "luminate"
+  ],
+  "types": [
+   "data"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 21,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "b95d2cada48e912e",
+  "url": "https://musically.com/2026/10/21/spotifys-creator-level-memberships-are-just-for-podcasters/",
+  "title": "Spotify’s creator-level ‘Memberships’ are just for podcasters",
+  "summary": "Spotify is rolling out the ‘Memberships’ subscriptions that it trailed earlier this year at its Investor Day event. However, as announced, they are just for podcasters… for now, at least. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T12:30:00.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "cf32c8f130fb1a8b",
+  "url": "https://musically.com/2026/10/21/spotify-adds-believe-to-its-slate-of-fan-remixes-licensing-deals/",
+  "title": "Spotify adds Believe to its slate of fan-remixes licensing deals",
+  "summary": "Will Spotify’s upcoming fan-remixes tool launch by the end of 2026? That’s still unclear, but the company does have a new licensing partner for its GenAI plans: Believe. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T12:30:00.000Z",
+  "entities": [
+   "believe",
+   "spotify"
+  ],
+  "types": [
+   "artist-services",
+   "dsp"
+  ],
+  "topics": [],
+  "score": 38,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "eca53fd18aa1123d",
+  "url": "https://musically.com/2026/10/21/brands-brew-up-drinks-deals-with-charli-xcx-and-blackpinks-lisa/",
+  "title": "Brands brew up drinks deals with Charli XCX and Blackpink’s Lisa",
+  "summary": "Fancy a drink? Forget picking your poison though: today you can pick your pop star depending on whether you’re more interested in vodka or, er, mango coconut sticky rice beverages. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "82b2ebb3587d6b88",
+  "url": "https://www.musicbusinessworldwide.com/soundexchanges-3-4m-lawsuit-against-sonos-put-on-hold-until-appeals-court-rules-on-its-right-to-sue-over-unpaid-royalties/",
+  "title": "SoundExchange’s $3.4M lawsuit against Sonos put on hold until appeals court rules on its right to sue over unpaid royalties",
+  "summary": "Paused since December 2025, the case remains on hold pending a New York federal appeals court ruling in the SoundExchange-SiriusXM dispute. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T12:10:05.000Z",
+  "entities": [
+   "siriusxm",
+   "soundexchange"
+  ],
+  "types": [
+   "dsp",
+   "pro"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 54,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
+  "id": "a5eac00d28650b03",
+  "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNN2kyMnRhUkxtWjRSZDNraDhqWWtOYnJ0UUctSXhZWUNFWGhiWHdkdmhHMXZTOEJ1VDJGRjBhbVFyb0QwYjBNdEhXeGgwRjA0ZDNfeVVyektJR1NVRHR0MGphSnUzVWs0dHJ2S0ZFVllnUXBvYnh0QXdBQ0FNcTJoWlU2T3B1LXZYQUpVN0xNWmM3T1BxTnlOQkUzMjV6Y1NzeE56QnhpOWZqNGZVOGdGLXA2NFBNWC1MbWdiTy0tVUtwck5M?oc=5",
+  "title": "Reservoir acquires rights to ‘Feliz Navidad’ star José Feliciano’s recorded music catalog",
+  "summary": "Reservoir acquires rights to ‘Feliz Navidad’ star José Feliciano’s recorded music catalog Music Business Worldwide",
+  "source": "Music Business Worldwide",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-21T12:00:56.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "catalog-deal",
+   "m&a"
+  ],
+  "score": 30,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
   "id": "8f6371f73c144e56",
   "url": "https://musically.com/2026/10/21/umg-wants-to-make-jeff-satur-t-pops-first-global-superstar/",
   "title": "UMG wants to make Jeff Satur ’T-Pop’s first global superstar’",
@@ -80,6 +1407,28 @@
   "firstSeen": "2026-10-21T11:43:18.383Z"
  },
  {
+  "id": "385cfc158fbc6388",
+  "url": "https://www.digitalmusicnews.com/2026/10/21/ai-music-instruction-artmaster-funding-round/",
+  "title": "AI Music Instruction Startup ArtMaster Just Raised $2.4 Million, With WMG Chief Robert Kyncl Among the Backers",
+  "summary": "Prague-based startup ArtMaster raises $2.4 million in a seed round that will go into developing AI models to help people learn musical instruments. Prague-based startup ArtMaster has raised $2.4 million in a seed round that included investors like Warner Music Group Chief Robert…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T10:00:48.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 27,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
   "id": "a6ff693f724966ef",
   "url": "https://variety.com/2026/music/global/ozzy-osbourne-happy-before-died-final-show-sharon-1236918473/",
   "title": "Ozzy Osbourne Was ‘Flying High’ Until the ‘Day He Passed’ After Final Concert, Sharon Osbourne Says: ‘We Hadn’t Seen Him That Way in Years’",
@@ -94,6 +1443,24 @@
   "topics": [],
   "score": 15,
   "firstSeen": "2026-10-21T11:43:18.383Z"
+ },
+ {
+  "id": "ac0a16ee3b2554e3",
+  "url": "https://www.digitalmusicnews.com/2026/10/21/south-korea-humanoid-robot-performances/",
+  "title": "Is There a Future for ‘Humanoid Robot Performances’? South Korea’s Galaxy Corporation Thinks So",
+  "summary": "South Korea-based Galaxy Corporation is combining entertainment IP, AI, and humanoid robots for an upcoming Halloween-inspired event in California. We’ve seen how successful virtual avatar-based performances can be with the massively popular ABBA Voyage in the UK, and other simi…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-21T09:00:23.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 13,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
  },
  {
   "id": "31c1a7fc8433c802",
@@ -338,6 +1705,22 @@
   "firstSeen": "2026-10-21T11:43:18.383Z"
  },
  {
+  "id": "1e9abe161067637e",
+  "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBRVWVZY21oSXd1ZkJ4bXJFVVI2N1R1SHVpa0dLTm53dlVHYlZaMGtIeWZiaGR6MmVwdUZLdzlBWi1LSnRDbGZnQ25rYmlES1BWUTdBampxcGhNYTRBMFJ1YlhpYXprekQybXNvMWgxb0U3dDhfNTJSSDRmMnpwUQ?oc=5",
+  "title": "LG & Kroger Face Copyright Suits Over Viral 'Cheese Tax' Track",
+  "summary": "LG & Kroger Face Copyright Suits Over Viral 'Cheese Tax' Track Digital Music News",
+  "source": "Digital Music News",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-21T01:47:02.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
   "id": "cfa030523a3a3e8b",
   "url": "https://variety.com/2026/music/news/charli-xcx-cancels-arizona-show-due-to-illness-1236918156/",
   "title": "Charli xcx Cancels ‘Music, Fashion, Film’ Show in Arizona Due to Illness: ‘It Breaks Me That I Can’t Be With You’",
@@ -354,6 +1737,26 @@
   ],
   "score": 15,
   "firstSeen": "2026-10-21T11:43:18.383Z"
+ },
+ {
+  "id": "8ffa55d1549b068d",
+  "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQX0E3QWRsRmdidkdKODZmMWc1MVVDclJIQkFoeGNxcDRadlZWWllQVXNneEkwcXc2b3g5cGtPZzFQcXZya3pqTDktYmo2eUhlQXVQX2RSYWo4MHVWTS14ZlBEU1FXclVzQ1N4THJXVnJQd01SSV84cG5jY3ZsOEl1WVFRQy1ob25iajJVaGgtcC1WUWp3SlR5U2pQblZNZ1hRR1ZFX1VEVmZZTGpBU2N6VXBYdVc3TWs5MHlQUTMwMDROQ1VrNHpFaEJBekFNZw?oc=5",
+  "title": "PlaqueBoyMax Tells White House 'F*ck You' After Official TikTok Uses His 'Man of the Year' Beat for Trump Video",
+  "summary": "PlaqueBoyMax Tells White House 'F*ck You' After Official TikTok Uses His 'Man of the Year' Beat for Trump Video inkl",
+  "source": "inkl",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-20T23:08:23.000Z",
+  "entities": [
+   "tiktok"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 17,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
  },
  {
   "id": "6b27b715ae35c063",
@@ -434,6 +1837,22 @@
   "topics": [],
   "score": 10,
   "firstSeen": "2026-10-21T11:43:18.383Z"
+ },
+ {
+  "id": "011527a6701e7b1c",
+  "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOZFc4OEhtZE92dFRZSHpZVlhaanBYRnFHRVlyV1VLZUlPQ3EweWtYaVBqT28yUlMxQ2RXUUo3Z3pVOXZlTVJwRWFMZFIyVk8yY0pFZHJvS2dOQm0tS2JWQ2FjUW5sa3d2Q3htWXFvRmRtS1lGY3lCWHRyaUdQR1FjdnFFSzBjSzk4a21IU3FMajlaSjBTTl9OX2lWcFUyN2t00gFWQVVfeXFMTlhjbVdENUp4dUJfVXpWOWRfT01pb29YaHBSWHhfUG0zbEUxdnFXU2t0QnlaMUFvNDFucGtNLW9xV1NZSThvVkZiNWlfTFpka0ZWVjlFVmc?oc=5",
+  "title": "Marvin Gaye's Heirs Sue Mich. Hotel Over Music Copyrights",
+  "summary": "Marvin Gaye's Heirs Sue Mich. Hotel Over Music Copyrights Law360",
+  "source": "Law360",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-20T20:43:27.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
  },
  {
   "id": "99ae1862915d9f11",
@@ -7902,6 +9321,24 @@
   "firstSeen": "2026-10-13T14:07:03.238Z"
  },
  {
+  "id": "5b3e33c4b3b5cddb",
+  "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNN0xHbTdvNFBiWTdraXdrY1ZSbmZiZDU1RmE2YjBhRnFjVzZ4Tk5hdHp5LXNyRS1MdE8wb0xxaktuYW5YSXFBNEt1Ym93M1NfcVhtV3B2SzIyeUwyNWVjUWNZOWQ1aVNKQU9oTFdWQXhVclRVMm9pS3dYN0sxeDI3UDk3X0ZVbGdTT183Q3ZDc0JFLWR5bnczU25ZRHZfcEpRclFtTEtSSnZUU2l2bXc?oc=5",
+  "title": "Brian Eno questions who controls AI as musicians take record labels to court",
+  "summary": "Brian Eno questions who controls AI as musicians take record labels to court SoaplandTV",
+  "source": "SoaplandTV",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-13T07:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 8,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
   "id": "c08465dbb156dbfc",
   "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPWXZVMHhqMmU4cnRjbmpuUnlGMVZrUVJreWxfRUdianQza1pDQ1Y1cVRhZDNKdU9UbDNFM2ExU3V2MU5uM3h0U2NQQUUtdk9wVlUwWXpqUmNsNWRNbnhWem14dGZjRllMVU1pVHBKZTNFeGNReVV3OEhZN3l2U2tTYjduS19remJxSi1PVGVSaGxZSDZxdm5hTXhOZGJaVHY3ZjdiU0dEQndiN0JzVEl4cDFkODZST1pOR0tjNEpFeFlFUnhyRGJfYkVSNUQ4UXlmaTR2cDR3a9IB3AFBVV95cUxPeVlrYW8wR09iVl9DYjU1ZkU1NTFvUDdOQ2FmSmJSNnM0dzJhTDdYOTdoOTlQR1BCZlV6eGdMbUJWME5ocHl1ZFg0Y1RQWDlmRlVjUVpWcUJOanR2QnZTTlphNGgwLWJyUS14bkVhUzljTklGUks4bVM2NXV3UTRreEdHdmZ1WDFwLUZwWGhyUm9RaE5JcWpqbk5LdUgwSjJkc21iNWlkei1xcFh4T2Y2NkV2NkQ5bV9ZeWNlLWlubVN3MUY2SkV5VVVpanZ0SnF0bWZFcE5DaC1VUnA4?oc=5",
   "title": "Music Australia Export Development Fund: International Performance and Touring Activity (Category 1) - fundsforNGOs",
@@ -8883,6 +10320,28 @@
   "firstSeen": "2026-10-14T11:47:08.809Z"
  },
  {
+  "id": "e1d5b41076ea1a94",
+  "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOc04wOGZVR3pSZGVPc3Q4Sk5hclNrOVo5VWhfS0hsb2xORTF2WTRKaF9zbURrcEpxX2hBSXdfQnJ2bTFrUXM2aDhsRFlKbWRyUVlVSWhheGRQeUdqdXBpM0g5MEZLaENJNG9pZTRxTnNoMVh2N244a0h6a0xodnNkX1B0amZRbHRPNUpkelFSbWJrampfQzJuaWM0VzU?oc=5",
+  "title": "Warner Music Copyright Lawsuit Targets Eyewear Companies",
+  "summary": "Warner Music Copyright Lawsuit Targets Eyewear Companies InterSpace Music Distribution",
+  "source": "InterSpace Music Distribution",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-12T07:00:00.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 22,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
   "id": "81419c8989940b69",
   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNZHlUT0pIdnpiRUdOdi01QVoteFd0WlhvMlRvWTI5N0drT1daeENNWk5WNENvLWJLRVN3a1pHYWx1NFg1aWtrRmdRdUtudE83LU1fcHVCb184M0xpSWtHVUhiUTEwa2dPOEtLZzVVRVc3VFpZb3poOFl3c1JSUkJ6UXJnVG5sMjhYa0g4ZWhaU3BLemFQeGk1ZEFn?oc=5",
   "title": "Nigeria’s Music Royalty System Faces Scrutiny Over Financial Disclosure",
@@ -9078,6 +10537,22 @@
   "topics": [],
   "score": 15,
   "firstSeen": "2026-10-11T12:44:39.831Z"
+ },
+ {
+  "id": "773b9070d96158ff",
+  "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPVVV4V0ZEbmk3WlNGV2pfa05HVHc4Z2JPNDNZWU5xdUEzZFJHNFBTMUNNOFJjeThmamNPNDJHRUZMT2haeUlGSnE5LVVGS3lJNFpNenVRZURvSXZoUFk1MTN1SlpjT0MxMzRHbUE4M0ZTYVBzazhPVmxmOGliR19xUFI1OW0xaThVZVh5cUFPVzRIVldoMWVHOUZONGx6M1J6cTdDdUMyUzhHeEdHMHZhOWF6MFd4VjJfaThqemRXQzV6eHVuTXdCRm5XenNHb3JWUEU4MjhBQ2h2QkNhM25TaW9B?oc=5",
+  "title": "X Japan's Yoshiki Makes History With Entertainment Community Fund Medal Of Honor For Music And Philanthropy",
+  "summary": "X Japan's Yoshiki Makes History With Entertainment Community Fund Medal Of Honor For Music And Philanthropy That Eric Alper",
+  "source": "That Eric Alper",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-11T07:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 0,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
  },
  {
   "id": "f105565262ad5d64",
@@ -10374,6 +11849,22 @@
   "firstSeen": "2026-10-16T11:18:23.860Z"
  },
  {
+  "id": "32f20bd15ec2296c",
+  "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNU190dkZwZGJGWDlMc1dqTjRRdkVqSUZjd3VIVTAyNVk5VTdmN2s5QnJraDlDbmNLSUc3TWowMFlsUWxFX3lXbmdLNlFIcE1rZW9NWUpuWldyZjEzX0EtWHRxS1JFZzJmdlRuY3NOeGJWUWg5UXJOX3RKV1l1Z3duT3pNWm4xMGFzWHpSb19JdXlsTUR5cjR5S3ZUM2hoaVRuMnU3SFZhUEdfb0owbW1BSA?oc=5",
+  "title": "Latham Partners Hit a High Note on the Hollywood Reporter’s 2026 Top Music Lawyers List",
+  "summary": "Latham Partners Hit a High Note on the Hollywood Reporter’s 2026 Top Music Lawyers List Latham & Watkins LLP",
+  "source": "Latham & Watkins LLP",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-09T07:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 0,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
+ },
+ {
   "id": "6771841cf79ba1b6",
   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOdE4ycWlJcXVkSnM4SUhSMUZtbjZ3MVFqakw2Szd5QTAyYXpyb1BiTjY1bXplZ2YzdzZESnNrNzAwVzV5NGN0SlJncGVSN1NrY0NfZC1LcUk3Xy1abnRjSlBlN2ZIeVRxRVhzSmRVMGQ3blJzZTVqUmpHZnFDUWwtaDlB?oc=5",
   "title": "Latest Music Industry Hires: Live Nation, Suno, GoDigital, More",
@@ -11335,6 +12826,22 @@
   "topics": [],
   "score": 10,
   "firstSeen": "2026-10-09T13:12:13.498Z"
+ },
+ {
+  "id": "8484064eebd62ddf",
+  "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPU25uOWhvZW9YSU80a01GTG1td2s2SS1WdTlyZmJWYm9EOXJRUVB4bnk0N3VXenBPbVlsaDF5UGtWamNmSTZCTkUzUVhSRmhnTkh3WHA1OGR0bktReXVJUmFtaHQtOHV6NktUclBORkViWi1HbC0yODZaR0h0UzJwUkNfOGJ5T2k4OUZ6YVZpN3ZCbnh0XzFUWjNnUE1Fbzd3NDJZV3hlVQ?oc=5",
+  "title": "Music Publishers Will Be Handed Millions of Dollars Next Year. Here’s Why - K-Jewel 99.3 FM",
+  "summary": "Music Publishers Will Be Handed Millions of Dollars Next Year. Here’s Why K-Jewel 99.3 FM",
+  "source": "Google News",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-08T14:18:05.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 0,
+  "firstSeen": "2026-10-22T11:46:30.976Z"
  },
  {
   "id": "242049574b00c2cd",
