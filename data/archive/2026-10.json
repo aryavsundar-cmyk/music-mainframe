@@ -1,5 +1,385 @@
 [
  {
+  "id": "d06cb3bdce2961f1",
+  "url": "https://www.billboard.com/pro/chris-brown-suspended-jail-sentence-london-nightclub-attack/",
+  "title": "Chris Brown Receives Suspended Jail Sentence in London Nightclub Attack Case",
+  "summary": "The incident took place in London in February 2023.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-26T12:30:01.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
+  "id": "93574c1b01b7012a",
+  "url": "https://musically.com/2026/10/26/movin-to-the-sun-shows-grey-areas-between-ai-and-human-music/",
+  "title": "‘Movin’ to the Sun’ shows grey areas between AI and human music",
+  "summary": "As you’ll know if you’ve heard it, ‘Movin’ to the Sun’ is a stone-cold dancefloor banger, chopped-up vocals from dance legend Ultra Naté. It’s also a track that started life as a song generated using AI-music platform Suno. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-26T12:30:00.000Z",
+  "entities": [
+   "hipgnosis-songs-fund",
+   "suno"
+  ],
+  "types": [
+   "catalog-fund",
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 57,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
+  "id": "2d19ef2700696797",
+  "url": "https://variety.com/2026/music/global/chris-brown-sentenced-attack-london-nightclub-1236931029/",
+  "title": "Chris Brown Sentenced to Eight Months in Prison, Suspended for 12 Months, for ‘Vicious and Unprovoked’ Attack at U.K. Nightclub",
+  "summary": "Grammy award winning singer Chris Brown has been sentenced to eight months in prison, suspended for 12 months – therefore avoiding jail time – in relation to a “vicious and unprovoked” attack at a London nightclub in 2023. Before sentencing, Judge Tony Baumgartner had warned Bro…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-26T12:16:52.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 23,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
+  "id": "0c71a30397adbc11",
+  "url": "https://www.digitalmusicnews.com/2026/10/26/brands-getting-sued-social-media-music-use/",
+  "title": "Brands Are Getting Sued Over Their Music Use on Social Media—How Brands Can Get Ahead",
+  "summary": "If you’ve followed Digital Music News’ coverage over the past few years, you’ve watched a pattern repeat itself with almost mechanical regularity. A major label discovers hundreds of unlicensed songs scattered across a brand’s TikTok and Instagram accounts and responds with a la…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-26T12:15:26.000Z",
+  "entities": [
+   "tiktok"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "litigation",
+   "pro-reform"
+  ],
+  "score": 45,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
+  "id": "721aaeb4859ae2d3",
+  "url": "https://www.billboard.com/pro/unitedmasters-signs-two-new-latin-artists/",
+  "title": "UnitedMasters Expands Latin Division & Signs Two New Artists",
+  "summary": "The new signings continue the company's focus on Latin music.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-26T12:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
+  "id": "a10d27dee4c38259",
+  "url": "https://www.billboard.com/pro/beatles-vinyl-sale-discogs-rare-records-purchase/",
+  "title": "Beatles for Sale: Discogs to List 1,300 Rare Beatles Records From Private Collection",
+  "summary": "The drop, done in partnership with Black Plastic Records, includes original pressings and other rare singles and editions from the U.K. and continental Europe.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-26T12:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
+  "id": "1192de05c24fc577",
+  "url": "https://completemusicupdate.com/jobs/digital-accounts-coordinator-absolute-label-services-london-hybrid/",
+  "title": "Digital Accounts Coordinator // Absolute Label Services (London Hybrid)",
+  "summary": "Absolute Label Services are seeking a Digital Accounts Coordinator to join their Wimbledon office (min of 3 days in office). Closing date: 6 Nov",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-26T10:35:32.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
+  "id": "100e12f39e2311cd",
+  "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNZlI1bnk3QVFjdFgwMWV4UWxFZ2ZxNENpc2R1b2lpT25JeHpSZjA5cDVnNDJscjJJSV9KVEFGVUNhdHptaVVHUmpnTVJxR0dKbk13UE4zRVB0bEdZSEJLTFl3UlJlcFJLWlpuUzFvSGZ2dXY0MElXUzFmUTlhZjlOem5WT1I5WHVqREZjSXFtb202Mm9vYlpNZkl3amlLdWJj?oc=5",
+  "title": "Elvis Presley Estate Sues Anthropic Over AI Training on 274 Songs",
+  "summary": "Elvis Presley Estate Sues Anthropic Over AI Training on 274 Songs https://streamlinefeed.co.ke/",
+  "source": "https://streamlinefeed.co.ke/",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-26T09:34:28.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 23,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
+  "id": "fd43d7d1f7feeb29",
+  "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOLU5WMUhGcm51Q0wwaVIydWJKM3BLczlKYUdtZ0RiRVVGUE10QkVaZHUwUkdfZG43b2lRYkFMaEw0TDZjdFRmYTMwLWZOMFlxdm1HTmFXVHlvN2FWcWN5N3IyaHlJbFUtNTRmdXd2T1FVdkxxbENDYTF3STRMNHVXOUtkN05Ja3FNY1RCWVVn?oc=5",
+  "title": "Suno Smacked With $285M Lawsuit Over Hip-Hop Producer Tags",
+  "summary": "Suno Smacked With $285M Lawsuit Over Hip-Hop Producer Tags AllHipHop",
+  "source": "AllHipHop",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-26T08:20:46.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 39,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
+  "id": "843a42afbe7dd237",
+  "url": "https://www.billboard.com/business/publishing/kenny-macpherson-big-deal-music-publisher-dies-71-1236367718/",
+  "title": "Kenny MacPherson, Veteran Music Publisher and Big Deal Music Co-Founder, Dies at 71",
+  "summary": "The Scottish-born executive worked with Radiohead, My Morning Jacket and St. Vincent across stints at Warner/Chappell, Chrysalis and his own indie publisher.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-26T06:07:07.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
+  "id": "c96de4a08bd388ce",
+  "url": "https://www.digitalmusicnews.com/2026/10/25/jay-z-los-angeles-anniversary-shows/",
+  "title": "Jay-Z Brings Sold-Out Los Angeles Anniversary Celebration to an End with Snoop Dogg, Dr. Dre, Blue Ivy",
+  "summary": "Jay-Z returned to SoFi Stadium for the final two nights of his 30th anniversary celebration, featuring Too $hort, Snoop Dogg, Dr. Dre, and Blue Ivy. Over the weekend, Jay-Z returned to SoFi Stadium for the final two performances of his JAŸ-Z30 Los Angeles celebration. Following…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-26T05:50:38.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
+  "id": "a4e36590b712fbb4",
+  "url": "https://www.digitalmusicnews.com/2026/10/25/my-chemical-romance-dallas-cheerleaders/",
+  "title": "Dallas Cowboys Cheerleaders Launch Lawsuit Against My Chemical Romance Over Lookalike Costumes",
+  "summary": "The Dallas Cowboys Cheerleaders file suit against My Chemical Romance over their dancers’ lookalike outfits during the Black Parade anniversary tour. My Chemical Romance (MCR) faces legal action from Pro Silver Star, the trademark owner of the Dallas Cowboys Cheerleaders (DCC).…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-26T05:30:54.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation",
+   "live"
+  ],
+  "score": 23,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
+  "id": "4e84548511b65720",
+  "url": "https://www.digitalmusicnews.com/2026/10/25/dolly-parton-estate-brand-ambassador/",
+  "title": "Dolly Parton’s Estate Appoints Her Niece Danielle as Brand Ambassador",
+  "summary": "Dolly Parton’s niece Danielle Parton has been named brand ambassador on behalf of the estate: “I’m proud to be part of that legacy.” Dolly Parton’s estate has announced that her niece, Danielle Parton, will take on the role as brand ambassador to help support the causes that the…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-26T04:48:57.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
+  "id": "033f1139ccf21ede",
+  "url": "https://www.digitalmusicnews.com/2026/10/25/elvis-presley-ip-anthropic-copyright-infringement/",
+  "title": "Elvis Presley IP Owners Sue Anthropic Over Allegations of Copyright Infringement",
+  "summary": "Elvis Presley’s rightsholders have sued Anthropic with allegations of copyright infringement over 274 of his songs used to train AI models without permission. AI company Anthropic faces yet another copyright infringement lawsuit, this time filed by the owners of Elvis Presley’s…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-26T04:44:03.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
+  "id": "13abbc9912ac9698",
+  "url": "https://variety.com/2026/music/news/olivia-rodrigo-you-seem-pretty-sad-returns-to-no-1-chart-1236930779/",
+  "title": "Olivia Rodrigo’s ‘You Seem Pretty Sad for a Girl So in Love’ Returns to No. 1 on Albums Chart Following ‘Expectations’ Remix",
+  "summary": "Following the release of her “Expectations” remix with Chappell Roan, Olivia Rodrigo returns to the top of the Billboard 200 with “You Seem Pretty Sad for a Girl So in Love,” earning a third total week at No. 1. Rodrigo initially released “You Seem Pretty Sad” back in June, bowi…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-25T19:28:19.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
+  "id": "b9ffdb9cfc43025a",
+  "url": "https://variety.com/2026/digital/news/pokemon-marshmello-concert-30th-anniversary-1236930618/",
+  "title": "DJ Pikachu: Pokémon Goes EDM With Lasers, Battles and Marshmello in 30th Anniversary Concert at Intuit Dome",
+  "summary": "Gotta rave ’em all! Pokémon celebrated its 30th anniversary with an epic EDM concert at LA’s Intuit Dome with DJs Marshmello and Alison Wonderland on Saturday night. Billed as Pokémon Night Out, the show mixed together the creatures from the popular video games and trading cards…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-25T17:08:29.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
+  "id": "6c7731731e8f02fa",
+  "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOOXVZZVdoTUZkakk3b2RzUU1XOEpWX1U2RmMtUGFiMVY5d1IwTzRuc1BfZl9od2VKTXB4SmZneUVVQlpVZU5tRkJlcG13VkJ1ek5MRDRzV01JTFhveENXbDRtX1pqTXFZR0NZZGV4dWJidTc1ck1uTDZRS3BjbkdVUmRwMmstX0U1NVhMV1JR?oc=5",
+  "title": "Reservoir sues Suno for $157.5m over 1,050 songs in AI training data",
+  "summary": "Reservoir sues Suno for $157.5m over 1,050 songs in AI training data PPC Land",
+  "source": "PPC Land",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-25T14:53:18.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 34,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
+  "id": "a8005cb83b62a7a5",
+  "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBFejJzR0lzcWE1dHRrNEwxOVItWndzVXpIc0pvTUdCZk9GU0NUXzNIMlo1Ul9CSDZZXzljdWRfbC01UFBGQ1NnZVdFZi11d3BoSl9QWXphbktpTGRFblZVamVyVi1pNEI0QlhXMU95UjZvMXRjaGV3WEZfRWdSRk0?oc=5",
+  "title": "Indonesia’s Music Boom: Local Stars, Global Ambitions",
+  "summary": "Indonesia’s Music Boom: Local Stars, Global Ambitions Digital Music News",
+  "source": "Digital Music News",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-25T13:45:38.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
+  "id": "82179a390461116d",
+  "url": "https://news.google.com/rss/articles/CBMixAJBVV95cUxOcEZYcXBkODBXWVpERDN4SXhUalJmQm5sXzM0OUdQa3VpOEFEbEs4bko2TWVqM0dOdFRGU2E2cUxqaXVRc2E5bXRXRVl1QWhYa0UxNlowQUlPYm85azY1cnRsS1J5eEh2VTZURXBGUVVueUhQNzVxMjBibzVwVDIxVnloYUZJS0VoYTNxc2tQa1VsM2dfTmJnanVvU0dMLTI2N1p4dHhzSzV3RGROc09faGpWVVE1UHRleENHZUNkSk5rM2lQVUZMcWJaSVpSTUljWThSTVRxOV9QWUlXazN0S3BTQXQ4S1B2TkZBQjg3dUNJU0JDbFduQVdCa2stX2JWSERzNE9nRExhOHhfRWRabVhVTTZFcUlDWlVlVzYxTkxGTUxYZVQ3NTM4QUZCVmpVSlc2dnpMOWUzSGt6cjVTRVNZWE7SAcQCQVVfeXFMTnBGWHFwZDgwV1laREQzeEl4VGpSZkJubF8zNDlHUGt1aThBRGxLOG5KNk1lajNHTnRURlNhNnFMaml1UXNhOW10V0VZdUFoWGtFMTZaMEFJT2JvOWs2NXJ0bEtSeXhIdlU2VEVwRlFVbnlIUDc1cTIwYm81cFQyMVZ5aGFGSUtFaGEzcXNrUGtVbDNnX05iZ2p1b1NHTC0yNjdaeHR4c0s1d0RkTnNPX2hqVlVRNVB0ZXhDR2VDZEpOazNpUFVGTHFiWklaUk1JY1k4Uk1UcTlfUFlJV2szdEtwU0F0OEtQdk5GQUI4N3VDSVNCQ2xXbkFXQmtrLV9iVkhEczRPZ0RMYTh4X0VkWm1YVU02RXFJQ1pVZVc2MU5MRk1MWGVUNzUzOEFGQlZqVUpXNnZ6TDllM0hrenI1U0VTWVhO?oc=5",
+  "title": "Ralph Vaughan Williams' music royalties are funding a new generation of composers; four postgraduate stud",
+  "summary": "Ralph Vaughan Williams' music royalties are funding a new generation of composers; four postgraduate stud The Times of India",
+  "source": "The Times of India",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-25T12:46:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
+  "id": "8c6fa2214309e119",
+  "url": "https://www.digitalmusicnews.com/2026/10/25/indonesia-music-market-eveara/",
+  "title": "Indonesia: One of the World’s Most Promising Digital Music Markets",
+  "summary": "Indonesia may be one of the most important music markets the global music business still underestimates. The following comes from Eveara, a partner of DMN. With approximately 286 million people, a young population and 230 million internet users, Indonesians generated 179 billion…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-25T12:00:05.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
+  "id": "4bddc07fbf9d168f",
+  "url": "https://www.digitalmusicnews.com/2026/10/25/apollo-research-ai-impact-corporate-environment/",
+  "title": "There’s ‘No Evidence’ AI is Improving Corporate Productivity, Profit Margins, or Growth, Apollo Finding Claims",
+  "summary": "Recent studies indicate that AI hasn’t brought any major productivity gains, profit margin increases, or growth potential for any major company outside the tech industry. New research outlined by investment leader Apollo Global Management finds that despite the astronomical inve…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-25T09:17:25.000Z",
+  "entities": [
+   "apollo"
+  ],
+  "types": [
+   "pe-fund"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 25,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
   "id": "f15c680968eb7cd0",
   "url": "https://variety.com/2026/music/news/jay-z-30-closer-dr-dre-snoop-dogg-los-angeles-sofi-stadium-1236930554/",
   "title": "Jay-Z Brings His ‘Jay-Z 30’ Concert Series to a Close in Los Angeles With Dr. Dre, Snoop Dogg and Too Short",
@@ -2306,6 +2686,29 @@
   ],
   "score": 15,
   "firstSeen": "2026-10-23T11:33:34.539Z"
+ },
+ {
+  "id": "847f18b4e647e26a",
+  "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOUmRxZlpmZVRhSkc2RDExdlNxNXB1cHViMXVUUXVRUGtVLURUVHhqd0xkSnlNdS1lSmRaTThoUnBacy0wUVUzVTQ2YXNSRFBvUE5lMUh2U280azhaR2lhaFdNcF9uY3JSNUVRUGNqVnROU1NwTmxMdHlhTGxvRG4tRHh5c09tMlFwSWQ4V3NZOWdGYm9kcUYyMFNhTmhHS1AyMUdLNWVScjEwSDBmZ200QnFRRm9FYXZ3c0FYX0pNVHdnb2Frak1tczVRbWE5dkdjU1VCaVVUMXVaeUNydUlqYVF1M0tLS2N1Ymc?oc=5",
+  "title": "Reservoir sues Suno and Anthropic for infringing songs by Joni Mitchell, Johnny Cash, Madonna and more",
+  "summary": "Reservoir sues Suno and Anthropic for infringing songs by Joni Mitchell, Johnny Cash, Madonna and more Music Business Worldwide",
+  "source": "Music Business Worldwide",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-22T12:19:08.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 26,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
  },
  {
   "id": "285b98b1d933cb0b",
@@ -8282,6 +8685,22 @@
   "firstSeen": "2026-10-16T11:18:23.860Z"
  },
  {
+  "id": "ccbfc400ac2c6447",
+  "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOUENEMFZqcWh5b3pMQUQ4TmNOQU8xa01ObGNxWFlQZzJSSXBNRUZiaU1WMUpmbnd6ODhrTjBNWG9sYVc1cmFXZmJfZllnUUd4dVJ5ckhfc05oZlZzcEtXZjRwOFJMcndqeFFIYnN1V0pwVmFHSVJHUDRTUS11ZUV2MDB5T0xpazRwZGVLYnVoYVFWR1J4bjRYNUVpcV9ISXhJYlU2ZlFkbFZkN19Bd2FGbHRmYzlfaTlPaVZzN2h4UUkzdC1fRzMtUWJR?oc=5",
+  "title": "Recording industry group defends royalty payment guidelines challenge",
+  "summary": "Recording industry group defends royalty payment guidelines challenge Free Malaysia Today",
+  "source": "Free Malaysia Today",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-16T05:09:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 0,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
+ },
+ {
   "id": "81c6e80b9a0b2809",
   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNdUNEZ2JpeXJ0VzJLNkwwOURLNTZ5ZG9xUGlhZFh2SFVZNHcyUUZUckhrVDRGdl9mckd0N213a2N3QUZ5bEhVVmoyVFJVcWRMYVF1VERFQ0JxVHZoVkJEVjVZM1drYkJxaEtVLTB6WkowRmk2TkZNOFo4RzlBQkFSSkRwekw4RGJxbXVZd2ZHTkVkbUxJeTA2WjlvaGlWZFFWb1BqMVJodFIxbVU2dVo3V0xMdjJSS1l0RE1JYWFrMEV0dw?oc=5",
   "title": "Warner Music India strikes series of catalogue deals and strategic partnerships",
@@ -10679,6 +11098,22 @@
   "topics": [],
   "score": 0,
   "firstSeen": "2026-10-24T10:53:54.675Z"
+ },
+ {
+  "id": "c0fcad8ebc2286d9",
+  "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOLXRiNEh3SG56T3VtR28yVEZ5eHRheDdQeENTUlNLVGdDOTNpU0ZrLUlaVkt3WTVCZU0xSmFqMFkyRjJRclU0VUNpeDN2Mk5KbkxwRHRGalJpQUpDX1MwVU5zV24zWTlmMktWblFTOWVkQU51cmo4VnFWUGViRlczMXlsMjZBNFRBWEFQM1UyM280QnNLUXpGOWxVdU05ZnNZVnI1WVJES2tDck5ld2liTzRQcUxjOG0zRVB2ZVZxMWxvdk1pb0JMeWRxSGlBT0k?oc=5",
+  "title": "MU General Secretary Naomi Pohl Spotlights Jobs for Young Musicians at Labour Party Conference 2026",
+  "summary": "MU General Secretary Naomi Pohl Spotlights Jobs for Young Musicians at Labour Party Conference 2026 The Musicians' Union",
+  "source": "The Musicians' Union",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-14T07:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 0,
+  "firstSeen": "2026-10-26T12:54:47.061Z"
  },
  {
   "id": "63a6cee85302861d",
