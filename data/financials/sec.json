@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-29T13:46:30.388Z",
+ "updatedAt": "2026-10-30T13:39:10.134Z",
  "source": "SEC EDGAR XBRL (data.sec.gov/api/xbrl/companyfacts)",
  "companies": {
   "alphabet": {
@@ -513,7 +513,7 @@
   },
   "amazon": {
    "entityId": "amazon",
-   "name": "AMAZON COM INC",
+   "name": "AMAZON.COM, INC.",
    "ticker": "AMZN",
    "cik": 1018724,
    "metrics": {
@@ -591,23 +591,23 @@
       "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax"
      },
      "quarter": {
-      "value": 200606000000,
+      "value": 201944000000,
       "currency": "USD",
-      "start": "2026-04-01",
-      "end": "2026-06-30",
+      "start": "2026-07-01",
+      "end": "2026-09-30",
       "form": "10-Q",
-      "filed": "2026-07-31",
-      "accn": "0001018724-26-000026",
+      "filed": "2026-10-30",
+      "accn": "0001018724-26-000040",
       "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax"
      },
      "priorQuarter": {
-      "value": 167702000000,
+      "value": 180169000000,
       "currency": "USD",
-      "start": "2025-04-01",
-      "end": "2025-06-30",
+      "start": "2025-07-01",
+      "end": "2025-09-30",
       "form": "10-Q",
-      "filed": "2026-07-31",
-      "accn": "0001018724-26-000026",
+      "filed": "2026-10-30",
+      "accn": "0001018724-26-000040",
       "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax"
      }
     },
@@ -685,23 +685,23 @@
       "tag": "us-gaap:OperatingIncomeLoss"
      },
      "quarter": {
-      "value": 27461000000,
+      "value": 28076000000,
       "currency": "USD",
-      "start": "2026-04-01",
-      "end": "2026-06-30",
+      "start": "2026-07-01",
+      "end": "2026-09-30",
       "form": "10-Q",
-      "filed": "2026-07-31",
-      "accn": "0001018724-26-000026",
+      "filed": "2026-10-30",
+      "accn": "0001018724-26-000040",
       "tag": "us-gaap:OperatingIncomeLoss"
      },
      "priorQuarter": {
-      "value": 19171000000,
+      "value": 17422000000,
       "currency": "USD",
-      "start": "2025-04-01",
-      "end": "2025-06-30",
+      "start": "2025-07-01",
+      "end": "2025-09-30",
       "form": "10-Q",
-      "filed": "2026-07-31",
-      "accn": "0001018724-26-000026",
+      "filed": "2026-10-30",
+      "accn": "0001018724-26-000040",
       "tag": "us-gaap:OperatingIncomeLoss"
      }
     },
@@ -779,45 +779,45 @@
       "tag": "us-gaap:NetIncomeLoss"
      },
      "quarter": {
-      "value": 62647000000,
+      "value": 20685000000,
       "currency": "USD",
-      "start": "2026-04-01",
-      "end": "2026-06-30",
+      "start": "2026-07-01",
+      "end": "2026-09-30",
       "form": "10-Q",
-      "filed": "2026-07-31",
-      "accn": "0001018724-26-000026",
+      "filed": "2026-10-30",
+      "accn": "0001018724-26-000040",
       "tag": "us-gaap:NetIncomeLoss"
      },
      "priorQuarter": {
-      "value": 18164000000,
+      "value": 21187000000,
       "currency": "USD",
-      "start": "2025-04-01",
-      "end": "2025-06-30",
+      "start": "2025-07-01",
+      "end": "2025-09-30",
       "form": "10-Q",
-      "filed": "2026-07-31",
-      "accn": "0001018724-26-000026",
+      "filed": "2026-10-30",
+      "accn": "0001018724-26-000040",
       "tag": "us-gaap:NetIncomeLoss"
      }
     },
     "cash": {
      "latest": {
-      "value": 78213000000,
+      "value": 55783000000,
       "currency": "USD",
       "start": null,
-      "end": "2026-06-30",
+      "end": "2026-09-30",
       "form": "10-Q",
-      "filed": "2026-07-31",
-      "accn": "0001018724-26-000026",
+      "filed": "2026-10-30",
+      "accn": "0001018724-26-000040",
       "tag": "us-gaap:CashAndCashEquivalentsAtCarryingValue"
      },
      "prior": {
-      "value": 57741000000,
+      "value": 66922000000,
       "currency": "USD",
       "start": null,
-      "end": "2025-06-30",
+      "end": "2025-09-30",
       "form": "10-Q",
-      "filed": "2025-08-01",
-      "accn": "0001018724-25-000086",
+      "filed": "2025-10-31",
+      "accn": "0001018724-25-000123",
       "tag": "us-gaap:CashAndCashEquivalentsAtCarryingValue"
      }
     },
@@ -975,34 +975,34 @@
     },
     "longTermDebt": {
      "latest": {
-      "value": 128894000000,
+      "value": 173125000000,
       "currency": "USD",
       "start": null,
-      "end": "2026-06-30",
+      "end": "2026-09-30",
       "form": "10-Q",
-      "filed": "2026-07-31",
-      "accn": "0001018724-26-000026",
+      "filed": "2026-10-30",
+      "accn": "0001018724-26-000040",
       "tag": "us-gaap:LongTermDebtNoncurrent"
      },
      "prior": {
-      "value": 50718000000,
+      "value": 50742000000,
       "currency": "USD",
       "start": null,
-      "end": "2025-06-30",
+      "end": "2025-09-30",
       "form": "10-Q",
-      "filed": "2025-08-01",
-      "accn": "0001018724-25-000086",
+      "filed": "2025-10-31",
+      "accn": "0001018724-25-000123",
       "tag": "us-gaap:LongTermDebtNoncurrent"
      }
     }
    },
    "latestFiling": {
     "form": "10-Q",
-    "filed": "2026-07-31",
-    "accn": "0001018724-26-000026",
-    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/"
+    "filed": "2026-10-30",
+    "accn": "0001018724-26-000040",
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000040/"
    },
-   "latestPeriodEnd": "2026-06-30",
+   "latestPeriodEnd": "2026-09-30",
    "filings": {
     "annual": {
      "form": "10-K",
@@ -1012,9 +1012,9 @@
     },
     "periodic": {
      "form": "10-Q",
-     "filed": "2026-07-31",
-     "reportDate": "2026-06-30",
-     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/"
+     "filed": "2026-10-30",
+     "reportDate": "2026-09-30",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000040/"
     }
    },
    "pending": null,
@@ -8590,7 +8590,7 @@
   },
   "siriusxm": {
    "entityId": "siriusxm",
-   "name": "SIRIUS XM HOLDINGS INC.",
+   "name": "Sirius XM Holdings Inc.",
    "ticker": "SIRI",
    "cik": 908937,
    "metrics": {
@@ -8668,23 +8668,23 @@
       "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax"
      },
      "quarter": {
-      "value": 2160000000,
+      "value": 2153000000,
       "currency": "USD",
-      "start": "2026-04-01",
-      "end": "2026-06-30",
+      "start": "2026-07-01",
+      "end": "2026-09-30",
       "form": "10-Q",
-      "filed": "2026-07-30",
-      "accn": "0000908937-26-000022",
+      "filed": "2026-10-29",
+      "accn": "0000908937-26-000028",
       "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax"
      },
      "priorQuarter": {
-      "value": 2138000000,
+      "value": 2159000000,
       "currency": "USD",
-      "start": "2025-04-01",
-      "end": "2025-06-30",
+      "start": "2025-07-01",
+      "end": "2025-09-30",
       "form": "10-Q",
-      "filed": "2026-07-30",
-      "accn": "0000908937-26-000022",
+      "filed": "2026-10-29",
+      "accn": "0000908937-26-000028",
       "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax"
      }
     },
@@ -8762,23 +8762,23 @@
       "tag": "us-gaap:OperatingIncomeLoss"
      },
      "quarter": {
-      "value": 472000000,
+      "value": 479000000,
       "currency": "USD",
-      "start": "2026-04-01",
-      "end": "2026-06-30",
+      "start": "2026-07-01",
+      "end": "2026-09-30",
       "form": "10-Q",
-      "filed": "2026-07-30",
-      "accn": "0000908937-26-000022",
+      "filed": "2026-10-29",
+      "accn": "0000908937-26-000028",
       "tag": "us-gaap:OperatingIncomeLoss"
      },
      "priorQuarter": {
-      "value": 365000000,
+      "value": 493000000,
       "currency": "USD",
-      "start": "2025-04-01",
-      "end": "2025-06-30",
+      "start": "2025-07-01",
+      "end": "2025-09-30",
       "form": "10-Q",
-      "filed": "2026-07-30",
-      "accn": "0000908937-26-000022",
+      "filed": "2026-10-29",
+      "accn": "0000908937-26-000028",
       "tag": "us-gaap:OperatingIncomeLoss"
      }
     },
@@ -8856,45 +8856,45 @@
       "tag": "us-gaap:NetIncomeLoss"
      },
      "quarter": {
-      "value": 239000000,
+      "value": 317000000,
       "currency": "USD",
-      "start": "2026-04-01",
-      "end": "2026-06-30",
+      "start": "2026-07-01",
+      "end": "2026-09-30",
       "form": "10-Q",
-      "filed": "2026-07-30",
-      "accn": "0000908937-26-000022",
+      "filed": "2026-10-29",
+      "accn": "0000908937-26-000028",
       "tag": "us-gaap:NetIncomeLoss"
      },
      "priorQuarter": {
-      "value": 205000000,
+      "value": 297000000,
       "currency": "USD",
-      "start": "2025-04-01",
-      "end": "2025-06-30",
+      "start": "2025-07-01",
+      "end": "2025-09-30",
       "form": "10-Q",
-      "filed": "2026-07-30",
-      "accn": "0000908937-26-000022",
+      "filed": "2026-10-29",
+      "accn": "0000908937-26-000028",
       "tag": "us-gaap:NetIncomeLoss"
      }
     },
     "cash": {
      "latest": {
-      "value": 174000000,
+      "value": 210000000,
       "currency": "USD",
       "start": null,
-      "end": "2026-06-30",
+      "end": "2026-09-30",
       "form": "10-Q",
-      "filed": "2026-07-30",
-      "accn": "0000908937-26-000022",
+      "filed": "2026-10-29",
+      "accn": "0000908937-26-000028",
       "tag": "us-gaap:CashAndCashEquivalentsAtCarryingValue"
      },
      "prior": {
-      "value": 92000000,
+      "value": 79000000,
       "currency": "USD",
       "start": null,
-      "end": "2025-06-30",
+      "end": "2025-09-30",
       "form": "10-Q",
-      "filed": "2026-07-30",
-      "accn": "0000908937-26-000022",
+      "filed": "2026-10-29",
+      "accn": "0000908937-26-000028",
       "tag": "us-gaap:CashAndCashEquivalentsAtCarryingValue"
      }
     },
@@ -9052,34 +9052,34 @@
     },
     "longTermDebt": {
      "latest": {
-      "value": 9453000000,
+      "value": 8066000000,
       "currency": "USD",
       "start": null,
-      "end": "2026-06-30",
+      "end": "2026-09-30",
       "form": "10-Q",
-      "filed": "2026-07-30",
-      "accn": "0000908937-26-000022",
+      "filed": "2026-10-29",
+      "accn": "0000908937-26-000028",
       "tag": "us-gaap:LongTermDebtAndCapitalLeaseObligations"
      },
      "prior": {
-      "value": 10136000000,
+      "value": 9019000000,
       "currency": "USD",
       "start": null,
-      "end": "2025-06-30",
+      "end": "2025-09-30",
       "form": "10-Q",
-      "filed": "2025-07-31",
-      "accn": "0000908937-25-000023",
+      "filed": "2025-10-30",
+      "accn": "0000908937-25-000030",
       "tag": "us-gaap:LongTermDebtAndCapitalLeaseObligations"
      }
     }
    },
    "latestFiling": {
     "form": "10-Q",
-    "filed": "2026-07-30",
-    "accn": "0000908937-26-000022",
-    "url": "https://www.sec.gov/Archives/edgar/data/908937/000090893726000022/"
+    "filed": "2026-10-29",
+    "accn": "0000908937-26-000028",
+    "url": "https://www.sec.gov/Archives/edgar/data/908937/000090893726000028/"
    },
-   "latestPeriodEnd": "2026-06-30",
+   "latestPeriodEnd": "2026-09-30",
    "filings": {
     "annual": {
      "form": "10-K",
@@ -9089,9 +9089,9 @@
     },
     "periodic": {
      "form": "10-Q",
-     "filed": "2026-07-30",
-     "reportDate": "2026-06-30",
-     "url": "https://www.sec.gov/Archives/edgar/data/908937/000090893726000022/"
+     "filed": "2026-10-29",
+     "reportDate": "2026-09-30",
+     "url": "https://www.sec.gov/Archives/edgar/data/908937/000090893726000028/"
     }
    },
    "pending": null,

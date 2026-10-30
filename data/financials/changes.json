@@ -1,8 +1,238 @@
 {
  "startedAt": "2026-09-27T15:02:57.764Z",
- "updatedAt": "2026-10-29T13:46:30.387Z",
+ "updatedAt": "2026-10-30T13:39:10.133Z",
  "source": "Written by scripts/refresh-financials.mjs when a figure changes between refreshes.",
  "entries": [
+  {
+   "at": "2026-10-30T13:39:10.133Z",
+   "entityId": "amazon",
+   "metric": "revenue",
+   "slot": "quarter",
+   "kind": "new-period",
+   "from": {
+    "value": 200606000000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-07-31",
+    "accn": "0001018724-26-000026"
+   },
+   "to": {
+    "value": 201944000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-10-30",
+    "accn": "0001018724-26-000040"
+   }
+  },
+  {
+   "at": "2026-10-30T13:39:10.133Z",
+   "entityId": "amazon",
+   "metric": "operatingIncome",
+   "slot": "quarter",
+   "kind": "new-period",
+   "from": {
+    "value": 27461000000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-07-31",
+    "accn": "0001018724-26-000026"
+   },
+   "to": {
+    "value": 28076000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-10-30",
+    "accn": "0001018724-26-000040"
+   }
+  },
+  {
+   "at": "2026-10-30T13:39:10.133Z",
+   "entityId": "amazon",
+   "metric": "netIncome",
+   "slot": "quarter",
+   "kind": "new-period",
+   "from": {
+    "value": 62647000000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-07-31",
+    "accn": "0001018724-26-000026"
+   },
+   "to": {
+    "value": 20685000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-10-30",
+    "accn": "0001018724-26-000040"
+   }
+  },
+  {
+   "at": "2026-10-30T13:39:10.133Z",
+   "entityId": "amazon",
+   "metric": "cash",
+   "slot": "latest",
+   "kind": "new-period",
+   "from": {
+    "value": 78213000000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-07-31",
+    "accn": "0001018724-26-000026"
+   },
+   "to": {
+    "value": 55783000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-10-30",
+    "accn": "0001018724-26-000040"
+   }
+  },
+  {
+   "at": "2026-10-30T13:39:10.133Z",
+   "entityId": "amazon",
+   "metric": "longTermDebt",
+   "slot": "latest",
+   "kind": "new-period",
+   "from": {
+    "value": 128894000000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-07-31",
+    "accn": "0001018724-26-000026"
+   },
+   "to": {
+    "value": 173125000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-10-30",
+    "accn": "0001018724-26-000040"
+   }
+  },
+  {
+   "at": "2026-10-30T13:39:10.133Z",
+   "entityId": "siriusxm",
+   "metric": "revenue",
+   "slot": "quarter",
+   "kind": "new-period",
+   "from": {
+    "value": 2160000000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-07-30",
+    "accn": "0000908937-26-000022"
+   },
+   "to": {
+    "value": 2153000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-10-29",
+    "accn": "0000908937-26-000028"
+   }
+  },
+  {
+   "at": "2026-10-30T13:39:10.133Z",
+   "entityId": "siriusxm",
+   "metric": "operatingIncome",
+   "slot": "quarter",
+   "kind": "new-period",
+   "from": {
+    "value": 472000000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-07-30",
+    "accn": "0000908937-26-000022"
+   },
+   "to": {
+    "value": 479000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-10-29",
+    "accn": "0000908937-26-000028"
+   }
+  },
+  {
+   "at": "2026-10-30T13:39:10.133Z",
+   "entityId": "siriusxm",
+   "metric": "netIncome",
+   "slot": "quarter",
+   "kind": "new-period",
+   "from": {
+    "value": 239000000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-07-30",
+    "accn": "0000908937-26-000022"
+   },
+   "to": {
+    "value": 317000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-10-29",
+    "accn": "0000908937-26-000028"
+   }
+  },
+  {
+   "at": "2026-10-30T13:39:10.133Z",
+   "entityId": "siriusxm",
+   "metric": "cash",
+   "slot": "latest",
+   "kind": "new-period",
+   "from": {
+    "value": 174000000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-07-30",
+    "accn": "0000908937-26-000022"
+   },
+   "to": {
+    "value": 210000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-10-29",
+    "accn": "0000908937-26-000028"
+   }
+  },
+  {
+   "at": "2026-10-30T13:39:10.133Z",
+   "entityId": "siriusxm",
+   "metric": "longTermDebt",
+   "slot": "latest",
+   "kind": "new-period",
+   "from": {
+    "value": 9453000000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-07-30",
+    "accn": "0000908937-26-000022"
+   },
+   "to": {
+    "value": 8066000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-10-29",
+    "accn": "0000908937-26-000028"
+   }
+  },
   {
    "at": "2026-10-29T13:46:30.387Z",
    "entityId": "alphabet",
