@@ -1,5 +1,720 @@
 [
  {
+  "id": "49136ddbd032a502",
+  "url": "https://www.billboard.com/pro/indie-venue-of-month-jacksonville-haunted-florida-theatre/",
+  "title": "Inside Jacksonville’s Historic — And Haunted? — Florida Theatre, Which Turns 100 Next Year",
+  "summary": "The nearly century-old venue has hosted acts including Elvis Presley, Fleetwood Mac and Bon Jovi — and according to some, it’s home to multiple active spirits.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T23:48:02.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "7b0100cbe25dee4c",
+  "url": "https://www.digitalmusicnews.com/2026/10/30/music-industry-hires-oct-30-2026/",
+  "title": "Latest Music Industry Hires: Berklee College of Music, Empire, Believe, Too Lost, Peermusic, WMG, Hybe Americas, More",
+  "summary": "Here’s a recap of recent music industry hires and in-house promotions as of October 30th, 2026. If you have a job shuffle to share, we’re all ears. Send us a note to news@digitalmusicnews.com. If you’d like to post a job on our Job Board, just send us a request to noah@digitalmu…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T23:34:03.000Z",
+  "entities": [
+   "believe",
+   "hybe"
+  ],
+  "types": [
+   "artist-services",
+   "label"
+  ],
+  "topics": [],
+  "score": 40,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "51834c2d3c0ee98a",
+  "url": "https://www.billboard.com/pro/billboard-japan-luminate-tokyo-conference-j-pop-metadata/",
+  "title": "Billboard Japan & Luminate’s ‘NOW PLAYING JAPAN Vol. 6’ Focuses on Overseas Perspectives on the Japanese Market, How to Leverage Metadata",
+  "summary": "Held Oct. 2 in Tokyo, the conference featured speakers including Luminate CEO Rob Jonas and Naohiro Kaji of the Ministry of Economy, Trade and Industry.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T22:55:29.000Z",
+  "entities": [
+   "luminate"
+  ],
+  "types": [
+   "data"
+  ],
+  "topics": [],
+  "score": 16,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "5dd0fe006fa749f9",
+  "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPNl8wdUctaTV2RXJBSTI0TlRQN0p1LTNTc3pwV2dMX0xmeEJWd19fb0FkNkk3cnhHOG9DUElHV0hHQmt3VTZHbVhUVTlSMnlBU3BhbzAtdFQzUzNyd0didUI4WkswbEZObVZBd1lwOG1rQkhDSW9pTGtkaFZfRkk1WHJGX0o2ZG9JWF9mMUxDRFkxQ3g0NnJR?oc=5",
+  "title": "Suno and MLC Propose November 2 Subpoena Response Deadline",
+  "summary": "Suno and MLC Propose November 2 Subpoena Response Deadline InterSpace Music Distribution",
+  "source": "InterSpace Music Distribution",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-30T21:49:45.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 26,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "1b9f0df4afafce70",
+  "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE00WnlpZFJFM2NFZ3NydTZXZm5pMWRjN1JlS2d3a21qMm15Yk9SNnhGZkJqeHBtS0h1cW9vVnhfWm0wN3g4SmRzQUJnWGdLRUd4UkpSQ25hVkpaOHdHR08xMlpVaXNWbndFMzNiZUlhNFpjb1JuSi1fbWpsRQ?oc=5",
+  "title": "Suno Plows Ahead With MLC Subpoena, Sets Response Deadline",
+  "summary": "Suno Plows Ahead With MLC Subpoena, Sets Response Deadline Digital Music News",
+  "source": "Digital Music News",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-30T20:56:09.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 26,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "40f05d562a15ec0c",
+  "url": "https://www.digitalmusicnews.com/2026/10/30/suno-mlc-subpoena-schedule/",
+  "title": "Suno Is Keeping the Pressure on the Mechanical Licensing Collective; Court Orders MLC Subpoena Response by Monday",
+  "summary": "Suno is charging ahead with its Mechanical Licensing Collective subpoena, and the MLC now has until Monday to formally oppose a related motion to compel. The involved parties just recently disclosed that quick-moving schedule, including the November 2nd response cutoff for the M…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T20:51:29.000Z",
+  "entities": [
+   "suno",
+   "the-mlc"
+  ],
+  "types": [
+   "music-tech",
+   "pro"
+  ],
+  "topics": [
+   "ai",
+   "litigation",
+   "pro-reform"
+  ],
+  "score": 68,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "20c431d84059a264",
+  "url": "https://variety.com/2026/film/columns/mosquito-bowl-tom-francis-singing-visceral-intense-wwii-1236931824/",
+  "title": "‘The Mosquito Bowl’ Star Tom Francis on Singing in the Movie Last Minute and the ‘Visceral and Intense’ World War II Scenes",
+  "summary": "SPOILER ALERT: This story reveals major details about Peter Berg’s new real-life World War II film “The Mosquito Bowl.” When British actor Tom Francis signed with his U.S. agents at CAA, he made his aspirations very clear. “One of the first emails I sent to my agents was, ‘This…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T20:44:25.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "b0060067c6e71682",
+  "url": "https://www.digitalmusicnews.com/2026/10/30/spotify-ai-cover-remix-tool-launch/",
+  "title": "Spotify Reportedly Prepares to Launch Its AI Cover and Remix Tool in Early 2027, Charging Subscribers Up to $5 More Per Month",
+  "summary": "Spotify is reportedly preparing to roll out its long-awaited AI cover and remix tool – possibly at a $5-per-month price point in the States – early next year. That potential launch timetable surfaced in a Financial Times report, which cited anonymous and purportedly well-informe…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T20:30:58.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "dsp-economics"
+  ],
+  "score": 30,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "78e6fd566b49083f",
+  "url": "https://www.billboard.com/pro/rick-ross-domestic-violence-charge-felony-misdemeanor/",
+  "title": "Rick Ross Gets Felony Domestic Violence Charge Dropped, Now Facing Only Misdemeanor",
+  "summary": "The rapper was arrested earlier this month for allegedly striking his live-in girlfriend. Defense attorneys say he’s being “wrongfully accused.”",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T20:22:27.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "f7b4dd0cb07d16da",
+  "url": "https://www.billboard.com/lists/spotify-umg-music-q3-earnings-reports-every-company-made/",
+  "title": "Q3 Music Earnings Roundup: Here’s What Every Company Made (Updating)",
+  "summary": "A rundown of publicly traded companies’ results for the quarter ending Sept. 30, from Spotify to Universal Music Group and more.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T19:43:17.000Z",
+  "entities": [
+   "spotify",
+   "umg"
+  ],
+  "types": [
+   "dsp",
+   "label"
+  ],
+  "topics": [
+   "earnings"
+  ],
+  "score": 50,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "1fa1055cb4ed354a",
+  "url": "https://www.digitalmusicnews.com/2026/10/30/asap-rocky-arrives-in-fortnite/",
+  "title": "A$AP Rocky Arrives in Fortnite in His Anime Look on November 1",
+  "summary": "A$AP Rocky arrives in Fortnite on November 1, drawn in anime style and sailing alongside One Piece’s Straw Hats in Fortnite Treasure Hunters. A$AP Rocky arrives in Fortnite next month, drawn in anime style and sailing alongside One Piece’s Straw Hats on a battleship of his own.…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T19:36:44.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "2650696c266fd884",
+  "url": "https://www.digitalmusicnews.com/2026/10/30/live-nation-ticketmaster-cashortrade-front-gate-tickets/",
+  "title": "Live Nation/Ticketmaster Expands CashorTrade Tie-Up, This Time with Wholly Owned Front Gate Tickets",
+  "summary": "Ticketmaster is launching an integration with CashorTrade that allows verified tickets to be resold on the latter’s marketplace at face value or below. Bots are crashing shows and fans are left destitute after their favorite artist comes to town. Can this mess be solved by… Live…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T19:28:20.000Z",
+  "entities": [
+   "live-nation",
+   "ticketmaster"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 38,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "42988eb7946cb24e",
+  "url": "https://news.pollstar.com/2026/10/30/morgan-wallens-sand-in-my-boots-festival-returns-to-gulf-shores-may-21-23/",
+  "title": "Morgan Wallen’s Sand In My Boots Festival Returns To Gulf Shores May 21-23",
+  "summary": "Following last year’s inaugural edition , Morgan Wallen’s Sand In My Boots festival is set to return to the beaches of Gulf Shores, Alabama, May 21-23, 2027. With promoter AEG Presents, the music festival and beach vacation promises to bring together Wallen’s favorite artists, m…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-30T19:25:29.000Z",
+  "entities": [
+   "aeg",
+   "aeg-presents"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 43,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "52d828ed260953e1",
+  "url": "https://news.pollstar.com/2026/10/30/inter-ac-milan-unveil-new-generali-stadium/",
+  "title": "Inter, AC Milan Unveil New Generali Stadium",
+  "summary": "FC Internazionale and AC Milan, two of the most historic clubs in Italian professional soccer, unveiled images of their new stadium. Generali Stadium will replace San Siro but retain the spirit of the beloved stadium known as “La Scala del calcio,” originally built in 1926 and h…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-30T19:21:10.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "c0f2a05760ea743e",
+  "url": "https://news.pollstar.com/2026/10/30/diiv-releases-new-album-announces-world-tour/",
+  "title": "DIIV Releases New Album, Announces World Tour",
+  "summary": "DIIV is gearing up for a 47-date world tour in support of the band’s new album, ZIRP!, out today. The experimental alternative band has lined up festival appearances in Australia and Japan, along with headline shows across North America, Europe and the UK. ZIRP! includes “Dare M…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-30T19:20:23.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "00462d26ec8bec03",
+  "url": "https://www.digitalmusicnews.com/2026/10/30/backstreet-boys-pro-gamer-team/",
+  "title": "Backstreet Boys Launch Pro Video Game Team, Seek Women Gamers",
+  "summary": "The Backstreet Boys expands its entertainment legacy into competitive gaming with a celebrity-owned team and a search for players to represent it. They’ve spent decades uniting fans through music. Now, the Backstreet Boys are bringing that global reach—and their competitive inst…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T18:16:38.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "4bd7be56cb0f1c0e",
+  "url": "https://www.billboard.com/lists/executive-turntable-mel-curey-acm-board-of-directors/",
+  "title": "Executive Turntable: Mel Curey Joins Believe, ACM Names New Board of Directors",
+  "summary": "Plus, Hayley Silvertown joins Create Music Group, Cristina Pimentel and Caitlin Glazebrook launch a new company to help startups connect with investors and more music industry hires and promotions.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T18:11:15.000Z",
+  "entities": [
+   "believe"
+  ],
+  "types": [
+   "artist-services"
+  ],
+  "topics": [],
+  "score": 18,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "13750c3e38fd7dd8",
+  "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOWUttVi1kX3F0Y3k3OTVZeWVrODB2MVdqenI0RHVLQTMtVUNSQVVtTnlmRUMwWm1Oc2N6UjF6NUk0MDJMSEJacGE0WWxQaTFESF9hZURRY1VDOFBYRjJvZUkxN0tVcXU2bW85aHJFYVpYT0V6OWtFZlI3UU83bVByQkdpUEY2SnJEamJVd19RYkJjWE12VVdLelNvMGdYc2hRdVlDT3l5UTdWcmJISGZFMlVTSzFHZHY4MTZvRmo1SU8tV0ZvME5yeGNGVGZ6bjVGeXJ4NjJQZ3AyWkVVZE96UEt3aGl3WEVoZWlz?oc=5",
+  "title": "Spotify Climbs 6% on Report of Paid AI Remix Service; Sirius XM Edges Higher, Warner Music and Netflix Hold Steady",
+  "summary": "Spotify Climbs 6% on Report of Paid AI Remix Service; Sirius XM Edges Higher, Warner Music and Netflix Hold Steady 24/7 Wall St.",
+  "source": "24/7 Wall St.",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-30T18:03:00.000Z",
+  "entities": [
+   "siriusxm",
+   "spotify",
+   "wmg"
+  ],
+  "types": [
+   "dsp",
+   "label"
+  ],
+  "topics": [],
+  "score": 56,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "a49a367d866c68ed",
+  "url": "https://www.musicbusinessworldwide.com/umgs-share-price-closes-up-7-9-adding-around-2-5b-in-value-after-q3-subscription-growth-beats-forecasts/",
+  "title": "UMG’s share price closes up 7.9% – adding around $2.5B in value – after Q3 subscription growth beats forecasts",
+  "summary": "At its peak today, the rally added around USD $4.8 billion (EUR €4.3bn) to UMG's market capitalization. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T17:06:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "2f5232f95cc63d34",
+  "url": "https://www.billboard.com/pro/behind-turnstile-massive-washington-monument-benefit-show/",
+  "title": "How Turnstile Pulled Off Its Massive Washington Monument Benefit Show: ‘It Took a Village’",
+  "summary": "“This show felt like a culmination of everything the band has been working toward,” says manager James Vitalo.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T17:01:29.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "70f5dea97309845e",
+  "url": "https://www.musicbusinessworldwide.com/from-universal-musics-3-90bn-quarter-to-spotifys-ai-remix-gamble-its-mbws-weekly-round-up/",
+  "title": "From Universal Music’s $3.90bn quarter to Spotify’s AI remix gamble… it’s MBW’s Weekly Round-Up",
+  "summary": "The biggest headlines from the past few days... Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T16:50:06.000Z",
+  "entities": [
+   "spotify",
+   "umg"
+  ],
+  "types": [
+   "dsp",
+   "label"
+  ],
+  "topics": [],
+  "score": 44,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "248d58c76dac4431",
+  "url": "https://news.pollstar.com/2026/10/30/nominations-open-for-38th-annual-pollstar-awards/",
+  "title": "Nominations Open For 38th Annual Pollstar Awards",
+  "summary": "Pollstar today (Oct. 30) announced the opening of nominations for the 38th Annual Pollstar Awards, the live industry’s most prestigious honors. The nomination period is open for three weeks and closes Nov. 20 at 5:00 p.m. PT. The Pollstar Awards, which are peer-voted, include ov…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-30T16:44:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "e7546eb2f35a322c",
+  "url": "https://news.pollstar.com/2026/10/30/gnarls-barkley-cancels-to-whom-it-still-concerns-tour/",
+  "title": "Gnarls Barkley Cancels ‘To Whom It Still Concerns’ Tour",
+  "summary": "Gnarls Barkley has canceled its “Whom It Still Concerns Tour” less than two months after announcing the outing. Ticketmaster has also notified ticket buyers that they will receive a refund to their “account within 14-21 days.” The cancellation arrives a month after a representat…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-30T16:18:47.000Z",
+  "entities": [
+   "ticketmaster"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 25,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "b024c0009bc1cbe4",
+  "url": "https://completemusicupdate.com/spotify-aiming-to-get-ai-remix-product-live-in-early-2027-even-though-it-remains-unclear-if-artists-and-fans-are-all-that-interested-in-it/",
+  "title": "Spotify aiming to get AI remix product live in early 2027, even though it remains unclear if artists and fans are all that interested in it",
+  "summary": "Spotify is reportedly hoping to launch its much hyped AI remix tool early next year. It’s not really clear that music creators or fans are all that excited about the proposition, though Universal says conversations with artists about opting into the the AI gimmick are actually g…",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T16:16:55.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "4b3a067e563bbc4e",
+  "url": "https://news.pollstar.com/2026/10/30/chase-center-the-place-to-be-amid-wnba-championship-run-for-valkyries-executive-profile/",
+  "title": "Chase Center’s Sheena Way on ‘Ballhalla,’ WNBA Championship Run For Valkyries (Executive Profile)",
+  "summary": "Chase Center is the place to be this week as the second-year WNBA Golden State Valkyries valiantly take on the Atlanta Dream toward the goal of bringing the championship to the Bay. Game 7, taking place Halloween night back in San Francisco, will determine the winner of all the…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-30T15:44:07.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "3f6125589a0fc38b",
+  "url": "https://news.pollstar.com/2026/10/30/rapsody-is-in-love-how-an-unprofitable-sold-out-run-of-25-tickets-set-the-stage-for-the-rappers-2027-world-tour-ambitions/",
+  "title": "Rapsody Is In Love: How A Run Of $25 Tickets Set The Stage For The Rapper’s 2027 World Tour Ambitions",
+  "summary": "Please login to your Pollstar subscriber account to view this content.",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-10-30T15:42:41.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "cc8144cca409c036",
+  "url": "https://variety.com/2026/music/concert-reviews/aerosmith-hollywood-bowl-dave-grohl-johnny-depp-guns-roses-1236934897/",
+  "title": "Aerosmith Joined by Dave Grohl and Johnny Depp at Hollywood Bowl for First Show in Three Years, as GNR and Black Crowes Open With Tribute Sets: Concert Review",
+  "summary": "With Aerosmith, fans might not want to miss a thing, but they most especially did not want to miss — if at all possible — the band’s two all-star-guest-augmented shows at the Hollywood Bowl this week, the first of which was Thursday night. These two outings are the group’s first…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T15:27:44.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "9666263f44298730",
+  "url": "https://musically.com/2026/10/30/music-ally-marketing-week-agenda-preview/",
+  "title": "Music Ally Marketing Week agenda preview",
+  "summary": "We are delighted to give you a first preview at the agenda for the marketing summit of Music Ally Marketing Week! The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T14:33:45.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "0c7adf5eec163dcf",
+  "url": "https://musically.com/2026/10/30/spotify-and-harry-styles-throw-halloween-party-to-close-historic-residency/",
+  "title": "Spotify and Harry Styles throw Halloween party to close historic residency",
+  "summary": "Harry Styles plays the last of his 30 nights at Madison Square Garden on 31 October, and Spotify is marking the occasion with a free dance party elsewhere in New York the same evening. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T14:31:06.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 27,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "3c099cea6339415c",
+  "url": "https://musically.com/2026/10/30/bigxthaplug-reveals-album-features-with-localised-billboards/",
+  "title": "BigXthaPlug reveals album features with localised billboards",
+  "summary": "BigXthaPlug releases his fourth studio album Better Over Time on 30 October, and the rollout has included one of the more inventive feature reveals we’ve seen this year. Rather than posting a tracklist, his team put up billboards of each guest artist in their own hometown: Lil Y…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T14:27:37.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "a5f2c90ffb946e61",
+  "url": "https://musically.com/2026/10/30/reddits-new-feed-could-help-artists-reach-new-audiences/",
+  "title": "Reddit’s new feed could help artists reach new audiences",
+  "summary": "Reddit is the latest platform to lean further into recommendations. Its homepage is being split into two feeds: “For You”, which will be the default and will show posts from communities people don’t follow, and “Following”, which sticks to the subreddits they’ve joined. The upda…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T14:23:35.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "32bc5cffcc1915d5",
+  "url": "https://musically.com/2026/10/30/duets-connects-music-startup-founders-with-investors-and-experts/",
+  "title": "Duets connects music-startup founders with investors and experts",
+  "summary": "Well, not just music startups, as we’ll explain. Securing deals with music rightsholders is a huge part of any music startup’s workload, but so is attracting investors and advisors. A new platform called Duets Network wants to help with that. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T13:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "469d24a11a8de3a9",
+  "url": "https://musically.com/2026/10/30/robloxs-q3-2026-138m-daily-users-who-spent-34bn-hours-playing/",
+  "title": "Roblox’s Q3 2026: 138m daily users who spent 34bn hours playing",
+  "summary": "At first glance, some of the numbers in Roblox’s quarterly financials don’t look good at all when you compare them to Q3 a year ago. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T13:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "earnings"
+  ],
+  "score": 16,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "594c12dc175c97f8",
+  "url": "https://musically.com/2026/10/30/backstreet-boys-are-launching-their-own-esports-gaming-team/",
+  "title": "Backstreet Boys are launching their own esports gaming team",
+  "summary": "Forget quitting playing games (with my heart). Pop veterans Backstreet Boys are very much not quitting playing games: they’re recruiting professional gamers as part of a move into the esports industry. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T13:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "67d98c84d503a56e",
+  "url": "https://musically.com/2026/10/30/spotify-is-hoping-to-launch-its-ai-remix-tool-in-early-2027/",
+  "title": "Spotify is hoping to launch its AI remix tool in early 2027",
+  "summary": "In May, Spotify announced its plans to launch an AI tool “allowing fans to create covers and remixes” but – sensibly having learned from past missed-deadlines for its hi-res music debut – didn’t tie itself to a specific launch date. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T13:30:00.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "93667f376dc648d3",
+  "url": "https://musically.com/2026/10/30/youth-music-awards-winners-run-it-elevation-music-tipp-and-more/",
+  "title": "Youth Music Awards winners: Run It, Elevation Music, TiPP and more",
+  "summary": "This week saw the annual Youth Music Awards, where the UK-based charity celebrated emerging musicians as well as projects that work with young people and music around the country. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T13:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "a186227d12c00795",
+  "url": "https://musically.com/2026/10/30/audio-chateau-records-raises-9m-for-creator-culture-label/",
+  "title": "Audio Chateau Records raises $9m for ‘creator culture’ label",
+  "summary": "High-single-digit funding rounds for music-tech startups are familiar, but less so for labels. Audio Chateau Records is bucking that trend by trousering a Series A round of up to $9m. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T13:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
+  "id": "4dca4fcb8ad95820",
+  "url": "https://variety.com/2026/music/news/david-bowie-stage-concert-documentary-brett-morgen-speaks-1236934780/",
+  "title": "David Bowie’s Immersive ‘Stage’ Concert Experience: Director Brett Morgen on the Show, the Artist and the Archive (EXCLUSIVE)",
+  "summary": "Although he released two albums during the final dozen years of his life, David Bowie had effectively retired from active duty, focusing on his family and, as his extensive posthumous catalog of sound and vision shows, curating his life’s work. It’s been a treasure trove for lon…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T13:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "catalog-deal"
+  ],
+  "score": 22,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
   "id": "85481b2c77d96770",
   "url": "https://news.pollstar.com/2026/10/30/weekly-signings-stella-lefty-to-make-wake-label-deals-for-john-mayer-flaming-lips-boyz-ii-men/",
   "title": "Weekly Signings: Stella Lefty To Make Wake; Label Deals For John Mayer, Flaming Lips, Boyz II Men",
@@ -277,6 +992,22 @@
   "firstSeen": "2026-10-30T12:48:42.655Z"
  },
  {
+  "id": "a0ad3f4ff515921e",
+  "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQSEM4YUI5aW9hcFhOc0YyUXlWamNIM19fTXduZE1ya2dsRGxqWkxscDJSRExkVUQ5SS1kaVV0ejBOWUZuOTl3YTNjRWFNa00zWFJvbkx3VVUwcFNsV3dwS0tKRDM4elAweGV5ZVgzYlN1cktEbUtHa0JNRWNoMzE0dTU5RUJsaXdydXdOUWFJeE1lRE1SaDRrUUx3aTVBNzA3cXlvdHNZNTMtMnNZMXRLUEtNS0ljRU5SaGRqZWFRdTDSAcABQVVfeXFMUEhDOGFCOWlvYXBYTnNGMlF5VmpjSDNfX013bmRNcmtnbERsalpMbHAyUkRMZFVEOUktZGlVdHowTllGbjk5d2EzY0VhTWtNM1hSb25Md1VVMHBTbFd3cEtLSkQzOHpQMHhleWVYM2JTdXJLRG1LR2tCTUVjaDMxNHU1OUVCbGl3cnV3TlFhSXhNZURNUmg0a1FMd2k1QTcwN3F5b3RzWTUzLTJzWTF0S1BLTUtJY0VOUmhkamVhUXUw?oc=5",
+  "title": "Music Australia Export Development Fund: International Market and Audience Development (Category 3) - fundsforNGOs",
+  "summary": "Music Australia Export Development Fund: International Market and Audience Development (Category 3) fundsforNGOs - Grants and Resources for Sustainability",
+  "source": "Grants and Resources for Sustainability",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-30T07:49:50.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
   "id": "309c75d9b602703c",
   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPSk1QNkVUSXFudlRoUXVHaGd4eEl0MnpsNWE0dDBQM3ZjTGpTdEF4dHAtRDZ5WmVfQjVQVzh4SWpkSGVIR1FXckowVWFJRWtzX0RfSUlRc08xcGdLcUlDQTY5WUdjeFlIclJFTnV6N1hOZDg4N29pcHVLNjhvUXhWYUhFTkYxRnpyaTNr?oc=5",
   "title": "Music-royalty companies take stage at ABS East",
@@ -331,6 +1062,24 @@
   "topics": [],
   "score": 15,
   "firstSeen": "2026-10-30T12:48:42.655Z"
+ },
+ {
+  "id": "97a9c6f4b471b18c",
+  "url": "https://www.digitalmusicnews.com/2026/10/29/judge-awards-biggie-mother-trust-fund/",
+  "title": "Delaware Judge Orders Faith Evans to Pay $12.5 Million (Plus Some Serious Interest) to Voletta Wallace’s Trust",
+  "summary": "A Delaware judge has ordered Faith Evans to pay over $12.5 million in Biggie’s estate profits to his mother’s Voletta Wallace Revocable Trust. On Tuesday, October 27, Chancellor Kathaleen St. J. McCormick of the Delaware Court of Chancery ordered R&B singer Faith Evans to immedi…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-30T05:46:16.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 13,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
  },
  {
   "id": "75536d5df6446fba",
@@ -1209,6 +1958,28 @@
   ],
   "score": 21,
   "firstSeen": "2026-10-29T12:55:45.853Z"
+ },
+ {
+  "id": "9b2e488ca95e8a43",
+  "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQTlNkMGpmUlByYVBzc19TbmhZaUtHcnpJNTZfblBWMzZDOEVTZnpZZlF6S1hZVWJtNXFwNDdCMUwtZW9URHpHQWU4b0xRd2ZxZHplVEo2VDVtR0lGYnFQYXZteVlrOTctNzItUVZOSEsyLUttNTkzbkhQMnRyVzkyanpqYnRxcUVVSEE?oc=5",
+  "title": "ÉTIENNE DAHO SIGNS GLOBAL DEAL WITH WARNER CHAPPELL MUSIC",
+  "summary": "ÉTIENNE DAHO SIGNS GLOBAL DEAL WITH WARNER CHAPPELL MUSIC Warner Music Group",
+  "source": "Warner Music Group",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-29T12:02:22.000Z",
+  "entities": [
+   "warner-chappell",
+   "wmg"
+  ],
+  "types": [
+   "label",
+   "publisher"
+  ],
+  "topics": [],
+  "score": 41,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
  },
  {
   "id": "c5d4bf629dbf33f9",
@@ -9867,6 +10638,28 @@
   "firstSeen": "2026-10-21T11:43:18.383Z"
  },
  {
+  "id": "92e03e98d68031a9",
+  "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNV1h3ZW9vMEI0Ny12X2VpdTJRa0VBNC1nYjhhb0kydHVQRkNhbm9NWlctc0dyWGprQTNONDU0YnpTd05YeF8wN1NBQUdjT2NIR1J6VDQxTks4TDFDY2RId3lsVzZIWEVCQjVoWUhiS0JoVU8tWjhxclVFb1NFUHA0dXNLSTVQMkRyak9jWXdCWDZzVDhLRHYyZ2ctVnY1cEtTdzhpcEMtOHdIeFhfTTV4SVRmWWV4YVVrMDY0?oc=5",
+  "title": "The Hidden Business Behind Spotify: Why Millions of Subscribers Don't Guarantee High Profits",
+  "summary": "The Hidden Business Behind Spotify: Why Millions of Subscribers Don't Guarantee High Profits Coinpaper",
+  "source": "Coinpaper",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-20T19:00:35.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "dsp-economics"
+  ],
+  "score": 20,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
+ },
+ {
   "id": "4f8b3d650fc0acfd",
   "url": "https://www.digitalmusicnews.com/2026/10/20/spotify-family-plan-qr-code-scan/",
   "title": "Spotify Isn’t Messing Around: Streamer Insists Family Plan Subscribers Live in the Same Household or Face Year-Long Lockouts",
@@ -10835,6 +11628,22 @@
   "topics": [],
   "score": 17,
   "firstSeen": "2026-10-21T11:43:18.383Z"
+ },
+ {
+  "id": "bdfcd449f832b716",
+  "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNdDMzYXE0OTYteVRDT1hkV2pQNnkwQU42MmRXWW9zaDRTeUpraVE3VGxLTXhwSFA1YXdkcVotZUtGdFcxeVUyVXBwYThPZWpjWFdIMG9tcWliLUdZdGNYTkw3NkFJck5kb0tfcEk2U3JGQ1Y3dGpZenl0TVFxQjlFa2g5V09YYnJlYmpNaUhscS1UaVB3ZDRrbDZ4Rmc?oc=5",
+  "title": "Why brands like Wendy's and e.l.f. are releasing albums",
+  "summary": "Why brands like Wendy's and e.l.f. are releasing albums Marketplace.org",
+  "source": "Marketplace.org",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-20T07:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 0,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
  },
  {
   "id": "d757e6344899985b",
@@ -12181,6 +12990,24 @@
   "topics": [],
   "score": 0,
   "firstSeen": "2026-10-30T12:48:42.655Z"
+ },
+ {
+  "id": "c48ea79570da7b04",
+  "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPY3Y1MnJza0h0Y3NMQVByQkVVTklRN1RXVWFIU2pqV0F2R1Q5WjI3TEc1TUxmdHctU19tUW9VVC04aTUtWW81UVpCcE82aXl0anFYOGJTTGlYcjRaX2FjLU5yOE94dlAxbzZQWEVHdEdYQ3ZzLWxlaUVueHhqdGxEZkV1UGE3MDZ0TWMzRGh5Sk1kUE1QX0lxdmNIYjREclhwM3ZhNjBSV2VlN2FnaU1GVWZ2SWhnRkZxU1FfZVRzTUotT3NGYm90Ug?oc=5",
+  "title": "US Supreme Court rejects music labels' challenge to copyright termination ruling",
+  "summary": "US Supreme Court rejects music labels' challenge to copyright termination ruling Reuters",
+  "source": "Reuters",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-19T07:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 8,
+  "firstSeen": "2026-10-31T12:20:13.142Z"
  },
  {
   "id": "96bc3eef051c19cc",

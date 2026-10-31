@@ -2,7 +2,7 @@
  "coverageSince": "2026-09-21",
  "oldestItem": "2026-08-10",
  "newestItem": "2026-10-30",
- "count": 2291,
+ "count": 2335,
  "months": [
   {
    "month": "2026-08",
@@ -14,8 +14,8 @@
   },
   {
    "month": "2026-10",
-   "count": 1546
+   "count": 1590
   }
  ],
- "updatedAt": "2026-10-30T12:48:42.689Z"
+ "updatedAt": "2026-10-31T12:20:13.177Z"
 }
