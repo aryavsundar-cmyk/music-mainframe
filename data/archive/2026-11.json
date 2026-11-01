@@ -1,0 +1,38 @@
+[
+ {
+  "id": "2d90ddaf7ae21c5b",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE52SWJNZk9jdmt2WTZGNjdsdEdxeTFyRld4a1lFbGhwcTZyd2JCaV91M2l1TDVQTE1HenhRczN4SmlDbTFYMlhQNENDUWdtelp6UDhVWkxUOGF3YzdGTUpWWnJxMm5kYTBERHltcg?oc=5",
+  "title": "The biggest music industry news | October 2026 roundup",
+  "summary": "The biggest music industry news | October 2026 roundup RouteNote",
+  "source": "RouteNote",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-01T11:16:21.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-01T13:16:26.792Z"
+ },
+ {
+  "id": "66f806dd0e8995d6",
+  "url": "https://variety.com/2026/music/concert-reviews/phoebe-bridgers-concert-review-billie-eilish-intuit-dome-1236936235/",
+  "title": "Phoebe Bridgers Makes L.A.’s Intuit Dome Into an Intimate Space Full of Love, Grief, Light Shows, ‘Peter Pan’ Cosplay and a Great Billie Eilish Duet: Concert Review",
+  "summary": "So, in talking about the marvel that was Phoebe Bridgers’ opening night at L.A.’s Intuit Dome Friday night, which part of the show do you talk about first? Would it the emotionally riveting middle section of the show, in which Bridgers used the no-phones setting to elaborately e…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-01T00:09:22.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [],
+  "score": 28,
+  "firstSeen": "2026-11-01T13:16:26.792Z"
+ }
+]
