@@ -1,5 +1,466 @@
 [
  {
+  "id": "c1c3c5f113d3ccf0",
+  "url": "https://www.musicbusinessworldwide.com/irving-azoffs-music-artists-coalition-joins-cate-blanchett-and-caa-on-ai-licensing-brief-in-new-york-times-case-against-openai/",
+  "title": "Irving Azoff’s Music Artists Coalition joins Cate Blanchett and CAA on AI licensing brief in New York Times’ case against OpenAI",
+  "summary": "RIAA, NMPA, ASCAP, BMI, and five other music organizations filed a proposed brief of their own, formally backing the plaintiffs. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T14:26:35.000Z",
+  "entities": [
+   "ascap",
+   "bmi",
+   "iconic-artists",
+   "riaa"
+  ],
+  "types": [
+   "catalog-fund",
+   "pro",
+   "trade"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 87,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "fbe8bcfcd119769d",
+  "url": "https://www.musicbusinessworldwide.com/raye-sam-fender-garth-brooks-and-the-bots-five-things-to-know-about-the-ai-arms-race-in-live-ticketing/",
+  "title": "Raye, Sam Fender, Garth Brooks… and the bots. Five things to know about the AI arms race in live ticketing",
+  "summary": "Bots overwhelmed a presale sign-up, a ticket queue, and a ticketing site in October. Here’s how, and what lawmakers plan to do about it. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T14:26:22.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "dabe4e8a67fa0dc0",
+  "url": "https://www.musicbusinessworldwide.com/pandoras-monthly-user-base-fell-by-2-75m-yoy-in-q3-while-siriusxms-total-revenue-share-and-royalty-costs-rose-to-726m/",
+  "title": "Pandora’s monthly user base fell by 2.75m YoY in Q3, while SiriusXM’s total revenue share and royalty costs rose to $726M",
+  "summary": "Pandora’s monthly active user base shrank by 2.75 million year-over-year in the third quarter of 2026. The streaming service had 38.81 million monthly active users (MAUs) at the end of September, down 6.6% from 41.56 million a year earlier. That’s according to third-quarter resu…",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T14:26:10.000Z",
+  "entities": [
+   "siriusxm"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "earnings"
+  ],
+  "score": 33,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "3e18439d5c9c8e3b",
+  "url": "https://www.musicbusinessworldwide.com/umg-sony-and-distrokid-tell-court-they-are-working-on-a-resolution-in-dispute-over-ai-music-data-for-suno-case/",
+  "title": "UMG, Sony, and DistroKid tell court they are ‘working on a resolution’ in dispute over AI music data for Suno case",
+  "summary": "The two majors are seeking data from DistroKid on how many of the tracks it delivers to streaming services are flagged as AI-generated. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T14:25:49.000Z",
+  "entities": [
+   "distrokid",
+   "suno"
+  ],
+  "types": [
+   "distributor",
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 57,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "4e59c303d069d000",
+  "url": "https://news.pollstar.com/2026/11/02/uk-lineups-raye-at-bst-hyde-park-phoebe-bridgers-at-ape-state-fayre-mint/",
+  "title": "UK Lineups: Raye At BST Hyde Park, Phoebe Bridgers At APE, State Fayre & Mint",
+  "summary": "Raye Is Coming Home Raye, the newly crowned Mercury Prize winner for her current album, This Music May Contain Hope, is BST Hyde Park’s second headliner, taking to the stage on Saturday, July 10, 2027. Sienna Spiro, who’s featured in Pollstar’s 2026 Hotstar Special, joins the bi…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-02T14:25:13.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "policy"
+  ],
+  "score": 21,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "2c59decffb6a653a",
+  "url": "https://musically.com/2026/11/02/aap-rocky-lil-uzi-vert-and-hatsune-miku-star-in-new-fortnite-season/",
+  "title": "A$AP Rocky, Lil Uzi Vert and Hatsune Miku star in new Fortnite season",
+  "summary": "Fortnite’s latest mini-season is called ‘Treasure Hunters’ and four music artists – two human and two virtual – are at the heart of it. The promo started yesterday (1 November) and runs for four weeks. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T13:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "2e1ce8ef22240e55",
+  "url": "https://musically.com/2026/11/02/ausify-2026-encourages-30-ways-to-pda-for-australian-music/",
+  "title": "Ausify 2026 encourages ’30 ways to PDA’ for Australian music",
+  "summary": "A year ago we reported on the ‘Ausify Your Algo’ campaign launched in Australia to encourage listeners to play local artists’ music in order to nudge their streaming services’ algorithms to recommend more. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T13:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "c630b7c6484c8ee0",
+  "url": "https://musically.com/2026/11/02/gema-on-ai-the-most-important-thing-is-we-get-an-output-remuneration/",
+  "title": "GEMA on AI: ‘The most important thing is we get an output remuneration’",
+  "summary": "Having won an initial ruling against Suno in Germany, collecting society GEMA is considering its future moves in AI music, both in terms of lawsuits and policy lobbying. In an interview for our Music Ally Focus podcast today, general counsel Dr Kai Welp talked about one of its p…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T13:30:00.000Z",
+  "entities": [
+   "gema",
+   "suno"
+  ],
+  "types": [
+   "music-tech",
+   "pro"
+  ],
+  "topics": [
+   "ai",
+   "pro-reform"
+  ],
+  "score": 65,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "5bf91cc8fa8341fe",
+  "url": "https://www.digitalmusicnews.com/2026/11/02/srr-capital-launches-with-a-vc-style-approach-to-music-investing/",
+  "title": "SRR Capital Launches With a VC-Style Approach to Music Investing",
+  "summary": "SRR Capital Management has launched with a venture-style approach to newly created music rights. Founded by Manuel Delgado, the firm is putting its strategy into practice, with its first song agreement signed and its first release scheduled. The following comes from Sample Road…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T13:01:59.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [],
+  "score": 33,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "c92a507c149c2da2",
+  "url": "https://musically.com/2026/11/02/the-weeknd-hits-big-in-hong-kong-and-china-with-faye-wong-sample/",
+  "title": "The Weeknd hits big in Hong Kong and China with Faye Wong sample",
+  "summary": "Here’s a new angle on local fan-service. The Weeknd just celebrated finishing his four-concert run in Hong Kong by releasing a brand new track – ‘Hong Kong (feat. 王菲季候風)’ that is already making waves in Hong Kong and mainland China. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "9c12f1f30604e86c",
+  "url": "https://variety.com/2026/music/global/raye-headline-bst-hyde-park-sienna-spiro-1236937285/",
+  "title": "Raye to Headline BST Hyde Park With Sienna Spiro Opening",
+  "summary": "Raye is set to headline BST Hyde Park in London this coming summer with special guest Sienna Spiro. The singer — who just won the U.K.’s prestigious Mercury Prize for her latest album, “This Music May Contain Hope” — will play the festival on Saturday, July 10. Sienna Spiro is t…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T12:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "00a822ff9955bcce",
+  "url": "https://musically.com/2026/11/02/vickie-nauman-talks-games-and-why-ai-drones-are-more-worrying-than-ai-tunes/",
+  "title": "Vickie Nauman talks games (and why AI drones are more worrying than AI tunes)",
+  "summary": "Gaming is really, really different than anything else that’s out there. It’s not like film and TV synchronisation licensing. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T06:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "5cb2211d7a59356c",
+  "url": "https://www.digitalmusicnews.com/2026/11/01/what-is-attribution-metadata-music-ai/",
+  "title": "What Is Attribution?",
+  "summary": "Attribution may become one of the most useful bridges between human creativity and AI music. At its simplest, it gives us a way to see which compositions, recordings, performances and creative choices helped shape an AI-generated result. That visibility can provide a foundation…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T04:45:35.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "8bb7bfd14318f4f4",
+  "url": "https://www.digitalmusicnews.com/2026/11/01/music-artists-coalition-brief-openai-microsoft/",
+  "title": "Music Artists Coalition and a Broad Hollywood Consortium File a Weighty Amicus Brief Supporting the New York Times Against OpenAI and Microsoft",
+  "summary": "A Hollywood-backed nonprofit, alongside the Music Artists Coalition and other groups, filed an amicus brief in the New York Times’ case against OpenAI and Microsoft. Cate Blanchett’s nonprofit The Human Consent Foundation (HCF), striving to protect individuals’ name, image, and…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T04:21:35.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "927ee857cf1490fb",
+  "url": "https://www.digitalmusicnews.com/2026/11/01/wu-tang-detroit-halftime-show-thanksgiving/",
+  "title": "The NFL Taps Wu-Tang Clan to Play the Thanksgiving Day Halftime Show In Detroit",
+  "summary": "Wu-Tang Clan will perform the halftime show at Ford Field during the Detroit Lions’ Thanksgiving game on November 26, produced by Eminem and his manager. Legendary New York rap group the Wu-Tang Clan will perform the halftime show at Ford Field during the Detroit Lions’ annual T…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T04:14:01.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "14d6a85cacfcadd5",
+  "url": "https://www.digitalmusicnews.com/2026/11/01/dolly-parton-niece-fired-by-estate/",
+  "title": "Dolly Parton’s Niece Becomes the Latest Casualty In a Growing Power Battle Inside the Estate",
+  "summary": "Dolly Parton’s niece, the sister of the star’s ousted nephew and security guard, was reportedly fired by the state late last month. It’s the latest chapter in a growing power battle at the Dolly estate. The battle surrounding Dolly Parton’s estate rages on, with her niece—not th…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T04:10:25.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "bbb0ef02eb8364be",
+  "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9zVTJkLW1QMFB6OWk1TVNKYThVNTVtblpNMlBhVnVweU42VjZ6b1JkczdFR1BYWHVXZVQ3bUtRZkRsWFBHcG84ZTR6RV9yWmVMdXlDMDhxdGtYVGcxMTVoWXluREVNNEc5ald5UnFILXZDdw?oc=5",
+  "title": "Is Suno the Music Industry’s Biggest Nightmare — or Greatest Hope?",
+  "summary": "Is Suno the Music Industry’s Biggest Nightmare — or Greatest Hope? Billboard",
+  "source": "Billboard",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-02T04:02:21.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 26,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "d529bb71223d387b",
+  "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOZnYzcmtXZlI2eTNEdjBRQmZ2TU55ZmRnNEpVeVk2ZnF6cG4yN1VDOXNSOXBya1laTE53OFlrcUpHZXBFT0VjSDRQNGE2bWgtZHRqU2I0M3dZWEVXZFJ1YVVsWHNNeFNReVR3clF0akhDT1V4bFRWMjJPOFZOejdhdUZwcjBldC1J?oc=5",
+  "title": "Spotify Says Over 13,800 Artists Generated $100,000 on the Platform Last Year: Loud & Clear Report",
+  "summary": "Spotify Says Over 13,800 Artists Generated $100,000 on the Platform Last Year: Loud & Clear Report Billboard",
+  "source": "Billboard",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-02T03:57:17.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "1fbd3bfad6742147",
+  "url": "https://www.billboard.com/pro/ausify-campaign-returns/",
+  "title": "Ausify Campaign Returns as Australian Music’s Streaming Share Hits New Low",
+  "summary": "Ben Lee, Missy Higgins and Budjerah are among the artists backing the month-long push, which asks fans to make their support for local music public.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T03:50:58.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "96702c9a2b921478",
+  "url": "https://www.billboard.com/pro/marty-erlichman-death-barbra-streisand-manager/",
+  "title": "Marty Erlichman, Barbra Streisand’s Longtime Manager, Dies at 97",
+  "summary": "An entertainment manager for decades, Erlichman also worked with The Clancy Brothers and Tommy Makem.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T01:12:50.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "230cbb1cbe9ce5f2",
+  "url": "https://variety.com/2026/music/people-news/marty-erlichman-dead-barbra-streisand-manager-1236937009/",
+  "title": "Marty Erlichman, Longtime Manager for Barbra Streisand, Dies at 97",
+  "summary": "Marty Erlichman, the entertainment manager who discovered Barbra Streisand and managed her for more than six decades, died on Saturday of age-related causes. He was 97. “To the world, he was a giant of Hollywood; to us, he was a deeply devoted and loving father, husband, grandfa…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T00:06:37.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "39695aaaf2fec9db",
+  "url": "https://variety.com/2026/tv/news/hilary-duff-fing-done-when-lizzie-mcguire-ended-1236936919/",
+  "title": "Hilary Duff Says She Was ‘F—ing Done’ With ‘Lizzie McGuire’ When It Ended and Never Wanted to Sing ‘What Dreams Are Made Of’ Again: I Was ‘Exhausted By It’",
+  "summary": "Hilary Duff is reflecting on being so “done” playing Lizzie McGuire after the 2003 movie concluded the two-season Disney Channel show that made her a star. “The Lizzie McGuire Movie” features the now-iconic “What Dreams Are Made Of,” which Duff re-recorded for her 2026 “(Mine)”…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-01T21:16:13.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "a6c332e1907056bd",
+  "url": "https://variety.com/2026/music/news/my-chemical-romance-scores-first-no-1-with-the-black-parade-1236936933/",
+  "title": "My Chemical Romance Scores First-Ever No. 1 on Albums Chart With ‘The Black Parade,’ 20 Years After Its Release",
+  "summary": "My Chemical Romance has scored its first-ever No. 1 on the Billboard 200 as “The Black Parade” surges from No. 139 to the top of the chart, 20 years after its initial release. The group reaches the chart summit for the first time following a deluxe reissue of the album with 78,0…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-01T20:53:51.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "84ca311df67f6db8",
+  "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5TZExFY0R6QVVqRWczZnJxN3FnOXJwQ3ZMR3JaNFQyX1BhUDBCMmNiaUdFVW85NzN1SHQzV3FyaGdBWGlXU3liNTNnTFhweFJTWUtfZ19n?oc=5",
+  "title": "Top Music Lawsuit 2026: Biggest Cases, Payouts, Updates",
+  "summary": "Top Music Lawsuit 2026: Biggest Cases, Payouts, Updates LawFold.com",
+  "source": "LawFold.com",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-01T16:56:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "036694a619cf1d53",
+  "url": "https://variety.com/2026/music/news/harry-styles-closes-madison-square-garden-harryween-1236936778/",
+  "title": "Harry Styles Closes Out 30-Night Madison Square Garden Residency With Two ‘Harryween’ Shows, Dressed as Elvis and Pizza Rat, and a Jalen Brunson Guest Appearance",
+  "summary": "Harry Styles’ record-setting 30-night residency at New York’s Madison Square Garden came to a close over the weekend, with a pair of Styles’ recurring “Harryween” concerts that saw the star, his band and much of the audience dressed for the occasion — in his case as 1970s-era El…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-01T16:38:34.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
   "id": "2d90ddaf7ae21c5b",
   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE52SWJNZk9jdmt2WTZGNjdsdEdxeTFyRld4a1lFbGhwcTZyd2JCaV91M2l1TDVQTE1HenhRczN4SmlDbTFYMlhQNENDUWdtelp6UDhVWkxUOGF3YzdGTUpWWnJxMm5kYTBERHltcg?oc=5",
   "title": "The biggest music industry news | October 2026 roundup",

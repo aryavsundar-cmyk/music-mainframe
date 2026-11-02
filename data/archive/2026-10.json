@@ -20,6 +20,43 @@
   "firstSeen": "2026-11-01T13:16:26.792Z"
  },
  {
+  "id": "94587447a1835d2e",
+  "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOczVPMzlfV0RudkstRGZuMkN4bnNKM1U0SU5PN0h6aWhNTHFBZk1iaXJEbXNkRDdsRmM3OHpoWFhQZ2k1aFY2X0Nzd0U2dmlUUmV3S1BpZHdSRFg2ZUlwUjUtQkNrY2xGcU05T2lrZ3BIWTVjT2NiS0cxLUM0R094R00zUE1GcjFTbEdIbjFyVFZZX0JzVzZvX0NwUUNrTlhxV1o3bFY4a0RiWW1sWXVN?oc=5",
+  "title": "R&B Group Boyz II Men Heads Into Country Music With Warner Records Nashville Deal",
+  "summary": "R&B Group Boyz II Men Heads Into Country Music With Warner Records Nashville Deal Williamson Source",
+  "source": "Williamson Source",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-31T13:05:08.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "388481919b420409",
+  "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE02bmdvc1Q1cFlnc0lnbFR5T3RxOXA4eHA5WUNWRWRxRFM3RkZHS1czQ0RWdDN6MkNhSzNCd1h2VFZrclpWTXRXMHhkdlo2WktUZVJiUkk5VjZLYTZRNkNOMnBoYTdRdEM3bnVleXM1dWdaYUNueGpEcTdGdGs?oc=5",
+  "title": "Could a Combined BMG & Concord Create a Fourth ‘Quiet’ Major Label? And More Questions Answered",
+  "summary": "Could a Combined BMG & Concord Create a Fourth ‘Quiet’ Major Label? And More Questions Answered Billboard",
+  "source": "Billboard",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-31T11:15:16.000Z",
+  "entities": [
+   "bmg",
+   "concord"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 41,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
   "id": "d7f10d558aee406d",
   "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQRnlJdlF6YUhEc3Y0Zy1LMEdsMWJsSEVXdGF5UjN6eDdjME5kTjdzV1JpenQzQnZ4Q0Z4dXdHajVBWXozYnZXV2xtV3IzVkt6ZzJLSHlMSnNzYVRMT0dZSXI5cmh0WmNud0s1ZkhNdnlockowcktraDMxMnhhZ1JJTw?oc=5",
   "title": "When streaming becomes a 'gold mine' for the music industry.",
@@ -34,6 +71,68 @@
   "topics": [],
   "score": 5,
   "firstSeen": "2026-11-01T13:16:26.792Z"
+ },
+ {
+  "id": "55eeb8d843b26059",
+  "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE82RFdPWUZVNFRXcUtrS0NQdzlvX25DTk5XRFUxaWtnN0FnVDVyaG1hclRRVU9qTU1teExnZTNVZG5yN0R3RVd4UDBTWkljWUZtVmVnV29obkg2MmdacHpJWGd0OUZsaFg5dU1NZktSWjNTRDNrZXVYMUxVTQ?oc=5",
+  "title": "DistroKid vs TuneCore vs CD Baby: Best Pick in 2026",
+  "summary": "DistroKid vs TuneCore vs CD Baby: Best Pick in 2026 Ones To Watch",
+  "source": "Ones To Watch",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-31T07:00:00.000Z",
+  "entities": [
+   "distrokid",
+   "tunecore"
+  ],
+  "types": [
+   "distributor"
+  ],
+  "topics": [],
+  "score": 33,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "e6f4fcfa7948c3a3",
+  "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOMlFyV1NGQnZfN3pmcWNrVDFBdmpkNVBuc29MaHRqcm9DeTNTeS1wTnF1NjFfN1VtWkpwQk9pMWxfbVRmVGYyR2Jxcl9hd2VMdEUzNVU5VUFSLWlkTEpQMmM4QjN4SmRDazg2UHh1Qnk5QlMweWoweE1sWDJUd2dzdVJnNENFN2hMdUVoMFk5aTJJTGpYd05r?oc=5",
+  "title": "TicketNetwork Targets Resale Conditions in DOJ’s Live Nation-Ticketmaster Settlement",
+  "summary": "TicketNetwork Targets Resale Conditions in DOJ’s Live Nation-Ticketmaster Settlement TicketNews",
+  "source": "TicketNews",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-31T06:33:14.000Z",
+  "entities": [
+   "live-nation",
+   "ticketmaster"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 41,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "b7c32aa3b3ede41a",
+  "url": "https://variety.com/2026/tv/news/kid-rock-abdul-el-sayed-9-11-hijackers-real-time-bill-maher-1236935914/",
+  "title": "Bill Maher Fact-Checks Kid Rock After He Compares Abdul El-Sayed to 9/11 Hijackers on ‘Real Time’",
+  "summary": "Bill Maher opened his new episode of “Real Time” Friday night by addressing Trump’s 1,300-word social media tirade against him following their White House dinner earlier this month, with the comic comparing the president to Taylor Swift. Following a sit-down interview with Repub…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-10-31T03:13:17.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "policy"
+  ],
+  "score": 11,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
  },
  {
   "id": "49136ddbd032a502",
@@ -1082,6 +1181,22 @@
   ],
   "score": 31,
   "firstSeen": "2026-10-30T12:48:42.655Z"
+ },
+ {
+  "id": "3f8cc989cfa71945",
+  "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9Vc3FVSVFXRFVrUHk0a00xMFA5eUpwTldjME9kWlg1bjMwd2xKd0V4MU9PY2R1bXpTSkZPVEo1YThhSklxbnkyUkZSWDJpYWFYeDEzd1N5NDR5TldrS3hQWUxQRDF5MTRFcGJEenBQck5peHZuRzh6T082bw?oc=5",
+  "title": "Cheapest Reliable Music Distribution For Independent Artists",
+  "summary": "Cheapest Reliable Music Distribution For Independent Artists Ones To Watch",
+  "source": "Ones To Watch",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-30T07:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 2,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
  },
  {
   "id": "69a29e4256b3b30c",
@@ -3392,6 +3507,22 @@
   "firstSeen": "2026-10-29T12:55:45.853Z"
  },
  {
+  "id": "d2c149dc516d6391",
+  "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOMXpQZEFZRTVsZ0tYcFhBVVlUaE5Ec0ZSbVlMSVNZNkVSdUd6UjFxUEtLU3Z0dnJTS0Z2cGZCLTV1ZmVRcEc5X1FrLVhCajlZLTlwVzFBaXBFLUxneENSWjlsdzZieGdpVVg0X1dYWUY2bDBhMGJNaWs4OFhMSnJFTUlqQUVhU0Q4VVo4Tmd6eGloMEUzRldFU0JmQ2JTUFQ2eGZRbXZacl9wTjhRemZaN1E2bw?oc=5",
+  "title": "Best Platforms for Independent Music Careers in 2026",
+  "summary": "Best Platforms for Independent Music Careers in 2026 Ones To Watch",
+  "source": "Ones To Watch",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-28T07:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 2,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
   "id": "2f8a8f5489d2539f",
   "url": "https://www.billboard.com/pro/bmg-signs-australia-parcels-global-publishing-deal/",
   "title": "BMG Signs Australia’s Parcels to Global Publishing Deal",
@@ -4878,6 +5009,22 @@
   "topics": [],
   "score": 22,
   "firstSeen": "2026-10-27T12:05:57.027Z"
+ },
+ {
+  "id": "2c38f1405d66f1dd",
+  "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1kYkF4bTRsU0ROTXpYRkRtY296MFhFNGFuYkxlNXZTQnpWLXJHczAtbVo1LXpSd3pYUTNJSWF2aFZ5bjA2YVdlRlJpVVdsY2JHbVUzZC1ZRFY0LUxmalNQMHRiN1QwWFNhdXN1QS1iMUpXM09tSXd4cDl3?oc=5",
+  "title": "From Mary J. Blige to Future: Why Black Artists Are Selling Their Music Catalogs for Millions",
+  "summary": "From Mary J. Blige to Future: Why Black Artists Are Selling Their Music Catalogs for Millions Baller Alert",
+  "source": "Baller Alert",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-27T01:04:56.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 2,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
  },
  {
   "id": "78b73185d60c88dd",
@@ -10310,6 +10457,43 @@
   ],
   "score": 20,
   "firstSeen": "2026-10-21T11:43:18.383Z"
+ },
+ {
+  "id": "0b81dec28ca8ae80",
+  "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPcHpDUEpQUlBUSXJnTktiT1c4dVRzVlNzcnFoTGw5X2pQNUZVemw3Z3hBQWRZMDd1SEFSNlhDNUxuRW1QOXphd0FQUnNZX0F1VS05NTA2RlZ1UWNvR293ZmMzVHhrSTlDR1VCaXhOU25JV01xSVNqaV9RVF9sTXBtTHM1c2lCNE40LU1GTEVHTGFnb0MxX2lLQmtYTQ?oc=5",
+  "title": "Reservoir Acquires Rights to José Feliciano’s Recorded Catalog",
+  "summary": "Reservoir Acquires Rights to José Feliciano’s Recorded Catalog InterSpace Music Distribution",
+  "source": "InterSpace Music Distribution",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-21T07:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "catalog-deal",
+   "m&a"
+  ],
+  "score": 20,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "f373fb2c0c290546",
+  "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNekVZRHY0SHhBR3gzVXU1NmR1VkxGYy1fMEM5SkhabkJ5aDNzeHpkeUV5WnVpLVAtNUF5MVB4Zzg0amFNSFltRmxmZXZhWFozVGtkNUpEa0g1N3QyOWdZTmdCVGQzZkNLSUNSWVF0U25JaDFVNDZNRi05Q0VOMHBONERYcVNVVGFiWm84emVqbmRVMFpSN0RrT1VibzN4QVBpS0JpUVF6aEd0VHJ5cEUxclRqN1hOUTdf?oc=5",
+  "title": "Musixmatch Acquires Music Reports, Expanding Music Rights and Royalty Services",
+  "summary": "Musixmatch Acquires Music Reports, Expanding Music Rights and Royalty Services CelebrityAccess",
+  "source": "CelebrityAccess",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-21T07:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "m&a"
+  ],
+  "score": 8,
+  "firstSeen": "2026-11-02T15:42:45.741Z"
  },
  {
   "id": "20201c27c6f79282",
