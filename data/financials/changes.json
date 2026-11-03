@@ -1,8 +1,238 @@
 {
  "startedAt": "2026-09-27T15:02:57.764Z",
- "updatedAt": "2026-10-30T13:39:10.133Z",
+ "updatedAt": "2026-11-03T14:41:43.674Z",
  "source": "Written by scripts/refresh-financials.mjs when a figure changes between refreshes.",
  "entries": [
+  {
+   "at": "2026-11-03T14:41:43.674Z",
+   "entityId": "apple",
+   "metric": "revenue",
+   "slot": "annual",
+   "kind": "new-period",
+   "from": {
+    "value": 416161000000,
+    "currency": "USD",
+    "end": "2025-09-27",
+    "form": "10-K",
+    "filed": "2025-10-31",
+    "accn": "0000320193-25-000079"
+   },
+   "to": {
+    "value": 478834000000,
+    "currency": "USD",
+    "end": "2026-09-26",
+    "form": "10-K",
+    "filed": "2026-11-03",
+    "accn": "0000320193-26-000026"
+   }
+  },
+  {
+   "at": "2026-11-03T14:41:43.674Z",
+   "entityId": "apple",
+   "metric": "operatingIncome",
+   "slot": "annual",
+   "kind": "new-period",
+   "from": {
+    "value": 133050000000,
+    "currency": "USD",
+    "end": "2025-09-27",
+    "form": "10-K",
+    "filed": "2025-10-31",
+    "accn": "0000320193-25-000079"
+   },
+   "to": {
+    "value": 158063000000,
+    "currency": "USD",
+    "end": "2026-09-26",
+    "form": "10-K",
+    "filed": "2026-11-03",
+    "accn": "0000320193-26-000026"
+   }
+  },
+  {
+   "at": "2026-11-03T14:41:43.674Z",
+   "entityId": "apple",
+   "metric": "netIncome",
+   "slot": "annual",
+   "kind": "new-period",
+   "from": {
+    "value": 112010000000,
+    "currency": "USD",
+    "end": "2025-09-27",
+    "form": "10-K",
+    "filed": "2025-10-31",
+    "accn": "0000320193-25-000079"
+   },
+   "to": {
+    "value": 132175000000,
+    "currency": "USD",
+    "end": "2026-09-26",
+    "form": "10-K",
+    "filed": "2026-11-03",
+    "accn": "0000320193-26-000026"
+   }
+  },
+  {
+   "at": "2026-11-03T14:41:43.674Z",
+   "entityId": "apple",
+   "metric": "cash",
+   "slot": "latest",
+   "kind": "new-period",
+   "from": {
+    "value": 39544000000,
+    "currency": "USD",
+    "end": "2026-06-27",
+    "form": "10-Q",
+    "filed": "2026-07-31",
+    "accn": "0000320193-26-000020"
+   },
+   "to": {
+    "value": 36305000000,
+    "currency": "USD",
+    "end": "2026-09-26",
+    "form": "10-K",
+    "filed": "2026-11-03",
+    "accn": "0000320193-26-000026"
+   }
+  },
+  {
+   "at": "2026-11-03T14:41:43.674Z",
+   "entityId": "apple",
+   "metric": "operatingCashFlow",
+   "slot": "annual",
+   "kind": "new-period",
+   "from": {
+    "value": 111482000000,
+    "currency": "USD",
+    "end": "2025-09-27",
+    "form": "10-K",
+    "filed": "2025-10-31",
+    "accn": "0000320193-25-000079"
+   },
+   "to": {
+    "value": 145097000000,
+    "currency": "USD",
+    "end": "2026-09-26",
+    "form": "10-K",
+    "filed": "2026-11-03",
+    "accn": "0000320193-26-000026"
+   }
+  },
+  {
+   "at": "2026-11-03T14:41:43.674Z",
+   "entityId": "apple",
+   "metric": "capex",
+   "slot": "annual",
+   "kind": "new-period",
+   "from": {
+    "value": 12715000000,
+    "currency": "USD",
+    "end": "2025-09-27",
+    "form": "10-K",
+    "filed": "2025-10-31",
+    "accn": "0000320193-25-000079"
+   },
+   "to": {
+    "value": 9041000000,
+    "currency": "USD",
+    "end": "2026-09-26",
+    "form": "10-K",
+    "filed": "2026-11-03",
+    "accn": "0000320193-26-000026"
+   }
+  },
+  {
+   "at": "2026-11-03T14:41:43.674Z",
+   "entityId": "apple",
+   "metric": "longTermDebt",
+   "slot": "latest",
+   "kind": "new-period",
+   "from": {
+    "value": 71340000000,
+    "currency": "USD",
+    "end": "2026-06-27",
+    "form": "10-Q",
+    "filed": "2026-07-31",
+    "accn": "0000320193-26-000020"
+   },
+   "to": {
+    "value": 68208000000,
+    "currency": "USD",
+    "end": "2026-09-26",
+    "form": "10-K",
+    "filed": "2026-11-03",
+    "accn": "0000320193-26-000026"
+   }
+  },
+  {
+   "at": "2026-11-03T14:41:43.674Z",
+   "entityId": "goldman-sachs",
+   "metric": "revenue",
+   "slot": "quarter",
+   "kind": "new-period",
+   "from": {
+    "value": 20338000000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-08-03",
+    "accn": "0000886982-26-000297"
+   },
+   "to": {
+    "value": 18679000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-11-02",
+    "accn": "0000886982-26-000532"
+   }
+  },
+  {
+   "at": "2026-11-03T14:41:43.674Z",
+   "entityId": "goldman-sachs",
+   "metric": "netIncome",
+   "slot": "quarter",
+   "kind": "new-period",
+   "from": {
+    "value": 6628000000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-08-03",
+    "accn": "0000886982-26-000297"
+   },
+   "to": {
+    "value": 5294000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-11-02",
+    "accn": "0000886982-26-000532"
+   }
+  },
+  {
+   "at": "2026-11-03T14:41:43.674Z",
+   "entityId": "goldman-sachs",
+   "metric": "cash",
+   "slot": "latest",
+   "kind": "new-period",
+   "from": {
+    "value": 187266000000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-08-03",
+    "accn": "0000886982-26-000297"
+   },
+   "to": {
+    "value": 176767000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-11-02",
+    "accn": "0000886982-26-000532"
+   }
+  },
   {
    "at": "2026-10-30T13:39:10.133Z",
    "entityId": "amazon",
