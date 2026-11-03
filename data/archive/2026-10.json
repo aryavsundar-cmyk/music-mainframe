@@ -175,6 +175,22 @@
   "firstSeen": "2026-10-31T12:20:13.142Z"
  },
  {
+  "id": "ec17d1ef043fa364",
+  "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxORHVOMkVaM0JfTVVIcTN3LXlJUEdjcVg0X1ZVV240aXcxSlBaZ25wQk1wclJGM1JIUzFVSzBOZFBDUWhkNW9zWkNsQUI0cjYteVlEVWdNdEgyWDRKVWhFZTZfWGZvOUlOTjM5VURlUElGbmlkdFRwazVndjJUWU4xYk85NlZwQTY2Wko0czZGWjBIWlhaZG5BYkxR?oc=5",
+  "title": "Music Industry Moves: Chris Young Signs With UTA; Kurt Vile Re-Ups With Third Side Publishing",
+  "summary": "Music Industry Moves: Chris Young Signs With UTA; Kurt Vile Re-Ups With Third Side Publishing Variety",
+  "source": "Variety",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-30T23:25:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 2,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
   "id": "51834c2d3c0ee98a",
   "url": "https://www.billboard.com/pro/billboard-japan-luminate-tokyo-conference-j-pop-metadata/",
   "title": "Billboard Japan & Luminate’s ‘NOW PLAYING JAPAN Vol. 6’ Focuses on Overseas Perspectives on the Japanese Market, How to Leverage Metadata",
@@ -945,6 +961,28 @@
   "firstSeen": "2026-10-30T12:48:42.655Z"
  },
  {
+  "id": "698217b8f7ae7cce",
+  "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPV2dtVmYwV2xiRjAyeUFTVjVQTE4yQW12RlIxajVMYTJ5UUlJVmtja2E3SnNhLW5wM1ktb0FMckhBbnYxWk5NZVZEM3VGMFJHNUxNM0xvT3ZtUjE1VkM1NGNwVTFFMmFaalU1WTdHaGZEMmVZbDdJNDM3Vi1MUHRuSmRldk4?oc=5",
+  "title": "Live Nation’s Berchtold Says Its Concert Scale Gives Its Venues an Edge While Dismissing Settlement Criticism",
+  "summary": "Live Nation’s Berchtold Says Its Concert Scale Gives Its Venues an Edge While Dismissing Settlement Criticism TicketNews",
+  "source": "TicketNews",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-30T10:33:20.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 20,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
   "id": "88caccf2b7895243",
   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPMEFIaV9Ic3h3OVZENzdXTmZYMW1ZNXl6c2NhMllGYVIwbnRDSm9WOE4xZERVX1BjTnJBVmYyTWs2dENLZTBlNUlXYzI3YWVXb2tDaURhbG5fa1dHX0dFLUk0cDZmTXhyNmswejhSUjFtNE54cnNKR1dYblYtb0RoUVFRRmFIS2hqVmEwNE9RNGlyUmRmQWh2eFVtekpTRXJiLUtkZFp4ZGxQUnZwWDB4cy1ycTZlYmNKYmc?oc=5",
   "title": "Universal Music Shares Climb After Streaming Revenue Beats Expectations",
@@ -1181,6 +1219,22 @@
   ],
   "score": 31,
   "firstSeen": "2026-10-30T12:48:42.655Z"
+ },
+ {
+  "id": "30e22f6ce2c07b5f",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1OUFBERFRLNUpBSkMzZGJyTy0zTDAzVTFuZ19IMWtPdzNfWUJJVi1yeExxbWhmYko1OW83QXdoRWw4VW41MEZtTENuQ2R2WEVkSElsVTZ0NlIwSXhzWVBZYnRVa1Y0S05yQkR1dw?oc=5",
+  "title": "Ditto Music Review 2026: Is It Worth It for Indie Artists?",
+  "summary": "Ditto Music Review 2026: Is It Worth It for Indie Artists? Ones To Watch",
+  "source": "Ones To Watch",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-30T07:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 2,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
  },
  {
   "id": "3f8cc989cfa71945",
@@ -1481,6 +1535,22 @@
   ],
   "score": 15,
   "firstSeen": "2026-10-30T12:48:42.655Z"
+ },
+ {
+  "id": "245622bc833f4dc8",
+  "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPZkgzb011SXZrbmF0N3FESU1jTVZhb3lfZk5aNmxueHoySnhidy12MnNYYTg5Y0JkUTZ2UUdEWVBFTW5FYTVxQXo0bjZ4VV8xVXVYVXQ5cmd3QXhPMHQtMkFRbmk1VVB5dGZCVUN5enRtTGdIdklQbzFLNEZnMEdVTms1WVRKSDU5QlBTSDJCY19hRVpHYUEw?oc=5",
+  "title": "Music Rights Metadata: AIMi Labs Finds Mismatches",
+  "summary": "Music Rights Metadata: AIMi Labs Finds Mismatches InterSpace Distribution",
+  "source": "InterSpace Distribution",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-29T19:03:31.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 2,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
  },
  {
   "id": "536650d537b7edf3",
@@ -2315,6 +2385,24 @@
   "topics": [],
   "score": 29,
   "firstSeen": "2026-10-29T12:55:45.853Z"
+ },
+ {
+  "id": "8088ce9c6613a221",
+  "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBMVUtZZlBwRVFFRE5MZVNhLW5VcmJGSFV2MDBIdk5uTTR1NXQwTHVYQU05MjdRdElrZkJMUGZvMktsa3lsUjlqT0xFazByWWtDLTlCUVpUeFJHNnNnUjRhMEFMX0NQQnY5X0JUUzM3cXJ2WDdnYXlSZ1FPTDBRV00?oc=5",
+  "title": "Is AI Music Legal? What Creators Need to Know (2026)",
+  "summary": "Is AI Music Legal? What Creators Need to Know (2026) www.perfectcorp.com",
+  "source": "www.perfectcorp.com",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-29T07:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai"
+  ],
+  "score": 10,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
  },
  {
   "id": "b1873ea455c6ccc7",
@@ -4953,6 +5041,28 @@
   "firstSeen": "2026-10-27T12:05:57.027Z"
  },
  {
+  "id": "0801e979dc7fbbac",
+  "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPMlBiWjJLaFo4ai14TURMUjA3R3RjV3l2OHV0bDFSQlp2YXdidmFQcHBRSGVJVzVjcE5ncUdmOC1LbDgzR1g2WkFEdXFXaEFVTTlsdzRubE9VLVJUakpFbjV6Zm5LRG5ON3djX1AydHczNm9rZ2MzemljQ3lpMWxuZ0FHRXAzZ2EwWHdoZUVaNnFEcHZnVnU3UE00QnVZVXRLZTRwRXZNSklwbkR2TXZOWTBPWGZfM1hY?oc=5",
+  "title": "Live Nation Reveals Trump Attended Meeting to Finalise US Antitrust Settlement Terms",
+  "summary": "Live Nation Reveals Trump Attended Meeting to Finalise US Antitrust Settlement Terms The Music Network",
+  "source": "The Music Network",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-27T04:10:33.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
   "id": "94bb9b8a56e75a9b",
   "url": "https://www.digitalmusicnews.com/2026/10/26/harbourview-equity-hit-boy-roblox-collab/",
   "title": "HarbourView Equity Partners Brings Hit-Boy to Roblox Through Overtune Collaboration",
@@ -6614,6 +6724,22 @@
   ],
   "score": 32,
   "firstSeen": "2026-10-24T10:53:54.675Z"
+ },
+ {
+  "id": "a2b4592dc7a7543d",
+  "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxORElheGFqVWV6X240aUNMUUFBeFhPWEVFaDFJM3AwWng2MFRvVjR6VGJoMUliMXdvUk1FVlZpcWFrQjdmRHVEZTZ3bEpZWXNIb0VJa0ktYlE3bE1QbnpON1NXclVrNGNLMVEyR1NLN2U2elBneVM1Wld1alhWTlhGUFktWmUtb2NXVjYtcHhMZG9fUUxtVmNDX2pEYXJqeVNaMVE?oc=5",
+  "title": "UMG Signs Licensing Deal With TYGER, a Gaming Music Service That Adapts Songs Using AI",
+  "summary": "UMG Signs Licensing Deal With TYGER, a Gaming Music Service That Adapts Songs Using AI InterSpace Music Distribution",
+  "source": "InterSpace Music Distribution",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-23T22:48:38.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 0,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
  },
  {
   "id": "bdf983f1e015cb79",

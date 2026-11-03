@@ -1,5 +1,987 @@
 [
  {
+  "id": "ee7f8cbaabb95863",
+  "url": "https://www.digitalmusicnews.com/2026/11/03/adobe-premiere-mobile-umg-wmg-partnership/",
+  "title": "Adobe Premiere Mobile Adds Tracks from UMG and WMG in Major Music Partnership",
+  "summary": "Adobe Premiere mobile secures a major partnership with Universal Music Group and Warner Music Group to bring fully licensed music to the platform. On Tuesday, Adobe announced a new partnership with Universal Music Group (UMG) and Warner Music Group (WMG) to bring fully licensed…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-03T14:00:19.000Z",
+  "entities": [
+   "umg",
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 51,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "2a168a7a77c046d1",
+  "url": "https://www.billboard.com/pro/j-pop-company-nebula17-expands-team-artist-roster-us/",
+  "title": "U.S.-Based Japanese Music Company Nebula17 Expands Team & Roster: ‘J-Pop Feels Ready for Its Moment’",
+  "summary": "The L.A.-based company was founded by former Avex USA CEO Naoki Osada, who says he's seeing major \"momentum\" for J-pop in the U.S.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-03T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "eccc74b23d28f1da",
+  "url": "https://news.google.com/rss/articles/CBMinAJBVV95cUxPN2txa2l2SGlLSVgwTDdTUWhEdnhJZXFTZ1V0NmhkRUpxZ0dGamVDWlRhemQweFVsYzM4NnczRGFxSC14Mnl2X1lxUWs1LUVGOTdmeVBqbkl6ZGcyRUotZGVuelpSWF9iNWthVmZPb0hoNTMzWXRNSkJzM1k4RVZqUXd6UHNsYWhHQlRkeXlrRTNGRHVpOTIwRHhaUDd2YzB2TnVLSXA0T1J4czJ2WHdQckxRcUZNeEdkZTJtaWxJQVBsMmotVXhkN3JTWngxb19lc3Zfb0ZWMU42bmtWWEtsNDA2a1BjdG1EdjhyZmNOM3Z6b2NzYXVzTTZSLXNIWEtpelJlZl8zeWNoVVJaeWc2emFERjNsaDFsTjNiLQ?oc=5",
+  "title": "Adobe’s popular video editing app is adding free music from top artists in a new deal",
+  "summary": "Adobe’s popular video editing app is adding free music from top artists in a new deal Digital Camera World",
+  "source": "Digital Camera World",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-03T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "40875f2e1e7891f8",
+  "url": "https://musically.com/2026/11/03/spotify-enlists-john-legend-ryan-tedder-for-fresh-finds-summit/",
+  "title": "Spotify enlists John Legend, Ryan Tedder for Fresh Finds Summit",
+  "summary": "In September, Spotify launched ‘Fresh Finds Forward’ as a 12-month support program for artists who’ve featured in its ‘Fresh Finds’ family of discovery playlists. Now the initiative has spawned its first event. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-03T13:30:00.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 27,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "422838af8411a286",
+  "url": "https://musically.com/2026/11/03/bts-world-tour-fuelled-a-record-financial-quarter-for-hybe-in-q3/",
+  "title": "BTS world tour fuelled a record financial quarter for Hybe in Q3",
+  "summary": "Besides Apple, Hybe has also been breaking some quarterly financial records lately. Its Q3 revenues of KRW 1.53tn ($1.14bn) were an all-time record for the company, as was its operating profit of KRW 188.5bn ($140.4m). The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-03T13:30:00.000Z",
+  "entities": [
+   "hybe"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "earnings",
+   "live"
+  ],
+  "score": 40,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "526e13ad4f4a0f91",
+  "url": "https://musically.com/2026/11/03/apples-music-business-broke-its-q3-revenue-record-last-quarter/",
+  "title": "Apple’s music business broke its Q3 revenue record last quarter",
+  "summary": "Apple’s latest quarterly financials saw the company report $114.6bn of revenues in Q3 (its fiscal Q4) – a 12% rise year-on-year, despite its already-goliath size. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-03T13:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "earnings"
+  ],
+  "score": 21,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "7e9f19c9e425c303",
+  "url": "https://musically.com/2026/11/03/ar-startup-acaply-wants-to-help-producers-easily-source-vocals/",
+  "title": "A&R startup Acaply wants to help producers easily source vocals",
+  "summary": "2026 is a worrying time for many singers and rappers, aware that the emergence of voice-cloning technology means their voices can be copied and put to use on songs without their involvement or permission. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-03T13:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "b05c27c33b345a97",
+  "url": "https://musically.com/2026/11/03/10-of-the-45-new-idol-groups-in-south-korea-this-year-are-virtual/",
+  "title": "10 of the 45 new ‘idol’ groups in South Korea this year are virtual",
+  "summary": "While Hybe enjoyed record revenues from its human artists last quarter, a stat in a headline from Korea JoongAng Daily caught our eye this morning: ‘One in four K-Pop acts now virtual’. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-03T13:30:00.000Z",
+  "entities": [
+   "hybe"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 29,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "e2de38500062b362",
+  "url": "https://completemusicupdate.com/jobs/pr-marketing-executive-or-manager-era-london/",
+  "title": "PR & Marketing Executive or Manager // ERA (London)",
+  "summary": "UK trade organisation ERA (The Digital Entertainment and Retail Association) is seeking an an enthusiastic, creative and music-loving marketing executive / manager to join the team from January 2026.",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-03T13:04:10.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "37c212658003b986",
+  "url": "https://musically.com/2026/11/03/ai-roundup-lyria-lawsuit-anthropics-q3-openai-pile-in/",
+  "title": "AI roundup: Lyria lawsuit, Anthropic’s Q3, OpenAI pile-in",
+  "summary": "Big money, big lawsuits, and claims that if AI training isn’t ruled as ‘fair use’ it would “threaten not merely a single industry, but the broader economy” – not to mention hamper cancer research, cybersecurity defences and emergency response systems. It’s quite the day of news…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-03T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 23,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "ec5c2b03e35c7ec3",
+  "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdWJyMTB4LUxxWHg0cjBSdjl6aGk2cVhkbzZfelp5bWx6T3pxTDFSaWJ4QUhBQmg4eEFDNU1MQjZrb2djM2JOX1pRaTFQdmZIZVVsMDduUllldF9QUFd6eE5LaXQ2UUliUTVqX090ZGhHTmlWcEI2dW84TXNMQk8yM0ZLU3d4all0REpqT21NWExTSkg4R1pLRDRvNlpWejZtVGVTanFXRU0yZVU?oc=5",
+  "title": "Warner Music Group: Pricing Power Is Proven, Catalog Returns Are Not (NASDAQ:WMG)",
+  "summary": "Warner Music Group: Pricing Power Is Proven, Catalog Returns Are Not (NASDAQ:WMG) Seeking Alpha",
+  "source": "Seeking Alpha",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-03T11:47:31.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "catalog-deal"
+  ],
+  "score": 41,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "2cb650a4b66537e9",
+  "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPSU0xQi1Mb1dQZEhRU0RJVVFiRVBrWTJ2T2d2XzdVcUY3UG5qcU5xWHRhWExDYnJjcXFkNTV4d05oWS1oSndtMkgxR3V3U2lQc2JXaVJ3WERSX0V0NWNfUDRfZXJUQ0tmTUtQWGk1R1d3VE1FWlpVenYwZTk0VDFMTHI3bGVRdm0taVg5OUxsNWd2YW1TRzI2X2hqZ2I?oc=5",
+  "title": "Bella Poarch Says She No Longer Writes Songs to Go Viral, Aiming to Avoid Impact of Feed Algorithms",
+  "summary": "Bella Poarch Says She No Longer Writes Songs to Go Viral, Aiming to Avoid Impact of Feed Algorithms Technology Org",
+  "source": "Technology Org",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-03T11:03:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "ab139d19a9008281",
+  "url": "https://variety.com/2026/music/global/independent-talent-outernet-london-1236938228/",
+  "title": "Independent Talent to Rep Outernet London for Creative Commercial Strategy (EXCLUSIVE)",
+  "summary": "Independent Talent Group have been appointed creative commercial agency for immersive U.K. venue Outernet London. The partnership will unite Independent’s substantial client list – which includes artists, filmmakers, creators, musicians and producers – with Outernet’s immersive…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-03T10:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "2eaac2a8d557458b",
+  "url": "https://musically.com/2026/11/03/districts-bengaluru-venue-is-now-the-airtel-arena/",
+  "title": "District’s Bengaluru venue is now the Airtel Arena",
+  "summary": "When “going-out” platform District by Zomato announced that it had taken over the operations of Bengaluru’s 17,000-capacity outdoor venue Terraform in September 2025, it promised that “high-speed internet connectivity” was […] The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-03T09:55:33.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "b041cf4bf6498be6",
+  "url": "https://musically.com/2026/11/03/official-charts-pro-data-reveals-gta-vis-longer-term-music-boosts/",
+  "title": "Official Charts Pro data reveals GTA VI’s longer-term music boosts",
+  "summary": "Having their song featured in a trailer or teaser for Grand Theft Auto VI gives an artist a significant spike in streams. But does it last? The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-03T09:20:02.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [],
+  "score": 33,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "f24af40155719990",
+  "url": "https://variety.com/2026/music/news/bts-katseye-hybe-record-quarterly-revenue-profit-1236938217/",
+  "title": "BTS, Katseye Drive Hybe to Record Quarterly Revenue and Profit",
+  "summary": "BTS’ world tour sent K-pop powerhouse Hybe to the highest quarterly revenue and operating profit in its history in the third quarter of 2026. Revenue for the quarter reached KRW1.5257 trillion ($1.13 billion) and operating profit came in at KRW188.5 billion ($140.2 million). Bot…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-03T08:24:40.000Z",
+  "entities": [
+   "hybe"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "earnings",
+   "live"
+  ],
+  "score": 40,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "d0950216f325ab88",
+  "url": "https://musically.com/2026/11/03/clean-bandit-talk-tiktok-independence-and-ar-meetings-in-bed/",
+  "title": "Clean Bandit talk TikTok, independence and ‘A&R meetings in bed’",
+  "summary": "Every songwriter understands that once their work is out in the world, people will interpret it and put it to uses that they never intended. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-03T06:00:00.000Z",
+  "entities": [
+   "tiktok"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "7c9e799781f57f45",
+  "url": "https://www.digitalmusicnews.com/2026/11/02/timbaland-lawsuit-former-managers/",
+  "title": "Timbaland Sues Former Managers Alleging $15 Million Fraud Scheme",
+  "summary": "Timbaland files a $15 million lawsuit against his former managers, alleging fraud, breach of fiduciary duty, and civil theft, among other claims. Timbaland is suing his former manager and business manager for $15 million, accusing the duo of several claims, including fraud, brea…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-03T05:04:36.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "4b64da4f66bbc65b",
+  "url": "https://variety.com/2026/music/news/trent-reznor-atticus-ross-score-david-fincher-cliff-booth-1236938107/",
+  "title": "Trent Reznor and Atticus Ross to Score David Fincher’s ‘The Further Mis-Adventures of Cliff Booth’",
+  "summary": "Nine Inch Nails principals and veteran film composers Trent Reznor and Atticus Ross are once again teaming up to provide the score for David Fincher’s new film “The Further Mis-Adventures of Cliff Booth,” marking their sixth collaboration with Fincher on one of his movies. News…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-03T02:07:06.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "6188927a7df7916f",
+  "url": "https://www.billboard.com/pro/my-chemical-romance-cowboys-cheerleaders-lawsuit-why-ended/",
+  "title": "Here’s Why the My Chemical Romance Lawsuit Really Ended, According to the Band’s Manager",
+  "summary": "Court filings reveal a new explanation for why the high-profile legal dispute with the Dallas Cowboys Cheerleaders wrapped up so quickly.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-03T02:04:19.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "5033860262f2ed76",
+  "url": "https://variety.com/2026/film/columns/publicist-bill-harrison-creative-director-stylist-johnny-wujek-art-of-elysium-1236938034/",
+  "title": "Veteran Publicist Bill Harrison and Creative Director Johnny Wujek Join Nonprofit Art of Elysium (EXCLUSIVE)",
+  "summary": "Veteran publicist Bill Harrison and Emmy-winning costume designer, celebrity stylist and creative director Johnny Wujek have joined the staff of arts nonprofit The Art of Elysium. Harrison boards as chief marketing officer while Wujek has been named vice president of the organiz…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-03T00:49:27.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "policy"
+  ],
+  "score": 16,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "41157a8da26bbd49",
+  "url": "https://www.digitalmusicnews.com/2026/11/02/mariah-carey-christmas-gucci/",
+  "title": "Never Too Soon (Or Is It?)—Mariah Carey Ramps Up the Ultra-Lucrative Christmas Machine, This Time with Gucci On Board",
+  "summary": "November is here, and so is Mariah Carey’s latest “It’s Time” video, featuring a deep cut for longtime fans, alongside a Gucci tie-up for the season. It’s November, and you know what that means: Mariah Carey is ready to ring in the Christmas season, whether or not we think it’s…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T22:22:52.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "712f860e53587714",
+  "url": "https://variety.com/2026/music/news/justin-timberlake-apple-docuseries-janet-jackson-1236937847/",
+  "title": "Justin Timberlake to Release Four-Part ‘Tell-All’ Docuseries, Featuring Janet Jackson, on Apple (EXCLUSIVE)",
+  "summary": "Justin Timberlake is set to release a four-part docuseries on Apple TV in December, described as a “tell-all,” three sources confirm to Variety. One source says the series will feature Janet Jackson discussing the infamous “wardrobe malfunction” that took place during the pair’s…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T22:11:37.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "9c1d57ca5f04cb11",
+  "url": "https://variety.com/2026/music/news/bruce-springsteen-abdul-el-sayed-senator-election-1236937898/",
+  "title": "Bruce Springsteen Endorses Abdul El-Sayed for Senator: ‘He’s a Fighter Against’ Trump’s ‘Corrupt, Lawless, Anti-American Leadership’",
+  "summary": "Bruce Springsteen is throwing his support behind Abdul El-Sayed, who’s running as the Democratic candidate in the race to be Michigan’s senator. El-Sayed is running against Republican nominee Mike Rogers in this year’s midterms, and if elected he would become the first Muslim se…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T22:03:36.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "93885c8edec10d60",
+  "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNb3c1bjVveTJWRndKM3ZwcWNVYW9TMHRSOExKeHRyWVBCb3liQUEtZ1VkekVnbjNGYlRQdHMzTTJlVDBqU1VRNWlVUGhnd2xJeGQ3N2dyR3k1dUhHZDdlREdvd3ZLNnRpd3JaUTNUNDFSMkRjZjI2V1J2VW50aVgwOEVVbzhaR2xoYTJLbDh0b3l5U3JxVEF2Tks1emlHVWVrS0E?oc=5",
+  "title": "Qobuz Analytics for Artists: How to Read Streams, Downloads and Royalties",
+  "summary": "Qobuz Analytics for Artists: How to Read Streams, Downloads and Royalties RouteNote",
+  "source": "RouteNote",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-02T21:56:59.000Z",
+  "entities": [
+   "qobuz"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "fa7ea720ca7b545f",
+  "url": "https://www.digitalmusicnews.com/2026/11/02/ftc-live-nation-lawsuit/",
+  "title": "Live Nation/Ticketmaster Fires Back Against the FTC’s Intensifying Lawsuit, Claiming the Agency Is ‘Belatedly, Selectively, Arbitrarily, and Unequally Enforcing the BOTS Act’",
+  "summary": "The FTC is “belatedly, selectively, arbitrarily, and unequally enforcing the BOTS Act” in its lawsuit against Live Nation – at least according to the Ticketmaster parent, which is once again firing back against the agency’s complaint. Live Nation took aim at the action in an ame…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T21:55:55.000Z",
+  "entities": [
+   "live-nation",
+   "ticketmaster"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "litigation",
+   "policy"
+  ],
+  "score": 52,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "da9adef6fd69d1d4",
+  "url": "https://www.digitalmusicnews.com/2026/11/02/oak-view-group-iag-sponsorship-branding/",
+  "title": "Oak View Group Links with IAG on Broad-Based Sponsorship and Branding Deal",
+  "summary": "Oak View Group announces an agreement with Independent Artist Group (IAG) to work with touring artists on sponsorship and brand partnerships. On Monday, Oak View Group (OVG) announced an agreement with Independent Artist Group (IAG) to work with the agency’s music and comedy tou…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T21:50:18.000Z",
+  "entities": [
+   "oak-view-group"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 20,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "67fbb194334c7133",
+  "url": "https://www.billboard.com/pro/timbaland-lawsuit-ex-managers-financial-misconduct/",
+  "title": "Timbaland Sues Ex-Managers for $15M Over Accusations of ‘Financial Misconduct’",
+  "summary": "The veteran hitmaker claims his longtime manager and partner Gary Marella treated him like \"a piggy bank\" — accusations the manager strongly denies.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T21:11:23.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "d4efb23dc5e3954a",
+  "url": "https://www.digitalmusicnews.com/2026/11/02/gema-socan-one-arena-live-collective/",
+  "title": "GEMA Hooks Canada’s SOCAN Into Its Growing One Arena Live Collective",
+  "summary": "Canadian collective SOCAN joins German society GEMA’s One Arena, improving transparency around international concert royalties. One Arena has announced its newest member, the Canadian collective SOCAN, providing a commitment to the initiative that expands the One Arena network b…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T20:35:24.000Z",
+  "entities": [
+   "gema",
+   "socan"
+  ],
+  "types": [
+   "pro"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 55,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "72d3abbdd56c2cda",
+  "url": "https://news.pollstar.com/2026/11/02/wisin-bringing-universidad-del-perreo-to-ny-for-one-night-only/",
+  "title": "Wisin Bringing ‘Universidad del Perreo’ To NY For One Night Only",
+  "summary": "Reggaeton legend Wisin is bringing his “Universidad del Perreo” to New York City this December. “La Universidad del Perreo” shows in Puerto Rico recently sold out in just an hour, and the lone U.S. headline show, which is promoted by Cárdenas Marketing Network, this year will be…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-02T20:31:32.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "ddefcc9bb90015c2",
+  "url": "https://news.pollstar.com/2026/11/02/jack-johnson-announces-two-nights-at-wynn-las-vegas-wynn-theater/",
+  "title": "Jack Johnson Announces Two Nights At Wynn Las Vegas’ Wynn Theater",
+  "summary": "Jack Johnson is following up his “SURFILMUSIC” amphitheater shows across North America with two shows booked in Las Vegas in June 2027, marking his first return to the Encore Theater at the Wynn Las Vegas in four years. Johnson and his band have lined up back-to-back performance…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-02T20:26:15.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "16255260fc648326",
+  "url": "https://www.musicbusinessworldwide.com/ftc-and-four-states-demand-jury-trial-in-bots-act-lawsuit-against-live-nation-and-ticketmaster/",
+  "title": "FTC and four states demand jury trial in BOTS Act lawsuit against Live Nation and Ticketmaster",
+  "summary": "The US Federal Trade Commission and four states have demanded a jury trial in their lawsuit against Live Nation and its ticketing subsidiary, Ticketmaster. Colorado, Florida, Illinois, and Nebraska joined the FTC in the demand, which was filed in federal court in Los Angeles on…",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T20:00:59.000Z",
+  "entities": [
+   "live-nation",
+   "ticketmaster"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "litigation",
+   "live",
+   "policy"
+  ],
+  "score": 57,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "353ad81671aeeb6d",
+  "url": "https://www.billboard.com/pro/artist-museums-expanding-business-opportunities-nashville/",
+  "title": "How Artist Museums May Expand Business Opportunities In Downtown Nashville",
+  "summary": "From Dolly Parton to Johnny Cash, museums are taking over Nashville.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T19:59:09.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "5bf8bd35df3ca66b",
+  "url": "https://news.pollstar.com/2026/11/02/techno-pioneer-juan-atkins-dies-at-64/",
+  "title": "Techno Pioneer Juan Atkins Dies At 64",
+  "summary": "Juan Atkins, a Detroit DJ and producer who helped pioneer techno, died Oct. 31 in Mexico City. He was 64. The longtime musician was found unresponsive in a hotel room prior to performing at YuYu Cine Club in Mexico’s capital, according to Resident Advisor. A representative from…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-02T19:52:04.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "d627f226f0beb535",
+  "url": "https://www.digitalmusicnews.com/2026/11/02/apple-tv-justin-timberlake-docuseries/",
+  "title": "Apple TV Prepping a Lengthy Justin Timberlake Docuseries Full of Wardrobe Malfunctions, DWIs, and Britney Spears Revelations",
+  "summary": "Justin Timberlake releases a four-part docuseries on Apple TV next month, featuring controversies involving Janet Jackson, Britney Spears, and more. Justin Timberlake is preparing to release a four-part docuseries on Apple TV next month, described as a “tell-all” and featuring i…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T19:45:13.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "01e36b1a5edce0fa",
+  "url": "https://www.digitalmusicnews.com/2026/11/02/live-nation-australia-sydney-opera-house/",
+  "title": "Live Nation Australia Expands ‘On the Steps’ at the Sydney Opera House with Suki Waterhouse, James Blake, Rise Against, and More",
+  "summary": "Live Nation renews its fundraising partnership with Australian music charity Support Act for the 2026 edition of the On The Steps concert series. Live Nation’s Sydney Opera House Forecourt event will raise funds once more for the Australian music industry charity Support Act in…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T19:38:49.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 20,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "d11c587d4f44b96c",
+  "url": "https://news.pollstar.com/2026/11/02/hum-announces-2027-us-tour-dates/",
+  "title": "HUM Announces 2027 US Tour Dates",
+  "summary": "HUM announced a 2027 United States tour, set to begin March 3 in Atlanta at The Eastern. The tour will run for 12 dates, concluding July 17 at The Warfield in San Francisco. The US tour will mark the band’s first run of shows since their return to the stage in 2026. See full tou…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-02T19:32:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "2b1e81aa9a4fa1b7",
+  "url": "https://www.digitalmusicnews.com/2026/11/02/exit-announces-triumphant-return-to-serbia/",
+  "title": "EXIT Announces Its Triumphant Return to Serbia",
+  "summary": "After being forced to leave its home in Serbia amid political turmoil, EXIT is making a triumphant return with a special edition planned for 2027. Following the historic election victory of Serbia’s student-led movement for freedom and justice, which ended over a decade of polit…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T19:06:31.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "9932279bbcc63dac",
+  "url": "https://news.pollstar.com/2026/11/02/phoebe-bridgers-delivers-memories-on-the-lost-tour-live-review/",
+  "title": "Phoebe Bridgers Delivers Memories On ‘The Lost Tour’ (Live Review)",
+  "summary": "Maybe Phoebe Bridgers has been a rock star all along. The 32-year-old is rightly respected as one of the best songwriters of the last decade or so, since her 2017 full-length debut Stranger in the Alps. Her songs are whipsmart, catchy, deeply personal reveals into her life and h…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-02T19:00:37.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "dab5d45a2a236052",
+  "url": "https://www.digitalmusicnews.com/2026/11/02/alphabet-shareholder-lawsuit-ai-training/",
+  "title": "Google/Alphabet Directors Face Shareholder Suit for Failing to Curb Unauthorized AI Training: ‘Alphabet Will Be Subject to Potentially Massive Liability from the Copyright Infringement’",
+  "summary": "Amid an avalanche of AI infringement litigation, we know how rightsholders feel about tech giants’ alleged free-for-all training. But at least according to a new lawsuit filed against Google parent Alphabet’s directors, some investors are also far from thrilled about the practic…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T18:55:49.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "0f85969130dabd72",
+  "url": "https://news.pollstar.com/2026/11/02/oak-view-group-independent-artist-group-partner-for-artist-brand-partnerships/",
+  "title": "Oak View Group, Independent Artist Group Partner For Artist Sponsorship & Brand Partnerships",
+  "summary": "Oak View Group and Independent Artist Group have announced a partnership to provide sponsorship and brand partnership opportunities for IAG’s music and comedy touring roster. Additionally, the deal enables “OVG to make touring and music assets from IAG artists available to OVG b…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-02T18:52:11.000Z",
+  "entities": [
+   "oak-view-group"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 20,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "e97ce6197d3ef679",
+  "url": "https://www.digitalmusicnews.com/2026/11/02/nexroc-jyp-entertainment-avex-takeover-plans/",
+  "title": "Investment Firm Nexroc Reportedly Shelves JYP and Avex Takeover Plans Following Assets Scrutiny — While Doubling Down on Its Long-Term ‘Global Acquisition Strategy’",
+  "summary": "Late last week, Japan- and China-based Nexroc Group announced its intention to acquire majority stakes in JYP Entertainment and Avex. But at least for the time being, the self-described “diversified global holding company and investment platform” has seemingly shelved the takeov…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T18:49:34.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "m&a",
+   "pe-capital"
+  ],
+  "score": 28,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "3b6e26963cd7d732",
+  "url": "https://www.musicbusinessworldwide.com/alphabet-shareholder-sues-sundar-pichai-and-12-others-over-training-googles-ai-including-lyria-on-copyrighted-works/",
+  "title": "Alphabet shareholder sues Sundar Pichai and 12 others over training Google’s AI, including Lyria, on copyrighted works",
+  "summary": "Phil Rosen is suing on Alphabet's behalf in a shareholder derivative suit, meaning any damages recovered would be paid to Alphabet itself rather than to him. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T18:32:50.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "4e9710e196629bc4",
+  "url": "https://www.musicbusinessworldwide.com/live-nations-ticketmaster-brings-festival-ticketing-subsidiary-front-gate-tickets-into-cashortrade-face-value-resale-partnership/",
+  "title": "Live Nation’s Ticketmaster brings festival ticketing subsidiary Front Gate Tickets into CashorTrade face-value resale partnership",
+  "summary": "Fans who bought festival passes through Front Gate can now resell them to other fans on CashorTrade for no more than they originally paid. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T18:32:34.000Z",
+  "entities": [
+   "live-nation",
+   "ticketmaster"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 43,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "b403bf96dfcfbe39",
+  "url": "https://variety.com/2026/music/news/olivia-rodrigo-holiday-song-take-me-home-4-christmas-1236937692/",
+  "title": "Olivia Rodrigo to Release First Holiday Song, ‘Take Me Home (4 Christmas),’ With Music Video Starring Cynthia Nixon and ‘SNL’s’ Ben Marshall",
+  "summary": "Olivia Rodrigo is getting in the holiday spirit. The pop star will release her first-ever Christmas song, titled “Take Me Home (4 Christmas),” on Thursday at 5 p.m. PT. The track will be accompanied by a music video starring Rodrigo alongside “Sex and the City” star Cynthia Nixo…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T17:33:01.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [],
+  "score": 28,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "ff90a1c6f03e3217",
+  "url": "https://www.billboard.com/pro/raffaella-braun-rises-president-triple-tigers-records/",
+  "title": "Raffaella Braun Rises to President at Triple Tigers Records as Co-President Annie Ortmeier Steps Down",
+  "summary": "Braun had been promoted to the co-president role at Triple Tigers Records in July.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T17:22:52.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "879a89bbbd888cf3",
+  "url": "https://variety.com/2026/music/global/lenny-kravitz-not-dead-learjet-crash-rumors-1236937632/",
+  "title": "Lenny Kravitz Did Not Die in Learjet Crash; Rep Shuts Down Viral Rumor as ‘Untrue and Incorrect’",
+  "summary": "Reports that Lenny Kravitz was a passenger aboard the Learjet plane that crashed in Florida are false, his representative has said. The Learjet, which was reportedly carrying 9 passengers bound for the Bahamas, crashed on a sidewalk in Palm Beach County on Sunday, killing everyb…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T17:18:11.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "3dcdb5c1988bd7d5",
+  "url": "https://completemusicupdate.com/abbas-agnetha-didnt-really-sing-backing-vocals-for-daniel-odonnell-irish-collecting-societies-face-off-in-court-over-dodgy-data-and-disputed-deductions/",
+  "title": "ABBA’s Agnetha didn’t really sing backing vocals for Daniel O’Donnell: Irish collecting societies face off in court over dodgy data and disputed deductions",
+  "summary": "Ten years ago Irish performer collecting society RAAP sued label collecting society PPI, claiming it was inappropriately deducting money from payments due to performers. After a detour via EU courts, the dispute is now in the Irish High Court, with allegations of dodgy data bein…",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T17:12:41.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation",
+   "pro-reform"
+  ],
+  "score": 28,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "409687c54e23e4b5",
+  "url": "https://news.pollstar.com/2026/11/02/new-lexington-venue-the-rail-announces-initial-shows-led-by-lynyrd-skynyrd-umphreys-mcgee-niko-moon/",
+  "title": "New Lexington Venue The Rail Announces Initial Shows, Led By Lynyrd Skynyrd, Umphrey’s McGee, Niko Moon",
+  "summary": "The Rail, a new venue in Lexington, Kentucky opening within the Commons Entertainment District, has announced its first wave of concerts ahead of its opening in early 2027, led by Lynyrd Skynyrd, Umphrey’s McGee, Niko Moon and with dates announced into mid-June/ Designed to deli…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-02T17:04:07.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "df6a8abe891f60e2",
+  "url": "https://variety.com/2026/music/news/kennedy-center-2026-honorees-1236937610/",
+  "title": "Kennedy Center Sets 2026 Honorees: David Mamet, Paul Anka, Andy Garcia and More",
+  "summary": "The John F. Kennedy Center for the Performing Arts, along with President Donald Trump, has announced this year’s slate of honorees. Paul Anka, David Foster, Andy Garcia, David Mamet and Barbara Mandrell will receive the prestigious honor at the 49th Kennedy Center Honors, taking…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T17:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "ed75f6e897ef5ed6",
+  "url": "https://news.pollstar.com/2026/11/02/queens-of-the-stone-age-plot-european-leg-of-perfecth-world-tour/",
+  "title": "Queens Of The Stone Age Plot European Leg Of ‘Perfecth World Tour’",
+  "summary": "Queens of the Stone Age have announced the European leg of their “Perfecth World Tour.” The additional dates kick off on June 13 in Hanover, Germany, at the Gilde Parkbühne. The band will then wrap things up on June 30 at the Pula Arena in Croatia. See full tour routing below. T…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-02T16:46:26.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "ee0f4df2160a5976",
+  "url": "https://news.pollstar.com/2026/11/02/morgan-wallens-sand-in-my-boots-featuring-kings-of-leon-ella-langley-kygo-may-21-23-in-gulf-shores-alabama/",
+  "title": "Morgan Wallen’s ‘Sand In My Boots’ Featuring Kings of Leon, Ella Langley, Kygo May 21-23 In Gulf Shores, Alabama",
+  "summary": "Following up on Friday’s announcement of dates and location, the lineup has been revealed for Morgan Wallen’s Sand In My Boots festival in Gulf Shores, Alabama, May 21-23, which features Kings of Leon, Ella Langley, Kygo, Empire of The Sun, Nelly, Flo Rida, Gavin Adcock, Koe Wet…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-02T16:44:33.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
+  "id": "2992e78bed4cea5b",
+  "url": "https://variety.com/2026/music/news/hunger-games-album-jennifer-lawrence-ella-langley-1236937594/",
+  "title": "‘Hunger Games’ Companion Album to Feature Jennifer Lawrence, Ella Langley, Tyler Childers, Mckenna Grace and 25 More",
+  "summary": "The lineup for the companion album for “The Hunger Games: Sunrise on the Reaping” has been announced, and it’s packed out, with no fewer than 29 tracks, featuring well-established rock, country and Americana acts like Ella Langley, Tyler Childers, Kacey Musgraves, Stevie Nicks a…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-02T16:36:19.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
   "id": "c1c3c5f113d3ccf0",
   "url": "https://www.musicbusinessworldwide.com/irving-azoffs-music-artists-coalition-joins-cate-blanchett-and-caa-on-ai-licensing-brief-in-new-york-times-case-against-openai/",
   "title": "Irving Azoff’s Music Artists Coalition joins Cate Blanchett and CAA on AI licensing brief in New York Times’ case against OpenAI",
@@ -221,6 +1203,26 @@
   "firstSeen": "2026-11-02T15:42:45.741Z"
  },
  {
+  "id": "a9108e46e4e39e70",
+  "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE05ODI4WlQ1S1Fjdlh2N3dPbFlZd09wQ2NGXzZBbjNvRmc2ejlEY1FsTlNqWFBQY3FaUkowVF82ODJBa3c3ZlJnRUY3STBTMXhxbHpJcnE4bEJOekxwWUZN?oc=5",
+  "title": "Spotify’s AI remix tool could launch in early 2027",
+  "summary": "Spotify’s AI remix tool could launch in early 2027 RouteNote",
+  "source": "RouteNote",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-02T11:40:32.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 17,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
+ },
+ {
   "id": "00a822ff9955bcce",
   "url": "https://musically.com/2026/11/02/vickie-nauman-talks-games-and-why-ai-drones-are-more-worrying-than-ai-tunes/",
   "title": "Vickie Nauman talks games (and why AI drones are more worrying than AI tunes)",
@@ -359,6 +1361,28 @@
   "topics": [],
   "score": 10,
   "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "a9381647ebf39c89",
+  "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNcHdlNW1TaDRFY01BLWM1TkVvaVRYd21qZ3R6MkcybzlzYk5iYnBSbWFrZWZoVXhJZDUxem15aHVfODJmaXIzdWtsc2JvRHZVa1pZbDJkNVAydDYyT2FOTUFWelRwa1IwM2gzX05iUVYtUlBhRUFRQU1RMUdBNFFuTlpTZ2ZUNkpB?oc=5",
+  "title": "Roslyn Pineda Appointed President of Asia For Sony Music Publishing",
+  "summary": "Roslyn Pineda Appointed President of Asia For Sony Music Publishing Billboard",
+  "source": "Billboard",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-02T03:31:38.000Z",
+  "entities": [
+   "sony-music-entertainment",
+   "sony-music-publishing"
+  ],
+  "types": [
+   "label",
+   "publisher"
+  ],
+  "topics": [],
+  "score": 41,
+  "firstSeen": "2026-11-03T14:06:20.120Z"
  },
  {
   "id": "96702c9a2b921478",
