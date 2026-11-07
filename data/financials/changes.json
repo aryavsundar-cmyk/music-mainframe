@@ -1,8 +1,238 @@
 {
  "startedAt": "2026-09-27T15:02:57.764Z",
- "updatedAt": "2026-11-06T14:39:33.373Z",
+ "updatedAt": "2026-11-07T13:36:31.039Z",
  "source": "Written by scripts/refresh-financials.mjs when a figure changes between refreshes.",
  "entries": [
+  {
+   "at": "2026-11-07T13:36:31.039Z",
+   "entityId": "ares",
+   "metric": "revenue",
+   "slot": "quarter",
+   "kind": "new-period",
+   "from": {
+    "value": 1428610000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-08-07",
+    "accn": "0001628280-26-054538"
+   },
+   "to": {
+    "value": 1433399000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-11-06",
+    "accn": "0001628280-26-071628"
+   }
+  },
+  {
+   "at": "2026-11-07T13:36:31.039Z",
+   "entityId": "ares",
+   "metric": "netIncome",
+   "slot": "quarter",
+   "kind": "new-period",
+   "from": {
+    "value": 150635000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-08-07",
+    "accn": "0001628280-26-054538"
+   },
+   "to": {
+    "value": 85330000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-11-06",
+    "accn": "0001628280-26-071628"
+   }
+  },
+  {
+   "at": "2026-11-07T13:36:31.039Z",
+   "entityId": "ares",
+   "metric": "cash",
+   "slot": "latest",
+   "kind": "new-period",
+   "from": {
+    "value": 557094000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-08-07",
+    "accn": "0001628280-26-054538"
+   },
+   "to": {
+    "value": 597705000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-11-06",
+    "accn": "0001628280-26-071628"
+   }
+  },
+  {
+   "at": "2026-11-07T13:36:31.039Z",
+   "entityId": "blackstone",
+   "metric": "revenue",
+   "slot": "quarter",
+   "kind": "new-period",
+   "from": {
+    "value": 5043978000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-08-07",
+    "accn": "0001193125-26-340208"
+   },
+   "to": {
+    "value": 3062888000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-11-06",
+    "accn": "0001193125-26-451802"
+   }
+  },
+  {
+   "at": "2026-11-07T13:36:31.039Z",
+   "entityId": "blackstone",
+   "metric": "netIncome",
+   "slot": "quarter",
+   "kind": "new-period",
+   "from": {
+    "value": 1229189000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-08-07",
+    "accn": "0001193125-26-340208"
+   },
+   "to": {
+    "value": 662372000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-11-06",
+    "accn": "0001193125-26-451802"
+   }
+  },
+  {
+   "at": "2026-11-07T13:36:31.039Z",
+   "entityId": "blackstone",
+   "metric": "cash",
+   "slot": "latest",
+   "kind": "new-period",
+   "from": {
+    "value": 2507073000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-08-07",
+    "accn": "0001193125-26-340208"
+   },
+   "to": {
+    "value": 3037534000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-11-06",
+    "accn": "0001193125-26-451802"
+   }
+  },
+  {
+   "at": "2026-11-07T13:36:31.039Z",
+   "entityId": "blackstone",
+   "metric": "longTermDebt",
+   "slot": "latest",
+   "kind": "new-period",
+   "from": {
+    "value": 13318636000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-08-07",
+    "accn": "0001193125-26-340208"
+   },
+   "to": {
+    "value": 13521893000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-11-06",
+    "accn": "0001193125-26-451802"
+   }
+  },
+  {
+   "at": "2026-11-07T13:36:31.039Z",
+   "entityId": "carlyle",
+   "metric": "revenue",
+   "slot": "quarter",
+   "kind": "new-period",
+   "from": {
+    "value": 1123500000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-08-10",
+    "accn": "0001527166-26-000045"
+   },
+   "to": {
+    "value": 334100000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-11-06",
+    "accn": "0001527166-26-000053"
+   }
+  },
+  {
+   "at": "2026-11-07T13:36:31.039Z",
+   "entityId": "carlyle",
+   "metric": "netIncome",
+   "slot": "quarter",
+   "kind": "new-period",
+   "from": {
+    "value": 137100000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-08-10",
+    "accn": "0001527166-26-000045"
+   },
+   "to": {
+    "value": -7700000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-11-06",
+    "accn": "0001527166-26-000053"
+   }
+  },
+  {
+   "at": "2026-11-07T13:36:31.039Z",
+   "entityId": "carlyle",
+   "metric": "cash",
+   "slot": "latest",
+   "kind": "new-period",
+   "from": {
+    "value": 1256500000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-08-10",
+    "accn": "0001527166-26-000045"
+   },
+   "to": {
+    "value": 1583500000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-11-06",
+    "accn": "0001527166-26-000053"
+   }
+  },
   {
    "at": "2026-11-06T14:39:33.373Z",
    "entityId": "apollo",
