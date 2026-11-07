@@ -1,5 +1,721 @@
 [
  {
+  "id": "90efb8ae2f68658e",
+  "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE0xMXI0Q09rZUJ6ZEt6NV83cUxPVVIzU25LYWR0ZnQ3cG9HRERnemhLeXc4VktDZmNMWkd6ek51cUJfdWZXRWlBNnJIVi1TQkZGOU5QNWc5MjdTVWM?oc=5",
+  "title": "Spotify Business Model (2026): How Spotify Makes €17.2B a Year",
+  "summary": "Spotify Business Model (2026): How Spotify Makes €17.2B a Year FourWeekMBA",
+  "source": "FourWeekMBA",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-07T07:25:41.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 27,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "5b23d8a9d95eb1d9",
+  "url": "https://www.billboard.com/pro/flo-milli-wins-never-lose-me-copyright-lawsuit-dismissal/",
+  "title": "Flo Milli Wins Dismissal of Copyright Lawsuit Over ‘Never Lose Me’ Beat Sample",
+  "summary": "A judge ruled that the man who brought the claims did not technically own a beat sampled in the 2023 hit.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-07T01:55:41.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "6610010d3ca44624",
+  "url": "https://www.digitalmusicnews.com/2026/11/06/music-industry-hires-nov-6-2026/",
+  "title": "Latest Music Industry Hires: RCS Worldwide, Ground Control Touring, Arc28 Entertainment, Nebula17, SeatGeek, Dolly Parton Estate, More",
+  "summary": "Here’s a recap of recent music industry hires and in-house promotions as of November 6th, 2026. If you have a job shuffle to share, we’re all ears. Send us a note to news@digitalmusicnews.com. If you’d like to post a job on our Job Board, just send us a request to noah@digitalmu…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-07T01:45:10.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "95512f41d9cf8bd8",
+  "url": "https://www.billboard.com/business/legal/michael-sanft-deaf-keffe-d-attorney-2pac-murder-trial-1236376793/",
+  "title": "Michael Sanft, Attorney Who Represented Keffe D in 2Pac Murder Trial, Dies at 54",
+  "summary": "Sanft put together a team and took on Davis' case pro bono.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-07T00:27:59.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "ebfe3bc25e543485",
+  "url": "https://variety.com/2026/music/news/olivia-rodrigo-christmas-praised-writer-waitresses-wrapping-1236941752/",
+  "title": "Olivia Rodrigo’s ‘Take Me Home (4 Christmas)’ Effusively Endorsed by Writer of the Waitresses’ ‘Christmas Wrapping,’ Who Praises Her for Picking Up the ‘Vibe’ 45 Years Later",
+  "summary": "Olivia Rodrigo’s first holiday single, “Take Me Home (4 Christmas),” earned plenty of plaudits upon coming out of the gate late Thursday night — none greater than that offered by Chris Butler, the writer of the Waitresses’ classic 1981 song “Christmas Wrapping,” who said he’d be…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-06T23:34:20.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [],
+  "score": 28,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "698baf9a2a3c8034",
+  "url": "https://www.digitalmusicnews.com/2026/11/06/msg-macklemore-arena-level-comments/",
+  "title": "MSG Bluntly Responds to Macklemore Allegations: ‘He’s Not an Arena-Level Act’",
+  "summary": "Macklemore claims that several arenas are refusing to book him for his ‘Free Palestine’ tour in an attempt to silence him, but MSG says he just isn’t a big enough artist. Macklemore has called out several arenas across the country for turning down his Free Palestine Tour, allegi…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-06T23:20:11.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "4513b8d45d9e7cfd",
+  "url": "https://www.billboard.com/pro/faouzia-award-billboard-canada-women-in-music-news/",
+  "title": "In Canada: Faouzia to Accept the Breakthrough Award at Billboard Canada Women in Music 2026",
+  "summary": "Also up north this week: Angine de Poitrine reveals a third member at a Toronto concert and SOCAN joins GEMA's live music royalty network.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-06T23:00:51.000Z",
+  "entities": [
+   "gema",
+   "socan"
+  ],
+  "types": [
+   "pro"
+  ],
+  "topics": [],
+  "score": 50,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "1b1bc92816c9f80c",
+  "url": "https://www.digitalmusicnews.com/2026/11/06/live-nation-revenue-q3-2026/",
+  "title": "What Lawsuits? Live Nation Posts ‘Record’ Q3 2026 Financials, Now Expects ‘To Welcome Nearly 180 Million Fans’ This Year",
+  "summary": "What FTC and attorneys general lawsuits? Live Nation has posted an 18.9% year-over-year (YoY) revenue hike for Q3 2026, when international fan attendance surged 29.2% YoY to top 25 million. All told, that growth resulted in a total of $10.11 billion in revenue and approximately…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-06T22:58:32.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "policy"
+  ],
+  "score": 26,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "821fc4d61c51c1df",
+  "url": "https://variety.com/2026/music/news/blackpink-jisoo-signs-wme-worldwide-representation-1236941763/",
+  "title": "Blackpink’s Jisoo Signs With WME for Worldwide Representation",
+  "summary": "Jisoo, the singer and actor best known as a member of K-pop group Blackpink, has signed with talent agency WME, which will represent her worldwide. The deal comes as Jisoo builds out her solo music career. Last week she released “Addicted,” a moody dance-pop number about being p…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-06T22:57:18.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "c1913179ac60bc8b",
+  "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOR2tXZnlLOEdva2pXOE8zVEV0OFEwTUs4bk9nbkltY1haOGdJcXFCZnUzaVBTNERzd21VQ3VWQ2dFUlhuWGhYYUo4VG5NSUhYNFhlNks0ejlHZTBkNjBVTFZHc2J3VWczY1dkYmlWNTRsaXR4VktTR3R0X3dBU0J2bHpkMFNJVVhZZkNCOVJ0S1A5dnJNcjFQRGdWeFQzdmo1a21Z?oc=5",
+  "title": "Call for funding for 'lifesaving' community music programs",
+  "summary": "Call for funding for 'lifesaving' community music programs ABC News & Headlines – Australian Broadcasting Corporation",
+  "source": "ABC News & Headlines – Australian Broadcasting Corporation",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-06T22:57:10.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "64c17c0b9bf7965d",
+  "url": "https://www.digitalmusicnews.com/2026/11/06/snoop-dogg-biopic-casting-finalized/",
+  "title": "Critical Casting Decisions Finalized in Upcoming Snoop Dogg Biopic",
+  "summary": "Universal Pictures unveils several new casting choices in the upcoming Snoop Dogg biopic, including Cynthia Erivo, Zachariah Rogers, and Hercy Miller. The film is due out on August 6, 2027. It’s been a big week for casting reveals in Universal Pictures’ upcoming Snoop Dogg biopi…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-06T22:34:58.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "ec856140c1b4b08a",
+  "url": "https://variety.com/2026/music/news/nick-cave-evening-of-talk-and-music-tour-1236941729/",
+  "title": "Nick Cave Returning to North America for 25-Date ‘Evening of Talk and Music’ in Spring",
+  "summary": "Eight years after touring with a combination of audience Q&As and solo music, Nick Cave will return to North America with “Conversations With Nick Cave: An Evening of Talk and Music,” a followup to his 2019 tour of the same name. This followup is set to run for 25 dates in the U…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-06T22:34:06.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live",
+   "m&a"
+  ],
+  "score": 23,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "4f8569e110457d67",
+  "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPYWpGME5OSllqZlFfZlR1YjQ1WG9jTnNYaFEzbWpSbTZUS013cHRvQnExa3lHaVNNUG9wbEppbEtOTUluRGhMeUNGN1ZpRGlvRFhJRnZqVmxxY3dXT19PclBPWHhyMnEtSWwySDlJYkk1UHdINkVXUmtiTV9wM3JqcHFRUm5jX3ZmUHRhd0pxb1BHWmJjRzFBVWJR?oc=5",
+  "title": "Building a sustainable African music industry: Beyond the vibes",
+  "summary": "Building a sustainable African music industry: Beyond the vibes Herald.co.zw",
+  "source": "Herald.co.zw",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-06T22:05:09.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "175efbeed4ce80a5",
+  "url": "https://www.billboard.com/lists/executive-turntable-apple-music-seatgeek/",
+  "title": "Executive Turntable: Apple Music Names Brian Pesaturo Head of Label Relations",
+  "summary": "Plus: SeatGeek's new chief business officer and more music industry hires and promotions.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-06T21:27:07.000Z",
+  "entities": [
+   "apple-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "602af55ac2bf42e6",
+  "url": "https://news.pollstar.com/2026/11/06/macklemore-says-9-us-arenas-turned-down-his-palestine-benefit-show/",
+  "title": "Macklemore Says 9 US Arenas Turned Down His Palestine Benefit Show",
+  "summary": "Macklemore claims that nine U.S. arenas refused to have him host his “Free Palestine” tour. The American rapper posted a statement on Instagram informing fans that he was turned down by nine U.S. venues: New York’s Madison Square Garden, Prudential Center in Newark, Brooklyn’s B…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-06T20:35:21.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "5fb007f3d3f68f72",
+  "url": "https://www.digitalmusicnews.com/2026/11/06/rbx-spotify-lawsuit-appeal/",
+  "title": "Breaking: Rapper RBX Files Ninth Circuit Appeal in Fraud-Focused Class Action Lawsuit Against Spotify",
+  "summary": "Last month, a federal judge dismissed a fraud-focused class action filed against Spotify by rapper Reality Born Unknown (RBX). Now, the “Heatmizer 2” artist has kicked off an appeal, according to court filings shared with Digital Music News. Long Beach-born RBX (real name Eric C…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-06T20:21:30.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 30,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "c38f69451f89ba77",
+  "url": "https://news.pollstar.com/2026/11/06/kings-of-leon-release-new-album-announce-2027-north-american-tour/",
+  "title": "Kings Of Leon Release New Album & Announce 2027 North American Tour",
+  "summary": "To go along with Kings of Leon’s new studio album, O My Beloved, the rock band has announced a 30-city North American tour featuring special guests Band of Horses and Dexter and The Moonrocks. O My Beloved – released today via Love Tap Records, distributed by Virgin Music – mark…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-06T19:46:30.000Z",
+  "entities": [
+   "virgin-music-group"
+  ],
+  "types": [
+   "distributor"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 25,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "316e7bde9a453f67",
+  "url": "https://variety.com/2026/music/news/macklemore-free-palestine-tour-banned-us-arenas-1236941564/",
+  "title": "Macklemore Accuses Madison Square Garden and Eight Other Arenas of Banning His ‘Free Palestine’ Tour",
+  "summary": "Macklemore is accusing some of America’s most iconic arenas of shutting his “Free Palestine” tour out. The rapper, who recently had dates in Dublin, Paris and London at the end of October, took to Instagram on Nov. 6 to say that he has been turned down by American venues, includ…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-06T19:43:37.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "129e8fa3e054eee2",
+  "url": "https://www.digitalmusicnews.com/2026/11/06/nile-rodgers-comments-on-ai-use/",
+  "title": "Nile Rodgers Becomes the Latest High-Profile Musician to Publicly Support AI",
+  "summary": "Nile Rodgers becomes the latest high-profile musician to support AI, defending his use of the tech in an upcoming Christmas-themed charity video. This week, Nile Rodgers shared a clip on Instagram of his upcoming video for “The Christmas Song,” an updated version of his 2020 cha…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-06T19:39:53.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "af7fb110f77211f3",
+  "url": "https://www.billboard.com/pro/my-chemical-romance-black-parade-no-1-20-years/",
+  "title": "My Chemical Romance’s ‘The Black Parade’ Was a No. 1 Album 20 Years in the Making: Inside the Campaign",
+  "summary": "“I think a great record is always relevant, one year, five years, 20 years or even 50 years after its original release,” says Warner Records’ Jesse Ervin.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-06T19:28:56.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "44a7506f056ef61a",
+  "url": "https://news.pollstar.com/2026/11/06/latin-mafia-motley-crue-milo-j-carla-morrison-headlining-mexico-citys-2027-vive-latino/",
+  "title": "Latin Mafia, Mötley Crüe, Milo J, Carla Morrison Headlining Mexico City’s 2027 Vive Latino",
+  "summary": "The 27th edition of the popular Mexican festival Vive Latino will be headlined by Latin Mafia, Mötley Crüe, Milo J, Carla Morrison and Ed Maverick. The rock-heavy, eclectic festival celebrates Ibero-American culture and takes place March 13 and 14 at Mexico City’s iconic Estadio…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-06T19:04:29.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "9fa048f9eebb5a53",
+  "url": "https://www.billboard.com/pro/stray-kids-label-jyp-entertainment-lawsuit-stolen-song/",
+  "title": "Stray Kids Label JYP Entertainment Sues Distributor Over ‘Stolen’ Track Upload",
+  "summary": "Someone put a pirated version of \"back to life\" by Stray Kids member HAN on streaming services. The K-pop conglomerate wants damages.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-06T18:58:09.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "37eaf46f424310e9",
+  "url": "https://news.pollstar.com/2026/11/06/aeg-presents-festivals-secure-industry-leading-green-credentials/",
+  "title": "AEG Presents Festivals Secure Industry Leading Green Credentials",
+  "summary": "AEG Presents announced that a number of its festivals have been recognized through A Greener Future’s sustainability certification program, reaffirming the company’s commitment to reducing environmental impact across its operations. Paris-based festival, We Love Green – an AEG P…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-06T18:53:33.000Z",
+  "entities": [
+   "aeg",
+   "aeg-presents"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 43,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "ff3bc8a4d4385a1f",
+  "url": "https://news.pollstar.com/2026/11/06/asia-pops-jay-chou-katseye-big-bang-reach-milestones-down-under/",
+  "title": "Asia Pop’s Jay Chou, Katseye, BIG BANG, Reach Milestones Down Under",
+  "summary": "Three major Asian pop acts reached milestones in Australia, as their audiences widen in size and become more diversified than ever before, and its stars amped up their production. Following an October 19 show at Melbourne’s Marvel Stadium to 32,000 fans, Mandopop superstar Jay C…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-06T18:24:03.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "dde93e7b59acc948",
+  "url": "https://www.billboard.com/pro/billboard-touring-power-players-2026-list/",
+  "title": "Touring Power Players: Billboard’s 2026 List Revealed",
+  "summary": "As selected by Billboard's editors, these are the executives moving the live sector forward, from promoters and agents to marketing and production pros.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-06T18:00:42.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "a57c0e94a3a29ec6",
+  "url": "https://www.billboard.com/pro/josephine-vaccarello-touring-executive-of-the-year/",
+  "title": "Meet the ‘Unflappable’ Exec Bringing Superstars To Madison Square Garden and Sphere",
+  "summary": "MSG Entertainment president and Billboard's Touring Executive of the Year Josephine Vaccarello has built relationships that translate into history-making runs at the company's venues.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-06T17:59:49.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "d165bd99e6a44d4f",
+  "url": "https://news.pollstar.com/2026/11/06/global-latin-star-feid-announces-2027-north-american-arena-tour/",
+  "title": "Global Latin Star Feid Announces 2027 North American Arena Tour",
+  "summary": "Global Latin star Feid is returning to North American arenas next year with his “FERXXO – THE GREEN STAR TOUR,” which promises to bring a “bold new chapter” for the energetic artist, says promoter Live Nation. The 31-date tour kicks off Feb. 5 at Orlando’s Kia Center, and the ro…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-06T17:43:27.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 25,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "17983644caad06e6",
+  "url": "https://news.pollstar.com/2026/11/06/unplugged-uncorked-benefit-raises-1-3m-for-musicians-on-call-led-by-aegs-rich-schaefer-city-winerys-michael-dorf/",
+  "title": "‘Unplugged & Uncorked’ Benefit Raises $1.3M For Musicians On Call, Led By AEG’s Rich Schaefer, City Winery’s Michael Dorf",
+  "summary": "The fifth annual “Unplugged & Uncorked” benefit brought together more than 550 guests and raised more than $1.3 million for Musicians at Call with Oct. 29 at New York City’s Ziegfeld Ballroom. The sold-out evening included fine wines, exclusive experiences and philanthropy as a…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-06T17:10:38.000Z",
+  "entities": [
+   "aeg"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 20,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "37e80c1161316832",
+  "url": "https://www.musicbusinessworldwide.com/live-nation-generated-10-1b-in-q3-up-19-yoy-as-international-markets-overtook-the-us-in-fan-attendance-this-year/",
+  "title": "Live Nation generated $10.1B in Q3, up 19% YoY – as international markets overtook the US in fan attendance this year",
+  "summary": "That's according to Live Nation's latest quarterly results, published on Thursday (November 5). Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-06T16:59:39.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "earnings"
+  ],
+  "score": 26,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "1e6deb543d1477ba",
+  "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPR2pHN1o5dkRJeXQ3elRVRVdlSnhSZlFhakhqX1gxYjJjUTdZc1p0cGQ0dktSYmZJd2RXZlVLWjdDa1U1VjAyU3JqajE2Y0c4R0ZBWnd5WDg1NFN3R3NGNUZHcUYxMXZ0UllEdEhDUzR3SzZIazZCRExrWGxhUjc5U3BwT0swRzBLYWphbjNPUi1sWTdoQTJmd1ZYbHVyQQ?oc=5",
+  "title": "Why indie songwriters should know about The Mechanical Licensing Collective",
+  "summary": "Why indie songwriters should know about The Mechanical Licensing Collective The Fader",
+  "source": "The Fader",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-06T16:49:35.000Z",
+  "entities": [
+   "the-mlc"
+  ],
+  "types": [
+   "pro"
+  ],
+  "topics": [
+   "pro-reform"
+  ],
+  "score": 36,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "19c82afd179077af",
+  "url": "https://news.pollstar.com/2026/11/06/jessie-reyez-brings-a-little-vengeance-and-a-lot-of-humanity-to-arenas/",
+  "title": "Jessie Reyez Brings ‘A Little Vengeance’ (And A Lot Of Humanity) To Arenas",
+  "summary": "Please login to your Pollstar subscriber account to view this content.",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-06T16:45:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "c99cef813b60639a",
+  "url": "https://news.pollstar.com/2026/11/06/run-dmc-reunion-rocks-aerosmith-friends-show-at-hollywood-bowl-is-there-more-to-come/",
+  "title": "Run-DMC Reunite For Aerosmith & Friends Hollywood Bowl Show, Is There More To Come?",
+  "summary": "As the first of two Aerosmith & Friends concerts at The Hollywood Bowl was in full swing, there was an air of confusion when Run-DMC didn’t join Steven Tyler, Joe Perry, Tom Hamilton, Brad Whitford and Joey Kramer for “Walk This Way.” After all, they were named on the flyer and…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-06T16:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "25a8401402270ae5",
+  "url": "https://news.pollstar.com/2026/11/06/maluma-announces-loco-x-volver-world-tour-2027/",
+  "title": "Maluma Announces ‘Loco X Volver World Tour 2027’",
+  "summary": "Maluma has announced the “Loco X Volver World Tour 2027,” which will take him to more than 60 cities worldwide. Produced globally by Fenix Entertainment and Cardenas Marketing Network (CMN), the tour will open Feb. 5 in Bogotá, Colombia, and include stops in Buenos Aires, Mexico…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-06T16:12:13.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "bdf94d28c7c8c7af",
+  "url": "https://www.musicbusinessworldwide.com/from-sonys-record-3-15b-quarter-to-influence-medias-600m-anthem-deal-its-mbws-weekly-round-up/",
+  "title": "From Sony’s record $3.15B quarter to Influence Media’s $600M Anthem deal… it’s MBW’s Weekly Round-Up",
+  "summary": "The biggest headlines from the past few days... Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-06T16:03:48.000Z",
+  "entities": [
+   "influence-media"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [],
+  "score": 28,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "6d4cb7edf126d503",
+  "url": "https://www.musicbusinessworldwide.com/warner-chappell-boss-guy-moot-the-first-music-publisher-to-receive-the-uks-mits-award-on-ar-catalog-my-chemical-romance-and-the-pros/",
+  "title": "Warner Chappell boss Guy Moot, the first music publisher to receive the UK’s MITS Award, on A&R, catalog, My Chemical Romance, and the PROs",
+  "summary": "This coming Monday (November 9), at London’s Grosvenor House Hotel, Guy Moot, Chair and CEO of Warner Chappell Music (WCM), will become the first music publisher to receive the award in its 34-year history. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-06T15:54:40.000Z",
+  "entities": [
+   "warner-chappell"
+  ],
+  "types": [
+   "publisher"
+  ],
+  "topics": [
+   "catalog-deal"
+  ],
+  "score": 36,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "10ba699d74b46b2e",
+  "url": "https://completemusicupdate.com/with-mlc-data-now-included-what-does-cisacs-annual-report-on-song-revenues-still-exclude-and-why/",
+  "title": "With MLC data now included, what does CISAC’s annual report on song revenues still exclude and why?",
+  "summary": "This week CISAC published its annual report telling us how much money is flowing through songwriter collecting societies, with total collections in 2025 reaching €14.1 billion. For the first time data from The MLC is included in the report, though there are still some song reven…",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-06T15:12:53.000Z",
+  "entities": [
+   "cisac",
+   "hipgnosis-songs-fund",
+   "the-mlc"
+  ],
+  "types": [
+   "catalog-fund",
+   "pro",
+   "trade"
+  ],
+  "topics": [
+   "earnings"
+  ],
+  "score": 64,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "8e994efa0ef67aa9",
+  "url": "https://variety.com/2026/music/reviews/motorheads-orgasmatron-deluxe-edition-album-review-1236939607/",
+  "title": "Motorhead’s Classic ‘Orgasmatron’ Gets a Mighty 40th Anniversary Sonic Upgrade and Deluxe Edition: Album Review",
+  "summary": "The best rock bands create their greatest work with their backs against the wall — witness the Rolling Stones — and the legendary British hard-rock powerhouse Motorhead was no exception. Forty years ago, the band had seen the dissolution of its classic “No Sleep ‘Til Hammersmith…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-06T15:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "979770313a4b157b",
+  "url": "https://www.musicbusinessworldwide.com/rotor-videos-opens-artist-unlimited-to-any-artist-from-9-99-a-month-with-unlimited-release-visuals-and-a-library-of-17m-non-ai-generated-clips/",
+  "title": "Rotor Videos opens Artist Unlimited to any artist from $9.99 a month, with unlimited release visuals and a library of 17M+, non-AI-generated clips",
+  "summary": "The plans give artists unlimited access to Rotor's tools for making visual assets for release campaigns, including music videos, lyric videos, Spotify Canvas, and Apple Music Album Motion. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-06T14:56:21.000Z",
+  "entities": [
+   "apple-music",
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 50,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
   "id": "8235eb3f061c67ee",
   "url": "https://www.billboard.com/pro/wme-blackpink-jisoo-worldwide-representation/",
   "title": "WME Signs BLACKPINK’s JISOO for Worldwide Representation",
@@ -308,6 +1024,44 @@
   ],
   "score": 20,
   "firstSeen": "2026-11-06T14:12:32.707Z"
+ },
+ {
+  "id": "d8b3616ad6f3b2ff",
+  "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE81Ni1GTE1OcENOZFA5eXJkcmRLUWljUHM2cFk5RVlsM1E5NFFUdS0xTTJlOVVKeFFRSlVpZTI0eThrdlllT2VpNm9ib1hRek9sdllaenMwajhoVXhVWlNCc2M2MXhmNmg2ZVpWWUtPQzJheFlCTHlXaA?oc=5",
+  "title": "Most Ethical Spotify Alternatives Ranked by Artist Pay",
+  "summary": "Most Ethical Spotify Alternatives Ranked by Artist Pay Ones To Watch",
+  "source": "Ones To Watch",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-06T10:22:58.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 17,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "2c2cc04e79bf9224",
+  "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5GUWRtMTFQQTBCeWwwejliTlp0OURLdnV5WkNvbnFkQWMwTk5YSEdvWUp0TVlkT0JCN1hnTHRvU3g2eFF0RTBoWURXRE9KZmJS?oc=5",
+  "title": "Music Lawsuit 2026: 9 Major Cases and Settlement Updates",
+  "summary": "Music Lawsuit 2026: 9 Major Cases and Settlement Updates LawFold.com",
+  "source": "LawFold.com",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-06T08:30:55.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 13,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
  },
  {
   "id": "f8d18873e1a0b541",
@@ -5362,6 +6116,22 @@
   ],
   "score": 34,
   "firstSeen": "2026-11-04T14:27:16.640Z"
+ },
+ {
+  "id": "0ed0c525f22ba099",
+  "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQOWNhb0FlRndta1dESG1iNkFkdEtYMUVQMDNJcjIxbFVqTlg1MW9ybklYSWxPU3l3ZXg3YTFudXZmRXp0bnV6R0NkbUFkNjV5emVBVWJqb2pzTzBrbG8xMjdsbXVLSWJEem82Z0dBS0UtQmpLN3RKNFdSZTFRWndrbzVn?oc=5",
+  "title": "How UnitedMasters Distribution Works for Independent Artists",
+  "summary": "How UnitedMasters Distribution Works for Independent Artists Ones To Watch",
+  "source": "Ones To Watch",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-01T07:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 2,
+  "firstSeen": "2026-11-07T12:55:18.792Z"
  },
  {
   "id": "89c7475d4eee753e",
