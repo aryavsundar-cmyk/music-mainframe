@@ -1,5 +1,221 @@
 [
  {
+  "id": "7eb417f7735a841a",
+  "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPZ1lrUk90S2ZXeHdfTHphX1RqeVRkTFJVVDluVFpKVDRReTcwS01JS0hDMnZVQ0VzVFVJXzFkc3J0ZDctSVB0b0dNcXVGa3kyYk0tTWRPTlF3dElBZmFwaWl3b3lKNHgwaWVlQ05TVlM0V1BUYnUzajlKRGlad0NfQ3dDRlVjb1F00gGQAUFVX3lxTE40bXBHc2p2TS1hcUtBTnR5cGVFdW1FMTNhLUxKalZuNFgwTzB2SFdJcnFlMGp5Zjd4NEcwMFI4S2Z3ZmdUX1AzcTJ6cVlycUdHRHhHLTFNNS01QmdOV2pQQ1NSeUZtOWdwWC04ZWlWaTU2eG9jVWtUVXA0Z2VCVjhaQ1lxOFJDMEJfczVCQzhPSg?oc=5",
+  "title": "Eminem-Linked Publisher Sues Suno Over AI Music Training",
+  "summary": "Eminem-Linked Publisher Sues Suno Over AI Music Training FindArticles",
+  "source": "FindArticles",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-08T12:31:33.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 39,
+  "firstSeen": "2026-11-08T13:17:17.389Z"
+ },
+ {
+  "id": "6c77bda6e61511c9",
+  "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNNkFNQjNZTW1JZDYzYnd2b1gyQ0tBOE9FYk9oTVcyR3hQc2RCejR0ZHJkNVBZUno4cjRqSHBXUUhNclgwd3dCcEljTGtiZ01pWGVGYlIyNEV5Nm1oUm5lN3I3ck1ZemFRUjJxNXp2UTV3aWJ6RXk4eFNtZHZEYmlvR2ZGaFg2bTR4WWtwQ09ZMVlfTHZ6U1k2ZzN0TEFxMmFJSzVGYzNYU2VkSkYxam83UkNFakctRE8yUUhIWjYwVm9WRHgzeTAwXzJRYkt6TVhNZm96WVZQYk4tRC1hLXZB?oc=5",
+  "title": "Eminem publisher Eight Mile Style has sued the AI music platform Suno for $41 million, claiming the rapper's music was illicitly used for training. See link below ⬇️ 📸 Theo Wargo, Getty Images",
+  "summary": "Eminem publisher Eight Mile Style has sued the AI music platform Suno for $41 million, claiming the rapper's music was illicitly used for training. See link below ⬇️ 📸 Theo Wargo, Getty Images Facebook",
+  "source": "Facebook",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-08T06:13:01.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 34,
+  "firstSeen": "2026-11-08T13:17:17.389Z"
+ },
+ {
+  "id": "b02b0345828fb26f",
+  "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNN3NEUjkxX25lTGgzYXJtdG9nazU3VzRHMENEWG9RVjg3RndNajVWS1VPWHdBOXV6R3JoWE51RlJ1NGdSM3JXWFpQN1hKZmxEU2ZxYjU0S3BTNDhoYTFHd0Q3bHFrQTdlSFRlaTBOTEMydmRvcEpaeGU1dktFekp2VTZ4QjhvZUYyT1ZQRg?oc=5",
+  "title": "AI platform reproduced Michigan music publishers' copyrighted works without authorization, lawsuit says",
+  "summary": "AI platform reproduced Michigan music publishers' copyrighted works without authorization, lawsuit says CBS News",
+  "source": "CBS News",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-07T22:15:34.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-08T13:17:17.389Z"
+ },
+ {
+  "id": "d3d9186215cb3ab0",
+  "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPczNzaDA5MGZLTkRrT1JHSTBXRlVWTldmV3hyeXZxNGVRYTMxaUdnSm1vVTRsTDJDWEFQOE1rVHpoWjVnMjVZU2d3TFV4Rk5oMWhaUU44YlFJUlVnYWFuZWJiVkhEZ3dKaGs2REhUNXJRZURtYWtJZHdEX3hlbWJuYlhkY2tkT3h3dXhwRHFR?oc=5",
+  "title": "Eminem Publisher Sues Suno for $41M [2026] - https://tech-insider.org/",
+  "summary": "Eminem Publisher Sues Suno for $41M [2026] https://tech-insider.org/",
+  "source": "Google News",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-07T20:26:40.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 34,
+  "firstSeen": "2026-11-08T13:17:17.389Z"
+ },
+ {
+  "id": "b4933c6e84649f09",
+  "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPTVNPamI1eUxaR2laU1JUaVFoMkpNVm5STG9naWw1UXhRXzBhWGlHMUhhdFQzWXYzY29iSVFkN1RMTXc3c3BXZjF5cnBUMWV3Y2dkbUhqT0NzRTZoRE11Yy1DOHUyLS1TQkNmTF9EQXRqOHdTT3dIZkJIRUsxRjB4dDZVZ2xQanVfUkYtNDF1MWRVWGx1TlVVZVczLWIzUmJPNGZ4TTZSOVRrcVpaVTRJNUdXbWo4Z0RVZ2VnQ1BZOG9HV3NkcFIxczBSYlhiSlZCR21hQWxyRUo?oc=5",
+  "title": "Elvis Presley Estate Warns ‘The Next Elvis Won’t Pick up a Guitar’ in New Lawsuit Against AI Music Company Suno",
+  "summary": "Elvis Presley Estate Warns ‘The Next Elvis Won’t Pick up a Guitar’ in New Lawsuit Against AI Music Company Suno VICE",
+  "source": "VICE",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-07T18:19:59.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 34,
+  "firstSeen": "2026-11-08T13:17:17.389Z"
+ },
+ {
+  "id": "5813bb5d4d2f8e15",
+  "url": "https://variety.com/2026/music/news/richard-lloyd-dead-television-guitarist-1236942055/",
+  "title": "Richard Lloyd, Television’s Fiery and Fluent Guitarist, Dies at 75",
+  "summary": "Richard Lloyd, whose fluent and fiery guitar work was a vital element in the influential 1970s-era New York City band Television, died on Saturday at his home in Chattanooga, Tenn., according to the New York Times. The cause of death was bile duct cancer; he was 75. While common…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-07T18:06:47.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-08T13:17:17.389Z"
+ },
+ {
+  "id": "42696eb39538d3cb",
+  "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNV2Z1RzdMVDFtbTQwc1VqXy1SVFNPcTNrYjVNZWFUdldKY2psVnQ4TXQxUWhGQmwyLUZISE1CbWNnSGtaRmw5MDB2WjZhM3dYV0VRN2VMMXVmTUYzSm03S0VEemVwWXFhTDRLVXlsaGNzMkROR3p5SmpfTUJuYjJZS1BQMVFPNVJZNmlJNjJHM3d0ZmUzRHVHcUtybzZnUFpqTy0tM0dKLVRyS3Z1R1ZDNVBuVXhyaHBxbW1R?oc=5",
+  "title": "Eminem song publisher seeks $41M in copyright lawsuit vs. AI platform",
+  "summary": "Eminem song publisher seeks $41M in copyright lawsuit vs. AI platform Detroit Free Press",
+  "source": "Detroit Free Press",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-07T17:09:00.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 36,
+  "firstSeen": "2026-11-08T13:17:17.389Z"
+ },
+ {
+  "id": "135b8b3081f607bd",
+  "url": "https://variety.com/2026/music/news/elvis-eminem-sue-suno-ai-music-generator-1236941798/",
+  "title": "Elvis Music Owners, Eminem Publisher File Sprawling New Lawsuits Against AI Music Generator Suno: ‘The Next Elvis Won’t Pick Up a Guitar’",
+  "summary": "A collection of Elvis Presley music rightsholders and the publisher of many of Eminem’s records have filed sprawling new federal lawsuits against the AI music generator Suno, with each party making separate allegations that add to the AI company’s legal challenges. The Presley l…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-07T16:15:26.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 34,
+  "firstSeen": "2026-11-08T13:17:17.389Z"
+ },
+ {
+  "id": "d9efa634895c7317",
+  "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQY29vaGFSTlN1SWJTTWpWcVdiTWZaTWppNlFJanZGR1d0S3A2Vm1LVjVGWFNiODB1TkJWc3pQUGQyWHF2SWR1Zk9lX09WRm9GTm12UHh4bTlpdXkxQkpidF8wRm5yTWI4X29IenM1NmtGOC0tSUdfOTRSaEtsTkl3eVZtbkFfUTUtTDVjbWU1cWRrdw?oc=5",
+  "title": "Elvis Estate, Eminem Publisher File Lawsuits Against AI Startup Suno",
+  "summary": "Elvis Estate, Eminem Publisher File Lawsuits Against AI Startup Suno Variety",
+  "source": "Variety",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-07T16:15:00.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 26,
+  "firstSeen": "2026-11-08T13:17:17.389Z"
+ },
+ {
+  "id": "73fe72b64189ee76",
+  "url": "https://www.billboard.com/pro/elvis-presley-ai-voice-cloning-lawsuit-suno/",
+  "title": "Elvis Presley Rights Owners Sue Suno Over AI Voice Cloning: ‘Elvis’ Identity Was Stolen’",
+  "summary": "The singer's legendary voice is at the center of a cutting-edge lawsuit that aims to hold the AI firm legally liable for allowing users to create knockoff vocals.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-07T15:38:11.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 34,
+  "firstSeen": "2026-11-08T13:17:17.389Z"
+ },
+ {
   "id": "90efb8ae2f68658e",
   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE0xMXI0Q09rZUJ6ZEt6NV83cUxPVVIzU25LYWR0ZnQ3cG9HRERnemhLeXc4VktDZmNMWkd6ek51cUJfdWZXRWlBNnJIVi1TQkZGOU5QNWc5MjdTVWM?oc=5",
   "title": "Spotify Business Model (2026): How Spotify Makes €17.2B a Year",
@@ -1689,6 +1905,28 @@
   "firstSeen": "2026-11-06T14:12:32.707Z"
  },
  {
+  "id": "06c797c7a2bf0cc8",
+  "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQamxSa3ZvcWxVSE5FcFE2dTlKRXp1a1dMT2JiRXZ1eGVvOWlCbi01MVFfSlZxcEh3M3I1Ymd0YkJzRmxyNkotUFpSOHRqdkMzN2h5UGNrZk44Q0p1QU1jalJ1Y3dYenJ5SGdCX1plYjdBWVZFaTFiTXRTSUI0WjZzNg?oc=5",
+  "title": "Music Industry Moves: Influence Media Completes $600 Million Anthem Acquisition, Including Songs by Britney Spears, the Weeknd, Justin Timberlake and More",
+  "summary": "Music Industry Moves: Influence Media Completes $600 Million Anthem Acquisition, Including Songs by Britney Spears, the Weeknd, Justin Timberlake and More Variety",
+  "source": "Variety",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-05T17:55:00.000Z",
+  "entities": [
+   "influence-media"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [
+   "m&a"
+  ],
+  "score": 31,
+  "firstSeen": "2026-11-08T13:17:17.389Z"
+ },
+ {
   "id": "960ad242c10db940",
   "url": "https://variety.com/2026/music/news/cma-awards-performers-ella-langley-kacey-musgraves-1236940471/",
   "title": "First Performers Announced for CMA Awards Include Ella Langley, Kacey Musgraves, Miranda Lambert and Red Clay Strays",
@@ -2103,6 +2341,22 @@
   "firstSeen": "2026-11-05T14:34:39.691Z"
  },
  {
+  "id": "a2709377a8e0b962",
+  "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOUGppX0xQcFk0Z1F3dmhIWWVsaDk3QVpGMXg5cGlMSFZYU1p6NmkyeTdDZzhZV3djYVJDeXBwSFlDOUM4cVdka3BJZkpBdHhQZ0thNkY4emZoSmZ3TGNaT0tjX2VnQUtwS0lBWHJ1NV9naXRtSDRkOE9RU1VyOVEzdG9GeFpzZDBHVE5rTWctT1p3YnFlblRHZnhtMnc5dElKMG5nSmZpU1o5RlRKSUROOUgwUjlpMUUtT01rNnRmeGM1TGl4QXA3RDVoQ1VZSjVqa2lFQ095OA?oc=5",
+  "title": "A €1 million fund is available for Irish musicians and groups to buy instruments through the Music Capital Scheme",
+  "summary": "A €1 million fund is available for Irish musicians and groups to buy instruments through the Music Capital Scheme Nialler9",
+  "source": "Nialler9",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-05T12:27:50.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 2,
+  "firstSeen": "2026-11-08T13:17:17.389Z"
+ },
+ {
   "id": "5aae697ab5170eea",
   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOd0RWNjMzbW9EMGI1ZWxTOGZ6MzhDeVlWajZSNHZzbUo0Z2hRQTZ0QjVKUllwM2JTaWVkTXJoZHRldlY2RS1Wb2MtTEtRNEZkdHVyeGhsSXZxUmhHREF1bHZHQkJkUkZseDZuNnNxWHIxNjdMTEVZUWM1UlplTVZTOTRn?oc=5",
   "title": "ARTISTS: MLC To Distribute $424M, Don't Miss Your Share",
@@ -2117,6 +2371,26 @@
   "topics": [],
   "score": 15,
   "firstSeen": "2026-11-05T14:34:39.691Z"
+ },
+ {
+  "id": "ac780a92e0aa3093",
+  "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE16SnJMM0E3S2JWYzJ4djI0akE4WXVMT1VFUFhpZ3BkZGt5RzJ6U3RPU1RUZmt0dU1TbmxnNWZvQVVvbXhJLTZMNHZycjJmOVJELWJXczhaX0dNa2RCVFZlQkgwQUNUWGt1WTZSbGctc0tHSFZSNGZWVU5NRUpoSWs?oc=5",
+  "title": "Spotify Wrapped 2026 Artist Deadline: One Day Left!",
+  "summary": "Spotify Wrapped 2026 Artist Deadline: One Day Left! Hypebot",
+  "source": "Hypebot",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-05T11:01:11.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 14,
+  "firstSeen": "2026-11-08T13:17:17.389Z"
  },
  {
   "id": "1d5b5abc57e5a862",
@@ -6008,6 +6282,22 @@
   "topics": [],
   "score": 10,
   "firstSeen": "2026-11-02T15:42:45.741Z"
+ },
+ {
+  "id": "16a0691d197fa2f7",
+  "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQMHlHNzZZbmtHMUNVOU5ERjEzZzNfb0JzN2I2NXN6dXl6U2ZSVW5Da0twb0xCRU9nc2Qya2UteVkyQm5nMWxMaFQ5OHlqclhyLVJ1S1JOR3hCNWJFYzJJa21PaGc1cnlJd3VyeVJ2Vy1jdzhOc0dpWFZYblVES181dXJyVTZieDBnMFQ3clgwdGVkNWhDdTdqb1hWUk10clhTbTEwRkRnMk40UHc?oc=5",
+  "title": "The Music Industry’s $20 Billion Public Market Problem",
+  "summary": "The Music Industry’s $20 Billion Public Market Problem Bloomberg",
+  "source": "Bloomberg",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-02T00:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 2,
+  "firstSeen": "2026-11-08T13:17:17.389Z"
  },
  {
   "id": "39695aaaf2fec9db",
