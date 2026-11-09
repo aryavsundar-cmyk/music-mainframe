@@ -1,5 +1,645 @@
 [
  {
+  "id": "86ab09e95b4cfbb5",
+  "url": "https://news.pollstar.com/2026/11/09/prg-appoints-former-soundcloud-coo-cfo-drew-wilson-as-chief-financial-officer/",
+  "title": "PRG Appoints Former SoundCloud COO & CFO Drew Wilson As Chief Financial Officer",
+  "summary": "Production Resource Group (PRG) announced the appointment of Drew Wilson as Chief Financial Officer, effective today. Wilson brings more than 20 years of financial and operational leadership across music, media, entertainment and technology, most recently serving as Chief Operat…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-09T15:36:49.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "5ec0a35d290a2890",
+  "url": "https://news.pollstar.com/2026/11/09/stray-kids-announce-2027-run-it-world-tour/",
+  "title": "Stray Kids Announce 2027 ‘Run It’ World Tour",
+  "summary": "Stray Kids are embarking on the “Run It” world tour in 2027 across North America, Europe and the UK. The tour kicks off May 16 at Lumen Field in Seattle, then continues to Vancouver, Santa Clara, San Diego, Los Angeles, Atlanta, Chicago, East Rutherford, Paris, London, Munich, B…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-09T15:31:22.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "04cc26327f5b57df",
+  "url": "https://variety.com/2026/music/opinion/blue-wave-songwriters-1236942713/",
+  "title": "The Blue Wave Could Mean a Rising Tide for Songwriters — Here’s Why (Guest Post)",
+  "summary": "David Israelite is the president & CEO of the National Music Publishers’ Association, the trade association representing American music publishers and their songwriting partners. Variety welcomes responsible commentary, please send ideas to music@variety.com. The political tidal…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T15:00:00.000Z",
+  "entities": [
+   "tidal"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 27,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "598fc4bf6c8c173e",
+  "url": "https://www.billboard.com/pro/ella-langley-sony-top-music-publisher-rankings-q3/",
+  "title": "Publishers Quarterly: Sony Music Publishing Makes History Again in Q3",
+  "summary": "The publisher is the first company to surpass the 40% market share milestone, with a big assist from Ella Langley's \"Choosin' Texas.\"",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T15:00:00.000Z",
+  "entities": [
+   "sony-music-entertainment",
+   "sony-music-publishing"
+  ],
+  "types": [
+   "label",
+   "publisher"
+  ],
+  "topics": [
+   "earnings"
+  ],
+  "score": 57,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "06f53c275457a45c",
+  "url": "https://news.pollstar.com/2026/11/09/aviva-arena-appoints-dave-gaydon-as-live-programming-director/",
+  "title": "Aviva Arena Appoints Dave Gaydon As Live Programming Director",
+  "summary": "Dave Gaydon has joined the senior leadership team at YTL Live, operators of Aviva Arena Bristol, currently under construction and scheduled to open in late 2028/early 2029. The appointment as Live Programming Director is effective immediately, and Gaydon will report to YTL Live…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-09T14:54:13.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "7cc27391aab0de26",
+  "url": "https://www.billboard.com/pro/anjali-sud-tubi-replace-jennifer-witz-siriusxm-ceo/",
+  "title": "Tubi CEO Anjali Sud to Replace Jennifer Witz As SiriusXM CEO",
+  "summary": "Sud will begin her new role on Jan. 1, while Witz will remain as an advisor through 2027.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T13:44:24.000Z",
+  "entities": [
+   "siriusxm"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 27,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "3b87dba6fe5a2197",
+  "url": "https://musically.com/2026/11/09/live-nation-revenues-up-19-fans-are-showing-up-in-record-numbers/",
+  "title": "Live Nation revenues up 19%: ‘Fans are showing up in record numbers’",
+  "summary": "“In a world of endless screens and AI-generated everything, the one thing that can’t be replicated is being there,” is how Live Nation boss Michael Rapino’s statement on the company’s Q3 financials begins. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T13:30:00.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 33,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "661d6eb06ffa0b60",
+  "url": "https://musically.com/2026/11/09/warner-music-france-invests-in-independent-firm-delicieuse-musique/",
+  "title": "Warner Music France invests in independent firm Délicieuse Musique",
+  "summary": "A lot has been said – much of it by independent-music bodies – about the consolidation in their sector driven by major-label acquisitions. But we’re seeing other kinds of deals too, where majors take stakes in independents. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T13:30:00.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 29,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "7adeeb44212b3634",
+  "url": "https://musically.com/2026/11/09/loss-of-interest-is-biggest-reason-why-people-leave-online-communities/",
+  "title": "Loss of interest is biggest reason why people leave online communities",
+  "summary": "In recent years, the music industry has been catching up fast on the demands of running superfan communities online. A new study by the US-based Pew Research Center offers some useful pointers on problems that can see fans running for the exits. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T13:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "dsp-economics"
+  ],
+  "score": 23,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "955693056afd97e6",
+  "url": "https://musically.com/2026/11/09/tiktok-rapped-by-european-commission-over-rabbit-hole-effect/",
+  "title": "TikTok rapped by European Commission over ‘rabbit hole effect’",
+  "summary": "TikTok is in trouble again with the European Commission. The company has preliminarily been found in breach of the EU’s Digital Services Act for its ‘For You’ feed – and specifically “the so-called ‘rabbit hole effect’ of its recommender system”. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T13:30:00.000Z",
+  "entities": [
+   "tiktok"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "policy"
+  ],
+  "score": 33,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "b7aca3ad3fb8bda9",
+  "url": "https://musically.com/2026/11/09/k-pop-biz-pushes-back-after-newjeans-contract-details-revealed/",
+  "title": "K-Pop biz pushes back after NewJeans contract details revealed",
+  "summary": "The fallout from K-Pop group NewJeans’ 2024 dispute with their management agency, Hybe subsidiary Ador, continues – even though the group ultimately lost their legal battle to end their contract with the company. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T13:30:00.000Z",
+  "entities": [
+   "hybe"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 29,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "e481023b85feacd3",
+  "url": "https://www.musicbusinessworldwide.com/warner-music-france-invests-in-delicieuse-musique-the-bordeaux-based-label-group-with-a-roster-of-1200-artists/",
+  "title": "Warner Music France invests in Délicieuse Musique, the Bordeaux-based label group with a roster of 1,200+ artists",
+  "summary": "Délicieuse's portfolio includes the labels Délicieuse Records, Nice Guys, Noire & Blanche, Egoplanet, Crosswalk, and Hip Dozer. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T12:56:20.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 29,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "ed1fc8b76517aa4d",
+  "url": "https://www.musicbusinessworldwide.com/soundexchanges-unpaid-royalties-lawsuit-against-music-choice-heads-back-to-court-more-than-seven-years-after-it-was-filed/",
+  "title": "SoundExchange’s unpaid royalties lawsuit against Music Choice heads back to court, more than seven years after it was filed",
+  "summary": "The case was filed in April 2019 and has been largely on hold since December 2021. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T12:55:48.000Z",
+  "entities": [
+   "soundexchange"
+  ],
+  "types": [
+   "pro"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 39,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "4a04e5f2fea08d55",
+  "url": "https://www.musicbusinessworldwide.com/interscope-strikes-exclusive-distribution-and-jv-deal-with-brazils-supernova-entertainment-signs-rapper-bk/",
+  "title": "Interscope strikes exclusive distribution and JV deal with Brazil’s Supernova Entertainment, signs rapper BK",
+  "summary": "The deal covers Supernova's catalog and includes an agreement for the two companies to partner on new signings. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T12:55:31.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "catalog-deal"
+  ],
+  "score": 27,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "f448af27317be42e",
+  "url": "https://www.musicbusinessworldwide.com/jyp-entertainment-sues-distributor-onesync-and-its-ceo-alleging-they-copied-stray-kids-member-hans-track-and-uploaded-it-to-streaming-services-as-yungzzz/",
+  "title": "JYP Entertainment sues distributor OneSync and its CEO, alleging they copied Stray Kids member HAN’s track and uploaded it to streaming services as ‘yungzzz’",
+  "summary": "The defendants allegedly copied a track by HAN from YouTube and uploaded it to streaming services under the artist name 'yungzzz' without permission. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T12:55:03.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 23,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "1a2f603b94d9ec5a",
+  "url": "https://www.musicbusinessworldwide.com/hybe-responds-to-nyt-report-on-newjeans-contracts-says-leaked-agreements-are-being-used-as-a-means-to-attack-the-k-pop-industry/",
+  "title": "HYBE responds to NYT report on NewJeans contracts, says leaked agreements ‘are being used as a means to attack the K-pop industry’",
+  "summary": "The Times reported the contracts, signed when the members were 14 to 17, lacked standard protections for minors. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T12:54:30.000Z",
+  "entities": [
+   "hybe"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 29,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "0f5201462b8136f4",
+  "url": "https://www.digitalmusicnews.com/2026/11/09/frenzy-superfan-engagement-for-live-events/",
+  "title": "No More Link-in-Bio Fandom: Frenzy Keeps Fan Experiences In-House",
+  "summary": "Every artist knows the drill: “Check out our merch, check out our socials, check out our setlist.” Fans get bounced between five different apps and three different checkout carts just to feel connected to the show they’re already attending. Frenzy, a Seattle-based platform that…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T12:54:01.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "e4a9a5bef34bab57",
+  "url": "https://musically.com/2026/11/09/suno-sued-by-elvis-presley-rights-owners-and-eight-mile-style/",
+  "title": "Suno sued by Elvis Presley rights-owners and Eight Mile Style",
+  "summary": "The flow of copyright-infringement lawsuits aimed at AI-music service Suno isn’t letting up yet. Two new legal actions have been added to the pile: from a group of Elvis Presley rights-owners and Eminem publisher Eight Mile Style. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T12:30:00.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 39,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "e8f225e908d94e4a",
+  "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNbjhJTXFsSmxfazBoSnhvdnhPZmdJSUVJOGVIS25OTXlwYnBsUk5OYU9nNmtCRkc3Tk1LZklmSlZNSjBoX2Y3aGlUb2Z6Q1p3bVdnU05SRmdXcWREYUEtS3BYUXNENjA2bEVXdndOdmtxOHhieU1ZNU1ic2JjUFUxd2FoZ3l0amxiWllGRkNnUmVpY2ZhR2pRVzVfWXZjRGF3cXRhV2pHQQ?oc=5",
+  "title": "Spotify for textbooks: How Perlego is making academic reading more accessible",
+  "summary": "Spotify for textbooks: How Perlego is making academic reading more accessible Tech.eu",
+  "source": "Tech.eu",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-09T11:04:28.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 27,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "58b7a320ce093545",
+  "url": "https://musically.com/2026/11/09/why-transparency-should-be-built-into-a-startup-from-day-one/",
+  "title": "Why transparency should be built into a startup from day one",
+  "summary": "Too Lost CEO and co-founder Gregory Hirschhorn on why publishing your performance data is an advantage rather than a risk, and how early-stage music companies can start. Every music startup […] The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T11:00:17.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "fc6a3407fd96efe0",
+  "url": "https://www.billboard.com/pro/tiesto-unlimited-productions-us-expansion/",
+  "title": "Tiësto Co-Founded Unlimited Productions Opens First U.S. Offices",
+  "summary": "The company launched its New York offices and announced plans to open an L.A.-based operation in 2027.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T11:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "13e24a0038c872a2",
+  "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOc29sVjctUnZsN21pWGc2cFV0cnRjc21UQ2NnOWFJNUJSN2R2SDduTWx2MnViNGhXOC10d1VuWjZ0Z0J5UHFnRHd2cWtyQ0ctNkNjbUJ3ZG5zeVk1S1NSWUxidURpa3R1NWF5MXA2cGszQ3k2QThadGZWWFphSDFsU3l3NFFuMlcyYTYwUFhjamtPaXdneWI2THdySGNkcFZWb0c1X3R3Y0p2Nk1DaXRUMTQzVUZWQQ?oc=5",
+  "title": "Love the beat, pay for play: Inside the business of South African music",
+  "summary": "Love the beat, pay for play: Inside the business of South African music thenational.co.za",
+  "source": "thenational.co.za",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-09T10:51:08.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "6a9d69b41d4f8abf",
+  "url": "https://www.digitalmusicnews.com/2026/11/08/5-keys-to-music-attribution/",
+  "title": "5 Keys to Music Attribution",
+  "summary": "AI may become very good at identifying influence without becoming any better at paying creators. Attribution has become one of the music industry’s favorite answers to the AI problem. The promise sounds reasonable: identify the recordings and compositions that helped shape an AI…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T06:33:56.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 36,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "62cccd98dd0440b0",
+  "url": "https://www.digitalmusicnews.com/2026/11/08/ai-detectors-indie-artists-risk/",
+  "title": "Human Enough? How AI Detector Scores Put Indie Artists at Risk",
+  "summary": "When Hamburg musician André Grafet, who records as Colored Tears, released DECAY / TIME, a 23-song tribute to the 1980s Swedish post-punk band Twice a Man, he says every note was played, programmed, and sung by him using a combination of Cubase, Sequential synthesizers, and Nati…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T06:30:58.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [
+   "ai",
+   "m&a"
+  ],
+  "score": 44,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "1c84813565ac1624",
+  "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOMnB4Tjgzb1JJOHhfenBKMEtBSVNrU1JUNnJiR3NLQlV3MHhzQVhSdnRkTG1FUk5TZW1JcmEtVTdZNkdydkJldnB1YW1XNHdNcWJTUkRLX25DMDY2YlFGUnRJUldTZGczSDZIeTNuMWZIRW5tTlBTVS1jVlZWc1ROakdZRUU2SWhPMXJ1MTNwZw?oc=5",
+  "title": "Canada Music Fund Receives Another $67M From Government",
+  "summary": "Canada Music Fund Receives Another $67M From Government Digital Music News",
+  "source": "Digital Music News",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-09T06:30:54.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "701538f808289a07",
+  "url": "https://www.digitalmusicnews.com/2026/11/08/canada-music-fund-francophone-productions/",
+  "title": "Canada Music Fund Receives Another $67 Million With Nearly $25 Million Earmarked for Francophone Artists and Productions",
+  "summary": "The Minister of Canadian Identity and Culture announces another $67 million in funding for the Canadian Music Fund, with nearly $25 million earmarked for French-language artists and productions. At the 48th Adisq Gala over the weekend, Marc Miller, the Minister of Canadian Ident…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T06:29:23.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "8f14cc97fa98697d",
+  "url": "https://www.digitalmusicnews.com/2026/11/08/amazon-music-livestream-camp-flog-gnaw-2026/",
+  "title": "Amazon Music Tapped to Livestream Tyler, the Creator’s Camp Flog Gnaw Carnival 2026",
+  "summary": "Tyler, the Creator’s Camp Flog Gnaw Carnival returns to Amazon Music for the fourth consecutive year of their exclusive livestreaming partnership. Last week, Amazon Music announced that it will exclusively livestream Tyler, the Creator’s 12th annual Camp Flog Gnaw Carnival, taki…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T05:36:26.000Z",
+  "entities": [
+   "amazon-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "20008d337f6128e2",
+  "url": "https://www.digitalmusicnews.com/2026/11/08/eminem-publisher-sues-suno-copyright-infringement/",
+  "title": "Eminem’s Publisher Eight Mile Style Sues Suno Over Allegations of Copyright Infringement",
+  "summary": "Eminem’s publishing company, Eight Mile Style, has now filed litigation against Suno for allegedly reproducing their copyrighted works without permission or compensation. Digital Music News was given a first look at the complaint. Eight Mile Style, Eminem’s publishing company th…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T05:16:52.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "catalog-deal",
+   "litigation"
+  ],
+  "score": 46,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "35f39c08b1b16fd4",
+  "url": "https://variety.com/2026/film/news/twice-this-is-for-you-bleecker-street-crosswalk-upcg-1236942090/",
+  "title": "K-Pop Concert Film ‘Twice: This Is For… You’ Acquired by Bleecker Street’s Crosswalk and Universal Pictures International",
+  "summary": "Bleecker Street’s event cinema division Crosswalk and Universal Pictures Content Group have acquired North American and international rights, respectively, to “Twice: This Is For… You.” The film captures K-pop phenomenon Twice at London’s O2 Arena during their “This Is For” worl…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-09T01:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "2a10d8b8f472ec17",
+  "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOZmFCREhGU09PWE9RQkxuQXBoRU9jS0JQT2h6R1NPa1hCR0V1ZFdMU1dhMV9QT01tMDhWTzJVU1JWdS1lNVY5TExBNHMxdnljNGxQV3BzNzFoQzRHeVJzMmZFMmF2SHBWeFBCTHk2NUlxSl9qQVhaY0pfWDMwZ0ZvbjNuMjZEck8ySEpWWW5HNHNvWkE?oc=5",
+  "title": "Youth Music launches £2.4 million racial equity fund",
+  "summary": "Youth Music launches £2.4 million racial equity fund UK Fundraising",
+  "source": "UK Fundraising",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-08T20:45:32.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "44e0366449556417",
+  "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNbU9LTmFuN3hGSFRHRVJ1bUd5ZnFRbUNzMVVabG9kX0Q0TmxhZGFSMi1CbXJLRlp3eExYSFE4NFZaaE1zamk4UGZ6Zk9weXpZdXliSTBrZmgxMVVzeUJ1ZUxrVG5abHQ0R0xLRkRBcVVvdFVhTFJSMTMtbTFEMWtpV3dfaUxtWW02S19SVA?oc=5",
+  "title": "Suno AI Music Generator Sued Again For Copyright Infringement",
+  "summary": "Suno AI Music Generator Sued Again For Copyright Infringement Yahoo Tech",
+  "source": "Yahoo Tech",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-08T19:42:14.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 34,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "daa49d201a01522e",
+  "url": "https://news.pollstar.com/2026/11/08/run-dmc-reunion-rocks-aerosmith-friends-show-at-hollywood-bowl-is-there-more-to-come/",
+  "title": "Run-DMC Reunite For Aerosmith, Is There More To Come?",
+  "summary": "As the first of two Aerosmith & Friends concerts at The Hollywood Bowl was in full swing, there was an air of confusion when Run-DMC didn’t join Steven Tyler, Joe Perry, Tom Hamilton, Brad Whitford and Joey Kramer for “Walk This Way.” After all, they were named on the flyer and…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-08T15:33:43.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "572d244ff9cdf013",
+  "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQTEhYcWxLdVFfUDdOYUszZzRHQy1LdWtjaVUyOHB6ZWhIVG1NbEZKSFVhMlowNXBaaUEzejFtTW9XS1ZUbzFmNG9nX01Md0hrS0xqWXQ5a2ppZWUxYXd5Z05pZGJFcTN6aWYzLTJfbUtaMW5raTI1TGo4WktrdC1PVGNMSFVGeXRQY3lITXlkWFNnUklkbHk2YVU4YkcwNHhQSDd2QWN0UmpkcDk5MDhwNA?oc=5",
+  "title": "Eminem’s Publisher Sues AI Music Generator Suno for $41 Million",
+  "summary": "Eminem’s Publisher Sues AI Music Generator Suno for $41 Million DancehallMag",
+  "source": "DancehallMag",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-08T12:37:55.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 29,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
   "id": "7eb417f7735a841a",
   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPZ1lrUk90S2ZXeHdfTHphX1RqeVRkTFJVVDluVFpKVDRReTcwS01JS0hDMnZVQ0VzVFVJXzFkc3J0ZDctSVB0b0dNcXVGa3kyYk0tTWRPTlF3dElBZmFwaWl3b3lKNHgwaWVlQ05TVlM0V1BUYnUzajlKRGlad0NfQ3dDRlVjb1F00gGQAUFVX3lxTE40bXBHc2p2TS1hcUtBTnR5cGVFdW1FMTNhLUxKalZuNFgwTzB2SFdJcnFlMGp5Zjd4NEcwMFI4S2Z3ZmdUX1AzcTJ6cVlycUdHRHhHLTFNNS01QmdOV2pQQ1NSeUZtOWdwWC04ZWlWaTU2eG9jVWtUVXA0Z2VCVjhaQ1lxOFJDMEJfczVCQzhPSg?oc=5",
   "title": "Eminem-Linked Publisher Sues Suno Over AI Music Training",
@@ -23,6 +663,42 @@
   "firstSeen": "2026-11-08T13:17:17.389Z"
  },
  {
+  "id": "94ca774a11461f0b",
+  "url": "https://www.digitalmusicnews.com/2026/11/08/warner-music-france-delicieuse-musique/",
+  "title": "Warner Music France Invests in Délicieuse Musique to Accelerate Growth of Independent Labels",
+  "summary": "Warner Music France announces an investment in Délicieuse Musique, paving the way for new growth opportunities for its independent labels. Warner Music France, a division of Warner Music Group (WMG), has announced an investment in Délicieuse Musique, the independent company oper…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-08T11:44:45.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 19,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "7230a357848ca162",
+  "url": "https://www.digitalmusicnews.com/2026/11/08/del-casher-wah-wah-pedal-inventor-death/",
+  "title": "Del Casher, Elvis Collaborator and Wah-Wah Pedal Inventor, Passes Away",
+  "summary": "Music pioneer and Elvis collaborator Del Casher, who invented the widely used wah-wah pedal, has passed away at the age of 88. Del Casher, a pioneering guitarist and the inventor of the wah-wah pedal, best known for his work with Elvis Presley, has passed away. He was 88. Casher…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-08T10:34:56.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
   "id": "6c77bda6e61511c9",
   "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNNkFNQjNZTW1JZDYzYnd2b1gyQ0tBOE9FYk9oTVcyR3hQc2RCejR0ZHJkNVBZUno4cjRqSHBXUUhNclgwd3dCcEljTGtiZ01pWGVGYlIyNEV5Nm1oUm5lN3I3ck1ZemFRUjJxNXp2UTV3aWJ6RXk4eFNtZHZEYmlvR2ZGaFg2bTR4WWtwQ09ZMVlfTHZ6U1k2ZzN0TEFxMmFJSzVGYzNYU2VkSkYxam83UkNFakctRE8yUUhIWjYwVm9WRHgzeTAwXzJRYkt6TVhNZm96WVZQYk4tRC1hLXZB?oc=5",
   "title": "Eminem publisher Eight Mile Style has sued the AI music platform Suno for $41 million, claiming the rapper's music was illicitly used for training. See link below ⬇️ 📸 Theo Wargo, Getty Images",
@@ -44,6 +720,28 @@
   ],
   "score": 34,
   "firstSeen": "2026-11-08T13:17:17.389Z"
+ },
+ {
+  "id": "20c5c798688388b0",
+  "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQLUhnZF9NbVN2aWZTckV1TFdsQ3lVTmNfTW5PSFE4NVduTy1yVU1SdEgwN2F1ZUNfZGp2aXYtUFZlNHJSNElQVHFjVWhUX29QSVBReFZ6Ty1hbXUxVlVwSjZ4bEwwX29nclgwS0JBWUloaVpLMWZvaHVwZloxMHhCODFHOEpPMUtHVVlWX1ByZw?oc=5",
+  "title": "Elvis Presley’s Rights Owners Sue Suno for Cloning His Voice. It’s One of the First Big Tests of Tennessee’s ELVIS Act",
+  "summary": "Elvis Presley’s Rights Owners Sue Suno for Cloning His Voice. It’s One of the First Big Tests of Tennessee’s ELVIS Act Voice Over Herald",
+  "source": "Voice Over Herald",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-08T00:00:00.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 21,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
  },
  {
   "id": "b02b0345828fb26f",
@@ -2694,6 +3392,29 @@
   "firstSeen": "2026-11-05T14:34:39.691Z"
  },
  {
+  "id": "b69360f95332c599",
+  "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNYm1fT1VjVXNzVXEtUkFHTkllREtxc1NwT1h6UmM5UmJUQzJBUXd5RVNIdWgwNHVrdGI4bEhfV3ZOUHc0SjVnMkdzUDFYMWZfd3JSZXIxQnlDRmk5OV9ueHRPOEd0Y2YzWHIyRzZ6aHEyOUg4WXdQVE9KMDl0VmtDbEpQSVdQWXY5dGxfdHltMTc0V2Z2TVNfa1Y4X25CRnU0Zm13ZjQ5ckVaZk1ZeWt5TGxlRzRUQ2FOX3RTRUZJeU45VUplcTdLNnhRNA?oc=5",
+  "title": "How Is Reservoir Media (NASDAQ:RSVR) Capitalizing on Digital and Catalog Growth in Fiscal Q2 2027?",
+  "summary": "How Is Reservoir Media (NASDAQ:RSVR) Capitalizing on Digital and Catalog Growth in Fiscal Q2 2027? Kalkine",
+  "source": "Kalkine",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-05T01:40:00.000Z",
+  "entities": [
+   "reservoir"
+  ],
+  "types": [
+   "publisher"
+  ],
+  "topics": [
+   "catalog-deal",
+   "earnings"
+  ],
+  "score": 34,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
   "id": "0a2fd6b1303abed4",
   "url": "https://www.billboard.com/pro/lil-durk-bail-motion-judge-torn-rapper-jail/",
   "title": "Judge Torn on Lil Durk Bail Question After Murder-for-Hire Verdict: ‘A Question of Psychology’",
@@ -3454,6 +4175,22 @@
   "topics": [],
   "score": 10,
   "firstSeen": "2026-11-05T14:34:39.691Z"
+ },
+ {
+  "id": "e7bd61faf4813230",
+  "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPaEhYTlNzcU40YnczYThIMTlvZUpsb05wV2xqVGF3NmZjN0xud3N4c1NkZWZXTUpPYjFDalgtRnNnaHluRXB0M21vZFBkUm51aXZtR0M3LXc2SzZmYkZSV0hQMjNPUmxWRDhZQzAyQWJEblktWkF6VG5ncXl0emtLaE1Fc0syOF95U1JQZkZhYjJaMXcyajAwUHp4X1N6Z3VJTTFkbl94YWk?oc=5",
+  "title": "How Old Music Contracts Are Still Causing Royalty Battles Today",
+  "summary": "How Old Music Contracts Are Still Causing Royalty Battles Today That Eric Alper",
+  "source": "That Eric Alper",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-04T15:39:37.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 2,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
  },
  {
   "id": "beace910ba36dcf4",
@@ -6298,6 +7035,26 @@
   "topics": [],
   "score": 2,
   "firstSeen": "2026-11-08T13:17:17.389Z"
+ },
+ {
+  "id": "3b34db95f53c4b3b",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFB6TnhwT0l4RUd2VUFoUHVBbVlfQWdqQWR1RTJhYWQ1Z0pHTTJlU3MwSDZjcFpPblNRcEJEV3ZTa3Rvd2xoT29LXzFJal9WWGlLTXQtbmVVWHlua0NITTd1NjdlczdDVE1tUTBR?oc=5",
+  "title": "Spotify Wants Another $5 a Month in 2027 to Let You Remix Songs You're Already Paying to Stream",
+  "summary": "Spotify Wants Another $5 a Month in 2027 to Let You Remix Songs You're Already Paying to Stream eCoustics",
+  "source": "eCoustics",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-01T23:02:46.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 12,
+  "firstSeen": "2026-11-09T16:10:26.118Z"
  },
  {
   "id": "39695aaaf2fec9db",
