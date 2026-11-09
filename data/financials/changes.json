@@ -1,8 +1,77 @@
 {
  "startedAt": "2026-09-27T15:02:57.764Z",
- "updatedAt": "2026-11-07T13:36:31.039Z",
+ "updatedAt": "2026-11-09T16:54:56.814Z",
  "source": "Written by scripts/refresh-financials.mjs when a figure changes between refreshes.",
  "entries": [
+  {
+   "at": "2026-11-09T16:54:56.814Z",
+   "entityId": "brookfield",
+   "metric": "revenue",
+   "slot": "quarter",
+   "kind": "new-period",
+   "from": {
+    "value": 1047000000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-08-10",
+    "accn": "0001628280-26-054933"
+   },
+   "to": {
+    "value": 1283000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-11-09",
+    "accn": "0001628280-26-071827"
+   }
+  },
+  {
+   "at": "2026-11-09T16:54:56.814Z",
+   "entityId": "brookfield",
+   "metric": "netIncome",
+   "slot": "quarter",
+   "kind": "new-period",
+   "from": {
+    "value": 1172000000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-08-10",
+    "accn": "0001628280-26-054933"
+   },
+   "to": {
+    "value": 2999000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-11-09",
+    "accn": "0001628280-26-071827"
+   }
+  },
+  {
+   "at": "2026-11-09T16:54:56.814Z",
+   "entityId": "brookfield",
+   "metric": "cash",
+   "slot": "latest",
+   "kind": "new-period",
+   "from": {
+    "value": 1503000000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-08-10",
+    "accn": "0001628280-26-054933"
+   },
+   "to": {
+    "value": 657000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-Q",
+    "filed": "2026-11-09",
+    "accn": "0001628280-26-071827"
+   }
+  },
   {
    "at": "2026-11-07T13:36:31.039Z",
    "entityId": "ares",
