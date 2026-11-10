@@ -85,7 +85,8 @@ for (const [from, to] of WORK_SWAPS) {
 
 // ── the manifest and the README ─────────────────────────────────────────────────────────────────────────
 const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'))
-const keepScript = (k) => !['test:valuation', 'test:pmi', 'test:abs', 'test:carveout', 'test:edition', 'test:work', 'test', 'build', 'build:work', 'dev', 'start', 'server'].includes(k)
+// `edition:allow` goes too: its script is not copied, and an exported package.json must not name a file that is not there.
+const keepScript = (k) => !['test:valuation', 'test:pmi', 'test:abs', 'test:carveout', 'test:edition', 'edition:allow', 'test:work', 'test', 'build', 'build:work', 'dev', 'start', 'server'].includes(k)
 pkg.name = 'music-mainframe-work'
 pkg.description = FRAMING.title
 pkg.scripts = {

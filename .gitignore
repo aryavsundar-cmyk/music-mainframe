@@ -26,3 +26,6 @@ dist-work
 
 # Edition export check (npm run test:export)
 .export-check
+
+# Edition module inventory (written by the build; the allowlist it is checked against is committed)
+.edition-modules.*.json
