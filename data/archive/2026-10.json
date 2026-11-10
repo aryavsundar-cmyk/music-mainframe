@@ -1303,6 +1303,26 @@
   "firstSeen": "2026-10-30T12:48:42.655Z"
  },
  {
+  "id": "0599475ec34ceaac",
+  "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOaDNwRHJONHVNTVBKc2RoeHVQNWdJeUExaVRDVmU0akYxSGtwUDhvSWtjSDhLWThMMGw1VWJLRzd4aXgyUFBlUWpnRlFlVkZacEVBRjRjSlpMMmJ0cVZ4MFczLW02RkJ6YVJ4eTE0N2FhR2dSc0FsVEtaaFd2NVdRbFdVSmZueEJQQUZpSHp0TUZfNzg?oc=5",
+  "title": "Spotify plans AI Covers and Remixes Tool for Q1 2027",
+  "summary": "Spotify plans AI Covers and Remixes Tool for Q1 2027 EDMTunes",
+  "source": "EDMTunes",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-30T07:00:00.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 12,
+  "firstSeen": "2026-11-10T14:49:09.985Z"
+ },
+ {
   "id": "30e22f6ce2c07b5f",
   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1OUFBERFRLNUpBSkMzZGJyTy0zTDAzVTFuZ19IMWtPdzNfWUJJVi1yeExxbWhmYko1OW83QXdoRWw4VW41MEZtTENuQ2R2WEVkSElsVTZ0NlIwSXhzWVBZYnRVa1Y0S05yQkR1dw?oc=5",
   "title": "Ditto Music Review 2026: Is It Worth It for Indie Artists?",
@@ -1349,6 +1369,28 @@
   "topics": [],
   "score": 5,
   "firstSeen": "2026-11-01T13:16:26.792Z"
+ },
+ {
+  "id": "86ecdcc4b8b98d52",
+  "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNSE5IZ1JKV1hxb3FZVVc5QnluWDVpSlpfYzVWTklneFMyMVhOT2drNnhXWXFfX0ExVGY1aUxYVHZQbktjdW5YcHdtY2YzRHVyVGR2d2ZjOVA0YXI1b2ExeTNRQlowMWpKQVNOVnVfX1BES2kzTllBQkE1ZVFpWlNDVmNka3ZUUlQ4OGtYTVNRYThRdjRUeFdMQl9zRGFlUldNZ0E?oc=5",
+  "title": "Universal Music Group: What We Think of the Stock After Earnings",
+  "summary": "Universal Music Group: What We Think of the Stock After Earnings Morningstar",
+  "source": "Morningstar",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-30T07:00:00.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "earnings"
+  ],
+  "score": 20,
+  "firstSeen": "2026-11-10T14:49:09.985Z"
  },
  {
   "id": "a51c0c83696d7254",
@@ -2469,6 +2511,26 @@
   "firstSeen": "2026-10-29T12:55:45.853Z"
  },
  {
+  "id": "050afb113cccfd81",
+  "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOM2szSlNQQVZCYXZsTUJzOHE2NFExVjNscGhKQUtGNUhPM1pEXzdQM002cjVHRUNkVmVOVDZTMUY5dnpCM19uaDJUc1k2Y0RhR082YXBqUU0xY0lweFRZLTRmRFRsTmthb1N5ZlB6MlQydmtrUmpjdVRqbW9oTnhBREg2NmpGRGRzd2cwQkRtUG12UWp3TWJCR2l0b0VQTUd4TThCMDM5UEoySUJTRVFGbXMxakxERUti?oc=5",
+  "title": "Universal Music Logs Higher Revenue as Subscriptions, Streaming Pick Up",
+  "summary": "Universal Music Logs Higher Revenue as Subscriptions, Streaming Pick Up WSJ",
+  "source": "WSJ",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-29T07:00:00.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 14,
+  "firstSeen": "2026-11-10T14:49:09.985Z"
+ },
+ {
   "id": "8088ce9c6613a221",
   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBMVUtZZlBwRVFFRE5MZVNhLW5VcmJGSFV2MDBIdk5uTTR1NXQwTHVYQU05MjdRdElrZkJMUGZvMktsa3lsUjlqT0xFazByWWtDLTlCUVpUeFJHNnNnUjRhMEFMX0NQQnY5X0JUUzM3cXJ2WDdnYXlSZ1FPTDBRV00?oc=5",
   "title": "Is AI Music Legal? What Creators Need to Know (2026)",
@@ -3281,6 +3343,22 @@
   "topics": [],
   "score": 10,
   "firstSeen": "2026-10-29T12:55:45.853Z"
+ },
+ {
+  "id": "638894d8cadfd505",
+  "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNbDVKYnBONUo2VFhrQkY5XzkxYWNidkRyRXNDdXlSTzYtSm5jNXpOZ1JXR1VKY3NlUnpPcFNUVmJHOFBUUXhXUnhMNXhPeHpTb1hWMGJvTndiamVkUTZRRUFwd3dqc21NQ0FjZjBfbWJIRFd5UFNOT2pYcUNISHNFWElIZGRnQkNWeFBtMkVneEwxY3NwNkxva0ppaG9LX0U5eWNHdUtEaVNRNDZyMFNVUXBjeFAzZU5SSmpxOVJwWENEem42M0ZncUk3TElEUmEtSmZfVmN1YkJ5QQ?oc=5",
+  "title": "SoStereo Joins FlyteVu With Private Investment From DMG To Expand Music, Audio and Creative Capabilities",
+  "summary": "SoStereo Joins FlyteVu With Private Investment From DMG To Expand Music, Audio and Creative Capabilities citybiz",
+  "source": "citybiz",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-10-28T14:49:35.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 0,
+  "firstSeen": "2026-11-10T14:49:09.985Z"
  },
  {
   "id": "6359a0c13e63b055",
