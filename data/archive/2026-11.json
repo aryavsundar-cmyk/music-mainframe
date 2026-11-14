@@ -1,5 +1,602 @@
 [
  {
+  "id": "647c47cf61be41ee",
+  "url": "https://www.musicbusinessworldwide.com/from-tiktoks-daddy-yankee-deal-to-youtubes-billboard-comeback-its-mbws-weekly-round-up/",
+  "title": "Sony’s new deal in China, TikTok signing Daddy Yankee… it’s MBW’s Weekly Round-Up",
+  "summary": "The biggest headlines from the past few days... Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-14T09:17:54.000Z",
+  "entities": [
+   "tiktok"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 27,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "82a3d00a891739a2",
+  "url": "https://www.musicbusinessworldwide.com/sony-music-renews-multi-year-licensing-deal-with-chinas-netease-cloud-music/",
+  "title": "Sony Music renews multi-year licensing deal with China’s NetEase Cloud Music",
+  "summary": "The multi-year deal, announced on Friday (November 13), means NetEase Cloud Music has now re-signed with all three major music companies in 2026 Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-14T09:12:04.000Z",
+  "entities": [
+   "netease-cloud-music",
+   "sony-music-entertainment"
+  ],
+  "types": [
+   "dsp",
+   "label"
+  ],
+  "topics": [],
+  "score": 49,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "dae3380c2275cf86",
+  "url": "https://www.musicbusinessworldwide.com/az-cohens-aztec-a-joint-venture-label-with-believe-has-signed-its-first-artist/",
+  "title": "Az Cohen’s AZTEC, a joint venture label with Believe, has signed its first artist",
+  "summary": "Believe unveiled AZTEC in May, describing it as its first JV in the United States. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-14T09:08:21.000Z",
+  "entities": [
+   "believe"
+  ],
+  "types": [
+   "artist-services"
+  ],
+  "topics": [],
+  "score": 23,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "6d1d2b661bb410f9",
+  "url": "https://www.musicbusinessworldwide.com/symphonic-inks-deal-to-bring-hundreds-of-thousands-of-songs-to-roblox-with-artists-paid-royalties-for-all-plays/",
+  "title": "Symphonic inks deal to bring ‘hundreds of thousands’ of songs to Roblox – with artists paid royalties for all plays",
+  "summary": "According to Symphonic, artists will receive royalties for all plays of their music on Roblox Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-14T09:02:03.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "2c954ce06d732a73",
+  "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQUFUwM3dQVGFTT0lSWVFWVDJFNkxHVmNZZVRMSEZ0ZEdZY3BzM1l5YmtLRUhIelZBbWVBOGdvbTg2SlpYcE1Nckw3djdQaHh5Z3NkUjM3Vkl3cTRTZk9FN2pIaFRraVNjR2REbGpOdEF4RlZVR0d1cGtST1VQU3FRYkNYdTJGcXNITWVVTDFaYnlfZ3NWLTBWWW15aFRsdDV5MzN3eUU1ejNaV1VUTHdLMw?oc=5",
+  "title": "Songwriter donating royalties to assist people with cancer",
+  "summary": "Songwriter donating royalties to assist people with cancer Palatka Daily News",
+  "source": "Palatka Daily News",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-14T02:12:46.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "461d53a7a59c1d7a",
+  "url": "https://www.billboard.com/pro/canada-music-fund-67m-boost-canada-news/",
+  "title": "In Canada: Canada Music Fund to Receive $67M Boost; Women in Music Executive Award Winners Share Their Wisdom",
+  "summary": "Also this week: Sean Paul appears on the first episode of Billboard Canada News.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-14T00:10:09.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "1f8ff282f687b9eb",
+  "url": "https://www.billboard.com/pro/kanye-west-settles-sample-lawsuit-holocaust-survivors/",
+  "title": "Ye Settles Lawsuit Over ‘Gun to My Head’ Sample From Descendant of Holocaust Survivors",
+  "summary": "German singer-songwriter Alice Merton claimed she had expressly denied the rapper's clearance request due to his history of antisemitism.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-13T22:04:42.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "6cedc245d596b50a",
+  "url": "https://variety.com/2026/film/news/bruce-springsteen-steven-spielberg-jaws-skinny-dipping-1236947282/",
+  "title": "Bruce Springsteen Says Steven Spielberg ‘F—ed Up’ Skinny Dipping After Releasing ‘Jaws’: ‘Why Would a Nice Man Do That?’",
+  "summary": "A lot changed after Steven Spielberg released “Jaws” in 1975. Widely considered as the first summer blockbuster, the film revolutionized how Hollywood distributed its big-budget spectacles. But, as Bruce Springsteen laments, the iconic shark thriller killed one of America’s favo…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-13T22:01:04.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "efab280ecaafe3ec",
+  "url": "https://news.pollstar.com/2026/11/13/netflix-aeg-presents-unveil-2027-north-american-dates-for-kpop-demon-hunters-golden-world-tour/",
+  "title": "Netflix, AEG Presents Unveil 2027 North American Dates For ‘Kpop Demon Hunters Golden World Tour’",
+  "summary": "Fans will be able to seal the Honmoon in North American arenas next summer. Netflix and AEG Presents announced global tour dates for the highly anticipated “KPop Demon Hunters Golden World Tour.” The tour presented by Mastercard kicks off in June 2027, with the initial announcem…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-13T21:00:16.000Z",
+  "entities": [
+   "aeg",
+   "aeg-presents"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 43,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "6dea5caca73fa1d4",
+  "url": "https://news.pollstar.com/2026/11/13/popular-vtuber-hoshimachi-suisei-signs-with-wme/",
+  "title": "Popular VTuber Hoshimachi Suisei Signs With WME",
+  "summary": "Hoshimachi Suisei, a Japanese virtual artist with nearly 3 million YouTube followers, has signed with WME for global representation. The popular VTuber announced the news on the final night of her sold-out tour at Marine Messe Fukuoka Hall A in Japan. Suisei broke out with her h…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-13T20:30:16.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "4b44afebd37e1d46",
+  "url": "https://news.pollstar.com/2026/11/13/ronnie-wood-and-his-ammo-band-announce-nyc-show/",
+  "title": "Ronnie Wood And His Ammo Band Announce NYC Show",
+  "summary": "Ronnie Wood And His Ammo Band are headed to the Beacon Theatre in March, giving Rolling Stones fans a rare opportunity to see the beloved guitarist take the stage outside of stadiums. The March 22, 2027, show will feature Wood joined by Grammy-nominated singer and Rolling Stones…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-13T20:24:06.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "b74bb6375f84a96e",
+  "url": "https://www.billboard.com/pro/raul-malo-widow-lawsuit-the-mavericks-band-name/",
+  "title": "Raul Malo’s Widow Sues to Stop Remaining Members of The Mavericks From Using Band Name",
+  "summary": "The surviving band members have been performing as \"The Mavericks & Friends\" since Malo's death from cancer in 2025.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-13T20:19:48.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "d91fc58f7f91453b",
+  "url": "https://www.musicbusinessworldwide.com/reservoir-expands-copyright-lawsuits-against-suno-and-anthropic-to-more-than-2500-songs-combined/",
+  "title": "Reservoir expands copyright lawsuits against Suno and Anthropic to more than 2,500 songs combined",
+  "summary": "Reservoir first sued the two AI companies in October Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-13T20:10:22.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 34,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "2c619d544533caa4",
+  "url": "https://www.musicbusinessworldwide.com/theteam-forms-11-member-board-after-providence-completes-buyout-of-founder-casey-wasserman/",
+  "title": "THE•TEAM forms 11-member board after Providence completes buyout of founder Casey Wasserman",
+  "summary": "Seven of the board's members come from THE•TEAM's leadership group, including CEO Michael Watts and Chief Financial Officer Elena Rochelli. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-13T20:09:52.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "pe-capital"
+  ],
+  "score": 20,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "545fbf44ce0e0e0b",
+  "url": "https://www.musicbusinessworldwide.com/live-nation-operated-cleveland-amphitheater-breaks-ground-ahead-of-2028-opening/",
+  "title": "Live Nation-operated Cleveland amphitheater breaks ground, ahead of 2028 opening",
+  "summary": "The amphitheater is being developed by real estate firm Bedrock and Rock Entertainment Group, which oversees the Cleveland Cavaliers. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-13T20:09:41.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 20,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "c61d2e636c156a41",
+  "url": "https://www.musicbusinessworldwide.com/umg-and-warner-chappell-agree-to-settle-lawsuit-alleging-quavos-2018-track-bubble-gum-copied-a-demo-handed-to-him-at-a-migos-after-party/",
+  "title": "UMG and Warner Chappell agree to settle lawsuit alleging Quavo’s 2018 track ‘Bubble Gum’ copied a demo handed to him at a Migos after-party",
+  "summary": "Lawyers for L.Mont and the companies said they \"have reached a settlement in principle in this matter,\" meaning they have yet to finalize the deal. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-13T20:09:25.000Z",
+  "entities": [
+   "warner-chappell"
+  ],
+  "types": [
+   "publisher"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 32,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "04a8e8e198862f5b",
+  "url": "https://news.pollstar.com/2026/11/13/final-call-for-pollstars-2027-ticketing-star-awards-nominations/",
+  "title": "Final Call For Pollstar’s 2027 Ticketing Star Awards Nominations",
+  "summary": "Nominations close today for the Pollstar 2027 Ticketing Star Awards, honoring box office professionals who have made an impact in their organization or were a game-changer in the industry. Submissions are being accepted through Nov. 13, 2026 at 5 p.m. PT. Voting will then begin…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-13T19:32:49.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "882ad4e9f06a5b8e",
+  "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPcmFoN0s2ajFpaFplN3VTTFNtVTVScENtUkNGb0dJOTNXMDQ4bDF0Q3pOcFNva0ZONVBYbnN4MlJFamxodmtOeDV0Ui1PSzlnT2pXUXNjM200U21WNk1yUzZBVmN3S0hhRXRRdWtSRTV0ZDJ4S0xHVE9oTjQtaXRsZ1hEcTZhckZkWWhTbml5dFZCYmllTkdkby1zdTVrMm16Sndabw?oc=5",
+  "title": "Samsung’s HARMAN Launches Drops, a TikTok-Style Music Discovery App",
+  "summary": "Samsung’s HARMAN Launches Drops, a TikTok-Style Music Discovery App EDMTunes",
+  "source": "EDMTunes",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-13T19:12:19.000Z",
+  "entities": [
+   "tiktok"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "c432ccdf1a140799",
+  "url": "https://news.pollstar.com/2026/11/13/alex-warren-announces-north-american-leg-for-world-tour/",
+  "title": "Alex Warren Announces North American Leg For World Tour",
+  "summary": "Alex Warren has announced the North American leg of his “Finding (More) Family On The Road World Tour,” with a new 26-city run starting April 5 at Paycom Center in Oklahoma City. Warren will then play New York, Tampa, Raleigh and more before wrapping up in Birmingham, Alabama, a…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-13T18:46:28.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "21e1560305d983b9",
+  "url": "https://www.billboard.com/pro/congress-stop-big-ai-ripping-off-creators-jerrold-nadler/",
+  "title": "Stolen (Not Super) Intelligence: Why Congress Must Stop Big AI From Ripping Off Creators (Guest Column)",
+  "summary": "Big Tech has built AI on stolen intelligence, and Trump’s DOJ is helping them get away with it.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-13T18:29:05.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation",
+   "policy"
+  ],
+  "score": 24,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "2f2b81fc00b5b696",
+  "url": "https://news.pollstar.com/2026/11/13/new-2-day-music-festival-at-venice-beach-in-the-works/",
+  "title": "New 2-Day Venice Beach Music Festival In The Works",
+  "summary": "Los Angeles isn’t giving up on having music events on the beaches. Following the cancellation of Ocean Way in Santa Monica because of beach erosion, Venice Beach is proposing to have its own music festival on its beachfront. The two-day 1905 Fest in Venice Beach is in the works…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-13T18:02:26.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "1e8cd089df3c77fc",
+  "url": "https://www.billboard.com/lists/executive-turntable-drew-wilson-prg-tash-shah-tunecore/",
+  "title": "Executive Turntable: Drew Wilson Named PRG CFO, TuneCore Elevates Tash Shah",
+  "summary": "Plus, Abby Miller joins Borchetta Entertainment Group, Jaclyn D. Childress named Shorefire president and more music industry hires and promotions.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-13T17:24:07.000Z",
+  "entities": [
+   "tunecore"
+  ],
+  "types": [
+   "distributor"
+  ],
+  "topics": [],
+  "score": 20,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "32b7d44bc3e560b6",
+  "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBCSlRKVmRkTWN3cm0zeVJQanUtZmEzekJaOWtlcnZhWlF0dHRoV3ZuWFFsSUNZeWIzUzRDTVl2bl8tMVo1dW5zZm5nZVJqUEFuZnJrU3pUbw?oc=5",
+  "title": "Music Lawsuit June 2026: Settlements, Payouts, Deadlines",
+  "summary": "Music Lawsuit June 2026: Settlements, Payouts, Deadlines LawFold.com",
+  "source": "LawFold.com",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-13T16:52:05.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "f75871807952a9b1",
+  "url": "https://www.billboard.com/pro/kanye-west-opera-lawsuit-musician-alleges-locked-wyoming-hs/",
+  "title": "Ye Lawsuit: Opera Musician Says He Was Locked in Wyoming HS to Write ‘Nebuchadnezzar’",
+  "summary": "The case, the latest over Ye's troubled 2019 opera, claims the rapper's staffers ignored requests to provide food and water or \"unlock the band room doors.\"",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-13T16:44:08.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "78052a8bdf12408c",
+  "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQRk1qYXI5WXJWM1kzQzMyNlR2OW5oZ1BELWs1dGZhbjBnZDFkUlhvdDgwUWszS2pockQ3UHdlekQ2ZmRCWFMtYmg0SWl0REg5cFlHSFZoQ0oya0FpMWl2YTVkWk5XaHJwTUU5bXh3eUJSeHFsOUZ6eEVTbFdWbzEyQw?oc=5",
+  "title": "Lee Mendelson Film Productions Settles GameMill Copyright Suit",
+  "summary": "Lee Mendelson Film Productions Settles GameMill Copyright Suit Digital Music News",
+  "source": "Digital Music News",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-13T16:34:16.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "6d5382155408e90b",
+  "url": "https://news.pollstar.com/2026/11/13/cts-eventim-reports-third-quarter-results/",
+  "title": "CTS Eventim Reports Third Quarter Results",
+  "summary": "CTS Eventim reported its financials for the first nine months of 2026. Consolidated revenue climbed by 8.1% compared with the prior-year period to €2.322 billion ($2.57 billion). Adjusted EBITDA rose by 6.3% to €359.1 million ($397.7 million). The adjusted EBITDA margin stood at…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-13T16:11:45.000Z",
+  "entities": [
+   "cts-eventim"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "earnings"
+  ],
+  "score": 26,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "b70a7567bedb17dd",
+  "url": "https://news.pollstar.com/2026/11/13/florence-center-and-legends-global-name-vince-thomas-general-manager/",
+  "title": "Florence Center And Legends Global Name Vince Thomas General Manager",
+  "summary": "The Florence Center and Legends Global announced the appointment of Vince Thomas as General Manager of the Florence Center in Florence, South Carolina. Thomas is a seasoned venue management executive with 18+ years of experience leading operations across arenas, stadiums, perfor…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-13T16:06:50.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "6000d1e09e25d370",
+  "url": "https://variety.com/2026/music/album-reviews/u2-carnaval-de-luz-album-review-1236947053/",
+  "title": "U2 Gets On Its Boots for First All-New Full-Length Record in Nine Years, ‘Carnaval de Luz,’ With More Callbacks to Band’s ’90s Peaks Than ’80s Glories: Album Review",
+  "summary": "“The past and me have got to break up,” Bono sings in the verse that opens “Carnaval de Luz,” U2’s first full-length album of all-new material in nine years. It sounds like a mission statement, doesn’t it? The singer doesn’t linger long on combating nostalgia or breaking out of…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-13T16:01:46.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "247832d05db7c59a",
+  "url": "https://news.pollstar.com/2026/11/13/from-the-opry-house-to-msg-back-behind-the-cma-awards-60th-with-exec-producer-robert-deaton/",
+  "title": "From The Opry House To MSG & Back: Behind The CMA Awards 60th With Exec. Producer Robert Deaton",
+  "summary": "Please login to your Pollstar subscriber account to view this content.",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-13T15:55:46.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "policy"
+  ],
+  "score": 16,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "c2a72dfdde9479de",
+  "url": "https://completemusicupdate.com/getty-v-stability-ruling-could-allow-ai-companies-to-offshore-training-to-circumvent-uk-copyright-law-says-bpi/",
+  "title": "Getty v Stability ruling could allow AI companies to “offshore” training to circumvent UK copyright law, says BPI",
+  "summary": "The ongoing legal battle between Getty Images and Stability AI, which is testing the copyright obligations of AI companies in the UK, was back in court this week. BPI has intervened in support of Getty, telling judges that this case could have “significant consequences” for the…",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-13T15:44:28.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "869d1b3b2b23bbce",
+  "url": "https://news.pollstar.com/2026/11/13/uk-lineups-alt-j-join-o2-anniversary-lineup-download-headliners-unveiled/",
+  "title": "UK Lineups: Alt-j Join O2 Anniversary Lineup, Download Headliners Unveiled",
+  "summary": "alt-j Join The O2 Party The O2 has announced that alt-J will perform at the venue as part of its 20th birthday celebrations, taking place throughout summer 2027. The Mercury Prize-winning British band will bring its “Then Again Tour 2027” to the iconic London venue July 14, 2027…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-13T15:36:41.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
+  "id": "b092241d8dab7ae9",
+  "url": "https://variety.com/2026/music/news/taylor-swift-to-perform-cma-awards-first-time-13-years-1236946968/",
+  "title": "Taylor Swift to Perform at CMAs for the First Time in 13 Years",
+  "summary": "Taylor Swift will perform on the CMA Awards Wednesday for the first time in 13 years, ABC and the Country Music Association announced Friday morning. Swift had already publicly declared, upon getting a CMA nomination this year, that she would attend the show, but there was no in…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-13T14:59:13.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "policy"
+  ],
+  "score": 16,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
   "id": "30ecae74c4bae37f",
   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNOHJDTDVUN1lvMGVfOTRSQWdheDBtX191T0RUV2tTRGV4Z0R3U25oU1FoWmFXUUlrQVcxUlFRRGNRZjBtdURla05Sa3ZHZ3RrUnV0cGJTcmJENi1hUTBaaXRRSUdtandQa25SallHaEdRa0V1N1JJc2RQOG9hS0p5Wi1zZHJtU2FfWS1QekVOeXVpYjg?oc=5",
   "title": "Google, Meta, TikTok Oppose Indonesia’s AI Copyright Bill",
@@ -155,6 +752,22 @@
   ],
   "score": 48,
   "firstSeen": "2026-11-13T14:30:32.017Z"
+ },
+ {
+  "id": "adfdd9cea5cc9f19",
+  "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPNUU0Q2txUWhiNWJ6TFRlanJCdjNBRzRSa3VJanBLVGx3VE85MWF3RC1odkNUd0FmZlJQNmZsM3VxVC0wREtPU3JJbGstbThnOFNmXzhWM3ZTZ3JNSGZvb25mVXRNdDFRVm1JM0FXcDBWcXhUN3lmUzVLR0dER2ZZUFZlTGJjWUFIZEtr?oc=5",
+  "title": "Open call: Jägermeister 2026 Save The Night Fund",
+  "summary": "Open call: Jägermeister 2026 Save The Night Fund Music In Africa",
+  "source": "Music In Africa",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-13T13:31:33.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
  },
  {
   "id": "0fffb1e8b9ebede2",
@@ -3082,6 +3695,26 @@
   "firstSeen": "2026-11-11T14:13:55.183Z"
  },
  {
+  "id": "7cecda6078862488",
+  "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQZ09JT042S3l1TnluaW5ZMzNxaWJEMHJWVjB1MHBSbW82X3ZKQ2FGcU5iYW9HTENMU0hDcjZNaWFJUExLYXV0QVlUcUQzNmY0bl9pUGRaaXVCWDhFTmNOYUc2WEdoZW81YmFESWdfYXV3RkhIZHA0U1hpeGxxaGZnTnV6eHlleTlmNTBWSm5FOFdrMzhRQ2ppOWtXQkNXRE5lQzNvZw?oc=5",
+  "title": "Tencent Music Entertainment Group (TME) Could Be Worth Nearly 90% More: Here’s the Investment Case",
+  "summary": "Tencent Music Entertainment Group (TME) Could Be Worth Nearly 90% More: Here’s the Investment Case Yahoo Finance",
+  "source": "Yahoo Finance",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-10T21:30:23.000Z",
+  "entities": [
+   "tencent-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 14,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
   "id": "5a036a83e29d6740",
   "url": "https://variety.com/2026/digital/news/adobe-premiere-mobile-songs-licensed-umg-wmg-1236944255/",
   "title": "Adobe Premiere Mobile App Launches Hundreds of Thousands of Tracks Licensed From UMG, WMG",
@@ -3674,6 +4307,29 @@
   "topics": [],
   "score": 10,
   "firstSeen": "2026-11-11T14:13:55.183Z"
+ },
+ {
+  "id": "cd9b1d3a59cf668d",
+  "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxON3lEdG5xY1FMN2NiRGJEeUF0NWhKV0pjMGJZRmRLVnljN1VwYTc5NW14X2dkSjhIZ3dDOXRYYjhjcC13MWd5eXRTdE1BOGhvaGsyRWFXcVhmVlVPdnIyZFNvSXRNaFZwQ0lDQmlNQmNjWVZ0WVdCTTB1dUxYWGRVLVhBYldtN3JPcHc?oc=5",
+  "title": "Suno Says It Blocks Artist Names but Elvis Presley Lawsuit Says Lyrics Spelling His Name Yielded a Voice Clone",
+  "summary": "Suno Says It Blocks Artist Names but Elvis Presley Lawsuit Says Lyrics Spelling His Name Yielded a Voice Clone www.techtimes.co.uk",
+  "source": "www.techtimes.co.uk",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-10T15:14:30.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 26,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
  },
  {
   "id": "dc6fb81c7b7d44c4",
@@ -5162,6 +5818,28 @@
   "firstSeen": "2026-11-09T16:10:26.118Z"
  },
  {
+  "id": "62fbbf7261396624",
+  "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBQeFVFanlBNEFOVXJ4RFNJMVJHWF9KazV2dG1LUDN2cm5XV3RuazVOSmZaSjhpd2JmZXNPRnUyRV9TWTF6R1FpZDBkU0tSWHcxQTZqZUVkeHpSWmhLcHlSQl9xY2tVek5wdWVKMEhBR0syd1FNeURYWQ?oc=5",
+  "title": "Suno: Lawsuits for voice cloning of Elvis and Eminem",
+  "summary": "Suno: Lawsuits for voice cloning of Elvis and Eminem SecNews.gr",
+  "source": "SecNews.gr",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-09T09:40:00.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
+ },
+ {
   "id": "b39cbc32cc2a1ad2",
   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQUmVqMm1sOUZHam5TRHdmNm1Ib3ZIWmJJTzhEbzdCRHZyTzVxRWN3bGl5Z2l4YUc2SDBTVTlzdFExWnY2ZC1XMG40S2VsQ3VYYWRrZlFQc0lXNjY4dFlBakpkRGk4RWsxT1dzSVhZQmJBaXVBTmJsTFlSU25QR1ZkY09McmdPdFZxTy1FbUNwTkdaSnNZWmtqaWt2YXgxQmM?oc=5",
   "title": "Canada Music Fund Receives Another $67 Million in Federal Funding",
@@ -5176,6 +5854,28 @@
   "topics": [],
   "score": 5,
   "firstSeen": "2026-11-11T14:13:55.183Z"
+ },
+ {
+  "id": "ba5ad4db1e70538f",
+  "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNX1RVZVZJMFRYOVgzbk9GOWloVlVaV0ZOTkdaZi13SHRoSjdmOERaekNFX3BJT09PNmJlRW1laUdkdll3N291WHhnZ1FVR3plWWR1TjRNNHVwVHloTTJqcTJBZ1RkU2hyU1NjU19GU25ZOFB6TFNmT2tFTC12c2hIR0pkaGh5dWFuVUJqaUNBdUpkNE8yQVE?oc=5",
+  "title": "Elvis’s owners sue Suno and say typing his name still clones his voice",
+  "summary": "Elvis’s owners sue Suno and say typing his name still clones his voice Martin Cid Magazine",
+  "source": "Martin Cid Magazine",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-09T07:09:44.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
  },
  {
   "id": "6a9d69b41d4f8abf",
@@ -6285,6 +6985,28 @@
   ],
   "score": 26,
   "firstSeen": "2026-11-07T12:55:18.792Z"
+ },
+ {
+  "id": "639864423a4dd17b",
+  "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxONEVnekRBbG9jLXE1MnN2Nk4wMTdaZmt6UVhkdEV1Q25IQUo0Z3hncjF4c1NzRDBaUjZIaEdkTFZSWGpvSkRKXzJVMWQxWlRwdWdjaDlab0h4Vmc3YlJ0eGx4UmRKNkozOGF3bXM1bDMzbWVmTUkyeEpsaHNiTE5jcU45MUlaUkpyaVdV?oc=5",
+  "title": "Live Nation Reports Record $10.1 Billion Quarter as Antitrust and Political Pressures Mount",
+  "summary": "Live Nation Reports Record $10.1 Billion Quarter as Antitrust and Political Pressures Mount TicketNews",
+  "source": "TicketNews",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-06T16:54:45.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-14T13:26:54.518Z"
  },
  {
   "id": "1e6deb543d1477ba",
