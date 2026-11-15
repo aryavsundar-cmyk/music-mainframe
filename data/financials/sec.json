@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-10T15:15:51.576Z",
+ "updatedAt": "2026-11-15T14:21:18.925Z",
  "source": "SEC EDGAR XBRL (data.sec.gov/api/xbrl/companyfacts)",
  "companies": {
   "alphabet": {
@@ -8590,7 +8590,7 @@
   },
   "siriusxm": {
    "entityId": "siriusxm",
-   "name": "Sirius XM Holdings Inc.",
+   "name": "SIRIUS XM HOLDINGS INC.",
    "ticker": "SIRI",
    "cik": 908937,
    "metrics": {
