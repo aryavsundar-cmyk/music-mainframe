@@ -1,5 +1,639 @@
 [
  {
+  "id": "79776d2c751502b2",
+  "url": "https://www.billboard.com/pro/ascap-names-samantha-saturn-general-manager-nashville/",
+  "title": "ASCAP Names Samantha Saturn as General Manager, ASCAP Nashville",
+  "summary": "Most recently, Saturn served for nearly eight years as chief marketing officer of SESAC Music Group.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-16T15:24:52.000Z",
+  "entities": [
+   "ascap",
+   "sesac"
+  ],
+  "types": [
+   "pro"
+  ],
+  "topics": [],
+  "score": 55,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "274bf14cc562b3fe",
+  "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNZDN2Y2c0Vm84STZCM0FQSllPN0g3SGNoTXdqUmd0TGVPaTRUQWxYM2lpTHRnelZUZ3BXdnhSNkVOMTQyOUhrTlZ2S056UjJVSVpua2Q4NDNkU2VpRlAyTVg5TEJ1elVOelB5ZnQtVjhJaTlScndxWUdicFFUeFFFYlZBeUlrdUFv?oc=5",
+  "title": "5 Best Blockchain Music Royalty and Streaming Platforms",
+  "summary": "5 Best Blockchain Music Royalty and Streaming Platforms FinanceFeeds",
+  "source": "FinanceFeeds",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-16T15:24:18.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "4112e1f894090baa",
+  "url": "https://www.musicbusinessworldwide.com/jesus-lopez-to-step-down-as-chairman-and-ceo-of-universal-music-latin-america-iberian-peninsula-becoming-chairman-emeritus-of-gts/",
+  "title": "Jesús López to step down as Chairman and CEO of Universal Music Latin America & Iberian Peninsula, becoming Chairman Emeritus of GTS",
+  "summary": "López has been working with UMG Chairman and CEO Sir Lucian Grainge on a succession plan, with details \"to be announced in due course,\" according to the company. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-16T15:23:49.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 29,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "34740d50e27ca57a",
+  "url": "https://variety.com/2026/music/news/jesus-lopez-chairman-emeritus-universal-music-group-1236948939/",
+  "title": "Jesús López, Legendary Latin Music Executive, to Become a Chairman Emeritus at Universal Music Group",
+  "summary": "Jesús López, one of the most important executives in Latin music history, will take on a new role at Universal Music Group as Chairman Emeritus, Global Talent Services, UMG’s artist management and services company. López continues a career encompassing five decades in music and…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-16T15:08:23.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 29,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "d28e40098de5885c",
+  "url": "https://www.billboard.com/pro/jesus-lopez-leaves-universal-music-latin-shifts-to-gts/",
+  "title": "Jesús López Steps Down as Head of Universal Music Latin America/Iberian Penninsula, Named Chairman Emeritus of UMG’s Global Talent Services",
+  "summary": "López led UMG’s Latin business for nearly 30 years.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-16T15:00:00.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 29,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "e96f5a77c8cbf228",
+  "url": "https://www.digitalmusicnews.com/2026/11/16/elvis-presley-enterprises-amended-suno-lawsuit/",
+  "title": "Elvis Presley Enterprises and Authentic Brands Group Amend Their Suno Copyright and NIL Suit, Adding ‘A Multitude’ of Allegedly Infringing Outputs",
+  "summary": "Just one week after filing a copyright infringement and NIL suit against Suno, Elvis Presley Enterprises has fired off an amended action – complete with an expanded list of allegedly infringing outputs. Plaintiffs including Elvis Presley Enterprises, Authentic Brands Group, and…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-16T14:59:31.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 31,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "b62e1d668c1da2ea",
+  "url": "https://www.digitalmusicnews.com/2026/11/16/musexpo-2027-registrations-open/",
+  "title": "MUSEXPO 2027 Brings Apple Music, Glassnote, HYBE America, Times Music (India), Disney Music Group, EA, & More Together on The Future of A&R",
+  "summary": "A&R has always been a game of chasing what hasn’t happened yet. Heading into 2027, that chase comes with new complications, from AI-generated tracks flooding streaming platforms to training data lawsuits that continue to redraw what labels, publishers, and distributors can safel…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-16T14:44:53.000Z",
+  "entities": [
+   "apple-music",
+   "deezer",
+   "hybe"
+  ],
+  "types": [
+   "dsp",
+   "label"
+  ],
+  "topics": [
+   "ai",
+   "dsp-economics"
+  ],
+  "score": 77,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "00480325d00c6583",
+  "url": "https://variety.com/2026/music/news/grammy-snubs-surprises-harry-styles-raye-noah-kahan-1236948467/",
+  "title": "Grammys Snubs and Surprises: Harry Styles Shut Out, Raye’s Huge Year and Noah Kahan Only Gets One Nomination",
+  "summary": "The 2027 Grammy nominations have arrived, with some notable breakthroughs and reigning hot streaks from artists including Raye, Rosalía, Phoebe Bridgers, Miranda Lambert, the Olivias (Dean and Rodrigo), Bruno Mars and many more. As with every year, there are plenty of surprises…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-16T14:20:08.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "f043545438f886ac",
+  "url": "https://news.pollstar.com/2026/11/16/foo-fighters-announce-uk-european-take-cover-tour-dates/",
+  "title": "Foo Fighters Announce UK/European ‘Take Cover’ Tour Dates",
+  "summary": "Foo Fighters announced European and UK dates for their “Take Cover Tour”, taking place in summer and fall of 2027. The newly announced shows will run from June 9 in Reykjavik through September 18 at Dublin’s Croke Park, and will include the band’s return to London Wembley Stadiu…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-16T14:16:31.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "0d208ddbdbbad867",
+  "url": "https://news.pollstar.com/2026/11/16/2026-impact-international-uk-euro-honoree-george-akins/",
+  "title": "2026 Impact International UK/Euro Honoree: George Akins",
+  "summary": "GEORGE AKINSManaging DirectorDHP Family IN IT FOR THE LOVE, NOT A RISING SHARE PRICE There’s a motto written on the walls of DHP Family’s office in Nottingham, England, which says: “Make sure everybody has a fucking good time.” And, according to company owner George Akins, “we l…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-16T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "177ef3ed4167592a",
+  "url": "https://musically.com/2026/11/16/hybe-subsidiary-launches-the-wildcard-club-for-musical-vtubers/",
+  "title": "Hybe subsidiary launches The Wildcard Club for musical VTubers",
+  "summary": "VTubers are the online creators who use an avatar for their videos and livestreams rather than their real face. They’re hugely popular, particularly in Asia, and a growing number have musical ambitions. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-16T14:00:00.000Z",
+  "entities": [
+   "hybe"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 29,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "233256abe7dcdf34",
+  "url": "https://news.pollstar.com/2026/11/16/2026-impact-international-uk-euro-honoree-alvaro-covoes/",
+  "title": "2026 Impact International UK/Euro Honoree: Álvaro Covões",
+  "summary": "ÁLVARO COVÕESManaging DirectorEverything Is New ‘THERE IS ALWAYS SOMETHING NEW TO DISCOVER’ Álvaro Covões is one of the chief reasons Portugal is included on the itineraries of international artists and audiences today. He’s been working in the festival business for more than 31…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-16T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "35eca8a1c637f8d5",
+  "url": "https://news.pollstar.com/2026/11/16/2026-impact-international-uk-euro-honoree-laura-chiplin/",
+  "title": "2026 Impact International UK/Euro Honoree: Laura Chiplin",
+  "summary": "LAURA CHIPLINMajor Stadium Events DirectorTottenham Hotspur Stadium TOTTENHAM’S NEW HOME PREPS FOR 2028 EUROS Laura Chiplin joined London’s Tottenham Hotspur in 2018 as part of the team that opened the new 62,000+ Tottenham Hotspur Stadium when the club left White Hart Lane, whi…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-16T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "3ad669392daf2b55",
+  "url": "https://musically.com/2026/11/16/symphonic-is-latest-distributor-to-strike-a-roblox-music-deal/",
+  "title": "Symphonic is latest distributor to strike a Roblox music deal",
+  "summary": "Roblox has been steadily building a library of music for its community of developers to use in their games, with Symphonic the latest distributor to join the ‘Blox party. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-16T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "5c011ab73d82efe7",
+  "url": "https://musically.com/2026/11/16/musicares-survey-delivers-finance-healthcare-and-wellbeing-warnings/",
+  "title": "MusiCares survey delivers finance, healthcare and wellbeing warnings",
+  "summary": "US charity MusiCares has published some findings from its 2026 ‘Wellness in Music Survey’ based on research involving more than 3,300 music-industry professionals. Heads up: there are some significant concerns. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-16T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "8271bff725fb1533",
+  "url": "https://news.pollstar.com/2026/11/16/2026-impact-international-uk-euro-honoree-john-cornwell/",
+  "title": "2026 Impact International UK/Euro Honoree: John Cornwell",
+  "summary": "JOHN CORNWELLPromoter, Managing DirectorSJM Concerts A PROMOTER’S PROMOTER ADAPTS TO THE BUSINESS It is one of the most satisfying things for a promoter to watch artists they’ve been working with since the club level break into arenas and stadiums. John Cornwell has experienced…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-16T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "8f3d0091aad8d628",
+  "url": "https://news.pollstar.com/2026/11/16/2026-impact-international-uk-euro-honoree-wouter-de-wilde/",
+  "title": "2026 Impact International UK/Euro Honoree: Wouter de Wilde",
+  "summary": "WOUTER DE WILDEManaging Director, Head PromoterGreenhouse Talent Netherlands GROWING COUNTRY MUSIC IN BENELUX Greenhouse Talent is one of the most respected promoters in the Benelux region, founded by Pascal van de Velde in 2005 and operating offices in Ghent, Belgium, and Breda…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-16T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "ac30f97224d490f8",
+  "url": "https://news.pollstar.com/2026/11/16/pollstars-2026-impact-international-uk-euro-honors/",
+  "title": "Pollstar’s 2026 Impact International: UK/Euro Honors",
+  "summary": "Hello and welcome to Pollstar‘s annual Impact International: UK/Euro honors, which once again recognize the most inspiring live initiatives and success stories coming from the other side of the Atlantic. From veterans of the game to the young guns actively shaping the future of…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-16T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "bb6bb212ed1943a9",
+  "url": "https://musically.com/2026/11/16/trebel-builds-on-sesh-acquisition-with-walopass-fan-cards/",
+  "title": "Trebel builds on Sesh acquisition with ‘WaloPass’ fan cards",
+  "summary": "Earlier this year we wrote about streaming service Trebel Music’s acquisition of superfan startup Sesh. Now it has taken a follow-up step with the launch of something called ‘WaloPass’. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-16T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "dsp-economics",
+   "m&a"
+  ],
+  "score": 31,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "de2985329abefecb",
+  "url": "https://news.pollstar.com/2026/11/16/2026-impact-international-uk-euro-honoree-andy-burnham/",
+  "title": "2026 Impact International UK/Euro Honoree: Andy Burnham",
+  "summary": "ANDY BURNHAMUK Prime Minister THE ‘KING OF THE NORTH’ GOES TO BAT FOR MUSIC As Mayor of Greater Manchester, Andy Burnham earned the nickname “King of the North” due to his full-throated championing of the North of England and for his high-profile battles with the Conservative go…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-16T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "e48f3e5a71ab802a",
+  "url": "https://news.pollstar.com/2026/11/16/2026-impact-international-uk-euro-honoree-craig-dsouza/",
+  "title": "2026 Impact International UK/Euro Honoree: Craig D’Souza",
+  "summary": "CRAIG D’SOUZAPartner & AgentWME ‘NO ONE WILL CARE WHAT YOU DID YESTERDAY’ WME partner and agent Craig D’Souza – whose clients include Stormzy, Dave, Myles Smith, Freya Skye and Kwn – checks in with Pollstar about his latests accomplishments and what’s next. The biggest highlight…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-16T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "edd54c08efcbea16",
+  "url": "https://news.pollstar.com/2026/11/16/2026-impact-international-uk-euro-honoree-chris-bray/",
+  "title": "2026 Impact International UK/Euro Honoree: Chris Bray",
+  "summary": "CHRIS BRAYLegends GlobalPresident, Europe ‘SPORT IS BECOMING ENTERTAINMENT, AND MUSIC IS BENEFITING’ Legends Global is a vast and varied operation comprising 450-plus venues worldwide, with 20,000 events hosted and 165 million guests entertained annually. Presiding over all of i…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-16T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "54a9010d1a039e59",
+  "url": "https://variety.com/2026/music/news/taylor-swift-ties-grammy-record-album-of-the-year-1236948334/",
+  "title": "Taylor Swift Ties Grammy Record for Consecutive Album of the Year Nominations",
+  "summary": "What is perhaps most remarkable about the overwhelmingly female-dominated list of 2027 Grammy nominations is the fact that perennials Taylor Swift, Beyonce and Adele actually aren’t leading the pack. While Beyonce and Adele were basically off-cycle in 2026 (Beyonce did get a nod…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-16T13:51:19.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "a768ba702d9fff03",
+  "url": "https://musically.com/2026/11/16/suno-bridge-takes-ai-music-to-daws-starting-with-ableton-live/",
+  "title": "Suno Bridge takes AI music to DAWs – starting with Ableton Live",
+  "summary": "Suno building a bridge? No, this isn’t news of a licensing deal with any of the AI-music firm’s current litigants. Instead, it’s the latest step in the company’s efforts to position itself as a legitimate music-making tool for professionals. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-16T13:33:40.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 31,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "d9ca3324a3d03b9c",
+  "url": "https://www.digitalmusicnews.com/2026/11/16/what-makes-an-arena-artist-in-2026/",
+  "title": "What Makes an Arena Artist In 2026?",
+  "summary": "Not long ago, selling out Madison Square Garden meant chart hits and a household name. Now artists like Slayyyter, FKA twigs, and Cleo Sol are filling arenas on the strength of something else. So what does it actually take to be an arena artist today? This article was written by…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-16T13:05:09.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "96597c8807b7d784",
+  "url": "https://variety.com/2026/music/news/beyonce-grammys-100-nominations-1236948327/",
+  "title": "Beyoncé Makes Grammys History as First Artist With 100 Nominations",
+  "summary": "Beyoncé has once again made Grammy history in becoming the first artist with 100 nominations, as “Morning Dew (Donk)” secures a nod for best R&B solo performance. The pop singer dropped the long-unreleased “Morning Dew (Donk)” on July 4 ahead of the 20th anniversary of her sopho…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-16T13:00:40.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "741ca1dc65406b97",
+  "url": "https://variety.com/2026/music/news/grammy-nominations-raye-olivia-rodrigo-ella-langley-rosalia-1236948743/",
+  "title": "Grammy Nominations 2027: Raye Leads With 11 Noms as Rosalía, Olivia Rodrigo, Ella Langley and Other Female Artists Dominate",
+  "summary": "The full lineup of nominations for the 2027 Grammys was announced Monday morning, and most of the top artists that had been predicted to score big came through with impressive tallies. But one piece of the puzzle definitely did not go as foreseen — that it would end up being Ray…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-16T11:51:17.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "2668af8353f5ffb9",
+  "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQLTFCLWlkM25jMHZ3MXJSV1pKZkxzNGpOcTcxa0hCbXNka3lFeVZVbF9jTHh6UVN4aXR5QWpwQnVDbVdlOHh6RHVoMUpHeElVWGN1U1pleng5dC1mMmNQeFJpVnk3UE9ESmtaSy04RGtnTDVlQVlJOUVVZTNPTjNCQlIwM2IxTFBodGJSQTRlbzU2Q211Szkzc1Rn?oc=5",
+  "title": "TikTok’s $10 Problematic Delivery Penalty: What Artists Need to Know",
+  "summary": "TikTok’s $10 Problematic Delivery Penalty: What Artists Need to Know RouteNote",
+  "source": "RouteNote",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-16T10:33:54.000Z",
+  "entities": [
+   "tiktok"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 27,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "711ff75d4d1c4990",
+  "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQaUZMN2N0ZjN5aFNRejJrbzg5blhoNTFjYWV3LXFULWJyY0dYNXlCV3Rid2pjS08tVlVpUGpSc08yNGlMT2ZtV3JCYzlrYmVPMk5LZ2VVR1dJYVN0M29XTk1DRlhnOXRMQ3ZWOVVzOWJkX1l1OGJNY29Uc09rYkhYZ1htU0Q1ZFh2UGxqOWM3dlZPM1RTT2Jrc2R5RTdRQ1NKNjlZWFY2a1laLVNNX2RsS3ZLNzB0WlRrV1g2NkpFaHdNMEU3QnBUSmNlTTRJTHJNUTJjTDNEclA4MHhWQUE?oc=5",
+  "title": "Spotify and Universal Music Group’s Q3 2026 Results Highlight Changing Economics of the Global Music Industry",
+  "summary": "Spotify and Universal Music Group’s Q3 2026 Results Highlight Changing Economics of the Global Music Industry EventFAQs",
+  "source": "EventFAQs",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-16T08:09:42.000Z",
+  "entities": [
+   "spotify",
+   "umg"
+  ],
+  "types": [
+   "dsp",
+   "label"
+  ],
+  "topics": [
+   "earnings"
+  ],
+  "score": 50,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "62e4ad40b34d27ff",
+  "url": "https://www.digitalmusicnews.com/2026/11/15/sony-music-netease-china-licensing-distribution/",
+  "title": "Sony Music Re-Inks Multi-Year NetEase Cloud Music Licensing and Distro Deal for China",
+  "summary": "Sony Music renews its multi-year licensing and distribution agreement with China’s NetEase Cloud Music, the third and final major to do so. NetEase Cloud Music and Sony Music Entertainment have announced a multi-year music licensing renewal, originally finalized on November 12.…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-16T05:11:01.000Z",
+  "entities": [
+   "netease-cloud-music",
+   "sony-music-entertainment"
+  ],
+  "types": [
+   "dsp",
+   "label"
+  ],
+  "topics": [],
+  "score": 44,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "ecb752c42def17c1",
+  "url": "https://www.digitalmusicnews.com/2026/11/15/kate-nash-onlyfans-to-support-tour/",
+  "title": "Kate Nash Reveals Losing $16,000 on Her Current Tour, With Plans to Help Cover the Cost on OnlyFans",
+  "summary": "Kate Nash says she expects to lose around $16k on her current tour and plans to help make up the difference by posting content to OnlyFans. Kate Nash revealed last week that she expects to lose approximately $16,000 on her current tour and intends to make up as much of the diffe…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-16T04:46:24.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "ec1282748323bc4f",
+  "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPTFVkMTFEWWJZeXFEVE1LUjFoV2pZSTJFcmVQNHJtRTdYT1Q1VTFmeXo0bFhibVBjU2lhLWtNTVBfQkdXa0NhSlk2MDlfNFFDeUw0eWpOczhNRlluT0w2LUpoTHoxNzNCRlNSMHUwOHA0WERPNV80c3g3VWtpb282MnBsemkxSW9MYTJ2ZEZTcnJpTzNQZEh5ZVM2VXNoRU1WOTlxaG5QS0pGRWdlQTl0SFZxdWI?oc=5",
+  "title": "Firmus joins the prepayment funding dance. But will the music stop?",
+  "summary": "Firmus joins the prepayment funding dance. But will the music stop? AFR",
+  "source": "AFR",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-15T23:55:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "6441c82c68b2a594",
+  "url": "https://variety.com/2026/music/columns/phoebe-bridgers-snl-still-standing-skull-skeleta-1236948223/",
+  "title": "Phoebe Bridgers’ Skeletal Transformation on ‘SNL’ Wasn’t Just a Startling Special Effect — It Emotionally Elevated One of the Best Pop Songs Ever Written About Death",
+  "summary": "On her first appearance as a solo artist on “Saturday Night Live” since 2021. Phoebe Bridgers didn’t break any guitars this time. But maybe some hearts. Or perhaps the impact was felt more as a chill down the spine. However it was received, Bridgers’ performance of “Still Standi…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-15T23:54:54.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "5afe0e19f8fd34cb",
+  "url": "https://variety.com/2026/music/news/phil-collins-rock-roll-hall-of-fame-induction-health-1236948171/",
+  "title": "Phil Collins Says He’s a ‘Well Man’ Now and Hints at the ‘Possibility of Doing Some Shows’ Amid Health Battle: ‘You Haven’t Heard the Last of Me’",
+  "summary": "Phil Collins made a rare public appearance to accept his induction into the Rock & Roll Hall of Fame at the ceremony in Los Angeles on Saturday, where he addressed his health, calling himself “a well man now.” “Thank you so much. Thank you. I’m really not as bad as it looks. I’m…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-15T19:12:41.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "d58aa62eb9d30cc6",
+  "url": "https://variety.com/2026/music/news/rock-roll-hall-fame-induction-ceremony-2026-performances-1236948068/",
+  "title": "Rock & Roll Hall of Fame Ceremony Gets Fired Up With Live-Wire Numbers From U2, the Chili Peppers, Usher, Cynthia Erivo, Sienna Spiro, Aerosmith and More",
+  "summary": "You could feel it in the air that night, at the Rock & Roll Hall of Fame induction ceremony, held Saturday at L.A. Peacock Theatre and filmed for a December ABC special. The show’s producers would relish, as always, the thought of having younger artists salute their elders, or b…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-15T18:33:42.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
   "id": "6b35662ec31ae73c",
   "url": "https://variety.com/2026/music/concert-reviews/brandi-carlile-all-request-tour-burn-setlist-concert-review-1236947885/",
   "title": "Brandi Carlile’s All-Requests Tour Isn’t Just a Magnificent Stunt, but an Unusually Moving Transaction Between Performer and Audience: Concert Review",
@@ -5011,6 +5645,24 @@
   "firstSeen": "2026-11-10T14:49:09.985Z"
  },
  {
+  "id": "ebceb6856675ec80",
+  "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPVTducjE1djN6b1pMMUpndlR1Sjd0cXlmdlZDaW0zd1h4ekQxZ1dCT19aWHJGRnp1aGdCaG5wUjZHMERYNnhKYlJ1R1dsX3ozMVRWdmotSFY4R3laSjdicVlOZF9nUWtJMHlFTmU2MlZTYy1nSncxRENCTDRpb04tZzZ3Y09HUU9XaV9ZZWRvcGl6M2REYjdDeGlzakpncUNoQWZRemRxMlJnSjlPN3c?oc=5",
+  "title": "African Music’s Global Appeal Fuels a New Source of Wealth",
+  "summary": "African Music’s Global Appeal Fuels a New Source of Wealth Bloomberg.com",
+  "source": "Bloomberg.com",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-10T09:59:06.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 10,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
   "id": "cc51db7cb39d1a80",
   "url": "https://www.digitalmusicnews.com/2026/11/09/venice-beach-new-music-festival-2027/",
   "title": "After Santa Monica’s Ocean Way Crashes, Venice Beach Hatches a New Music Festival",
@@ -5966,6 +6618,29 @@
   "topics": [],
   "score": 29,
   "firstSeen": "2026-11-09T16:10:26.118Z"
+ },
+ {
+  "id": "3c157f4700805a4f",
+  "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQcUdJOFNmVDVBYTFHc3Rmd2Z6MUxPWnhDbVAzMkUxdTVmM0NuY2RYNW9IX1pfcWF6V1dkcXZHV3FlbFdWazZ2bTNGSi1lU3FkUDlUY1pXcXRGS0I0eHE1dGVld3RvVDNmQlZsMXg4LVR3TF9FODRnS012NU50WllmSFJGNElzTnZmamkxZWdac3ZUa2I1NFpmekJuWDNXMGxTczJFRnlnNkRTZzlnT2tmRQ?oc=5",
+  "title": "Elvis Presley and Eminem rights holders take AI music company Suno to court",
+  "summary": "Elvis Presley and Eminem rights holders take AI music company Suno to court primetimer.com",
+  "source": "primetimer.com",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-09T12:56:00.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 24,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
  },
  {
   "id": "ed1fc8b76517aa4d",
@@ -9174,6 +9849,22 @@
   "topics": [],
   "score": 10,
   "firstSeen": "2026-11-05T14:34:39.691Z"
+ },
+ {
+  "id": "5645118a52764a02",
+  "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNN3c0V1hpTkU1TDBrbDZpd2l6ZHlfNlVYQWVEZzlWaGNzaFZ4TFRTb3I0T3VGaGVzN0Q2X3QwSHh0djFhQjh3LWVkeHBPb2RkS2xIbUtEMFc0S1VLTlR3anFnbVctSWtoeThsYkVxOUgwYnRJbFl3Z1FDQ0l0V0ZBVjY2XzBjcjd5NFlJ?oc=5",
+  "title": "The Deals: Jared Gutstadt’s Audio Chateau Records Secures $9M Funding Round & More",
+  "summary": "The Deals: Jared Gutstadt’s Audio Chateau Records Secures $9M Funding Round & More Billboard",
+  "source": "Billboard",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-05T08:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 0,
+  "firstSeen": "2026-11-16T15:38:05.015Z"
  },
  {
   "id": "27eae5c4ae598fcd",
