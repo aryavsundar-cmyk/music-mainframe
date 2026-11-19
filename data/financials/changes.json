@@ -1,8 +1,169 @@
 {
  "startedAt": "2026-09-27T15:02:57.764Z",
- "updatedAt": "2026-11-17T16:30:51.866Z",
+ "updatedAt": "2026-11-19T16:06:17.275Z",
  "source": "Written by scripts/refresh-financials.mjs when a figure changes between refreshes.",
  "entries": [
+  {
+   "at": "2026-11-19T16:06:17.275Z",
+   "entityId": "wmg",
+   "metric": "revenue",
+   "slot": "annual",
+   "kind": "new-period",
+   "from": {
+    "value": 6707000000,
+    "currency": "USD",
+    "end": "2025-09-30",
+    "form": "10-K",
+    "filed": "2025-11-20",
+    "accn": "0001319161-25-000034"
+   },
+   "to": {
+    "value": 7437000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-K",
+    "filed": "2026-11-19",
+    "accn": "0001319161-26-000042"
+   }
+  },
+  {
+   "at": "2026-11-19T16:06:17.275Z",
+   "entityId": "wmg",
+   "metric": "operatingIncome",
+   "slot": "annual",
+   "kind": "new-period",
+   "from": {
+    "value": 694000000,
+    "currency": "USD",
+    "end": "2025-09-30",
+    "form": "10-K",
+    "filed": "2025-11-20",
+    "accn": "0001319161-25-000034"
+   },
+   "to": {
+    "value": 1177000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-K",
+    "filed": "2026-11-19",
+    "accn": "0001319161-26-000042"
+   }
+  },
+  {
+   "at": "2026-11-19T16:06:17.275Z",
+   "entityId": "wmg",
+   "metric": "netIncome",
+   "slot": "annual",
+   "kind": "new-period",
+   "from": {
+    "value": 365000000,
+    "currency": "USD",
+    "end": "2025-09-30",
+    "form": "10-K",
+    "filed": "2025-11-20",
+    "accn": "0001319161-25-000034"
+   },
+   "to": {
+    "value": 741000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-K",
+    "filed": "2026-11-19",
+    "accn": "0001319161-26-000042"
+   }
+  },
+  {
+   "at": "2026-11-19T16:06:17.275Z",
+   "entityId": "wmg",
+   "metric": "cash",
+   "slot": "latest",
+   "kind": "new-period",
+   "from": {
+    "value": 618000000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-08-05",
+    "accn": "0001319161-26-000032"
+   },
+   "to": {
+    "value": 589000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-K",
+    "filed": "2026-11-19",
+    "accn": "0001319161-26-000042"
+   }
+  },
+  {
+   "at": "2026-11-19T16:06:17.275Z",
+   "entityId": "wmg",
+   "metric": "operatingCashFlow",
+   "slot": "annual",
+   "kind": "new-period",
+   "from": {
+    "value": 678000000,
+    "currency": "USD",
+    "end": "2025-09-30",
+    "form": "10-K",
+    "filed": "2025-11-20",
+    "accn": "0001319161-25-000034"
+   },
+   "to": {
+    "value": 866000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-K",
+    "filed": "2026-11-19",
+    "accn": "0001319161-26-000042"
+   }
+  },
+  {
+   "at": "2026-11-19T16:06:17.275Z",
+   "entityId": "wmg",
+   "metric": "capex",
+   "slot": "annual",
+   "kind": "new-period",
+   "from": {
+    "value": 139000000,
+    "currency": "USD",
+    "end": "2025-09-30",
+    "form": "10-K",
+    "filed": "2025-11-20",
+    "accn": "0001319161-25-000034"
+   },
+   "to": {
+    "value": 100000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-K",
+    "filed": "2026-11-19",
+    "accn": "0001319161-26-000042"
+   }
+  },
+  {
+   "at": "2026-11-19T16:06:17.275Z",
+   "entityId": "wmg",
+   "metric": "longTermDebt",
+   "slot": "latest",
+   "kind": "new-period",
+   "from": {
+    "value": 4710000000,
+    "currency": "USD",
+    "end": "2026-06-30",
+    "form": "10-Q",
+    "filed": "2026-08-05",
+    "accn": "0001319161-26-000032"
+   },
+   "to": {
+    "value": 4039000000,
+    "currency": "USD",
+    "end": "2026-09-30",
+    "form": "10-K",
+    "filed": "2026-11-19",
+    "accn": "0001319161-26-000042"
+   }
+  },
   {
    "at": "2026-11-17T16:30:51.866Z",
    "entityId": "liveone",
