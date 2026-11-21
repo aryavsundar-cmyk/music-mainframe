@@ -1,5 +1,532 @@
 [
  {
+  "id": "cd4830ce1679fa9b",
+  "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9FX3FrbkJEWl9iYlVjT3ByLTEyZkVkOWU0aUFfVlMtVkVURDduaERwM2hJRUhsQURHYmM1UVpmc1N0NS1MdnVjZ2RTRkJfSXNVemNRdmxlUnBNQnF3WWxKRVRURUZkdmlPMXJNQ3FTbUV5SkVvcDNTRDI4SQ?oc=5",
+  "title": "GTA 6 Song Licensing: How Much Rockstar Pays for Songs",
+  "summary": "GTA 6 Song Licensing: How Much Rockstar Pays for Songs MNEEMO",
+  "source": "MNEEMO",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-21T08:08:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "1613e0c48c2c2160",
+  "url": "https://www.digitalmusicnews.com/2026/11/20/apple-music-club-live-gta-vi-circoloco/",
+  "title": "Apple Music’s Club Live Transforms Into The Vault From Grand Theft Auto VI for Free CircoLoco Records Radio Livestream",
+  "summary": "Apple Music hosts an exclusive Club Live livestream to celebrate the launch of Grand Theft Auto VI and its in-game radio station, CircoLoco Records Radio. On Friday night, Apple Music announced an exclusive Club Live livestream from The Vault in celebration of the launch of Gran…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-21T05:04:52.000Z",
+  "entities": [
+   "apple-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "c1d180b247f1a6de",
+  "url": "https://www.billboard.com/pro/mort-weiner-death-veteran-record-label-executive-dead-92/",
+  "title": "Mort Weiner, Veteran Label Executive, Dies at 92: ‘His Commitment to Artists and Our Industry Was Superb’",
+  "summary": "Over a career spanning nearly four decades, Weiner held senior positions in sales, promotion, marketing and distribution at several major record labels.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-21T00:15:54.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "e4692b57efacc98d",
+  "url": "https://www.digitalmusicnews.com/2026/11/20/wixen-meta-sac-partial-dismissal/",
+  "title": "Federal Judge Partially Dismisses Wixen’s Second Amended Complaint Against Meta, Allows Core Infringement and Defamation Claims to Proceed",
+  "summary": "After 10 months of intense litigation, a federal judge has partially dismissed Wixen Music Publishing’s lawsuit against Meta – while allowing a substantial portion of the infringement and defamation action to proceed. Judge John Walter made that partial dismissal official in a c…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-21T00:05:34.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "7d0b66904f653c3a",
+  "url": "https://www.billboard.com/pro/milo-j-signs-caa/",
+  "title": "Rising Argentine Star Milo J Signs With CAA",
+  "summary": "The rapper, singer, producer and songwriter recently took home four Latin Grammys and is up for two Grammys in 2027.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-21T00:03:32.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "5bebd53d50490c30",
+  "url": "https://variety.com/2026/music/news/cma-awards-taylor-swift-big-ratings-increase-1236954677/",
+  "title": "CMA Awards See a 55% Ratings Bump in Key Adult Demo With Taylor Swift’s Return to the Show",
+  "summary": "The CMA Awards’ producers knew it; they knew her. What they undoubtedly knew was that a performance by Taylor Swift would bring a ratings bonanza to the 60th annual telecast, with the only question being how big a boost. It was a substantial one, as ratings released Friday showe…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-20T23:21:58.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "policy"
+  ],
+  "score": 16,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "6ff3a409c47e5d9d",
+  "url": "https://www.digitalmusicnews.com/2026/11/20/latest-music-industry-hires-ascap-universal-music-group-hybe-bet-pophouse-prescription-songs-iron-mountain-more/",
+  "title": "Latest Music Industry Hires: ASCAP, Universal Music Group, HYBE, BET, Pophouse, Prescription Songs, Iron Mountain, More",
+  "summary": "Here’s a recap of recent music industry hires, departures, and in-house promotions as of November 20th, 2026. If you have a job shuffle to share, we’re all ears. Send us a note to news@digitalmusicnews.com. If you’d like to post a job on our Job Board, just send us a request to…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-20T23:21:26.000Z",
+  "entities": [
+   "ascap",
+   "hybe",
+   "umg"
+  ],
+  "types": [
+   "label",
+   "pro"
+  ],
+  "topics": [],
+  "score": 62,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "1f1e05de40c8b718",
+  "url": "https://www.billboard.com/pro/billboard-canada-women-in-music-40-under-40-2026-lists/",
+  "title": "In Canada: Billboard Canada’s 2026 Women in Music and 40 Under 40 Lists Are Out",
+  "summary": "Also up north this week: Gracie Abrams discusses Daughter From Hell, her second No. 1 on Billboard Canada's Canadian Albums chart.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-20T23:10:59.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "e1252dec081f3713",
+  "url": "https://www.digitalmusicnews.com/2026/11/20/eight-mile-style-v-suno-amended-suit/",
+  "title": "Eminem Publisher Eight Mile Style Files Amended Suno Copyright and DMCA Suit, Adding 100+ Allegedly Infringing Outputs — ‘Lose Yourself,’ ‘Without Me,’ and More",
+  "summary": "Suno is facing yet another expanded copyright infringement lawsuit – this time from Eminem publisher Eight Mile Style, which has joined Elvis Presley Enterprises, Reservoir, and others in bolstering its high-stakes claims. Eight Mile made the amended action official yesterday, l…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-20T21:28:48.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 34,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "41fc6c306bbea7ff",
+  "url": "https://www.digitalmusicnews.com/2026/11/20/50-cent-harrassment-lawsuit-tossed/",
+  "title": "Federal Judge Tosses Harassment Lawsuit Against 50 Cent; Rapper’s Attorney Calls Case ‘Nothing More Than a Stunt to Garner Media Attention’",
+  "summary": "A federal judge has dismissed the case filed against 50 Cent by a former executive at his company who claims he threatened and harassed her. On Wednesday, a Georgia federal judge dismissed a lawsuit claiming that Curtis “50 Cent” Jackson had threatened and harassed a former exec…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-20T21:14:21.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "94d9c1960509d1e6",
+  "url": "https://news.pollstar.com/2026/11/20/pollstars-fifth-annual-impact-international-uk-euro-reception-in-london-was-one-to-remember/",
+  "title": "Pollstar’s Fifth Annual Impact International: UK/Euro Reception In London Was One To Remember",
+  "summary": "Pollstar’s annual Impact International UK/Euro reception celebrated its fifth edition Thursday, Nov. 19, at London’s Sky Garden Bar 155 meters above the city. The spectacular venue turned out to be a perfect fit for this reception, which once again celebrated some of this indust…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-20T20:49:37.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "42bb750b6c733da4",
+  "url": "https://www.digitalmusicnews.com/2026/11/20/impala-helen-smith-streaming-fraud/",
+  "title": "IMPALA’s Helen Smith on Taking on Streaming Fraud: ‘The Integrity of the Digital Music Market Is at Stake’",
+  "summary": "As International Fraud Awareness Week comes to a close, IMPALA’s Helen Smith reiterates the organization’s call for tough, coordinated action to tackle streaming manipulation and fraud across the digital music ecosystem. Streaming manipulation and fraud are rapidly growing issue…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-20T20:36:52.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "4b4b6e6684c3c5e2",
+  "url": "https://www.billboard.com/pro/boosie-badazz-felony-charge-nightclub-assault-dismissed/",
+  "title": "Boosie Badazz Charge Over Alleged Nightclub Assault Dismissed — But His Legal Troubles Aren’t Over",
+  "summary": "\"We feel vindicated that the grand jury found there was no probable cause for an indictment,\" the rapper's attorney tells Billboard.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-20T20:28:57.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "88244da900cd4ff1",
+  "url": "https://news.pollstar.com/2026/11/20/carin-leons-la-cura-fest-to-return-in-2027-with-kacey-musgraves-reik-intocable-hombres-g/",
+  "title": "Carín León’s La Cura Fest To Return In 2027 With Kacey Musgraves, Reik, Intocable & Hombres G",
+  "summary": "Carín León is bringing La Cura Fest back in 2027, announcing dates and the first wave of artists performing at the festival that bridges Mexican and country music. León will headline the two-day festival alongside Reik and Kacey Musgraves. La Cura Fest takes place March 13 and 1…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-20T20:23:04.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "0a38ab5b4b70b78b",
+  "url": "https://news.pollstar.com/2026/11/20/last-chance-to-submit-nominations-for-38th-annual-pollstar-awards/",
+  "title": "Last Chance To Submit Nominations For 38th Annual Pollstar Awards",
+  "summary": "UPDATE: Today (Nov. 20) is the last chance for subscribers to nominate their peers for the 38th annual Pollstar Awards. The winners will be announced at the Pollstar Awards Show on April 14, during the 2027 Pollstar Live! conference, which takes place in Indian Wells, California…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-20T20:09:47.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "dsp-economics"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "6a729f90f209f0ff",
+  "url": "https://news.pollstar.com/2026/11/20/voting-open-for-2027-pollstar-ticketing-star-awards/",
+  "title": "Voting Open For 2027 Pollstar Ticketing Star Awards",
+  "summary": "Voting has opened for the Pollstar 2027 Ticketing Star Awards, honoring box office professionals who have made an impact in their organization or were a game-changer in the industry. The deadline to vote is Friday, Dec. 4 at 5 p.m. PT. The 2027 Ticketing Star Awards are presente…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-20T19:06:50.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "96e3215d31649412",
+  "url": "https://www.billboard.com/pro/slayyyter-big-year-worst-girl-grammy-nominations-strategy/",
+  "title": "Inside Slayyyter’s Big Year: From ‘WOR$T GIRL’ Breakthrough to Best New Artist Grammy Nomination",
+  "summary": "\"Rather than trying to make Slayyyter fit into the mainstream, we focused on bringing the mainstream into her world,\" says RECORDS' Andrew Saltman.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-20T18:39:24.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "df81ccbe82cd020c",
+  "url": "https://www.billboard.com/lists/executive-turntable-melissa-victor-burkhardt-hybe/",
+  "title": "Executive Turntable: Melissa Victor-Burkhardt Joins HYBE Global Label Services",
+  "summary": "Plus, Kristina Heney and Greg Lombardo join Pophouse, Prescription Songs promotes Caitlin Lopilato and more music industry hires and promotions.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-20T18:00:07.000Z",
+  "entities": [
+   "hybe"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 24,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "946879cfcda43419",
+  "url": "https://news.pollstar.com/2026/11/20/stars-shine-on-country-musics-and-ella-langleys-biggest-night/",
+  "title": "Choosin’ Texas (and Ella), Burnin’ Barn, Returnin’ Taylor: Stars Shine At CMAs",
+  "summary": "The CMA Awards returned to Bridgestone Arena in Nashville for their 60th Annual ceremony Nov. 18. Host Lainey Wilson returned for her third stint as emcee, opening the show in a tribute duet with Vince Gill on Dolly Parton’s “I Will Always Love You,” which has become the go-to s…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-20T17:23:24.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [
+   "live",
+   "policy"
+  ],
+  "score": 39,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "1a716fa94ee4c586",
+  "url": "https://www.musicbusinessworldwide.com/vevo-dscvr-artists-to-watch-2027-dalvin-la-melodia-conep-devon-again-mari-froes-die-spitz/",
+  "title": "Vevo dscvr artists to watch 2027: Dalvin La Melodía, Conep, Devon Again, Mari Froes, Die Spitz",
+  "summary": "Introducing the first batch of Vevo's Artists To Watch for 2027... Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-20T16:57:17.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "6d70a4f120880e47",
+  "url": "https://www.digitalmusicnews.com/2026/11/20/live-nation-new-subscription-offering-hints/",
+  "title": "Live Nation Hints at a Serious Subscription Offering Ahead; Rapino Teases ‘A Big Story There’",
+  "summary": "Live Nation might be introducing a new subscription offering for concertgoers, according to statements made during its investor presentation. Live Nation unveiled some potentially intriguing plans for a new subscription service during the company’s November 2026 investor present…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-20T16:51:17.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 20,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "3bcf853abef47d80",
+  "url": "https://variety.com/2026/film/columns/jennifer-lopez-186-carat-diamond-necklace-jlo-show-premiere-dolce-gabbana-1236953996/",
+  "title": "Jennifer Lopez Wears 186-Carat Diamond Necklace to ‘JLo Show’ Premiere: ‘There’s Security All Around’",
+  "summary": "Jennifer Lopez famously sings, “Don’t be fooled by the rocks that I got, I’m still, I’m still Jenny from the block.” She certainly had a lot of rock at the Thursday night premiere of her concert film “The JLo Show.” Lopez was not only wearing a Chantilly lace gown and a satin sh…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-20T16:50:41.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "da183d75a6d3add3",
+  "url": "https://www.digitalmusicnews.com/2026/11/20/universal-music-ai-strategy/",
+  "title": "Universal Music Lambasts ‘Walled Garden’ Criticism as ‘A Complete Flip of Reality,’ Targets the ‘Next Step’ in D2C Superfan and Experiential Offerings",
+  "summary": "Universal Music Group (UMG) has doubled down on its “walled garden” support and confirmed plans for a superfan-geared expansion powered by digital platforms as well as in-person experiential events. UMG chief digital officer Michael Nash and CFO Matt Ellis covered these and othe…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-20T16:37:40.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "dsp-economics"
+  ],
+  "score": 32,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "fdffb58a08622fd0",
+  "url": "https://news.pollstar.com/2026/11/20/marlboros-muskogee-magic-how-sister-sadie-are-changing-the-face-of-modern-bluegrass-beyond/",
+  "title": "Marlboros, Muskogee & Magic: How Sister Sadie Are Changing The Face of Modern Bluegrass & Beyond",
+  "summary": "When Deanie Richardson and Gena Britt called Dale Ann Bradley, Tina Adair and Beth Lawrence to come play Nashville’s storied The Station Inn, it was all about friends getting together to play some songs, have a few laughs and celebrate the combustive musicality that defines blue…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-20T16:33:57.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "68713694813cfec5",
+  "url": "https://news.pollstar.com/2026/11/20/supporting-feeding-on-world-vegan-day-maggie-baird-talks-plant-based-meals-new-public-media-series-billie-eilish-impact/",
+  "title": "Supporting & Feeding On World Vegan Day: Maggie Baird Talks Plant-Based Meals, New Public Media Series, Billie Eilish Impact",
+  "summary": "Please login to your Pollstar subscriber account to view this content.",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-20T16:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "fd07722bd46fa399",
+  "url": "https://news.pollstar.com/2026/11/20/latin-grammy-winner-milo-j-signs-with-creative-artists-agency/",
+  "title": "Latin Grammy Winner Milo J Signs With Creative Artists Agency",
+  "summary": "Milo J, a Latin Grammy-winning Argentine rapper and singer, has signed with Creative Artists Agency for representation, bolstering the company’s Latin Touring roster. The 20-year-old rising star is coming off a win for the highly coveted Record of the Year honor at the Latin Gra…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-20T16:30:00.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [],
+  "score": 28,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "1c384658d2ce7bb2",
+  "url": "https://completemusicupdate.com/music-may-be-excluded-from-australias-ai-friendly-copyright-reforms-though-aria-says-we-stand-with-the-rest-of-the-creative-and-media-industries/",
+  "title": "Music may be excluded from Australia’s AI-friendly copyright reforms - though ARIA says “we stand with the rest of the creative and media industries”",
+  "summary": "This week the creative and media industries came together to oppose AI-friendly copyright reforms being considered by the Australian government. It’s now being reported that those reforms might not actually impact on music, though the music industry says it remains committed to…",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-20T16:20:28.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "9ad18f666aded191",
+  "url": "https://news.pollstar.com/2026/11/20/top-tours-ed-sheerans-loop-tour-grosses-more-than-120m-in-north-america/",
+  "title": "Top Tours: Ed Sheeran’s ‘Loop Tour’ Grosses More Than $120M In North America",
+  "summary": "Please login to your Pollstar subscriber account to view this content.",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-20T15:37:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "a622180454c99a3a",
+  "url": "https://news.pollstar.com/2026/11/20/florence-sc-and-the-machine-new-arena-gm-vince-thomas-gears-up/",
+  "title": "Florence (SC) And the Machine: New Arena GM Vince Thomas Gears Up",
+  "summary": "Industry veteran Vince Thomas was recently named General Manager of the Florence Center in South Carolina, where he has been instrumental in preparing the facility for the return of professional hockey as the former Assistant General Manager and Director of Events. Managed by Le…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-20T15:29:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
   "id": "50caa523ab657682",
   "url": "https://www.musicbusinessworldwide.com/duetti-raises-665m-warner-posts-a-record-2b-quarter-its-mbws-weekly-round-up/",
   "title": "Duetti raises $665M, Warner posts a record $2B quarter… It’s MBW’s Weekly Round-Up",
@@ -142,6 +669,22 @@
   "topics": [],
   "score": 15,
   "firstSeen": "2026-11-20T15:22:51.600Z"
+ },
+ {
+  "id": "d3c40331f5d1a11c",
+  "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNcXZFR19LQ2w1YnFPMHBOa0lWSGVPdFBZdUstdkdNSFNUUlRWT1FTdVlObk9EWUV4U3NLQTUtU25QaGM1NEIwRFRyeWRYc1Y0Q1lySlRqc0plM3BMM2RKSThuNEloS2Mxbk5ER054ZDE5a0dJdW16NHdycWNVVEdrVzFXRFo3WWZmVnRzN1BiaDBfS1BsSnRhNG1oclFkRWhuNDVSRndxaURiNjkxRU54YXRyYTFIWWJPNkFKYmNSREhQVkhvbWdqUFlmMm14RW55MHVB?oc=5",
+  "title": "How Independent Bands Can Turn Local Museums And Exhibitions Into Music Licensing Opportunities",
+  "summary": "How Independent Bands Can Turn Local Museums And Exhibitions Into Music Licensing Opportunities That Eric Alper",
+  "source": "That Eric Alper",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-20T14:05:02.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
  },
  {
   "id": "6380438f85c3016d",
@@ -300,6 +843,29 @@
   ],
   "score": 23,
   "firstSeen": "2026-11-20T15:22:51.600Z"
+ },
+ {
+  "id": "5ed2d6d6ab188576",
+  "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOTEdWc05mcEFiLVktYkNhWnRqenpjU3Zwb3JucGlkOEFNVFUzejBTWmtId3V1UmpLMkR6T210algwdldCam5TMG4xTEpKa3BILWpDMXN5a29ISk5ZdzBaX2pXbkJQeWJVS1hPMG5pekxHdlB1ZnB5MDMwTl94dnRiWlpEZ2ZxendNNHBvdA?oc=5",
+  "title": "Carlyle and KKR pour $475M into music royalties platform that bought Katy Perry's catalog",
+  "summary": "Carlyle and KKR pour $475M into music royalties platform that bought Katy Perry's catalog The Business Journals",
+  "source": "The Business Journals",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-20T13:27:00.000Z",
+  "entities": [
+   "carlyle",
+   "kkr"
+  ],
+  "types": [
+   "pe-fund"
+  ],
+  "topics": [
+   "catalog-deal"
+  ],
+  "score": 49,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
  },
  {
   "id": "e237cd596d6fab05",
@@ -919,6 +1485,28 @@
   "firstSeen": "2026-11-20T15:22:51.600Z"
  },
  {
+  "id": "fc5d34d9c8e39c5c",
+  "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxORkE4V3pqakg5a21sbURhYmZEMUJGQkxfUG9hclkxV1JzMTFwbHI3QUpOUTdlV3RjUWR0ZGd3QjBxSnVrZDhHYnpfd3VQZEN6WWFONzZiT0o4S3VCX0lOZnFuUkYwckc5WktURE5zZTRPWWxSWkttdDhmTjZnOWVCUWNpTXdLMmhDSDdyc0NnLWk0UllJSER1aUNwcGdDUV9UcUdMblpGRGhGSDZm?oc=5",
+  "title": "Warner Music (WMG) Q4 2026 Earnings Call Transcript",
+  "summary": "Warner Music (WMG) Q4 2026 Earnings Call Transcript The Motley Fool",
+  "source": "The Motley Fool",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-19T18:12:00.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "earnings"
+  ],
+  "score": 25,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
   "id": "67beaab3b9592e07",
   "url": "https://www.billboard.com/business/legal/chris-brown-to-increase-child-support-to-ex-diamond-1236385727/",
   "title": "Chris Brown Agrees to Increase Child Support — For Now — to Ex Diamond in Bitter Custody Fight",
@@ -957,6 +1545,24 @@
   ],
   "score": 30,
   "firstSeen": "2026-11-20T15:22:51.600Z"
+ },
+ {
+  "id": "7764ef4dcc473d61",
+  "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOdFBNeE1mRHdzMWJLN29IOEo4cEw2RXJoZFZpb3EyaHFaVEtkNWVWSU1KZnRQRTltMDVhRWQ4TTRoWEEwWjVTQ1FlQm56Qi1CWE9KVDVUbHppb1hvaURhVlc3RjZvSzEzMlU3eXJJV3lvcmJkSjZxejlTSnBqTEZRMjh1ak1Sd2J6OVhZaFNGUnhjUEE?oc=5",
+  "title": "The AI Music 'Revolution' Is Getting Stranger by the Day",
+  "summary": "The AI Music 'Revolution' Is Getting Stranger by the Day OkayAfrica",
+  "source": "OkayAfrica",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-19T17:47:59.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai"
+  ],
+  "score": 13,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
  },
  {
   "id": "24b32ddafe350aed",
@@ -1448,6 +2054,26 @@
   "firstSeen": "2026-11-19T15:40:41.921Z"
  },
  {
+  "id": "9e109deea8529a95",
+  "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNZ1lTNEdGaldrSVc0NVd1cU02OS10V04zWTdsUGdfSHlSZ1J0bXRnOGQzQ2p6VDdoSENNUm9nS3NwUlZTNFJGNDVxaDJPU1FJV3lUeHRJV1lVZHZFNDg5MWxmckFab0xBd1ZXTDRuRmI2YVAtNlFoWFJHZWQxQXNtOWtZcnh2WlBxbHNuRQ?oc=5",
+  "title": "TikTok SoundOn layoffs: Is SoundOn shutting down in 2026?",
+  "summary": "TikTok SoundOn layoffs: Is SoundOn shutting down in 2026? RouteNote",
+  "source": "RouteNote",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-19T13:06:44.000Z",
+  "entities": [
+   "tiktok"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 17,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
   "id": "4f95c513240e053e",
   "url": "https://musically.com/2026/11/19/this-indian-grammy-nominee-already-has-four-recording-academy-certificates/",
   "title": "This Indian Grammy nominee already has four Recording Academy certificates",
@@ -1594,6 +2220,29 @@
   "topics": [],
   "score": 15,
   "firstSeen": "2026-11-19T15:40:41.921Z"
+ },
+ {
+  "id": "b20adef2237742ed",
+  "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPQXlSYjhZbm9ZNk9jOUR1bjB2R3puNkZzcGZUenlFWjU3SVRULUgxc0M3bi1YS2pzNzZjX3BqVVlwNmNKQWY5YlZ2bkVjNkN0YWZ4aldJeXNHZlcwZDZDODNaeG9RZ1pvSUdkT2g4Y0ZFb1hoWVdRdEhtUlJfTWFYajhDd3l4djJ2dGlpclRNQ2k3bzBNTHAxRWYyVEJkczFMZW5wdF9WMlhSWHJyRzdKNVFLZURocGFscmRxQmt0MUNONHkxaGJJQ2JZVTl0Zw?oc=5",
+  "title": "What Does Carlyle and KKR's (NYSE:KKR) $475 Million Investment in Litmus Music Mean for Music Rights?",
+  "summary": "What Does Carlyle and KKR's (NYSE:KKR) $475 Million Investment in Litmus Music Mean for Music Rights? Kalkine",
+  "source": "Kalkine",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-19T10:41:00.000Z",
+  "entities": [
+   "carlyle",
+   "kkr",
+   "litmus-music"
+  ],
+  "types": [
+   "catalog-fund",
+   "pe-fund"
+  ],
+  "topics": [],
+  "score": 55,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
  },
  {
   "id": "f0a12f53d011a013",
@@ -2413,6 +3062,22 @@
   ],
   "score": 21,
   "firstSeen": "2026-11-19T15:40:41.921Z"
+ },
+ {
+  "id": "5a7aeee8eb8c6084",
+  "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1aUEI3SVp5VVI1cmE4amRSTGxTVDI1aVdRV2Ffb0pPczJGS3FBdXJLckVRc0lscGR5WE9ZUVdLaDFKQjIyNlFjcFdmV2EyM1VoaGtEYTZEdFFSbXRWeE9HUGFnLUZVUWVTTlpGM01aUWN0cDg?oc=5",
+  "title": "McGraw Signs With BBR Music Group - RAMP",
+  "summary": "McGraw Signs With BBR Music Group RAMP - Radio and Music Pros",
+  "source": "Radio and Music Pros",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-18T18:18:20.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
  },
  {
   "id": "55dde2fb38126f4f",
@@ -4319,6 +4984,26 @@
   ],
   "score": 20,
   "firstSeen": "2026-11-17T15:55:44.692Z"
+ },
+ {
+  "id": "2b0e483d3489371e",
+  "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQY3kzN0xoRjhtcDVpc0ZSTnpMdVNSZDBUMnJmazJ5bDhnR1RxX0Jtd2dsZ3hwdkJzRVV0R0xpMUZscUJVLVRJTzlLcF85OFhHQktfUDNLRVFmSjdkcGxGNlREV2oxbTU5aGlCWFZ5eGxuWlVYVU1ScERpMnlGTmhjb1A4YWVmeWJpSXgwang5Um1yNU43Y1hvT2tSS2Q2QXZTTVRmTk1MdDBQdw?oc=5",
+  "title": "FELIPE HOLGUIN APPOINTED CEO OF UNIVERSAL MUSIC LATIN AMERICA & IBERIAN PENINSULA",
+  "summary": "FELIPE HOLGUIN APPOINTED CEO OF UNIVERSAL MUSIC LATIN AMERICA & IBERIAN PENINSULA Yahoo Finance",
+  "source": "Yahoo Finance",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-17T15:00:00.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 16,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
  },
  {
   "id": "a4ff3b86080e5c7e",
@@ -9957,6 +10642,26 @@
   "firstSeen": "2026-11-12T15:07:00.742Z"
  },
  {
+  "id": "974e009c4b05c83c",
+  "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQSG1XVFZReDJnYzVCeXhfXzdKMktSSDVfMjd5eC13Y194ejV6eUJ5UERSX2tGTUlnWGVSVTlPbEhpc011T0xWT1FELWFpYUpMa1hSN1ppb3o2TnBCMG9Zb2xiSFdsang0LUtvZkVWSGVhLUJCV3JkZWJZQk9vUkd3LTVHRmlFNlNOaThGRm5kYS1zb2stQXFCTkdacTc?oc=5",
+  "title": "Live Nation hits record $10.1B quarter",
+  "summary": "Live Nation hits record $10.1B quarter MoneyWise.com",
+  "source": "MoneyWise.com",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-11T09:32:38.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
   "id": "1a448b6c65882ef3",
   "url": "https://www.musicbusinessworldwide.com/adobes-premiere-mobile-app-adds-hundreds-of-thousands-of-licensed-tracks-following-universal-and-warner-deals/",
   "title": "Adobe’s Premiere mobile app adds ‘hundreds of thousands’ of licensed tracks following Universal and Warner deals",
@@ -11346,6 +12051,22 @@
   ],
   "score": 10,
   "firstSeen": "2026-11-16T15:38:05.015Z"
+ },
+ {
+  "id": "29c3c6d1440131cd",
+  "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNdXhjZ0s1b0hHemJWNHd3bzI5SHdHMmY4VVZFRU4ybTNaSDhHNDdtTF9sc0VLNTBGaFh6dVlLRTB5QUZrQ29pWU5xNXEzcXZuYk9Na1U3TlV4eGpYZC0wUVkzVGJNNHgwVWNvVWxWaUx5SUF0THBNdG43S2VLakRWUG00Q2pIRFRNSWpKZ2h5bmRoYldSQms4UjV6b0Y4eEw2RUlhckRPS0pVOUFobFlnSmJYbUpWaTJYakVjZGZfOExwMWs?oc=5",
+  "title": "The $30 Trap: Where Is My Streaming Money? How Independent Artists Leak Royalties (And How to Fix It)",
+  "summary": "The $30 Trap: Where Is My Streaming Money? How Independent Artists Leak Royalties (And How to Fix It) Muzique Magazine",
+  "source": "Muzique Magazine",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-10T08:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 0,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
  },
  {
   "id": "cc51db7cb39d1a80",
@@ -13028,6 +13749,22 @@
   ],
   "score": 24,
   "firstSeen": "2026-11-20T15:22:51.600Z"
+ },
+ {
+  "id": "533d7144ffd245a4",
+  "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBkV3dWU2ZDR2VZMUxXY0RXRUhTTE9QdFp6SE5RaTRTMkVzR0JDQ3JXOUhrZEtqVlNVYVM3bEFqUHpoTnU5d3BrSS1sTi1LNVNnS2lBci1mYmhZNDU5YmRPWXlyaGU?oc=5",
+  "title": "RouteNote Free vs. Paid: What Indie Artists Need to Know",
+  "summary": "RouteNote Free vs. Paid: What Indie Artists Need to Know Ones To Watch",
+  "source": "Ones To Watch",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-08T08:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 0,
+  "firstSeen": "2026-11-21T14:35:29.415Z"
  },
  {
   "id": "6c77bda6e61511c9",
