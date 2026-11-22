@@ -1,5 +1,45 @@
 [
  {
+  "id": "6c25e55bb8f4f3cf",
+  "url": "https://variety.com/2026/music/news/katseye-brings-out-camila-cabello-gabriela-los-angeles-1236955210/",
+  "title": "Katseye Brings Out Camila Cabello for ‘Gabriela’ Dance at Los Angeles Show",
+  "summary": "Roughly six songs into their performance on Saturday night, Katseye made a girl group connection with Fifth Harmony member Camila Cabello as Daniela Avanzini brought her out to be the collective’s “Gabriela” for the evening, dancing to the choreography that accompanies the song.…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-22T08:04:12.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [],
+  "score": 28,
+  "firstSeen": "2026-11-22T14:29:56.743Z"
+ },
+ {
+  "id": "8c6e137e09d0ecaa",
+  "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQRGVFVEpOR0pIZzVqLWR3ZWVranZnWmU3eHpRX0xTaXhodlJCY01nUERoNEViX2lCOHYtVzhuUXlNeXQzTUJFMVVkTUthU0xZTi00Z1FJWE1EM1ZUc094ZG9HbUxoenlNNmpOeEttRmFRYU51cThTT3FHY2I5RE5UX0FGNDJFTjlTSHBXWEpRYWpRWUh4UUszNFdTQ2VMZw?oc=5",
+  "title": "Music Licensing France in 2026: A Producer's Guide to SACEM, ADAMI and SPEDIDAM",
+  "summary": "Music Licensing France in 2026: A Producer's Guide to SACEM, ADAMI and SPEDIDAM Global Advisory Experts",
+  "source": "Global Advisory Experts",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-22T01:22:32.000Z",
+  "entities": [
+   "sacem"
+  ],
+  "types": [
+   "pro"
+  ],
+  "topics": [],
+  "score": 26,
+  "firstSeen": "2026-11-22T14:29:56.743Z"
+ },
+ {
   "id": "cd4830ce1679fa9b",
   "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9FX3FrbkJEWl9iYlVjT3ByLTEyZkVkOWU0aUFfVlMtVkVURDduaERwM2hJRUhsQURHYmM1UVpmc1N0NS1MdnVjZ2RTRkJfSXNVemNRdmxlUnBNQnF3WWxKRVRURUZkdmlPMXJNQ3FTbUV5SkVvcDNTRDI4SQ?oc=5",
   "title": "GTA 6 Song Licensing: How Much Rockstar Pays for Songs",
@@ -141,6 +181,26 @@
   "topics": [],
   "score": 10,
   "firstSeen": "2026-11-21T14:35:29.415Z"
+ },
+ {
+  "id": "57b60873921bd79d",
+  "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOZ1UtbHM4U0hHM1B3N05pb2MwRXJUR3dRWEZfTW1xVEtUUFhfNVlIQ3o2SDhaT0lzRDJURzFPUnM2ZXRsblVSejZfNGw3R3pvSjlGaG05U2Z3MEhzZ1dpbHQxUHlBQUYxU1NCWGs4WHpINk9Ob1dNMHlkTkc3dEtzX2JfWTR4UGh2cm1jN1lWZXZGNmQ1?oc=5",
+  "title": "Warner Music Group (WMG) CEO To Give CES 2027 First Music Keynote On AI",
+  "summary": "Warner Music Group (WMG) CEO To Give CES 2027 First Music Keynote On AI Yahoo Finance",
+  "source": "Yahoo Finance",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-20T22:12:32.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 19,
+  "firstSeen": "2026-11-22T14:29:56.743Z"
  },
  {
   "id": "e1252dec081f3713",
@@ -1483,6 +1543,26 @@
   ],
   "score": 64,
   "firstSeen": "2026-11-20T15:22:51.600Z"
+ },
+ {
+  "id": "7ae289e34097b71f",
+  "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPSTZGNGRFTm9aVWtzWHRTazMyZ2V1UUlLNkZPS0ZSMlQ1SFBEb2lDem5NT1prMzc4Ykx2MWJnSnZJXzM5RTBLaWhncUFtVXNiNmpPcVpIVmVlbVlTVWNWMUNvRjcwNjBOM0pKcEtnNXM4Yy13U3JLMmp3RGhZT29NRWFXQWd5SV9NcF93cmRNcFNlZ3NWaUxZNw?oc=5",
+  "title": "Warner Music: 3 Key Takeaways for Long-Term Investors",
+  "summary": "Warner Music: 3 Key Takeaways for Long-Term Investors Yahoo Finance",
+  "source": "Yahoo Finance",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-19T19:07:08.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 19,
+  "firstSeen": "2026-11-22T14:29:56.743Z"
  },
  {
   "id": "fc5d34d9c8e39c5c",
@@ -8271,6 +8351,26 @@
   "firstSeen": "2026-11-13T14:30:32.017Z"
  },
  {
+  "id": "44a9dd40a8e4e44b",
+  "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNWW5oXzI2dEVqOExRdmsxOUtHam1jaXN6YkNtU3pGbGxWcUdGUThNdDVLQjFRV1ZaVWZ0dVdXYUxRTDNUeWwxODRLb3VaMXg4TFZ5SW1fM0FxTWppbTlleWtWaWd4OE1nLU84MDZVaElZTVZvUUlaOVNySVNrZlZ0X1ZuWlJKSGRuUTk0bGN3?oc=5",
+  "title": "Music Industry Moves: Diplo and Andrew Bergman Launch Bison Music; Debbie Gibson Inks With Downtown",
+  "summary": "Music Industry Moves: Diplo and Andrew Bergman Launch Bison Music; Debbie Gibson Inks With Downtown Variety",
+  "source": "Variety",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-13T08:00:00.000Z",
+  "entities": [
+   "downtown"
+  ],
+  "types": [
+   "publisher"
+  ],
+  "topics": [],
+  "score": 14,
+  "firstSeen": "2026-11-22T14:29:56.743Z"
+ },
+ {
   "id": "bd2b80fcd9f615e2",
   "url": "https://www.digitalmusicnews.com/2026/11/12/jensen-huang-strange-kind-of-blindness/",
   "title": "A Strange Kind of Blindness",
@@ -12069,6 +12169,28 @@
   "firstSeen": "2026-11-21T14:35:29.415Z"
  },
  {
+  "id": "a51ce54b4f0ad1fd",
+  "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9uMUw2djduSzhCdW9UWHdvcnd1ZFVTMmlaZWpNNHFwNFhpMHlXeG0tUVlmSXE0OXhwX0N4Sklub3RxVWRjRmV4SlQyX05VOXpLamF3N01GdThOT0wxUWY2RTFUVjNBLXNibEdxSFJRbGR2WTJvN2JWeTNSd0wwUQ?oc=5",
+  "title": "UMG v. Suno Discovery Dispute Rages Amid Marathon Legal Battle",
+  "summary": "UMG v. Suno Discovery Dispute Rages Amid Marathon Legal Battle Digital Music News",
+  "source": "Digital Music News",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-10T08:00:00.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 16,
+  "firstSeen": "2026-11-22T14:29:56.743Z"
+ },
+ {
   "id": "cc51db7cb39d1a80",
   "url": "https://www.digitalmusicnews.com/2026/11/09/venice-beach-new-music-festival-2027/",
   "title": "After Santa Monica’s Ocean Way Crashes, Venice Beach Hatches a New Music Festival",
@@ -12430,6 +12552,28 @@
   "topics": [],
   "score": 10,
   "firstSeen": "2026-11-10T14:49:09.985Z"
+ },
+ {
+  "id": "c2775ce024e5020c",
+  "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOLTM2N0xsX3QwSWRhMmh3M25XdzhxS3BjUXZvV1FURjh5RDNuX2tKSmZGS2d6R3hCLUpxZnhIMVFkc3RuTEt4Q2hyU2g3QnJjR29iR3pCYXluSlVTYVU4eEJmdHQ1c1pVWDl4bVVoc2txdXk1b3ZtNk1vUFlKY3ZIcVN2QUlMU1FTOHk4Ykd6b0UwZ3ktX3R3NTlLeDF5cWtHbXJjUFlrNkQxUVpVZ21pLXRtYk1qbTBsRmc?oc=5",
+  "title": "Sony Music Publishing And River House Artists Sign Park Chisolm To Global Deal",
+  "summary": "Sony Music Publishing And River House Artists Sign Park Chisolm To Global Deal CelebrityAccess",
+  "source": "CelebrityAccess",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-09T20:16:07.000Z",
+  "entities": [
+   "sony-music-entertainment",
+   "sony-music-publishing"
+  ],
+  "types": [
+   "label",
+   "publisher"
+  ],
+  "topics": [],
+  "score": 36,
+  "firstSeen": "2026-11-22T14:29:56.743Z"
  },
  {
   "id": "c8d934cf94c231fb",
