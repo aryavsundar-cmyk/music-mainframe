@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-19T16:06:17.277Z",
+ "updatedAt": "2026-11-23T18:47:35.028Z",
  "source": "SEC EDGAR XBRL (data.sec.gov/api/xbrl/companyfacts)",
  "companies": {
   "alphabet": {
@@ -4786,7 +4786,7 @@
   },
   "goldman-sachs": {
    "entityId": "goldman-sachs",
-   "name": "The Goldman Sachs Group, Inc.",
+   "name": "GOLDMAN SACHS GROUP INC",
    "ticker": "GS",
    "cik": 886982,
    "metrics": {
