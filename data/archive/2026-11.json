@@ -1,5 +1,693 @@
 [
  {
+  "id": "e82b680b53d2180f",
+  "url": "https://variety.com/2026/music/news/ariana-grande-teases-eternal-sunshine-tour-movie-peacock-1236956068/",
+  "title": "Ariana Grande Teases ‘Eternal Sunshine Tour’ Movie at Peacock",
+  "summary": "Ariana Grande is teasing a documentary or concert film of her “Eternal Sunshine” tour, posting a clip on social media that reveals the movie will air on Peacock. The singer posted a clip on Monday morning from the moment in her “Eternal Sunshine” tour where she stands in the mid…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T17:52:07.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "c743e3db36b76720",
+  "url": "https://www.musicbusinessworldwide.com/d2c-platform-even-launches-day-date-vinyl-service-which-it-says-cuts-production-timelines-from-months-to-weeks/",
+  "title": "D2C platform EVEN launches Day & Date Vinyl service, which it says cuts production timelines ‘from months to weeks’",
+  "summary": "Company says the new service lets artists release vinyl alongside new and catalog albums with as little as two weeks' notice. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T17:39:34.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "catalog-deal"
+  ],
+  "score": 27,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "8ddaaff0c5e7ae45",
+  "url": "https://completemusicupdate.com/no-deal-on-post-brexit-touring-after-uk-eu-summit-spells-disappointment-for-music-industry/",
+  "title": "No deal on post-Brexit touring after UK-EU Summit spells disappointment for music industry",
+  "summary": "After Friday’s UK-EU Summit, both sides said they would “explore mutually beneficial solutions” to address post-Brexit issues for artists touring Europe, though with no clarity on what those solutions might be. ISM says the lack of progress on addressing these issues is “deeply…",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T17:03:16.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "105980a7f4fb9333",
+  "url": "https://news.pollstar.com/2026/11/23/osamasons-dj-apologizes-after-multiple-people-injured-at-terminal-5-show/",
+  "title": "OsamaSon’s DJ Apologizes After Multiple People injured At Terminal 5 Show",
+  "summary": "OsamaSon’s DJ Nino Andretti has apologized after instigating a crowd-crush that left five concertgoers injured during the rapper’s show at Terminal 5 in New York City. The Nov. 19 event was a partnership with Nike’s Jordan Brand. At one point during the show, Andretti encouraged…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-23T16:13:11.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "61d21b7344f61ee9",
+  "url": "https://variety.com/2026/music/news/justin-timberlake-documentary-trailer-britney-spears-janet-jackson-1236955955/",
+  "title": "Justin Timberlake Documentary Trailer: Apple TV Series to Unpack Britney Spears, Janet Jackson Controversies",
+  "summary": "Apple TV has confirmed that it will launch “Timberlake,” a new four-part documentary on Justin Timberlake’s life and career helmed by Academy Award winner Fisher Stevens; Variety first reported the news earlier this month. The series premieres globally on Apple TV on Friday, Dec…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T16:03:04.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "916e6b99c8c6a5fb",
+  "url": "https://news.pollstar.com/2026/11/23/ticketmaster-outage-disrupts-events-in-3-countries/",
+  "title": "Ticketmaster Outage Disrupts Events In 3 Countries",
+  "summary": "A Friday night Ticketmaster service disruption caused delays and locked out attendees at major events in three countries. Fans were stuck waiting outside the Caesars Superdome in New Orleans as the outage prevented the display of tickets to the Chris Brown and Usher concert. Sim…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-23T15:55:48.000Z",
+  "entities": [
+   "ticketmaster"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 30,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "e50fcb402e3b6eb4",
+  "url": "https://news.pollstar.com/2026/11/23/robert-glasper-embarks-on-first-blue-note-residency/",
+  "title": "Robert Glasper Embarks On First Blue Note Residency",
+  "summary": "Robert Glasper has announced his first-ever residency at the Blue Note, with completed performances in London and new additional shows set for Los Angeles. The 5-time Grammy Award-winning artist is wrapping up a seven-date stay at the London Blue Note, which kicked off on Nov. 1…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-23T15:48:25.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 20,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "171bc47cadcc4092",
+  "url": "https://news.pollstar.com/2026/11/23/stephanie-streeter-named-vp-partnership-sales-at-axs-exclusive/",
+  "title": "Stephanie Streeter Named VP, Partnership Sales At AXS (Exclusive)",
+  "summary": "Ticketing veteran Stephanie Streeter, most recently general manager for theaters and residencies at AXS, has been named vice president of partnership sales, signaling a strengthening alignment between the ticketing platform and parent company AEG’s global partnerships division a…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-23T15:00:00.000Z",
+  "entities": [
+   "aeg"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 30,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "78f18db66212182e",
+  "url": "https://www.billboard.com/pro/corina-smith-universal-music-latino-signing-exclusive/",
+  "title": "Corina Smith Signs With Universal Music Latino: ‘They’ve Embraced Me Exactly As I Am’",
+  "summary": "The Venezuelan artist will release new music in early 2027.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T15:00:00.000Z",
+  "entities": [
+   "umg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 29,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "7afe9bd79d664629",
+  "url": "https://musically.com/2026/11/23/work-it-like-its-new-making-the-most-of-catalogue-in-2026/",
+  "title": "‘Work it like it’s new’: making the most of catalogue in 2026",
+  "summary": "Streaming has significantly boosted the importance of older ‘catalogue’ music. That much we all know. But the scale can still surprise. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T14:35:17.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "catalog-deal"
+  ],
+  "score": 27,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "41bbd79dd2b1f2fd",
+  "url": "https://www.billboard.com/pro/los-tucanes-de-tijuana-sign-with-wme-global-representation/",
+  "title": "Los Tucanes de Tijuana Ink Deal With WME for Global Representation",
+  "summary": "The partnership aims to expand the norteño group's international touring opportunities, with its management also joining forces with ENTOTAL Agency.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "5b07236d3aeead3a",
+  "url": "https://variety.com/2026/music/news/gta-6-the-album-deluxe-travis-scott-slayyyter-1236955629/",
+  "title": "‘Grand Theft Auto VI: The Album’ Deluxe Adds 23 Original Songs From Travis Scott, Slayyyter, Offset, Sexyy Red and More",
+  "summary": "As if a 34-track soundtrack wasn’t enough, Atlantic Records and Rockstar Games have added 23 more original songs to the surprise deluxe edition of “Grand Theft Auto VI: The Album,” featuring new tracks from Travis Scott, 21 Savage, Slayyyter, Offset, Latto, and more. The deluxe…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T14:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "d047ec9ec765967b",
+  "url": "https://musically.com/2026/11/23/impala-outlines-action-it-would-like-to-see-on-streaming-fraud/",
+  "title": "Impala outlines action it would like to see on streaming fraud",
+  "summary": "It turns out that last week was International Fraud Awareness Week. Something we were unaware of, which may or may not make us absolute frauds. Happily, indie music body Impala has jogged our memory with some thoughts on what’s needed to tackle music-streaming fraud. The post is…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T13:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "79824b9c1ccabb4f",
+  "url": "https://www.musicbusinessworldwide.com/belgiums-streaming-pay-right-for-artists-must-prevent-double-payment-eu-advocate-general-says-in-spotify-and-majors-case/",
+  "title": "Belgium’s streaming pay right for artists must prevent ‘double payment,’ EU Advocate General says in Spotify and majors case",
+  "summary": "Maciej Szpunar said the right is not, in principle, incompatible with EU law, but that some of its detailed rules breach the freedom to provide services. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T12:56:30.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 27,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "51cc3919670cdb5f",
+  "url": "https://www.musicbusinessworldwide.com/nicolas-jaars-other-people-where-artists-retain-all-rights-signs-worldwide-distribution-deal-with-secretly/",
+  "title": "Nicolás Jaar’s Other People – where artists retain all rights – signs worldwide distribution deal with Secretly",
+  "summary": "Secretly Distribution will handle physical and digital distribution, marketing, and technology support for all of the label’s releases and initiatives. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T12:55:29.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "e94d646b69ddc086",
+  "url": "https://musically.com/2026/11/23/gta-vi-3-79bn-sales-streaming-activations-music-charts-impact/",
+  "title": "GTA VI: $3.79bn sales, streaming activations, music-charts impact",
+  "summary": "The long wait for Grand Theft Auto VI is finally over for gamers, and its launch last week brought a very-big number from developer Rockstar Games: $3.79bn of day-one retail sales. Rockstar also said that it sold 32.5m units of GTA VI pre-release. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T12:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "05fde3dd9c378653",
+  "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOV3F4Z1piQVB6THJqYzVzclFxRVo0RDl2N0RBUTZ1bnVfQlJmcUFBTUZsNWJHNmxFSGVZQUI1UWQ3WnRVbGtqZXRNNjZjQUxrOGNOTUFOYkNTbnNDZ1ZHOGlOZTg4WTQ1LVpYV1VXd2h5QVVLdTVUU29hNGdLUnNJdGNRZi1GNzNEaTAtLU1nRmd5NkRsR05EOV9kR0g2N1NhaTVmMjk5VFk4WVg0RXc2RVFmd1RLRkZlYzJ6alV2SUUtVjg4S0E?oc=5",
+  "title": "NetEase Cloud Music Revenue Falls to $290 Million as China’s Music Streaming Competition Intensifies",
+  "summary": "NetEase Cloud Music Revenue Falls to $290 Million as China’s Music Streaming Competition Intensifies RouteNote",
+  "source": "RouteNote",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-23T11:40:00.000Z",
+  "entities": [
+   "netease-cloud-music"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 22,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "d9dfb7191f1b3337",
+  "url": "https://news.pollstar.com/2026/11/23/unknown-substance-leads-to-co-op-live-evacuation-at-don-toliver-concert/",
+  "title": "‘Unknown Substance’ Leads To Co-op Live Evacuation At Don Toliver Concert",
+  "summary": "Co-op Live arena in Manchester, UK, was evacuated after an unknown substance was let off during a Don Toliver concert, Nov. 22. The Greater Manchester Police department declared it a major incident that occurred towards the end of the performance by Don Toliver, who was on that…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-23T11:27:54.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "c8f1a050c6f3a3e5",
+  "url": "https://variety.com/2026/music/global/noa-kirel-agustin-bernasconi-mirame-asi-el-camino-album-1236955731/",
+  "title": "Noa Kirel, Agustín Bernasconi Release ‘Mírame Así, El Camino de Noa’ Album (EXCLUSIVE)",
+  "summary": "Noa Kirel and Agustín Bernasconi have released an album based on their recent Prime Video drama “Mírame Así, El Camino de Noa.” The show stars Kirel as a young waitress who, after suffering a heartbreak, joins an emerging band led by Tommy (Bernasconi). “As she discovers her mus…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T11:05:25.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "9e527a92809a3b80",
+  "url": "https://www.musicbusinessworldwide.com/eminem-co-publisher-eight-mile-style-adds-108-allegedly-infringing-ai-tracks-to-47-7m-suno-lawsuit-calling-sunos-denials-false/",
+  "title": "Eminem co-publisher Eight Mile Style adds 108 allegedly infringing AI tracks to $47.7m Suno lawsuit, calling Suno’s denials ‘false’",
+  "summary": "The amended filing now accuses Suno of stealing Eminem's voice and likeness, but it adds no claim over them, and the damages it seeks are unchanged. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T10:19:30.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 34,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "a6986ef7bdec4154",
+  "url": "https://www.musicbusinessworldwide.com/5-things-to-know-about-sunos-move-into-ai-video-the-distrokid-documents-and-the-fight-over-v6/",
+  "title": "5 things to know about Suno’s move into AI video, the DistroKid documents, and the fight over v6",
+  "summary": "Suno moved into video this week, while DistroKid handed over AI-detection documents and UMG and Sony fought to keep their second lawsuit moving. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T10:17:38.000Z",
+  "entities": [
+   "distrokid",
+   "suno"
+  ],
+  "types": [
+   "distributor",
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 52,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "aff06cdbffd08884",
+  "url": "https://www.musicbusinessworldwide.com/soundcloud-cracks-down-on-ai-slop-spam-and-excessive-uploads-weeks-after-striking-ai-deals-with-moises-and-elevenlabs/",
+  "title": "SoundCloud cracks down on ‘AI slop, spam, and excessive uploads’ – weeks after striking AI deals with Moises and ElevenLabs",
+  "summary": "New terms let SoundCloud withhold, reverse, or recover payouts from users who use AI to game its systems. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T10:16:46.000Z",
+  "entities": [
+   "elevenlabs"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [],
+  "score": 18,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "6a4013412ab7ddf5",
+  "url": "https://www.musicbusinessworldwide.com/judge-throws-out-wixens-claims-over-200-plus-pre-1978-songs-in-copyright-lawsuit-against-meta-lets-rest-of-case-proceed/",
+  "title": "Judge throws out Wixen’s claims over 200-plus pre-1978 songs in copyright lawsuit against Meta, lets rest of case proceed",
+  "summary": "The ruling strips more than a third of the 569 songs from the case, though Wixen's remaining infringement claims and its defamation claim survive. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T10:16:25.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "f45687f71fbdaece",
+  "url": "https://www.musicbusinessworldwide.com/tiktok-rolls-out-likeness-detection-deepfake-tool-globally-launches-public-ai-content-checker/",
+  "title": "TikTok rolls out Likeness Detection deepfake tool globally, launches public AI-content checker",
+  "summary": "TikTok says its AI labeling tools have now helped it label more than 5 billion AI-generated videos, up from 3 billion in July. Source",
+  "source": "Music Business Worldwide",
+  "sourceId": "mbw",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T10:16:01.000Z",
+  "entities": [
+   "tiktok"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 30,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "13ec6c465a5cbf28",
+  "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQTWZXTHQxODJfVEhzb3MwN0dBVG5RYVBIOXVZaTJhQi1scEstRlhoQVhubGhzaUlRSkM0SXBRVHl3TXVnT01Mc3pYXzU2UndobmEybXZMT1Rpb3JUVVo3azNlWnZGb0szNjRaOExVT0RxaHdZNXhCMkxWNmY2bTU2UjFBQjc0aHVVNnVMWkFDZnZUcU1EWW9XSlR0UWN4ajBXOUxzUlQwNDBmdlcyNkVsTkNZMnpnUTlFWHVnVW5IeDNXekE?oc=5",
+  "title": "ATC Music Group expands into rights management with One Media iP acquisition",
+  "summary": "ATC Music Group expands into rights management with One Media iP acquisition Music Week",
+  "source": "Music Week",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-23T10:07:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "m&a"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "64fef26e4369121a",
+  "url": "https://musically.com/2026/11/23/atc-music-group-gets-into-rights-management-with-15m-one-media-ip-deal/",
+  "title": "ATC Music Group gets into rights management with £15m One Media iP deal",
+  "summary": "ATC Music Group has made its latest expansion move: into rights management with the £15m acquisition of One Media iP. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T09:45:15.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "m&a"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "3789b7bbe688dfda",
+  "url": "https://musically.com/2026/11/23/venture-musics-chris-nardone-stop-chasing-growth-and-start-building-gravity/",
+  "title": "Venture Music’s Chris Nardone: “Stop chasing growth and start building gravity’",
+  "summary": "Streams, followers, playlist adds, views, viral moments: artist teams have never been able to measure so much. But that’s the problem… The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T09:00:39.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "d16e04890a650d96",
+  "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNOE9zbXhGOFktbXc2S2xKMnZ0c0RqbVBDU053Wl9VR1RnUmVYUy1CS1BaOG9WZ3hyWmxIdDRFSWltYm0waHY2SW1pTDJxQlQtSXJ2QjBqYmNFZkFLLVF2aUFYOFd0YWdWOEJzcXBsQkItMGV1XzhOcFVSR0hMZGdFMkxmeUhhT1l4ekVwWk4teFBwQ0owRUU1QQ?oc=5",
+  "title": "ATC Music buys One Media iP for £15M to add rights ownership",
+  "summary": "ATC Music buys One Media iP for £15M to add rights ownership Dealroom",
+  "source": "Dealroom",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-23T08:45:25.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "9268324b7c6c8f70",
+  "url": "https://news.pollstar.com/2026/11/23/it-takes-a-village-to-develop-grow-an-artist-qs-with-james-wright-co-head-uk-music-uta/",
+  "title": "‘It Takes A Village To Develop & Grow An Artist’: Q’s With James Wright, Co-Head, UK Music, UTA",
+  "summary": "Pollstar speaks with James Wright, Co-Head of UK Music at UTA, to talk about the state of play as another incredibly eventful year for live entertainment is drawing to a close. UTA itself has had a standout year, from Take That’s “The Circus Live- Summer 2026” stadium tour to Ro…",
+  "source": "Pollstar",
+  "sourceId": "pollstar",
+  "category": "live",
+  "kind": "news",
+  "publishedAt": "2026-11-23T08:17:33.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "1dc112f33b288b00",
+  "url": "https://musically.com/2026/11/23/making-independents-unstoppable-what-twenty-years-has-taught-us/",
+  "title": "Making Independents Unstoppable: What Twenty Years Has Taught Us",
+  "summary": "Twenty years is a long time in music. The way people create, release, discover, and build their careers around music… all of it has evolved in ways we never imagined […] The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T07:51:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "63e4990e5ffcac21",
+  "url": "https://www.digitalmusicnews.com/2026/11/22/counterfeit-merch-reporting-guide-for-musicians/",
+  "title": "Did You Find Counterfeit Merch on Temu? — Here’s How to Report",
+  "summary": "After a year of trial and error, a T-shirt business owner has shared with Digital Music News their best practices for reporting counterfeit merch on Temu. It’s not just small artists who deal with counterfeit merchandise popping up online, but it can be especially difficult for…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T06:53:27.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "6ac14d6b16054143",
+  "url": "https://www.digitalmusicnews.com/2026/11/22/peachtree-entertainment-shut-down/",
+  "title": "Peachtree Entertainment’s Shutdown Leaves the Future of Rock the South on Rocky Ground",
+  "summary": "Nashville-based promoter Peachree Entertainment lays off employees and winds down operations, leaving the future of its recent partnerships uncertain. Peachtree Entertainment is reportedly winding down operations after laying off employees, which has raised many questions surrou…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T06:45:08.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "5462ed60551e1201",
+  "url": "https://www.billboard.com/pro/stockholm-gasometer-music-venue-europe/",
+  "title": "Inside Stockholm’s Gasometer, Europe’s Most Ambitious New Music Venue: ‘This Will Create Waves Far Beyond Here’",
+  "summary": "The venue will host its opening performances in March 2027.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T06:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "live"
+  ],
+  "score": 15,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "ee9cc03e0607983a",
+  "url": "https://variety.com/2026/music/news/don-toliver-manchester-concert-evacuated-tear-gas-1236955605/",
+  "title": "Don Toliver’s Manchester Concert Evacuated After Suspected Tear Gas Released Into Crowd",
+  "summary": "Don Toliver’s concert at Co-op Live in Manchester, England ended in an evacuation as tear gas was released in the crowd on Sunday. “It is understood that a substance believed to be tear gas was let off in the crowd towards the end of a concert,” wrote the Greater Manchester Poli…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-23T02:00:46.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "8d82112f9a399d0e",
+  "url": "https://variety.com/2026/music/news/ateez-u2-album-chart-debut-billboard-1236955537/",
+  "title": "Ateez Debuts at No. 1 on Billboard 200 for the Third Time This Year; U2’s ‘Carnaval de Luz’ Bows at No. 4",
+  "summary": "The K-pop group Ateez continued its string of chart successes with the No. 1 bow on the Billboard 200 album chart of “Golden Hour: Part 6.” It’s the third time in 2026 that the group has had an EP debut in the top spot; the last such occasion came in July, when they premiered at…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-22T23:27:32.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "36c8a4065ff54b52",
+  "url": "https://www.digitalmusicnews.com/2026/11/22/windham-hill-records-legacy/",
+  "title": "The Windham Hill Records Legacy Lives On",
+  "summary": "Some record labels release music. Others change the way we listen. For me, Windham Hill Records did both. As Windham Hill celebrates its 50th anniversary in 2026, I find myself reflecting on how much this extraordinary record label has meant to me. Founded by Will Ackerman in 19…",
+  "source": "Digital Music News",
+  "sourceId": "dmn",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-22T23:10:43.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "0fb69383d4e5f32a",
+  "url": "https://variety.com/2026/music/columns/noah-kahan-lack-of-grammy-nominations-reasons-1236955321/",
+  "title": "Noah Kahan Deserved a Lot More Grammy Love Than Just One Minor Nomination. Here’s Why He Didn’t Get It",
+  "summary": "In previous eras of less pervasive social media, we usually could only guess at just how disappointed music and film personalities were when they didn’t fare well with Grammy or Oscar nominations. But lately, more and more major and minor figures have been up-front and honest in…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-22T19:30:19.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
+  "id": "1fc8c18991896013",
+  "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE00bDNnRm1mX25tRWROUEZLa0wwWTFzbVk5Zy1vUDhzYVdUM1hiX0E3OHFNeDlzN1p2ZzlRTXphUERuMWhsejhma3pEdFVuMFJuVjlTR0xMX3BLS01xckFZ?oc=5",
+  "title": "Developing Music Lawsuit 2026: Suno, Udio, Sony Updates",
+  "summary": "Developing Music Lawsuit 2026: Suno, Udio, Sony Updates LawFold.com",
+  "source": "LawFold.com",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-22T15:05:48.000Z",
+  "entities": [
+   "suno",
+   "udio"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 45,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
+ },
+ {
   "id": "6c25e55bb8f4f3cf",
   "url": "https://variety.com/2026/music/news/katseye-brings-out-camila-cabello-gabriela-los-angeles-1236955210/",
   "title": "Katseye Brings Out Camila Cabello for ‘Gabriela’ Dance at Los Angeles Show",
@@ -1190,6 +1878,28 @@
   ],
   "score": 18,
   "firstSeen": "2026-11-20T15:22:51.600Z"
+ },
+ {
+  "id": "5df2433872436295",
+  "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNRmQ3bUVScTU5Rkw5aGxiVk5TWmtfeHJsTzBpT1k4SDI1azFyNkU5MjA1T2VENVA1bVJmb0NTWkVfWFlHU1I4cU5VZTE3M2I2TkpROTN6eDZDSGZ0MWpvTXBlc3B4d3Z2cU1QS0x1MXc3Zm9mRE5zTGRPSFlFVVFfQWZlZ0RRU0xSb1pVR3pPYlBkMUZvb2JVZTZQZEllSG9nTVpSbEpvOWNxaWpvb1F0WVhkRkVzWjdheEp4aEJvTDY5ek42SDNPcU5BdkVwN0lMM3FsVEc1T3hrazVQazJVV2lZNWlUcFRQeVFsOVR0VVp5YmlkMzNpeg?oc=5",
+  "title": "Warner Music Group Q3 CY2026 deep dive: AI licensing and streaming gains drive operating margin expansion",
+  "summary": "Warner Music Group Q3 CY2026 deep dive: AI licensing and streaming gains drive operating margin expansion TradingView",
+  "source": "TradingView",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-20T05:31:00.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [
+   "ai"
+  ],
+  "score": 24,
+  "firstSeen": "2026-11-23T17:59:15.347Z"
  },
  {
   "id": "5cd8a9871e9096ee",
