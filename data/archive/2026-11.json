@@ -1,5 +1,262 @@
 [
  {
+  "id": "a0c0bc5b9f0c39d6",
+  "url": "https://variety.com/2026/music/news/demetri-martin-standup-comedy-christmas-album-1236958546/",
+  "title": "Demetri Martin Releases ‘Standup Comedy for Christmas’ Album (EXCLUSIVE)",
+  "summary": "Demetri Martin is getting into the holiday spirit with a newly released album, “Standup Comedy for Christmas.” The album, out now, consists of 13 stand-up comedy tracks and one original, acoustic song that closes the set, titled “It’s Christmas FYI.” The new material is availabl…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-27T16:00:00.000Z",
+  "entities": [
+   "hipgnosis-songs-fund"
+  ],
+  "types": [
+   "catalog-fund"
+  ],
+  "topics": [],
+  "score": 33,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
+ },
+ {
+  "id": "af05a04ca065893c",
+  "url": "https://musically.com/2026/11/27/winamp-player-set-to-relaunch-in-private-beta-on-15-december/",
+  "title": "Winamp Player set to relaunch in private beta on 15 December",
+  "summary": "We’ve been writing about veteran digital-music brand Winamp’s comeback efforts since 2022, when – in very much a sign of those times – the plans included NFTs. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-27T13:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
+ },
+ {
+  "id": "c9f09e32aecae70b",
+  "url": "https://musically.com/2026/11/27/majors-and-uk-bodies-back-campaign-focused-on-music-and-dementia/",
+  "title": "Majors and UK bodies back campaign focused on music and dementia",
+  "summary": "Music can be a wonderful thing for people living with dementia, as well as their carers. However, a new campaign in the UK is highlighting the fact that streaming may not be accessible enough to those people. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-27T13:30:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 15,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
+ },
+ {
+  "id": "8d7df998b539e919",
+  "url": "https://musically.com/2026/11/27/impala-celebrates-ukraine-and-45-artists-with-100m-spotify-streams/",
+  "title": "Impala celebrates Ukraine – and 45 artists with 100m+ Spotify streams",
+  "summary": "It’s now precisely 1,737 days since Russia invaded Ukraine, with attacks continuing on the country’s infrastructure and its civilian population. The invasion has taken its toll on Ukraine’s music industry, but as Impala’s latest ‘Faces of the Independent Sector’ article explains…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-27T13:00:00.000Z",
+  "entities": [
+   "spotify"
+  ],
+  "types": [
+   "dsp"
+  ],
+  "topics": [],
+  "score": 27,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
+ },
+ {
+  "id": "d22e5b2ee22b90de",
+  "url": "https://variety.com/2026/music/news/justin-timberlake-reluctant-doc-big-revelations-1236959282/",
+  "title": "Justin Timberlake Was ‘Really Reluctant’ to Make Tell-All Documentary: ‘I’ve Gone Through a Lot in the Last Five Years’",
+  "summary": "Justin Timberlake is opening up about his decision to participate in an upcoming tell-all documentary, saying he was initially “really reluctant.” As Variety first reported, the singer is the subject of “Timberlake,” a four-part documentary from director Fisher Stevens that will…",
+  "source": "Variety Music",
+  "sourceId": "variety-music",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-27T10:27:50.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
+ },
+ {
+  "id": "0c356aa18c0a87ca",
+  "url": "https://musically.com/2026/11/27/tiktok-rolls-out-likeness-detection-tools/",
+  "title": "TikTok rolls out likeness detection tools",
+  "summary": "TikTok has launched two tools to deal with the growing amount of AI content on its platform. The first is a public checker. Anyone can upload a video, image or audio file, with or without a TikTok account, and find out whether it was made or edited with one of ByteDance’s own AI…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-27T10:00:00.000Z",
+  "entities": [
+   "bytedance",
+   "tiktok"
+  ],
+  "types": [
+   "dsp",
+   "strategic"
+  ],
+  "topics": [],
+  "score": 36,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
+ },
+ {
+  "id": "959ba0a1188f03b9",
+  "url": "https://musically.com/2026/11/27/why-loyalty-is-the-new-currency-for-artists/",
+  "title": "Why ‘loyalty is the new currency’ for artists",
+  "summary": "At Music Ally Marketing Week 2026, Big Cookie founder Aaron Bogucki unpacked how artists can move beyond chasing viral algorithms to build lasting fan communities under the theme ‘From Follow to Fan’. Emphasizing that “loyalty is the new currency” and “what your career is going…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-27T10:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
+ },
+ {
+  "id": "b8f695a29d4bb542",
+  "url": "https://musically.com/2026/11/27/how-carly-rae-jepsen-is-using-the-moment-around-her-gta-vi-sync/",
+  "title": "How Carly Rae Jepsen is using the moment around her GTA VI sync",
+  "summary": "We’ve already covered some of the standout music moments from last week’s GTA VI launch. One of the surprise breakout tracks is more than a decade old. Carly Rae Jepsen’s ‘Run Away With Me’ soundtracks a mission in the game, and since the game came out on 19 November the song’s…",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-27T10:00:00.000Z",
+  "entities": [
+   "hipgnosis-songs-fund",
+   "spotify"
+  ],
+  "types": [
+   "catalog-fund",
+   "dsp"
+  ],
+  "topics": [],
+  "score": 48,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
+ },
+ {
+  "id": "e45b2699dd5626af",
+  "url": "https://musically.com/2026/11/27/tips-on-how-to-use-meta-muse-for-an-artists-social-media-strategy/",
+  "title": "Tips on how to use Meta Muse for an artist’s social media strategy",
+  "summary": "Meta’s Muse AI agent arrived in the UK this week, following its US launch in September. Instagram boss Adam Mosseri has now explained how he thinks people who run social accounts should use it. The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-27T10:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
+ },
+ {
+  "id": "529380e3d829cca2",
+  "url": "https://musically.com/2026/11/27/these-are-the-most-underexplored-aspects-of-indias-music-industry-say-artist-managers/",
+  "title": "These are the most underexplored aspects of India’s music industry, say artist managers",
+  "summary": "The exponential growth of India’s music industry, from its headline-grabbing streaming volumes to its booming “concert economy”, has been well documented in the recent past. In some areas, however, it’s […] The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-27T09:25:58.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
+ },
+ {
+  "id": "98882fcb0f698cdf",
+  "url": "https://www.billboard.com/pro/live-nation-adds-venue-australia-gold-coast/",
+  "title": "Live Nation Adds Venue on Australia’s Gold Coast",
+  "summary": "Surfers Music Hall will be a 2,500-capacity live music space in Surfers Paradise, with a target to open its doors in mid-2028.",
+  "source": "Billboard Business",
+  "sourceId": "billboard-biz",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-27T05:55:55.000Z",
+  "entities": [
+   "live-nation"
+  ],
+  "types": [
+   "live"
+  ],
+  "topics": [
+   "live"
+  ],
+  "score": 25,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
+ },
+ {
+  "id": "fb630fdf16d6d458",
+  "url": "https://musically.com/2026/11/26/singer-songwriter-ashwin-syam-bets-on-kitalbums-as-an-offering-for-superfans/",
+  "title": "Singer-songwriter Ashwin Syam bets on KiTalbums as an offering for superfans",
+  "summary": "South Korean company KiTbetter, which manufactures KiTalbums, a hybrid physical-digital format, launched its DIY platform to enable independent artists to self-release the product in August 2025. Now, we’ve got to […] The post is from Music Ally.",
+  "source": "Music Ally",
+  "sourceId": "musically",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-26T17:45:56.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
+ },
+ {
+  "id": "f113e6bcb22b62f0",
+  "url": "https://completemusicupdate.com/judge-declines-to-dismiss-suno-publicity-rights-case-as-sixteen-more-musicians-join-the-legal-battle/",
+  "title": "Judge declines to dismiss Suno publicity rights case, as sixteen more musicians join the legal battle",
+  "summary": "Earlier this week the Suno lawsuit that accuses the AI company of infringing the publicity rights of artists, instead of copyright, was expanded, with sixteen new musicians added as plaintiffs in an amended complaint. The judge has now also denied Suno’s motion to dismiss the or…",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-26T17:13:42.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 34,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
+ },
+ {
+  "id": "0fe2859d2c30f0e3",
+  "url": "https://completemusicupdate.com/approved-to-the-lighthouse/",
+  "title": "🎧 Approved: To The Lighthouse",
+  "summary": "Halifax duo To The Lighthouse have no interest in sticking to one sound, so expect the shimmer of shoegaze, a post-punk edge and indie guitar pop. New single ‘Argue Like I Love You’ is a builder with a gorgeous riff, heavy drums and a second half that’s one long charge",
+  "source": "Complete Music Update",
+  "sourceId": "cmu",
+  "category": "trade",
+  "kind": "news",
+  "publishedAt": "2026-11-26T17:10:41.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 10,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
+ },
+ {
   "id": "d0c1950ae5b439d2",
   "url": "https://variety.com/2026/music/news/record-store-day-black-friday-founder-interview-releases-1236958941/",
   "title": "Record Store Day Co-Founder on How Black Friday Evolved Into a Major Holiday for Vinyl Hounds, and What Will Fly Off the Shelves This Year",
@@ -30,6 +287,42 @@
   "topics": [],
   "score": 15,
   "firstSeen": "2026-11-26T16:49:25.871Z"
+ },
+ {
+  "id": "81aa2655b3807638",
+  "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNX1dHVWlWRUpyUFhBNnl0QlNTbjBYeVFad0xUbHFJdWtFRzJFQkM2NGFVLVBMbHpjOTl2Y2JJbUpDeGxOaFNEdkVsS0dPRlYyU0hQV1E3cVdXNUt3Vm13LVZ5TkVLWDNiUVdWRy1fck1UT09EdUpXcEFPX0VzdW1YbTJKaHdvMkl0VFpld2VaZ2Zua2lOcEE?oc=5",
+  "title": "Why Warner Music Group (WMG) Might be Well Poised for a Surge",
+  "summary": "Why Warner Music Group (WMG) Might be Well Poised for a Surge Yahoo Finance",
+  "source": "Yahoo Finance",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-26T16:20:02.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 19,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
+ },
+ {
+  "id": "b770e2a2a38ace48",
+  "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE40ZWY1VGtuTlZsZzVaUno2NFFWM1BRejdSUDQzbWhfeDExZ2Q3YmEwYURGOWVFQXl4ZVlpQTRUTzhTelktN1NIaENmeGo4YlpRTUY2QzIxdXBBTUozcC02RVNhTDcwNlhkUnFvVUtfTXA4WFk?oc=5",
+  "title": "Roblox is opening a way for musicians to get paid",
+  "summary": "Roblox is opening a way for musicians to get paid lnt.ma",
+  "source": "lnt.ma",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-26T14:53:23.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
  },
  {
   "id": "84ad2951135ab467",
@@ -263,6 +556,22 @@
   ],
   "score": 57,
   "firstSeen": "2026-11-26T16:49:25.871Z"
+ },
+ {
+  "id": "1625eb92cc512b91",
+  "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQOGt4VGx3dVY5ekN0a0hhQ2tJam5WNDNQc1ZQZEFWT2pqZnJ1cUN6UFgwRENBamJZQWFMOHhJaUhnTWpGRDdjdFVTUEhZSUYzNWtpRGtOclJhSUhSV1E2SDhRZ0NZVE5LMFpueTc2cl82YlpuRHlycDVqcGttbGRUSi1zNXpUZDRCY3R0VHJxc1N0NlFCNUwzMmgwZ0RaZWZrbGpkY2prcTdySjl2WlgzZ1prMGJudWExYjQwQUt3Y2R0Zw?oc=5",
+  "title": "Society Of Authors ZAiKS partners with Salt on streaming royalty processing",
+  "summary": "Society Of Authors ZAiKS partners with Salt on streaming royalty processing MusicWeek.com",
+  "source": "MusicWeek.com",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-26T11:54:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 5,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
  },
  {
   "id": "de4c2926d5e013cd",
@@ -1775,6 +2084,29 @@
   "firstSeen": "2026-11-25T17:08:20.048Z"
  },
  {
+  "id": "4143704d50f4497d",
+  "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPWENXS3lFYmVGektYSmw1eXhlelpBMlRqNzQzZmpiTjV5U0c2OUZTaGZlVnMtdllDRXNFNmt4TjhWQjBsUjNUY3pvNFlpWVE4MTJyRHNsR1Fsb0dBRlNCSjJsZHd0bTNGQUI0TXBYRVdlRDNKSW9mS2pYWk9KV0lOd3l5SXMyb1ZIenVFSGpLV3IyMTVpaXlfYTNlZU8wNTktQnQ4?oc=5",
+  "title": "Eminem’s Publishers Add 108 Alleged AI Tracks to Suno Copyright Lawsuit",
+  "summary": "Eminem’s Publishers Add 108 Alleged AI Tracks to Suno Copyright Lawsuit foxy99.com",
+  "source": "foxy99.com",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-24T21:09:05.000Z",
+  "entities": [
+   "suno"
+  ],
+  "types": [
+   "music-tech"
+  ],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 29,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
+ },
+ {
   "id": "2573e58ed4c66c47",
   "url": "https://www.digitalmusicnews.com/2026/11/24/spotify-artist-profile-protection-all-artists/",
   "title": "Spotify Strengthens Anti-Deepfake Artist Profile Protections; Profile Controls Now Available to All Artists After Gradual Rollout and Beta Testing",
@@ -2488,6 +2820,45 @@
   "topics": [],
   "score": 24,
   "firstSeen": "2026-11-24T17:37:14.319Z"
+ },
+ {
+  "id": "92b7580f6bde06fc",
+  "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQVzdVb0RFUFhtRTFJWDlwd19YQXBMZ3RmcmtHem9tT0FzSEJEWE9ReVEyUkdDeWp5UWgyUUVuMFJMTVlsUkxpazE3UEdKZzA5UEgxc3o0QTJRWVpPN1ZPckgxMnVVVXpDY1BqeFpZajFFOXRUdXl4NE9FRXh4RWhPR0NmSHhrT1lhb3JJVDBXdld6cEJnNFFrdmw4S05LaUxENTlwaA?oc=5",
+  "title": "Musicians' org. threatens lawsuit against Dutch company selling AI-generated music",
+  "summary": "Musicians' org. threatens lawsuit against Dutch company selling AI-generated music NL Times",
+  "source": "NL Times",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-24T08:05:41.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [
+   "ai",
+   "litigation"
+  ],
+  "score": 18,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
+ },
+ {
+  "id": "ac770be8b0c24992",
+  "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNX2lodGJQYkROXzN5NmxjTTgwZldXaVhKZ21pcWstUWtxYXVrb2lJemVKa1hQNVJuU1QwN1VPbWJUX3F3eGcxSm4zdXo5c2VCend6VkUzb0VfOWxYTnljVDY4Z0IyX3o4WUNLdl83U0F3bk1lTElvNGhtcFhaa2ZOYTN3bXhmYTMtNHdteA?oc=5",
+  "title": "BMG Earns Exclusive Stage Licensing Rights to THE BALUSTERS",
+  "summary": "BMG Earns Exclusive Stage Licensing Rights to THE BALUSTERS www.bmg.com",
+  "source": "www.bmg.com",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-24T08:00:00.000Z",
+  "entities": [
+   "bmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 16,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
  },
  {
   "id": "0ecb5f65d1e7919f",
@@ -7412,6 +7783,26 @@
   "firstSeen": "2026-11-19T15:40:41.921Z"
  },
  {
+  "id": "491b74000025fd45",
+  "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNN0JkZjczc045cnNnaGwxQ1pYeHliSGNhdUU1NEI0YmdkdnBBT1U3dTUxTGJQQW0wYU5sdEtUcGZtb1hhM1ptTk5nUmlBeE1RTUJ0ODRnVi1IQkZqeVgyRG1NNDlpeVkxWU1oUmZkeGFRbWVRUWZjLXZHNnlDaTN5SWxNaGxUT3hETjh0U3E3alQyWktRZ1BHV1RnUml4MDlhLTE4?oc=5",
+  "title": "WARNER MUSIC GROUP CEO ROBERT KYNCL TO COVER THE FUTURE OF MUSIC AT CES 2027",
+  "summary": "WARNER MUSIC GROUP CEO ROBERT KYNCL TO COVER THE FUTURE OF MUSIC AT CES 2027 Warner Music Group",
+  "source": "Warner Music Group",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-18T16:51:41.000Z",
+  "entities": [
+   "wmg"
+  ],
+  "types": [
+   "label"
+  ],
+  "topics": [],
+  "score": 14,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
+ },
+ {
   "id": "6b260fc2639342a4",
   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE81eXlXTUNqaTR1WHk0RFpKYm1OalFnQXk5YkNveGswb3lBUFR5d3BDZEZZal9KdlF5dXU2ZTlQclJjRHQtdFNYUmF5eWhNcHpROU92dWh4NEtLdGt3ZWU0TXlGOS03eHRreGxNa0Rmb2Y1enlFMy03NjUwVE14QQ?oc=5",
   "title": "NMPA Seeks MLC v. Spotify Subpoena Amid Phono V Proceeding",
@@ -8224,6 +8615,22 @@
   ],
   "score": 26,
   "firstSeen": "2026-11-18T15:35:17.678Z"
+ },
+ {
+  "id": "a69a25b28ca7fce9",
+  "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNUC1fN1hBRzBscWxRTHY3Qk9XdVhtcEdWdUNzWnJWempCUEVJVV8tZ0Z1dkc0aHRpaGExdmlGRGdBLUhWSHlfYXROcFM5VFIyellQOFQ5RldWSDlTbFpDVUNVMmpQZVBERzFBcFp4Q2k4WnJ2TjlpQXU4Q2o4UExEVE9SdXpvWFlMSGctNS1WenFhUQ?oc=5",
+  "title": "NMPA Seeks MLC Documents in Phono V Rate Case",
+  "summary": "NMPA Seeks MLC Documents in Phono V Rate Case InterSpace Music Distribution",
+  "source": "InterSpace Music Distribution",
+  "sourceId": "google_news",
+  "category": "search",
+  "kind": "news",
+  "publishedAt": "2026-11-18T08:00:00.000Z",
+  "entities": [],
+  "types": [],
+  "topics": [],
+  "score": 0,
+  "firstSeen": "2026-11-27T16:34:57.833Z"
  },
  {
   "id": "a98eb7a53a1bd582",
